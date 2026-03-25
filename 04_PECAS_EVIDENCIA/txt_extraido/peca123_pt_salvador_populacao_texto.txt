@@ -1,0 +1,124 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Técnica
+Peça 123 / PT-13: Caso Salvador/BA — Análise de
+Duplicações sobre População Total
+Equipe de Auditoria — Fiscalização CAF-MAPA
+02 de dezembro de 2025
+1 Objetivo
+Este papel de trabalho documenta a análise de duplicações espaciais em Salvador/BA sobre a
+população total do CAF (3.175.345 registros ativos), complementando o PT-08 Apêndice I
+que analisou apenas o censo municipal (1.124 registros com precisão ≥5 casas decimais).
+Motivação : O PT-08 Apêndice I identificou 27 registros duplicados em Salvador, mas a
+análise sobre a população total revela uma concentração muito maior de 6.644 imóveis em uma
+única coordenada.
+2 Metodologia
+2.1 Base de Dados
+•Fonte: Tabela tmp_populacao_analisavel
+•População total : 3.175.345 registros (CAF ativos em UFs ativas)
+•Filtro: Código IBGE do município de Salvador ( cd_municipio = ’2927408’ )
+•Critério de duplicação : Coordenadas exatas (mesmo nr_latitude enr_longitude )
+2.2 Query SQL Executada
+Listing 1: Análise de duplicações em Salvador sobre população total
+1-- Detalhes da coordenada com mxima duplicao em Salvador
+2SELECT
+3 nr_latitude,
+4 nr_longitude,
+5 COUNT (*) astotal_imoveis,
+6 MIN(dt_criacao) asprimeira_criacao,
+7 MAX(dt_criacao) asultima_criacao,
+8 MAX(dt_criacao):: date -MIN(dt_criacao):: date as dias_periodo,
+9 ROUND( COUNT (*) * 100.0 /
+10 (SELECT COUNT (*) FROM tmp_populacao_analisavel), 2)
+11 aspercentual_total
+12FROM tmp_populacao_analisavel
+13WHERE nr_latitude = -12.960000 AND nr_longitude = -38.510000
+14GROUP BY nr_latitude, nr_longitude;
+1
+
+--- Página 2 ---
+Peça 123 / PT-13 - Caso Salvador (População Total) TCU
+3 Resultados
+3.1 Coordenada com Máxima Duplicação
+Tabela 1: Análise da Coordenada Crítica em Salvador/BA
+Parâmetro Valor
+Latitude -12,960000
+Longitude -38,510000
+Total de imóveis 6.644
+Primeira criação 14/junho/2024
+Última criação 02/setembro/2025
+Período total 445 dias
+% sobre população total 0,21%
+% sobre duplicações nacionais 1,46%
+3.2 Comparação com PT-08 Apêndice I
+Tabela 2: Comparação entre Análises
+Parâmetro PT-08 Apêndice I Peça 123 (Este documento)
+Base de análise Censo municipal População total
+Registros analisados 1.124 3.175.345
+Imóveis na coordenada 27 6.644
+Período analisado 21 dias 445 dias
+Percentual 2,40% (sobre censo) 1,46% (sobre duplicações)
+Explicação da diferença : O PT-08 Apêndice I analisou apenas os 1.124 registros de Salvador
+que possuíam precisão ≥5 casas decimais, encontrando 27 duplicados. O presente PT-13 ana-
+lisa todos os registros de Salvador na população total, incluindo aqueles com menor precisão,
+revelando que a coordenada genérica (-12,96; -38,51) concentra 6.644 cadastros.
+4 Contexto Geográfico
+A coordenada (-12,960000; -38,510000) corresponde a uma área no centro urbano de Salva-
+dor/BA . A utilização desta coordenada para 6.644 cadastros distintos, ao longo de 445 dias,
+evidencia:
+1.Falha de validação semântica : O sistema aceita coordenadas sintaticamente válidas
+(dentrodosintervalospermitidos),massemanticamenteabsurdas(áreaurbanaconsolidada
+declarada como zona rural).
+2.Persistência do problema : O intervalo de 445 dias (junho/2024 a setembro/2025)
+demonstra que a vulnerabilidade não foi corrigida ao longo do tempo.
+3.Escala do problema : 6.644 cadastros em uma única coordenada representam 1,46% de
+todas as duplicações espaciais identificadas no CAF nacional.
+2
+
+--- Página 3 ---
+Peça 123 / PT-13 - Caso Salvador (População Total) TCU
+5 Memória de Cálculo
+5.1 Cálculo do Percentual sobre Duplicações Nacionais
+Total de duplicações nacionais = 453 .657imóveis
+Imóveis em Salvador (coord. crítica) = 6 .644imóveis
+Percentual =6.644
+453 .657×100 = 1 ,46%
+5.2 Query de Verificação
+Listing 2: Cálculo do percentual sobre duplicações nacionais
+1WITH todas_duplicacoes AS(
+2 SELECT nr_latitude, nr_longitude, COUNT (*) asqtd
+3 FROM tmp_populacao_analisavel
+4 GROUP BY nr_latitude, nr_longitude
+5 HAVING COUNT (*) > 1
+6)
+7SELECT
+8 SUM(qtd) astotal_duplicados_nacional,
+9 6644 asimoveis_salvador,
+10 ROUND(6644 * 100.0 / SUM(qtd), 2) aspercentual
+11FROM todas_duplicacoes;
+12-- Resultado: 453.657 | 6.644 | 1,46%
+6 Conclusão
+A análise sobre a população total do CAF revela que a coordenada (-12,960000; -38,510000)
+em Salvador/BA concentra 6.644 imóveis cadastrados ao longo de 445 dias , representando
+1,46%de todas as duplicações espaciais identificadas no sistema.
+Este achado complementa o PT-08 Apêndice I e demonstra que:
+•A magnitude do problema é significativamente maior quando analisada sobre a população
+total (6.644 vs. 27 registros);
+•A coordenada genérica é utilizada como “ponto default” para cadastros sem georreferen-
+ciamento preciso;
+•A falha persiste por período prolongado (445 dias), indicando ausência de controles pre-
+ventivos efetivos.
+7 Anexos
+7.1 Parâmetros de Conexão
+Host: 172.23.80.1
+Port: 5433
+Database: caf_mapa
+User: postgres
+Data de execução: 02/dezembro/2025
+3
+
+--- Página 4 ---
+Peça 123 / PT-13 - Caso Salvador (População Total) TCU
+7.2 Artefatos Gerados
+•peca123_pt_salvador_populacao_total.tex — Este documento (código fonte)
+•peca123_pt_salvador_populacao_total.pdf — Versão compilada (Peça 123)
+4

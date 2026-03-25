@@ -1,0 +1,193 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Tecnica
+Peca 131: Analise de Capacidade Civil dos
+Responsaveis no CAF
+Equipe de Auditoria — Fiscalizacao CAF-MAPA
+03 de dezembro de 2025
+1 Objetivo
+Este papel de trabalho documenta a analise de capacidade civil dos responsaveis cadas-
+trados no Sistema CAF, verificando:
+•Responsaveis falecidos ainda ativos no cadastro (cruzamento com SISOBI);
+•Menores de 16 anos cadastrados como responsaveis (absolutamente incapazes);
+•Adolescentes de 16-17 anos nao emancipados (relativamente incapazes);
+•Divergencias de data de nascimento entre CAF e Receita Federal;
+•CPFs nao localizados na base da Receita Federal.
+Fundamentacao Legal : Artigos 3 ºe 4ºdo Codigo Civil (Lei 10.406/2002) definem a
+incapacidade civil, tornando nulos ou anulaveis os atos praticados por incapazes.
+2 Metodologia
+2.1 Base de Dados
+A analise foi realizada no ambiente LABCONTAS do TCU, utilizando:
+•Fonte CAF :[BD_AGRO_CAF_AUD_2025].[dbo].[S_*]
+•Fonte Obitos :[BD_SISOBI].[dbo].[SISOBI]
+•Fonte CPF :[BD_RECEITA].[dbo].[CPF]
+•Populacao : Responsaveis de Unidades Familiares ativas
+2.2 Criterio de Selecao
+Foi aplicado o JOIN Triplo canonico para identificar responsaveis de UFs ativas:
+Listing 1: Selecao de responsaveis ativos
+1SELECT DISTINCT
+2 pf.nr_cpf,
+3 pf.dt_nascimento ASdt_nascimento_caf,
+4 uf.dt_ativacao,
+5 uf.dt_atualizacao
+1
+
+--- Página 2 ---
+Peca 131 / PT - Capacidade Civil no CAF TCU
+6FROM [BD_AGRO_CAF_AUD_2025].[dbo].[S_RESPONSAVEL_UFPR] r
+7INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_UNIDADE_FAMILIAR] uf
+8 ONr.id_unidade_familiar = uf.id_unidade_familiar
+9INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_PESSOA_FISICA] pf
+10 ONr.id_pessoa_fisica = pf.id_pessoa_fisica
+11WHERE uf.id_tipo_situacao_unidade_familiar = 1 -- UF ativa
+12 AND r.st_excluido = 0;
+2.3 Cruzamentos Externos
+1.SISOBI : Verificacao de obito pelo CPF do responsavel;
+2.RFB: Validacao de data de nascimento e existencia do CPF.
+3 Resultados
+3.1 Responsaveis Falecidos (SISOBI)
+O cruzamento com a base SISOBI identificou 12.820 responsaveis falecidos ainda ativos no
+CAF.
+Tabela 1: Obitos por Periodo
+Periodo do Obito Quantidade % Observacao
+Antes de 2020 132 1,0% Obitos antigos
+2020-2022 2.891 22,5% Periodo COVID
+2023 3.647 28,4% —
+2024 4.812 37,5% —
+2025 1.338 10,4% Ano corrente
+Total 12.820 100% —
+3.1.1 Casos Extremos de Obitos Antigos
+Tabela 2: Obitos Mais Antigos com Cadastros Ainda Ativos
+Ano Obito Data Ativacao Data Atualizacao Anos Pos-Obito
+1985 28/ago/2024 08/out/2024 39 anos
+1997 — — 28 anos
+1998 — — 27 anos
+2011 05/mar/2025 05/mar/2025 14 anos
+2011 05/mar/2025 05/mar/2025 14 anos
+Achado critico : Responsavel falecido ha 39 anos (1985) com cadastro ativado em agos-
+to/2024 eatualizado em outubro/2024 .
+3.2 Menores Absolutamente Incapazes
+Foram identificados 40 menores de 16 anos cadastrados como responsaveis de Unidades
+Familiares — atos nulosconforme Art. 3 ºdo Codigo Civil.
+2
+
+--- Página 3 ---
+Peca 131 / PT - Capacidade Civil no CAF TCU
+Tabela 3: Distribuicao por Idade na Ativacao
+Idade na Ativacao Quantidade Observacao
+-1 ano (erro de data) 5 Divergencia com RFB
+0 ano (recem-nascido) 9 Impossivel
+1 ano 10 Impossivel
+2-6 anos 1 Criancas
+7-10 anos 3 Criancas
+11 anos 1 Caso extremo
+13-15 anos 11 Pre-adolescentes
+Total 40 —
+Achado critico :Crianca de 11 anos cadastrada como responsavel de Unidade Familiar
+— caso de absoluta incapacidade civil.
+3.3 Adolescentes Nao Emancipados
+Foram identificados 210 adolescentes de 16-17 anos nao emancipados cadastrados como
+responsaveis — atos anulaveis conforme Art. 4 º, I do Codigo Civil.
+Tabela 4: Adolescentes 16-17 Anos
+Categoria Quantidade Status
+16 anos 98 Nao emancipados
+17 anos 112 Nao emancipados
+Total 210 st_declarante_emancipado = False
+Observacao : O campo st_declarante_emancipado = False indica expressamente que
+estes adolescentes nao sao emancipados , configurando incapacidade relativa.
+3.4 Divergencias de Data de Nascimento
+O cruzamento CAF vs RFB identificou 12.777 divergencias de data de nascimento.
+Tabela 5: TOP 10 Maiores Divergencias
+Data CAF Data RFB Diferenca Observacao
+10/nov/1879 10/nov/1989 110 anos Seculo errado
+10/dez/2028 20/nov/1921 107 anos Data futura no CAF
+12/out/2082 12/out/1982 100 anos Data futura no CAF
+15/mar/2045 15/mar/1945 100 anos Data futura no CAF
+04/out/2049 04/out/1949 100 anos Data futura no CAF
+21/jul/1885 21/jul/1985 100 anos Seculo errado
+20/jan/2039 20/jan/1939 100 anos Data futura no CAF
+01/jan/2019 01/jan/1919 100 anos Data futura no CAF
+18/set/2024 18/set/1924 100 anos Data futura no CAF
+10/abr/2045 10/abr/1945 100 anos Data futura no CAF
+Achado critico : Divergencia maxima de 110 anos entre data no CAF (10/nov/1879) e
+data na RFB (10/nov/1989).
+3
+
+--- Página 4 ---
+Peca 131 / PT - Capacidade Civil no CAF TCU
+3.5 Datas de Nascimento Futuras
+Foram identificados 48 registros com data de nascimento no futuro(apos 2025), resultando
+em “idades negativas”.
+Tabela 6: Datas de Nascimento Futuras por Ano
+Ano no CAF Quantidade Observacao
+2084 1 59 anos no futuro
+2083 1 58 anos no futuro
+2082 1 57 anos no futuro
+2049 8 —
+2048 5 —
+2045-2047 9 —
+2028-2044 23 —
+Total 48 Todas invalidas
+Observacao : Estes registros evidenciam falha critica de validacao — o sistema aceita
+datas de nascimento no futuro sem qualquer verificacao.
+3.6 CPFs Nao Localizados na RFB
+Foram identificados 520 CPFs cadastrados no CAF que nao existem na base da Receita
+Federal.
+4 Analise
+4.1 Consolidacao dos Achados
+Tabela 7: Resumo das Inconsistencias de Capacidade Civil
+Categoria Quantidade % Impacto Juridico
+Responsaveis falecidos 12.820 49,1% Cadastro invalido
+Menores <16 anos 40 0,2% Atos nulos
+Adolescentes 16-17 210 0,8% Atos anulaveis
+Divergencias nascimento 12.777 48,9% Dado incorreto
+Datas futuras 48 0,2% Validacao ausente
+CPFs inexistentes 520 2,0% Cadastro irregular
+Total de registros 26.415 — —
+Nota: Ha sobreposicao entre categorias (ex: divergencias podem incluir datas futuras). O total
+consolidado de registros unicos com problemas e de aproximadamente 26.000 casos .
+4.2 Falhas de Validacao Identificadas
+1.Ausencia de cruzamento com SISOBI : O sistema nao verifica obito do responsavel
+antes de permitir ativacao ou atualizacao de cadastro;
+2.Nao verificacao de maioridade : O sistema permite cadastrar menores de 16 anos como
+responsaveis, sem alertas ou bloqueios;
+4
+
+--- Página 5 ---
+Peca 131 / PT - Capacidade Civil no CAF TCU
+3.Campo de emancipacao nao validado : Adolescentes 16-17 anos nao emancipados
+(st_declarante_emancipado = False ) sao aceitos como responsaveis;
+4.Validacao de data insuficiente : O sistema aceita datas de nascimento no futuro e datas
+incompativeis com a idade do titular do CPF.
+5 Conclusao
+A analise de capacidade civil dos responsaveis no CAF revela falhas sistemicas de validacao :
+1.12.820 responsaveis falecidos ainda ativos no cadastro, incluindo caso extremo de obito
+em1985(39 anos atras) com atualizacao em 2024;
+2.40 menores absolutamente incapazes (<16 anos), incluindo caso de crianca de 11
+anoscadastrada como responsavel;
+3.210 adolescentes relativamente incapazes (16-17 anos nao emancipados);
+4.12.777 divergencias de data de nascimento entre CAF e RFB, incluindo divergencia
+maxima de 110 anos ;
+5.48 datas de nascimento no futuro , evidenciando ausencia total de validacao temporal.
+Impacto juridico : Os atos praticados por absolutamente incapazes sao nulos(Art. 166, I
+do CC), enquanto os praticados por relativamente incapazes sao anulaveis (Art. 171, I do CC).
+A manutencao de cadastros de pessoas falecidas pode caracterizar irregularidade administrativa
+e, em casos extremos, fraude.
+6 Anexos
+6.1 Parametros de Conexao LABCONTAS
+Ambiente: LABCONTAS (SQL Server)
+Base CAF: [BD_AGRO_CAF_AUD_2025]
+Base SISOBI: [BD_SISOBI]
+Base RFB: [BD_RECEITA]
+Data de execucao: Novembro/2025
+6.2 Artefatos Gerados (CSVs)
+Os seguintes arquivos CSV foram exportados das queries executadas no LABCONTAS e servem
+como evidencia primaria dos achados:
+•ACHADO_CRITICO_responsaveis_com_obito.csv (12.820 registros)
+•ACHADO_CRITICO_menores_16_anos.csv (40 registros)
+•ACHADO_16_17_anos_nao_emancipados.csv (210 registros)
+•ACHADO_datas_nascimento_divergentes.csv (12.777 registros)
+•ACHADO_cpf_nao_encontrado_receita.csv (520 registros)
+6.3 Artefatos deste Documento
+•peca131_pt_capacidade_civil.tex — Este documento (codigo fonte)
+•peca131_pt_capacidade_civil.pdf — Versao compilada (Peca 131)
+5

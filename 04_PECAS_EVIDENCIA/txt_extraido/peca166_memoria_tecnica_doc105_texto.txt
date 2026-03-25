@@ -1,0 +1,60 @@
+--- Página 1 ---
+Comentários sobre o Documento 105  
+ 
+A verificação realizada consistiu na identificação dos documentos de imóvel e de 
+relação com a terra listados no Documento 105 do Tribunal de Contas da União (TCU), 
+seguida da análise dos respectivos arquivos anexados no sistema. Em cada caso, 
+procedeu -se à avaliação da conformidade do documento em relação à norma aplicável, 
+à comparação entre a área indicada no documento e a área registrada no sistema, bem 
+como à conferência da evidência documental mencionada no relatório.  
+A análise identific ou inconsistências relevantes entre as evidências descritas no 
+Documento 105 e os documentos efetivamente disponíveis no sistema. Em 66% dos 
+casos, a própria nomenclatura dos arquivos PDF indicados pelo TCU sugere que se trata, 
+possivelmente, de comprovant es de renda ou declarações de veracidade, e não de 
+documentos de comprovação de imóvel e de relação com a terra. Nos 34% restantes, 
+embora a descrição dos arquivos indique tratar -se de documentos relacionados a 
+imóvel rural, a evidência mencionada no relatório não foi confirmada a partir do exame 
+dos documentos efetivamente anexados ao sistema.  
+Verificou -se, assim, que em 100% dos casos listados no Documento 105 a evidência 
+descrita no relatório não corresponde ao documento que se encontra disponível no 
+sistema e que deveria ter sido objeto de análise. Em algumas situações, as evidências 
+menciona das referem -se, inclusive, a imóveis vinculados a outras UFPAs, indicando 
+possível inconsistência na associação entre registros cadastrais e documentos 
+utilizados na reanálise.  
+Esse cenário é reforçado pela comparação entre a análise original e a reanálise 
+apresentada no Documento 105. Embora a análise inicial apresente limitações, 
+especialmente na identificação de áreas em documentos que concentram múltiplas 
+informações  (documentos cartoriais, por exemplo) , ela demonstra maior aderência aos 
+documentos efetivamente vinculados aos registros. Em contraste, a reanálise 
+apresenta incongruências que indicam a possível utilização de um conjunto de 
+documentos equivocado ou inadequadament e associado aos registros analisados.  
+Quanto à verificação das áreas, observou -se que 27,2% dos documentos analisados 
+não apresentam correspondência entre a área indicada no documento e a área 
+registrada no sistema. Identificaram -se ainda 8 casos (5,8%) referentes a públicos 
+específicos (pescador artesanal, extrativista, quilombola, assentado da reforma agrária 
+e indígena ) cuja documentação prevista na portaria não exige, necessariamente, a 
+identificação  de uma  área  unitária para a UFPA . Adicionalmente, foram identificados 4 
+casos (2,9%) de doc umentos que utiliza ram  unidades de medida regionais (tarefas e 
+braças), cuja validação depende do fator de conversão adotado em cada município.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990633.
+
+--- Página 2 ---
+Por outro lado, foram identificados 87 casos (64%) em que os documentos de imóvel ou 
+de relação com a terra apresentam área idêntica à registrada no banco de dados.  
+Considerando exclusivamente a aderência dos documentos ao texto normativo, a taxa 
+geral de conformidade apurada foi de 50% dos documentos listados no Documento 105 
+como supostamente irregulares. Em termos objetivos, metade dos casos indicados pelo 
+TCU corr esponde , na verdade,  a situações de conformidade cadastral.  
+As principais causas de inconformidade identificadas foram:  
+- CAR e/ou documento não previsto em norma;  
+- Documento de terceiro ou em nome de terceiro não listado na UFPA;  
+- Ausência ou indefinição de área ou de identificação do beneficiário;  
+- Documentos vencidos, incompletos, ilegíveis ou sem assinatura ou data;  
+- Medidas ou unidades de área não padronizadas ; e 
+- Exigência específica não atendida (ex.: apresentação de RGP para pescador 
+artesanal) . 
+Os resultados obtidos indicam a possível existência de erro sistemático na vinculação 
+entre os registros da base de dados e os documentos considerados na reanálise 
+apresentada no Documento 105, o que compromete a consistência e a confiabilidade 
+das evidênc ias utilizadas no relatório.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990633.

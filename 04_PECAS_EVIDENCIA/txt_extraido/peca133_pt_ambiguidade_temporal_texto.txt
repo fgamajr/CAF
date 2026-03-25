@@ -1,0 +1,741 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Técnica
+PT-A04-05: Análise de Ambiguidade Semântica
+em Campos Temporais
+Equipe de Auditoria Operacional – TCU
+15 de novembro de 2025
+Informações do Papel de Trabalho
+Código PT: PT-A04-05
+Achado: Achado 4 – Incompletude e baixa qualidade do Dicionário de Dados
+do Sistema CAF
+Questão de Auditoria:
+(v) Os campos temporais possuem descrições que resolvem ambigui-
+dades semânticas?
+Tipo de Análise: Censitária (100% dos campos temporais identificados)
+Data da Análise: 15 de novembro de 2025
+Auditor Responsável:
+Equipe de Auditoria Operacional – TCU
+Arquivo de Dados:
+Dicionario de dados-CAF3v1.CSV
+Universo Analisado:
+87 campos temporais (tipos: date, timestamp)
+
+--- Página 2 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Sumário
+1 Objetivo e Escopo 3
+1.1 Objetivo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Questão de Auditoria Específica . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3 Escopo e Limitações . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4 Critérios de Conformidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Metodologia 3
+2.1 Abordagem Analítica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Categorias de Ambiguidade Identificadas . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3 Script de Análise Automatizada . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.4 Memórias de Cálculo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3 Resultados 5
+3.1 Visão Geral Quantitativa . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.2 Distribuição por Categoria de Ambiguidade . . . . . . . . . . . . . . . . . . . . . 5
+3.3 Distribuição por Gravidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.4 Validação dos Casos Críticos da Seção II (Tabela 9) . . . . . . . . . . . . . . . . 6
+3.4.1 Caso 1: S_UNIDADE_FAMILIAR.dt_criacao . . . . . . . . . . . . . . . . . 6
+3.4.2 Caso 2: S_UNIDADE_FAMILIAR.dt_ativacao . . . . . . . . . . . . . . . . . 7
+3.4.3 Caso 3: S_UNIDADE_FAMILIAR.dt_primeira_ativacao . . . . . . . . . . 7
+3.4.4 Caso 4: S_PESSOA_JURIDICA.dt_inscricao . . . . . . . . . . . . . . . . . 8
+4 Conclusão 8
+4.1 Síntese dos Achados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.2 Impacto Operacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.3 Gravidade do Problema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4.4 Resposta à Questão de Auditoria . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+5 Evidências e Anexos 9
+5.1 Lista de Evidências . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+5.2 Rastreabilidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+Anexo A – Tabela Completa de Análise de Campos Temporais 10
+2
+
+--- Página 3 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+1 Objetivo e Escopo
+1.1 Objetivo
+Este Papel de Trabalho documenta a análise censitária de ambiguidades semânticas em campos
+temporais do dicionário de dados do Sistema CAF. O objetivo é verificar se as descrições dos
+campos de data e timestamp resolvem ambiguidades inerentes a campos temporais, permitindo
+interpretação inequívoca sem conhecimento prévio do sistema.
+1.2 Questão de Auditoria Específica
+Questão (v): Os campos temporais possuem descrições que resolvem ambiguidades semânticas
+importantes, conforme o princípio de Consistência da ISO/IEC 25012?
+1.3 Escopo e Limitações
+•Universo: 87 campos temporais identificados no dicionário
+•Tipos de dados incluídos: date,timestamp without time zone ,timestamp with
+time zone ,time
+•Tipo de análise: Censitária (100% do universo)
+•Fonte de dados: Arquivo “Dicionario de dados-CAF3v1.CSV” fornecido pela equipe
+responsável
+•Foco:Ambiguidades semânticas que impedem compreensão sem conhecimento tácito
+1.4 Critérios de Conformidade
+Baseado na norma ISO/IEC 25012 (Data Quality Model), especificamente o princípio de
+Consistência (Consistency) :
+Critério ISO/IEC 25012 – Consistência
+Consistência (Consistency): O grau em que os dados são livres de contradição e
+coerentes em sua representação.
+Aplicação ao contexto: Para campos temporais, a consistência exige que campos com
+nomes similares (ex: dt_ativacao vs.dt_primeira_ativacao ) tenham descrições que
+explicitem suas diferenças semânticas, evitando ambiguidade. Adicionalmente, campos
+temporaisdevemdistinguirclaramenteentreeventostécnicos(criaçãoderegistronobanco
+de dados) e eventos de negócio (data de um evento real no domínio da aplicação).
+2 Metodologia
+2.1 Abordagem Analítica
+A análise foi realizada em quatro etapas:
+1.Identificação de campos temporais: Parse do CSV para identificar todos os campos
+com tipos date/timestamp
+2.Classificação por categoria de ambiguidade: Aplicação de critérios automatizados
+(5 categorias)
+3.Avaliação de gravidade: Classificação da gravidade (Alta, Média, Baixa, Nenhuma)
+3
+
+--- Página 4 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+4.Validação de casos críticos: Verificação dos exemplos citados na Seção II (Tabela 9)
+2.2 Categorias de Ambiguidade Identificadas
+Categoria Descrição do Problema
+1. Técnico vs. Negócio Campos como dt_criacao ,dt_atualizacao são am-
+bíguos: referem-se à criação/atualização do registro no
+banco de dados ou à data do evento de negócio ?
+2. Primeira vs. Recente Campos como dt_ativacao edt_primeira_ativacao
+coexistem sem explicação clara da diferença funcional
+entre eles.
+3. Múltiplo Contexto Campos como dt_inscricao não especificam inscrição
+em qual sistema (CAF, Receita Federal, outros).
+4. Status Sem Contexto Campos como dt_bloqueio ,dt_inativacao não expli-
+cam quem pode causar a mudança de status ou por que
+motivo.
+5. Descrições Idênticas Múltiplos campos na mesma tabela com descrições idên-
+ticas (documentação copy-paste).
+Tabela 1: Taxonomia de Ambiguidades em Campos Temporais
+2.3 Script de Análise Automatizada
+A análise foi realizada pelo script Python analisar_ambiguidade_temporal.py , que imple-
+menta a seguinte lógica:
+Listing 1: Lógica de Detecção de Ambiguidades
+1defdetectar_categoria_ambiguidade(tabela, campo, descricao, campos_mesma_tabela):
+2 """
+3 Detecta categoria de ambiguidade e gravidade
+4
+5 Retorna: (categoria, problema_especifico, gravidade)
+6 """
+7desc_lower = descricao.lower() ifdescricao else""
+8campo_lower = campo.lower()
+9
+10 # CATEGORIA 1: Tecnico vs. Negocio
+11 if any(term incampo_lower forterm in[’dt_criacao’, ’dt_atualizacao’, ’
+dt_cadastro’]):
+12 ifeh_descricao_tautologica(campo, descricao):
+13 return(TECNICO_VS_NEGOCIO,
+14 "Ambiguidade:␣data␣de␣criacao␣do␣registro␣DB␣ou␣data␣do␣evento␣de␣
+negocio?",
+15 GRAVIDADE_ALTA)
+16
+17 # CATEGORIA 2: Primeira vs. Recente
+18 if’primeira’ incampo_lower:
+19 campos_similares = [c forcincampos_mesma_tabela
+20 ifcampo_base inc.lower() andc != campo]
+21 ifcampos_similares:
+22 return(PRIMEIRA_VS_RECENTE,
+23 f"Distincao␣pouco␣clara␣com␣campo␣similar:␣{campos_similares}",
+24 GRAVIDADE_ALTA)
+25
+4
+
+--- Página 5 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+26 # ... (demais categorias)
+2.4 Memórias de Cálculo
+Memórias de Cálculo – PT-A04-05
+MC-A04-40: totalCamposTemporais = 87 (total de campos temporais identificados)
+MC-A04-41: camposComAmbiguidade = 80 (campos com alguma ambiguidade semân-
+tica)
+MC-A04-42: gruposDescricoesIdenticas =0(gruposdecamposcomdescriçõesidên-
+ticas)
+MC-A04-43: pctCamposAmbiguos = (80 / 87) ×100 =92,0%
+MC-A04-44: casosCriticosAltaGravidade = 59 (casos classificados como gravidade
+Alta)
+3 Resultados
+3.1 Visão Geral Quantitativa
+A análise censitária de 87 campos temporais revelou que:
+Status de Ambiguidade Quantidade Percentual
+Campos COM ambiguidade semântica 80 92,0%
+Campos SEM ambiguidade significativa 7 8,0%
+TOTAL 87 100,0%
+Tabela 2: Distribuição de Campos Temporais por Status de Ambiguidade
+Resultado Principal
+92,0% dos campos temporais (80 de 87 campos) possuem ambiguidades semânticas
+que violam o princípio de Consistência daISO/IEC 25012 , tornando impossível in-
+terpretação inequívoca sem conhecimento tácito do sistema.
+3.2 Distribuição por Categoria de Ambiguidade
+Categoria de Ambiguidade Quantidade Percentual
+1. Técnico vs. Negócio 71 81,6%
+2. Primeira vs. Recente 1 1,1%
+3. Múltiplo Contexto 1 1,1%
+4. Status Sem Contexto 7 8,0%
+5. Descrições Idênticas 0 0,0%
+Sem Ambiguidade 7 8,0%
+TOTAL 87 100,0%
+Tabela 3: Distribuição por Categoria de Ambiguidade
+5
+
+--- Página 6 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Destaque: A categoria “Técnico vs. Negócio” representa 81,6%do total, indicando que a
+vasta maioria dos campos temporais sofre da ambiguidade fundamental: não distinguem entre
+eventos técnicos (criação de registro no banco) e eventos de negócio (data real de um evento do
+domínio).
+3.3 Distribuição por Gravidade
+Gravidade Quantidade Percentual
+Alta 59 67,8%
+Média 21 24,1%
+Baixa 0 0,0%
+Nenhuma 7 8,0%
+TOTAL 87 100,0%
+Tabela 4: Distribuição por Gravidade
+67,8% dos campos temporais possuem ambiguidades de gravidade Alta , ou seja, impedem
+completamente a interpretação correta sem conhecimento prévio do sistema.
+3.4 Validação dos Casos Críticos da Seção II (Tabela 9)
+A análise confirma e quantifica os 4 exemplos apresentados na Tabela 9 da Seção II (parágrafo
+20):
+3.4.1 Caso 1: S_UNIDADE_FAMILIAR.dt_criacao
+Atributo Valor
+Tabela S_UNIDADE_FAMILIAR
+Campo dt_criacao
+Descrição no Dicionário “Data criação”
+Categoria Técnico vs. Negócio
+Gravidade Alta
+Problema Identificado Ambiguidade fundamental: “Data criação” pode significar
+(1) data de criação do registro no banco de dados (evento
+técnico, timestamp automático) ou (2) data de inscrição/-
+cadastro do agricultor familiar (evento de negócio). Sem ex-
+plicação adicional, analistas não conseguem determinar qual
+interpretação é correta.
+Impacto Impossível determinar quando uma unidade familiar foi efe-
+tivamente cadastrada no programa versus quando o registro
+foi inserido tecnicamente no banco.
+Tabela 5: Caso Crítico 1 – Ambiguidade Técnico vs. Negócio
+6
+
+--- Página 7 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+3.4.2 Caso 2: S_UNIDADE_FAMILIAR.dt_ativacao
+Atributo Valor
+Tabela S_UNIDADE_FAMILIAR
+Campo dt_ativacao
+Descrição no Dicionário “Data ativação”
+Categoria Técnico vs. Negócio
+Gravidade Média
+Problema Identificado Descrição tautológica: apenas traduz o nome técnico sem
+agregar contexto. O que significa “ativação”? É a pri-
+meira vez que a unidade familiar foi ativada? É a mais re-
+cente ativação após inativações? Campo coexiste com dt_-
+primeira_ativacao , criando confusão adicional.
+Tabela 6: Caso Crítico 2 – Descrição Tautológica
+3.4.3 Caso 3: S_UNIDADE_FAMILIAR.dt_primeira_ativacao
+Atributo Valor
+Tabela S_UNIDADE_FAMILIAR
+Campo dt_primeira_ativacao
+Descrição no Dicionário “Data primeira ativação”
+Categoria Primeira vs. Recente
+Gravidade Alta
+Problema Identificado Distinção pouco clara com campo similar dt_ativacao . Se
+este campo representa a “primeira ativação”, o que dt_-
+ativacao representa? A descrição não esclarece a diferença
+funcional entre eles, tornando impossível saber quando usar
+cada campo em análises.
+Impacto Analistas não conseguem distinguir entre data da primeira
+ativação histórica e data de ativação atual/mais recente.
+Tabela 7: Caso Crítico 3 – Ambiguidade Primeira vs. Recente
+7
+
+--- Página 8 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+3.4.4 Caso 4: S_PESSOA_JURIDICA.dt_inscricao
+Atributo Valor
+Tabela S_PESSOA_JURIDICA
+Campo dt_inscricao
+Descrição no Dicionário “Data inscrição”
+Categoria Múltiplo Contexto
+Gravidade Alta
+Problema Identificado Contexto ambíguo: “inscrição” em qual sistema ou órgão?
+Pode ser (1) data de inscrição no CAF, (2) data de inscri-
+ção no CNPJ da Receita Federal, (3) data de inscrição em
+cadastros estaduais/municipais. A descrição não especifica.
+Impacto Impossível determinar a origem da data sem consultar ou-
+tras fontes de dados ou especialistas do domínio.
+Tabela 8: Caso Crítico 4 – Ambiguidade de Múltiplo Contexto
+4 Conclusão
+4.1 Síntese dos Achados
+Aanálisecensitáriade87campostemporaisidentificadosnodicionáriodedadosdoSistemaCAF
+demonstrauma falhacríticaesistêmicanaresoluçãodeambiguidadessemânticas . Com
+92,0% dos campos apresentando alguma forma de ambiguidade (80 de 87), o dicionário viola
+frontalmente o princípio de Consistência (Consistency) estabelecido na norma ISO/IEC
+25012.
+4.2 Impacto Operacional
+Esta lacuna de documentação:
+•Força analistas a presumir significados baseando-se exclusivamente em conhecimento
+tácito
+•Aumenta o risco de interpretações incorretas em análises críticas, especialmente ao
+distinguir eventos técnicos (registro DB) de eventos de negócio
+•Tornaimpossívelparaauditoresexternos compreenderemcorretamenteosdadostem-
+porais sem consultar especialistas do sistema
+•Viola o princípio de que campos com nomes similares devem ter descrições que expli-
+citem suas diferenças (ISO/IEC 25012)
+•Perpetua a dependência de conhecimento tácito de desenvolvedores e gestores origi-
+nais do sistema
+4.3 Gravidade do Problema
+O fato de 67,8% dos campos temporais possuírem ambiguidades de gravidade Alta de-
+monstra que este não é um problema marginal ou de detalhes de documentação, mas sim uma
+falha estrutural que compromete a função primária do dicionário de dados: servir como fonte
+da verdade autossuficiente para compreensão dos dados.
+8
+
+--- Página 9 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+4.4 Resposta à Questão de Auditoria
+Questão (v): Os campos temporais possuem descrições que resolvem ambiguidades semânticas
+importantes?
+Resposta: NÃO .Aanáliseevidenciouque92,0%doscampostemporais(80de87)possuem
+ambiguidadessemânticasnãoresolvidas, caracterizandouma inadequaçãocríticaesistêmica
+da documentação que viola o princípio de Consistência da ISO/IEC 25012.
+5 Evidências e Anexos
+5.1 Lista de Evidências
+1.Script de Análise: analisar_ambiguidade_temporal.py (código-fonte completo dis-
+ponível no repositório de papéis de trabalho)
+2.Resultado Completo: analise_ambiguidade_completa.csv (88 linhas: 1 cabeçalho +
+87 campos temporais analisados)
+3.Anexo A: Tabela completa com os 87 campos temporais e categorias de ambiguidade
+(páginas seguintes)
+5.2 Rastreabilidade
+Todas as métricas apresentadas neste Papel de Trabalho estão vinculadas às seguintes memórias
+de cálculo:
+•MC-A04-40: Total de campos temporais identificados (87)
+•MC-A04-41: Campos com ambiguidade (80)
+•MC-A04-42: Grupos de descrições idênticas (0)
+•MC-A04-43: Percentual de campos ambíguos (92,0%)
+•MC-A04-44: Casos de gravidade Alta (59)
+9
+
+--- Página 10 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Anexo A – Tabela Completa de Análise de Campos Temporais
+Esta seção contém a tabela completa com os 87 campos temporais analisados, incluindo:
+•Nome da tabela e campo
+•Descrição registrada no dicionário
+•Problema específico identificado
+•Gravidade (Alta, Média, Nenhuma)
+A tabela utiliza o seguinte esquema de cores:
+•Vermelho claro : Ambiguidade de gravidade Alta
+•Amarelo claro : Ambiguidade de gravidade Média
+•Verde claro : Sem ambiguidade significativa
+Tabela Campo Descrição Problema Identificado Gravidade
+S_AREA_IMOVEL dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_AREA_IMOVEL dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_AREA_PESSOA_UFPR dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_AREA_PESSOA_UFPR dt_inativacao Data inativação Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_ATUALIZACAO_-
+UNIDADE_FAMILIARdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_BENEFICIO_MEMBRO_-
+FAMILIARdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_BENEFICIO_MEMBRO_-
+FAMILIARdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+Continua na próxima página...
+10
+
+--- Página 11 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_BLOQUEIO_LOTE dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_BLOQUEIO_PESSOA dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_BLOQUEIO_PESSOA dt_fim_suspensao Data fim suspenso Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_CAF dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CATEGORIA_PRODUTO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CATEGORIA_PRODUTO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CLIENTE dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CLIENTE dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CONTROLE_MIGRACAO_-
+PJdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CONTROLE_MIGRACAO_-
+PJdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CONTROLE_MIGRACAO_-
+UFPAdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_CONTROLE_MIGRACAO_-
+UFPAdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_COPIA_DAP dt_validade Data Validade Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+Continua na próxima página...
+11
+
+--- Página 12 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_DOCUMENTO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_DOCUMENTO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_DOC_IDENTIFICACAO dt_emissao Data emisso Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_ENDERECO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_ENDERECO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_ENTIDADE_EMISSORA dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_ENTIDADE_EMISSORA dt_inativacao Data inativação Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_FUNCIONARIO_UFPR dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_GERACAO_ARQUIVO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_GERACAO_ARQUIVO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_GERACAO_ARQUIVO dt_inicio_-
+processamentoData de inicio da gerao do
+arquivoDescrição adequada ou
+ambiguidade baixaNenhuma
+S_GERACAO_ARQUIVO dt_fim_-
+processamentoData de fim da gerao do
+arquivoDescrição adequada ou
+ambiguidade baixaNenhuma
+S_GERACAO_ARQUIVO dt_inicio Data de inicio do intervalo
+da gerao do arquivoDescrição adequada ou
+ambiguidade baixaNenhuma
+S_GERACAO_ARQUIVO dt_fim Data de fim do intervalo da
+gerao do arquivoDescrição adequada ou
+ambiguidade baixaNenhuma
+S_MEMBRO_EXCLUIDO dt_exclusao Data excluso Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+Continua na próxima página...
+12
+
+--- Página 13 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_MENSAGEM dt_inicio Data inicio Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_MENSAGEM dt_fim Data fim Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_MENSAGEM dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_MENSAGEM dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_MODELO_ARQUIVO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_MODELO_ARQUIVO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_NOTIFICACAO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_NOTIFICACAO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PERFIL dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PERFIL dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_FISICA dt_nascimento Data nascimento Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_PESSOA_FISICA dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_FISICA dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+Continua na próxima página...
+13
+
+--- Página 14 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_PESSOA_JURIDICA dt_constituicao Data constituio da pessoa
+jurdicaDescrição adequada ou
+ambiguidade baixaNenhuma
+S_PESSOA_JURIDICA dt_inativacao Data inativação Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_PESSOA_JURIDICA dt_validade Data validade Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_PESSOA_JURIDICA dt_bloqueio Data bloqueio Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_PESSOA_JURIDICA dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA dt_inscricao Data inscrição Contexto ambíguo:
+inscrição em qual
+sistema/órgão?Alta
+S_PESSOA_JURIDICA dt_ativacao Data ativação Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_PESSOA_JURIDICA_-
+FALHAdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA_-
+SOCIOdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA_-
+TOTALIZADORESdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA_-
+TOTALIZADORESdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIOdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIOdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+Continua na próxima página...
+14
+
+--- Página 15 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_PRODUTO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PRODUTO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_PTR_BENEFICIO_-
+CONSULTAdt_nascimento Data nascimento Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_RENDA dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_RENDA dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_RESPONSAVEL_UFPR dt_entrada Data entrada Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_RESPONSAVEL_UFPR dt_saida Data sada Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_SOCIO_PESSOA_-
+JURIDICA_INVALIDOdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_TELEFONE dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_TELEFONE dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_TIPO_RENDA dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_TIPO_RENDA dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_UNIDADE_FAMILIAR dt_validade Data validade Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+Continua na próxima página...
+15
+
+--- Página 16 ---
+Papel de Trabalho PT-A04-05 - Auditoria CAF TCU
+Tabela 9 – continuação da página anterior
+Tabela Campo Descrição Problema Identificado Gravidade
+S_UNIDADE_FAMILIAR dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_UNIDADE_FAMILIAR dt_primeira_-
+ativacaoData primeira ativação Distinção pouco clara
+com campo similar:
+dt_ativacaoAlta
+S_UNIDADE_FAMILIAR dt_bloqueio Data bloqueio Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_UNIDADE_FAMILIAR dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_UNIDADE_FAMILIAR dt_ativacao Data ativação Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_UNIDADE_FAMILIAR dt_inativacao Data inativação Falta contexto: quem
+pode causar esta
+mudança de status? Por
+quê?Média
+S_UNIDADE_FAMILIAR dt_edicao Data edição Descrição tautológica:
+apenas traduz nome
+técnico sem agregar
+contextoMédia
+S_UNIDADE_FAMILIAR_-
+PESSOAdt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_UNIDADE_FAMILIAR_-
+PESSOAdt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_UNIDADE_FAMILIAR_-
+PESSOAdt_inicio_mao_-
+de_obraData inicio mo de obra Descrição adequada ou
+ambiguidade baixaNenhuma
+S_UNIDADE_FAMILIAR_-
+PESSOAdt_fim_mao_de_-
+obraData fim mo de obra Descrição adequada ou
+ambiguidade baixaNenhuma
+S_USUARIO dt_criacao Data criação Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+S_USUARIO dt_atualizacao Data atualização Ambiguidade: data de
+criação do registro DB ou
+data do evento de
+negócio?Alta
+16

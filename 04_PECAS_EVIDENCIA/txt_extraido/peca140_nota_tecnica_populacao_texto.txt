@@ -1,0 +1,182 @@
+--- Página 1 ---
+NOTA TÉCNICA DE ATUALIZAÇÃO
+Atualização da População de Documentos e
+Projeções Estatísticas do Achado I
+(Referência: Peça 103 - Adequação Funcional)
+Equipe de Auditoria Operacional – TCU/AudTI
+TC 011.073/2025-0 – Auditoria do Sistema CAF
+18 de dezembro de 2025
+Resumo
+Esta Nota Técnica documenta a atualização da população total de documentos do Sis-
+tema CAF utilizada nas projeções estatísticas do Achado I. Durante a fase de execução da
+auditoria, identificou-se que a população correta é de 11.377.318 documentos , divergindo
+do valor preliminar de 10.700.156 documentos utilizado na Peça 103. Esta atualização im-
+pacta as projeções de documentos problemáticos e os respectivos intervalos de confiança, os
+quais são recalculados neste documento.
+Sumário
+1 Objetivo 2
+2 Origem da Divergência 2
+2.1 Valor Preliminar (Peça 103) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2.2 Valor Atualizado (População Correta) . . . . . . . . . . . . . . . . . . . . . . . . 2
+2.3 Causa da Divergência . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3 Valores Corrigidos 3
+3.1 Tabela Comparativa: Peça 103 vs. Valores Atualizados . . . . . . . . . . . . . . . 3
+4 Memória de Cálculo Atualizada 3
+4.1 Parâmetros Estatísticos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+4.2 Cálculo do Erro Padrão . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+4.3 Cálculo da Margem de Erro . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4.4 Cálculo do Intervalo de Confiança . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4.5 Projeção Populacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+5 Valores para Uso no Relatório 5
+6 Referências Documentais 5
+7 Conclusão 5
+1
+
+--- Página 2 ---
+Nota Técnica de Atualização - Peça 140 TCU/AudTI
+1 Objetivo
+Esta Nota Técnica tem por objetivo:
+1) Documentar a atualização da população de documentos do Sistema CAF de 10.700.156
+para11.377.318 documentos ;
+2) Explicar a origem da divergência entre os valores;
+3) Apresentar os valores corrigidos para as projeções estatísticas;
+4) Fornecer referência documental para os valores utilizados no relatório de auditoria.
+2 Origem da Divergência
+2.1 Valor Preliminar (Peça 103)
+A Peça 103 (Papel de Trabalho de Adequação Funcional) foi elaborada em 24 de outubro de
+2025utilizando como base a população de documentos disponível naquela data:
+•População utilizada: 10.700.156 documentos
+•Fonte:Query inicial sobre a tabela S_DOCUMENTO do banco CAF
+•Critério: Contagem de documentos vinculados a cadastros ativos
+2.2 Valor Atualizado (População Correta)
+Durante a consolidação das análises e cruzamento com outros papéis de trabalho, identificou-se
+que a população correta de documentos cadastrados no Sistema CAF é de:
+População Correta
+N = 11.377.318 documentos
+2.3 Causa da Divergência
+A diferença de 677.162 documentos (6,3%) entre os valores decorre de:
+a)Critério de contagem: A query inicial excluía documentos de cadastros em situação
+“pendente de análise”, os quais também integram a base documental do sistema;
+b)Período de referência: A extração inicial considerava apenas documentos inseridos
+até 15/08/2025, enquanto a base completa inclui documentos até a data de extração
+(02/09/2025);
+c)Tabelasauxiliares: Documentosvinculadosatabelasderelacionamento(ex: S_DOCUMENTO_UF )
+não haviam sido contabilizados na query preliminar.
+A população de 11.377.318 documentos foi validada por meio de:
+•Query SQL definitiva executada sobre o dump completo do banco CAF;
+•Cruzamento com metadados da extração fornecida pelo STI/MAPA (Peça 60);
+•Verificação independente pela equipe de auditoria.
+2
+
+--- Página 3 ---
+Nota Técnica de Atualização - Peça 140 TCU/AudTI
+3 Valores Corrigidos
+3.1 Tabela Comparativa: Peça 103 vs. Valores Atualizados
+A tabela a seguir apresenta a comparação entre os valores constantes na Peça 103 e os valores
+corrigidos que devem ser utilizados como referência no relatório de auditoria:
+Tabela 1: Comparativo de Valores: Peça 103 vs. Valores Atualizados
+Parâmetro Peça 103 Valor Atualizado Referência
+População total (N) 10.700.156 11.377.318 Peça 140, §3
+Proporção problemáticos (p) 27,1% 27,1% Peça 103, p. 9
+Projeção pontual 2.900.364 3.083.253 Peça 140, §4
+IC 99% - Limite inferior 2.418.359 2.571.274 Peça 140, §4
+IC 99% - Limite superior 3.382.369 3.595.272 Peça 140, §4
+IC 99% (arredondado) 2,42M a 3,38M 2,57M a 3,60M Peça 140, §4
+Nota
+Aproporção amostral (27,1%) permanece inalterada, pois foi obtida a partir da análise
+de 646 documentos da amostra. Apenas as projeções populacionais são afetadas pela
+atualização do denominador (N).
+4 Memória de Cálculo Atualizada
+4.1 Parâmetros Estatísticos
+Os parâmetros estatísticos da análise de adequação funcional são:
+•Tamanho da amostra: n= 646documentos
+•Documentos problemáticos na amostra: x= 175(inadequados + parcialmente ade-
+quados)
+•Proporção amostral: ˆp= 175 /646 = 0 ,2709(27,09% ≈27,1%)
+•Nível de confiança: 99% ( z0,995= 2,576)
+4.2 Cálculo do Erro Padrão
+Erro Padrão com Correção para População Finita (FPC)
+SE=√
+ˆp(1−ˆp)
+n−1×√
+N−n
+N−1(1)
+SE=√0,2709×0,7291
+645×√
+11.377.318−646
+11.377.318−1(2)
+SE=√
+0,0003062 ×√
+0,9999433 (3)
+SE= 0,01750 ×0,99997 (4)
+SE≈0,0175 (5)
+3
+
+--- Página 4 ---
+Nota Técnica de Atualização - Peça 140 TCU/AudTI
+Nota:O FPC (Finite Population Correction) é praticamente 1,0 dado que n/N < 0,01%,
+mas é mantido por rigor metodológico.
+4.3 Cálculo da Margem de Erro
+Margem de Erro (IC 99%)
+ME=z0,995×SE (6)
+ME= 2,576×0,0175 (7)
+ME= 0,0451≈4,5p.p. (8)
+4.4 Cálculo do Intervalo de Confiança
+Intervalo de Confiança (99%)
+IC99%= ˆp±ME (9)
+IC99%= 0,271±0,045 (10)
+IC99%= [0,226; 0 ,316]ou[22,6%; 31 ,6%] (11)
+4.5 Projeção Populacional
+Projeção para a População de 11.377.318 Documentos
+Estimativa pontual:
+Problemáticos =N×ˆp (12)
+= 11.377.318×0,271 (13)
+=3.083.253documentos (14)
+Limite inferior (IC 99%):
+Mínimo =N×0,226 (15)
+= 11.377.318×0,226 (16)
+=2.571.274documentos (17)
+Limite superior (IC 99%):
+Máximo =N×0,316 (18)
+= 11.377.318×0,316 (19)
+=3.595.272documentos (20)
+4
+
+--- Página 5 ---
+Nota Técnica de Atualização - Peça 140 TCU/AudTI
+5 Valores para Uso no Relatório
+Com base nos cálculos apresentados, os valores a serem utilizados no relatório de auditoria são:
+Valores Oficiais para o Relatório de Auditoria
+Parâmetro Valor
+População total de documentos 11.377.318
+Proporção de documentos problemáticos 27,1%
+Projeção de documentos problemáticos 3,08 milhões
+Intervalo de confiança (99%) 2,57 a 3,60 milhões
+Margem de erro ±4,5 p.p.
+6 Referências Documentais
+Tabela 2: Rastreabilidade das Referências
+Parâmetro Peça de Referência Localização
+População (N) Peça 140 (esta NT) Seção 3, Tabela 1
+Proporção
+(27,1%)Peça 103 Página 9, Tabela 3
+Projeção (3,08M) Peça 140 (esta NT) Seção 4, Cálculo de Projeção
+IC 99% (2,57-
+3,60M)Peça 140 (esta NT) Seção 4, Cálculo de IC
+Metodologia
+amostralPeça 103 Páginas 5-8
+Exemplos de ina-
+dequaçãoPeça 103 Páginas 12-14
+7 Conclusão
+Esta Nota Técnica documenta a atualização da população de documentos do Sistema CAF de
+10.700.156 para 11.377.318 documentos , bem como as consequentes atualizações nas proje-
+ções estatísticas do Achado I.
+Os valores atualizados a serem referenciados no relatório de auditoria são:
+•População: 11.377.318 documentos (ou “11,4 milhões”)
+•Documentos problemáticos: 3,08 milhões (IC 99%: 2,57 a 3,60 milhões)
+A metodologia de análise, a proporção amostral (27,1%) e os exemplos de inadequação
+documentados na Peça 103 permanecem válidos e devem continuar sendo referenciados para
+esses elementos.
+Equipe de Auditoria Operacional
+TCU/AudTI
+18 de dezembro de 2025
+5

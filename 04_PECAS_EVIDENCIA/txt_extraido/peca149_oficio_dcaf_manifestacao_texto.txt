@@ -1,0 +1,383 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA DE AGRICULTURA FAMILIAR E AGROECOLOGIA
+DEPARTAMENTO DE CADASTRO NACIONAL DA AGRICULTURA FAMILIAR
+          
+OFÍCIO - MDA Nº 18/2026/DCAF-MDA/MDA
+Brasília, na data da assinatura eletrônica.
+À Senhora
+TATIANA FREITAS DE OLIVEIRA
+Chefe da Assessoria Especial de Controle Interno
+Ministério do Desenvolvimento Agrário e Agricultura Familiar
+Brasília/DF
+ 
+ASSUNTO:
+ Resposta ao Ofício 000.356/2025 - AudTI - TC 011.073/2025-
+0 - Diligência - Auditoria em andamento.
+ 
+Senhora Chefe, 
+ 
+1
+.
+Em atenção ao encaminhamento referente ao 
+Ofício 4045/2026-
+TCU/Seproc
+ (Documento SEI 50582705), por meio do qual o Tribunal de Contas da
+União remeteu a este Ministério relatório preliminar para comentários dos gestores,
+no âmbito do 
+Processo TC 011.073/2025-0
+, encaminham-se, em anexo, as
+considerações técnicas elaboradas pelo 
+Departamento de Cadastro Nacional da
+Agricultura Familiar (DCAF)
+ acerca dos achados, conclusões, determinações e
+recomendações preliminarmente propostos pela equipe de auditoria.
+2
+.
+A manifestação anexa foi estruturada com o objetivo de contribuir para
+a melhor compreensão das questões abordadas no relatório, conferindo maior
+precisão técnica, contextualização normativa, institucional e operacional, bem como
+registrando a perspectiva da unidade gestora responsável pelo Cadastro Nacional da
+Agricultura Familiar (CAF) quanto às medidas já adotadas, em curso ou passíveis de
+implementação, e tem como conclusão.
+3
+.
+Neste sentido, as contribuições do DCAF/MDA às propostas de
+determinação e recomendação do relatório estão organizadas
+sinteticamente no item 4 do Relatório Técnico DCAF/MDA - Documento SEI
+nº 
+51239341
+, e podem ser lidas à luz do seguinte contexto:
+3
+.
+1
+.
+À vista do conjunto analisado, o Departamento de Cadastro Nacional da
+Agricultura Familiar reconhece a relevância do trabalho realizado pela equipe de
+auditoria do Tribunal de Contas da União e acolhe o valor analítico do relatório como
+insumo importante para o aperfeiçoamento do Cadastro Nacional da Agricultura
+Familiar. Não obstante, conclui que parte dos encaminhamentos propostos demanda
+recalibração, porque o relatório não incorporou de modo suﬁciente o contexto de
+reconstrução institucional do MDA nem a natureza jurídica e institucional do CAF
+como instrumento de identiﬁcação e qualiﬁcação da agricultura familiar, e não como
+cadastro cartográfico com a finalidade de gestão fundiária.
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.
+
+--- Página 2 ---
+3
+.
+2
+.
+A conclusão central que se impõe é que as determinações de
+saneamento massivo associadas aos Achados I, II, III e IV, assim como a formulação
+ampla da determinação relativa ao Achado IV, não se mostram adequadas nos
+termos propostos. Em todos esses casos, há um traço comum: a projeção de uma
+lógica retrospectiva, homogênea e de larga escala sobre uma base que é dinâmica,
+atualizável, operada em rede descentralizada e submetida a processo contínuo de
+monitoramento, revisão normativa, evolução tecnológica e curadoria administrativa.
+Essa lógica não se harmoniza com a ﬁnalidade jurídica do CAF, com a sua dinâmica
+regulatória nem com os princípios da proporcionalidade e da razoabilidade
+administrativa.
+3
+.
+3
+.
+Cumpre registrar que medidas massivas de saneamento, quando
+desacopladas de critérios de risco, materialidade e veriﬁcabilidade, tendem a impor
+ônus desproporcional justamente sobre beneﬁciários legítimos da política pública.
+No contexto do CAF, isso significaria transferir a agricultores e agricultoras familiares
+o custo de reapresentação documental, deslocamentos, retrabalho cadastral e
+eventual suspensão ou atraso no acesso a políticas públicas, mesmo quando
+inexistente impropriedade material comprovada. O próprio relatório do TCU
+reconhece, nesse ponto, que fragilidades de gestão de dados podem conduzir tanto
+à concessão indevida quanto à exclusão de agricultores familiares legítimos do
+acesso a benefícios
+3
+.
+4
+.
+Também se conclui que o relatório não ponderou adequadamente o
+processo de implantação, maturação e governança do próprio cadastro. Desde 2023,
+o MDA atuou sobre uma política em transição, adotando medidas sucessivas de
+continuidade do acesso, correção de curso, reorganização normativa, fortalecimento
+da Rede CAF, implantação prudencial do CAF 3.0 e recomposição de governança
+tecnológica. Esse percurso não apenas existiu, como foi parcialmente reconhecido
+pelo próprio TCU no monitoramento anterior, quando registrou esforços
+signiﬁcativos da gestão no aprimoramento dos regramentos, dos sistemas e da
+governança do CAF, além de reconhecer o CAF 3.0 como avanço em relação aos
+sistemas anteriores.
+3
+.
+5
+.
+Também merece destaque a centralidade da Rede CAF no arranjo
+institucional do cadastro. O CAF não é alimentado de forma automática e
+desassistida, mas operado de forma descentralizada por uma rede credenciada
+heterogênea, territorializada e supervisionada. A própria regulamentação vigente e
+a Nota Técnica nº 27/2025 evidenciam que se trata do principal ativo institucional
+para orientação dos beneﬁciários, qualiﬁcação cadastral e implementação das
+melhorias do sistema, razão pela qual seu fortalecimento é condição para o
+aprimoramento sustentável da integridade e da confiabilidade do cadastro.
+3
+.
+6
+.
+Por isso, o encaminhamento institucionalmente mais adequado não é o
+de revisão massiva do passivo, mas o de aperfeiçoamento prospectivo, gradual,
+seletivo e orientado por risco. Isso vale para a base documental, para os dados
+geoespaciais, para as inconsistências cadastrais de natureza heterogênea e para a
+governança de metadados. Em lugar de comandos amplos e indiferenciados, a
+resposta mais aderente é a estruturação de trilhas de curadoria periódica,
+monitoramento por criticidade, saneamento focalizado dos casos materialmente
+relevantes, reforço das regras de negócio, qualiﬁcação continuada da rede emissora,
+gestão de mudanças, interoperabilidade com bases oﬁciais e fortalecimento da
+governança técnica e gerencial do sistema.
+3
+.
+7
+.
+Nessa perspectiva, as recomendações do TCU podem ser acolhidas, no
+todo ou em parte, como diretrizes pertinentes de melhoria contínua, desde que
+compreendidas em chave prospectiva e não como validação da premissa de falha
+estrutural generalizada do cadastro. Esse tratamento é o que melhor se ajusta à
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.
+
+--- Página 3 ---
+realidade social e territorial da agricultura familiar brasileira, à heterogeneidade da
+Rede CAF, ao caráter vivo da base e ao dever do Estado de preservar a continuidade
+do acesso às políticas públicas enquanto aprimora seus instrumentos de
+governança, controle e integridade.
+3
+.
+8
+.
+Em conclusão, a história recente do CAF é, antes de tudo, a história da
+reconstrução institucional do MDA e da recuperação de sua capacidade de conduzir
+políticas públicas próprias com governança, base normativa, infraestrutura
+tecnológica e coordenação federativa adequadas. Desde 2023, o Ministério não
+atuou sobre um cadastro estático e plenamente estabilizado, mas sobre uma política
+em transição, que exigia simultaneamente continuidade do acesso, correção de
+curso, fortalecimento da rede emissora, revisão normativa, modernização
+tecnológica, formação continuada, transparência e integração com outros sistemas
+de governo. É essa trajetória que deve orientar a leitura ﬁnal dos achados e a
+calibração das medidas a serem adotadas.
+3
+.
+9
+.
+Por ﬁm, cumpre registrar, ainda, que a resposta institucional do MDA já
+ingressou em fase de consolidação estrutural no campo da tecnologia e da
+governança de dados. A migração para novo arranjo de TIC, com contratação de
+empresas públicas especializadas, foi formalmente concebida pelo Ministério como
+medida necessária para assegurar autonomia tecnológica, continuidade operacional,
+proteção do patrimônio institucional e governança própria sobre dados sensíveis e
+sistemas críticos, em superação ao modelo transitório de dependência do órgão
+provedor. Nesse contexto, a contratação da DATAPREV, ao lado do SERPRO e da
+TELEBRAS é parte da estratégia de reconstrução ministerial destinada a sustentar e
+evoluir o CAF em bases mais estáveis, seguras e aderentes à missão institucional do
+MDA.
+4
+.
+Ressalta-se que as informações apresentadas observam o caráter
+preliminar do relatório e a respectiva restrição de acesso, devendo receber o
+tratamento adequado nos termos da legislação aplicável.
+5
+.
+Diante do exposto, encaminham-se os autos à 
+Assessoria Especial de
+Controle Interno (AECI)
+, para conhecimento e adoção das providências cabíveis
+quanto à consolidação e ao envio da manifestação ministerial ao Tribunal de Contas
+da União.
+ 
+ 
+Atenciosamente,
+ 
+ 
+(assinado eletronicamente)
+ABRAHÃO ALEXANDRE BARROS DE LIMA
+Divisão de Monitoramento do Cadastro Nacional da Agricultura Familiar
+ 
+(assinado eletronicamente)
+GLÁUCIO COIMBRA CARDOSO
+Divisão de Operações do Cadastro Nacional da Agricultura Familiar
+ 
+(assinado eletronicamente)
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.
+
+--- Página 4 ---
+FÁBIO HENRIQUE DE LIMA JUNIOR
+Coordenação de Rede do Cadastro Nacional da Agricultura Familiar
+ 
+(assinado eletronicamente)
+ANDRÉ MARQUES DE ALMEIDA PESSOA
+Coordenação de Monitoramento do Cadastro Nacional da Agricultura Familiar
+ 
+(assinado eletronicamente)
+GUSTAVO MEYER
+Coordenação de Operações do Cadastro Nacional da Agricultura Familiar
+ 
+(assinado eletronicamente)
+LUÍSA MARTINS FERNANDES
+Coordenadora-Geral de Operação e Avaliação do Cadastro Nacional da Agricultura
+Familiar
+ 
+(assinado eletronicamente)
+ARTHUR AUGUSTO LOPES DA SILVA
+Coordenação-Geral de Monitoramento e Governança do Cadastro Nacional da
+Agricultura Familiar
+ 
+(assinado eletronicamente)
+ARTHUR REIS RIMOLDI
+Diretor do Departamento de Cadastro Nacional da Agricultura Familiar
+ 
+ 
+ANEXOS: 
+Anexo 1 – Ofício MDA nº 82/2024/AECI-MDA (SEI nº 
+51238838
+).
+Anexo 2 – Material apresentados ao CONDRAF em 28/02/2025 (SEI nº
+51238360
+).
+Anexo 3 – Material apresentado ao TCU (SEI nº
+51238352
+).
+Anexo 4 – Nota Técnica nº 12/2025/CGTI-MDA/MDA (SEI nº 
+51238304
+).
+Anexo 5 – Estudo Técnico Preliminar nº 15/2025 (SEI nº 
+51238331
+).
+Anexo 6 – Relatório de Monitoramento do CAF – 2024 (SEI nº 
+51238873
+).
+Anexo 7 – Nota Técnica nº 27/2025/CGMCAF-MDA/MDA (SEI nº
+51238296
+).
+Anexo 8 – Plano de Trabalho – Execução Descentralizada – UFES (SEI n°
+51238262
+)
+Anexo 9 – Contrato MDA n° 6 – DATAPREV (SEI n° 
+51238288
+)
+Anexo 10 – Ofício MDA n° 154/2024/SPOA-MDA (SEI n° 
+51238311
+)
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.
+
+--- Página 5 ---
+Anexo 11 – Documento 121 – Reanálise MDA (SEI n° 
+51238343
+)
+Anexo 12 – Especiﬁcações Técnicas – CAF 3.0 – Integrações Bases de
+Dados (SEI n° 
+51238822
+)
+Anexo 13 – Análise Peça 103 (SEI n° 
+51238825
+)
+Anexo 14 – Nota Técnica MDA n° 1/2023/CGCAF/DCAF/SAF (SEI n°
+51238840
+)
+Anexo 15 – Planilha Monitoramento Mensal – Emissões CAF (SEI n°
+51238327
+)
+Anexo 16 - Comentários Sobre o Documento 105 (SEI nº 
+51239309
+)
+Anexo 17 - Planilha (SEI nº 
+51239312
+)
+Anexo 18 - Planilha de Resultado - Veriﬁcação Inﬂação Municipal (SEI nº
+51238280
+)
+ 
+ 
+Documento assinado eletronicamente por 
+Arthur Augusto Lopes da Silva
+,
+Coordenador (a) Geral
+, em 18/03/2026, às 22:59, conforme horário oficial de
+Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro
+de 2020.
+Documento assinado eletronicamente por 
+Glaucio Coimbra Cardoso
+, 
+Chefe de
+Serviço
+, em 18/03/2026, às 23:00, conforme horário oficial de Brasília, com
+fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Abrahao Alexandre Barros de Lima
+,
+Chefe de Divisão
+, em 18/03/2026, às 23:00, conforme horário oficial de Brasília,
+com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de
+2020.
+Documento assinado eletronicamente por 
+Fabio Henrique de Lima Junior
+,
+Coordenador (a)
+, em 18/03/2026, às 23:00, conforme horário oficial de Brasília,
+com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de
+2020.
+Documento assinado eletronicamente por 
+Luísa Martins Fernandes
+,
+Coordenador (a) Geral do Cadastro Nacional da Agricultura Familiar
+, em
+18/03/2026, às 23:01, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Andre Marques de Almeida Pessoa
+,
+Coordenador (a)
+, em 18/03/2026, às 23:01, conforme horário oficial de Brasília,
+com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de
+2020.
+Documento assinado eletronicamente por 
+Gustavo Meyer
+, 
+Coordenador (a)
+, em
+18/03/2026, às 23:03, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Arthur Reis Rimoldi
+, 
+Diretor (a)
+, em
+18/03/2026, às 23:05, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.
+
+--- Página 6 ---
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+51202621
+ e o código CRC 
+76291530
+.
+Esplanada dos Ministérios bloco C, 5 andar  – Telefone: (61) 3276-4533   
+CEP: 70.046-900 - Brasília/DF 
+Referência:
+ Processo nº 55000.012930/2025-64
+SEI nº 51202621
+Ofício - MDA 18 (51202621)         SEI 55000.012930/2025-64 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990616.

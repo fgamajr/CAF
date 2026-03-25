@@ -1,0 +1,278 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Técnica
+PT-A04-01: Análise de Cobertura do Dicionário de
+Dados
+Equipe de Auditoria Operacional – TCU
+15 de novembro de 2025
+Sumário
+1 Introdução 3
+1.1 Contexto e Motivação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Objetivos do Papel de Trabalho . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Metodologia 3
+2.1 População e Amostra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Procedimentos Analíticos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+3 Resultados 4
+3.1 Quantificação do Déficit de Cobertura . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.2 Tabela Comparativa de Cobertura . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4 Conclusão 7
+A Anexo A – Memórias de Cálculo 8
+B Anexo C – Scripts Utilizados 8
+B.1 Script de Análise e Comparação . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+1
+
+--- Página 2 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+Lista de Tabelas
+1 Memória de Cálculo da Cobertura do Dicionário . . . . . . . . . . . . . . . . . . 4
+2 Status de Documentação de Tabelas do Schema caf_mapa . . . . . . . . . . . . . 4
+3 Índice de Memórias de Cálculo do PT-A04-01 . . . . . . . . . . . . . . . . . . . . 8
+2
+
+--- Página 3 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+1 Introdução
+1.1 Contexto e Motivação
+Durante a elaboração do Achado 4 ("Incompletude e baixa qualidade do Dicionário de Dados
+do Sistema CAF"), identificou-se uma aparente divergência entre o número de tabelas existentes
+no banco de dados e o número de tabelas documentadas no artefato “Dicionario de dados-
+CAF3.xlsx”. A versão inicial da Seção II do achado apontava um déficit de 16 tabelas, com base
+em informações preliminares.
+Este papel de trabalho foi criado para formalizar a apuração dessa divergência, estabelecendo
+uma evidência técnica, rastreável e reprodutível sobre a real cobertura do dicionário de dados.
+Questão de Auditoria Central
+A documentação oficial do Sistema CAF (dicionário de dados) reflete com precisão o
+esquema de tabelas existente no banco de dados de produção?
+1.2 Objetivos do Papel de Trabalho
+1.Objetivo Primário : Identificar e listar de forma conclusiva todas as tabelas do schema
+caf_mapa que não estão documentadas no dicionário de dados oficial.
+2.Objetivo Secundário : Quantificar o déficit exato de cobertura da documentação.
+3.Objetivo Terciário : Gerar uma tabela comparativa completa que sirva como evidência
+para o Achado 4, indicando o status de documentação de cada tabela do banco de dados.
+2 Metodologia
+2.1 População e Amostra
+A análise foi **censitária**, comparando duas populações completas:
+•População 1 (Banco de Dados) : A lista de todas as tabelas base ( BASE TABLE ) no
+schemacaf_mapa do banco de dados PostgreSQL de produção.
+•População 2 (Dicionário) : A lista de todas as tabelas documentadas, extraída do
+arquivoDicionario de dados-CAF3v1.CSV .
+2.2 Procedimentos Analíticos
+A análise foi realizada em três etapas, utilizando scripts bashe o cliente psql. Os scripts
+completos estão no Anexo C.
+1.Extração da Lista do Banco de Dados : Uma consulta SQL foi executada no banco
+de dados para extrair os nomes de todas as tabelas do tipo BASE TABLE , excluindo VIEWs.
+A saída foi limpa e salva no arquivo db_tables.txt .
+2.Extração da Lista do Dicionário : O arquivo Dicionario de dados-CAF3v1.CSV foi
+processado para extrair da primeira coluna os nomes de tabelas que seguem o padrão
+S_.... A saída foi limpa, ordenada e salva no arquivo dict_tables.txt .
+3.Comparação Diferencial : O comando commdo Linux foi utilizado para comparar os
+dois arquivos e gerar três listas distintas:
+•Tabelas presentes apenas no banco de dados (não documentadas).
+3
+
+--- Página 4 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+•Tabelas presentes apenas no dicionário (documentadas, mas inexistentes no DB).
+•Tabelas presentes em ambos (corretamente documentadas).
+3 Resultados
+3.1 Quantificação do Déficit de Cobertura
+A análise confirmou a existência de **109 tabelas base** no schema caf_mapa . O dicionário de
+dados, por sua vez, documenta **93 tabelas**.
+Isso resulta em um déficit de **16 tabelas não documentadas**, o que corresponde a uma
+cobertura de apenas 85,3% e um déficit de **14,7%**.
+Tabela 1: Memória de Cálculo da Cobertura do Dicionário
+ID (MC) Métrica Valor
+MC-A04-01 Total de tabelas base no DB ( totalTabelasDB ) 109
+MC-A04-02 Total de tabelas no dicionário ( totalTabelasDict ) 93
+MC-A04-03 Tabelas não documentadas ( naoDocumentadas ) 16
+MC-A04-04 Déficit de cobertura percentual 14,7%
+3.2 Tabela Comparativa de Cobertura
+A tabela a seguir detalha o status de documentação para cada uma das 109 tabelas base iden-
+tificadas no banco de dados. As 16 tabelas não documentadas estão destacadas.
+Tabela 2: Status de Documentação de Tabelas do Schema
+caf_mapa
+Nome da Tabela No DB? No Dicionário? Status
+S_AREA_IMOVEL Sim Sim Documentada
+S_ATUALIZACAO_UNIDADE_FAMILIAR Sim Sim Documentada
+S_BENEFICIO_MEMBRO_FAMILIAR Sim Sim Documentada
+S_BLOQUEIO_LOTE Sim Sim Documentada
+S_BLOQUEIO_PESSOA Sim Sim Documentada
+S_BLOQUEIO_PESSOA_DOCUMENTO Sim Sim Documentada
+S_CACHE_DATAPREV Sim Sim Documentada
+S_CADUNICO Sim Sim Documentada
+S_CAF Sim Sim Documentada
+S_CARACTERIZACAO_AREA Sim Sim Documentada
+S_CATEGORIA_PRODUTO Sim Sim Documentada
+S_CATEGORIA_RENDA Sim Sim Documentada
+S_CLIENTE Sim Sim Documentada
+S_CONDICAO_DOMINIO Sim Sim Documentada
+S_CONFIGURACAO Sim Sim Documentada
+S_CONTROLE_MIGRACAO_PJ Sim Sim Documentada
+S_CONTROLE_MIGRACAO_UFPA Sim Sim Documentada
+S_COPIA_DAP Sim Sim Documentada
+S_DOCUMENTO Sim Sim Documentada
+S_DOC_IDENTIFICACAO Sim Sim Documentada
+S_ENDERECO Sim Sim Documentada
+Continua na próxima página
+4
+
+--- Página 5 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+Tabela 2 – continuação
+Nome da Tabela No DB? No Dicionário? Status
+S_ENTIDADE_EMISSORA Sim Sim Documentada
+S_FAIXA_RENDA Sim Sim Documentada
+S_FUNCIONARIO_UFPR Sim Sim Documentada
+S_GERACAO_ARQUIVO Sim Sim Documentada
+S_GERACAO_ARQUIVO_DOCUMENTO Sim Sim Documentada
+S_MEMBRO_EXCLUIDO Sim Sim Documentada
+S_MENSAGEM Sim Sim Documentada
+S_MENSAGEM_PERFIS Sim Sim Documentada
+S_MENSAGEM_USUARIOS Sim Sim Documentada
+S_MODELO_ARQUIVO Sim Sim Documentada
+S_MODULO Sim Sim Documentada
+S_MODULO_FISCAL Sim Sim Documentada
+S_MODULO_PERMISSAO Sim Sim Documentada
+S_MOTIVO_INATIVACAO Sim Sim Documentada
+S_MUNICIPIO Sim Sim Documentada
+S_NACIONALIDADE Sim Sim Documentada
+S_NATUREZA_JURIDICA Sim Sim Documentada
+S_NOTIFICACAO Sim Sim Documentada
+S_ORIGEM_RENDA Sim Sim Documentada
+S_PERFIL Sim Sim Documentada
+S_PERFIL_PERMISSAO Sim Sim Documentada
+S_PESSOA_FISICA Sim Sim Documentada
+S_PESSOA_JURIDICA Sim Sim Documentada
+S_PESSOA_JURIDICA_FALHA Sim Sim Documentada
+S_PESSOA_JURIDICA_SOCIO Sim Sim Documentada
+S_PRODUTO Sim Sim Documentada
+S_PRODUTO_TIPO_RENDA Sim Sim Documentada
+S_PUBLICOS_TRADICIONAIS Sim Sim Documentada
+S_RAMO_ATIVIDADE Sim Sim Documentada
+S_REGIAO Sim Sim Documentada
+S_RENDA Sim Sim Documentada
+S_RENDA_DOCUMENTO Sim Sim Documentada
+S_RESPONSAVEL_UFPR Sim Sim Documentada
+S_SEXO Sim Sim Documentada
+S_SISOBI_DAP Sim Sim Documentada
+S_SISOBI_DAP_CONTROLE Sim Sim Documentada
+S_SUSPENSAO_UFPR Sim Sim Documentada
+S_TELEFONE Sim Sim Documentada
+S_TELEFONE_PESSOA Sim Sim Documentada
+S_TIPO_AREA Sim Sim Documentada
+S_TIPO_CAF Sim Sim Documentada
+S_TIPO_DOCUMENTO Sim Sim Documentada
+S_TIPO_ENDERECO Sim Sim Documentada
+S_TIPO_ENQUADRAMENTO_RENDA Sim Sim Documentada
+S_TIPO_ENTIDADE_CADASTRADORA Sim Sim Documentada
+S_TIPO_ESCOLARIDADE Sim Sim Documentada
+S_TIPO_ESTADO_CIVIL Sim Sim Documentada
+S_TIPO_ETNIA Sim Sim Documentada
+Continua na próxima página
+5
+
+--- Página 6 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+Tabela 2 – continuação
+Nome da Tabela No DB? No Dicionário? Status
+S_TIPO_LOCALIZACAO_AREA Sim Sim Documentada
+S_TIPO_LOTE Sim Sim Documentada
+S_TIPO_MEMBRO_FAMILIAR Sim Sim Documentada
+S_TIPO_NOTIFICACAO Sim Sim Documentada
+S_TIPO_PERMISSAO Sim Sim Documentada
+S_TIPO_RENDA Sim Sim Documentada
+S_TIPO_SITUACAO_GERACAO_ARQUIVO Sim Sim Documentada
+S_TIPO_SITUACAO_PESSOA_JURIDICA Sim Sim Documentada
+S_TIPO_SITUACAO_UNIDADE_FAMILIAR Sim Sim Documentada
+S_TIPO_SUSPENSAO Sim Sim Documentada
+S_TIPO_TELEFONE Sim Sim Documentada
+S_TIPO_TERRENO_UFPR Sim Sim Documentada
+S_TIPO_UNIDADE_MEDIDA Sim Sim Documentada
+S_UNIDADE_FAMILIAR Sim Sim Documentada
+S_UNIDADE_FAMILIAR_ENQUADRAMENTO_RENDA Sim Sim Documentada
+S_UNIDADE_FAMILIAR_PESSOA Sim Sim Documentada
+S_UNIDADE_FAMILIAR_TIPO_TERRENO Sim Sim Documentada
+S_USUARIO Sim Sim Documentada
+S_AREA_DOCUMENTO Sim Não Não Docu-
+mentada
+S_AREA_PESSOA_UFPR Sim Não Não Docu-
+mentada
+S_CNAE_PRINCIPAL Sim Não Não Docu-
+mentada
+S_ENDERECO_UFPR_PESSOA Sim Não Não Docu-
+mentada
+S_PESSOA_JURIDICA_TOTALIZADORES Sim Não Não Docu-
+mentada
+S_PESSOA_JURIDICA_TOTALIZADORES_-
+MUNICIPIOSim Não Não Docu-
+mentada
+S_PTR_BENEFICIO_CONSULTA Sim Não Não Docu-
+mentada
+S_SOCIO_PESSOA_JURIDICA_INVALIDO Sim Não Não Docu-
+mentada
+id_mantido Sim Não Não Docu-
+mentada
+tb_areas Sim Não Não Docu-
+mentada
+tb_auxiliar Sim Não Não Docu-
+mentada
+tb_cep Sim Não Não Docu-
+mentada
+tb_config_incra Sim Não Não Docu-
+mentada
+tb_controle_migracao_incra Sim Não Não Docu-
+mentada
+tb_dap Sim Não Não Docu-
+mentada
+Continua na próxima página
+6
+
+--- Página 7 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+Tabela 2 – continuação
+Nome da Tabela No DB? No Dicionário? Status
+typeorm_migrations Sim Não Não Docu-
+mentada
+4 Conclusão
+Este papel de trabalho confirma, de maneira conclusiva e reprodutível, que o dicionário de dados
+do Sistema CAF possui um déficit de cobertura de **14,7%**. Das 109 tabelas base existentes
+no banco de dados, 16 não estão documentadas.
+Esta evidência técnica fundamenta o Achado 4 e deve ser utilizada para corrigir a Seção II
+do relatório de auditoria, garantindo a precisão das informações apresentadas.
+7
+
+--- Página 8 ---
+Papel de Trabalho PT-A04-01 - Auditoria CAF TCU
+A Anexo A – Memórias de Cálculo
+Tabela 3: Índice de Memórias de Cálculo do PT-A04-01
+MC Nome Variável Descrição / Método Resultado
+MC-A04-01 totalTabelasDB SELECT COUNT(*) deinformation_-
+schema.tables ondetable_type=’BASE
+TABLE’109
+MC-A04-02 totalTabelasDict grep -c no arquivo CSV do dicionário 93
+MC-A04-03 naoDocumentadas totalTabelasDB - totalTabelasDict 16
+MC-A04-04 deficitPercentual (naoDocumentadas /totalTabelasDB ) *
+10014,68%
+B Anexo C – Scripts Utilizados
+B.1 Script de Análise e Comparação
+Listing 1: Script para identificar tabelas não documentadas
+1#!/bin/bash
+2
+3# --- STEP 1: Get a clean list of BASE TABLES from the database ---
+4DB_TABLES_FILE="db_base_tables.txt"
+5echo"Executando␣query␣no␣banco␣de␣dados..."
+6PGPASSWORD=’[SENHA_REMOVIDA]’ psql -h 172.23.80.1 -p 5433 -U postgres -d caf_mapa -t -
+c "SELECT␣table_name␣FROM␣information_schema.tables␣WHERE␣table_schema␣=␣’caf_mapa
+’␣AND␣table_type␣=␣’BASE␣TABLE’␣ORDER␣BY␣table_name;" | grep -v "rows)" | sed’s/␣
+//g’ | grep . > "$DB_TABLES_FILE"
+7
+8# --- STEP 2: Get a clean list of tables from the dictionary CSV ---
+9DICT_CSV_PATH="Dicionario␣de␣dados-CAF3v1.CSV"
+10DICT_TABLES_FILE="dict_tables.txt"
+11echo"Processando␣arquivo␣CSV␣do␣dicionário..."
+12cat"$DICT_CSV_PATH" | tr -d ’\r’ | cut -d, -f1 | sed’s/␣//g’ | grep -E ’^S_[A-Z_]+$’
+| sort -u > "$DICT_TABLES_FILE"
+13
+14# --- STEP 3: Compare the two clean lists ---
+15echo"Tabelas␣não␣documentadas:"
+16comm -23 "$DB_TABLES_FILE" "$DICT_TABLES_FILE"
+8

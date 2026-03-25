@@ -1,0 +1,658 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Técnica
+PT-A04-04: Análise de Documentação de
+Unidades de Medida
+Equipe de Auditoria Operacional – TCU
+15 de novembro de 2025
+Informações do Papel de Trabalho
+Código PT: PT-A04-04
+Achado: Achado 4 – Incompletude e baixa qualidade do Dicionário de Dados
+do Sistema CAF
+Questão de Auditoria:
+(iv) Os campos numéricos possuem documentação adequada de suas
+unidades de medida?
+Tipo de Análise: Censitária (100% dos campos numéricos identificados)
+Data da Análise: 15 de novembro de 2025
+Auditor Responsável:
+Equipe de Auditoria Operacional – TCU
+Arquivo de Dados:
+Dicionario de dados-CAF3v1.CSV
+Universo Analisado:
+125 campos numéricos (tipos: numeric, integer, bigint, decimal)
+
+--- Página 2 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Sumário
+1 Objetivo e Escopo 3
+1.1 Objetivo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Questão de Auditoria Específica . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3 Escopo e Limitações . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.4 Critérios de Conformidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Metodologia 3
+2.1 Abordagem Analítica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Script de Análise Automatizada . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2.3 Memórias de Cálculo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 Resultados 4
+3.1 Visão Geral Quantitativa . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.2 Distribuição por Tipo de Dado . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.3 Casos Críticos Identificados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.3.1 Caso 1: S_AREA_IMOVEL.nr_area . . . . . . . . . . . . . . . . . . . . . . . 5
+3.3.2 Caso 2: S_RENDA.vl_renda_estimada evl_renda_auferida . . . . . . . 6
+3.3.3 Caso 3: S_MODULO_FISCAL.nr_modulo_fiscal . . . . . . . . . . . . . . . 6
+3.4 Campos com Boa Documentação de Unidade . . . . . . . . . . . . . . . . . . . . 6
+4 Conclusão 6
+4.1 Síntese dos Achados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+4.2 Impacto Operacional . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4.3 Resposta à Questão de Auditoria . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+5 Evidências e Anexos 7
+5.1 Lista de Evidências . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+5.2 Rastreabilidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Anexo A – Tabela Completa de Análise de Unidades de Medida 8
+2
+
+--- Página 3 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+1 Objetivo e Escopo
+1.1 Objetivo
+Este Papel de Trabalho documenta a análise censitária da documentação de unidades de medida
+para campos numéricos no dicionário de dados do Sistema CAF. O objetivo é verificar se o
+dicionário fornece informação adequada sobre as unidades em que os valores numéricos são
+expressos, permitindo interpretação correta sem conhecimento prévio do sistema.
+1.2 Questão de Auditoria Específica
+Questão (iv): Os campos numéricos possuem documentação adequada de suas unidades de
+medida?
+1.3 Escopo e Limitações
+•Universo: 125 campos numéricos identificados no dicionário
+•Tiposdedadosincluídos: numeric,integer,bigint,decimal,money,double precision ,
+real,smallint ,int
+•Tipo de análise: Censitária (100% do universo)
+•Fonte de dados: Arquivo “Dicionario de dados-CAF3v1.CSV” fornecido pela equipe
+responsável
+•Critério de identificação: Busca textual por palavras-chave de unidades (hectare, me-
+tro, reais, percentual, etc.) nas descrições
+1.4 Critérios de Conformidade
+Baseado na norma ISO/IEC 25012 (Data Quality Model), especificamente o princípio de
+Compreensibilidade (Understandability) :
+Critério ISO/IEC 25012 – Compreensibilidade
+Compreensibilidade (Understandability): O grau em que os dados podem ser com-
+preendidos por usuários humanos, expressos em uma linguagem, símbolos e unidades
+apropriadas .
+Aplicação ao contexto: Para campos numéricos, a compreensibilidade exige que a
+documentação especifique explicitamente a unidade de medida (reais, hectares, metros
+quadrados,percentual,etc.),permitindoqueanalistasinterpretemosvalorescorretamente
+sem ambiguidade.
+Adicionalmente, oframework DAMA-DMBOK estabeleceque“metadadostécnicosdevem
+incluir unidades de medida e escalas para atributos numéricos”.
+2 Metodologia
+2.1 Abordagem Analítica
+A análise foi realizada em três etapas:
+1.Identificação de campos numéricos: Parse do arquivo CSV para identificar todos os
+campos com tipos de dados numéricos
+3
+
+--- Página 4 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+2.Extração de palavras-chave de unidades: Busca textual na descrição por termos
+como “hectare”, “metro”, “reais”, “percentual”, etc.
+3.Classificação: Cada campo é classificado como “Com unidade” (se a descrição menciona
+a unidade) ou “Sem unidade” (caso contrário)
+2.2 Script de Análise Automatizada
+A análise foi realizada pelo script Python analisar_unidades_medida.py , que implementa a
+seguinte lógica:
+Listing 1: Lógica de Identificação de Unidades Documentadas
+1# Tipos de dados numericos
+2TIPOS_NUMERICOS = [
+3’numeric’, ’decimal’, ’money’, ’double␣precision’, ’real’,
+4’integer’, ’bigint’, ’smallint’, ’int’
+5]
+6
+7# Palavras-chave que indicam presenca de unidade
+8PALAVRAS_UNIDADE = [
+9’hectare’, ’metro’, ’m’, ’km’, ’alqueire’,
+10’reais’, ’r$’, ’dlar’, ’percentual’, ’%’,
+11’kg’, ’grama’, ’tonelada’, ’litro’,
+12’ano’, ’ms’, ’dia’, ’hora’, ’minuto’, ’segundo’
+13]
+14
+15defcampo_tem_unidade_documentada(descricao):
+16 """Verifica se a descricao menciona unidade de medida"""
+17 if notdescricao:
+18 returnFalse
+19
+20desc_lower = descricao.lower()
+21
+22 forpalavra inPALAVRAS_UNIDADE:
+23 ifpalavra indesc_lower:
+24 returnTrue
+25
+26 returnFalse
+2.3 Memórias de Cálculo
+Memórias de Cálculo – PT-A04-04
+MC-A04-30: totalCamposNumericos = 125 (total de campos numéricos identificados)
+MC-A04-31: comUnidade = 20 (campos cuja descrição menciona unidade de medida)
+MC-A04-32: semUnidade = 105 (campos sem menção à unidade de medida)
+MC-A04-33: pctSemUnidade = (105 / 125) ×100 =84,0%
+3 Resultados
+3.1 Visão Geral Quantitativa
+A análise censitária de 125 campos numéricos revelou que:
+4
+
+--- Página 5 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Status de Documentação Quantidade Percentual
+Campos com unidade documentada 20 16,0%
+Campos sem unidade documentada 105 84,0%
+TOTAL 125 100,0%
+Tabela 1: Distribuição de Campos Numéricos por Status de Documentação de Unidade
+Resultado Principal
+84,0% dos campos numéricos (105 de 125 campos) não documentam suas unidades
+de medida, violando o requisito de Compreensibilidade daISO/IEC 25012 .
+3.2 Distribuição por Tipo de Dado
+Tipo de Dado Total Com Unid. Sem Unid. % Sem Unid.
+integer 100 1 99 99,0%
+numeric 24 19 5 20,8%
+bigint 1 0 1 100,0%
+TOTAL 125 20 105 84,0%
+Tabela 2: Distribuição por Tipo de Dado
+Observação crítica: Campos do tipo integer apresentam déficit quase total (99,0%), en-
+quanto campos numeric têm melhor documentação (20,8% sem unidade), sugerindo que valores
+decimais são vistos como mais prioritários para documentação.
+3.3 Casos Críticos Identificados
+3.3.1 Caso 1: S_AREA_IMOVEL.nr_area
+Atributo Valor
+Tabela S_AREA_IMOVEL
+Campo nr_area
+Tipo numeric(9,2)
+Descrição no Dicionário “Tamanho da área imóvel”
+Unidade Esperada Hectares, m 2, ou Alqueires (definido via FK id_tipo_unidade_medida )
+Status SEM UNIDADE DOCUMENTADA
+Impacto Campocríticoparacálculodemódulosfiscaiseelegibilidade.
+Sem a unidade, analistas não sabem se o valor “10.5” signi-
+fica 10,5 hectares, 10,5 m 2, ou 10,5 alqueires. A dependência
+de FK para unidade não é mencionada na descrição.
+Tabela 3: Caso Crítico 1 – Campo de área sem unidade documentada
+5
+
+--- Página 6 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+3.3.2 Caso 2: S_RENDA.vl_renda_estimada evl_renda_auferida
+Atributo Valor
+Tabela S_RENDA
+Campos vl_renda_estimada ,vl_renda_auferida
+Tipo numeric
+Descrições “Valor renda estimada”, “Valor renda auferida”
+Unidade Esperada Reais (R$) – presumível mas não documentado
+Status SEM UNIDADE DOCUMENTADA
+Impacto Embora seja razoável presumir que valores de renda sejam
+em reais, a ausência de especificação explícita viola a norma
+ISO/IEC 25012 e pode levar a ambiguidades em análises
+comparativas ou internacionais.
+Tabela 4: Caso Crítico 2 – Campos monetários sem unidade documentada
+3.3.3 Caso 3: S_MODULO_FISCAL.nr_modulo_fiscal
+Atributo Valor
+Tabela S_MODULO_FISCAL
+Campo nr_modulo_fiscal
+Tipo integer
+Descrição “Numero de módulos fiscais aceito no município”
+Unidade Esperada Unidades (contagem) ou hectares?
+Status SEM UNIDADE DOCUMENTADA
+Impacto Ambiguidade crítica: “número de módulos fiscais” pode sig-
+nificar (1) uma contagem adimensional de módulos ou (2)
+o tamanho do módulo fiscal em hectares. A descrição não
+resolve essa ambiguidade fundamental.
+Tabela 5: Caso Crítico 3 – Ambiguidade em campo de módulo fiscal
+3.4 Campos com Boa Documentação de Unidade
+Para contraste, a Tabela 6 apresenta exemplos de campos com documentação adequada de
+unidades:
+Campo Tipo Descrição (com unidade)
+nr_latitude numeric “Latitude em graus decimais”
+nr_longitude numeric “Longitude em graus decimais”
+nr_percentual_* numeric “Percentual de [...]” (vários campos)
+Tabela 6: Exemplos de Campos com Unidade Adequadamente Documentada
+4 Conclusão
+4.1 Síntese dos Achados
+A análise censitária de 125 campos numéricos identificados no dicionário de dados do Sistema
+CAF demonstra uma falha sistêmica na documentação de unidades de medida . Com
+6
+
+--- Página 7 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+84,0% dos campos sem qualquer especificação de unidade, o dicionário viola frontalmente o
+requisito de Compreensibilidade (Understandability) estabelecido na norma ISO/IEC
+25012.
+4.2 Impacto Operacional
+Esta lacuna de documentação:
+•Força analistas a presumir unidades baseando-se em conhecimento tácito ou contexto
+•Aumenta o risco de erros de interpretação , especialmente em campos críticos como
+nr_area
+•Violaoprincípiodequedadosdevemserexpressosem“ unidadesapropriadas ”(ISO/IEC
+25012)
+•Dificultaauditoriasexternas eanálisesporequipessemconhecimentopréviododomínio
+•Perpetua a dependência de especialistas para interpretação correta de valores numé-
+ricos
+4.3 Resposta à Questão de Auditoria
+Questão (iv): Os campos numéricos possuem documentação adequada de suas unidades de
+medida?
+Resposta: NÃO . A análise evidenciou que 84,0% dos campos numéricos (105 de 125) não
+documentam suas unidades de medida, caracterizando uma inadequação crítica da documen-
+tação que viola normas internacionais de qualidade de dados.
+5 Evidências e Anexos
+5.1 Lista de Evidências
+1.Script de Análise: analisar_unidades_medida.py (código-fonte completo disponível
+no repositório de papéis de trabalho)
+2.Resultado Completo: analise_unidades_completa.csv (126 linhas: 1 cabeçalho +
+125 campos numéricos analisados)
+3.Anexo A: Tabela completa com os 125 campos numéricos e status de documentação de
+unidade (páginas seguintes)
+5.2 Rastreabilidade
+Todas as métricas apresentadas neste Papel de Trabalho estão vinculadas às seguintes memórias
+de cálculo:
+•MC-A04-30: Total de campos numéricos identificados (125)
+•MC-A04-31: Campos com unidade documentada (20)
+•MC-A04-32: Campos sem unidade documentada (105)
+•MC-A04-33: Percentual sem unidade (84,0%)
+7
+
+--- Página 8 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Anexo A – Tabela Completa de Análise de Unidades de Medida
+Esta seção contém a tabela completa com os 125 campos numéricos analisados, incluindo:
+•Nome da tabela e campo
+•Tipo de dado (numeric, integer, bigint, etc.)
+•Descrição registrada no dicionário
+•Status de documentação de unidade (Sim/Não)
+A tabela utiliza o seguinte esquema de cores:
+•Vermelho claro : Campo sem unidade documentada
+•Verde claro : Campo com unidade documentada
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_AREA_IMOVEL nr_area numeric Tamanho da área imóvel Não
+S_AREA_IMOVEL nr_longitude numeric Longitude da área imóvel Sim
+S_AREA_IMOVEL nr_latitude numeric Latitude da área imóvel Sim
+S_AREA_IMOVEL id_tipo_-
+unidade_medidainteger ID de identificação de tipo de
+unidade mediaSim
+S_AREA_IMOVEL id_tipo_area integer ID de identificação de tipo área Não
+S_AREA_IMOVEL id_tipo_-
+localizacao_areainteger ID de identificação de tipo de
+localizao áreaNão
+S_AREA_IMOVEL nm_origem_imovel integer Origem do imóvel importado
+das APIs do INCRA
+INCRA(SIGEF/SNCR)Não
+S_AREA_PESSOA_UFPR id_condicao_-
+dominiointeger ID de identificação de tipo de
+condio de domnioNão
+S_BLOQUEIO_LOTE id_tipo_lote integer ID de identificação de tipo de
+loteNão
+S_BLOQUEIO_PESSOA id_tipo_lote integer ID de identificação de tipo lote Não
+S_CACHE_DATAPREV tp_consulta integer 1 - cadunico, 2 - beneficios, 3 -
+faixa renda, 4 relacao
+trabalhistaNão
+S_CAF id_tipo_caf integer ID de identificação de tipo CAF Não
+S_CAF nr_caf integer Numero CAF Não
+S_CARACTERIZACAO_AREA id_-
+caracterizacao_-
+areainteger ID de identificação de
+caracterizao áreaNão
+S_CONDICAO_DOMINIO id_condicao_-
+dominiointeger ID de identificação de condio de
+domnioNão
+S_CONTROLE_MIGRACAO_PJ id_pj integer ID de identificação de pessoa
+jurdica CAF 2Não
+Continua na próxima página...
+8
+
+--- Página 9 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Tabela 7 – continuação da página anterior
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_CONTROLE_MIGRACAO_PJ nu_situacao integer 1 - migrando, 2 - migrado, 3 -
+cadastro incomplet, 4 - PJ sem
+sociosNão
+S_CONTROLE_MIGRACAO_PJ tp_pj integer 1 - Coop. Singular, 2 - Coop.
+Central, 3 - Empresa, 4 -
+AssociacaoNão
+S_CONTROLE_MIGRACAO_UFPA id_unidade_-
+familiarinteger ID de identificação da unidade
+familiarNão
+S_CONTROLE_MIGRACAO_UFPA nu_situacao integer 1 - realizando migracao, 2 -
+cadastro migrado, 3 - cadastro
+incompleto, 4 - UFPA sem
+membros, 5 - realizando
+atualizacaoNão
+S_COPIA_DAP id_sexo_titular integer ID de identificação de sexo do
+titularNão
+S_COPIA_DAP id_sexo_-
+subtitularinteger ID de identificação de sexo do
+subtitularNão
+S_COPIA_DAP id_-
+caracterizacao_-
+areainteger ID de identificação de
+caracterizao áreaNão
+S_COPIA_DAP id_atividade_-
+principalinteger ID de identificação de atividade
+principalNão
+S_DOCUMENTO id_tipo_-
+documentointeger ID de identificação do tipo
+documentoNão
+S_DOC_IDENTIFICACAO id_tipo_-
+documentointeger ID de identificação de tipo
+documentoNão
+S_FAIXA_RENDA valor_maximo numeric Valor mximo da renda Não
+S_FAIXA_RENDA valor_minimo numeric Valor mnimo da renda Não
+S_GERACAO_ARQUIVO nr_etapa integer Etapa que o processo esto no
+momento.Não
+S_GERACAO_ARQUIVO nr_ultima_pagina integer Ultima pagina inteirada na
+etapa atual.Não
+S_GERACAO_ARQUIVO id_tipo_-
+situacao_-
+geracao_arquivointeger ID de identificação de tipo
+situao gerao arquivoNão
+S_GERACAO_ARQUIVO_-
+DOCUMENTOnr_etapa integer Etapa que o processo esta no
+momento.Não
+S_MODULO id_modulo integer ID de identificação de modulo Não
+S_MODULO_FISCAL nr_modulo_fiscal integer Numero de mdulos fiscais aceito
+no municpioNão
+S_MODULO_PERMISSAO id_modulo integer ID de identificação de modulo Não
+S_MODULO_PERMISSAO id_tipo_-
+permissaointeger ID de identificação de tipo
+permissoNão
+S_MODULO_PERMISSAO id_motivo_-
+inativacaointeger ID de identificação de motivo
+inativaoNão
+S_MUNICIPIO id_regiao integer ID de identificação da regio Não
+S_NOTIFICACAO id_tipo_-
+notificacaointeger ID de identificação de tipo
+notificaoNão
+Continua na próxima página...
+9
+
+--- Página 10 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Tabela 7 – continuação da página anterior
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_ORIGEM_RENDA id_origem_renda integer ID de identificação de origem
+rendaNão
+S_PERFIL_PERMISSAO id_modulo integer ID de identificação de modulo Não
+S_PERFIL_PERMISSAO id_tipo_-
+permissaointeger ID de identificação de tipo
+permissoNão
+S_PESSOA_FISICA id_sexo integer ID de identificação de sexo Não
+S_PESSOA_FISICA id_tipo_etnia integer ID de identificação de tipo etnia Não
+S_PESSOA_FISICA id_tipo_-
+escolaridadeinteger ID de identificação de tipo
+escolaridadeNão
+S_PESSOA_FISICA id_tipo_estado_-
+civilinteger ID de identificação de tipo
+estado civilNão
+S_PESSOA_JURIDICA id_tipo_-
+situacao_-
+pessoa_juridicainteger ID de identificação de tipo
+situao pessoa jurdicaNão
+S_PESSOA_JURIDICA id_motivo_-
+inativacaointeger ID de identificação de motivo
+inativaoNão
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_assentado_-
+pnrainteger Numero assentados PNRA Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_beneficio_-
+pncfinteger Numero benefcios PNCF Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_demais_-
+agricultoresinteger Numero demais agricultores Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_socios_caf_-
+ativosinteger Numero scios CAF ativos Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_socios_sem_-
+cafinteger Scios que no possuem CAF ou
+que o CAF esteja inativo!Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_socios_-
+masculinointeger Numero scios masculinos Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_socios_-
+femininointeger Numero scios femininos Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+assentado_pnranumeric Numero percentual assentado
+PNRASim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+beneficio_pncfnumeric Numero percentual beneficio
+PNCFSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+demais_-
+agricultoresnumeric Numero percentual demais
+agricultoresSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+socios_caf_-
+ativosnumeric Numero percentual scios CAF
+ativoSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+socios_sem_cafnumeric Percentual de scios que no
+possuem CAF ou que o CAF
+esteja inativo!Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+socios_masculinonumeric Numero percentual scios
+masculinosSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+socios_femininonumeric Numero percentual scios
+femininosSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_dap integer Numero DAP Não
+Continua na próxima página...
+10
+
+--- Página 11 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Tabela 7 – continuação da página anterior
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+dapnumeric Percentual DAP Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_quilombo integer Numero quilombo Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+quilombonumeric Percentual quilombo Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_terra_-
+indigenainteger Numero terra indgena Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+terra_indigenanumeric Percentual terra indgena Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_demais_-
+povos_-
+comunidadesinteger Numero demais povos
+comunidadesNão
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+demais_povos_-
+comunidadesnumeric Percentual demais povos
+comunidadesSim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_nenhuma_opcao integer Numero nenhuma opo Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+nenhuma_opcaonumeric Percentual nenhuma opo Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_aquicultor integer Numero agricultor Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+aquicultornumeric Percentual agricultor Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_extrativista integer Numero extrativista Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+extrativistanumeric Percentual extrativista Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_pescador_-
+artesanalinteger Numero pescador artesanal Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+pescador_-
+artesanalnumeric Percentual pescador artesanal Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_silvicultor integer Numero silvicultor Não
+S_PESSOA_JURIDICA_-
+TOTALIZADORESnr_percentual_-
+silvicultornumeric Percentual silvicultor Sim
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_MUNICIPIOnr_total_socios integer Numero total scios Não
+S_PRODUTO id_caf_2 integer ID de identificação do produto
+no banco do CAF 2Não
+S_PRODUTO percentual_-
+rebatenumeric Percentual de rebate do produto Sim
+S_PRODUTO id_ramo_-
+atividadeinteger ID de identificação de ramo de
+atividadeNão
+S_PTR_BENEFICIO_CONSULTA nr_tipo_ptr integer 1-RURAL | 2-PESCA Não
+S_PUBLICOS_TRADICIONAIS id_publico_-
+tradicionalinteger ID de identificação de publico
+tradicionalNão
+Continua na próxima página...
+11
+
+--- Página 12 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Tabela 7 – continuação da página anterior
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_RAMO_ATIVIDADE id_ramo_-
+atividadeinteger ID de identificação de ramo
+atividadeNão
+S_REGIAO id_regiao integer ID de identificação de regio Não
+S_RENDA vl_renda_-
+estimadanumeric Valor renda estimada Não
+S_RENDA vl_renda_-
+auferidanumeric Valor renda auferida Não
+S_SEXO id_sexo integer ID de identificação de sexo Não
+S_SUSPENSAO_UFPR id_tipo_-
+suspensaointeger ID de identificação de tipo
+suspensoNão
+S_TELEFONE id_tipo_telefone integer ID de identificação de tipo
+telefoneNão
+S_TIPO_AREA id_tipo_area integer ID de identificação de tipo área Não
+S_TIPO_CAF id_tipo_caf integer ID de identificação de tipo CAF Não
+S_TIPO_DOCUMENTO id_tipo_-
+documentointeger ID de identificação de tipo
+documentoNão
+S_TIPO_ENDERECO id_tipo_endereco integer ID de identificação de tipo
+endereoNão
+S_TIPO_ENQUADRAMENTO_-
+RENDAid_tipo_-
+enquadramento_-
+rendainteger ID de identificação de tipo
+enquadramento rendaNão
+S_TIPO_ENTIDADE_-
+CADASTRADORAid_tipo_-
+entidade_-
+cadastradorainteger ID de identificação de tipo
+entidade cadastradoraNão
+S_TIPO_ESCOLARIDADE id_tipo_-
+escolaridadeinteger ID de identificação de tipo
+escolaridadeNão
+S_TIPO_ESTADO_CIVIL id_tipo_estado_-
+civilinteger ID de identificação de tipo
+estado civilNão
+S_TIPO_ETNIA id_tipo_etnia integer ID de identificação de tipo etnia Não
+S_TIPO_LOCALIZACAO_AREA id_tipo_-
+localizacao_areainteger ID de identificação de tipo
+localizao áreaNão
+S_TIPO_LOTE id_tipo_lote integer ID de identificação de tipo lote Não
+S_TIPO_MEMBRO_FAMILIAR id_tipo_membro_-
+familiarinteger ID de identificação de tipo
+membro familiarNão
+S_TIPO_NOTIFICACAO id_tipo_-
+notificacaointeger ID de identificação de tipo
+notificaoNão
+S_TIPO_PERMISSAO id_tipo_-
+permissaointeger ID de identificação de tipo
+permissoNão
+S_TIPO_RENDA id_origem_renda integer ID de identificação de origem
+rendaNão
+S_TIPO_SITUACAO_-
+GERACAO_ARQUIVOid_tipo_-
+situacao_-
+geracao_arquivointeger ID de identificação de tipo
+situao gerao arquivoNão
+S_TIPO_SITUACAO_PESSOA_-
+JURIDICAid_tipo_-
+situacao_-
+pessoa_juridicainteger ID de identificação de tipo
+situao pessoa jurdicaNão
+S_TIPO_SITUACAO_-
+UNIDADE_FAMILIARid_tipo_-
+situacao_-
+unidade_familiarinteger ID de identificação de tipo
+situao unidade familiarNão
+Continua na próxima página...
+12
+
+--- Página 13 ---
+Papel de Trabalho PT-A04-04 - Auditoria CAF TCU
+Tabela 7 – continuação da página anterior
+Tabela Campo Tipo Descrição Tem
+Uni-
+dade?
+S_TIPO_SUSPENSAO id_tipo_-
+suspensaointeger ID de identificação de tipo
+suspensoNão
+S_TIPO_TELEFONE id_tipo_telefone integer ID de identificação de tipo
+telefoneNão
+S_TIPO_TERRENO_UFPR id_tipo_-
+terreno_ufprinteger ID de identificação de tipo
+terreno UFPRNão
+S_TIPO_UNIDADE_MEDIDA id_tipo_-
+unidade_medidainteger ID de identificação de tipo
+unidade de medidaNão
+S_UNIDADE_FAMILIAR id_tipo_-
+situacao_-
+unidade_familiarinteger ID de identificação de tipo
+situao unidade familiarNão
+S_UNIDADE_FAMILIAR id_motivo_-
+inativacaointeger ID de identificação de motivo
+inativaoNão
+S_UNIDADE_FAMILIAR id_tipo_-
+terreno_ufprinteger ID de identificação de tipo
+terreno UFPRNão
+S_UNIDADE_FAMILIAR id_-
+caracterizacao_-
+areainteger ID de identificação de
+caracterizao áreaNão
+S_UNIDADE_FAMILIAR id_publico_-
+tradicionalinteger ID de identificação de publico
+tradicionalNão
+S_UNIDADE_FAMILIAR_-
+ENQUADRAMENTO_RENDAid_tipo_-
+enquadramento_-
+rendainteger ID de identificação de tipo
+enquadramento rendaNão
+S_UNIDADE_FAMILIAR_-
+PESSOAid_tipo_membro_-
+familiarinteger ID de identificação de tipo
+membro familiarNão
+S_UNIDADE_FAMILIAR_-
+TIPO_TERRENOid_tipo_-
+terreno_ufprinteger ID de identificação de tipo
+terreno UFPRNão
+S_USUARIO id integer ID de identificação da migration Não
+S_USUARIO timestamp bigint Data de execuo Não
+13

@@ -1,0 +1,368 @@
+{
+  "meta": {
+    "descricao": "Índice de Normas de Auditoria do TCU (NAT) mapeadas para requisitos operacionais",
+    "fonte": "common/nat_tcu/normas_auditoria_nat_tcu.md",
+    "manual": "common/nat_tcu/Manual_auditoria_operacional_4_edicao.pdf",
+    "versao": "1.0",
+    "data": "2025-10-25"
+  },
+
+  "requisitos_gerais": {
+    "NAT_129": {
+      "numero": 129,
+      "titulo": "Requisitos de Qualidade dos Relatórios",
+      "requisitos": [
+        {
+          "codigo": "CLAREZA",
+          "descricao": "Produzir textos de fácil compreensão, evitar jargão, usar frases curtas",
+          "validacao": "Frases ≤30 palavras, siglas definidas em glossário",
+          "criticidade": "AVISO"
+        },
+        {
+          "codigo": "CONVICÇÃO",
+          "descricao": "Expor achados com firmeza, evitar palavras que denotem insegurança",
+          "validacao": "Evitar: 'supõe-se', 'parece que', 'talvez', 'aparentemente'",
+          "criticidade": "AVISO"
+        },
+        {
+          "codigo": "CONCISÃO",
+          "descricao": "Linguagem sucinta, máximo de informações de forma breve",
+          "validacao": "Relatório ≤30 páginas, parágrafos ≤10 linhas",
+          "criticidade": "AVISO"
+        },
+        {
+          "codigo": "COMPLETUDE",
+          "descricao": "Apresentar toda informação necessária para satisfazer objetivos",
+          "validacao": "Relações entre objetivos, critérios, achados e conclusões expressas claramente",
+          "criticidade": "CRÍTICA"
+        },
+        {
+          "codigo": "EXATIDÃO",
+          "descricao": "Apresentar evidências necessárias para sustentar achados",
+          "validacao": "Cálculos corretos, citações exatas, dados verificáveis",
+          "criticidade": "CRÍTICA"
+        },
+        {
+          "codigo": "RELEVÂNCIA",
+          "descricao": "Expor apenas o que tem importância dentro do contexto",
+          "validacao": "Fatos contribuem para conclusões e resultam em propostas",
+          "criticidade": "AVISO"
+        },
+        {
+          "codigo": "TEMPESTIVIDADE",
+          "descricao": "Emitir relatórios tempestivamente",
+          "validacao": "Cumprir prazos previstos sem comprometer qualidade",
+          "criticidade": "AVISO"
+        },
+        {
+          "codigo": "OBJETIVIDADE",
+          "descricao": "Apresentar evidências de forma imparcial, tom equilibrado",
+          "validacao": "Evitar adjetivos/advérbios que impliquem crítica sem suporte",
+          "criticidade": "CRÍTICA"
+        }
+      ]
+    }
+  },
+
+  "estrutura_achado": {
+    "NAT_138": {
+      "numero": 138,
+      "titulo": "Apresentação dos Achados - Matriz de Achados",
+      "descricao": "Estrutura completa de cada achado usando matriz de achados como papel de trabalho",
+      "aspectos": [
+        {
+          "ordem": "I",
+          "nome": "Descrição/Título do Achado",
+          "skill_responsavel": null,
+          "criticidade": "CRÍTICA",
+          "observacao": "Título claro e descritivo do achado"
+        },
+        {
+          "ordem": "II",
+          "nome": "Situação Encontrada",
+          "skill_responsavel": "tcu-secao-ii-situacao",
+          "secao": "II",
+          "criticidade": "CRÍTICA",
+          "observacao": "Descrição factual do que foi encontrado, com quantificação"
+        },
+        {
+          "ordem": "III",
+          "nome": "Objetos nos quais foi constatado",
+          "skill_responsavel": "tcu-secao-ii-situacao",
+          "secao": "II",
+          "criticidade": "CRÍTICA",
+          "observacao": "Identificação dos objetos/processos onde o achado foi verificado"
+        },
+        {
+          "ordem": "IV",
+          "nome": "Critério de Auditoria Adotado",
+          "skill_responsavel": "tcu-secao-i-criterios",
+          "secao": "I",
+          "criticidade": "CRÍTICA",
+          "observacao": "Norma legal ou técnica que estabelece o que deveria ser"
+        },
+        {
+          "ordem": "V",
+          "nome": "Evidências",
+          "skill_responsavel": "tcu-secao-iii-evidencias",
+          "secao": "III",
+          "criticidade": "CRÍTICA",
+          "observacao": "Provas que sustentam o achado (rastreáveis e reprodutíveis)"
+        },
+        {
+          "ordem": "VI",
+          "nome": "Causas",
+          "skill_responsavel": "tcu-secao-iv-causas",
+          "secao": "IV",
+          "criticidade": "CRÍTICA",
+          "observacao": "Por que ocorreu (causas-raiz, não sintomas)"
+        },
+        {
+          "ordem": "VII",
+          "nome": "Efeitos Reais ou Potenciais",
+          "skill_responsavel": "tcu-secao-v-efeitos",
+          "secao": "V",
+          "criticidade": "CRÍTICA",
+          "observacao": "Consequências já materializadas ou riscos"
+        },
+        {
+          "ordem": "VIII",
+          "nome": "Responsável",
+          "skill_responsavel": null,
+          "criticidade": "CRÍTICA",
+          "observacao": "Qualificação, conduta, nexo causal e culpabilidade"
+        },
+        {
+          "ordem": "IX",
+          "nome": "Esclarecimentos dos Responsáveis",
+          "skill_responsavel": null,
+          "criticidade": "AVISO",
+          "observacao": "Manifestações formais dos responsáveis (se houver)"
+        },
+        {
+          "ordem": "X",
+          "nome": "Conclusão da Equipe",
+          "skill_responsavel": "tcu-secao-vi-conclusao",
+          "secao": "VI",
+          "criticidade": "CRÍTICA",
+          "observacao": "Resposta às questões de auditoria, generalização"
+        },
+        {
+          "ordem": "XI",
+          "nome": "Proposta de Encaminhamento",
+          "skill_responsavel": "tcu-secao-vii-propostas",
+          "secao": "VII",
+          "criticidade": "CRÍTICA",
+          "observacao": "Determinações/Recomendações focadas no 'quê', não no 'como'"
+        }
+      ]
+    }
+  },
+
+  "conclusoes": {
+    "NAT_156": {
+      "numero": 156,
+      "titulo": "Conclusão - Resposta à Questão Fundamental",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Trazer resposta à questão fundamental da auditoria (objetivo) e às questões do escopo",
+      "criticidade": "CRÍTICA"
+    },
+    "NAT_157": {
+      "numero": 157,
+      "titulo": "Força das Conclusões",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Conclusões dependem de evidências suficientes e adequadas + lógica sólida",
+      "criticidade": "CRÍTICA"
+    },
+    "NAT_158": {
+      "numero": 158,
+      "titulo": "Conclusões como Afirmações Deduzidas",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Conclusões são afirmações deduzidas dos achados, considerando efeitos",
+      "criticidade": "CRÍTICA"
+    },
+    "NAT_159": {
+      "numero": 159,
+      "titulo": "Generalização dos Resultados",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Mencionar expressamente se resultados podem ou não ser generalizados",
+      "detalhes": {
+        "159.1": "Amostra probabilística → generalização possível (com IC informado)",
+        "159.2": "Amostra não probabilística → sem generalização (conclusões aplicam-se apenas aos elementos examinados)"
+      },
+      "criticidade": "CRÍTICA"
+    },
+    "NAT_160": {
+      "numero": 160,
+      "titulo": "Conclusões em Auditorias Operacionais",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Destacar de forma equilibrada: pontos fortes, oportunidades de melhoria, benefícios esperados. Relatar dificuldades e iniciativas positivas dos gestores",
+      "criticidade": "CRÍTICA"
+    },
+    "NAT_161": {
+      "numero": 161,
+      "titulo": "Benefício Total Estimado",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Relatar benefício total estimado das propostas. Pode incluir considerações sobre o trabalho realizado",
+      "criticidade": "AVISO"
+    },
+    "NAT_162": {
+      "numero": 162,
+      "titulo": "Impacto nas Contas",
+      "skill": "tcu-secao-vi-conclusao",
+      "requisito": "Indicar eventual impacto dos achados nas contas das entidades auditadas",
+      "criticidade": "AVISO"
+    }
+  },
+
+  "propostas": {
+    "NAT_163": {
+      "numero": 163,
+      "titulo": "Consistência e Referências das Propostas",
+      "skill": "tcu-secao-vii-propostas",
+      "requisito": "Propostas consistentes com achados, decorrentes logicamente, focadas nas causas. Indicar entre parênteses os números dos parágrafos onde achados foram apresentados",
+      "criticidade": "CRÍTICA",
+      "exemplo": "Determinar à entidade X que... (parágrafos 27, 32 e 45)"
+    },
+    "NAT_164": {
+      "numero": 164,
+      "titulo": "Tipos de Proposta",
+      "skill": "tcu-secao-vii-propostas",
+      "requisito": "Podem ser formuladas: recomendações, determinações, medidas saneadoras, medidas cautelares, etc.",
+      "criticidade": "AVISO"
+    },
+    "NAT_165": {
+      "numero": 165,
+      "titulo": "Foco no 'Quê', Não no 'Como'",
+      "skill": "tcu-secao-vii-propostas",
+      "requisito": "Propostas devem focar 'o quê' deve ser aperfeiçoado/corrigido, não 'o como' (discricionariedade do gestor)",
+      "criticidade": "CRÍTICA",
+      "excecao": "Exceto quando se justifica proposta específica (ex: alterar legislação)"
+    },
+    "NAT_166": {
+      "numero": 166,
+      "titulo": "Requisitos para Determinações",
+      "skill": "tcu-secao-vii-propostas",
+      "requisito": "Determinações exigem avaliação de requisitos indispensáveis (conforme norma específica)",
+      "criticidade": "CRÍTICA"
+    }
+  },
+
+  "validacoes_secoes": {
+    "secao_i_criterios": {
+      "skill": "tcu-secao-i-criterios",
+      "nats_aplicaveis": [],
+      "validacoes_criticas": [
+        "Critérios legais específicos (Art. X, não lei genérica)",
+        "Hierarquia normativa respeitada (Lei → Decreto → Portaria)",
+        "Questões em formato interrogativo e negrito"
+      ],
+      "validacoes_aviso": [
+        "Contexto muito longo (>3 parágrafos)",
+        "Questões muito amplas ou vagas"
+      ]
+    },
+    "secao_ii_situacao": {
+      "skill": "tcu-secao-ii-situacao",
+      "nats_aplicaveis": ["NAT_129_OBJETIVIDADE", "NAT_140"],
+      "nat_140_descricao": "Relatar achados descrevendo natureza e extensão. Quantificar em termos de população/casos examinados e valor monetário",
+      "validacoes_criticas": [
+        "Quantificação presente (%, valores absolutos, IC)",
+        "Tom factual (sem opiniões ou adjetivos valorativos)",
+        "Exemplos concretos incluídos"
+      ],
+      "validacoes_aviso": [
+        "Falta de intervalo de confiança em estatísticas",
+        "Ausência de tamanho de amostra (n=X)"
+      ]
+    },
+    "secao_iii_evidencias": {
+      "skill": "tcu-secao-iii-evidencias",
+      "nats_aplicaveis": ["NAT_138_V"],
+      "validacoes_criticas": [
+        "Rastreabilidade total (hashes SHA-256 para arquivos digitais)",
+        "Cada afirmação da Seção II tem evidência correspondente",
+        "Referências cruzadas claras",
+        "Reprodutibilidade (informações para reexecutar análises)"
+      ],
+      "validacoes_aviso": [
+        "Falta de datas de extração",
+        "Evidências sem responsável pela coleta"
+      ]
+    },
+    "secao_iv_causas": {
+      "skill": "tcu-secao-iv-causas",
+      "nats_aplicaveis": ["NAT_138_VI", "NAT_163"],
+      "validacoes_criticas": [
+        "Causas explicam 'por quê', não 'o quê'",
+        "Fundamentação em evidências",
+        "Causas atacáveis por propostas"
+      ],
+      "validacoes_aviso": [
+        "Causas muito genéricas",
+        "Falta de síntese de interconexão"
+      ]
+    },
+    "secao_v_efeitos": {
+      "skill": "tcu-secao-v-efeitos",
+      "nats_aplicaveis": ["NAT_138_VII"],
+      "validacoes_criticas": [
+        "Distinção clara: Efeitos Reais vs. Riscos",
+        "Linguagem assertiva (reais) vs. cautelosa (riscos)",
+        "Efeitos derivam logicamente da situação encontrada"
+      ],
+      "validacoes_aviso": [
+        "Falta de quantificação de impacto",
+        "Riscos sem probabilidade estimada"
+      ]
+    },
+    "secao_vi_conclusao": {
+      "skill": "tcu-secao-vi-conclusao",
+      "nats_aplicaveis": ["NAT_156", "NAT_157", "NAT_158", "NAT_159", "NAT_160", "NAT_161", "NAT_162"],
+      "validacoes_criticas": [
+        "Todas as questões de Seção I respondidas",
+        "Generalização explícita (NAT 159)",
+        "Visão equilibrada (NAT 160): pontos fortes + oportunidades",
+        "Conclusões deduzidas dos achados (NAT 158)"
+      ],
+      "validacoes_aviso": [
+        "Falta de benefícios esperados (NAT 161)",
+        "Ausência de impacto nas contas (NAT 162)"
+      ]
+    },
+    "secao_vii_propostas": {
+      "skill": "tcu-secao-vii-propostas",
+      "nats_aplicaveis": ["NAT_163", "NAT_164", "NAT_165", "NAT_166"],
+      "validacoes_criticas": [
+        "Mapeamento Causa → Proposta completo (NAT 163)",
+        "Referências a parágrafos entre parênteses (NAT 163)",
+        "Foco no 'quê', não no 'como' (NAT 165)",
+        "Determinações com prazo, Recomendações sem prazo"
+      ],
+      "validacoes_aviso": [
+        "Proposta muito genérica",
+        "Falta de justificativa para determinação vs. recomendação"
+      ]
+    }
+  },
+
+  "matriz_achados": {
+    "descricao": "Consolidação de todas as seções (I-VII) em formato tabular estruturado",
+    "skill": "tcu-matriz-achados",
+    "entrada": [
+      "secoes/secao_I.md",
+      "secoes/secao_II.md",
+      "secoes/secao_III.md",
+      "secoes/secao_IV.md",
+      "secoes/secao_V.md",
+      "secoes/secao_VI.md",
+      "secoes/secao_VII.md"
+    ],
+    "saida": "matriz_achados.md (ou .docx)",
+    "colunas": [
+      {"nome": "Aspecto", "fonte": "NAT 138", "largura": "15%"},
+      {"nome": "Conteúdo", "fonte": "Seções I-VII", "largura": "85%"}
+    ],
+    "formato": "Tabela com 11 linhas (aspectos I-XI) consolidando informações das seções"
+  }
+}

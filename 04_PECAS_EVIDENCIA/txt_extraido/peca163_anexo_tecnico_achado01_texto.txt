@@ -1,0 +1,1452 @@
+--- Página 1 ---
+Em relação ao Achado I, entende -se necessário contextualizar os apontamentos constantes 
+do relatório preliminar à luz do marco normativo aplicável e da dinâmica operacional do processo de 
+inscrição no Cadastro Nacional da Agricultura Familiar – CAF.  
+A análise individualizada dos casos examinados indica que parte relevante das ocorrências 
+classificadas como documentação “Parcialmente Adequada(P)” ou “Inadequada(I)” demanda 
+reavaliação, especialmente quando considerada a norma vigente à época da emissão  do respectivo 
+cadastro.  
+Para os cadastros emitidos no período de 20/12/2022 até 28/06/2023  devem ser analisados à 
+luz da Portaria MAPA nº 293, de 19 de dezembro de 2022, na qual merece destaque o disposto em seu 
+art. 13, que admitia a apresentação de documentação complementar e outros elementos aptos à 
+formação da convicção do agente responsável pela inscrição. Nessas situações, a avaliação da 
+adequação documental não pode se limi tar à leitura isolada de um único arquivo ou documento, 
+devendo considerar o conjunto probatório apresentado no cadastro e o regime normativo então 
+vigente.  
+Os casos submetidos à Portaria MDA nº 20, de 27 de junho de 2023, vigente de 28/06/2023 até  
+25/03/2025 , e alterada em 02/07/2024 pela Portaria MDA nº 29 /2024, a aferição da elegibilidade 
+deveria observar os requisitos previstos no art. 5º, relativos à área do estabelecimento, à 
+predominância de mão de obra familiar, à origem da renda bruta familiar e à gestão familiar da unidade 
+produtiva. Além disso, o a rt. 14 da mesma Portaria autorizava expressamente o cadastrador a solicitar 
+documentos complementares ou  admitir outros elementos probatórios aptos a comprovar o exercício 
+da atividade rural em regime de agricultura familiar, a origem e formação da renda bruta, o tamanho da 
+área do estabelecimento e o endereço residencial dos gestores da unidade familiar.  
+Esse aspecto é relevante porque, em diversos casos analisados, a suficiência probatória não 
+decorria de um único documento isoladamente considerado, mas do conjunto documental constante 
+do processo de inscrição. Verificou -se, em diferentes situações, que i nformações relevantes estavam 
+distribuídas em páginas distintas do mesmo arquivo ou em documentos complementares anexados 
+ao cadastro, de modo que a conclusão pela inadequação documental, sem exame da integralidade do 
+acervo probatório, pode conduzir a int erpretação incompleta da realidade do caso concreto.  
+Por sua vez, para os cadastros emitidos sob a vigência da Portaria nº 19, de 21 de março de 
+2025, a análise documental deve observar o disposto em seu art. 15, que passou a disciplinar de forma 
+mais objetiva a documentação obrigatória a ser anexada, inclui ndo comprovantes de propriedade, 
+posse ou relação de uso da terra, comprovantes das rendas declaradas e declaração de veracidade 
+das informações prestadas. Ademais, a referida Portaria, em seus arts. 22 e 23, passou a prever 
+mecanismos de validação das inf ormações declaradas mediante cruzamento com bases públicas, 
+saneamento de inconsistências e apuração posterior da veracidade das informações.  
+Dessa forma, entende -se que a conclusão quanto à inadequação documental não pode ser 
+generalizada sem a devida consideração de três fatores: i) o normativo vigente à época da inscrição; ii) 
+a análise da integralidade dos documentos e arquivos anexados ao c adastro; e iii) a sistemática 
+regulamentar aplicável, que admitia complementação documental como meio legítimo de formação 
+da convicção do cadastrador.  
+Conforme demonstrado na tabela a seguir, elaborada a partir da análise individualizada dos 
+registros constantes na Peça 103 , parcela relevante dos casos apontados pela auditoria apresenta 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 2 ---
+elementos que recomendam revisão da conclusão originalmente atribuída, seja pela existência de 
+documentação complementar no próprio processo, seja pela necessidade de enquadramento do caso 
+concreto segundo a norma vigente à época da inscrição.  
+Assim, os elementos examinados sugerem que parte das situações apontadas no relatório 
+preliminar não decorre, necessariamente, de ausência de documentação hábil à comprovação da 
+elegibilidade da agricultura familiar, mas, em diversos casos, de leitura parc ial dos documentos 
+apresentados ou de avaliação dissociada do regime normativo vigente ao tempo da constituição do 
+cadastro. Por essa razão, considera -se que a extensão das fragilidades apontadas no Achado I deve 
+ser avaliada com cautela, evitando -se gener alizações que possam não refletir adequadamente as 
+especificidades jurídicas e operacionais do processo de inscrição no CAF.  
+A tabela a seguir apresenta 53 dos 646 documentos analisados, incluindo informações 
+essenciais para localização e rastreabilidade. Arquivo utilizado: relatorio_smart_20251006_194134, 
+restando as seguintes colunas:  
+• ID 
+• ID_DOCUMENTO  
+• NOME DOCUMENTO  
+• TIPO ESPERADO  
+• ADEQUAÇÃO  
+• CLASSIFICAÇÃO_BD  
+• DATA CRIAÇÃO  
+ 
+Foram adicionadas as seguintes colunas com comentários deste Departamento:  
+• DATA DE ATIVAÇÃO  
+• SISTEMA OPERACIONAL  
+• PORTARIA VIGENTE  
+• ADEQUAÇÃO DCAF  
+• ANÁLISE ADEQUAÇÃO DCAF  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 3 ---
+Tabela 1 – Análise de Adequação Funcional  de Documentos  Comprobat órios  
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+13 1714db6f -
+efc5 -4fe5 -
+b9a8 -
+a01357b7f10a  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  29/08/2023  29/08/2023  CAF 2.0  MDA nº20/23  Adequado  Importa destacar que o cadastro foi 
+ativado em 29/08/2023 e, portanto, 
+submetia -se ao disposto no art. 14 da 
+Portaria nº 20, de 27/06/2023, vigente à 
+época. Referido dispositivo autorizava o 
+cadastrador, quando entendesse 
+necessário, a solicitar a apresent ação de 
+documentos complementares para 
+comprovação da renda bruta.  
+18 35657f86 -
+6c3a -429f -
+b037 -
+4b4f66675d45  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  25/11/2024  25/11/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O documento analisado possui 5 
+páginas. Na quarta página, consta um 
+contrato de comodato em que figura 
+como comodatário o Sr. Idílio Antônio de 
+Souza, relativo a uma área de 5 ha, em 
+conformidade com o registro constante 
+no sistema. Importa destacar, ainda , que 
+a ativação foi realizada em 25/11/2024 e, 
+portanto, estava sujeita ao disposto no 
+art. 14 da Portaria nº 20, de 27/06/2023.  
+20 b298f2ed -
+1e3c -45ba -
+ba18 -
+83ae2defb719  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  20/09/2024  20/09/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O documento analisado possui 5 
+páginas. Na quinta página, consta 
+documento emitido pelo ITERPA 
+referente ao título de propriedade em 
+nome de Clécio Cardoso Batista, com 
+área de 2,43 ha, em correspondência 
+com a informação registrada no sistema.  
+ 
+Verifica -se que a documentação 
+apresentada está em conformidade com 
+a Portaria nº 29, de 02/07/2024, que 
+alterou a Portaria nº 20, de 27/06/2023, 
+especialmente quanto ao disposto na 
+alínea “b” do inciso I do art. 8º, que 
+prevê, para a inscrição da Unidade 
+Familiar d e Produção Agrária, a 
+apresentação de cópia de 
+documentação comprobatória da 
+propriedade, admitindo -se, para esse 
+fim, entre outros, certidão de matrícula 
+do imóvel, escritura pública, Cadastro 
+Nacional de Imóveis Rurais (CNIR) ou 
+Imposto sobre a Proprieda de Territorial 
+Rural (ITR).  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 4 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+32 1c646077 -
+765c -4db0 -
+97ca -
+8cb92777efad  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  24/07/2024  24/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Por se tratar de documento manuscrito 
+genérico, não se enquadraria nas 
+categorias regulamentares específicas 
+de comprovação de renda.  
+ 
+Entretanto, verifica -se que a análise do 
+caso deve observar a Portaria nº 20, de 
+27/06/2023, vigente à época da ativação 
+do cadastro. Nos termos do art. 14 da 
+referida Portaria, o cadastrador poderia, 
+quando considerasse necessário, 
+solicitar a apresentaçã o de documentos 
+complementares ou prova testemunhal 
+aptos a comprovar, entre outros 
+aspectos, a origem e a formação da 
+renda bruta.  
+41 a5faf210 -fbd6 -
+4845 -9057 -
+37b89852bb3
+3 Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  26/06/2023  26/06/2023  CAF 2.0  MAPA 
+nº293/22  Adequado  Conforme análise, o documento 
+apresentado consiste em “Contrato 
+Particular de Compromisso de Compra e 
+Venda”, devidamente identificado e 
+registrado em cartório, mas não previsto 
+expressamente no rol do art. 8º, alínea 
+“c”, da Portaria MDA nº 19/2025.  
+ 
+Entretanto, verifica -se que a análise do 
+caso deve observar a norma vigente à 
+época da ativação do cadastro, ocorrida 
+em 26/06/2023, portanto anterior à 
+publicação da Portaria nº 20, de 
+27/06/2023. Nessa situação, aplica -se a 
+Portaria MAPA nº 293, de 19/12 /202 2, 
+especialmente o art. 13, que autorizava o 
+cadastrador, quando entendesse 
+necessário, a solicitar documentos 
+complementares ou prova testemunhal 
+aptos a comprovar, entre outros 
+aspectos, o exercício da atividade rural, a 
+origem e formação da renda bruta,  o 
+tamanho da área do estabelecimento e o 
+endereço residencial dos gestores  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 5 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+49 395df4b3 -
+72b3 -480f -
+bb14 -
+31dbef9345c6  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  09/04/2024  09/04/2024  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, o documento 
+apresentado está bem estruturado e 
+contém informações claras, tendo sido 
+apontado, contudo, que haveria 
+inadequação regulatória em razão do 
+excesso em relação ao limite de renda 
+previsto na Portaria MDA nº 19/2025 para 
+autodeclarações de renda familiar.  
+ 
+Entretanto, verifica -se que a análise do 
+caso deve considerar a norma vigente à 
+época da ativação do cadastro, qual seja, 
+a Portaria nº 20, de 27/06/2023. À época, 
+não havia previsão de limite de renda 
+específico para es se tipo de documento. 
+Ademais, o art. 14 da referida Portaria 
+autorizava o cadastrador, quando 
+entendesse necessário, a solicitar 
+documentos complementares ou prova 
+testemunhal aptos a comprovar, entre 
+outros aspectos, a origem e a formação 
+da renda bruta.  
+56 f102b384 -
+d343 -4696 -
+aa39 -
+0eafb6180617  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A PARCIALMENT
+E_ADEQUADO  INCORRETA_E_
+INADEQUADA  12/09/2023  12/09/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, o documento 
+apresentado é claramente identificável 
+como extrato do INSS, com dados 
+estruturados e legíveis, tendo sido 
+apontado, contudo, que não se 
+enquadraria nos tipos específicos de 
+comprovação de renda exigidos pela 
+regulament ação do CAF.  
+ 
+Entretanto, verifica -se que a análise do 
+caso deve observar a Portaria nº 20, de 
+27/06/2023, vigente à época da ativação 
+do cadastro. Nos termos do art. 14 da 
+referida Portaria, o cadastrador poderia, 
+quando considerasse necessário, 
+solicitar  a apresentação de documentos 
+complementares ou prova testemunhal 
+aptos a comprovar, entre outros 
+aspectos, a origem e a formação da 
+renda bruta.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 6 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+92 b443dec1 -
+bb19 -4eef -
+aaf8 -
+37ef02378c2d  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  20/08/2024  20/08/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Conforme análise do TCU, o documento 
+apresentado é claramente identificável 
+como conta de energia elétrica, em razão 
+do cabeçalho da concessionária, dos 
+dados de consumo, do código de barras 
+para pagamento, tendo sido apontado, 
+contudo, que não estaria inc luído entre 
+os documentos expressamente aceitos 
+pela Portaria.  
+ 
+Entretanto, verifica -se que, no caso de 
+pescadores artesanais, a área do 
+estabelecimento pode ser igual a zero, 
+razão pela qual se admite, para fins 
+cadastrais, a apresentação de 
+comprovante d e endereço. Tal 
+entendimento encontra amparo na 
+Portaria nº 20, de 27/06/2023, com 
+alterações posteriores, especialmente 
+nos §§ 2º e 3º do art. 3º.  
+ 
+Nos termos do § 2º, os pescadores 
+artesanais devem atender 
+simultaneamente aos requisitos 
+estabelecidos nos incisos II, III e IV do 
+art. 3º da Lei nº 11.326, de 24 de julho de 
+2006. Já o § 3º dispõe que, na hipótese 
+de pescadores artesanais que 
+desenvolvam  a atividade sem 
+combinação com produção 
+agropecuária, a área do estabelecimento 
+será considerada igual a z ero para fins do 
+cumprimento do inciso I do art. 3º do 
+Decreto nº 9.064, de 31 de maio de 2017.  
+10
+7 6278b8d5 -
+368a -4246 -
+85a2 -
+ea1f40e00dbc  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  17/10/2023  17/10/2023  CAF 2.0  MDA nº20/23  Adequado  O documento consiste em documento 
+oficial do INSS e a Portaria MDA nº 
+19/2025 não preveê benefícios 
+previdenciários entre os documentos 
+expressamente aceitos como 
+comprovantes de renda para fins de 
+inscrição no CAF.  
+ 
+Entretanto, verifica -se que a análise do 
+caso deve observar a Portaria nº 20, de 
+27/06/2023, vigente à época da ativação 
+do cadastro. Nos termos do art. 14 da 
+referida Portaria, o cadastrador poderia, 
+quando considerasse necessário, 
+solicitar a apresentaçã o de documentos 
+complementares ou prova  testemunhal 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 7 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+aptos a comprovar, entre outros 
+aspectos, a origem e a formação da 
+renda bruta.  
+10
+8 ca8493cb -
+5d8e -4cc7 -
+85a2 -
+510e9be3c9a5  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  30/12/2024  30/12/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O documento apresentado consiste em 
+Espelho do Beneficiário do Programa 
+Nacional da Reforma Agrária, no qual 
+consta o nome da agricultora na 
+condição de assentada no 
+PA067900000025. Trata -se, portanto, de 
+documento apto a comprovar a condição 
+de beneficiár ia do PNRA.  
+ 
+Verifica -se que a documentação 
+apresentada está em conformidade com 
+o art. 9º da Portaria nº 20, de 
+27/06/2023, que estabelece, para a 
+inscrição no CAF de Unidade Familiar de 
+Produção Agrária e Empreendimento 
+Familiar Rural beneficiário do Pro grama 
+Nacional de Reforma Agrária, a exigência 
+de pelo menos um dos documentos ali 
+previstos, entre os quais se inclui a 
+certidão de beneficiário do PNRA.  
+11
+1 9aa6fcdd -
+64d9 -458e -
+af8e -
+e731a1b44764  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  16/03/2024  16/03/2024  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, o documento 
+apresentado consiste em declaração 
+oficial da FUNAI, apta a demonstrar o 
+exercício de atividade agrícola e a 
+vinculação do interessado ao território 
+indígena, embora não corresponda, de 
+forma literal, ao rol específico de 
+documentos de propriedade ou posse 
+previsto na Portaria MDA nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+indicada no cadastro. Nos termos do art. 
+14 da referida Portaria, o cadastrador 
+podia admitir documento s 
+complementares aptos a comprovar, 
+entre outros aspectos, o exercício da 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 8 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+atividade rural e o tamanho da área do 
+estabelecimento.  
+15
+5 f1fcaa30 -5f5a -
+40e5 -a330 -
+c6080fbc993e  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  07/03/2025  07/03/2025  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Conforme análise do TCU, o documento 
+principal é uma carteira profissional de 
+pescador artesanal, a qual, 
+isoladamente, não comprovaria relação 
+com imóvel rural.  
+ 
+Entretanto, tratando -se de pescador 
+artesanal indígena, aplica -se a disciplina 
+específica da Portaria nº 20, de 
+27/06/2023, com alterações posteriores, 
+especialmente os §§ 2º e 3º do art. 3º, 
+segundo os quais a área pode ser 
+considerada igual a zero quando  a 
+atividade não é combinada com 
+produção agropecuária. Além disso, o 
+arquivo contém declaraç ão de 
+pertencimento indígena, elemento que 
+reforça a vinculação territorial e o 
+enquadramento do beneficiário.  
+18
+3 51e32ae3 -
+738e -483b -
+ac71 -
+4d232df56586  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  16/05/2024  16/05/2024  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração está formalmente 
+regular e informa renda bruta de R$ 
+130.000,00, razão pela qual foi 
+considerada inadequada à luz da Portaria 
+MDA nº 19/2025 mais restritiva.  
+ 
+Entretanto, a análise do caso deve 
+considerar a Portaria nº 20, de 
+27/06/2023, indicada no cadastro. 
+Segundo a interpretação adotada na 
+análise, não havia, nesse contexto, limite 
+específico de valor para a utilização da 
+autodeclaração de renda, e o art. 14  
+admitia a apresentação de documentos 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 9 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+complementares para comprovação da 
+renda bruta.  
+18
+4 bdd634a9 -
+e473 -4122 -
+92cb -
+236b156d555
+8 Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A PARCIALMENT
+E_ADEQUADO  INCORRETA_E_
+INADEQUADA  09/09/2024  10/09/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O documento apresentado consiste em 
+declaração oficial emitida pela 
+Secretaria da Fazenda do Estado de 
+Santa Catarina, contendo informações 
+de comercialização de produtos rurais.  
+ 
+Trata -se de documento produzido por 
+órgão público e com conteúdo apto a 
+corroborar a renda declarada. Nesse 
+contexto, ainda que não conste 
+expressamente do rol mais restritivo da 
+Portaria MDA nº 19/2025, a 
+documentação pode ser aceita como 
+meio idôneo de c omprovação da renda, 
+especialmente em razão da natureza 
+oficial e da confiab ilidade das 
+informações prestadas.  
+18
+5 70221716 -
+7eb0 -4c47 -
+b502 -
+6e5731a05959  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  22/01/2025  03/02/2025  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Conforme análise do TCU, o documento 
+apresenta valores claros e foi 
+considerado inadequado apenas em 
+razão de limite previsto na Portaria MDA 
+nº 19/2025.  
+ 
+Entretanto, considerando a normativa 
+indicada no cadastro - Portaria nº 20, de 
+27/06/2023, com alterações da Portaria 
+nº 29, de 02/07/2024 -, a interpretação 
+adotada foi a de que ainda não havia 
+limite específico de valor para a 
+utilização da autodeclaraçã o de renda. 
+Nessa perspectiva, o documento pode 
+ser admitido para comprovação da 
+renda.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 10 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+20
+5 72165fe5 -
+7860 -443f -
+9430 -
+83eb8105e0c1  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  28/08/2023  19/10/2023  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 8 páginas. Nas quatro 
+últimas consta escritura pública do Sítio 
+Tabuleiro, em nome do agricultor 
+cadastrado, documento idôneo para 
+comprovação da propriedade da terra. A 
+pequena divergência de área em relação 
+ao CAR não afasta, por si só, a aptidão do 
+título apresentado.  
+ 
+Considerando a Portaria nº 20, de 
+27/06/2023, indicada no cadastro, a 
+documentação é suficiente para amparar 
+a relação do beneficiário com o imóvel 
+rural.  
+20
+9 0d0bf200 -
+fc12 -4811 -
+a3fa -
+c5c8ead5a1a4  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  20/02/2024  30/04/2025  CAF 2.0  MDA nº20/23  Adequado  O documento apresentado consiste em 
+contrato particular de compra e venda de 
+imóvel rural, com reconhecimento 
+cartorial de firmas.  
+ 
+Embora não se enquadre no rol mais 
+restritivo da Portaria MDA nº 19/2025, a 
+análise do caso considerou a Portaria nº 
+20, de 27/06/2023, cujo art. 14 admitia 
+documentos complementares aptos a 
+comprovar o tamanho da área e a relação 
+com o imóvel. Sob essa pe rspectiva, o 
+documento pode ser aceito como 
+elemento de comprovação.  
+23
+0 eb9133fc -
+61ae -433b -
+8189 -
+ca44d1f1c925  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  23/07/2024  04/02/2025  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Conforme análise do TCU, o documento 
+apresenta dados financeiros claros, 
+assinatura e identificação do declarante, 
+tendo sido considerada inadequação 
+apenas em razão de limite de renda 
+previsto na Portaria MDA nº 19/2025.  
+ 
+Entretanto, considerando a normativa 
+indicada no cadastro - Portaria nº 20, de 
+27/06/2023, com alterações da Portaria 
+nº 29, de 02/07/2024 -, a interpretação 
+adotada foi a de que ainda não havia 
+limite específico de valor para a 
+utilização da autodeclaraçã o de renda. 
+Nessa linha, o docume nto pode ser 
+admitido para comprovação da renda.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 11 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+25
+3 7920d42c -
+e839 -4ede -
+a30a -
+a67ef993e2db  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  PARCIALMENT
+E_ADEQUADO  INCORRETA_E_
+INADEQUADA  03/07/2024  03/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O arquivo possui 6 páginas. Embora a 
+primeira contenha declaração emitida 
+por sindicato, nas páginas 2 e 4 constam, 
+respectivamente, o ITR e o CCIR, 
+documentos aptos a comprovar a 
+relação com o imóvel rural.  
+ 
+Assim, à luz da Portaria nº 20, de 
+27/06/2023, com as alterações 
+posteriores, a documentação 
+apresentada é suficiente para 
+comprovação da terra.  
+27
+6 6439eaa4 -
+d584 -4b23 -
+a1cb -
+90c748a089ad  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  26/06/2024  26/06/2024  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 6 páginas. As cinco 
+primeiras reúnem informações 
+previdenciárias do INSS, e a última 
+contém autodeclaração de renda com 
+valores coincidentes com os lançados no 
+sistema.  
+ 
+Considerando a normativa à época, ou 
+seja, a Portaria 20 de 27/06/23, a 
+documentação complementar é 
+suficiente para amparar a comprovação 
+da renda.  
+27
+7 924e9444 -
+fd9e -4813 -
+9bd7 -
+1ce99d7dc1d5  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  08/10/2024  08/10/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O arquivo possui 8 páginas. Embora a 
+primeira apresente declaração de posse 
+emitida por sindicato, na página 5 consta 
+CCIR em nome da agricultora, 
+documento idôneo para comprovação da 
+relação com a terra.  
+ 
+A documentação, portanto, mostra -se 
+suficiente à luz da Portaria nº 20, de 
+27/06/2023, com as alterações 
+posteriores.  
+27
+9 3c094aa6 -
+18b2 -498c -
+bee1 -
+bc88ff0eec4b  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  26/07/2024  26/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Embora o documento analisado não 
+contenha informações de renda, há no 
+próprio cadastro outro anexo consistente 
+em autodeclaração de renda com valores 
+coincidentes com os lançados no 
+sistema: https://caf3 -mda -prod.s3.sa -
+east -1.amazonaws.com/604bd9db -
+9ed8 -4711-b02c -1fd3829085c6 -
+1729087142266.pdf.  
+ 
+Assim, considerando a Portaria nº 20, de 
+27/06/2023, com as alterações da 
+Portaria nº 29, de 02/07/2024, a 
+documentação é suficiente para 
+comprovação da renda.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 12 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+28
+1 716f453a -29ff -
+4872 -97d1 -
+39f878085825  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  26/06/2024  26/06/2024  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração é legível e traz os dados 
+necessários à conferência, tendo sido 
+considerada inadequada apenas em 
+razão de limite de valor previsto na 
+Portaria MDA nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+indicada no cadastro, sob cuja 
+interpretação não havia limite específico 
+de valor para utilização da 
+autodeclaração de renda.  
+28
+7 a675dbe3 -
+6031 -4c02 -
+985a -
+3c3e0d56a47a  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  19/12/2023  21/12/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a carteira de 
+pescador profissional, isoladamente, não 
+comprovaria relação com imóvel rural.  
+ 
+Entretanto, no caso de pescador 
+artesanal, aplica -se a disciplina 
+específica dos §§ 2º e 3º do art. 3º da 
+Portaria nº 20, de 27/06/2023, com 
+alterações posteriores, segundo a qual a 
+área pode ser considerada igual a zero 
+quando a atividade não se combina c om 
+produção agropecuária. Nessa hipótese, 
+o comprovante da condição de pescador 
+artesanal, associado aos demais 
+elementos cadastrais, pod e ser admitido 
+para fins de enquadramento.  
+29
+0 8d65ac1f -
+8ef8 -40cd -
+bdaa -
+f94c1d9dc5a7  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  02/09/2024  02/09/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O arquivo possui 5 páginas. Embora a 
+primeira traga apenas documento do 
+CAR, nas páginas 4 e 5 consta registro de 
+imóvel em nome de Gilson Oliveira da 
+Costa, documento idôneo para 
+comprovação da propriedade.  
+ 
+Assim, a documentação atende à 
+Portaria nº 20, de 27/06/2023, com as 
+alterações posteriores.  
+30
+5 ad43a53d -
+16da -49c4 -
+bfea -
+5d9d238e9863  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  25/07/2023  08/12/2023  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 6 páginas. Embora a 
+primeira contenha apenas o CAR, nas 
+páginas 5 e 6 consta contrato de 
+arrendamento em nome do agricultor, 
+apto a demonstrar a relação jurídica com 
+o imóvel rural.  
+ 
+À luz da Portaria nº 20, de 27/06/2023, a 
+documentação complementar é 
+suficiente para amparar o vínculo com a 
+terra.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 13 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+33
+7 799676af -
+6778 -4d6a -
+bbd2 -
+b4d1099f3e69  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  06/11/2023  06/11/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração apresenta valores 
+expressos e foi considerada inadequada 
+apenas em razão de limite regulamentar 
+previsto na Portaria MDA nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+indicada no cadastro. Nos termos da 
+interpretação adotada, não havia limite 
+específico de valor para a utilização da 
+autodeclaração de renda, razão pela qual 
+o documento pode ser admitido.  
+33
+8 025c224f -
+1ab9 -4485 -
+9146 -
+dbeb7ba7f9cf  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  05/05/2023  [NULL]  CAF 2.0  MAPA 
+nº293/22  Adequado  O arquivo possui 3 páginas. Embora a 
+primeira corresponda apenas a 
+documento de identificação pessoal, na 
+terceira consta declaração de 
+residência/permanência em terra 
+indígena.  
+ 
+Tratando -se de pessoa indígena, a 
+análise do enquadramento não se 
+restringe à prova clássica de propriedade 
+imobiliária, devendo ser considerados os 
+elementos que demonstrem o vínculo 
+territorial e o exercício da atividade rural. 
+Nessa linha, a documentaçã o pode ser 
+admitida à luz da Portaria MAPA nº 293, 
+de 19/12/2022, aplicável a o caso.  
+36
+7 06b42521 -
+7dee -4dcf -
+b07e -
+1ad61188ccf3  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  28/11/2023  07/12/2023  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 5 páginas. Embora a 
+primeira contenha apenas o CAR, nas 
+páginas 4 e 5 constam o ITR e recibo de 
+compra e venda relativos ao imóvel. O 
+ITR é documento idôneo para 
+comprovação da relação com a terra, 
+ainda que exista divergência de área em 
+relação ao CAR.  
+ 
+Assim, a documentação atende à 
+Portaria nº 20, de 27/06/2023.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 14 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+38
+6 ab45fe45 -
+a9bc -45ae -
+b5fc -
+cbe0ad47f785  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  12/07/2024  12/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Embora o documento analisado seja uma 
+certidão de casamento, sem 
+informações de renda, há no próprio 
+cadastro outro anexo consistente em 
+autodeclaração de renda com valores 
+coincidentes com os lançados no 
+sistema: https://caf3 -mda -prod.s3.sa -
+east -1.amazona ws.com/ae2ed76d -ccc8 -
+4b55 -94e6 -cfa7e843879e -
+1730930969348.pdf.  
+ 
+Dessa forma, considerando a Portaria nº 
+20, de 27/06/2023, com as alterações da 
+Portaria nº 29, de 02/07/2024, a 
+documentação é suficiente para 
+comprovação da renda.  
+38
+9 1c3e88bf -
+b026 -4cd5 -
+9644 -
+16a42209b5fa  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  24/11/2023  24/11/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração apresenta identificação, 
+valores, assinatura e data, tendo sido 
+considerada inadequada apenas em 
+razão de limite previsto na Portaria MDA 
+nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+indicada no cadastro, sob cuja 
+interpretação a autodeclaração podia ser 
+admitida para comprovação da renda.  
+41
+5 dc761bbe -
+439d -4744 -
+bf7b -
+05a340ca6edc  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  01/08/2023  21/12/2023  CAF 2.0  MDA nº20/23  Adequado  O documento apresentado consiste em 
+declaração de posse por simples 
+ocupação, contendo identificação da 
+agricultora, localização do imóvel e 
+tempo de posse.  
+ 
+Embora não corresponda, de forma 
+literal, ao rol mais restritivo da Portaria 
+MDA nº 19/2025, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+cujo art. 14 admitia documentos 
+complementares aptos a comprovar a 
+posse e o tamanho da área do 
+estabelecimento. Nessa perspectiva, a 
+documentação pode ser aceita.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 15 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+42
+0 32e72a23 -
+af55 -4222 -
+89fb -
+b4c47ce07ff9  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  21/07/2023  21/07/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração informa renda total de 
+R$ 206.070,00, tendo sido considerada 
+inadequada apenas em razão de limite 
+previsto na Portaria MDA nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+considerar a Portaria nº 20, de 
+27/06/2023, indicada no cadastro. 
+Segundo a interpretação adotada, não 
+havia limite específico de valor para 
+utilização da autodeclaração de renda, e 
+o art. 14 permitia a complementação da 
+prova da renda bruta.  
+42
+5 6c0fc597 -
+0700 -4da1 -
+941e -
+e7a51ea6fe99  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  21/12/2022  #N/D  
+02/03/26  CAF 1.0  MAPA 
+nº293/22  Adequado  O documento apresentado consiste em 
+espelho da unidade familiar no 
+SIPRA/PNRA, no qual constam a 
+identificação da beneficiária, a condição 
+de assentada e os dados do lote rural.  
+ 
+Embora não se trate de título dominial, o 
+documento é apto a evidenciar a 
+condição de beneficiária do Programa 
+Nacional de Reforma Agrária e a 
+vinculação ao lote. Considerando a 
+Portaria MAPA nº 293, de 19/12/2022, 
+cuja sistemática admitia documentos 
+compl ementares, a documentação pode 
+ser aceita para comprovação da relação 
+com a t erra.  
+44
+3 402ee2af -
+8a87 -48ca -
+b839 -
+e60c04aa33f2  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  29/01/2024  02/02/2024  CAF 2.0  MDA nº20/23  Adequado  O documento apresentado consiste em 
+recibo de compra e venda de fração de 
+terra, assinado e com reconhecimento 
+de firma.  
+ 
+Embora não se enquadre no rol mais 
+restritivo da Portaria MDA nº 19/2025, a 
+análise do caso considerou a Portaria nº 
+20, de 27/06/2023, cujo art. 14 admitia 
+documentos complementares aptos a 
+comprovar o tamanho da área e a relação 
+com o imóvel rural. Sob e ssa 
+perspectiva, o documento pode ser 
+aceito como elemento de comprovação.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 16 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+44
+5 8cb7dacd -
+04e9 -43a1 -
+8520 -
+3bc29ab67e61  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  04/07/2023  04/07/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, o documento 
+teria sido considerado inadequado em 
+razão de renda muito superior ao limite 
+de autodeclaração. Contudo, na 
+conferência do cadastro verificou -se que 
+o valor efetivamente lançado no sistema 
+é de R$ 204.200,00, coincident e com o 
+valor do documento, não tendo sido 
+localizada a renda de R$ 804.200,00 
+mencionada na auditoria.  
+ 
+Além disso, considerando a Portaria nº 
+20, de 27/06/2023, indicada no cadastro, 
+a autodeclaração podia ser admitida 
+como documento complementar de 
+comp rovação da renda.  
+45
+2 d97c7659 -
+c388 -45f4 -
+8300 -
+fa0cf4cee43c  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  16/07/2024  16/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Embora o documento analisado seja 
+extrato do CNIS, sem comprovação 
+direta de renda rural, há no próprio 
+cadastro outro anexo consistente em 
+autodeclaração de renda com valores 
+coincidentes com os lançados no 
+sistema: https://caf3 -mda -prod.s3.sa -
+east -1.amaz onaws.com/c089061e -1f03 -
+408c -a151 -cc9c104a12d5 -
+1729065557074.pdf.  
+ 
+Assim, considerando a Portaria nº 20, de 
+27/06/2023, com as alterações da 
+Portaria nº 29, de 02/07/2024, a 
+documentação é suficiente para 
+comprovação da renda.  
+45
+3 3cce5fb4 -
+fdd5 -4d31 -
+b4e5 -
+8812d3375836  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  18/11/2024  18/11/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O arquivo possui 9 páginas. Embora a 
+auditoria tenha apontado ausência de 
+conteúdo suficiente, verifica -se que as 
+páginas do instrumento estão fora de 
+ordem, mas compõem um conjunto 
+documental passível de leitura. Além 
+disso, consta ITR em nome da 
+agricult ora, referente a imóvel de 15,2 
+ha, área próxima à declarada no sistema.  
+ 
+Assim, considerando a Portaria nº 20, de 
+27/06/2023, com as alterações 
+posteriores, a documentação é suficiente 
+para comprovação da relação com a 
+terra.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 17 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+46
+1 91e35ad8 -
+aba6 -4eb8 -
+aa8a -
+0153514e082a  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  23/01/2025  24/01/2025  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Embora a primeira página do arquivo 
+corresponda a uma CNH, na página 6 
+consta autodeclaração de renda com 
+valores compatíveis com os lançados no 
+sistema.  
+ 
+Nessas condições, a documentação 
+complementar é suficiente para 
+comprovação da renda, conforme a  
+Portaria nº 20, de 27/06/2023.  
+46
+3 f8e2c3f7 -
+3d69 -4a35 -
+b204 -
+4b529bd53ad
+d Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  12/12/2023  12/12/2023  CAF 2.0  MDA nº20/23  Adequado  O documento apresentado consiste em 
+formulário oficial da EMPAER -PB para 
+levantamento de renda no âmbito do 
+CAF, contendo identificação do 
+beneficiário, detalhamento da atividade 
+rural, assinatura e data.  
+ 
+Embora o TCU tenha apontado que o 
+formulário não integra o rol específico da 
+Portaria MDA nº 19/2025, a análise do 
+caso deve observar a Portaria nº 20, de 
+27/06/2023, indicada no cadastro, cujo 
+art. 14 admitia documentos 
+complementares aptos a comprovar a 
+origem e a formação da renda bruta.  
+47
+0 67fb6c61 -
+83c0 -41a8 -
+b39b -
+89800efd79fd  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  24/07/2024  24/07/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Conforme análise do TCU, o documento 
+está devidamente identificado e 
+preenchido, com assinatura e valor 
+declarado claramente visível, tendo sido 
+considerada inadequação apenas em 
+razão de limite previsto na Portaria MDA 
+nº 19/2025.  
+ 
+Entretanto, considerando a normativa 
+indicada para o cadastro - Portaria nº 20, 
+de 27/06/2023, com alterações da 
+Portaria nº 29, de 02/07/2024 -, a 
+interpretação adotada foi a de que ainda 
+não havia limite específico de valor para 
+utilização da autodeclara ção de renda. 
+Nessa per spectiva, o documento pode 
+ser admitido.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 18 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+48
+0 f8a3cd05 -
+c5d9 -4f18 -
+ae5b -
+c3993a5eeaa5  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  04/01/2024  04/01/2024  CAF 2.0  MDA nº20/23  Adequado  Embora a primeira página do arquivo 
+traga recibo de pagamento de salário, as 
+páginas 2 a 16 contêm notas fiscais de 
+venda de produtos, em consonância com 
+os valores lançados no sistema.  
+ 
+Assim, a documentação complementar é 
+suficiente para comprovação da renda à 
+luz da Portaria nº 20, de 27/06/2023.  
+49
+5 1c420d28 -
+0fa5 -4705 -
+851b -
+d05986c913df  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  17/09/2024  17/10/2025  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O documento inicialmente analisado 
+refere -se ao pagamento do Garantia -
+Safra, que, isoladamente, não esgota a 
+comprovação da renda. Entretanto, há no 
+cadastro outro anexo consistente em 
+declaração de renda: https://caf3 -mda -
+prod.s3.sa -east -
+1.amazonaws.com/d daa3ec1 -1939 -
+4a58 -8ecf -d36dc9f6ace2 -
+1729193208348.pdf.  
+ 
+Considerando a atualização cadastral 
+informada e a Portaria nº 20, de 
+27/06/2023 vigente à época, a 
+documentação complementar é 
+suficiente para amparar a comprovação 
+da renda.  
+49
+7 ba1177b2 -
+499b -4768 -
+a822 -
+4746fd42b51b  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  07/05/2024  11/11/2024  CAF 2.0  MDA nº20/23  Adequado  Embora o documento analisado seja 
+extrato do CNIS, há no cadastro outro 
+anexo consistente em autodeclaração de 
+renda: https://caf3 -mda -prod.s3.sa -east -
+1.amazonaws.com/addc83ac -a5e1 -
+4a6b -866a -cfae11fb5a96 -
+1743802912350.pdf.  
+ 
+Considerando a Portaria nº 20, de 
+27/06/2023 aplicada à atualização 
+cadastral, a documentação 
+complementar é suficiente para 
+comprovação da renda.  
+51
+4 da99343c -
+b555 -4e2e -
+9f53 -
+68e0355b6cec  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  11/01/2024  11/01/2024  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 6 páginas. Nas duas 
+primeiras consta contrato de compra e 
+venda em que o agricultor figura como 
+beneficiário; nas páginas 5 e 6 constam 
+ITR e CCIR, todos referentes à área de 
+28,7 ha.  
+ 
+Trata -se, portanto, de conjunto 
+documental suficiente para comprovar a 
+relação com a terra, à luz da Portaria nº 
+20, de 27/06/2023.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 19 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+53
+3 8b9cbdde -
+52e7 -48a0 -
+ab36 -
+853d946ba185  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  08/04/2024  08/04/2024  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, o documento 
+é claro e apresenta valores objetivos de 
+renda, embora não corresponda 
+exatamente ao rol mais restritivo da 
+Portaria MDA nº 19/2025.  
+ 
+Entretanto, considerando a Portaria nº 
+20, de 27/06/2023, indicada no cadastro, 
+o art. 14 admitia documentos 
+complementares aptos a comprovar a 
+renda bruta, razão pela qual o formulário 
+pode ser aceito.  
+54
+6 1b8adb38 -
+9903 -4253 -
+92b4 -
+0523ce38ac5e  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  18/10/2024  18/10/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  O arquivo possui 13 páginas. Embora a 
+primeira apresente apenas o CAR, na 
+página 8 consta contrato de compra e 
+venda em nome do agricultor, referente à 
+área de 20,7 tarefas.  
+ 
+Considerando a Portaria nº 20, de 
+27/06/2023, com as alterações 
+posteriores, o documento complementar 
+é suficiente para amparar a relação com 
+o imóvel rural.  
+55
+0 13f9d1cb -
+5327 -4b5b -
+9de5 -
+0af578bc41e6  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  03/09/2024  03/09/2024  CAF 2.0  MDA nº20/23 e 
+29/24  Adequado  Embora o documento analisado seja 
+holerite, há no cadastro outro anexo 
+consistente em autodeclaração de 
+renda: https://caf3 -mda -prod.s3.sa -east -
+1.amazonaws.com/91f1ff8b -99f6 -4c58 -
+92c8 -a0dc1b391540 -
+1729164353540.pdf.  
+ 
+Considerando a Portaria nº 20, de 
+27/06/2023, com as alterações 
+posteriores, a documentação 
+complementar é suficiente para 
+comprovação da renda.  
+56
+5 2095ee0b -
+19d6 -4d72 -
+aa99 -
+b121faaf3097  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  22/11/2022  22/07/2025  CAF 1.0  MAPA 
+nº293/22  Adequado  Embora o documento inicialmente 
+analisado seja holerite, há no cadastro 
+outro anexo contendo diversos 
+comprovantes de venda compatíveis 
+com os valores declarados no sistema: 
+https://caf3 -mda -prod.s3.sa -east -
+1.amazonaws.com/afbb9bc5 -ca91 -
+4b73 -9f59 -6157ead69 8c7 -
+1727543049041.pdf.  
+ 
+Considerando a Portaria MAPA nº 293, de 
+19/12/2022, aplicável ao caso, a 
+documentação complementar é 
+suficiente para comprovação da renda.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 20 ---
+id id_documento  nome_document
+o tipo_esperado  adequacao  classificacao_
+bd data_criacao  DATA DE ATIVAÇÃO  SISTEMA EM 
+OPERAÇAO   PORTARIA 
+VIGENTE  ADEQUAÇÃO 
+DCAF  ANÁLISE ADEQUAÇÃO DCAF  
+56
+6 37e8f1b6 -
+aef8 -4ee0 -
+9613 -
+a502d057d6e4  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  03/10/2023  03/10/2023  CAF 2.0  MDA nº20/23  Adequado  Conforme análise do TCU, a 
+autodeclaração apresenta informações 
+claras e renda declarada de R$ 
+95.444,00, tendo sido considerada 
+inadequada apenas em razão de limite 
+previsto na Portaria MDA nº 19/2025.  
+ 
+Entretanto, a análise do caso deve 
+observar a Portaria nº 20, de 27/06/2023, 
+indicada no cadastro, sob cuja 
+interpretação a autodeclaração podia ser 
+admitida para comprovação da renda.  
+60
+3 7f3a6b38 -
+f761 -4cfb -
+a86c -
+c14325be90aa  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A PARCIALMENT
+E_ADEQUADO  INCORRETA_E_
+INADEQUADA  10/04/2024  10/04/2024  CAF 2.0  MDA nº20/23  Adequado  Embora o documento analisado seja 
+extrato do CNIS, há no cadastro outro 
+anexo consistente em autodeclaração de 
+renda familiar com valores coincidentes 
+com os lançados no sistema: 
+https://caf3 -mda -prod.s3.sa -east -
+1.amazonaws.com/4f241a05 -780f -4988 -
+a5a9 -e638 56a0ba9e -
+1729888431044.pdf.  
+ 
+Considerando a Portaria nº 20, de 
+27/06/2023, indicada no cadastro, a 
+documentação complementar é 
+suficiente para comprovação da renda.  
+61
+5 833586b7 -
+9227 -4274 -
+8dd1 -
+2783af886e11  Documento do 
+Imóvel ou de 
+Relação com a 
+Terra.pdf  DOCUMENTO_IMOVEL  INADEQUADO  INCORRETA_E_
+INADEQUADA  19/02/2024  19/02/2024  CAF 2.0  MDA nº20/23  Adequado  O arquivo possui 4 páginas. Embora a 
+primeira apresente apenas o CAR, na 
+quarta consta Termo de Comodato Rural 
+em nome do agricultor, referente à área 
+de 5,45 ha.  
+ 
+À luz da Portaria nº 20, de 27/06/2023, o 
+documento complementar é suficiente 
+para demonstrar a relação jurídica com o 
+imóvel rural.  
+61
+9 55613cb7 -
+1209 -4d90 -
+ba34 -
+f00d3f271e0e  Comprovante de 
+renda.pdf  COMPROVANTE_REND
+A INADEQUADO  INCORRETA_E_
+INADEQUADA  27/03/2023  31/01/2025  CAF 2.0  MAPA 
+nº293/22  Adequado  Embora a primeira página do arquivo 
+corresponda a requerimento para 
+emissão do CAF, a segunda contém 
+autodeclaração de renda familiar com 
+valores coincidentes com os lançados no 
+sistema.  
+ 
+Considerando a Portaria MAPA nº 293, de 
+19/12/2022, aplicável ao caso, a 
+documentação complementar é 
+suficiente para comprovação da renda.  
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.
+
+--- Página 21 ---
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990630.

@@ -1,0 +1,76 @@
+--- Página 1 ---
+MINISTÉRIO DA AGRICULTURA E PECUÁRIA
+SECRETARIA EXECUTIVA
+SUBSECRETARIA DE TECNOLOGIA DA INFORMAÇÃO
+COORDENAÇÃO - GERAL DE INOVAÇÃO E TRANSFORMAÇÃO DIGITAL
+ 
+OFÍCIO Nº 76/2025/C GDSD/S TI/SE/MAP A
+Brasília, na da ta da assina tura ele trônic a.
+Ao Senhor
+Dieg o Doniz etti Gonç alves Machado
+Subsecretário de Planejamen to, Orçamen to e Adminis tração
+Ministério do Desenvolvimento Agrário e Agricultura Familiar
+ 
+Assun to:  Ofício 000.356/2025 - AudTI - T C 011.073/2025-0 - Dilig ência - Audit oria em andamen to.
+ 
+Senhor Sub secretário,
+ 
+1. Em atenção ao Ofício MDA nº 90 (SEI nº 45772292), por meio do qual solicit a-se o apoio
+deste Minis tério da Agricultur a e Pecuária (MAP A) no fornecimen to de informaç ões relacionadas à
+audit oria em curso no âmbit o do Tribunal de Contas da União (TCU), referente ao Processo TC
+011.073/2025-0, informamos que a Subsecretaria de Tecnologia da Informaç ão (STI/MAP A), por
+intermédio de sua equipe técnic a, envidou esforços para atender , dentro do prazo estabelecido , às
+demandas elenc adas no Ofício 000.356/2025 – AudTI (SEI nº 45688308).
+2. No tocante ao item a (Divergência quan to ao númer o de tabelas existentes), prestamos os
+seguin tes esclar ecimen tos:
+a)Atualmen te, encontram-se em uso 95 tabelas no banc o de dados do CAF 3.0,
+devidamen te descrit as no dicionário de dados a tualiz ado.
+b)As tabelas que inicia vam com os preﬁxos tb_ e id_ correspondiam a estrutur as
+tempor árias, utiliz adas em processos de migr ação e testes, e já foram remo vidas da base
+de dados.
+c)A tabela S_MO TIVO_INA TIVACAO, não contemplada na documen tação anteriormen te
+enviada, f oi incluída na v ersão a tualiz ada, já disponibiliz ada à equipe de audit oria.
+d)Para subsidiar a análise, foram disponibiliz ados, via FTPS do domínio
+agricultur a.gov.br (com acessos previamen te enviados), o dicionário de dados
+atualiz ado, o modelo de dados e um dump da base r evisado.
+3. Com relação ao item b (Registros de documen tos anexados com links expirados),
+informamos que os links permanecem válidos, porém demandam credenciais especíﬁc as para acesso.
+Para viabiliz ar a análise, foi criado acesso individual ao audit or Fernando Lima Gama Júnior , cujos dados
+de aut enticação foram en viados dir etamen te ao mesmo.
+4. Reiteramos que permanecemos à disposiç ão para fornecer informaç ões complemen tares e
+adot ar medidas adicionais que se façam necessárias, reaﬁrmando o compr omisso deste Minis tério com a
+transpar ência e c om o a tendimen to integral às de terminaç ões dos ór gãos de c ontrole.
+ 
+Respeit osamen te,
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78957544.
+
+--- Página 2 ---
+EDUARDO ALMEIDA DA LUZ AMORIM
+Coordenador de Desenvolvimento de Aplicações
+ 
+ 
+De ac ordo.
+ 
+LILIANE PEREIRA DOS SANTOS
+Subsecretária de Tecnologia da Informação - Substituta 
+ 
+ 
+ 
+ 
+Documento assinado eletronicamente por EDUARDO ALMEIDA DA LUZ AMORIM, Coordenador (a),
+em 18/09/2025, às 12:14, conforme horário oﬁcial de Brasília, com fundamento no art. 4º,§ 3º, do
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por Liliane Pereira dos Santos, Subsecretária de Tecnologia da
+Informação - Substituta, em 18/09/2025, às 14:51, conforme horário oﬁcial de Brasília, com
+fundamento no art. 4º,§ 3º, do Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 , informando o código veriﬁcador 45798933
+e o código CRC 9455351C.
+ 
+Ministério A P E Abastecimento ANEXO B, 2O ANDAR 000000, Anexo, Ala B  - Bairro Zona Cívico-Administrativa –
+Telefone:    
+CEP 70043900 Brasília/DF 
+Referência:  Processo nº 55000.012930/2025-64 SEI nº 45798933
+Criado por alana.alencar , versão 3 por alana.alencar  em 18/09/2025 1 1:08:09.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78957544.

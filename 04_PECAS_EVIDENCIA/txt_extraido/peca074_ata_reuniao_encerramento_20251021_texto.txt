@@ -1,0 +1,224 @@
+--- Página 1 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 1 
+ATA DA REUNIÃO 
+Nome do órgão ou entidade participante: Data: 
+Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA) 
+Tribunal de Contas da União (TCU) 
+Controladoria-Geral da União (CGU) 21/10/2025 
+ 
+SUMÁRIO DA REUNIÃO 
+Participantes Nome: Fernando Lima Gama Júnior, Cargo/Função: Coordenador da 
+equipe de fiscalização do TCU 
+Nome: Sylvio Xavier Júnior, Cargo/Função: Integrante da equipe de 
+fiscalização do TCU 
+Nome: Harley Alves Ferreira, Cargo/Função: Supervisor da equipe de 
+fiscalização do TCU 
+Nome: Tatiana Freitas de Oliveira, Cargo/Função: Chefe da AECI do 
+MDA 
+Nome: Michelle Inacio da Silva, Cargo/Função: Representante da AECI do 
+MDA e responsável por demandas do TCU e CGU 
+Nome: Glaucio Coimbra Cardoso, Cargo/Função: PO do sistema do CAF 
+Nome: Frederico Augusto Del Isola e Diniz, Cargo/Função: Representante 
+da CGTI do MDA 
+Nome: Bruno Martins da Silva, Cargo/Função: Coordenador-Geral da 
+CGAGR da CGU 
+ 
+Eduardo Santos de Souza, Cargo/Função: Chefe de divisão da CGAGR da 
+CGU 
+Objetivos 1. O objetivo principal desta reunião foi apresentar formalmente os 
+achados finais da auditoria operacional realizada pelo Tribunal de Contas da 
+União (TCU) na base de dados do Sistema CAF (Cadastro da Agricultura 
+Familiar). Trata-se de uma etapa metodológica obrigatória das auditorias 
+operacionais do TCU, onde os achados consolidados são apresentados aos 
+gestores antes da emissão do relatório definitivo. A equipe de auditoria 
+reduziu os achados preliminares de 17 para 11 achados principais, 
+consolidando e enxugando as questões identificadas para tornar o relatório 
+mais objetivo e focado nos problemas mais críticos. 
+2. Além da apresentação dos achados, a reunião teve como objetivo 
+discutir as propostas de encaminhamento e recomendações que serão 
+formalizadas no relatório final, previsto para ser entregue ao MDA no final 
+de novembro de 2025. Os auditores enfatizaram a importância de uma 
+abordagem colaborativa, solicitando que os gestores avaliem a 
+plausibilidade das recomendações propostas, considerando restrições 
+técnicas, orçamentárias e de prazo. Também foi discutido o prazo para 
+apresentação dos comentários gestores, inicialmente de 15 dias, mas 
+estendido para aproximadamente 30 dias devido ao período de recesso de 
+final de ano. 
+3. A reunião também serviu para esclarecer ajustes metodológicos 
+realizados em resposta a comentários feitos pelos gestores do MDA na 
+reunião técnica anterior (07/10/2025). Por exemplo, os auditores refizeram 
+análises considerando apenas cadastros ativos (excluindo inativos da base 
+S_UNIDADE_FAMILIAR), respondendo a crítica metodológica do PO 
+Glaucio Coimbra. Também foram esclarecidos aspectos técnicos do sistema 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190672.
+
+--- Página 2 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 2 
+CAF que podem explicar alguns achados, como a possibilidade de 
+pescadores artesanais declararem área zero, aquicultores utilizarem unidade 
+de medida em metros cúbicos, e povos tradicionais (quilombolas, indígenas, 
+extrativistas) poderem ter áreas superiores a 4 módulos fiscais conforme 
+legislação específica. 
+ 
+Resumo 1. A reunião iniciou com uma breve introdução do coordenador 
+Fernando Lima Gama Júnior, explicando o caráter formal e metodológico 
+do encontro como parte do processo de auditoria operacional do TCU. Foi 
+destacado que os achados já haviam sido preliminarmente validados na 
+reunião técnica de 07/10/2025, e que agora seriam apresentados de forma 
+consolidada, tendo sido reduzidos de 17 para 11 achados principais. 
+Fernando enfatizou que esta não é a versão absolutamente final, pois a 
+equipe ainda está redigindo o relatório, mas representa as conclusões quase 
+definitivas do trabalho. Também foi explicado o fluxo: relatório será 
+entregue em final de novembro, os gestores terão um prazo para apresentar 
+comentários (inicialmente 15 dias, possivelmente estendido para 30 dias 
+devido ao recesso), e posteriormente o TCU monitorará a implementação 
+das recomendações em um prazo que pode variar de seis meses a um ano, 
+dependendo da complexidade. 
+2. Os auditores apresentaram os 11 achados finais de forma resumida, 
+com destaque para os principais problemas identificados. Achado 1: Não 
+conformidade com módulos fiscais - identificou que 0,66% dos imóveis 
+no CAF 2.0 (aproximadamente 16 mil casos) superavam 4 módulos fiscais, 
+e mesmo após a implementação do CAF 3.0 ainda persistem cerca de 1.026 
+casos. Também foi discutido que aquicultura utiliza metros cúbicos (não é 
+erro, mas característica específica da atividade), e que pescadores artesanais, 
+povos tradicionais, quilombolas e indígenas podem ter áreas zero ou 
+superiores a 4 módulos fiscais por previsão legal. Achado 2: Documentos 
+inadequados - análise por IA (Claude Vision) de uma amostra revelou que 
+19,8% dos documentos são inadequados (RG como documento de imóvel, 
+conta de energia como comprovante de propriedade, extratos vazios, 
+documentos em branco, etc.), além de 5,4% parcialmente inadequados, 
+projetando aproximadamente 2 milhões de documentos problemáticos. 
+Achado 3: Divergências em áreas de imóveis - validação semântica via IA 
+de 201 documentos mostrou que 137 (68%) apresentam divergências entre 
+área cadastrada no banco e área constante no documento, com casos 
+extremos de divergência superior a 1.000% (possivelmente explicados por 
+quilombolas que declaram área total do território vs área produtiva 
+individual). 
+3. Outros achados relevantes apresentados incluem: Achado 4: 
+Problemas em dados cartográficos - identificação de coordenadas 
+geográficas impossíveis, como 3 mil propriedades concentradas exatamente 
+na coordenada central de Salvador/BA (indicando uso de placeholder), 
+propriedades cadastradas em capitais estaduais quando deveriam estar em 
+área rural, e casos de áreas cadastradas superiores à área total do município 
+(exemplo: Penalva/MA com área cadastrada 2 mil vezes maior que a área 
+municipal). Houve melhoria após implementação do Leaflet (ferramenta de 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190672.
+
+--- Página 3 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 3 
+mapeamento interativo), reduzindo propriedades “fora do Brasil” de 1.688 
+para apenas 1 caso, mas erros de município/estado permaneceram altos 
+(32%). Achado 5: Duplicação massiva de propriedades - 285 mil grupos 
+de propriedades absolutamente idênticas (mesmo município, área, unidade 
+de medida), totalizando 2 milhões de duplicações, com casos extremos de 
+até 847 propriedades idênticas. Achado 6: Inconsistências em dados 
+pessoais - mediante cruzamento com bases da Receita Federal e SISOB, 
+foram identificados 85 casos de datas de nascimento no futuro, 346 casos 
+usando placeholder “01/01/1901”, 515 CPFs inexistentes na Receita 
+Federal, 315 beneficiários falecidos com cadastro ativo, 7 responsáveis 
+familiares menores de 16 anos não emancipados, e 35 mil divergências 
+significativas (>80%) entre nomes cadastrados no CAF vs Receita Federal. 
+A equipe do TCU esclareceu que apresentará listas detalhadas (CPFs, IDs 
+de documentos) para que o MDA possa fazer correções caso a caso. 
+Destaques 1. 🎯 Redução de achados de 17 para 11: Equipe de auditoria 
+consolidou e enxugou achados preliminares para tornar relatório mais 
+objetivo e focado nos problemas críticos. 
+2. 📊 Apenas 1.026 casos ativos acima de 4 módulos fiscais no CAF 
+3.0: Houve significativa melhoria em relação ao CAF 2.0 (16 mil casos), 
+demonstrando eficácia dos novos controles sistêmicos implementados. 
+3. 🤖 19,8% de documentos inadequados detectados por IA: 
+Análise via Claude Vision AI identificou aproximadamente 2 milhões de 
+documentos que não comprovam requisitos de elegibilidade (RGs, contas de 
+energia, arquivos em branco, etc.). 
+4. 📐 68% de divergência em áreas de imóveis: Validação semântica 
+de 201 documentos revelou que 137 apresentam divergência entre área 
+cadastrada e área documentada, incluindo casos extremos com divergência 
+superior a 1.000%. 
+5. 🗺️ Melhoria significativa com Leaflet: Coordenadas “fora do 
+Brasil” reduziram de 1.688 para apenas 1 caso, mas erros de 
+município/estado permaneceram em 32% mesmo após implementação. 
+6. 🔄 2 milhões de propriedades duplicadas: Identificados 285 mil 
+grupos de propriedades absolutamente idênticas, com casos extremos de até 
+847 duplicatas do mesmo imóvel. 
+7. 👤 315 beneficiários falecidos com cadastro ativo: Cruzamento 
+triplo entre CAF, Receita Federal e SISOB identificou mortos recebendo 
+benefícios, além de 515 CPFs inexistentes e 35 mil divergências 
+significativas de nome. 
+8. 📅 Prazo estendido para comentários gestores: Inicialmente 15 
+dias, possivelmente estendido para 30 dias devido ao recesso de final de ano, 
+com relatório final previsto para final de novembro/2025. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190672.
+
+--- Página 4 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 4 
+9. 🤝 Abordagem colaborativa enfatizada: TCU solicitou que MDA 
+avalie plausibilidade das recomendações, apontando impossibilidades 
+técnicas ou operacionais, em vez de contestar achados já validados 
+tecnicamente. 
+10. 🔍 Ajustes metodológicos implementados: Equipe refez análises 
+considerando apenas cadastros ativos (filtro pela 
+S_UNIDADE_FAMILIAR) em resposta a críticas metodológicas 
+apresentadas na reunião anterior. 
+Conclusão A reunião de encerramento da auditoria operacional do TCU no Sistema 
+CAF demonstrou uma abordagem técnica e colaborativa, com apresentação 
+formal de 11 achados consolidados que evidenciam problemas de qualidade 
+de dados, governança e controles sistêmicos. Os achados mais críticos 
+incluem documentos inadequados (19,8% da base, projetando 2 milhões de 
+casos), divergências em áreas de imóveis (68% de não conformidade na 
+amostra validada), e dados pessoais inconsistentes (315 falecidos ativos, 515 
+CPFs inexistentes, 35 mil divergências de nome). Houve reconhecimento de 
+melhorias implementadas no CAF 3.0, como redução de propriedades acima 
+de 4 módulos fiscais de 16 mil para 1.026 casos, e correção de coordenadas 
+geográficas fora do Brasil com a implementação do Leaflet. 
+Durante a reunião, ficou evidenciado que muitos problemas identificados 
+originam-se do legado do CAF 2.0, sistema anterior que não possuía 
+validações robustas. O CAF 3.0 implementou melhorias significativas, como 
+integração em tempo real com a base da Receita Federal (BCadastro) para 
+validação de CPF e data de nascimento, ferramenta de mapeamento 
+interativo (Leaflet) que praticamente eliminou cadastros fora do território 
+brasileiro, e controles que impedem cadastro de propriedades acima de 4 
+módulos fiscais (exceto para casos legalmente permitidos como povos 
+tradicionais, quilombolas, indígenas, pescadores artesanais e extrativistas). 
+Contudo, persistem desafios em dados cartográficos (32% de erros de 
+município/estado) e na qualidade dos documentos comprobatórios 
+digitalizados. 
+A equipe do TCU enfatizou o caráter construtivo e não punitivo da auditoria, 
+esclarecendo que o monitoramento será sobre o órgão (MDA) e não sobre 
+pessoas físicas ou gestores individualmente. Foi destacada a importância de 
+os gestores avaliarem a plausibilidade das recomendações que serão 
+formalizadas no relatório final, apontando impossibilidades técnicas, 
+orçamentárias ou operacionais, de modo a construir conjuntamente soluções 
+viáveis. O prazo para implementação das recomendações será de seis meses 
+a um ano, dependendo da complexidade, permitindo que o MDA planeje e 
+execute as melhorias de forma estruturada. A entrega do relatório final está 
+prevista para o final de novembro de 2025, e os gestores terão 
+aproximadamente 30 dias (estendido dos 15 dias iniciais devido ao recesso) 
+para apresentar comentários e sugestões antes da finalização definitiva do 
+documento. 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190672.

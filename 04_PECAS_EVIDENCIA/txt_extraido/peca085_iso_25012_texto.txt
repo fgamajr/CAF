@@ -1,0 +1,687 @@
+--- Página 1 ---
+ 
+ 
+  
+ Reference number
+ISO/IEC 25012:2008(E)
+© ISO/IEC 2008
+  
+ INTERNATIONAL 
+STANDARD ISO/IEC
+25012
+First edition
+2008-12-15
+Software engineering — Software product
+Quality Requirements and Evaluation (SQuaRE) — Data quality model 
+Ingénierie du logiciel — Exigences de qualité et évaluation du produit 
+logiciel (SQuaRE) — Modèle de la qualité des données 
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 2 ---
+ISO/IEC 25012:2008(E) 
+PDF disclaimer 
+This PDF file may contain embedded typefaces. In accordance with Adobe's licensing policy, this file may be printed or viewed b ut 
+shall not be edited unless the typefaces which are embedded are licensed to and installed on the computer performing the editin g. In 
+downloading this file, parties accept therein the responsibility of not infringing Adobe's licensing policy. The ISO Central Se cretariat 
+accepts no liability in this area. 
+Adobe is a trademark of Adobe Systems Incorporated. 
+Details of the software products used to create this PDF file can be found in the General Info relative to the file; the PDF-cr eation 
+parameters were optimized for printing. Every care has been taken to ensure that the file is suitable for use by ISO member bod ies. In 
+the unlikely event that a problem relating to it is found, please inform the Central Secretariat at the address given below. 
+ 
+ COPYRIGHT PROTECTED DOCUMENT  
+ 
+©   ISO/IEC 2008 
+All rights reserved. Unless otherwise specified, no part of this publication may be reproduced or utilized in any form or by an y means, 
+electronic or mechanical, including photocopying and microfilm, without permission in writing from either ISO at the address be low or 
+ISO's member body in the country of the requester. 
+ISO copyright office 
+Case postale 56 • CH-1211 Geneva 20 
+Tel.  + 41 22 749 01 11 
+Fax  + 41 22 749 09 47 
+E-mail  copyright@iso.org Web  www.iso.org 
+Published in Switzerland 
+ 
+ii © ISO/IEC 2008 – All rights reserved
+  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 3 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  iiiContents Page 
+Foreword....................................................................................................................... ..................................... iv  
+Introduc tion ................................................................................................................... ..................................... v  
+1 Scope .......................................................................................................................... ........................... 1  
+2 Conforma nce.................................................................................................................... ..................... 2  
+3 Normative references ........................................................................................................... ................ 2  
+4 Terms and de finiti ons.......................................................................................................... ................. 2  
+5 Data quality................................................................................................................... ......................... 4  
+5.1 Overview ....................................................................................................................... ......................... 4  
+5.1.1 Inherent data  quality.......................................................................................................... ................... 4  
+5.1.2 System dependent data quality.................................................................................................. ......... 4  
+5.2 Data qualit y model............................................................................................................. ................... 4  
+5.3 Data quality characteristics ................................................................................................... .............. 6  
+5.3.1 Inherent point  of view......................................................................................................... .................. 6  
+5.3.2 Inherent and system depe ndent point of view .................................................................................. 7  
+5.3.3 System dependent point of view................................................................................................. ...... 10  
+Annex A  (informative)  Terms and definitions from ISO/IEC 25000 ............................................................. 11  
+Bibliography ................................................................................................................... .................................. 13  
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 4 ---
+ISO/IEC 25012:2008(E) 
+iv © ISO/IEC 2008 – All rights reserved
+ Foreword 
+ISO (the International Organization for Standardization) and IEC (the International Electrotechnical 
+Commission) form the specialized system for worldwide standardization. National bodies that are members of 
+ISO or IEC participate in the development of International Standards through technical committees 
+established by the respective organization to deal with particular fields of technical activity. ISO and IEC technical committees collaborate in fields of mutual interest. Other international organizations, governmental and non-governmental, in liaison with ISO and IEC, also take part in the work. In the field of information technology, ISO and IEC have established a joint technical committee, ISO/IEC JTC 1. 
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2. 
+The main task of the joint technical committee is to prepare International Standards. Draft International 
+Standards adopted by the joint technical committee are circulated to national bodies for voting. Publication as an International Standard requires approval by at least 75 % of the national bodies casting a vote. 
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent 
+rights. ISO and IEC shall not be held responsible for identifying any or all such patent rights. 
+ISO/IEC 25012 was prepared by Joint Technical Committee ISO/IEC JTC 1, Information technology , 
+Subcommittee SC 7, Software and systems engineering . 
+ISO/IEC 25012 is one of the SQuaRE series of International Standards, which consists of the following 
+divisions under the general title Software engineering  — Software product Quality Requirements and 
+Evaluation (SQuaRE):  
+⎯ Quality Management Division (ISO/IEC 2500n), 
+⎯ Quality Model Division (ISO/IEC 2501n), 
+⎯ Quality Measurement Division (ISO/IEC 2502n), 
+⎯ Quality Requirements Division (ISO/IEC 2503n), 
+⎯ Quality Evaluation Division (ISO/IEC 2504n). Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 5 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  vIntroduction 
+The quantity of data and information handled by computer systems is increasing worldwide; data quality is a 
+key component of the quality and usefulness of information derived from that data, and most business 
+processes depend on the quality of data. 
+A common prerequisite to all information technology projects is the quality of the data which are exchanged, 
+processed and used between the computer systems and users and among computer systems themselves. 
+Managing and enhancing the quality of data is important because of: 
+⎯ the acquisition of data from organizations of which the quality of data production process is unknown or 
+weak; 
+⎯ the existence of defective data contributing to unsatisfactory information, unusable results and dissatisfied 
+customers; 
+⎯ the dispersion of such data among various owners and users. Data captured in accordance with the 
+workflow needs of a single organization often lack a coherent and integrated vision which is necessary to ensure interoperability and co-operation; 
+⎯ the need for processing data which are not immediately re-usable because of semantic ambiguity or lack 
+of consistency between such data and other existing co-related data; 
+⎯ the co-existence of legacy architecture and computer systems with distributed systems designed and 
+realized at different times and with different standards; 
+⎯ the existence of information systems (such as the world wide web) where data change frequently and 
+integration is a special issue. 
+The data quality model defined in this International Standard aims to meet these needs, taking into account 
+that the data life cycle is often longer than the software life cycle; it could be used, for example, to: 
+⎯ define and evaluate data quality requirements in data production, acquisition and integration processes; 
+⎯ identify data quality assurance criteria, also useful for re-engineering, assessment and improvement of 
+data; 
+⎯ evaluate the compliance of data with legislation and/or requirements. 
+The detection of errors or inefficiencies due to data gives rise to enhancement and corrective interventions 
+concerning data and other components of the system in which data reside, for example: 
+⎯ data (e.g. redesigning, parsing, cleansing, enriching, transforming, matching); 
+⎯ software (e.g. modifying source programs to implement consistency controls); 
+⎯ hardware (e.g. upgrading a computer system to improve response time); 
+⎯ human business processes (e.g. user training to avoid errors in the data entry process; improvement of 
+accounting processes that manage data). Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 6 ---
+ISO/IEC 25012:2008(E) 
+vi © ISO/IEC 2008 – All rights reserved
+ The data quality model defined in this International Standard is intended to be used in conjunction with the 
+other SQuaRE series International Standards, which are represented in Figure 1 (adapted from ISO/IEC 25000). 
+ 
+ 
+ 
+Figure 1 — Organization of the SQuaRE series of International Standards 
+The divisions within the SQuaRE series are: 
+⎯ ISO/IEC 2500n - Quality Management Division . The International Standards that form this division 
+define all common models, terms and definitions referred to further as all other International Standards from the SQuaRE series. Referring paths (guidance through SQuaRE documents) and high level practical suggestions in applying proper standards to specific application cases provide help to all types of users. The division also provides requirements and guidance for a supporting function which is responsible for the management of software product requirements specification and evaluation. 
+⎯ ISO/IEC 2501n - Quality Model Division . The International Standards that form this division present 
+detailed quality models for software and data. Furthermore, in the software quality model the internal and 
+external quality characteristics are decomposed into subcharacteristics. Practical guidance on the use of the quality models is also provided. 
+⎯ ISO/IEC 2502n - Quality Measurement Division . The International Standards that form this division 
+include a software product quality measurement reference model, mathematical definitions of quality 
+measures, and practical guidance for their application. Presented measures apply to internal software 
+quality, external software quality and quality in use. Quality Measure Elements forming foundations for the 
+latter measures are defined and presented. 
+⎯ ISO/IEC 2503n - Quality Requirements Division . The International Standard that forms this division 
+helps to specify quality requirements. These quality requirements can be used in the process of quality 
+requirements elicitation for a software product to be developed or as input for an evaluation process. The 
+requirements definition process is mapped to technical processes defined in ISO/IEC 15288.  
+ 
+ 
+Quality  
+Requirements  
+Division  
+2503n Quality  
+Management Division  
+2500n Quality Model  
+Division  
+2501n  
+ 
+Quality  
+Evaluation  
+Division  
+2504n 
+Quality  
+Measurement Division  
+2502n
+Extension Division 25050 to 25099Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 7 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  vii⎯ ISO/IEC 2504n - Quality Evaluation Division . The International Standards that form this division provide 
+requirements,  recommendations and guidelines for software product evaluation, whether performed by 
+evaluators, acquirers or developers. The support for documenting a measure as an Evaluation Module is also presented. 
+⎯ ISO/IEC 25050 to ISO/IEC 25099  are reserved for SQuaRE extension International Standards, Technical 
+Specifications, Publicly Available Specifications (PAS) and/or Technical Reports. 
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 8 ---
+Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 9 ---
+INTERNATIONAL STANDARD ISO/IEC 25012:2008(E)
+ 
+© ISO/IEC 2008 – All rights reserved  1Software engineering — Software product Quality 
+Requirements and Evaluation (SQuaRE) — Data quality model 
+1 Scope 
+This International Standard defines a general data quality model for data retained in a structured format within 
+a computer system. 
+This International Standard focuses on the quality of the data as part of a computer system and defines quality 
+characteristics for target data used by humans and systems. 
+Target data are those that the organization decides to analyse and validate through the model; the term non-
+target data covers two cases: the first refers to data that are not persistent such as data handled by an operating system; the second refers to data that could be within the scope of the standard, but an organization chooses to not apply the standard to them. 
+In Figure 2 the structure of a general system is displayed in a diagram: this can include information systems 
+which in turn can include one or more computer systems. 
+ 
+Figure 2 — Target domain of the data quality model 
+This International Standard can be used with other standards in the SQuaRE series to establish data quality 
+requirements, define data quality measures, or plan and perform data quality evaluations. 
+Data quality requirements and data quality measures can be categorized with the data quality characteristics 
+in 5.2 and used by an evaluation process to analyse data independently from other computer system's components.    Information systemSystem  
+Human  
+business  
+Mechanical 
+system  Computer 
+hardware Software  Target 
+Data  Computer system  Communication 
+Non target 
+Data Data Quality Model Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 10 ---
+ISO/IEC 25012:2008(E) 
+2 © ISO/IEC 2008 – All rights reserved
+ This International Standard aims to support the implementation of system's life cycle processes, such as 
+those defined in ISO/IEC 15288. 
+This International Standard takes into account all data types (e.g. character strings, texts, dates, numbers, 
+images, sounds, etc.), assigned data values and relationships between data (e.g. consistency between data in the same or in different entities); the scope does not include data produced by embedded devices or real time sensors that are not retained for further processing or historical purposes. 
+This International Standard does not dictate physical organization of data (i.e. data base management 
+systems); moreover the activities of conceptual, logical and physical schema design are outside the scope of this International Standard; all processes and deliverables related to such data benefit from the application of this International Standard. 
+Conformance of data to the data design is included within the scope of this International Standard. The definition of metadata is addressed by ISO/IEC 11179 and is outside the scope of this International 
+Standard, even if it refers to metadata to evaluate data quality. 
+The relationship of this International Standard to industry- and domain-specific data quality standards and its 
+precedence over these standards are determined by the user in a specific context of use. 
+2 Conformance 
+When this International Standard is used for conformance, the user shall provide evidence that each data quality characteristic in 5.2 has been addressed, give reasons in the event of exclusion, or describe its own categorization of data quality attributes and provide a mapping to the characteristics in 5.2. 
+3 Normative references 
+The following referenced documents are indispensable for the application of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies. 
+ISO/IEC 25000, Software engineering — Software product Quality Requirements and Evaluation 
+(SQuaRE) — Guide to SQuaRE  
+4 Terms and definitions 
+For the purposes of this document, the terms and definitions given in ISO/IEC 25000 and the following apply. 
+4.1 
+computer system 
+system containing one or more components 
+NOTE 1 Components include computers (hardware), associated software and data. 
+NOTE 2 Adapted from ISO/IEC 24765. 
+4.2 
+data 
+reinterpretable representation of information in a formalized manner suitable for communication, interpretation, 
+or processing 
+NOTE 1 Data can be processed by humans or by automatic means. 
+[ISO/IEC 2382-1:1993] Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 11 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  3NOTE 2 The definition in ISO/IEC 25000 is different because it refers to data which relate to the result of the 
+measurement. 
+4.3 
+data quality 
+degree to which the characteristics of data satisfy stated and implied needs when used under specified 
+conditions 
+4.4 
+data quality characteristic category of data quality attributes that bears on data quality 
+4.5 
+data quality measure 
+variable to which a value is assigned as the result of measurement of a data quality characteristic 
+NOTE Adapted from ISO/IEC 15939:2007. 
+4.6 
+data quality model 
+defined set of characteristics which provides a framework for specifying data quality requirements and 
+evaluating data quality 
+4.7 
+data type 
+categorization of an abstract set of possible values, characteristics, and set of operations for an attribute 
+NOTE Adapted from ISO/IEC 2382-17. 
+4.8 
+entity 
+representation of a set of real or abstract things that are recognized as the same type because they share the 
+same characteristics and can participate in the same relationships 
+NOTE Adapted from ISO/IEC 2382-17. 
+4.9 entity instance 
+one of a set of real or abstract things represented by an entity 
+[IEEE 1320.2-1998] 
+4.10 
+information 
+〈information processing 〉 knowledge concerning objects, such as facts, events, things, processes, or ideas, 
+including concepts, that within a certain context have a particular meaning 
+[ISO/IEC 2382-1:1993] 
+NOTE Although information will necessarily have a representation form to make it communicable, it is the 
+interpretation of this representation (the meaning) that is relevant in the first place. 
+4.11 
+information system 
+one or more computer systems and communication systems, together with associated organizational 
+resources such as human, technical, and financial resources, that provide and distribute information 
+NOTE Adapted from ISO/IEC 2382-1:1993. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 12 ---
+ISO/IEC 25012:2008(E) 
+4 © ISO/IEC 2008 – All rights reserved
+ 4.12 
+integrity 
+property of safeguarding the accuracy and completeness of assets 
+[ISO/IEC 13335-1:2004] 
+4.13 
+metadata data that describe other data 
+[ISO/IEC 11179-1:2004] 
+4.14 
+quality measure element 
+measure, which is either a base measure or a derived measure, that is used for constructing software or data 
+quality measures 
+5 Data quality 
+5.1 Overview 
+Data quality is described using a defined data quality model. 
+The data quality model defined in this International Standard categorizes quality attributes into fifteen 
+characteristics considered by two points of view: inherent and system dependent. 
+5.1.1 Inherent data quality 
+Inherent data quality refers to the degree to which quality characteristics of data have the intrinsic potential to 
+satisfy stated and implied needs when data is used under specified conditions. 
+From the inherent point of view, data quality refers to data itself, in particular to: 
+⎯ data domain values and possible restrictions (e.g. business rules governing the quality required for the 
+characteristic in a given application); 
+⎯ relationships of data values (e.g. consistency); 
+⎯ metadata. 
+5.1.2 System dependent data quality 
+System dependent data quality refers to the degree to which data quality is reached and preserved within a 
+computer system when data is used under specified conditions. 
+From this point of view data quality depends on the technological domain in which data are used; it is 
+achieved by the capabilities of computer systems' components such as: hardware devices (e.g. to make data available or to obtain the required precision), computer system software (e.g. backup software to achieve recoverability), and other software (e.g. migration tools to achieve portability). 
+5.2 Data quality model 
+The data quality model defined in this International Standard outlines the fifteen quality characteristics in 
+accordance with the inherent and system dependent points of view. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 13 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  5Table 1 — Data quality model characteristics 
+DATA QUALITY 
+Characteristics Inherent System 
+dependent 
+Accuracy X  
+Completeness X  
+Consistency X  
+Credibility X  
+Currentness X  
+Accessibility X X 
+Compliance X X 
+Confidentiality X X 
+Efficiency X X 
+Precision X X 
+Traceability X X 
+Understandability X X 
+Availability  X 
+Portability  X 
+Recoverability  X 
+ 
+The existence of an “X” symbol in Table 1 indicates the relevance of the characteristics for the data quality 
+required or evaluated from inherent and/or system dependent points of view and as a result its measurability. 
+Some characteristics are relevant from both points of view. Data quality characteristics will be of varying importance and priority to different stakeholders. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 14 ---
+ISO/IEC 25012:2008(E) 
+6 © ISO/IEC 2008 – All rights reserved
+ 5.3 Data quality characteristics 
+5.3.1 Inherent point of view 
+Characteristics relevant from inherent point of view are listed below. 
+5.3.1.1 Accuracy 
+The degree to which data has attributes that correctly represent the true value of the intended attributes of a 
+concept or event in a specific context of use. It has two main aspects: 
+Syntactic accuracy 
+Syntactic accuracy is defined as the closeness of the data values to a set of values defined in a domain 
+considered syntactically correct. 
+EXAMPLE 1 A low degree of syntactic accuracy is when the word Mary is stored as Marj. 
+Semantic accuracy 
+Semantic accuracy is defined as the closeness of the data values to a set of values defined in a domain 
+considered semantically correct. 
+EXAMPLE 2 A low degree of semantic accuracy is when the name John is stored as George. Both names are 
+syntactically accurate, because of the domain of reference in which they reside, but George is a different name related to 
+another person. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Record's field syntactic accuracy 
+• Measurement Function A/B  
+• Quality Measure Elements A=number of records with the specified field syntactically accurate  
+B=number of records 
+5.3.1.2 Completeness 
+The degree to which subject data associated with an entity has values for all expected attributes and related 
+entity instances in a specific context of use. 
+EXAMPLE For an employee data base, completeness lessens, if some employees' records do not contain the data 
+regarding a number where they can be reached in the event of an emergency. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Completeness of data within a file 
+• Measurement Function A/B 
+• Quality Measure Elements A=number of data required for the particular context in the data file  
+B=number of data in the specified particular context of intended use 
+5.3.1.3 Consistency 
+The degree to which data has attributes that are free from contradiction and are coherent with other data in a 
+specific context of use. It can be either or both among data regarding one entity and across similar data for comparable entities. 
+NOTE A particular case of inconsistency is represented by synonyms: a dictionary of terms used to define data could 
+be useful to avoid it. 
+EXAMPLE An employee's birth date cannot be later than his “recruitment date”. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 15 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  7EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Consistency of a data file 
+• Measurement Function A/B 
+• Quality Measure Elements A=number of data consistent in the file 
+B=number of data recorded in file 
+5.3.1.4 Credibility 
+The degree to which data has attributes that are regarded as true and believable by users in a specific context 
+of use. 
+NOTE Credibility includes the concept of authenticity (the  truthfulness of origins, attributions, commitments). 
+EXAMPLE Data certified from an independent and trusted organization should be considered credible. EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Credibility of data used by a bank for evaluating credit risk 
+• Measurement Function A/B 
+• Quality Measure Elements A= Number of data certified by internal audit after obtaining credit risk information 
+data 
+B=Number of data used to obtain credit risk information 
+5.3.1.5 Currentness 
+The degree to which data has attributes that are of the right age in a specific context of use. 
+EXAMPLE The timetable of a railway station must be updated with the frequency required to allow passengers to 
+take a train even if the scheduled time or platform change. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Currentness of a field data value 
+• Measurement Function A/B 
+• Quality Measure Elements A=number of data inspections where the detected data value conforms with 
+currentness requirements  
+B=number of data inspections on data values of the specified field 
+5.3.2 Inherent and system dependent point of view 
+Characteristics relevant to inherent and system dependent points of view are listed below. 
+5.3.2.1 Accessibility 
+The degree to which data can be accessed in a specific context of use, particularly by people who need 
+supporting technology or special configuration because of some disability. 
+EXAMPLE Data that should be managed by a screen reader cannot be stored as an image. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Sound data accessibility  
+• Measurement Function A/B 
+• Quality Measure Elements A= number of data stored only as “sound” (e.g. without a textual representation of  
+sound) 
+B= number of data values representing a sound  
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Multichannel data accessibility  
+• Measurement Function A/B 
+• Quality Measure Elements A=Number of data that the differently able user successfully accesses 
+B=Number of data available Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 16 ---
+ISO/IEC 25012:2008(E) 
+8 © ISO/IEC 2008 – All rights reserved
+ 5.3.2.2 Compliance 
+The degree to which data has attributes that adhere to standards, conventions or regulations in force and 
+similar rules relating to data quality in a specific context of use. 
+EXAMPLE Credit risk data of a bank must comply with specific laws and standards. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Privacy law non-conformity: values 
+• Measurement Function A 
+• Quality Measure Elements A=number of items that do not conform to privacy law statements due to data 
+content 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Privacy law non-conformity: architecture 
+• Measurement Function A 
+• Quality Measure Elements A=number of items that do not conform to privacy law statements due to technical 
+architecture failures 
+5.3.2.3 Confidentiality 
+The degree to which data has attributes that ensure that it is only accessible and interpretable by authorized 
+users in a specific context of use. 
+NOTE Confidentiality is an aspect of information security (together with availability, integrity) as defined in 
+ISO/IEC 13335-1:2004. 
+EXAMPLE Data that refers to personal or confidential information like health or profit must be accessed only by 
+authorized users or should be written in secret code. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Encryption usage 
+• Measurement Function A/B  
+• Quality Measure Elements A= Number of database fields encrypted 
+B=Number of fields with an encryption requisite 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Non vulnerability  
+• Measurement Function 1- A/B 
+• Quality Measure Elements A=number of successful penetrations during formal penetration tests 
+B=number of penetration attempted 
+5.3.2.4 Efficiency 
+The degree to which data has attributes that can be processed and provide the expected levels of 
+performance by using the appropriate amounts and types of resources in a specific context of use. 
+EXAMPLE Using more space than necessary to store data can cause waste of storage, memory and time. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Numbers stored as strings 
+• Measurement Function A 
+• Quality Measure Elements A=number of data stored as strings 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Storage  wasted space 
+• Measurement Function Σ(B - A) 
+• Quality Measure Elements A=benchmarked average space for efficient data storage of a database 
+B=used space for data in any physical files of the database Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 17 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  95.3.2.5 Precision 
+The degree to which data has attributes that are exact or that provide discrimination in a specific context of 
+use. 
+EXAMPLE A precision of 5 decimal places allows different functionalities rather than a precision of 2 decimal places 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Precision of data values 
+• Measurement Function A/B 
+• Quality Measure Elements A=number of data values with the requested precision 
+ B=total number of data values 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Precision of fields of a database 
+• Measurement Function A/B  
+• Quality Measure Elements A=number of data fields of the database defined with the requested precision  
+B=total number of data fields of the database 
+5.3.2.6 Traceability 
+The degree to which data has attributes that provide an audit trail of access to the data and of any changes 
+made to the data in a specific context of use. 
+EXAMPLE Public administrations must keep information about the access executed by users for investigating who 
+read/wrote confidential data. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Traceability of values  
+• Measurement Function A/B 
+• Quality Measure Elements A=Number of data for which required traceability of values is available  
+B=number of data items for which traceability is tested 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Automatic traceability 
+• Measurement Function A 
+• Quality Measure Elements A=number of data items traced automatically (using system capabilities) 
+5.3.2.7 Understandability 
+The degree to which data has attributes that enable it to be read and interpreted by users, and are expressed 
+in appropriate languages, symbols and units in a specific context of use. 
+NOTE Some information about data understandability are provided by metadata. 
+EXAMPLE To represent a State (within a country), the standard acronym is more understandable than a numeric 
+code. 
+EXAMPLE OF INHERENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Master data understandability due to existing metadata 
+• Measurement Function A/B 
+• Quality Measure Elements A=Number of data of master data files with existing metadata 
+B=Number of data of master data files 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Master data understandability due to linked metadata 
+• Measurement Function A/B 
+• Quality Measure Elements A=Number of fields having metadata automatically linked to related data 
+B=Total number of fields Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 18 ---
+ISO/IEC 25012:2008(E) 
+10 © ISO/IEC 2008 – All rights reserved
+ 5.3.3 System dependent point of view 
+Characteristics relevant from system dependent point of view are listed below. 
+5.3.3.1 Availability 
+The degree to which data has attributes that enable it to be retrieved by authorized users and/or applications 
+in a specific context of use. 
+NOTE 1 A particular case of availability is concurrent access (both to read or to update data) by more than one user 
+and/or application. 
+NOTE 2 Another case of availability is the capability of data to be available for a specific period of time. 
+EXAMPLE Data should be available also during managing operations like backup. EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Data items availability  
+• Measurement Function A/B 
+• Quality Measure Elements A=Number of data items available during backup/restore activities 
+B=Number of data items of backup/restore procedures 
+5.3.3.2 Portability 
+The degree to which data has attributes that enable it to be installed, replaced or moved from one system to 
+another preserving the existing quality in a specific context of use. 
+EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Data portability 
+• Measurement Function A/B 
+• Quality Measure Elements A=number of data that preserved  the existing quality attribute after the migration 
+to a different computer system  B=number of data migrated 
+5.3.3.3 Recoverability 
+The degree to which data has attributes that enable it to maintain and preserve a specified level of operations 
+and quality, even in the event of failure, in a specific context of use. 
+NOTE 1 Recoverability can be provided by features like commit/synch point, rollback (fault-tolerance capability) or by 
+backup-recovery mechanisms. 
+EXAMPLE When a media device has a failure, data stored in that device should be recoverable. EXAMPLE OF SYSTEM DEPENDENT DATA QUALITY MEASURE 
+• Data Quality Measure Name Recoverability  
+• Measurement Function A/B 
+• Quality Measure Elements A= number of data items successfully backed up/restored during backup /restore 
+operation 
+B= number of data items of backup/restore procedures Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 19 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  11Annex A  
+(informative) 
+ 
+Terms and definitions from ISO/IEC 25000 
+A.1  
+base measure measure defined in terms of an attribute and the method for quantifying it 
+NOTE A base measure is functionally independent of other measures. 
+A.2  context of use 
+users, tasks, equipment (hardware, software and materials), and the physical and social environments in 
+which a product is used 
+A.3  
+derived measure 
+measure that is defined as a function of two or more values of base measures 
+NOTE A transformation of a base measure using a mathematical function can also be considered as a derived 
+measure. 
+A.4  
+measure (noun) 
+variable to which a value is assigned as the result of measurement 
+NOTE The term “measures” is used to refer collectively to base measures, derived measures, and indicators. 
+A.5  
+measurement 
+set of operations having the object of determining a value of a measure 
+A.6  
+measurement function 
+algorithm or calculation performed to combine two or more base measures 
+A.7  
+quality model 
+defined set of characteristics, and of relationships between them, which provides a framework for specifying 
+quality requirements and evaluating quality 
+A.8  
+requirement 
+expression of a perceived need that something be accomplished or realized 
+NOTE The requirements may be specified as part of a contra ct, or specified by the development organization, as 
+when a product is developed for unspecified users, such as consumer software, or the requirements may be more general, 
+as when a user evaluates products for comparison and selection purposes. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 20 ---
+ISO/IEC 25012:2008(E) 
+12 © ISO/IEC 2008 – All rights reserved
+ A.9  
+system 
+combination of interacting elements organized to achieve one or more stated purposes 
+NOTE 1 A system may be considered as a product or as the services it provides. 
+NOTE 2 In practice, the interpretation of its meaning is frequently clarified by the use of an associative noun, e.g. 
+aircraft system. Alternatively the word system may be substituted simply by a context dependent synonym, e.g. aircraft, 
+though this may then obscure a system principles perspective. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 21 ---
+ISO/IEC 25012:2008(E) 
+© ISO/IEC 2008 – All rights reserved  13Bibliography 
+[1] ISO/IEC 2382-1, Information technology — Vocabulary — Part 1: Fundamental terms  
+[2] ISO/IEC 2382-17, Information technology — Vocabulary — Part 17: Databases  
+[3] ISO/IEC 11179-1, Information technology — Metadata registries (MDR) — Part 1: Framework  
+[4] ISO/IEC 13335-1:2004, Information technology — Security techniques — Management of information 
+and communications technology security — Part 1: Concepts and models for information and 
+communications technology security management  
+[5] ISO/IEC 15288:2008, Systems and software engineering — System life cycle processes  
+[6] ISO/IEC 15939:2007, Systems and software engineering — Measurement process  
+[7] ISO/IEC 24765, Systems and software engineering — Vocabulary 1) 
+[8] ISO/IEC 25000, Software engineering — Software product Quality Requirements and Evaluation 
+(SQuaRE) — Guide to SQuaRE  
+[9] IEEE Std 1320.2-1998, IEEE standard for conceptual modeling language syntax and semantics for 
+IDEF1X97 (IDEFobject) 
+ 
+                                                      
+1) To be published. Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.
+
+--- Página 22 ---
+ISO/IEC 25012:2008(E) 
+ICS  35.080 
+Price based on 13 pages 
+© ISO/IEC 2008 – All rights reserved 
+  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Biblioteca
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192845.

@@ -1,0 +1,418 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA DE AGRICULTURA FAMILIAR, COOPERATVISMO E AGROECOLOGIA
+COORDENAÇÃO-GERAL DO CADASTRO NACIONAL DA AGRICULTURA FAMILIAR
+ 
+NOTA TÉCNICA Nº 1/2023/CGCAF - MDA/SAF - MDA/MDA/MAPA
+PROCESSO Nº 55000.000059/2023-94
+INTERESSADO: SECRETARIA DE AGRICULTURA FAMILIAR E AGROECOLOGIA
+1
+.
+ASSUNTO
+1
+.
+1
+.
+Intermitência no funcionamento do sistema CAFWeb para emissão do
+Registro CAF.
+1
+.
+2
+.
+Providências normativas para mitigação dos possíveis efeitos negativos
+decorrentes de tal intermitência
+ 
+2
+.
+REFERÊNCIAS
+2
+.
+1
+.
+PORTARIA SAF/MAPA Nº 293, DE 19 DE DEZEMBRO DE 2022
+2
+.
+2
+.
+PORTARIA SAF/MAPA Nº 174, DE28 DE JUNHO DE 2022
+2
+.
+3
+.
+DECRETO Nº 9.064, DE 31 DE MAIO DE 2017
+2
+.
+4
+.
+DECRETO Nº 10.688, DE 26 DE ABRIL DE 2021
+2
+.
+5
+.
+DECRETO Nº11.338, DE 1º DE JANEIRO DE 2023
+2
+.
+6
+.
+ DECRETO Nº 11.396, DE 21 DE JANEIRO DE 2023
+ 
+3
+.
+SUMÁRIO EXECUTIVO
+3
+.
+1
+.
+O Decreto 9.064/2017 estabelece que o cadastro ativo no Cadastro
+Nacional da Agricultura Familiar (CAF) será requisito para acesso às ações e políticas
+públicas destinadas à Unidade Familiar de Produção Agrária (UFPA), ao
+empreendimento familiar rural e às formas associativas de organização da
+agricultura familiar. Com a revogação da Portaria SEAD/CC/PR nº 523/2018 em 31 de
+outubro de 2022, por meio da Portaria SAF/MAPA nº 174, de 28 de junho de 2022, a
+partir de 1º de novembro de 2022 o único documento emitido para acesso às
+políticas públicas passou a ser o CAF. Até que seja concluída sua implementação, a
+Declaração de Aptidão ao Pronaf (DAP) permanece como instrumento de
+identiﬁcação e de qualiﬁcação dos agricultores familiares e suas formas
+associativas. 
+3
+.
+2
+.
+Esta Nota Técnica destaca os principais problemas identiﬁcados para a
+Emissão de Registro CAF de pessoas físicas e jurídicas, e tem como objetivo
+evidenciar possíveis impactos sobre o público da agricultura familiar decorrentes
+desses problemas.
+4
+.
+ANÁLISE
+4
+.
+1
+.
+A NOTA TÉCNICA Nº 69/2023/COGCAF/CGCAF/DEP-SAF/SAF/MAPA
+(processo SEI/MAPA Nº 21000.005944/2023-48), encaminhado pela Coordenação-
+Nota Técnica 1 (26535630)         SEI 55000.000059/2023-94 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990631.
+
+--- Página 2 ---
+Geral do Cadastro Nacional da Agricultura Familiar - CGCAF aos cuidados da
+Secretaria-Executiva do Ministério da Agricultura e Pecuária, trata da intermitência e
+lentidão do Sistema CAFWeb, segundo a qual, a intermitência do sistema foi
+reportada ao Departamento de Tecnologia da Informação - DTI do Ministério da
+Agricultura, Pecuária e Abastecimento - MAPA em 07 de Outubro de 2022,
+solicitando a veriﬁcação e solução dos problemas. Em resumo, a nota técnica relata
+que apesar dos esforços empenhados pela equipe responsável no DTI/MAPA, não
+houve correção da intermitência do sistema CAFWeb por parte da DTI/MAPA.
+4
+.
+2
+.
+Ainda em relação ao sistema CAFWeb e sua intermitência, o Ofício
+n°0010/2023/SPA-CONTAG encaminhado por representantes da Confederação
+Nacional dos Trabalhadores Rurais Agricultores e Agricultoras Familiares - CONTAG,
+no dia 18 de Janeiro de 2023 ao Ministro Paulo Teixeira, solicita reunião para
+tratativas de problemas referentes, dentre outros, a paralisação dos sistemas
+CFWeb e CECAF e solicitação de prorrogação do prazo de validade das Declarações
+de Aptidão ao PRONAF – DAP. No que tange aos problemas sistêmicos, a CONTAG
+destaca que, com os problemas da não emissão do CAF, as consequências diretas
+são o não atendimento às demandas massivas de acesso ao crédito do PRONAF, aos
+programas de Compras Públicas (PAA e PNAE), à inscrição no Programa Garantia-
+Safra – cujos prazos são limitados.
+4
+.
+3
+.
+Além disso, há o relato encaminhado pela Federação dos Trabalhadores
+na Agricultura Familiar do Estado do Paraná (FETRAF-PR) por meio do Ofício Nº
+05/2023, de 31 de Janeiro de 2023 (processo SEI 21000.009143/2023-51). Segundo
+o ofício, todos os sindicatos vinculados à Federação estão tendo problemas com a
+elaboração dos cadastros do CAF, uma vez que o sistema encontra-se muito lento e
+travando. Tal comportamento não permite avançar com o cadastramento, afetando
+a conclusão dos prazos legais para os ﬁnanciamentos dentro do zoneamento
+agrícola. Ainda em relato feito em reuniões realizadas com a Secretária Executiva
+Fernanda Maquiaveli e assessores da nova gestão, devido à lentidão do sistema
+CAFWeb o preenchimento do Registro CAF para cada agricultor(a) familiar leva em
+média 2 a 4 horas para conclusão em contrapartida ao cadastro anterior, que
+tardava cerca de 20 minutos. Sendo assim, a lentidão do sistema demanda em
+média 8 a 12 vezes mais tempo para emissão de cada registro CAF, reduzindo
+signiﬁcativamente a dos órgãos cadastradores para realizar as emissões de registro
+CAF.
+4
+.
+4
+.
+Em atenção à necessidade do CAF substituir gradativamente o
+documento anterior,  para o ano de 2023, a média de DAPs vencendo é de 56 mil ao
+mês até junho de 2023 e aumenta para quase 110mil ao mês até dezembro de
+2023. Tendo em vista que o calendário agrícola do Plano Safra da Agricultura
+Familiar costuma ter início a partir de julho de cada ano, sendo nesse período que
+ocorrem os picos de emissão de registros DAP/CAF para acesso às políticas de
+crédito rural, a taxa de emissão de registros no CAF tem se mostrado inferior ao
+necessário para manter o número de agricultores familiares registrados ativos e com
+acesso às políticas públicas como o Pronaf.
+4
+.
+5
+.
+Até o momento, tem-se a quantidade média de 21mil registros no CAF
+nos meses de dezembro/22 e janeiro/23, ou seja, abaixo da metade necessária para
+compensar o volume de DAPs vencidas. Caso esse ritmo se mantenha, há grandes
+chances da situação se agravar no segundo semestre de 2023, tendo em vista o
+acréscimo de DAPs a vencer neste período conforme se verifica na tabela abaixo:
+Tabela 1 - Quantitativo de Declarações de Aptidão ao Pronaf (DAP) à
+vencer em 2023.
+Nota Técnica 1 (26535630)         SEI 55000.000059/2023-94 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990631.
+
+--- Página 3 ---
+Mês de Vencimento
+Qtdade de DAPs a
+vencer
+Fev/23
+58.531
+Mar/23
+58.041
+Abr/23
+54.204
+Mai/23
+61.078
+Jun/23
+56.732
+Jul/23
+72.470
+Ago/23
+84.231
+Set/23
+89.541
+Out/23
+109.389
+Nov/23
+143.744
+Dez/23
+158.514
+Fonte: CGCAF/MDA
+ 
+4
+.
+6
+.
+Diante dos quantitativos apresentados, caso 
+mantenha-se o cenário
+atual no qual as emissões de novos registros CAF não tem alcançado
+sequer o volume de 30 mil por mês, estamos na eminência de um cenário
+no qual mais de 50% dos agricultores familiares com DAP a vencer em
+2023, não poderão acessar as políticas públicas.
+4
+.
+7
+.
+Vale destacar que durante o período de 2022 em que ambos os registros
+puderam ser emitidos observou-se a preferência dos agricultores e cadastradores na
+emissão do documento DAP, o que ocasionou baixa adesão ao registro CAF até 31
+de novembro de 2022.
+4
+.
+8
+.
+Apesar do quantitativo considerável de agentes emissores habilitados na
+Rede CAF, mais de 18 mil, este número não tem sido suﬁciente para atender toda a
+demanda estimada de emissão de Cadastros. Além disso, registra-se também que a
+partir de Novembro de 2022, devido à limitação de orçamento, foram
+descontinuados os processos de capacitação técnica desses agentes na
+operacionalização do sistema. A capacitação na modalidade de Ensino à Distância
+(EaD), bem como os eventos técnicos realizados nos Estados com apoio das
+superintendências e entidades emissoras locais, foram paralisadas diﬁcultando o
+serviço de atendimento ao usuário no esclarecimento de dúvidas. Conforme
+apontado no Relatório de Atividades da Coordenação de Gestão do Cadastro
+Nacional da Agricultura Familiar, datado do dia 22 de Novembro de 2022, (Processo
+SEI 21000.115905_2022-77) estima-se necessidade de aporte estimado de R$ 2,8
+milhões apenas para a manutenção do Sistema CAFWeb, e ainda é necessário
+orçamento para o monitoramento e as ações de ﬁscalização do CAF. O relatório
+também aponta a necessidade de destinação de recursos ﬁnanceiros para os
+processos de autorização, reuniões técnicas e capacitação contínua da Rede CAF.
+4
+.
+9
+.
+Desde a implementação do Cadastro da Agricultura Familiar (CAF) o
+Sistema de Gerenciamento do Garantia-Safra (SGGS), programa que atende
+aproximadamente 850 mil famílias em cerca de 1.100 municípios da região semi-
+árida, tem sofrido impactos como lentidão e indisponibilidade. Esses problemas,
+segundo o Departamento de Tecnologia e Informática (DTI) do Ministério da
+Agricultura e Pecuária (MAPA), ocorrem pelo fato de o CAF e Garantia-Safra
+utilizarem a base de dados do PRONAF e, diante da grande quantidade de acessos
+do CAF, o SGGS sofre com impactos na sua performance, acarretando em seguidas
+indisponibilidades. Tais problemas foram evidenciados pela Coordenação-Geral do
+Garantia-Safra, através de demandas abertas no redmine (sistema especíﬁco da
+DTI/MAPA), e também foram apresentados também pelas Coordenações Estaduais
+Nota Técnica 1 (26535630)         SEI 55000.000059/2023-94 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990631.
+
+--- Página 4 ---
+do Programa nos estados de Alagoas, Amazonas, Bahia, Maranhão, Minas Gerais,
+Paraíba, Rio Grande do Norte e Sergipe, onde destacam:
+"... o Sistema Geral do Garantia Safra, torna-se uma ferramenta importante
+para dar continuidade nas ações executadas nos Estados e municípios, sendo
+que a sua constante interrupção e inconsistências geram problemas tanto de
+execução como de monitoramento, afetando e diﬁcultando o trabalho pelas
+Coordenações Estaduais e dos municípios. Em decorrência destas questões,
+vimos por meio desta solicitar a resolução dos problemas ora veriﬁcados no
+Sistema do Programa Garantia Safra com urgência, pois está afetando a
+execução do referido programa em todos os estados aderidos". (Processo SEI
+Nº 21000.007484/2023-92)
+4
+.
+10
+.
+Registra-se ainda, que durante o período de transição de governo, a
+SAF/MAPA recebeu do GT de Desenvolvimento Agrário, uma solicitação, por meio do
+Ofício Nº 003/2022 - Grupo Técnico de Desenvolvimento Agrário da Transição
+Governamental (Processo SEI Nº 21000.122609/2022-22), de edição de nova
+Portaria prorrogando a validade por um ano das Declarações de Aptidão ao Pronaf-
+DAP vencidas ou à vencer entre 31/10/2022 e 31/03/2023.  Tal solicitação justiﬁcou-
+se pois, concomitantemente a este período de instabilidade do Sistema CAFWeb,
+concentra-se grande volume de editais de compras públicas do Programa Nacional
+de Alimentação Escolar - PNAE (geralmente no primeiro trimestre de cada ano), para
+os quais é pré-requisito que os produtores e cooperativas tenham o Registro CAF ou
+DAP ativo.
+4
+.
+11
+.
+O posicionamento da Coordenação de Gestão do Cadastro Nacional da
+Agricultura Familiar na NOTA TÉCNICA Nº 456/2022/COGCAF/CGCAF/DEP-
+SAF/SAF/MAPA (
+Processo SEI Nº 21000.122609/2022-22
+) foi de que não é
+recomendável adotar a prorrogação automática do prazo de validade DAPs Ativas,
+tendo em vista  os riscos que deverão ser assumidos e que esta medida não geraria
+uma solução deﬁnitiva e justiﬁcável para o Governo Federal e as políticas públicas
+destinadas à agricultura familiar.
+4
+.
+12
+.
+Considerando que a resolução do problema operacional do sistema não
+se viabilizou no curto prazo; considerando a grande probabilidade de um número
+signiﬁcativo de agricultores familiares e formas associativas sejam prejudicados no
+seu acesso às políticas públicas, implicando em um impacto negativo para
+a execução das políticas públicas; considerando a nova estruturação do governo que
+ainda está avaliando quais as ações mais urgentes; considerando que a solução a
+curto prazo possa desestimular a emissão de novos registros CAF, demandando
+ações de capacitação, sensibilização e conscientização junto à Rede de
+cadastradores CAF e aos Agricultores Familiares e UFPA sobre a necessidade
+seguirem efetuando novos registros; é possível considerar a prorrogação automática
+da validade das DAPs.
+4
+.
+13
+.
+Adicionalmente à essa consideração de prorrogação, recomendamos que
+seja viabilizado a adoção de um plano de ação a ser construído pela Coordenação
+Geral do Cadastro Nacional da Agricultura Familiar para resolução deﬁnitiva das
+falhas tecnológicas que tem causado a demanda reprimida apontada nos itens
+anteriores. É esperado que, juntamente deste Plano de Ação, sejam retomadas as
+ações de capacitação dos agentes cadastradores do Registro CAF, bem como da
+realização de uma campanha massiva de informação dos agricultores e agricultoras
+familiares, conscientizando esse público sobre a importância de continuarem
+realizando a emissão de Registro CAF mesmo durante o período de vigência da
+Portaria de Prorrogação da validade da DAP.
+ 
+5
+.
+DOCUMENTOS RELACIONADOS
+Nota Técnica 1 (26535630)         SEI 55000.000059/2023-94 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990631.
+
+--- Página 5 ---
+5
+.
+1
+.
+Ofício n°0010/2023/SPA-CONTAG (
+26541326
+)
+5
+.
+2
+.
+Ofício Nº 05/2023 - Processo SEI 21000.009143/2023-51
+5
+.
+3
+.
+Relatório de Atividades - COGCAF - Processo SEI 21000.115905_2022-77
+5
+.
+4
+.
+Ofício Nº 003/2022 - 
+Processo SEI Nº 21000.122609/2022-22
+5
+.
+5
+.
+NOTA TÉCNICA Nº 456/2022/COGCAF/CGCAF/DEP-SAF/SAF/MAPA
+- 
+Processo SEI Nº 21000.122609/2022-22
+5
+.
+6
+.
+Minuta de Portaria CGCAF - MDA (
+26541380
+)
+6
+.
+CONCLUSÃO
+6
+.
+1
+.
+Diante do exposto, e atendendo a solicitações superiores, visando não
+prejudicar os Agricultores e Agricultoras Familiares para obterem o acesso às
+Políticas Públicas e para que não ocorra a descontinuidade na produção e
+fornecimento de alimentos saudáveis à população, encaminhamos a Minuta de
+Portaria para a prorrogação por 12 meses dos prazos de validade das Declarações
+de Aptidão ao Programa Nacional de Fortalecimento da Agricultura Familiar (Pronaf)
+- Físicas e Jurídicas que estejam ATIVAS na data de publicação da Portaria e
+expirarão até 31 de janeiro de 2024. 
+6
+.
+2
+.
+Sendo assim, esta área técnica encaminha a Nota Técnica nº
+1/2023/CGCAF - MDA/SAF - MDA/MDA/MAPA para conhecimento e análise da
+Secretaria da Agricultura Familiar e Cooperativismo e da Secretaria Executiva para
+que, em estando de acordo, dê os devidos encaminhamentos.
+6
+.
+3
+.
+À consideração superior. 
+ 
+(Assinado eletronicamente)
+LUÍSA MARTINS FERNANDES
+Coordenadora-Geral do Cadastro Nacional da Agricultora Familiar - Substituta
+Documento assinado eletronicamente por 
+Luísa Martins Fernandes
+,
+Coordenador(a) Geral Substituto (a)
+, em 02/02/2023, às 09:45, conforme
+horário oficial de Brasília, com fundamento no art. 6º,§ 1º, do 
+Decreto nº 8.539, de
+8 de outubro de 2015.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+26535630
+ e o código CRC 
+CFCC4982
+.
+Referência:
+ Processo nº 55000.000059/2023-94
+SEI nº 26535630
+Nota Técnica 1 (26535630)         SEI 55000.000059/2023-94 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990631.

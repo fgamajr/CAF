@@ -1,0 +1,152 @@
+--- Página 1 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO  
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação  
+Unidade de Auditoria Especializada em Tecnologia da Informação  
+ 
+SisDoc: Documento1 - 2024 - DADSIS  1 
+ATA DA REUNIÃO  
+Nome do órgão ou entidade participante:  Data:  
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  (MDA)  
+Tribunal de Contas da União (TCU)  
+Controladoria -Geral da União  (CGU)  07/10/2025  
+ 
+SUMÁRIO DA REUNIÃO  
+Participantes  Nome: Fernando  Lima Gama Júnior , Cargo/Função: Coordenador da 
+equipe de fiscalização  do TCU  
+Nome: S ylvio Xavier Júnior , Cargo/Função: Integrante da equipe de 
+fiscalização  do TCU  
+Nome: Harley Alves Ferreira , Cargo/Função: Supervisor da equipe de 
+fiscalização  do TCU  
+Nome: Michelle Inacio da Silva , Cargo/Função: Representante da AECI do 
+MDA e responsável por demandas do TCU e CG U 
+Nome: Glaucio Coimbra Cardoso, Cargo/Função: PO do sistema do CAF  
+Nome: Arthur Reis Rimoldi, Cargo/Função: Diretor do CAF  
+Nome: Frederico Augusto Del Isola e Diniz , Cargo/Função: Representante 
+da CGTI do MDA  
+Nome: Bruno Martins  da Silva , Cargo/Função: Coordenador -Geral da 
+CGA GR da CGU  
+Nome: João Henrique  W. Bernardes , Cargo/Função: Chefe de divisão da 
+CGU responsável por auditorias no Inc ra e MDA  
+Objetivos  1. O objetivo principal da reunião foi discutir os achados preliminares de 
+uma auditoria realizada pelo Tribunal de Contas da União (TCU) na base de 
+dados do Cadastro da Agricultura Familiar (CAF). A auditoria foca na 
+governança e qualidade dos dados cadas trados, com o intuito de identificar 
+inconsistências, falhas de sistema e problemas operacionais que possam 
+comprometer a confiabilidade das informações utilizadas para políticas 
+públicas, como o Programa Nacional de Fortalecimento da Agricultura 
+Familiar (Pronaf). A reunião também buscou esclarecer os métodos e 
+processos utilizados pelo TCU na coleta e análise de dados, promovendo um 
+diálogo colaborativo entre as partes envolvidas.  
+ 
+2. Além disso, a reunião teve como objetivo alinhar expectativas entre os 
+auditores e os responsáveis pela gestão do CAF, buscando entender as 
+limitações operacionais e os desafios enfrentados no processo de cadastro e 
+migração de dados. Foram discutidas s oluções para problemas encontrados 
+e possibilidades de aprimoramento das bases de dados, incluindo validações 
+mais robustas e integrações com outras bases, como as da Receita Federal e 
+do Sistema de Óbitos (SISOB). Outro ponto importante foi a solicitação  de 
+sugestões adicionais de análise que poderiam ser incluídas no relatório final 
+da auditoria.  
+Resumo  1. A reunião começou com apresentações dos participantes e uma introdução 
+ao escopo da auditoria realizada pelo TCU. Os auditores explicaram que a 
+análise abrange 17 achados principais, incluindo inconsistências em dados 
+cadastrais, erros em coordenadas ge ográficas e problemas com a 
+classificação de documentos. Foi destacado que muitos problemas 
+encontrados estão relacionados à migração de dados do antigo sistema do 
+INCRA para o CAF atual, implantado em março de 2023. Exemplos de 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190600.
+
+--- Página 2 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO  
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação  
+Unidade de Auditoria Especializada em Tecnologia da Informação  
+ 
+SisDoc: Documento1 - 2024 - DADSIS  2 
+inconsistências em CPFs e CNPJs , datas de nascimento impossíveis e 
+classificações incorretas de documentos.  
+ 
+2. Uma parte significativa da discussão girou em torno de questões 
+específicas, como a presença de e -mails fictícios (75% dos registros 
+analisados), números de telefone inválidos (8% com DDDs inexistentes) e 
+CEPs genéricos ou incorretos (3 milhões de regis tros). Também foram 
+abordados problemas mais críticos, como rendas fora do estabelecimento 
+que potencialmente violam critérios legais, e composições societárias de 
+cooperativas que não atendem aos critérios mínimos para o CAF. Os gestores 
+do CAF explicara m que parte dessas inconsistências pode ser atribuída a 
+limitações técnicas do sistema anterior e ao alto volume de cadastros 
+realizados em períodos de pico, como durante o lançamento do Pronaf.  
+ 
+3. Os participantes concordaram com a importância de realizar cortes 
+temporais para separar dados legados (anteriores a março de 2023) dos dados 
+mais recentes, facilitando a análise de melhorias implementadas no novo 
+sistema. Sugestões foram feitas para ap rimorar processos, como a integração 
+com bases de dados exte rnas (ex.: registro de imóveis e juntas comerciais) e 
+o uso de validações mais rigorosas para dados cadastrais. A equipe do CAF 
+solicitou que o TCU compartilhe os relatórios preliminares antes da 
+finalização, para permitir revisões e comentários. A reunião  foi encerrada 
+com um compromisso mútuo de colaboração contínua, com destaque para a 
+importância de um cronograma claro para as próximas etapas da auditoria.  
+Destaques  1.                                 **Auditoria de dados no CAF**: Apresentação dos achados em 
+relação à governança e qualidade dos dados, com destaque para 17 
+questões principais identificadas.   
+2.       **Problemas com classificação de documentos**: Erros na 
+classificação de documentos como renda, declaração de veracidade e 
+imóvel, além de duplicações e ausência de integração com sistemas de 
+validação.   
+3.     **Renda e documentos incorretos**: Identificação de casos de renda 
+extremamente alta e documentos inválidos ou não classific ados 
+corretamente.   
+4.   **Georreferenciamento impreciso**: Coordenadas de imóveis fora 
+do Brasil, estados ou municípios declarados incorretamente.   
+5.        **Migração problemática**: Dados migrados do INCRA 
+apresentando inconsistências, como CPFs inválidos ou divergências de 
+nome e data de nascimento.   
+6.         **Dados de contato fictícios**: Problemas com telefones e e -mails, 
+incluindo padrões inválidos ou placeholders como "não possui".   
+7.      **Inadequação nos CNA Es**: Empresas e cooperativas com 
+CNA Es incompatíveis com a definição de agricultura familiar, incluindo 
+atividades de construção civil e supermercados.  
+Conclusão  A auditoria de dados realizada pela equipe do TCU no sistema CAF revelou 
+diversas inconsistências que comprometem a eficácia e a integridade das 
+informações. Um dos principais problemas está relacionado à migração de 
+dados do INCRA, que trouxe registros co m erros significativos, como CPFs 
+inválidos, divergências entre nome e data de nascimento, e dados de contato 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190600.
+
+--- Página 3 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO  
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação  
+Unidade de Auditoria Especializada em Tecnologia da Informação  
+ 
+SisDoc: Documento1 - 2024 - DADSIS  3 
+fictícios. Esses problemas, embora pontuais, destacam a necessidade de 
+maior rigor na validação inicial de informações durante processos de 
+migração.  
+ 
+Outro ponto crítico identificado foi a inadequação dos documentos inseridos 
+no sistema, como rendas extremamente altas, documentos classificados 
+erroneamente e coordenadas de georreferenciamento fora da lógica 
+territorial brasileira. Esses achados mostram que o sistema atual carece de 
+mecanismos automatizados de validação, seja por meio de inteligência 
+artifi cial ou regras mais robustas de preenchimento. Além disso, a falta de 
+atualização de tabelas como o módulo fiscal do INCRA e informações 
+cartográficas reforça a necessidade de integração com bases externas para 
+maior precisão.  
+ 
+Por fim, a análise de CNA Es incompatíveis e a baixa qualidade dos dados 
+de contato (telefones e e -mails) expõem desafios estruturais no sistema. A 
+auditoria sugere que as inconsistências sejam abordadas por meio de filtros 
+temporais que diferenciem dados do sistema antigo e do atua l, além de 
+melhorias na validação de dados no momento do cadastro. A equipe 
+responsável está aberta a contribuições e ajustes, com previsão de entrega do 
+relatório definitivo  no final de novembro.  
+ 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190600.

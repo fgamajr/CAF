@@ -1,0 +1,343 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+COORDENAÇÃO-GERAL DE MONITORAMENTO E GOVERNANÇA DO CAF
+ 
+  
+PLANO DE TRAB ALHO DE TERMO DE EXE CUÇÃ O DE SCENTRALIZ ADA
+1. DADOS  CADASTRAIS  DA UNIDADE  DESCENTRALIZADORA
+a. Unidade  Descentralizadora  e Responsável
+Nome do ór gão ou entidade descentralizador(a): Secretaria de Agricultura Familiar e Agroecologia –
+SAF/MDA
+Nome da autoridade competente: Vanderley Ziger Número do CPF: 847.101.019-49
+Nome da Secretaria/Unidade Responsável pelo acompanhamento da execução do objeto do TED: Secretaria
+de Agricultura Familiar e Agroecologia – SAF/MDA
+Identificação do Ato que confere poderes para assinatura: Portaria nº 564, de 14 de maio de 2024, publicada
+no Diário Oficial da União, Seção 2, Página 1.
+ 
+b. UG SIAFI
+Número e Nome da Unidade Gestora - UG que descentralizará o crédito: UG 490051 - Código de gestão:
+00001 - Secretaria de Agricultura Familiar e Agroecologia – SAF/MDA.
+2. DADOS  CADASTRAIS  DA UNIDADE  DESCENTRALIZADA
+a. Unidade  Descentralizada e Responsável
+Nome do ór gão ou entidade descentralizada: Universidade Federal do Espírito Santo - UFES
+Nome da autoridade competente: Eustáquio Vinícius de Castro
+Número do CPF: 481.065.346-34
+Nome da Secretaria/Departamento/Unidade Responsável pela execução do objeto do TED: Pró-Reitoria de
+Extensão (PROEX) da Universidade Federal do Espírito Santo (UFES)
+Identificação do Ato que confere poderes para assinatura: Decreto de 19 de março de 2024, publicado do
+DOU de 20/03/2024, edição 55, Seção 2, página 1.
+b. UG SIAFI
+Número e Nome da Unidade Gestora - UG que receberá o crédito: UG 153046 - Universidade Federal do
+Espírito Santo - UFES
+3. OBJET O
+A poio a ações de formação no âmbito do Plano de Formação do Cadastro Nacional da Agricultura Familiar ,
+nas vertentes de: a) desenvolvimento de metodologias e produção de conteúdos formativos; b) qualificação
+formativa, com foco na realização e apoio a atividades presenciais, híbridas e remotas.
+4. DESCRIÇÃO  DAS  AÇÕES  E MET AS A SEREM  DESENV OLVIDAS  NO ÂMBIT O DO TED:
+A proposta concentra-se no fortalecimento da Rede de entidades credenciadas para emissão do CAF - Rede
+CAF, em territórios prioritários, por meio de desenvolvimento de soluções de formação, inovação
+educacional, produção de materiais didáticos e suporte técnico-operacional para a realização das atividades.
+Com abrangência nacional, o projeto busca beneficiar diretamente cadastradores(as), entidades emissoras,
+gestores(as) públicos e agricultores(as) familiares, promovendo qualificação técnica, padronização de
+procedimentos, melhoria na qualidade e segurança dos dados, e ampliação do acesso ao Cadastro Nacional
+da Agricultura Familiar (CAF).16/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 1/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.
+
+--- Página 2 ---
+Todas as ações serão executadas com base em um planejamento orientado por etapas, com monitoramento
+por indicadores e alinhamento permanente às diretrizes estabelecidas pelo Departamento de Cadastro
+Nacional da Agricultura Familiar (DCAF/SAF/MDA). Para o alcance das metas, caberá à Unidade
+Descentralizada elaborar , com a orientação do DCAF , o planejamento das atividades, com revisões
+quadrimestrais, detalhando as atividades a serem realizadas, o produtos e subprodutos a serem entregues, os
+prazos estimados para execução e entrega, a metodologia de execução a ser utilizada, bem como os valores
+financeiros correspondentes. Esse processo visa garantir a coerência, a transparência e a efetividade na
+execução do plano de trabalho.
+Meta 1: Desenvolvimento Metodológico e Pr odução de Conteúdos formativos  
+Descrição: Elaboração e produção de materiais técnicos, metodológicos e audiovisuais destinados a
+estruturar as ações de formação e qualificação da Rede CAF . A meta contempla o desenvolvimento do
+referencial metodológico para as formações, a criação de manuais técnicos e cartilhas em versão digital, e a
+produção de conteúdos em vídeo, tanto para o curso de educação a distância (EAD) quanto para divulgação
+em redes sociais, com foco na padronização e disseminação do conhecimento sobre o CAF .
+Produto 1.1 : Elaboração de material técnico com referencial metodológico e planejamento das formações
+Produto 1.2 : Elaboração de no mínimo 03 (três) manuais técnicos em versão digital, sendo eles: Manual de
+Operacionalização do CAF , Manual da Capacitação dos Cadastradores e Manual de Politicas Publicas
+Produto 1.3: Elaboração de no mínimo 03 (três) cartilhas em versão digital
+Produto 1.4: Produção de vídeos com conteúdo para 01 (um) curso de educação a distancia (EAD), com
+carga horaria mínima de 30 horas, estruturado em formato modular , com recursos audiovisuais,
+desenvolvido em formato para plataformas Moodle.
+Produto 1.5: Elaboração e produção de vídeos curtos instrucionais para divulgação em redes sociais,
+totalizando pelo menos 150 minutos de vídeos disponíveis para serem veiculados.
+Indicador : Número de materiais, vídeos e planejamentos elaborados.
+Meta 2: Implementação de Plataformas Digitais e Certificação
+ Descrição: Implantação e disponibilização da infraestrutura tecnológica necessária para a execução das
+formações a distância e para a certificação dos participantes. A ação abrange a configuração do curso de
+educação a distância em plataforma Moodle, o fornecimento de ferramenta para a realização de webinários
+e oficinas virtuais, e a gestão do processo de elaboração e emissão dos certificados para cada turma,
+assegurando o registro e o reconhecimento da capacitação dos agentes da Rede CAF .
+Produto 2.1  — Implantação de 01 (um) curso de educação a distância, estruturado em formato modular na
+plataforma Moodle.
+Produto 2.2  — Disponibilização de 01 (uma) ferramenta para realização de webnários e oficinas virtuais.
+Produto 2.3  — Serviço de elaboração e emissão de certificados dos participantes de cada turma.
+Indicador:  Curso implantado, ferramenta disponibilizada e número de certificados emitidos.
+Meta 3: Realização e Apoio a Atividades Pr esenciais, Híbridas e Remoto
+Produto 3.1 — Realização de pelo menos 18 (dezoito) formações de multiplicadores com duração de no
+mínimo 32h, contemplando locação de espaço, hospedagem e alimentação para no mínimo 30 pessoas por
+capacitação.
+Produto 3.2 — Realização de 01 (um) Seminário Nacional do CAF com duração de 16h para no mínimo
+250 pessoas, com locação de espaço com infraestrutura necessária, materiais de comunicação (sinalização,
+banners, divulgação online e convites), e alimentação no evento. Além disso, disponibilização de
+deslocamento e diárias para até 50 pessoas.
+Produto 3.3 — Realização de no mínimo 127 (cento e vinte e sete) reuniões presenciais com duração de
+02h nas macrorregiões com a rede de multiplicadores, incluindo almoço e cof fe break para 30 pessoas por
+reunião.
+Indicador: Número de eventos realizados e número de participantes.
+ 
+Meta 4: Estruturação de Equipe de Trabalho e Gestão do TED
+Descrição: Acompanhamento da execução do projeto e estruturação da equipe técnica responsável pelo
+suporte às atividades e pela gestão do Termo de Execução Descentralizada. Esta meta engloba a
+disponibilização de agentes para apoio em nível estadual e nacional, bem como a elaboração de relatórios
+trimestrais de acompanhamento físico-financeiro e um relatório final, garantindo a transparência, o controle
+e a boa governança na aplicação dos recursos e no alcance dos resultados do projeto.
+Produto 4.1 — Disponibilização de equipe de trabalho com 27 (vinte e sete) agentes para suporte estadual
+das atividades.
+Produto 4.2  — Contratação de 01 (um) agente para suporte nacional das atividades.
+Produto 4.3  — Elaboração de relatórios de acompanhamento físico-financeiro trimestral das atividades,
+revisão de planejamento/execução e entrega de 01 (um) Relatório final de execução físico e financeiro do
+projeto.
+Indicador : Equipe contratada e relatórios entregues.16/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 2/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.
+
+--- Página 3 ---
+MODELO DE GOVERNANÇA  PARA  EXECUÇÃO DO TED
+Considerando a dimensão do desafio no âmbito da proposta, faz-se necessário um modelo de governança para
+estruturação e tramitação dos entregáveis (documentais e de valor) a cada ciclo de formalização das demandas
+temáticas, bem como, das interfaces com a execução das atividades de tecnologia e inovação. Neste contexto,
+buscando proporcionar transparência, clareza e agilidade, será elaborado um fluxo de suporte à reflexão, decisão e
+análise de todo o processo de governança e gerência, com entregáveis e responsáveis por cada atividade do ciclo de
+formalização das demandas temáticas.
+A Governança deve exercer um papel fundamental onde orienta todas as outras funções de gerenciamento, de modo
+que garanta que todos executem corretamente seus papéis, de acordo com políticas e práticas recomendadas. Nesse
+contexto encontram-se conceitos onde os colaboradores são instruídos, tém acesso a ferramentas e informações que
+permitem a eles executarem suas tarefas.
+Todas as metas e as descrições de seus produtos são apresentadas com seus respectivos saldos financeiros no Item 9
+— CRONOGRAMA  FÍSICO-FINANCEIRO. O valor unitário apresentado refere-se ao valor médio a ser apurado
+para osprincipais perfis técnico-científicos envolvidos na execução dos trabalhos.
+5. JUSTIFICA TIVA E MOTIV AÇÃO P ARA  CELEBRAÇÃO DO TED:
+O Departamento do Cadastro Nacional da Agricultura Familiar (DCAF), vinculado a Secretaria da Agricultura
+Familiar (SAF), possui como função a gestão do Cadastro Nacional da Agricultura Familiar (CAF), que, desde o dia
+12 de novembro de 2022, constitui o mecanismo que identifica o Agricultor Familiar e sua Unidade Familiar de
+Produção Agrária (UFP A), em substituição ao Declaração de Aptidão ao Pronaf (DAP), visando o acesso as politicas
+publicas voltadas para esse segmento.
+Com o intuito de possibilitar a emissão do Cadastro Nacional da Agricultura Familiar (CAF), o Ministério do
+Desenvolvimento Agrário e Agricultura Familiar (MDA) mantém uma extensa rede formada por ór gão e entidades
+publicas e privadas credenciadas, para realizar o cadastramento dos agricultores e agricultoras familiares em todo o
+território nacional.
+A rede credenciadora é formada por ór gão e entidades, entre as quais estão a Rede Pública de Assistência Técnica e
+Extensão Rural (A TER), as Confederações da Agricultura Familiar , as Confederações da Pesca e Aquicultura, as
+Prefeituras Municipais, o Instituto Nacional de Colonização e Reforma Agraria (INCRA), o Instituto Chico Mendes
+de Conservação da Biodiversidade (ICMBio), Secretarias Estaduais de Agricultura, Pesca e Desenvolvimento Rural,
+os Institutos Estaduais de Terras e or ganizações representativas de Povos e Comunidades Tradicionais (PCT), entre
+outros agentes estratégicos.
+Atualmente, o MDA  possui 1.241 Divisões de Rede credenciadas e aproximadamente 24 mil agentes emissores
+habilitados, que exercem a atividade de cadastrador(a), assegurando a inclusão da agricultura familiar nas politicas
+públicas.
+Em virtude da extensão e da importância dessa Rede, o Ministério do Desenvolvimento Agrário e Agricultura
+Familiar (MDA) reconhece a indispensabilidade constante de qualificação, capacitação e fortalecimento institucional
+dos ór gãos e entidades credenciadas, com o objetivo de assegurar a uniformização dos procedimentos, a
+conformidade técnica e a eficácia no atendimento aos agricultores e agricultoras familiares. Para tal, são elaboradas
+estratégias de capacitação continua, disponibilização de materiais técnicos e operacionais, além de iniciativas de
+supervisão e suporte técnico, favorecendo o aprimoramento constante da qualidade dos serviços oferecidos em todo o
+território nacional.
+Nesse contexto, apresenta-se a necessidade de formalizar parcerias para auxiliar na implementação de ações
+formativas estruturadas, abrangentes e ajustadas as particularidades dos distintos territórios. Tais colaborações são
+essenciais para assegurar que o procedimento de emissão do CAF seja realizado com qualidade, segurança e
+considerando as realidades socioculturais dos beneficiários.
+A área temática do projeto, seu foco e metas estratégicas apresentam contornos técnicos que justificam o emprego da
+descentralização de sua execução por meio de Termo de Execução Descentralizada - TED. Soma-se a isso a
+necessária expansão da execução do projeto, com vistas a viabilizar o alcance dos resultados pretendidos no âmbito
+fundiário. Neste contexto, a adoção desse instrumento faz-se adequada e vantajosa para que se possa responder , com
+maior efetividade, a crescente demanda por capacitação e qualificação da rede credenciada, bem como assegurar a
+melhor alocação de recursos e a agilidade na implementação das ações.
+Essa abordagem descentralizada contribui para a regionalização das atividades, permitindo que as especificidades
+locais sejam mais bem compreendidas e atendidas, o que é fundamental para o sucesso do projeto para execução nos
+territórios rurais previamente definidos e de acordo com as diversas realidades. Além disso, a utilização do TED
+propicia maior flexibilidade administrativa e operacional, facilitando ajustes pontuais conforme a evolução das
+atividades planejadas, sem perder a coerência com as diretrizes estratégicas estabelecidas.
+Outro ponto relevante é a transparência e o fortalecimento do controle social, uma vez que a descentralização permite
+o envolvimento direto das instituições parceiras e atores locais, fomentando um ambiente colaborativo e
+participativo. Assim, é possível promover uma execução mais responsável e alinhada as expectativas da comunidade
+beneficiada.
+Portanto, o emprego do Termo de Execução Descentralizada não só responde a uma questão prática de
+operacionalização do projeto, mas também reforça a governança compartilhada, elemento indispensável para a16/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 3/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.
+
+--- Página 4 ---
+sustentabilidade dos resultados e a perenidade das ações desenvolvidas no âmbito do instrumento em questão.
+6. SUBDESCENTRALIZAÇÃO
+A Unidade Descentralizadora autoriza a subdescentralização para outro ór gão ou entidade da administração pública
+federal?
+(      )Sim
+( X )Não
+7. FORMAS  POSSÍVEIS  DE EXECUÇÃO  DOS  CRÉDIT OS ORÇAMENTÁRIOS:
+ A forma de execução dos créditos orçamentários descentralizados poderá ser:
+(     ) Direta, por meio da utilização da capacidade or ganizacional da Unidade Descentralizada.
+(     ) Contratação de particulares, observadas as normas para contratos da administração pública.
+( X ) Descentralizada, por meio da celebração de convênios, acordos, ajustes ou outros instrumentos congêneres com
+entes federativos, entidades privadas sem ﬁns lucrativos, or ganismos internacionais ou fundações de apoio regidas
+pela Lei nº 8.958, de 20 de dezembro de 1994.
+8. CUST OS INDIRET OS (AR T. 8, §2°)
+A Unidade Descentralizadora autoriza a realização de despesas com custos operacionais necessários à consecução do
+objeto do TED?
+( X )Sim
+(    )Não
+O pagamento será destinado aos seguintes custos indiretos, até o limite de 20% do valor global pactuado:
+1. Realizar o pagamento das despesas operacionais e demais taxas previstas para a gestão do projeto junto à fundação
+que será contratada.
+9. CRONOGRAMA  FÍSICO-FINANCEIRO
+ 
+Metas 
+DescriçãoUnidade de
+Medida 
+QuantidadeValor
+Unitário (R$)Valor Total
+(R$) 
+Início 
+Fim
+ 
+Meta 1Desenvolvimento Metodológico e
+produção de conteúdos formativos 
+ 
+Unidade 
+ 
+01 
+ 
+1.006.080,00  
+ 
+1.006.080,00 
+ 
+Dez/25 
+ 
+Set/27
+ 
+Produto
+1.1 
+Elaboração de 01 (um) material técnico com referencial metodológico e planejamento das formações.
+ 
+ Produto
+1.2 
+Elaboração de no mínimo 03 (três) manuais técnicos em versão digital, sendo eles: Manual de
+Operacionalização do CAF , Manual de Capacitação dos Cadastradores e Manual de Políticas Públicas.
+ 
+ Produto
+1.3 
+Elaboração de no mínimo 03 (três) cartilhas em versão digital.
+ 
+ 
+ 
+Produto
+1.4 
+ 
+Produção de vídeos com conteúdo para 01 (um) curso de educação a distância (EAD), com car ga horária
+mínima de 30 horas, estruturado em formato modular , com recursos audiovisuais, desenvolvido em
+formato para plataformas Moodle.
+Produto
+1.5 Elaboração e produção de 150 (cento e cinquenta) minutos de vídeos curtos instrucionais para divulgação
+em redes sociais.
+MET A 2 
+IMPLEMENT AÇÃO
+DE PLA TAFORMAS
+DIGIT AIS E
+CER TIFICAÇÃOUNIDADE 1160.200,00 160.200,00 DEZ/25 NOV/27
+Produto
+2.1Implantagdo de 01 (um) curso de educação a distancia, estruturado em formato modular na plataforma
+Moodle.
+Produto
+2.2 Disponibilizagdo de 01 (uma) ferramenta para realizagdo de webnarios e oficinas virtuais.
+Produto
+2.3 Servigo de elaboração e emissao de certificados dos participantes de cada turma.
+MET A
+3 REALIZAÇÃO E
+APOIO A
+ATIVIDADES
+PRESENCIAIS,unidade 1 2.972.789,84 2.972.789,84 MAI/26 NOV/2716/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 4/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.
+
+--- Página 5 ---
+HÍBRIDAS E
+REMOT O
+Produto
+3.1 Realização de no mínimo 18 (dezoito) formações de multiplicadores com duração de no mínimo 32h,
+contemplando locação de espaço, hospedagem e alimentação para no mínimo 30 pessoas por capacitação.
+Produto
+3.2 Realização de 01 (um) Seminário Nacional do CAF com duração de 16h para no mínimo 250 pessoas,
+com locação de espaço com infraestrutura necessária, materiais de comunicação (sinalização, banners,
+divulgação online e convites), e alimentação no evento. Além disso, disponibilização de deslocamento e
+diárias para até 50 pessoas.
+Produto
+3.3 Realização de no mínimo 127 (cento e vinte e sete) reuniões presenciais com duração de 02h nas
+macrorregiões com a rede de multiplicadores, incluindo almoço e cof fe break para 30 pessoas por reunião.
+MET A 4 ESTRUTURAÇÃO
+DE EQUIPE DE
+TRABALHO E
+GESTÃO DO TED.unidade 13.858.518,40 3.858.518,40 DEZ/25 NOV/27
+Produto
+1 Disponibilização de equipe de trabalho com 27 (vinte e sete) agentes para suporte estadual das atividades
+durante 24 meses
+Produto
+2  Contratação de 01 (um) agente para suporte nacional das atividades.
+Produto
+3  Elaboração de relatórios de acompanhamento fisico-financeiro trimestral das atividades, revisão de
+planejamento/execução e entrega de 01 (um) Relatório final de execução físico e financeiro do projeto.
+VALOR TOTAL DIRET O:   R$ 6.664.656,88
+VALOR TOTAL INDIRET O:  R$ 1.332.931,36 
+VALOR TOTAL:  R$ 7.997.588,24 
+10. CRONOGRAMA  DE DESEMBOLSO
+MÊS/ANO VALOR  (R$)
+ 10/2025 - Repasse Orçamentário e financeiro  R$ 1.500.000,00
+ 03/2026 - Repasse Orçamentário e financeiro  R$ 3.500.000,00
+ 03/2027 - Repasse Orçamentário e financeiro  R$ 2.997.588,24
+ 11. PLANO  DE APLICAÇÃO  CONSOLIDADO  – PAD
+ CÓDIGO DA  NATUREZA  DA DESPESA CUST O INDIRET O VALOR PREVIST O
+ 339039 - Pessoa Jurídica   SIM R$ 1.332.931,36
+ 333039 - Pessoa Jurídica  NÃO R$ 6.664.656,88
+   TOTAL R$ 7.997.588,24
+ 12. PROPOSIÇÃO
+ Brasília - DF , na data da assinatura eletrônica
+ 
+EUSTÁQUIO VINÍCIUS DE CAS TRO
+Reitor
+Univ ersidade F eder al do Espírit o San to - UFE S
+ 
+13. APROV AÇÃO
+Brasília, novembro de 2021.
+ 
+ 
+ 
+VANDERLEY ZIGER
+Secr etário
+Secr etario de Agricultur a Familiar
+ 
+ 
+Documento assinado eletronicamente por Arthur Reis Rimoldi, Diretor (a), em 26/11/2025, às 11:40,
+conforme horário oﬁcial de Brasília, com fundamento no art. 4º,§ 3º, do Decreto nº 10.543, de 13 de
+novembro de 2020.16/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 5/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.
+
+--- Página 6 ---
+Documento assinado eletronicamente por Vanderley Ziger, Secretário(a), em 26/11/2025, às 15:21,
+conforme horário oﬁcial de Brasília, com fundamento no art. 4º,§ 3º, do Decreto nº 10.543, de 13 de
+novembro de 2020.
+Documento assinado eletronicamente por Eustaquio Vinicius Ribeiro de Castro, Usuário Externo, em
+29/11/2025, às 17:43, conforme horário oﬁcial de Brasília, com fundamento no art. 4º,§ 3º, do Decreto nº
+10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?acao=documento_conferir&id_orgao_acesso_externo=0
+, informando o código veriﬁcador 48513456 e o código CRC 46D6165C.
+Referência:  Caso r esponda es te Ofício , indic ar expressamen te o Pr ocesso nº 55000.019435/2025-86 SEI nº 4851345616/03/2026, 20:57 SEI/MAPA - 48513456 - Plano de Trabalho - Execução Descentralizada
+https://sei.agro.gov.br/sei/controlador.php?acao=documento_imprimir_web&acao_origem=arvore_visualizar&id_documento=62636844&infra_sist… 6/6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990625.

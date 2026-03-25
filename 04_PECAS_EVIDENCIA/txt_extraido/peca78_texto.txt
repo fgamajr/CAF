@@ -1,0 +1,721 @@
+ESPECIFICAÇÃO DE REGRAS DE
+         NEGÓCIO
+                             Projeto: CAF 3.0
+
+
+
+
+  Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+                                                 Índice
+1. HISTÓRICO DE REVISÕES                                                                                     3
+2. REFERÊNCIAS                                                                                               3
+1 REGRAS DE NEGÓCIO - UFPA                                                                                   3
+MEMBRO FAMILIAR                                                                                              3
+ENDEREÇO                                                                                                     4
+ÁREA                                                                                                         5
+MÃO DE OBRA                                                                                                  6
+RENDA                                                                                                        6
+2 REGRAS DE NEGÓCIO - PESSOA JURÍDICA                                                                        8
+3 REGRAS DE NEGÓCIO - GERAL                                                                                 10
+4 GLOSSÁRIO - DEFINIÇÕES, ACRÔNIMOS E ABREVIAÇÕES                                                           15
+
+
+
+
+          Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+1. HISTÓRICO DE REVISÕES
+     Versão             Data                          Descrição                                        Autor
+
+        0.1          11/07/2025                   Criação do artefato                      Leonardo Pacelli - HITSS
+                                         Criação das regras de negócio de                    Caio Brito – HITSS
+        0.2          14/07/2025
+                                                      UFPA                                 Matheus Gomes - HITSS
+                                                                                             Caio Brito – HITSS
+        0.3          15/07/2025        Criação das regras de negócio de PJ
+                                                                                           Matheus Gomes - HITSS
+
+
+
+2. REFERÊNCIAS
+    Nome do Documento               Descrição
+
+    Sistema CAF 3.0                 https://caf.mda.gov.br/
+    Leis e Portarias                DOCUMENTAÇÃO
+                                    https://www.gov.br/mda/pt-br/acesso-a-informacao/acoes-e-
+    Página oficial                  programas/programas-projetos-acoes-obras-e-atividades/cadastro-
+                                    nacional-da-agricultura-familiar/central-de-conteudo
+    Redmine                         https://sistemas.agricultura.gov.br/redmine/projects/caf-3-0
+    Sharepoint                      https://agromapa.sharepoint.com/sites/arquitetura/SitePages/CAF3.aspx
+
+
+
+1      REGRAS DE NEGÓCIO - UFPA
+
+
+MEMBRO FAMILIAR
+
+      RN1.1      Gestão familiar obrigatória
+
+
+      Um empreendimento familiar rural tem que ser gerido exclusivamente pela família.
+
+
+
+
+      RN1.2      Dados oriundos da Receita Federal
+      Os dados essenciais para o cadastro do membro familiar são extraídos de uma consulta na base
+      da Receita Federal por meio da integração com o BCadastro (ConectaGOV).
+
+
+      RN1.3      Unicidade de membro familiar
+
+
+      O cadastro é impedido de ser realizado caso o membro já esteja vinculado à outra UFPA.
+
+
+
+
+      RN1.4      Membro familiar responsável como pré-requisito
+
+
+      A UFPA deve possuir obrigatoriamente um membro familiar que seja o responsável pela família.
+
+
+
+
+                 Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+  RN1.5    Benefícios sociais oriundos da DataPrev
+
+
+  Após o cadastro do membro familiar é realizada uma consulta à base da DataPrev para extração,
+  se houver dados, de benefícios sociais referentes ao membro cadastrado.
+
+
+  RN1.6    Alteração de Responsável Familiar da UFPA
+
+
+  Caso o responsável pela UFPA seja desvinculado ou haja a necessidade de substituição é
+  necessário haver outros membros cadastrados e um deles deve ser indicado como o novo
+  responsável.
+
+
+
+
+  RN1.7    Obrigatoriedade de membro familiar responsável
+
+
+  Caso o responsável pela UFPA seja desvinculado e não haja outros membros familiares
+  cadastrados ou que não estejam aptos a serem membros responsáveis, a UFPA ficará inativa.
+
+
+
+  RN1.8    Vedação do membro familiar para ser responsável pela UFPA
+
+
+  Um membro só pode ser responsável por uma UFPA caso já tenha atingido a maior idade ou tenha
+  atingido os 16 anos de idade e seja emancipado na data de realização do cadastro.
+
+
+  RN1.9    Vedação de ativação da UFPA se houver bloqueio
+
+
+  A UFPA fica impedida de ser ativada caso haja um ou mais membros familiares com o CPF
+  bloqueado pelo Órgão Gestor.
+
+
+
+
+ENDEREÇO
+
+  RN1.10 Endereço como pré-requisito
+
+
+  A UFPA deve possuir obrigatoriamente um endereço cadastrado.
+
+
+
+
+  RN1.11 Integração com busca de CEP
+
+
+  O cadastro de endereço é realizado utilizando a busca por CEP através do ConectaGov.
+
+
+
+
+           Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+ÁREA
+
+  RN1.12 Cadastro de área como pré-requisito
+
+
+  A UFPA deve possuir obrigatoriamente ao menos uma área cadastrada.
+
+
+  RN1.13 Área principal como pré-requisito
+
+
+  Deve haver uma única área cadastrada marcada como principal.
+
+
+
+  RN1.14 Unicidade do cadastro de área
+  Cada área deve ser cadastrada uma única vez com propriedades distintas na UFPA.
+
+
+  RN1.15 Limite máximo de área
+
+
+  Um agricultor familiar tem que possuir área de até 4 módulos fiscais.
+
+
+
+
+  RN1.16 Exceção à regra de área para Atividades Específicas
+  A regra do limite de cálculo de módulos fiscais será desconsiderada se:
+       •   A atividade principal da UFPA for extrativismo
+       •   A atividade principal da UFPA for pesca artesanal
+       •   A atividade principal da UFPA for aquicultura
+       •   A UFPA estiver em área quilombola
+       •   A UFPA estiver em área indígena
+       •   A UFPA pertencer a comunidades de povos tradicionais
+
+
+  RN1.17 Documento comprobatório como pré-requisito
+
+
+  Para cada área cadastrada deve ser anexado obrigatoriamente um documento comprobatório.
+
+
+
+
+  RN1.18 Obrigatoriedade e importação de áreas do INCRA
+
+
+
+
+            Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+  No momento do cadastro da UFPA deve-se importar todas as áreas vinculadas aos membros
+  familiares, presentes no cadastro do INCRA. Prioritariamente as áreas são consultadas no
+  cadastro do SNCR (Sistema Nacional de Cadastro Rural). Caso não seja encontrado nenhum
+  registro para o membro em questão uma outra consulta é feita no SIGEF (Sistema de Gestão
+  Fundiária). Se nenhum dos serviços retornarem registros, entende-se que aquele membro não
+  possui áreas cadastradas no INCRA e o cadastro de áreas manual é liberado.
+
+
+
+
+  RN1.19 Exceção à Regra de Tamanho da Área para Atividade Específica
+
+
+  Se a atividade principal da UFPA for Aquicultura então deve-se respeitar os limites abaixo:
+
+
+      •   A área não pode exceder o limite de 500 metros cúbicos
+      •   A área não pode exceder o limite de 20.000 metros quadrados
+      •   A área não pode exceder o limite de 2 hectares
+
+
+
+
+MÃO DE OBRA
+
+  RN1.20 Dados oriundos da Receita Federal
+  Os dados essenciais para o cadastro de mão de obra são extraídos de uma consulta na base da
+  Receita Federal por meio da integração com o BCadastro (ConectaGOV) através do envio correto
+  do CPF e Data de Nascimento da pessoa.
+
+
+
+
+  RN1.21 Requisito para Mão de Obra externa
+  Caso a UFPA possua mão de obra externa (funcionários), a quantidade deve ser menor que o total
+  de membros familiares cadastrados.
+
+
+
+
+RENDA
+
+  RN1.22 Tipos de Renda
+  As rendas são categorizadas em dois tipos:
+  •   Renda do Estabelecimento: todas as rendas geradas a partir da produção agricultora ou
+      pecuária da UFPA.
+  •   Renda de Fora do Estabelecimento: todas as rendas provenientes de fora do estabelecimento
+      como empregos, benefícios sociais, benefícios previdenciários e aposentadorias.
+
+
+
+
+           Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+RN1.23 Renda do Estabelecimento como pré-requisito
+A UFPA deve possuir obrigatoriamente uma Renda do Estabelecimento cadastrada.
+
+
+RN1.24 Cálculo da Renda Familiar
+A renda familiar considerada para fins de elegibilidade é igual à soma das rendas oriundas da
+UFPA ou empreendimento.
+
+
+RN1.25 Cálculo da Renda Bruta Familiar
+A Renda Bruta Familiar é igual à soma das Receitas do Estabelecimento e das Rendas Externas
+da Família, excluídos benefícios sociais e previdenciários.
+
+
+RN1.26 Vedação ao benefício se renda da família for menor que renda externa
+A soma da Renda Familiar deve ser maior do que a soma das rendas externas da família.
+
+
+RN1.27 Documento comprobatório das Rendas Familiares
+Deve haver pelo menos 1 documento comprobatório da Renda Familiar.
+
+
+RN1.28 Documento comprobatório das Rendas Externas da Família
+Cada Renda Externa da Família deve ter um documento comprobatório anexado.
+
+
+RN1.29 Vedação ao benefício se Benefícios Sociais não forem declarados
+É realizada uma validação de todos os benefícios sociais, previdenciários e aposentadorias na
+base da DataPrev de todos os membros da família. Caso não seja informado, o cadastro não pode
+ser concluído.
+
+
+RN1.30 Vedação ao benefício se Vínculo Empregatício não for declarado
+É realizada uma validação na base da DataPrev para verificar se o membro familiar possuiu vínculo
+empregatício nos últimos 12 meses. Caso não seja informado, o cadastro não pode ser concluído.
+
+
+
+
+RN1.31 Renda Bruta Anual Dedutível
+Admite-se dedução de até R$ 20.000,00 da renda bruta anual oriunda de atividades externas ao
+estabelecimento, para cálculo de elegibilidade. Os benefícios sociais e previdenciários não são
+considerados nesse cálculo.
+
+
+RN1.32 Requisitos para Enquadramento Pronaf
+
+
+Unidades familiares devem atender a requisitos específicos para se enquadrarem no Pronaf. Caso
+atenda a todos os requisitos simultaneamente, a UFPA pode ser enquadrada em todos os tipos
+(A, AC, V, B).
+
+
+
+
+         Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+    Condições:
+
+
+        •   Deve possuir ao menos uma renda familiar
+        •   Cálculo: Soma de todas as rendas - Benefícios sociais – Rebate dos produtos
+        •   O cálculo não deve exceder o valor de R$ 500.000,00
+        •   Se a UFPA estiver localizada em área indígena, quilombola, assentamento ou estiver
+            incluída no programa de Crédito Fundiário, a UFPA será enquadrada como A e AC.
+        •   Se o cálculo especificado acima for menor ou igual a R$ 500.000,00, a UFPA será
+            enquadrada como V.
+        •   Se o cálculo especificado acima for menor ou igual a R$ 50.000,00 e a UFPA não possuir
+            mão de obra contratada, ela será enquadrada como B.
+
+
+
+
+2   REGRAS DE NEGÓCIO - PESSOA JURÍDICA
+
+
+
+    RN2.1    Dados oriundos da Receita Federal
+    Os dados essenciais para o cadastro da Pessoa Jurídica são extraídos de uma consulta na base
+    da Receita Federal por meio da integração com o BCadastro (ConectaGOV).
+
+
+    RN2.2    Unicidade da Pessoa Jurídica
+
+
+    O cadastro é impedido de ser realizado caso a pessoa jurídica, identificada pelo CNPJ, já existir
+    no CAF.
+
+
+    RN2.3    Vedação a Empreendimentos com Não Inscritos no CAF
+    Um empreendimento não pode ser considerado familiar se possuir membros não inscritos no CAF.
+
+
+    RN2.4    Reconhecimento de Empreendimento Familiar
+    Um empreendimento é considerado familiar se for formado exclusivamente por agricultores
+    familiares com inscrição ativa no CAF.
+
+
+
+
+    RN2.5    Classificação de Cooperativa da Agricultura Familiar
+    Uma cooperativa é considerada da agricultura familiar se possuir no mínimo 60% de cooperados
+    com inscrição ativa no CAF.
+
+
+    RN2.6    Desqualificação de Cooperativa com Membros Não Inscritos
+
+
+
+
+             Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+Se a cooperativa for composta majoritariamente por pessoas físicas não inscritas no CAF, então
+ela não se qualifica como cooperativa da agricultura familiar.
+
+
+RN2.7       Vedação de Inscrição para Pessoa Jurídica Incompatível
+É vedada a inscrição no CAF de pessoa jurídica cuja atividade econômica seja incompatível com
+a agricultura familiar.
+
+
+RN2.8       Obrigatoriedade de Inscrição Ativa no CAF
+A inscrição ativa no CAF é obrigatória para acesso às ações e políticas públicas da agricultura
+familiar.
+
+
+RN2.9       Responsável Legal como pré-requisito
+Cada pessoa jurídica cadastrada deve possuir obrigatoriamente um responsável legal que é
+oriundo da consulta aos dados da Receita Federal.
+
+
+RN2.10 Arquivo de sócios como pré-requisito
+Para realizar o cadastro de uma pessoa jurídica no CAF é necessário carregar um arquivo com
+extensão .TXT ou .CSV contendo uma lista de sócios que podem ser pessoas físicas, jurídicas ou
+ambos.
+
+
+RN2.11 Validade da Inscrição no CAF
+A inscrição no CAF para pessoas jurídicas é válida por 3 anos.
+
+
+RN2.12 Documento de Veracidade como Pré-Requisito
+Para concluir e ativar um cadastro de pessoa jurídica é necessário baixar o documento de
+veracidade que é gerado pelo sistema, assinar e realizar o upload do documento.
+
+
+RN2.13 Unicidade de Responsável Técnico
+Cada pessoa jurídica cadastrada no CAF pode possuir no máximo um responsável técnico.
+
+
+RN2.14 Extrato de Sócios
+Após o processamento do documento dos sócios, é possível imprimir o extrato com os dados dos
+sócios incluídos na pessoa jurídica.
+
+
+
+
+RN2.15 Extrato de Falhas
+Após o processamento do documento dos sócios, é possível imprimir o extrato com todos os CPFs
+que falharam ao serem processados. As falhas podem incluir CPF inválido ou que não estejam
+vinculados a um CAF ativo.
+
+
+RN2.16 Consulta Pública de Dados de Pessoa Jurídica
+
+
+
+
+            Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+    Os dados de uma Pessoa Jurídica podem ser consultados de forma pública sem que seja
+    necessário um perfil de usuário ou acesso ao sistema. Deve-se informar ao menos um dado como
+    o CNPJ, por exemplo, para que a pesquisa seja realizada.
+
+
+    RN2.17 Classificação de Cooperativa Singular
+    Uma cooperativa é considerada como singular se possuir no mínimo 50% dos cooperados com
+    inscrição ativa no CAF.
+
+
+    RN2.18 Classificação de Cooperativa Central
+    Uma cooperativa é considerada como central se possuir no mínimo 51% dos cooperados das
+    Cooperativas Singulares associadas que possuam inscrição ativa no CAF.
+
+
+    RN2.19 Classificação de Empreendimento Familiar
+    Um empreendimento familiar deve possuir 100% dos cooperados com inscrição ativa no CAF.
+
+
+    RN2.20 Classificação de Associação
+    Uma associação é caracterizada por possibilitar a inclusão de cooperadores pessoa física e pessoa
+    jurídica. Para ser validada, uma associação deve possuir pelo menos 51% dos cooperadores
+    pessoa física com inscrição ativa no CAF.
+
+
+    RN2.21 Tipos de Natureza Jurídica permitidos
+    É possível realizar o cadastro de pessoas jurídicas que contenham as naturezas jurídicas
+    permitidas.
+    Condições:
+        •   2062 - Sociedade Empresária Limitada
+        •   2135 - Empresário (Individual)
+        •   2240 – Sociedade Simples Limitada
+        •   3239 – Comunidade Indígena
+        •   4120 – Produtor Rural (Pessoa Física)
+        •   2143 – Cooperativa
+        •   3999 - Associação
+
+
+
+
+3   REGRAS DE NEGÓCIO - GERAL
+
+
+
+    RN3.1. Vedação ao Benefício sem Enquadramento Legal
+
+
+
+
+             Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+Um agricultor não pode acessar os benefícios do CAF se não cumprir simultaneamente os critérios
+legais.
+
+
+RN3.2. Enquadramento como Agricultor Familiar
+Um cidadão é considerado agricultor familiar se atender simultaneamente aos requisitos de área,
+mão de obra, endereço, renda e gestão de membros familiares.
+
+
+RN3.3. Bloqueio de Acesso por Inatividade no CAF
+Se a inscrição no CAF estiver inativa, então o beneficiário não pode acessar políticas públicas da
+agricultura familiar.
+
+
+RN3.4. Obrigatoriedade de Inscrição Ativa no CAF
+A inscrição ativa no CAF é obrigatória para acesso às ações e políticas públicas da agricultura
+familiar.
+
+
+RN3.5. Proibição de Dados Falsos
+É vedada a inscrição no CAF mediante apresentação de informações ou documentos falsos ou
+adulterados.
+
+
+RN3.6. Suspensão por Não Atendimento a Solicitação
+Se o inscrito não apresentar os documentos ou esclarecimentos solicitados pelo Órgão Gestor,
+então sua inscrição pode ser suspensa.
+
+
+RN3.7. Reconhecimento de Integradoras
+São consideradas integradoras as entidades com contrato de exclusividade de aquisição de
+produção das UFPA, compondo a receita bruta familiar.
+RN3.8. Validade da Inscrição no CAF
+A inscrição no CAF é válida por 3 anos, exceto para a região Norte, que é de 5 anos.
+
+
+RN3.9. Unicidade da Inscrição por UFPA ou Empreendimento
+Cada UFPA, empreendimento ou forma associativa deve possuir apenas uma inscrição no CAF.
+
+
+RN3.10. Vedação de Benefícios com Inscrição Suspensa
+Se a inscrição estiver suspensa ou inativa, então o beneficiário não poderá acessar políticas
+públicas da agricultura familiar.
+
+
+RN3.11. Verificação Prévia de Situação Cadastral
+Se for concedido benefício público, então deve ser verificada previamente a situação da inscrição
+no CAF, mesmo que esteja dentro da validade.
+
+
+RN3.12. Substituição da DAP pelo CAF
+
+
+
+
+            Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+Se a DAP estiver expirada, então o beneficiário tem que requerer a inscrição no CAF para manter
+acesso às políticas públicas.
+
+
+RN3.13. Inscrição por Procuração
+Se a inscrição for realizada por procuração, então deve haver poderes específicos e firma
+reconhecida em cartório.
+
+
+RN3.14. Controle Social sobre o CAF
+Qualquer cidadão, entidade ou conselho pode denunciar irregularidades na inscrição do CAF,
+exercendo controle social sobre o sistema.
+
+
+RN3.15. Consulta Pública de Dados de UFPA
+Os dados de uma UFPA podem ser consultados de forma pública sem que seja necessário um
+perfil de usuário ou acesso ao sistema. Deve-se informar ao menos um dado como o CPF, por
+exemplo, para que a pesquisa seja realizada.
+
+
+RN3.16. Credenciamento de Entidades na Rede CAF
+Apenas órgãos públicos, entidades públicas e entidades privadas sem fins lucrativos
+representativas da agricultura familiar podem ser credenciados na Rede CAF.
+Condições:
+    •   Órgãos públicos devem ser liderados por Unidade Central ou Unidade Regional.
+    •   Entidades privadas devem ser lideradas por Unidade Agregadora.
+    •   Exceções para entidades com dois níveis hierárquicos devem demonstrar atendimento ao
+        interesse público.
+
+
+RN3.17. Requisitos para Credenciamento de Entidades Privadas
+Entidades privadas devem atender a requisitos específicos para ingressar na Rede CAF.
+Condições:
+    •   Possuir personalidade jurídica na área de agricultura familiar ou correlacionada.
+    •   Ter no mínimo dois anos de atuação.
+    •   Não possuir fins lucrativos.
+    •   Prever representação social dos beneficiários no regimento interno ou estatuto social.
+
+
+RN3.18. Penalidades por Infrações
+Infrações cometidas por integrantes da Rede CAF podem resultar em sanções.
+Condições:
+    •   Sanções incluem advertência, suspensão e descredenciamento.
+    •   A aplicação de sanções deve considerar circunstâncias atenuantes e agravantes.
+
+
+RN3.19. Encerramento de Parcerias na Rede CAF
+
+
+
+
+         Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+O Termo de Adesão e Compromisso pode ser encerrado por solicitação formal, consenso entre as
+partes ou decisão unilateral do Órgão Gestor.
+As obrigações assumidas devem ser cumpridas até a data do encerramento.
+
+
+RN3.20. Vedações ao Cadastrador
+O cadastrador deve observar restrições específicas ao realizar inscrições no CAF.
+Condições:
+    •   Não pode exigir documentos não previstos nos normativos.
+
+
+RN3.21. Documento de Veracidade como Pré-Requisito
+Para concluir e ativar um cadastro de UFPA é necessário baixar o documento de veracidade que
+é gerado pelo sistema, assinar e realizar o upload do mesmo.
+
+
+RN3.22. Extrato de Dados
+Após a ativação do cadastro de UFPA é possível imprimir o extrato com todos os dados informados
+como os membros familiares cadastrados, áreas, rendas e endereço.
+
+
+RN3.23. Perfis de Usuário do CAF
+O sistema CAF possui 3 tipos de perfis que são fixos, porém também possibilita ao Órgão Gestor
+criar perfis caso seja necessário:
+Perfis de Sistema:
+    •   Administrador: perfil com acesso a todas as funcionalidades do sistema
+    •   Cadastrador: perfil responsável por criar e manter os cadastros de UFPA
+    •   Auto Cadastro PJ: perfil que possibilita o usuário realizar cadastros de pessoa jurídica
+
+
+RN3.24. Gestão de Usuários
+O sistema CAF possibilita ao Órgão Gestor a manutenção de usuários do sistema bem como a
+atribuição de novos perfis conforme necessário.
+
+
+RN3.25. Central de Mensagens
+O sistema CAF possibilita ao Órgão Gestor a criação e manutenção de comunicados aos usuários
+ou perfis escolhidos para serem notificados. As mensagens podem conter avisos genéricos como
+manutenção programada ou avisos específicos para um determinado perfil.
+
+
+RN3.26. Relatórios
+É possível visualizar, filtrar e consolidar dados de UFPA e Pessoas Jurídicas através de gráficos,
+tabelas explicativas, comparativos e listas.
+
+
+RN3.27. Bloqueio de Membro Familiar
+
+
+
+
+          Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+O sistema possibilita ao Órgão Gestor realizar o bloqueio de um membro familiar por meio do CPF.
+O bloqueio impossibilita o cadastro da UFPA de ser ativado. O desbloqueio deve ser realizado
+manualmente.
+
+
+RN3.28. Suspensão de Membro Familiar
+O sistema possibilita ao Órgão Gestor realizar a suspensão por prazo determinado de um membro
+familiar por meio do CPF. Após o período de suspensão, o CAF fica inativo.
+
+
+RN3.29. Bloqueio de Pessoa Jurídica
+O sistema possibilita ao Órgão Gestor realizar o bloqueio de uma pessoa jurídica por meio do
+CNPJ. O bloqueio impossibilita o cadastro da pessoa jurídica de ser ativado. O desbloqueio deve
+ser realizado manualmente.
+
+
+RN3.30. Suspensão de Pessoa Jurídica
+O sistema possibilita ao Órgão Gestor realizar a suspensão de uma pessoa jurídica por meio do
+CNPJ. Após o período de suspensão, o cadastro da pessoa jurídica fica inativo.
+
+
+
+
+         Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+4     GLOSSÁRIO - DEFINIÇÕES, ACRÔNIMOS E ABREVIAÇÕES
+                Termo                                                     Significado
+                                               Cadastro Nacional da Agricultura Familiar. Sistema oficial
+                                               do Governo Federal que identifica e qualifica Unidades
+CAF                                            Familiares de Produção Agrária (UFPA),
+                                               Empreendimentos Familiares Rurais e Formas
+                                               Associativas da Agricultura Familiar.
+                                               Declaração de Aptidão ao Pronaf. Documento substituído
+DAP                                            pelo CAF como instrumento de identificação para acesso
+                                               às políticas públicas da agricultura familiar.
+                                               Unidade Familiar de Produção Agrária. Conjunto de
+                                               indivíduos composto por família que explora atividade
+UFPA
+                                               agrária para subsistência e geração de renda, residindo
+                                               no estabelecimento ou nas proximidades.
+                                               Pessoa jurídica vinculada à UFPA, formada
+                                               exclusivamente por agricultores familiares com inscrição
+Empreendimento Familiar Rural
+                                               ativa no CAF, destinada à produção, beneficiamento,
+(EFR)
+                                               comercialização ou prestação de serviços de turismo
+                                               rural.
+                                               Cooperativas ou associações compostas majoritariamente
+Forma Associativa da Agricultura
+                                               por agricultores familiares com inscrição ativa no CAF,
+Familiar
+                                               reconhecidas como organizações da agricultura familiar.
+                                               Unidade de medida agrária, em hectares, utilizada para
+Módulo Fiscal                                  classificação fundiária de imóveis rurais, definida pelo
+                                               INCRA conforme o município.
+                                               Administração do estabelecimento ou empreendimento
+Gestão Familiar                                realizados exclusivamente por membros da própria
+                                               família.
+                                               Situação cadastral que habilita o acesso às políticas
+Inscrição Ativa no CAF
+                                               públicas da agricultura familiar.
+                                               Situação cadastral que impede o acesso às políticas
+Inscrição Inativa no CAF
+                                               públicas da agricultura familiar.
+                                               Situação cadastral temporária que suspende o acesso às
+Inscrição Suspensa no CAF                      políticas públicas da agricultura familiar, até
+                                               regularização.
+                                               Soma das rendas obtidas no estabelecimento e fora dele
+Renda Bruta Familiar                           por membros da UFPA, excluindo benefícios sociais e
+                                               previdenciários.
+                                               Entidade que mantém contrato de exclusividade com a
+Integradora                                    UFPA para aquisição de sua produção como matéria-
+                                               prima para o complexo agroindustrial.
+                                               Conjunto de mecanismos por meio dos quais cidadãos,
+Controle Social                                entidades ou conselhos acompanham, fiscalizam e
+                                               denunciam irregularidades no CAF.
+                                               Ação obrigatória dos órgãos gestores antes da concessão
+Verificação Prévia de Situação
+                                               de qualquer benefício vinculado ao CAF, com objetivo de
+Cadastra
+                                               checar a validade, suspensão ou inativação da inscrição.
+
+
+
+
+              Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+                                            Instrumento legal com poderes específicos exigido para
+Procuração com Firma Reconhecida            terceiros realizarem a inscrição no CAF em nome do
+                                            agricultor familiar.
+
+
+
+
+           Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190837.
+

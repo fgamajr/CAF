@@ -1,0 +1,674 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria T´ ecnica
+An´ alise de Conformidade com Limite de 4 M´ odulos Fiscais
+Cadastro da Agricultura Familiar (CAF)
+Valida¸ c˜ ao Incidental via Query SQL em Popula¸ c˜ ao Completa
+Equipe de Auditoria Operacional - TCU
+29 de Outubro de 2025
+Sum´ ario
+1 Introdu¸ c˜ ao 3
+1.1 Contexto e Motiva¸ c˜ ao . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Objetivo do Trabalho . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3 Popula¸ c˜ ao Analisada . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Metodologia 5
+2.1 Ferramenta Utilizada . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.2 Script de Valida¸ c˜ ao . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.3 Estratifica¸ c˜ ao de Resultados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.3.1 Estratifica¸ c˜ ao Temporal . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+2.3.2 Estratifica¸ c˜ ao por Faixa de Gravidade . . . . . . . . . . . . . . . . . . . . 6
+2.4 Processo de Extra¸ c˜ ao e An´ alise . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.5 Limita¸ c˜ oes Metodol´ ogicas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3 Resultados 8
+3.1 Resultados Consolidados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2 Estratifica¸ c˜ ao Temporal dos Resultados . . . . . . . . . . . . . . . . . . . . . . . 8
+3.3 Distribui¸ c˜ ao por Faixa de Gravidade . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.4 Estat´ ısticas Descritivas Detalhadas . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.5 Distribui¸ c˜ ao Temporal Detalhada por Faixa . . . . . . . . . . . . . . . . . . . . . 10
+4 Exemplos Representativos 11
+4.1 Casos por Faixa de Gravidade . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4.1.1 Faixa 4-50 MF: Excedentes Moderados (940 casos) . . . . . . . . . . . . . 11
+4.1.2 Faixa 50-500 MF: Excedentes Altos (549 casos) . . . . . . . . . . . . . . . 11
+4.1.3 Faixa >500 MF: Excedentes Extremos (38 casos) . . . . . . . . . . . . . 12
+4.2 Distribui¸ c˜ ao Geogr´ afica . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+5 Implica¸ c˜ oes e Conclus˜ oes 13
+5.1 Valida¸ c˜ ao da Descoberta Incidental . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.1.1 Descoberta Oportunista Durante Valida¸ c˜ ao de ´Area . . . . . . . . . . . . 13
+5.1.2 Relevˆ ancia do Achado . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.2 Estimativa de Impacto . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.2.1 Magnitude Absoluta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.2.2 Impacto Temporal . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+5.3 Implica¸ c˜ oes para o Relat´ orio de Auditoria . . . . . . . . . . . . . . . . . . . . . . 14
+5.3.1 Classifica¸ c˜ ao como Achado Incidental . . . . . . . . . . . . . . . . . . . . 14
+1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 2 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+5.3.2 Informa¸ c˜ oes a Incluir no Relat´ orio . . . . . . . . . . . . . . . . . . . . . . 14
+5.4 Limita¸ c˜ oes e Ressalvas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+5.4.1 Dependˆ encia da Qualidade dos Dados de ´Area . . . . . . . . . . . . . . . 14
+5.4.2 Exclus˜ ao de P´ ublicos Tradicionais . . . . . . . . . . . . . . . . . . . . . . 15
+5.4.3 Valores Extremos Provavelmente Decorrem de Erro . . . . . . . . . . . . . 15
+5.5 Conclus˜ ao Final . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+6 Anexos 17
+6.1 Anexo I - Script SQL Completo . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+6.2 Anexo II - Arquivo CSV Completo . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+6.3 Anexo III - Tabelas de An´ alise Estat´ ıstica . . . . . . . . . . . . . . . . . . . . . . 18
+6.4 Anexo IV - Referˆ encias Normativas . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 3 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+1 Introdu¸ c˜ ao
+1.1 Contexto e Motiva¸ c˜ ao
+Durante a auditoria operacional do Sistema CAF, especificamente durante a an´ alise de valida¸ c˜ ao
+de ´ areas de im´ oveis rurais (Achado 2 - Divergˆ encias Cr´ ıticas em ´Area de Im´ oveis Rurais), a equipe
+identificou oportunidade de realizar valida¸ c˜ ao incidental quanto ao cumprimento do requisito
+legal fundamental de elegibilidade ao programa de agricultura familiar: o limite de 4 (quatro)
+m´ odulos fiscais estabelecido pela Lei n º11.326, de 24 de julho de 2006, Art. 3 º, inciso
+I.
+A Lei 11.326/2006, que estabelece a Pol´ ıtica Nacional da Agricultura Familiar e Empreen-
+dimentos Familiares Rurais, define em seu Art. 3 ºos requisitos de elegibilidade ao programa,
+especificando no inciso I que o agricultor familiar e empreendedor familiar rural ´ e aquele que
+“n˜ ao detenha, a qualquer t´ ıtulo, ´ area maior do que 4 (quatro) m´ odulos fiscais ”.
+Esta an´ alise complementar foi motivada pela disponibilidade t´ ecnica de:
+•Acesso direto ` a base de dados PostgreSQL do Sistema CAF com permiss˜ ao de leitura
+•Tabela S MODULO FISCAL com valores oficiais por munic´ ıpio conforme INCRA
+•Tabela S AREA IMOVEL com ´ areas cadastradas vinculadas a Unidades Familiares
+•Capacidade de c´ alculo automatizado mediante query SQL sobre popula¸ c˜ ao completa
+Diferentemente dos achados principais planejados na matriz de risco da auditoria, este achado
+caracteriza-se como descoberta incidental realizada oportunamente mediante aproveitamento
+da infraestrutura t´ ecnica dispon´ ıvel durante a fase de trabalho de campo. N˜ ao constitui quest˜ ao
+de auditoria formalmente planejada, mas sim valida¸ c˜ ao complementar que emergiu naturalmente
+do processo investigativo.
+1.2 Objetivo do Trabalho
+Realizar an´ alise t´ ecnica complementar mediante query SQL sobre a popula¸ c˜ ao completa
+de ´ areas de im´ oveis rurais cadastradas no Sistema CAF para:
+1.Quantificar empiricamente o n´ umero de propriedades que excedem o limite legal de 4
+m´ odulos fiscais
+2.Estratificar resultados temporalmente (antes vs depois da implanta¸ c˜ ao do CAF 3.0 em
+26/03/2025)
+3.Classificar casos por gravidade conforme faixas de excedˆ encia (4-50 MF, 50-500 MF, >
+500 MF)
+4.Identificar padr˜ oes de distribui¸ c˜ ao temporal e magnitude de n˜ ao conformidade
+5.Documentar evidˆ encias t´ ecnicas objetivas para fundamentar poss´ ıvel recomenda¸ c˜ ao de
+auditoria
+1.3 Popula¸ c˜ ao Analisada
+A an´ alise foi realizada sobre a popula¸ c˜ ao completa de ´ areas de im´ oveis rurais vinculadas a
+Unidades Familiares ativas no Sistema CAF, mediante query SQL executada diretamente sobre
+o banco de dados PostgreSQL caf mapa.
+Crit´ erios de inclus˜ ao:
+3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 4 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+•Unidades Familiares com status ATIVA (dt inativacao IS NULL OU dt inativacao ≤
+dtativacao)
+•´Areas com tipo de terreno = 1 (Agricultura, Pecu´ aria e Outras atividades)
+•P´ ublico tradicional IS NULL (exclui comunidades/p´ ublicos tradicionais)
+•Caracteriza¸ c˜ ao de ´ area = 6 ou NULL (exclui categorias especiais)
+•´Area ¿ 0 hectares (exclui registros com ´ area zero)
+•Coordenadas geogr´ aficas v´ alidas (latitude entre -90 e 90, longitude entre -180 e 180)
+•Unidade de medida = M ²(id=1) ou hectares (id=3)
+Popula¸ c˜ ao total analisada: 2.283.197 registros de ´ areas de im´ oveis rurais vinculadas a
+Unidades Familiares ativas em todo territ´ orio nacional.
+Estratifica¸ c˜ ao temporal aplicada:
+•ANTES 26032025: ´Areas cadastradas antes de 26 de mar¸ co de 2025 (per´ ıodo CAF
+2.0)
+•DEPOIS 26032025: ´Areas cadastradas a partir de 26 de mar¸ co de 2025 (per´ ıodo CAF
+3.0)
+A data de 26/03/2025 marca a implanta¸ c˜ ao da vers˜ ao CAF 3.0 mediante Portaria MDA
+nº19/2025, representando marco regulat´ orio e tecnol´ ogico relevante para an´ alise temporal de
+conformidade.
+4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 5 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+2 Metodologia
+2.1 Ferramenta Utilizada
+PostgreSQL 14.x - Sistema Gerenciador de Banco de Dados Relacional
+•Vers˜ ao : PostgreSQL 14.x (banco de dados de produ¸ c˜ ao do Sistema CAF)
+•Schema : caf mapa (esquema principal do Sistema CAF vers˜ ao 3.0)
+•Acesso : Permiss˜ ao de leitura (SELECT) concedida pela equipe t´ ecnica do MDA
+•Fun¸ c˜ ao : C´ alculo de m´ odulos fiscais por propriedade mediante JOIN de tabelas
+Tabelas consultadas:
+•SAREA IMOVEL :´Areas de im´ oveis rurais com coordenadas geogr´ aficas e data de cadastro
+•SUNIDADE FAMILIAR : Unidades Familiares com status de ativa¸ c˜ ao/inativa¸ c˜ ao
+•SAREA PESSOA UFPR : Relacionamento entre ´ areas e Unidades Familiares
+•SMODULO FISCAL : M´ odulos fiscais oficiais por munic´ ıpio (fonte: INCRA)
+2.2 Script de Valida¸ c˜ ao
+Foi desenvolvido script SQL ( Validacao Modulos Fiscais v5.sql ) para:
+1. Converter ´ areas para hectares conforme unidade de medida (M ²÷10.000 ou hectares
+direto)
+2. Filtrar Unidades Familiares ativas conforme regras de neg´ ocio do CAF
+3. Realizar JOIN com tabela de m´ odulos fiscais por c´ odigo de munic´ ıpio IBGE
+4. Calcular quantidade de m´ odulos fiscais: ´ area hectares ÷modulo fiscal municipio
+5. Classificar conformidade: CONFORME (≤4 MF) vs EXCEDENTE (>4 MF)
+6. Extrair data de cadastro para estratifica¸ c˜ ao temporal
+F´ ormula aplicada:
+Quantidade de MF =´Area (hectares)
+M´ odulo Fiscal do Munic´ ıpio (hectares)(1)
+Crit´ erio de conformidade:
+Excede Limite =(
+SIM se Quantidade de MF >4,00
+N˜AO se Quantidade de MF ≤4,00(2)
+2.3 Estratifica¸ c˜ ao de Resultados
+2.3.1 Estratifica¸ c˜ ao Temporal
+Classifica¸ c˜ ao conforme data de cadastro da ´ area (campo dtcriacao da tabela SAREA IMOVEL ):
+•ANTES 26032025: dtcadastro ¡ ’2025-03-26’
+•DEPOIS 26032025: dtcadastro ≥’2025-03-26’
+5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 6 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+2.3.2 Estratifica¸ c˜ ao por Faixa de Gravidade
+Para os casos EXCEDENTES (¿ 4 MF), foi aplicada classifica¸ c˜ ao por magnitude de excedˆ encia:
+Faixa (MF) Interpreta¸ c˜ ao
+4 - 50 MF Excedentes moderados - Pr´ oximos ao limite de 4 MF,
+podem indicar erro de medi¸ c˜ ao ou atualiza¸ c˜ ao cadastral de-
+fasada. Requerem verifica¸ c˜ ao individual mas n˜ ao indicam
+necessariamente fraude.
+50 - 500 MF Excedentes altos - Problema significativo de dimensiona-
+mento, indicando propriedades de m´ edio a grande porte ca-
+dastradas indevidamente como agricultura familiar. Reque-
+rem investiga¸ c˜ ao priorit´ aria.
+>500 MF Excedentes extremos - Casos que requerem investiga¸ c˜ ao
+especial pois podem indicar erros graves de cadastramento
+(troca de v´ ırgula por ponto, ´ area de territ´ orio coletivo regis-
+trada como individual) ou fraude deliberada.
+Tabela 1: Classifica¸ c˜ ao por gravidade de excedˆ encia
+2.4 Processo de Extra¸ c˜ ao e An´ alise
+Etapas executadas:
+1. Desenvolvimento e teste do script SQL em ambiente de homologa¸ c˜ ao
+2. Execu¸ c˜ ao da query no banco de produ¸ c˜ ao mediante conex˜ ao autorizada
+3. Exporta¸ c˜ ao dos resultados para arquivo CSV (271 MB, 2.283.197 linhas)
+4. Processamento estat´ ıstico dos resultados mediante an´ alise em Excel
+5. Gera¸ c˜ ao de tabelas consolidadas por estrato temporal e faixa de gravidade
+6. C´ alculo de percentuais e estat´ ısticas descritivas (m´ ınimo, m´ aximo, m´ edia, mediana)
+2.5 Limita¸ c˜ oes Metodol´ ogicas
+•An´ alise censit´ aria, n˜ ao amostral: Todos os 2.283.197 registros foram analisados, por-
+tanto n˜ ao h´ a margem de erro estat´ ıstica de amostragem. Resultados representam a po-
+pula¸ c˜ ao total de Unidades Familiares ativas conforme crit´ erios de filtro aplicados.
+•Exclus˜ ao de p´ ublicos tradicionais: Query exclui intencionalmente Unidades Familiares
+classificadas como p´ ublico/comunidade tradicional (quilombolas, ind´ ıgenas, extrativistas),
+pois estas podem ter regras diferenciadas de m´ odulos fiscais conforme legisla¸ c˜ ao espec´ ıfica.
+•Dependˆ encia da qualidade dos dados de ´ area: C´ alculo assume que valores registra-
+dos na tabela SAREA IMOVEL est˜ ao corretos. Achado 2 (Divergˆ encias Cr´ ıticas em ´Area)
+identificou que 24,38% dos documentos apresentam divergˆ encia de ´ area ≥10%, o que pode
+impactar a precis˜ ao desta an´ alise.
+•Valores extremos podem indicar erros cadastrais: Casos com mais de 10.000
+m´ odulos fiscais (m´ aximo identificado: 14.934 MF) provavelmente decorrem de erro de
+digita¸ c˜ ao (troca de v´ ırgula por ponto, ausˆ encia de convers˜ ao de unidade de medida) e n˜ ao
+representam propriedades reais desta magnitude.
+6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 7 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+•Ausˆ encia de valida¸ c˜ ao com documentos: Esta an´ alise valida apenas a conformidade
+entre ´ area cadastrada no banco de dados versus limite legal de 4 m´ odulos fiscais . N˜ ao
+confronta ´ area cadastrada com ´ area documentada (valida¸ c˜ ao realizada no Achado 2).
+7
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 8 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+3 Resultados
+3.1 Resultados Consolidados
+A an´ alise da popula¸ c˜ ao completa de 2.283.197 ´ areas de im´ oveis rurais vinculadas a Unidades
+Familiares ativas revelou os seguintes resultados:
+Conformidade Quantidade Percentual Status
+CONFORME ( ≤4 MF) 2.281.670 99,93% ADEQUADO
+EXCEDENTE (¿ 4 MF) 1.527 0,07% N˜AO CONFORME
+TOTAL 2.283.197 100,00%
+Tabela 2: Distribui¸ c˜ ao de conformidade com limite de 4 m´ odulos fiscais (popula¸ c˜ ao completa)
+Interpreta¸ c˜ ao: A vasta maioria (99,93%) das Unidades Familiares ativas no Sistema CAF
+atende ao requisito legal de ´ area ≤4 m´ odulos fiscais. Identificou-se 1.527 casos n˜ ao conformes
+(0,07% da popula¸ c˜ ao), representando propriedades que excedem o limite estabelecido pela Lei
+11.326/2006, Art. 3 º, I.
+3.2 Estratifica¸ c˜ ao Temporal dos Resultados
+Estrato Conformidade Qtd % Estrato Min MF Max MF M´ edia MF
+ANTES 26032025 CONFORME 1.711.669 99,912% 0,00 4,00 0,30
+ANTES 26032025 EXCEDENTE 1.507 0,088% 4,03 14.934,00 142,00
+DEPOIS 26032025 CONFORME 570.001 99,996% 0,00 4,00 0,31
+DEPOIS 26032025 EXCEDENTE 20 0,004% 4,43 11.371,26 633,78
+TOTAL 2.283.197 100,00%
+Tabela 3: Estratifica¸ c˜ ao temporal de conformidade (ANTES vs DEPOIS 26/03/2025)
+Achado temporal cr´ ıtico:
+•98,7% dos casos n˜ ao conformes (1.507 de 1.527) s˜ ao cadastros anteriores a 26/03/2025
+(per´ ıodo CAF 2.0)
+•1,3% dos casos n˜ ao conformes (20 de 1.527) s˜ ao cadastros posteriores a 26/03/2025
+(per´ ıodo CAF 3.0)
+•Taxa de n˜ ao conformidade reduziu 22 vezes ap´ os implanta¸ c˜ ao do CAF 3.0: de 0,088%
+para 0,004%
+Esta distribui¸ c˜ ao temporal evidencia que a vasta maioria dos casos n˜ ao conformes s˜ ao
+legado do sistema anterior (CAF 2.0), sugerindo que controles de valida¸ c˜ ao implementados no
+CAF 3.0 mediante Portaria MDA 19/2025 est˜ ao sendo efetivos em prevenir novos cadastramentos
+acima do limite legal.
+8
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 9 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+3.3 Distribui¸ c˜ ao por Faixa de Gravidade
+Faixa (MF) Qtd % Excedentes % Popula¸ c˜ ao Min MF Max MF
+4 - 50 MF 940 61,56% 0,0412% 4,03 50,00
+50 - 500 MF 549 35,95% 0,0240% 50,94 480,00
+>500 MF 38 2,49% 0,0017% 553,85 14.934,00
+TOTAL EXCEDENTES 1.527 100,00% 0,0669%
+Tabela 4: Distribui¸ c˜ ao de casos n˜ ao conformes por faixa de gravidade
+An´ alise por gravidade:
+•61,56% s˜ ao excedentes moderados (4-50 MF): 940 casos pr´ oximos ao limite, podem
+decorrer de erro de medi¸ c˜ ao ou atualiza¸ c˜ ao cadastral defasada
+•35,95% s˜ ao excedentes altos (50-500 MF): 549 casos indicando propriedades de m´ edio
+a grande porte indevidamente cadastradas
+•2,49% s˜ ao excedentes extremos (>500 MF): 38 casos que requerem investiga¸ c˜ ao
+especial por poss´ ıvel erro grave de cadastramento
+3.4 Estat´ ısticas Descritivas Detalhadas
+Para o estrato ANTES 26032025 (1.507 casos n˜ ao conformes):
+•M´ ınimo: 4,03 MF (marginalmente acima do limite)
+•M´ aximo: 14.934,00 MF (caso extremo, prov´ avel erro cadastral)
+•M´ edia: 142,00 MF (indica presen¸ ca de casos graves que elevam m´ edia)
+•Mediana: 33,61 MF (valor central, menos sens´ ıvel a outliers)
+Para o estrato DEPOIS 26032025 (20 casos n˜ ao conformes):
+•M´ ınimo: 4,43 MF
+•M´ aximo: 11.371,26 MF (caso extremo, requer investiga¸ c˜ ao)
+•M´ edia: 633,78 MF (elevada devido a poucos casos extremos)
+•Mediana: 18,64 MF
+Observa¸ c˜ ao sobre valores extremos: Casos com mais de 10.000 m´ odulos fiscais (equi-
+valente a dezenas de milhares de hectares) provavelmente decorrem de erro de digita¸ c˜ ao ou
+convers˜ ao de unidade de medida , n˜ ao representando propriedades reais desta magnitude.
+Exemplo: digita¸ c˜ ao de ”14.934 hectares”quando deveria ser ”14,934 hectares”(troca de ponto
+por v´ ırgula) resulta em erro de 1.000 vezes.
+9
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 10 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+3.5 Distribui¸ c˜ ao Temporal Detalhada por Faixa
+Faixa (MF) Qtd ANTES % Exc ANTES Qtd DEPOIS % Exc DEPOIS Qtd Total
+4-50 926 61,45% 14 70,00% 940
+50-500 544 36,10% 5 25,00% 549
+>500 37 2,46% 1 5,00% 38
+TOTAL 1.507 100,00% 20 100,00% 1.527
+Tabela 5: Distribui¸ c˜ ao temporal por faixa de gravidade
+Padr˜ ao identificado: Casos extremos ( >500 MF) concentram-se quase exclusivamente no
+per´ ıodo ANTES (37 de 38 casos), sugerindo que controles implementados no CAF 3.0 est˜ ao
+prevenindo cadastramento de valores absurdos que caracterizam erro manifesto.
+10
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 11 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+4 Exemplos Representativos
+4.1 Casos por Faixa de Gravidade
+Nota metodol´ ogica: Exemplos espec´ ıficos com IDs rastre´ aveis est˜ ao dispon´ ıveis no arquivo
+CSV completo anexo (Anexo II). Esta se¸ c˜ ao apresenta caracteriza¸ c˜ ao geral por faixa sem expor
+dados individuais no corpo do documento.
+4.1.1 Faixa 4-50 MF: Excedentes Moderados (940 casos)
+Caracter´ ısticas t´ ıpicas:
+•´Areas entre 4,03 e 50,00 m´ odulos fiscais
+•M´ edia: 20,55 MF — Mediana: 17,95 MF
+•Representam 61,56% dos casos n˜ ao conformes
+•Maioria concentrada no per´ ıodo ANTES (98,5% - 926 casos)
+Interpreta¸ c˜ ao: Casos pr´ oximos ao limite (4-10 MF) podem decorrer de:
+•Atualiza¸ c˜ ao cadastral defasada (´ area aumentou mas cadastro n˜ ao foi atualizado)
+•Erro de medi¸ c˜ ao ou arredondamento
+•Mudan¸ ca no m´ odulo fiscal do munic´ ıpio (INCRA atualiza periodicamente)
+Casos mais distantes (10-50 MF) sugerem propriedades de pequeno a m´ edio porte cadastradas
+indevidamente como agricultura familiar.
+4.1.2 Faixa 50-500 MF: Excedentes Altos (549 casos)
+Caracter´ ısticas t´ ıpicas:
+•´Areas entre 50,94 e 480,00 m´ odulos fiscais
+•M´ edia: 123,31 MF — Mediana: 98,89 MF
+•Representam 35,95% dos casos n˜ ao conformes
+•Concentra¸ c˜ ao no per´ ıodo ANTES (99,1% - 544 casos)
+Interpreta¸ c˜ ao: Propriedades de m´ edio porte claramente incompat´ ıveis com defini¸ c˜ ao legal
+de agricultura familiar. Magnitude de excedˆ encia (12 a 120 vezes o limite legal) n˜ ao ´ e explic´ avel
+por erro de medi¸ c˜ ao, sugerindo:
+•Cadastramento indevido de propriedades comerciais/empresariais
+•´Area de territ´ orio coletivo registrada como ´ area individual
+•Fraude deliberada para acesso a benef´ ıcios do programa
+11
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 12 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+4.1.3 Faixa >500 MF: Excedentes Extremos (38 casos)
+Caracter´ ısticas t´ ıpicas:
+•´Areas entre 553,85 e 14.934,00 m´ odulos fiscais
+•M´ edia: 3.456,15 MF — Mediana: 1.137,13 MF
+•Representam 2,49% dos casos n˜ ao conformes
+•Quase exclusivamente no per´ ıodo ANTES (97,4% - 37 casos)
+Caso mais extremo identificado: 14.934,00 m´ odulos fiscais (mais de 3.700 vezes o limite
+legal)
+Interpreta¸ c˜ ao: Casos com magnitude de 500 a 15.000 vezes o limite legal requerem inves-
+tiga¸ c˜ ao especial pois:
+•Prov´ avel erro de digita¸ c˜ ao: Troca de v´ ırgula por ponto (14,934 ha →14.934 ha = erro
+de 1.000x)
+•Poss´ ıvel erro de convers˜ ao: ´Area em M ²digitada como se fosse em hectares (erro de
+10.000x)
+•Territ´ orio coletivo: ´Area de assentamento, territ´ orio quilombola ou ind´ ıgena registrada
+como individual
+Recomenda-se investiga¸ c˜ ao priorit´ aria destes 38 casos para corre¸ c˜ ao de dados manifestamente
+incorretos.
+4.2 Distribui¸ c˜ ao Geogr´ afica
+Limita¸ c˜ ao: An´ alise detalhada por UF/munic´ ıpio n˜ ao foi realizada nesta fase, mas est´ a tec-
+nicamente dispon´ ıvel mediante cruzamento do campo cdmunicipio com tabela de munic´ ıpios
+IBGE.
+An´ alise futura sugerida: Identificar se h´ a concentra¸ c˜ ao regional de casos n˜ ao conformes,
+permitindo investigar causas sistˆ emicas espec´ ıficas de determinadas regi˜ oes ou Estados.
+12
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 13 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+5 Implica¸ c˜ oes e Conclus˜ oes
+5.1 Valida¸ c˜ ao da Descoberta Incidental
+5.1.1 Descoberta Oportunista Durante Valida¸ c˜ ao de ´Area
+Este achado caracteriza-se como descoberta incidental realizada durante a execu¸ c˜ ao do tra-
+balho de campo da auditoria de valida¸ c˜ ao de ´ areas de im´ oveis rurais (Achado 2). N˜ ao constitui
+quest˜ ao de auditoria formalmente planejada na matriz de risco, mas sim valida¸ c˜ ao complementar
+que emergiu naturalmente mediante aproveitamento da infraestrutura t´ ecnica dispon´ ıvel:
+•Acesso direto ao banco de dados PostgreSQL do Sistema CAF
+•Disponibilidade da tabela S MODULO FISCAL com valores oficiais por munic´ ıpio
+•Capacidade t´ ecnica de calcular m´ odulos fiscais mediante query SQL
+•Oportunidade de validar conformidade legal em popula¸ c˜ ao completa
+5.1.2 Relevˆ ancia do Achado
+Embora incidental, o achado possui relevˆ ancia t´ ecnica e jur´ ıdica:
+•Valida cumprimento de requisito legal fundamental: Lei 11.326/2006, Art. 3 º, I
+•Quantifica n˜ ao conformidade em popula¸ c˜ ao completa: 1.527 casos (0,07%)
+•Evidencia efetividade de controles do CAF 3.0: Redu¸ c˜ ao de 22x na taxa de n˜ ao
+conformidade
+•Identifica casos cr´ ıticos: 38 casos extremos ( >500 MF) requerem investiga¸ c˜ ao prio-
+rit´ aria
+5.2 Estimativa de Impacto
+5.2.1 Magnitude Absoluta
+Classifica¸ c˜ ao Quantidade Percentual
+Casos conformes ( ≤4 MF) 2.281.670 99,93%
+Casos n˜ ao conformes (¿ 4 MF) 1.527 0,07%
+Excedentes moderados (4-50 MF) 940 0,04%
+Excedentes altos (50-500 MF) 549 0,02%
+Excedentes extremos ( >500 MF) 38 0,002%
+TOTAL 2.283.197 100,00%
+Tabela 6: Magnitude consolidada de n˜ ao conformidade
+5.2.2 Impacto Temporal
+•98,7% dos casos (1.507) s˜ ao legado do CAF 2.0 (cadastrados antes de 26/03/2025)
+•1,3% dos casos (20) s˜ ao cadastros novos no CAF 3.0 (cadastrados ap´ os 26/03/2025)
+•Taxa de n˜ ao conformidade reduziu de 0,088% para 0,004% (redu¸ c˜ ao de 95,5%)
+Este padr˜ ao temporal evidencia que:
+13
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 14 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+1. Problema ´ e primariamente legado hist´ orico do sistema anterior
+2. Controles implementados no CAF 3.0 est˜ ao sendo efetivos em prevenir novos casos
+3. Resolu¸ c˜ ao requer depura¸ c˜ ao retroativa dos 1.507 casos anteriores a 26/03/2025
+5.3 Implica¸ c˜ oes para o Relat´ orio de Auditoria
+5.3.1 Classifica¸ c˜ ao como Achado Incidental
+Recomenda-se que este achado seja documentado no relat´ orio de auditoria como:
+•Se¸ c˜ ao II.5: Achado Incidental - Propriedades que Excedem Limite de 4 M´ odulos Fiscais
+•Se¸ c˜ ao III.6: Evidˆ encias - Query SQL, CSV completo, an´ alise estat´ ıstica consolidada
+•Integra¸ c˜ ao com Achado 2: Mencionar como valida¸ c˜ ao complementar realizada durante
+an´ alise de ´ areas
+5.3.2 Informa¸ c˜ oes a Incluir no Relat´ orio
+Contexto narrativo:
+“Durante a an´ alise de valida¸ c˜ ao de ´ areas de im´ oveis rurais (Achado 2), a equipe
+de auditoria aproveitou o acesso direto ao banco de dados do Sistema CAF para
+realizar valida¸ c˜ ao incidental quanto ao cumprimento do requisito legal de limite de
+4 m´ odulos fiscais estabelecido pela Lei 11.326/2006, Art. 3 º, I. Mediante query SQL
+executada sobre a popula¸ c˜ ao completa de 2.283.197 ´ areas vinculadas a Unidades
+Familiares ativas, identificou-se que 1.527 propriedades (0,07%) excedem o limite
+legal, sendo 98,7% cadastros anteriores ` a implanta¸ c˜ ao do CAF 3.0 em 26/03/2025.
+A baixa taxa de n˜ ao conformidade em cadastros posteriores a 26/03/2025 (0,004% vs
+0,088% anteriores) evidencia que controles implementados mediante Portaria MDA
+19/2025 est˜ ao sendo efetivos em prevenir novos cadastramentos irregulares.”
+Dados quantitativos essenciais:
+•1.527 casos n˜ ao conformes (0,07% de 2.283.197 analisados)
+•98,7% s˜ ao legado do CAF 2.0 (1.507 casos antes de 26/03/2025)
+•61,56% excedentes moderados (4-50 MF) — 35,95% excedentes altos (50-500 MF) — 2,49%
+extremos ( >500 MF)
+•Taxa de n˜ ao conformidade reduziu 22 vezes ap´ os CAF 3.0: de 0,088% para 0,004%
+5.4 Limita¸ c˜ oes e Ressalvas
+5.4.1 Dependˆ encia da Qualidade dos Dados de ´Area
+Esta an´ alise assume que valores registrados na tabela SAREA IMOVEL est˜ ao corretos. Entretanto,
+o Achado 2 (Divergˆ encias Cr´ ıticas em ´Area) identificou que:
+•24,38% dos documentos apresentam divergˆ encia de ´ area ≥10%
+•An´ alise agregada revelou subdimensionamento sistem´ atico de +68%
+•33,33% dos documentos anexados s˜ ao de tipo inadequado (falsos positivos)
+14
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 15 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+Portanto, a real quantidade de propriedades que excedem 4 m´ odulos fiscais pode
+ser diferente se considerarmos as ´ areas constantes nos documentos oficiais ao inv´ es das ´ areas
+cadastradas no banco de dados.
+Implica¸ c˜ ao pr´ atica: Se h´ a subdimensionamento sistem´ atico de 68% conforme identificado
+no Achado 2, ´ e poss´ ıvel que parte dos casos atualmente classificados como CONFORMES ( ≤4
+MF) na verdade excedam o limite legal quando considerada a ´ area documentada real.
+5.4.2 Exclus˜ ao de P´ ublicos Tradicionais
+Query exclui intencionalmente Unidades Familiares classificadas como p´ ublico/comunidade tra-
+dicional, pois estas podem ter regras diferenciadas conforme legisla¸ c˜ ao espec´ ıfica (Decreto 6.040/2007,
+Lei 12.512/2011).
+Portanto, esta an´ alise n˜ ao valida conformidade de territ´ orios tradicionais (quilombo-
+las, ind´ ıgenas, extrativistas, ribeirinhos).
+5.4.3 Valores Extremos Provavelmente Decorrem de Erro
+Casos com mais de 10.000 m´ odulos fiscais (m´ aximo: 14.934 MF) provavelmente decorrem de erro
+de digita¸ c˜ ao ou convers˜ ao de unidade de medida, n˜ ao representando propriedades reais desta
+magnitude.
+Recomenda-se investiga¸ c˜ ao priorit´ aria dos 38 casos extremos (>500 MF) para iden-
+tificar causa raiz e corrigir dados manifestamente incorretos.
+5.5 Conclus˜ ao Final
+A an´ alise de conformidade com o limite de 4 m´ odulos fiscais estabelecido pela Lei 11.326/2006
+mediante query SQL sobre popula¸ c˜ ao completa de 2.283.197 ´ areas vinculadas a Unidades
+Familiares ativas revelou:
+•99,93% de conformidade (2.281.670 casos dentro do limite legal)
+•0,07% de n˜ ao conformidade (1.527 casos excedem limite de 4 MF)
+•98,7% dos casos n˜ ao conformes s˜ ao legado do CAF 2.0 (cadastrados antes de
+26/03/2025)
+•Taxa de n˜ ao conformidade reduziu 22 vezes ap´ os CAF 3.0 (de 0,088% para 0,004%)
+•61,56% s˜ ao excedentes moderados (4-50 MF) — 35,95% s˜ ao excedentes altos
+(50-500 MF) — 2,49% s˜ ao extremos (>500 MF)
+Estes achados:
+1.Evidenciam elevada conformidade geral do Sistema CAF com requisito legal funda-
+mental
+2.Identificam problema localizado de 1.527 casos que requerem verifica¸ c˜ ao e poss´ ıvel
+corre¸ c˜ ao
+3.Demonstram efetividade dos controles do CAF 3.0 mediante dr´ astica redu¸ c˜ ao em
+novos casos
+4.Sugerem necessidade de depura¸ c˜ ao retroativa dos 1.507 casos legados do sistema
+anterior
+15
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 16 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+5.Identificam 38 casos extremos (>500 MF) que requerem investiga¸ c˜ ao priorit´ aria por
+prov´ avel erro cadastral grave
+Embora caracterizado como achado incidental (n˜ ao planejado formalmente na matriz de
+risco), possui relevˆ ancia t´ ecnica e jur´ ıdica para valida¸ c˜ ao de conformidade legal do Sistema CAF,
+justificando sua documenta¸ c˜ ao no relat´ orio de auditoria como valida¸ c˜ ao complementar realizada
+oportunamente durante a fase de trabalho de campo.
+16
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 17 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+6 Anexos
+6.1 Anexo I - Script SQL Completo
+O script completo Validacao Modulos Fiscais v5.sql utilizado para c´ alculo de m´ odulos fiscais
+est´ a apresentado a seguir:
+Listing 1: Script de Valida¸ c˜ ao de M´ odulos Fiscais
+1 -- ====================================================================================
+-- Script : Validacao_Modulos_Fiscais_v5 . sql
+-- Descri ¸ c~ ao: Calcular m´ o dulos fiscais para as propriedades vinculadas
+-- a Unidades Familiares ativas , que n~ ao sejam de p´ u blico / comunidade
+-- tradicional e cujo terreno seja do tipo " Agricultura , Pecu ´ aria e Outras atividades "
+6 -- ====================================================================================
+WITH areas_convertidas AS (
+-- Convers ~ ao de ´ a reas para hectares conforme tipo de unidade de medida
+SELECT
+11 ai. id_area_imovel ,
+ai. cd_municipio ,
+ai. nr_area ,
+--tum . ds_tipo_unidade_medida ,
+CASE
+16 WHEN ai. id_tipo_unidade_medida = 1 THEN ai. nr_area / 10000.0 -- M para ha
+WHEN ai. id_tipo_unidade_medida = 3 THEN ai. nr_area -- j´ a est ´ a em ha
+ELSE NULL -- M ou outras unidades n~ ao aplic ´ a veis para ´ a rea
+END AS nr_area_hectares ,
+ai. nr_longitude ,
+21 ai. nr_latitude ,
+CAST (ai. dt_criacao AS DATE ) AS dt_cadastro
+FROM
+caf_mapa ." S_AREA_IMOVEL " ai
+--INNER JOIN
+26 -- caf_mapa ." S_TIPO_UNIDADE_MEDIDA " tum
+--ON ai. id_tipo_unidade_medida = tum . id_tipo_unidade_medida
+WHERE
+ai. st_ativo = true
+and ai. id_tipo_area <> 3 -- Diferente de tanque
+31 AND ai. id_tipo_unidade_medida IN (1, 3) -- Apenas M e ha
+),
+todas_unidades AS (
+-- Todas as Unidades Familiares ( ativas e inativas )
+36 -- Converte TIMESTAMP para DATE para garantir compara ¸ c~ ao apenas de datas
+-- Adiciona coluna para indicar status de ativa ¸ c~ ao
+SELECT
+id_unidade_familiar ,
+CAST ( dt_ativacao AS DATE ) AS dt_ativacao ,
+41 CAST ( dt_inativacao AS DATE ) AS dt_inativacao ,
+CASE
+WHEN dt_inativacao is null and dt_ativacao is not null THEN ’ATIVA ’
+WHEN CAST ( dt_inativacao AS DATE ) <= CAST ( dt_ativacao AS DATE ) THEN ’ATIVA ’
+ELSE ’INATIVA ’
+46 END AS status_unidade_familiar ,
+id_publico_tradicional
+FROM
+caf_mapa ." S_UNIDADE_FAMILIAR "
+where
+51 id_publico_tradicional IS NULL -- n~ ao ´ e p´ u blico / comunidade tradicional
+AND id_tipo_terreno_ufpr = 1 -- Agricultura , Pecu ´ a ria e Outras atividades
+and ( id_caracterizacao_area = 6 or id_caracterizacao_area is null )
+)
+56 -- Query principal : JOIN das tabelas e c´ a lculo de m´ o dulos fiscais
+SELECT
+ac. id_area_imovel ,
+uf. id_unidade_familiar ,
+--uf. dt_ativacao ,
+61 --uf. dt_inativacao ,
+--uf. status_unidade_familiar ,
+--apu . id_area_pessoa_ufpr ,
+--ac. id_area_imovel ,
+ac. cd_municipio as codigo_municipio_ibge ,
+66 --ac. nr_area AS nr_area_original ,
+--ac. ds_tipo_unidade_medida AS unidade_original ,
+ac. nr_area_hectares ,
+--ac. nr_longitude ,
+--ac. nr_latitude ,
+71 mf. nr_modulo_fiscal AS modulo_fiscal_municipio_ha ,
+ROUND (
+(ac. nr_area_hectares / NULLIF (mf. nr_modulo_fiscal , 0)):: numeric ,
+2
+) AS quantidade_mf_calculada ,
+76 CASE
+WHEN ROUND (( ac. nr_area_hectares / NULLIF (mf. nr_modulo_fiscal , 0)):: numeric , 2) > 4
+THEN ’SIM ’
+ELSE ’ N O ’
+END AS excede_limite_4mf ,
+81 ac. dt_cadastro
+FROM
+todas_unidades uf
+INNER JOIN
+caf_mapa ." S_AREA_PESSOA_UFPR " apu
+86 ON uf. id_unidade_familiar = apu . id_unidade_familiar
+17
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 18 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+INNER JOIN
+areas_convertidas ac
+ON apu . id_area_imovel = ac. id_area_imovel
+INNER JOIN
+91 caf_mapa ." S_MODULO_FISCAL " mf
+ON ac. cd_municipio = mf. cd_municipio
+WHERE
+ac. nr_area_hectares IS NOT null
+--and mf. nr_modulo_fiscal IS NOT NULL
+96 and ac. nr_area > 0
+--ac. nr_area = 0 -- 390 registros
+and (ac. nr_latitude BETWEEN -90 AND 90) and (ac. nr_longitude BETWEEN -180 AND 180)
+--(ac. nr_latitude not BETWEEN -90 AND 90) or (ac. nr_longitude not BETWEEN -180 AND 180) -- 184.549 registros
+and uf. status_unidade_familiar = ’ATIVA ’
+101 --uf. status_unidade_familiar <> ’ATIVA ’ -- 532.736 registros
+ORDER BY
+quantidade_mf_calculada DESC ,
+uf. id_unidade_familiar ;
+106 -- ==============================================================================================
+-- Observa ¸ c~ oes:
+-- 1. Status UF:
+-- - ATIVA : ( dt_inativacao is null E dt_ativacao is not null ) OU dt_inativacao <= dt_ativacao
+-- - INATIVA : dt_ativacao is null OU dt_inativacao > dt_ativacao
+111 -- 2. Formato de datas : dt_ativacao e dt_inativacao s~ ao convertidas para DATE
+-- (sem componente de hora ) usando CAST para garantir compara ¸ c~ ao consistente
+-- 3. Convers ~ ao de unidades :
+-- - M (id =1): dividido por 10.000 para converter em hectares
+-- - ha (id =3) : mantido o valor original
+116 -- - M (id =2): exclu ´ ıdo por n~ ao ser aplic ´ a vel a medidas de ´ a rea
+-- 4. M´ o dulos fiscais calculados : nr_area_hectares modulo_fiscal_municipio
+-- 5. Exclui coordenadas inv´ a lidas
+-- 6. Exclui Unidades Familiares inativas
+-- ===============================================================================================
+6.2 Anexo II - Arquivo CSV Completo
+Resultados completos da an´ alise de 2.283.197 registros salvos em:
+/evidencias/caso_quatro_modulos/
+_Script_Validacao_Modulos_Fiscais_v5_sql_Descri¸ c~ ao_Calcular_
+m´ odu_202510232319.csv
+Estrutura do CSV (271 MB):
+•idarea imovel : UUID ´ unico da ´ area de im´ ovel
+•idunidade familiar : UUID da Unidade Familiar vinculada
+•codigo municipio ibge : C´ odigo IBGE do munic´ ıpio
+•nrarea hectares :´Area em hectares (ap´ os convers˜ ao)
+•modulo fiscal municipio ha: M´ odulo fiscal do munic´ ıpio em hectares
+•quantidade mfcalculada : Quantidade de m´ odulos fiscais calculada (´ area ÷MF)
+•excede limite 4mf: Classifica¸ c˜ ao (SIM — N ˜AO)
+•dtcadastro : Data de cadastro da ´ area
+6.3 Anexo III - Tabelas de An´ alise Estat´ ıstica
+Arquivo Excel com an´ alise estat´ ıstica consolidada por estrato temporal e faixa de gravidade:
+/evidencias/caso_quatro_modulos/
+An´ alise da Popula¸ c~ ao Completa - M´ odulos Fiscais.xlsx
+Planilhas inclu´ ıdas:
+•Resumo Executivo : Tabelas consolidadas apresentadas neste documento
+18
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.
+
+--- Página 19 ---
+Papel de Trabalho - Auditoria CAF - M´ odulos Fiscais Outubro 2025
+•Estrato Temporal : Distribui¸ c˜ ao ANTES vs DEPOIS 26/03/2025
+•Faixas de Gravidade : Distribui¸ c˜ ao por faixa (4-50 MF, 50-500 MF, >500 MF)
+•Estat´ ısticas Descritivas : M´ ınimo, m´ aximo, m´ edia, mediana por estrato e faixa
+•Casos Extremos : Lista dos 38 casos >500 MF com IDs rastre´ aveis
+6.4 Anexo IV - Referˆ encias Normativas
+Lei n º11.326, de 24 de julho de 2006
+Estabelece as diretrizes para a formula¸ c˜ ao da Pol´ ıtica Nacional da Agricultura Familiar e
+Empreendimentos Familiares Rurais.
+Art. 3 º:Considera-se agricultor familiar e empreendedor familiar rural aquele que pratica
+atividades no meio rural, atendendo, simultaneamente, aos seguintes requisitos:
+I - n˜ ao detenha, a qualquer t´ ıtulo, ´ area maior do que 4 (quatro) m´ odulos fiscais;
+Dispon´ ıvel em: http://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11326.
+htm
+Portaria MDA n º19, de 26 de mar¸ co de 2025
+Institui o Sistema CAF vers˜ ao 3.0 e estabelece requisitos documentais e controles de valida¸ c˜ ao
+para elegibilidade ao Cadastro Nacional da Agricultura Familiar.
+Instru¸ c˜ ao Normativa INCRA n º11, de 11 de abril de 2003
+Estabelece o m´ odulo fiscal de cada Munic´ ıpio, previsto no Decreto n º84.685, de 6 de maio
+de 1980.
+19
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79202699.

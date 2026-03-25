@@ -1,0 +1,667 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+Subsecretaria de Planejamento, Orçamento e Administração
+COORDENAÇÃO-GERAL DE TECNOLOGIA DA INFORMAÇÃO
+NOTA TÉCNICA Nº 12/2025/CGTI-MDA/MDA
+PROCESSO Nº 55000.008167/2025-77
+INTERESSADO: COORDENAÇÃO-GERAL DE TECNOLOGIA DA INFORMAÇÃO
+(CGTI)
+1
+.
+ASSUNTO
+1
+.
+1
+.
+Proposta de alteração no PCA/2025 do MDA, ID 107, para inclusão da
+contratação de 
+Soluções e Serviços Especializados de Tecnologia da
+Informação e Comunicação, sob demanda, com Empresas Públicas.
+2
+.
+REFERÊNCIAS
+2
+.
+1
+.
+Portaria SGD/MGI n. 5.950, de 26 de outubro de 2023;
+2
+.
+2
+.
+Portaria MGI n. 43, de 31 de janeiro de 2023;
+2
+.
+3
+.
+Instrução Normativa SGD/ME n. 94, de 23 de dezembro de 2022;
+3
+.
+SUMÁRIO EXECUTIVO
+3
+.
+1
+.
+Fundamentar a inclusão da contratação de empresas públicas de TIC no
+Plano de Contratações Anual (PCA) de 2025 do Ministério do Desenvolvimento
+Agrário e Agricultura Familiar (MDA). Essa medida é estratégica para fortalecer o
+ecossistema tecnológico do MDA, garantindo 
+autonomia, integridade e
+segurança
+ das informações.
+4
+.
+FUNDAMENTAÇÃO
+4
+.
+1
+.
+A elaboração do Plano de Contratações Anual (PCA) decorre
+principalmente do Decreto nº 10.947, de 25 de janeiro de 2022, que institui e
+disciplina a obrigatoriedade da elaboração do PCA pelos órgãos e entidades da
+administração pública federal direta, autárquica e fundacional. Esse Decreto
+regulamenta dispositivos da Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos),
+especialmente no que se refere ao planejamento das contratações, previsto no art.
+12 e no art. 18 da referida lei, que determinam que toda contratação deve estar
+vinculada a um planejamento prévio.
+"Art. 12. No processo licitatório, observar-se-á o seguinte:
+VII - a partir de documentos de formalização de demandas, os órgãos
+responsáveis pelo planejamento de cada ente federativo 
+poderão
+, na forma de
+regulamento, 
+elaborar plano de contratações anual
+, com o objetivo de
+racionalizar as contratações dos órgãos e entidades sob sua competência,
+garantir o alinhamento com o seu planejamento estratégico e subsidiar a
+elaboração das respectivas leis orçamentárias."
+"Art. 18. 
+A fase preparatória do processo licitatório é caracterizada pelo
+planejamento e deve compatibilizar-se com o plano de contratações anual de
+que trata o inciso VII do caput do art. 12 desta Lei
+,
+ sempre que elaborado, e
+com as leis orçamentárias, bem como abordar todas as considerações
+técnicas, mercadológicas e de gestão que podem interferir na contratação,
+compreendidos: (...)"
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 2 ---
+4
+.
+2
+.
+É válido ressaltar que conforme dispõe o art. 16 do Decreto nº 10.947,
+de 25 de janeiro de 2022, 
+o Plano de Contratações Anual (PCA) pode ser alterado a
+qualquer tempo,
+ desde que respeitados os prazos e procedimentos deﬁnidos pelo
+órgão central do Sistema de Planejamento e de Orçamento Federal e do Sistema de
+Serviços Gerais (Sisg). Essa possibilidade assegura a necessária ﬂexibilidade ao
+planejamento das contratações, permitindo que o PCA seja ajustado sempre que
+houver mudanças nas prioridades institucionais, revisões estratégicas, variações
+orçamentárias ou surgimento de novas demandas. Dessa forma, garante-se que as
+contratações planejadas permaneçam aderentes às necessidades reais da
+Administração e alinhadas aos seus objetivos estratégicos.
+"Art. 16. Durante o ano de sua execução, o plano de contratações anual
+poderá ser alterado, por meio de justiﬁcativa aprovada pela autoridade
+competente."  
+4
+.
+3
+.
+Nesse sentido, pode-se aﬁrmar que a alteração do PCA pode signiﬁcar a
+inclusão, a exclusão ou o redimensionamento do plano de contratações do órgão.
+4
+.
+4
+.
+É certo que PCA/MDA 2025 foi elaborado no ano de 2024. Naquele ano, a
+equipe de Coordenação-Geral de Tecnologia da Informação (CGTI) projetou a
+necessidade de contratar “serviços de computação em nuvem”, que incluem
+Infraestrutura como Serviço e Plataforma como Serviço (IaaS e PaaS), serviços de
+monitoramento e gestão técnica e operacional de sistemas na nuvem, registrado no
+PCA 2025 sob a ID 107.  
+4
+.
+5
+.
+Contudo, o desenvolvimento do levantamento das necessidades de
+infraestrutura de TI do MDA durante o ano de 2025 resultou na necessidade de
+incluir em seu atual parque tecnológico outros serviços prestados por essas
+Empresas Públicas,
+ 
+tais como a prestação de serviços técnicos especializados e
+soluções em tecnologia da informação e comunicação (TIC), abrangendo consultoria,
+desenvolvimento de novos sistemas além de desenvolvimento evolutivo, corretivo e
+adaptativo, sustentação de sistemas novos e legados, suporte ao usuário, suporte e
+operação de plataformas e serviços em nuvem, bem como gestão de serviços,
+conectividade, segurança da informação, automação e inteligência aplicada, de
+forma alinhada às demandas específicas e em constante evolução do órgão.
+4
+.
+6
+.
+Atualizadas as necessidades do MDA de s
+o
+luçõ
+es e serviços
+especializados de TIC, esta CGTI passa a análise do cenário enfrentado pelo MDA
+para sustentar a necessidade de realinhamento da contratação 
+ID 107
+ a ﬁm de
+reﬂetir a contratação de Soluções e Serviços Especializados de Tecnologia da
+Informação e Comunicação, sob demanda, com Empresas Públicas.
+5
+.
+ANÁLISE
+5
+.
+1
+.
+A reconstrução do Ministério do Desenvolvimento Agrário e Agricultura
+Familiar (MDA) como órgão federativo foi viabilizada pela Portaria MGI n. 43, de 31
+de janeiro de 2023, que normatiza o compartilhamento de atividades de
+administração,  incluindo tecnologia da informação, por meio de arranjos
+colaborativos. Nessa modalidade de gestão compartilhada, o Ministério provedor, no
+caso, o Ministério da Agricultura e Pecuária (MAPA), executa atividades
+administrativas em benefício de um ou mais Ministérios demandantes, como é o
+caso do MDA.
+5
+.
+2
+.
+Nesse modelo de arranjo colaborativo, o Ministério provedor deve
+assegurar o mesmo padrão de qualidade, tempo e transparência para atendimento
+das demandas de todos os órgãos envolvidos - provedor e demandantes.
+5
+.
+3
+.
+Apesar de todo o esforço despendido pelo MAPA em suprir as
+necessidades administrativas do MDA, na seara da TI, essa dependência tecnológica
+e de gestão vem impactando desfavoravelmente nos programas e políticas de
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 3 ---
+governo a cargo o MDA.
+5
+.
+4
+.
+A dependência tecnológica do MAPA, embora tenha viabilizado a
+reconstrução inicial do MDA, apresenta limitações estruturais que comprometem: a
+tempestividade na implementação de políticas públicas especíﬁcas do
+desenvolvimento agrário; a customização de sistemas às necessidades particulares
+da agricultura familia; a priorização de demandas críticas do MDA frente às
+necessidades do órgão provedor; e a governança sobre dados sensíveis e
+estratégicos da pasta.
+5
+.
+5
+.
+Ainda à luz da Portaria MGI nº 43, de 31 de janeiro de 2023, que
+disciplina o compartilhamento de atividades administrativas — incluindo a área de
+Tecnologia da Informação e Comunicação (TIC) — entre Ministérios, é importante
+ressaltar que tais arranjos colaborativos possuem natureza transitória e visam
+apenas assegurar a continuidade administrativa durante o processo de
+reorganização da Administração Pública Federal, decorrente da Medida Provisória nº
+1.154, de 1º de janeiro de 2023.
+5
+.
+5
+.
+1
+.
+O Ministério do Desenvolvimento Agrário e Agricultura Familiar, recriado
+por força da referida Medida Provisória, possui missão institucional própria, distinta
+da do Ministério da Agricultura e Pecuária, orientada ao fortalecimento da
+agricultura familiar, à democratização do acesso à terra e à promoção do bem viver
+das populações do campo.
+5
+.
+5
+.
+2
+.
+A atual dependência dos contratos de TIC do MAPA tem se mostrado um
+limitador para a atuação do MDA, na medida em que:
+a
+)
+Restringe a expansão de serviços e soluções, em razão da saturação
+contratual do MAPA;
+b
+)
+Impede o adequado atendimento das 26 Superintendências do MDA
+espalhadas no território nacional, que necessitam de serviços básicos
+como conectividade, suporte e gestão de acessos;
+c
+)
+Reduz a agilidade na implementação de sistemas e soluções
+alinhadas às políticas públicas específicas do MDA;
+d
+)
+Gera riscos de governança e de priorização de projetos, uma vez
+que as agendas institucionais dos dois Ministérios não são
+coincidentes.
+5
+.
+5
+.
+3
+.
+Portanto, embora a Portaria MGI nº 43/2023 reconheça a legitimidade de
+arranjos colaborativos, é inequívoco que tais medidas têm caráter provisório e de
+transição, não substituindo a necessidade de que o MDA estruture e conduza, de
+forma autônoma, suas contratações e sua governança de TIC.
+5
+.
+5
+.
+4
+.
+A independência do MDA no provimento de TIC é condição indispensável
+para:
+a
+)
+Assegurar governança própria
+, em conformidade com os
+normativos federais;
+b
+)
+Garantir autonomia tecnológica
+, reduzindo riscos decorrentes da
+dependência contratual do MAPA;
+c
+)
+Atender com eﬁciência as superintendências e unidades
+descentralizadas
+;
+d
+)
+Dar vazão e celeridade à execução de projetos estratégicos
+,
+diretamente vinculados à missão institucional do MDA.
+6
+.
+CONTINUIDADE DE NEGÓCIOS E GESTÃO DE RISCOS NA
+TRANSIÇÃO
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 4 ---
+6
+.
+1
+.
+A proposição de contratação de Empresas Públicas visa garantir a
+continuidade de negócios, que representa o aspecto mais crítico desta contratação,
+especialmente considerando o processo de transição da dependência tecnológica do
+MAPA. A migração de sistemas, dados e processos de TIC entre provedores constitui
+operação de extrema complexidade e risco operacional, exigindo que nesse
+processo seja garantida a preservação do conhecimento institucional.
+6
+.
+1
+.
+1
+.
+Nesse contexto, a contratação de Empresas Públicas apresenta as
+seguintes características: 
+I
+ -
+Pela sua natureza perene e missão institucional, asseguram a
+retenção e transferência segura do conhecimento acumulado durante
+o período de transição;
+II
+ -
+Estabilidade contratual durante períodos de transição:
+diferentemente de contratos com empresas privadas, sujeitos a
+volatilidades mercadológicas e decisões comerciais unilaterais, as
+empresas públicas garantem continuidade mesmo em cenários de
+mudanças político-administrativas;
+III
+ -
+Capacidade de absorção gradual de competências: o modelo
+permite que o MDA desenvolva progressivamente suas capacidades
+internas, com suporte técnico especializado que não será
+descontinuado por decisões comerciais.
+6
+.
+2
+.
+A crescente dependência das políticas públicas de governo em relação
+aos sistemas e serviços digitais exige que o MDA possua um ecossistema robusto e
+resiliente de TIC. Atualmente, a CGTI enfrenta desaﬁos com a limitação de
+autonomia tecnológica, segurança e integridade das informações que ﬁcam
+submetidas às regras de negócio do MAPA. A contratação de empresas públicas de
+TIC, com sua expertise técnica e alinhamento com os objetivos estratégicos do setor
+público, é a solução mais adequada para mitigar esses riscos e assegurar a
+sustentabilidade operacional.
+6
+.
+3
+.
+A autonomia tecnológica é fundamental para que o MDA não ﬁque refém
+de soluções embarcadas e geridas pelo MAPA que possam impor restrições, retardar
+ou comprometer a agilidade na resposta às demandas do governo, ou elevar custos
+de forma imprevisível. A colaboração com empresas públicas de TIC, por sua
+natureza e ﬁnalidade, promove o intercâmbio de conhecimento e o desenvolvimento
+e a manutenção de soluções personalizadas que atendem às especiﬁcidades da
+Pasta Ministerial.
+6
+.
+4
+.
+A dependência tecnológica do MAPA, embora tenha viabilizado a
+reconstrução inicial do MDA, apresenta limitações estruturais que comprometem:
+a
+)
+A tempestividade na implementação de políticas públicas
+específicas do desenvolvimento agrário;
+b
+)
+A customização de sistemas às necessidades particulares da
+agricultura familiar;
+c
+)
+A priorização de demandas críticas do MDA frente às necessidades
+do órgão provedor;
+d
+)
+A governança sobre dados sensíveis e estratégicos da pasta.
+6
+.
+5
+.
+Adicionalmente, o histórico de descontinuidade da Pasta — extinta em
+2016 e recriada em 2023 — impõe um fator de vulnerabilidade estrutural que não
+pode ser negligenciado. Em contextos de transição política e administrativa, como o
+que se avizinha com o próximo ciclo eleitoral, a possibilidade de nova extinção do
+MDA representa um risco concreto à continuidade das políticas públicas voltadas ao
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 5 ---
+desenvolvimento agrário. Nesse cenário, a contratação de Empresas Públicas
+especializadas em TIC conﬁgura-se como medida estratégica e tecnicamente
+fundamentada, uma vez que se restringe à esfera pública e oferece maior
+estabilidade contratual frente às incertezas institucionais.
+6
+.
+6
+.
+A experiência passada demonstra que, diante da extinção do MDA,
+contratos ﬁrmados com empresas privadas foram, em sua maioria, transferidos,
+renegociados ou encerrados, gerando perda de ativos, descontinuidade de serviços
+e dispersão de competências.
+7
+.
+REFERÊNCIAS DE IMPLEMENTAÇÃO NA ADMINISTRAÇÃO PÚBLICA
+FEDERAL
+7
+.
+1
+.
+A implementação de contratos próprios com empresas públicas,
+alinhados às diretrizes normativas federais, permitirá ao MDA exercer maior controle
+sobre os serviços prestados, fortalecer sua governança digital e contar com suporte
+técnico qualiﬁcado. A infraestrutura atual da Pasta — composta por ativos de rede,
+sistemas em diferentes estágios de maturidade e workloads em nuvem — demanda
+soluções adaptadas à sua realidade operacional, que só podem ser viabilizadas por
+meio de parcerias estratégicas com entidades públicas especializadas. Exemplos
+exitosos, como o Centro de Serviços Compartilhados no MGI – ColaboraGov,
+encabeçado pelo Ministério da Gestão e Inovação (MGI) e as contratações do
+Ministério da Educação (MEC), demonstram a viabilidade jurídica, técnica e
+operacional dessa abordagem.
+7
+.
+2
+.
+O modelo do CSC, criado pelo MGI para o ColaboraGov em parceria com
+Empresas Públicas de TIC, permite criar capacidade contratual para atender
+tempestivamente às necessidades de TIC sem comprometer o orçamento da
+instituição. Esse modelo teve origem na necessidade do MGI em ofertar capacidade
+contratual a demandas com reduzida previsibilidade para a área de TI e que
+precisam de tempestiva solução para atender políticas públicas tão diversas quanto
+as conduzidas pelos ministérios atendidos pelo órgão central. A operação do CSC
+ocorre sob a dinâmica de que o MGI contrata uma estimativa de serviços a serem
+consumidos sob demanda e sem garantia de execução, o que permite ganhos de
+escala sem comprometer o orçamento do órgão. Os demandantes podem solicitar
+atendimento de demandas especíﬁcas, com uma Proposta de Atendimento (PAT)
+que é avaliada e ajustada sem gerar custos até a aprovação pelo MGI. Após a
+aprovação da PAT, deﬁne-se o início do serviço, abre-se a Ordem de Serviço e aloca-
+se o recurso orçamentário para a execução do serviço pela Empresa Pública.
+7
+.
+3
+.
+No que concerne a experiência do Ministério da Educação (MEC), este
+contratou o SERPRO, a DATAPREV e a TELEBRÁS, todas Empresas Públicas,
+observando suas atuações complementares e o potencial de concorrência para
+alcançar melhores resultados. A contratação desses serviços técnicos especializados
+em TIC pelo MEC foi para um período de 60 meses, prorrogável para até 10 anos.
+Este serviço é caracterizado como comum e não viola as vedações da IN SGD/ME nº
+94/2022. A modalidade de contratação foi a dispensa de licitação, com base no Art.
+75, inciso IX, da Lei nº 14.133/2021, que permite a aquisição de bens ou serviços de
+entidades da Administração Pública criadas para esse ﬁm especíﬁco, desde que o
+preço seja compatível com o mercado.
+7
+.
+4
+.
+Assim, numa avaliação inicial a contratação das empresas Dataprev,
+Telebras e Serpro, indica uma inclinação positiva e estratégica para o MDA. Isto
+porque a imprevisibilidade das demandas e da diversidade territorial das políticas do
+MDA, torna-se imperativo adotar um modelo de contratação que assegure
+independência tecnológica, amplie a capacidade institucional e viabilize a entrega
+de serviços digitais compatíveis com a missão pública do Ministério.
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 6 ---
+7
+.
+5
+.
+Vale destacar que o MDA vem enfrentando adversidades constantes por
+serviços de TIC, cuja complexidade e especiﬁcidade extrapolam os limites
+operacionais dos contratos atualmente compartilhados com o MAPA, reforçando a
+urgência de uma solução estruturada, estável e tecnicamente adequada.
+7
+.
+6
+.
+Em síntese, a contratação das Empresas Públicas DATAPREV, o SERPRO
+e a TELEBRÁS, criadas para fornecer serviços de TI à Administração Pública Federal,
+oferecem vantagens técnicas e estratégicas significativas:
+I
+ -
+Capacidade Técnica Especializada:
+ Essas empresas
+possuem corpos técnicos altamente qualiﬁcados e com vasta
+experiência em projetos de grande escala para o setor público. Isso
+assegura a qualidade e a aderência das soluções às complexas
+demandas do MDA;
+II
+ -
+Alinhamento Institucional:
+ A missão dessas empresas está
+diretamente ligada aos interesses estratégicos do Estado. Isso se
+traduz em maior comprometimento e na construção de parcerias de
+longo prazo, com foco na estabilidade e na evolução contínua dos
+sistemas, em vez de um modelo transacional de prestação de serviço;
+III
+ -
+Segurança Jurídica e Institucional:
+ Impossibilidade de
+descontinuidade abrupta por decisões comerciais, alinhamento
+permanente com políticas de Estado, não apenas de governo,
+subordinação às diretrizes de governança pública federal e
+transparência e controle social sobre as operações;
+IV
+ -
+Expertise em Transições Complexas:
+ Histórico comprovado
+em migrações de grande porte no setor público e conhecimento
+profundo das especiﬁcidades normativas e operacionais da APF, além
+de Capacidade de interoperabilidade com sistemas governamentais
+legados;
+V
+ -
+Apoio ao Desenvolvimento Tecnológico Nacional:
+ A
+contratação de empresas públicas fortalece o setor de TIC do país,
+promovendo a inovação e o desenvolvimento de tecnologias
+soberanas;
+VI
+ -
+Economia e Eficiência:
+ O modelo de contratação via dispensa
+de licitação, conforme previsto em lei, agiliza o processo e permite
+uma alocação de recursos mais eﬁciente, direcionando o investimento
+para a entrega de resultados técnicos de alta qualidade. Além disso, a
+ausência de lucro como principal motivador permite a oferta de
+serviços a preços mais competitivos e alinhados com a realidade
+orçamentária do governo;
+VII
+ -
+Interlocução qualiﬁcada com o mercado:
+ Capacidade de
+dialogar com empresas do mercado;
+VIII
+ -
+Ganhos de escala:
+ Potencial de atender a diversos órgãos da
+gestão pública, permitindo negociar ganhos de escala em
+contratações, compensando custos operacionais e oferecendo valores
+viáveis;
+IX
+ -
+Soluções sob demanda:
+ Habilidade de ofertar soluções com
+qualidade e em curto espaço de tempo entre a identiﬁcação da
+necessidade e a implementação.
+X
+ -
+Portfólio Abrangente:
+ Dataprev, Serpro e Telebrás dispõem
+de infraestrutura robusta, nuvem governamental, help desk,
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 7 ---
+conectividade, gestão de ativos e serviços de sustentação de sistemas
+— cobrindo os principais gargalos do MDA.
+XI
+ -
+Segurança e Soberania dos Dados:
+ Empresas públicas
+oferecem ambiente de maior conﬁabilidade quanto à proteção e
+governança de dados sensíveis, em conformidade com a LGPD e
+políticas nacionais de segurança da informação.
+7
+.
+7
+.
+O sucesso dessa contratação, além de garantir a estabilidade e
+continuidade dos serviços, permitirá ao MDA adquirir maturidade no uso de soluções
+de TIC, as quais subsidiarão futuras decisões para contratações que possam ser
+realizadas direcionadas ao mercado, por meio de processos licitatórios.
+8
+.
+CONCLUSÃO
+8
+.
+1
+.
+Diante do exposto, a alteração do PCA/2025, especiﬁcamente o
+realinhamento do item ID 107, não representa mera escolha administrativa, mas
+imperativo estratégico para assegurar:
+I
+ -
+A soberania tecnológica do MDA na condução de suas políticas
+públicas;
+II
+ -
+A continuidade operacional durante o crítico período de
+transição do modelo de gestão compartilhada;
+III
+ -
+A segurança institucional frente às incertezas político-
+administrativas;
+IV
+ -
+O desenvolvimento progressivo de capacidades internas com
+suporte técnico permanente e comprometido;
+V
+ -
+O compromisso com a soberania digital do Estado e com a
+proteção de informações estratégicas para a agricultura familiar e o
+desenvolvimento agrário;
+VI
+ -
+A necessidade de celeridade e eﬁciência  na estruturação da
+TIC no MDA.
+8
+.
+2
+.
+A contratação de empresas públicas federais (DATAPREV, SERPRO e
+TELEBRAS) constitui, portanto, a única alternativa que conjuga segurança jurídica,
+estabilidade operacional e alinhamento estratégico necessários para este momento
+de reconstrução e consolidação do MDA.
+8
+.
+3
+.
+Ressalta-se que esta estratégia não exclui futuras contratações com o
+mercado privado, mas estabelece a base sólida e segura sobre a qual o MDA
+poderá, com maturidade tecnológica e autonomia operacional, diversiﬁcar seus
+fornecedores de TIC.
+ 
+ 
+Documento assinado digitalmente
+BRUNO BRAZ DOS SANTOS QUEIROZ
+Coordenador de Infraestrutura de Tecnologia da Informação
+De acordo, encaminha-se para análise e providência.
+ 
+Documento assinado digitalmente
+PAMELA HILÁRIO SANTIAGO
+Coodenadora-Geral de Tecnologia da Informação
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 7
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.
+
+--- Página 8 ---
+ 
+ 
+Documento assinado eletronicamente por 
+Bruno Braz dos Santos Queiroz
+,
+Coordenador
+, em 30/09/2025, às 10:57, conforme horário oficial de Brasília, com
+fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Pamela Santiago Hilario
+,
+Coordenador (a) Geral de Tecnologia da Informação
+, em 30/09/2025, às
+18:32, conforme horário oficial de Brasília, com fundamento no art. 4º,§ 3º, do
+Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+45942345
+ e o código CRC 
+9F86B291
+.
+Referência:
+ Processo nº 55000.008167/2025-77
+SEI nº 45942345
+Nota Técnica - MDA 12 (45942345)         SEI 55000.008167/2025-77 / pg. 8
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990621.

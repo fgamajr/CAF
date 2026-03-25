@@ -1,0 +1,166 @@
+--- Página 1 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+Secretaria-Geral de Controle Externo 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+ 
+Ofício 000.356/2025 - AudTI 
+Brasília – DF, 12/09/2025. 
+ 
+Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+Fernand Machiaveli 
+Secretária-Executiva do Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA) 
+ 
+c/c 
+Tatiana Freitas de Oliveira 
+Chefe da Assessoria Especial de Controle Interno do MDA 
+(envio a cargo do próprio Ministério) 
+ 
+Processo: 011.073/2025-0 Tipo do processo: RELATÓRIO DE AUDITORIA 
+Relator do processo: ANTONIO ANASTASIA 
+Unidade responsável: Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+Assunto: Requisição de informações e/ou documentos. 
+ 
+ 
+Senhora Secretária-Executiva,  
+1. Em prosseguimento aos trabalhos da auditoria em andamento nesse Ministério do 
+Desenvolvimento Agrário e Agricultura Familiar, comunicada por meio do Ofício 0132/2025 
+TCU/AudTI, informo que a equipe de fiscalização se encontra na fase de execução (Portaria de 
+Fiscalização – AudTI 568/2025). O objetivo desta auditoria é avaliar informações que constam das bases 
+de dados relacionadas ao Cadastro Ambiental Rural (CAR) e ao Cadastro Nacional da Agricultura 
+Familiar (CAF), com foco na identificação de inconsistências e fragilidades nos dados que possam 
+comprometer a execução das políticas públicas da área ambiental e da agricultura familiar.  
+2. Para a adequada execução desta etapa, que visa a compreender o ambiente tecnológico, 
+os processos de negócio e a estrutura de dados para definir o escopo detalhado da fiscalização, é 
+imprescindível obter um conjunto abrangente de documentos e informações.  
+3. Considerando as seguintes divergências e problemas encontrados ao restaurar a cópia do 
+banco de dados do CAF fornecida via FTPS a esta equipe de auditoria: 
+a)  Divergência quanto ao número de tabelas existentes: 
+• Quantidade de tabelas no banco restaurado: 109; 
+• Quantidade de tabelas no dicionário de dados fornecido via FTPS: 95; 
+• Tabelas coincidentes (presentes em ambos): 95; 
+• Tabelas presentes apenas no banco restaurado, mas não documentadas no dicionário 
+de dados: 14. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78883215.
+
+--- Página 2 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+2 de 4 
+a.1) A relação das tabelas não contempladas no dicionário, mas existentes no banco, é a 
+seguinte: 
+• S_MOTIVO_INATIVACAO 
+• id_mantido 
+• tb_areas 
+• tb_auxiliar 
+• tb_cep 
+• tb_config_incra 
+• tb_controle_migracao_incra 
+• tb_dap 
+• tb_membros_caf2 
+• tb_membros_validados 
+• tb_relatorio_membros 
+• tb_responsaveis_legais 
+• tb_ufpas_ajuste 
+• tb_ufpas_incra 
+a.2) No dicionário fornecido, foram identificadas 94 tabelas com prefixo “S_” e 1 tabela 
+adicional, totalizando 95. Todas essas 95 aparecem igualmente no banco restaurado. Contudo, o banco 
+contém ainda 15 tabelas adicionais não documentadas (conforme relação acima), resultando no total 
+de 109. Isso indica a necessidade de esclarecimento quanto ao caráter dessas tabelas (se legadas, 
+auxiliares, temporárias ou efetivamente integrantes do modelo vigente). 
+a.3) No script encaminhado via FTPS, CAF3-ESTRUTURA-DDL.sql, seriam 129 tabelas. Assim é 
+preciso confirmar o número exato de tabelas. 
+b)  Registros de documentos anexados com links expirados: 
+b.1) Verificou-se que diversas tabelas (como S_DOCUMENTO) contêm colunas destinadas ao 
+registro de links para documentos anexados pelos beneficiários (tais como documentos pessoais, 
+comprovantes de renda e de endereço). Esses links encontram-se indisponíveis para a equipe de 
+auditoria, por se tratar de endereços do tipo (presigned URLs) do serviço Amazon S3, cujo acesso exige 
+login. 
+b.2)  Assim, na prática, embora a base contenha os metadados e os endereços de 
+armazenamento, os arquivos originais não podem ser consultados pela equipe de auditoria. Assim, 
+torna-se imprescindível que o MDA indique um mecanismo alternativo e seguro de acesso, seja por: 
+• disponibilização dos arquivos em mídia física/virtual criptografada, ou 
+• concessão de credenciais institucionais controladas para acesso direto ao bucket do 
+serviço de nuvem. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78883215.
+
+--- Página 3 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+3 de 4 
+4. Assim, para subsidiar o desenvolvimento dos trabalhos, solicito, nos termos dos arts. 42 e 
+87 da Lei 8.443/92 c/c o art. 245 do Regimento Interno do TCU, sejam apresentados à equipe de 
+auditoria, as seguintes informações e/ou documentos em relação aos pontos abaixo:  
+4.1. Confirmação oficial de quantas e quais são as tabelas atualmente em uso no CAF, 
+esclarecendo a situação das 15 não documentadas; 
+4.2. Disponibilização de documentação atualizada, incluindo modelo e dicionário de dados 
+atualizados, contemplando a descrição da finalidade de todas as tabelas utilizadas no ambiente vigente 
+e informações detalhadas sobre todas as colunas de cada tabela; 
+4.3. Indicação da forma adequada de acesso aos documentos anexados, conforme descrito no 
+item b acima. 
+5. Ressaltamos que tais informações são essenciais para assegurar a completude da análise e 
+a adequada verificação dos controles relacionados ao CAF. 
+6. Em caso de indisponibilidade, inexistência ou dificuldade para obtenção de alguma das 
+informações ou documentos, solicita-se registrar formalmente o fato, no mesmo prazo estabelecido e 
+encaminhar à equipe de auditoria na forma indicada. 
+7. Com o fito de agilizar os trabalhos e análises, à medida que as informações forem obtidas, 
+podem ser disponibilizadas à equipe de auditoria, não sendo necessário aguardar a consolidação da 
+totalidade das informações requeridas para posterior envio. 
+8. Por oportuno, solicito especial atenção às informações complementares que acompanham 
+este ofício, bem assim para a necessidade de utilizar – para resposta a comunicações e envio de 
+documentos – os serviços da plataforma Conecta-TCU ou do protocolo eletrônico, disponíveis no 
+Portal TCU ( www.tcu.gov.br ), endereço em que também é possível acessar os autos do processo. 
+9. Esclarecimentos adicionais quanto à presente requisição podem ser obtidos com o(s) 
+auditor(es) Fernando Lima Gama Júnior, matrícula 6499-8, e-mail fernando.gama@tcu.gov.br e 
+telefone 65999996180 e Sylvio Xavier Júnior, matrícula 24236-, e-mail sylvio@tcu.gov.br e telefone 
+6199978-3014. 
+Respeitosamente, 
+Assinado eletronicamente 
+FERNANDO LIMA GAMA JÚNIOR 
+Coordenador de auditoria 
+  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78883215.
+
+--- Página 4 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+4 de 4 
+INFORMAÇÕES COMPLEMENTARES 
+1) O acesso ao processo indicado nesta comunicação pode ser realizado por meio da plataforma de 
+serviços digitais Conecta-TCU, disponível no Portal TCU ( www.tcu.gov.br ). A visualização de processos 
+e documentos sigilosos depende de solicitação formal e posterior autorização do relator. Informações 
+detalhadas sobre o uso da plataforma, inclusive para fins de cadastro e credenciamento, podem ser 
+consultadas ao acionar o ícone “Conecta-TCU” do Portal TCU. 
+2) O envio de documentos e informações deve observar as seguintes orientações: 
+a) indicar, com destaque, o número do processo e deste ofício; 
+b) utilizar dos serviços da plataforma digital Conecta-TCU ou do protocolo eletrônico disponíveis 
+no Portal TCU. 
+3) A informação classificada na origem com restrição de acesso deve ser acompanhada dos seguintes 
+elementos, consoante a Lei de Acesso à Informação (Lei nº 12.527, de 18 de novembro de 2011), caso 
+contrário será considerada de acesso público pelo Tribunal:  
+a) indicação objetiva da hipótese de restrição de acesso: informação imprescindível à segurança 
+da sociedade ou do Estado; informação com sigilo atribuído por legislação específica; 
+informação pessoal relativa à intimidade, vida privada, honra e imagem; 
+b) na hipótese de informação imprescindível à segurança da sociedade ou do Estado, indicar:  
+b.1) o grau de sigilo da classificação (reservado, secreto ou ultrassecreto); 
+b.2) o fundamento legal da classificação; 
+b.3) o prazo de restrição de acesso ou o evento que defina o termo final; 
+b.4) o assunto sobre o qual versa a informação.  
+c) na hipótese de informação com sigilo atribuído por legislação específica, indicar o fundamento 
+legal da classificação;  
+d) na hipótese de informação pessoal relativa à intimidade, vida privada, honra e imagem, indicar 
+o prazo de restrição de acesso e a pessoa a que se refere. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78883215.

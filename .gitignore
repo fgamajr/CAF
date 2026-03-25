@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+.local/
+.mcp.json
+.venv/
+__pycache__/
+*.pyc
+
+_artefatos_latex/*.aux
+_artefatos_latex/*.log
+_artefatos_latex/*.out

@@ -1,0 +1,370 @@
+--- Página 1 ---
+MINISTÉRIO DA GESTÃO E DA INOVAÇÃO EM SERVIÇOS PÚBLICOS
+Secretaria Extraordinária para a Transformação do Estado
+Diretoria do Cadastro Ambiental Rural
+   
+ 
+OFÍCIO SEI Nº 98265/2025/MGI
+  
+ 
+Brasília, 16 de julho de 2025.
+ 
+Ao Senhor Francisco Eduardo de Holanda Bessa
+Chefe da Assessoria Especial de Controle Interno - AECI - MGI
+Em cópia para:
+Secretaria Executiva
+SETE 
+DESER-SGD
+ 
+Assunto: Solicita  prorrogação  AudTI nº 343
+Referência:
+ Ao responder este Ofício, favor indicar expressamente o Processo nº
+18001.001515/2025-49.
+ 
+Senhor Chefe da Assessoria Especial de Controle Interno
+,
+ 
+1
+.
+Em atenção ao Ofício 0138/2025-TCU/AudTI (
+51525361
+) , que trata da
+fiscalização registrada sob o nº Fiscalis 128/2025, referente à avaliação da qualidade
+dos dados do Cadastro Ambiental Rural (CAR), esta Unidade Jurisdicionada vem,
+respeitosamente, solicitar a reprogramação da mencionada ação fiscalizatória,
+propondo seu início para dezembro de 2025
+2
+.
+A presente solicitação fundamenta-se em razões operacionais
+ e
+estratégicas que, neste momento, representam ônus incompatível com a capacidade
+institucional para atendimento 
+concomitante, 
+tempestivo e qualificado 
+a
+os
+compromissos 
+até então assumidos.
+3
+.
+Vivenciamos um momento de transformação estrutural na gestão do CAR,
+tanto no contexto nacional quanto internacional, que atualmente demanda dedicação
+integral de nossas equipes.
+4
+.
+O Ministério da Gestão e da Inovação em Serviços Públicos encontra-se em
+fase de implementação do Plano de Aprimoramento e Integração de Gestão Territorial,
+apresentado ao Supremo Tribunal Federal (STF) em decorrência da decisão proferida
+na Ação de Descumprimento de Preceito Fundamental (ADPF) nº 743 que tem o
+objetivo de melhorar a qualidade dos dados fundiários e ambientais e sua
+interoperalidade para, deste modo, dar ao Estado melhor capacidade de resposta à
+eventos climáticos como secas e queimadas. Esse plano, homologado em 13 de março
+de 2025, estabelece cronograma rigoroso de entregas que exige de nossas equipes
+não apenas dedicação técnica, mas também articulação política e institucional
+complexa com múltiplos atores do governo federal.
+Ofício 98265 (52314024)         SEI 18001.001515/2025-49 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78532830.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78685490.
+
+--- Página 2 ---
+5
+.
+O monitoramento pelo STF por meio da referida ADPF, conforme
+evidenciado no primeiro relatório de acompanhamento do cumprimento das ações
+implementadas entre março e junho de 2025, exige prestação de informações
+detalhada e periódica, o que inclui ações coincidentes com o escopo de avaliar a
+qualidade dos dados do CAR, as quais têm planejamento de entregas relevantes até
+dezembro deste ano.
+6
+.
+Paralelamente aos compromissos nacionais, o Brasil se prepara para
+sediar a 30ª Conferência das Partes da Convenção-Quadro das Nações Unidas sobre
+Mudança do Clima, evento de magnitude global que posiciona nosso país como
+protagonista nas discussões sobre mudanças climáticas e sustentabilidade. O CAR,
+como instrumento central da política ambiental brasileira, será elemento de destaque
+nas apresentações e compromissos que o país assumirá perante a comunidade
+internacional.
+7
+.
+As ações preparatórias para a COP30 têm demandado esforços
+significativos de nossas equipes. Simultaneamente, trabalhamos na elaboração de
+documentação para apresentar trajetória de transformação digital do CAR e na
+preparação de apresentações institucionais sobre governança de um ecossistema de
+dados territoriais e ambientais, que deriva de articulação com parceiros internacionais
+para demonstração de resultados prospectivos.
+8
+.
+A agenda internacional do CAR vem se ampliando desde os diálogos
+iniciados entre o MGI e diversos parceiros internacionais na COP de Dubai. Dentre eles
+estão a Agência Norueguesa de Cooperação para o Desenvolvimento (NORAD) para
+modernização tecnológica do CAR e o Centre for Open Societal Systems (COSS) da
+Índia para ampliar o alcance do Sicar enquanto uma Infraestrutura Pública Digital
+(Digital Public Infrastructure - DPI), conforme previsto no Decreto 11.731 de 2023.
+9
+.
+A cooperação com a NORAD prevê apoio técnico e financeiro ao longo de
+três anos para potencializar a inovação tecnológica em torno do CAR, mediante
+desenvolvimento de novos módulos, integração de dados com sistemas fundiários e
+ambientais e iniciativas com inteligência artificial. Há ainda um componente de
+capacitação e inovação aberta para aumentar a rede de desenvolvedores e
+profissionais de geoprocessamento capazes de atuar nas tecnologias ligadas ao CAR.
+10
+.
+Por sua vez, a cooperação com a Índia tem como objetivo inicial a
+implementação de credenciais verificáveis no CAR, cujo primeiro ciclo de
+desenvolvimento está em andamento. O projeto piloto ampliará a confi
+abilidade d
+os
+documentos 
+do Cadastro Ambiental Rural, 
+aprimorando a experiência do Produtor ou
+Possuidor rural na gestão das suas obrigações, bem como no reconhecimento de seus
+direitos relacionados à terra.
+11
+.
+A atual gestão do CAR está alinhada aos eixos estratégicos do Plano de
+Transformação Digital 2024/2026 do MGI, especificamente nos pilares de Serviços
+Digitais e Melhoria da Qualidade, Unificação de Canais Digitais, e Governança e Gestão
+de Dados.
+12
+.
+Dentre as ações estratégicas previstas estão a migração da infraestrutura
+tecnológica do SICAR para o Datacenter da Dataprev, ocorrida em 2024, o
+desenvolvimento de um novo módulo de cadastro pré-preenchido, que será lançado
+na COP 30 e a modernização da infraestrutura do Sicar para melhorar o desempenho
+das análises automatizadas do CAR, por meio do módulo de Análise Dinamizada. Está
+ainda em desenvolvimento um novo módulo de Consulta Pública, para ampliação do
+alcance do compartilhamento de dados públicos do CAR.
+13
+.
+A
+ migração
+ do 
+Sicar
+ para a Dataprev
+ 
+englobou a 
+reestrutu
+ração d
+a
+arquitetura tecnológica
+ do 
+Sicar
+. Dentre as medidas adotadas está a utilização da
+autenticação 
+via login único 
+Gov.br
+, implementada
+ com sucesso
+,
+ em dezembro de
+Ofício 98265 (52314024)         SEI 18001.001515/2025-49 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78532830.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78685490.
+
+--- Página 3 ---
+2024
+,
+ e
+ 
+a 
+disponibiliza
+ção 
+dos
+ dados
+ 
+mais demandados 
+do CAR 
+por interoperabilidade
+com terceiros
+,
+ via
+ 
+API
+,
+ em janeiro de 2025
+ e
+,
+ por meio do
+ portal
+ 
+ConectaGOV.
+14
+.
+Também está em curso a implementação da governança do Ecossistema
+de dados do CAR. A Política de Governança de Dados no âmbito do MGI foi publicada
+conforme Portaria CGDSI/MGI nº 9, de 5 de dezembro de 2024, a qual estabeleceu
+fundamentos para a política específica de governança de dados do CAR, cujo processo
+de elaboração está previsto enquanto ação estratégica no Planejamento Estratégico da
+Dicar, com conclusão prevista para dezembro de 2025.
+15
+.
+Para viabilizar a elaboração dessa política, foi contratado consultor
+especializado, via PNUD, cujo trabalho de elaboração e assessoramento técnico segue
+cronograma alinhado aos demais compromissos institucionais.
+16
+.
+Desde 21 de agosto de 2024, 
+foi instituída
+ agenda recorrente com os
+intervenientes da gestão compartilhada de dados do CAR
+ no âmbito federal
+, 
+cuja
+previsão consta nos decretos 
+12.102, de 8/07/
+2024, 
+e 
+12.254, 
+de
+ 19
+/11
+/
+24
+, 
+quais
+sejam: 
+MGI/DICAR, MMA/SFB e Dataprev. A linha condutora desses encontros tem
+sido o letramento e adaptação do Modelo de Maturidade de Dados publicado pela
+Infraestrutura Nacional de Dados 
+(IND) 
+para apuração da maturidade do CAR
+enquanto ecossistema de dados, 
+isto é, 
+cujo domínio 
+de dados está sob gestão
+compartilhada de diferentes instituições públicas.
+17
+.
+O ritmo do progresso demonstra a complexidade deste trabalho: foram
+adaptados seis dos dez tópicos mais complexos do modelo, com previsão de conclusão
+em setembro de 2025. Esse instrumento será utilizado para apuração da maturidade
+de dados do CAR sob a perspectiva das três instituições intervenientes, em dezembro
+de 2025, o que ensejará a elaboração colaborativa da Estratégia de Dados do CAR
+para 2026-2028 e viabilizará a prontidão desses atores para co-construir a Política de
+Governança de Dados do CAR, cujo objetivo é instituir diretrizes, papéis e
+responsabilidades para governança e gestão dos dados desse ecossistema.
+18
+.
+A agenda de saneamento e qualificação de dados do CAR tem sido
+fortalecida por acordos de cooperação técnica (ACT) que estabelecem base sólida e
+perene, ao expandi-la à integração de sistemas e otimização de processos.
+19
+.
+O acordo celebrado, em 27 de junho de 2025, entre Receita Federal do
+Brasil (RFB), MGI e INCRA visa desenvolvimento de projetos e atividades de interesse
+comum, focando na integração de informações e otimização de processos relacionados
+aos cadastros de imóveis rurais.
+20
+.
+O ACT 32/2025, assinado em 27 de maio de 2025, com Conselho Nacional
+de Justiça (CNJ), Ministério do Desenvolvimento Agrário (MDA), INCRA e Operador
+Nacional do Registro de Imóveis (ONR), estabelece conjugação de esforços no
+desenvolvimento de mecanismos de compartilhamento de dados territoriais,
+ambientais e imobiliários. Este acordo viabiliza ações previstas no Plano de
+Transformação Digital para integração do CAR com registros de imóveis rurais dos
+cartórios, com conclusão prevista para março de 2026.
+21
+.
+A articulação com estados tem se intensificado significativamente,
+especialmente considerando a diversidade de contextos regionais e a necessidade de
+fortalecimento das capacidades de gestão locais. A reunião com estados da Amazônia
+Legal e Pantanal para tratamento da ADPF, conforme decisão de 28 de abril de 2025,
+exemplifica a complexidade desta articulação, que envolve não apenas aspectos
+técnicos de integração federativa, mas também questões políticas e jurídicas
+sensíveis.
+22
+.
+O encontro com estados para promoção de capacidades estatais e o
+lançamento da Rede de Gestores do CAR, previsto para agosto de 2025, representam
+Ofício 98265 (52314024)         SEI 18001.001515/2025-49 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78532830.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78685490.
+
+--- Página 4 ---
+esforços de fortalecimento institucional que demandam preparação cuidadosa e
+acompanhamento contínuo.
+23
+.
+O escopo previsto para a fiscalização atual coincide substancialmente com
+o escopo do Plano de Integração de Dados e Aprimoramento dos Sistemas Federais de
+Gestão Ambiental e Territorial, atualmente monitorado pelo STF no contexto da ADPF
+743, como informado acima, bem como com ações previstas no Plano de
+Transformação Digital 2024/2026 do MGI e no Planejamento Estratégico da DICAR
+2024–2025. Esta convergência é fruto do trabalho constante da nossa equipe em
+alinhar as soluções para responder aos desafios de natureza sistêmica que
+enfrentamos na gestão de dados ambientais. O impacto das ações será perceptível
+após as entregas previstas para os próximos 4 meses, quando essas etapas estarão
+consolidadas.
+24
+.
+O adiamento pleiteado permitirá maior eficiência operacional à Dicar ao
+evitar duplicação de esforços para responder a auditoria cujo objeto atualmente está
+sendo monitorado pelo STF. Isso permitirá avaliação oportuna desta corte sobre a
+suficiência dos controles implementados a partir de critérios de evolução da
+maturidade materialmente prospectados para o Ecossistema de dados do CAR,
+conforme detalhes apresentados.
+25
+.
+A reprogramação solicitada não representa postergação de
+responsabilidades, mas estratégia de otimização que permitirá apresentação de
+resultados consolidados e mensuráveis das ações de governança implementadas,
+demonstração efetiva dos avanços na qualidade e integração dos dados do CAR, e
+maior clareza quanto aos impactos das parcerias internacionais e compromissos
+assumidos.
+26
+.
+O momento atual caracteriza-se pela convergência de fatores estratégicos
+que demandam dedicação plena das equipes: compromissos com STF decorrentes da
+ADPF 743, preparação para COP30 como evento de projeção internacional do Brasil,
+parcerias internacionais estruturantes que posicionam o país como referência em
+gestão ambiental digital e, sobretudo, a implementação de ações estratégicas
+planejadas para a transformação digital em curso, cujo escopo é modernizar a
+arquitetura tecnológica do Sicar.
+27
+.
+A realização da fiscalização em dezembro de 2025 permitirá ao TCU
+analisar resultados concretos da transformação na gestão de dados ambientais. Isso
+contribuirá para aprimorar e consolidar as iniciativas implementadas até lá.
+ 
+ 
+ 
+Documento assinado eletronicamente
+CARLOS EDUARDO PORTELLA STURM
+Diretor - Substituto
+ 
+Documento assinado eletronicamente por 
+Carlos Eduardo Portella Sturm
+,
+Diretor(a) Substituto(a)
+, em 16/07/2025, às 17:24, conforme horário oficial de
+Brasília, com fundamento no § 3º do art. 4º do 
+Decreto nº 10.543, de 13 de
+novembro de 2020
+.
+Respeitosamente,
+ 
+Ofício 98265 (52314024)         SEI 18001.001515/2025-49 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78532830.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78685490.
+
+--- Página 5 ---
+A autenticidade deste documento pode ser conferida no site
+https://colaboragov.sei.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0
+, informando o código
+verificador 
+52314024
+ e o código CRC 
+153E0E8F
+.
+ 
+Esplanada dos Ministérios, Bloco K, Sala 687 - Bairro Zona Cívico-Administrativa
+CEP 70040-906 - Brasília/DF
+(61) 2020-4181 - e-mail 
+dicar.cgdi@gestao.gov.br - gov.br/gestao
+Processo nº 18001.001515/2025-49.
+SEI nº 52314024
+Ofício 98265 (52314024)         SEI 18001.001515/2025-49 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78532830.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78685490.

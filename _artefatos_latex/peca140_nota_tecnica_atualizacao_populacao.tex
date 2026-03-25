@@ -1,0 +1,353 @@
+% ================================================================================
+% PEÇA 140: NOTA TÉCNICA DE ATUALIZAÇÃO - POPULAÇÃO DE DOCUMENTOS DO ACHADO I
+% ================================================================================
+% VERSÃO: 1.0
+% DATA: 18 de dezembro de 2025
+% ACHADO: I - Inadequações nos Documentos Comprobatórios de Elegibilidade
+% REFERÊNCIA: Atualização dos valores constantes na Peça 103
+% ================================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ========== PACOTES PADRÃO ==========
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[breakable]{tcolorbox}
+\usepackage{array}
+
+% ========== CORES TCU OFICIAIS ==========
+\definecolor{tcured}{RGB}{204,0,0}      % Vermelho TCU #CC0000
+\definecolor{tcublue}{RGB}{0,51,102}    % Azul TCU #003366
+\definecolor{tcugreen}{RGB}{0,153,76}   % Verde TCU #006633
+\definecolor{tcuyellow}{RGB}{255,204,0} % Amarelo TCU #FFCC00
+\definecolor{tcuorange}{RGB}{255,153,0} % Laranja TCU #FF9900
+
+% ========== CONFIGURAÇÃO DE CABEÇALHO E RODAPÉ ==========
+\pagestyle{fancy}
+\fancyhead[L]{Nota Técnica de Atualização - Peça 140}
+\fancyhead[R]{TCU/AudTI}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+% ========== CONFIGURAÇÃO DE HYPERLINKS ==========
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=tcured,
+    urlcolor=tcublue,
+    citecolor=tcugreen
+}
+
+% ========== ESTILOS TCOLORBOX ==========
+\newtcolorbox{destaque}[1][]{
+    colback=tcuyellow!10,
+    colframe=tcuorange,
+    fonttitle=\bfseries,
+    title=#1,
+    breakable
+}
+
+\newtcolorbox{importante}[1][]{
+    colback=tcured!5,
+    colframe=tcured,
+    fonttitle=\bfseries,
+    title=#1,
+    breakable
+}
+
+\newtcolorbox{calculo}[1][]{
+    colback=tcugreen!5,
+    colframe=tcugreen,
+    fonttitle=\bfseries,
+    title=#1,
+    breakable
+}
+
+% ========== INFORMAÇÕES DO DOCUMENTO ==========
+\title{
+    \textbf{NOTA TÉCNICA DE ATUALIZAÇÃO}\\[0.5cm]
+    \Large Atualização da População de Documentos e\\
+    Projeções Estatísticas do Achado I\\[0.3cm]
+    \large (Referência: Peça 103 - Adequação Funcional)
+}
+
+\author{
+    Equipe de Auditoria Operacional -- TCU/AudTI\\[0.2cm]
+    \small TC 011.073/2025-0 -- Auditoria do Sistema CAF
+}
+
+\date{18 de dezembro de 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Esta Nota Técnica documenta a atualização da população total de documentos do Sistema CAF utilizada nas projeções estatísticas do Achado I. Durante a fase de execução da auditoria, identificou-se que a população correta é de \textbf{11.377.318 documentos}, divergindo do valor preliminar de 10.700.156 documentos utilizado na Peça 103. Esta atualização impacta as projeções de documentos problemáticos e os respectivos intervalos de confiança, os quais são recalculados neste documento.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% ================================================================================
+\section{Objetivo}
+% ================================================================================
+
+Esta Nota Técnica tem por objetivo:
+
+\begin{enumerate}[label=\arabic*)]
+    \item Documentar a atualização da população de documentos do Sistema CAF de 10.700.156 para \textbf{11.377.318 documentos};
+    \item Explicar a origem da divergência entre os valores;
+    \item Apresentar os valores corrigidos para as projeções estatísticas;
+    \item Fornecer referência documental para os valores utilizados no relatório de auditoria.
+\end{enumerate}
+
+% ================================================================================
+\section{Origem da Divergência}
+% ================================================================================
+
+\subsection{Valor Preliminar (Peça 103)}
+
+A Peça 103 (Papel de Trabalho de Adequação Funcional) foi elaborada em \textbf{24 de outubro de 2025} utilizando como base a população de documentos disponível naquela data:
+
+\begin{itemize}
+    \item \textbf{População utilizada:} 10.700.156 documentos
+    \item \textbf{Fonte:} Query inicial sobre a tabela \texttt{S\_DOCUMENTO} do banco CAF
+    \item \textbf{Critério:} Contagem de documentos vinculados a cadastros ativos
+\end{itemize}
+
+\subsection{Valor Atualizado (População Correta)}
+
+Durante a consolidação das análises e cruzamento com outros papéis de trabalho, identificou-se que a população correta de documentos cadastrados no Sistema CAF é de:
+
+\begin{destaque}[População Correta]
+\begin{center}
+\textbf{N = 11.377.318 documentos}
+\end{center}
+\end{destaque}
+
+\subsection{Causa da Divergência}
+
+A diferença de \textbf{677.162 documentos} (6,3\%) entre os valores decorre de:
+
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Critério de contagem:} A query inicial excluía documentos de cadastros em situação ``pendente de análise'', os quais também integram a base documental do sistema;
+
+    \item \textbf{Período de referência:} A extração inicial considerava apenas documentos inseridos até 15/08/2025, enquanto a base completa inclui documentos até a data de extração (02/09/2025);
+
+    \item \textbf{Tabelas auxiliares:} Documentos vinculados a tabelas de relacionamento (ex: \texttt{S\_DOCUMENTO\_UF}) não haviam sido contabilizados na query preliminar.
+\end{enumerate}
+
+A população de \textbf{11.377.318 documentos} foi validada por meio de:
+\begin{itemize}
+    \item Query SQL definitiva executada sobre o dump completo do banco CAF;
+    \item Cruzamento com metadados da extração fornecida pelo STI/MAPA (Peça 60);
+    \item Verificação independente pela equipe de auditoria.
+\end{itemize}
+
+% ================================================================================
+\section{Valores Corrigidos}
+% ================================================================================
+
+\subsection{Tabela Comparativa: Peça 103 vs. Valores Atualizados}
+
+A tabela a seguir apresenta a comparação entre os valores constantes na Peça 103 e os valores corrigidos que devem ser utilizados como referência no relatório de auditoria:
+
+\begin{table}[H]
+\centering
+\caption{Comparativo de Valores: Peça 103 vs. Valores Atualizados}
+\label{tab:comparativo}
+\begin{tabular}{|p{5cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{2.5cm}|}
+\hline
+\rowcolor{tcublue!20}
+\textbf{Parâmetro} & \textbf{Peça 103} & \textbf{Valor Atualizado} & \textbf{Referência} \\
+\hline
+População total (N) & 10.700.156 & \textbf{11.377.318} & Peça 140, §3 \\
+\hline
+Proporção problemáticos (p̂) & 27,1\% & 27,1\% & Peça 103, p. 9 \\
+\hline
+\rowcolor{tcuyellow!20}
+\textbf{Projeção pontual} & \textbf{2.900.364} & \textbf{3.083.253} & Peça 140, §4 \\
+\hline
+IC 99\% - Limite inferior & 2.418.359 & \textbf{2.571.274} & Peça 140, §4 \\
+\hline
+IC 99\% - Limite superior & 3.382.369 & \textbf{3.595.272} & Peça 140, §4 \\
+\hline
+\rowcolor{tcuyellow!20}
+\textbf{IC 99\% (arredondado)} & \textbf{2,42M a 3,38M} & \textbf{2,57M a 3,60M} & Peça 140, §4 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{importante}[Nota]
+A \textbf{proporção amostral} (27,1\%) permanece inalterada, pois foi obtida a partir da análise de 646 documentos da amostra. Apenas as \textbf{projeções populacionais} são afetadas pela atualização do denominador (N).
+\end{importante}
+
+% ================================================================================
+\section{Memória de Cálculo Atualizada}
+% ================================================================================
+
+\subsection{Parâmetros Estatísticos}
+
+Os parâmetros estatísticos da análise de adequação funcional são:
+
+\begin{itemize}
+    \item \textbf{Tamanho da amostra:} $n = 646$ documentos
+    \item \textbf{Documentos problemáticos na amostra:} $x = 175$ (inadequados + parcialmente adequados)
+    \item \textbf{Proporção amostral:} $\hat{p} = 175/646 = 0{,}2709$ (27,09\% $\approx$ 27,1\%)
+    \item \textbf{Nível de confiança:} 99\% ($z_{0,995} = 2{,}576$)
+\end{itemize}
+
+\subsection{Cálculo do Erro Padrão}
+
+\begin{calculo}[Erro Padrão com Correção para População Finita (FPC)]
+\begin{align}
+SE &= \sqrt{\frac{\hat{p}(1-\hat{p})}{n-1}} \times \sqrt{\frac{N-n}{N-1}} \\[0.3cm]
+SE &= \sqrt{\frac{0{,}2709 \times 0{,}7291}{645}} \times \sqrt{\frac{11.377.318 - 646}{11.377.318 - 1}} \\[0.3cm]
+SE &= \sqrt{0{,}0003062} \times \sqrt{0{,}9999433} \\[0.3cm]
+SE &= 0{,}01750 \times 0{,}99997 \\[0.3cm]
+SE &\approx 0{,}0175
+\end{align}
+\end{calculo}
+
+\textbf{Nota:} O FPC (Finite Population Correction) é praticamente 1,0 dado que $n/N < 0{,}01\%$, mas é mantido por rigor metodológico.
+
+\subsection{Cálculo da Margem de Erro}
+
+\begin{calculo}[Margem de Erro (IC 99\%)]
+\begin{align}
+ME &= z_{0,995} \times SE \\[0.2cm]
+ME &= 2{,}576 \times 0{,}0175 \\[0.2cm]
+ME &= 0{,}0451 \approx 4{,}5\text{ p.p.}
+\end{align}
+\end{calculo}
+
+\subsection{Cálculo do Intervalo de Confiança}
+
+\begin{calculo}[Intervalo de Confiança (99\%)]
+\begin{align}
+IC_{99\%} &= \hat{p} \pm ME \\[0.2cm]
+IC_{99\%} &= 0{,}271 \pm 0{,}045 \\[0.2cm]
+IC_{99\%} &= [0{,}226; 0{,}316] \text{ ou } [22{,}6\%; 31{,}6\%]
+\end{align}
+\end{calculo}
+
+\subsection{Projeção Populacional}
+
+\begin{calculo}[Projeção para a População de 11.377.318 Documentos]
+\textbf{Estimativa pontual:}
+\begin{align}
+\text{Problemáticos} &= N \times \hat{p} \\[0.2cm]
+&= 11.377.318 \times 0{,}271 \\[0.2cm]
+&= \mathbf{3.083.253} \text{ documentos}
+\end{align}
+
+\vspace{0.3cm}
+\textbf{Limite inferior (IC 99\%):}
+\begin{align}
+\text{Mínimo} &= N \times 0{,}226 \\[0.2cm]
+&= 11.377.318 \times 0{,}226 \\[0.2cm]
+&= \mathbf{2.571.274} \text{ documentos}
+\end{align}
+
+\vspace{0.3cm}
+\textbf{Limite superior (IC 99\%):}
+\begin{align}
+\text{Máximo} &= N \times 0{,}316 \\[0.2cm]
+&= 11.377.318 \times 0{,}316 \\[0.2cm]
+&= \mathbf{3.595.272} \text{ documentos}
+\end{align}
+\end{calculo}
+
+% ================================================================================
+\section{Valores para Uso no Relatório}
+% ================================================================================
+
+Com base nos cálculos apresentados, os valores a serem utilizados no relatório de auditoria são:
+
+\begin{destaque}[Valores Oficiais para o Relatório de Auditoria]
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|r|}
+\hline
+\rowcolor{tcublue!20}
+\textbf{Parâmetro} & \textbf{Valor} \\
+\hline
+População total de documentos & \textbf{11.377.318} \\
+\hline
+Proporção de documentos problemáticos & \textbf{27,1\%} \\
+\hline
+Projeção de documentos problemáticos & \textbf{3,08 milhões} \\
+\hline
+Intervalo de confiança (99\%) & \textbf{2,57 a 3,60 milhões} \\
+\hline
+Margem de erro & \textbf{±4,5 p.p.} \\
+\hline
+\end{tabular}
+\end{center}
+\end{destaque}
+
+% ================================================================================
+\section{Referências Documentais}
+% ================================================================================
+
+\begin{table}[H]
+\centering
+\caption{Rastreabilidade das Referências}
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\rowcolor{tcublue!20}
+\textbf{Parâmetro} & \textbf{Peça de Referência} & \textbf{Localização} \\
+\hline
+População (N) & Peça 140 (esta NT) & Seção 3, Tabela 1 \\
+\hline
+Proporção (27,1\%) & Peça 103 & Página 9, Tabela 3 \\
+\hline
+Projeção (3,08M) & Peça 140 (esta NT) & Seção 4, Cálculo de Projeção \\
+\hline
+IC 99\% (2,57-3,60M) & Peça 140 (esta NT) & Seção 4, Cálculo de IC \\
+\hline
+Metodologia amostral & Peça 103 & Páginas 5-8 \\
+\hline
+Exemplos de inadequação & Peça 103 & Páginas 12-14 \\
+\hline
+\end{tabular}
+\end{table}
+
+% ================================================================================
+\section{Conclusão}
+% ================================================================================
+
+Esta Nota Técnica documenta a atualização da população de documentos do Sistema CAF de 10.700.156 para \textbf{11.377.318 documentos}, bem como as consequentes atualizações nas projeções estatísticas do Achado I.
+
+Os valores atualizados a serem referenciados no relatório de auditoria são:
+
+\begin{itemize}
+    \item \textbf{População:} 11.377.318 documentos (ou ``11,4 milhões'')
+    \item \textbf{Documentos problemáticos:} 3,08 milhões (IC 99\%: 2,57 a 3,60 milhões)
+\end{itemize}
+
+A metodologia de análise, a proporção amostral (27,1\%) e os exemplos de inadequação documentados na Peça 103 permanecem válidos e devem continuar sendo referenciados para esses elementos.
+
+\vspace{1cm}
+
+\begin{flushright}
+\textbf{Equipe de Auditoria Operacional}\\
+TCU/AudTI\\
+18 de dezembro de 2025
+\end{flushright}
+
+\end{document}

@@ -1,0 +1,1094 @@
+--- Página 1 ---
+EVIDÊNCIA DE AUDITORIA
+ Amostra de Documentos de Imóveis Rurais
+ 
+Origem dos Dados: s3://caf-prod-mda
+Tipo de Análise: Validação de Áreas de Imóveis Rurais
+Data da Análise: 10/10/2025
+Data de Geração deste Relatório: 23/10/2025 às 01:23:50
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+7b8bb379-c73a-4712-a7b0-4cfdfed36464
+Documento do Imóvel ou de Relação com a Terra.pdf
+b43541d5-fe08-4c88-9ca8-2fd6d734f569
+13.32
+ha
+9b913392-204c-4f0d-b145-f1ff5d88414d
+Documento do Imóvel ou de Relação com a Terra.pdf
+2d835352-ac38-4657-8680-3a100995e106
+6.37
+ha
+8239af65-8ebb-47ae-819a-a92559f8c2de
+Documento do Imóvel ou de Relação com a Terra.pdf
+b75e1cf0-6d65-4581-876f-07593f5c1c49
+12.66
+ha
+be893181-6a4b-46d8-a9da-62d9c038559b
+Documento do Imóvel ou de Relação com a Terra.pdf
+08289c63-9ee3-4c89-a321-15277619ba26
+3.5
+ha
+48035cee-f4f2-4f13-8b04-2460c8c0fb59
+Documento do Imóvel ou de Relação com a Terra.pdf
+aca1bcfd-dec9-4119-8b7f-9f2d276f235d
+0.3
+ha
+8f72bb35-0dab-4778-81e3-eeeff15da1e3
+Documento da terra e parceria.pdf
+778c82c5-a9a6-4f70-a4c5-70dd6d33a6c3
+2.0
+ha
+03c0618c-fcbf-486e-a9c4-6451f3f0fa19
+Documento do Imóvel ou de Relação com a Terra.pdf
+607d10aa-cc16-40e6-83f7-21dfd6277472
+2.0
+ha
+58283441-4bbd-4c1b-b177-8b64ed103a3b
+Documento do Imóvel ou de Relação com a Terra.pdf
+c7e9f97a-75f5-423e-aade-828fc40dde9c
+40.4
+ha
+898fbb00-2b8e-4f80-a408-97c4fd09d6d7
+Documento do Imóvel ou de Relação com a Terra.pdf
+0ff15ea2-e1d0-42d4-91ee-498a83be884e
+7.79
+ha
+c0f8df55-e084-477c-aea8-ee2ca11cfad3
+Documento do Imóvel ou de Relação com a Terra.pdf
+405483a9-df54-40aa-a511-0267ff94b53f
+2.65
+ha
+43b4aa7c-c6cf-4255-a8ed-0e766b17bd40
+Documento do Imóvel ou de Relação com a Terra.pdf
+8316cf91-201a-45f9-bfc9-dda10d50e61e
+6.0
+ha
+1aa2a004-e0b7-469a-81ea-37638f4c26c3
+DC TERRA .pdf
+43ff19df-2f31-4bd2-9934-9f57fc6633c6
+5.0
+ha
+729c9093-e88c-4b7c-8826-4100445fad00
+Documento do Imóvel ou de Relação com a Terra.pdf
+de821464-fd65-4e21-838a-3c3322865f51
+8.0
+ha
+a5cd8187-5444-45fa-bceb-e2faad4a788e
+Documento do Imóvel ou de Relação com a Terra.pdf
+bb6f89df-42f5-4eca-b478-c40c8fb9cc65
+0.05
+M²
+356f442d-93f7-4573-8c25-f0b978aae6ea
+DOC DA TERRA.pdf
+bc768253-2cd4-4f23-a3c9-7ffc9c9d0c39
+4.0
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 2 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+b3bb143c-4746-4723-82b6-48b62e7f0fea
+Documento do Imóvel ou de Relação com a Terra.pdf
+cd2131b6-4d8f-4a47-bc46-596525f05de1
+12.1
+ha
+4f6e2d80-40d7-4be8-934d-6ef92f53d7bc
+Documento do Imóvel ou de Relação com a Terra.pdf
+c8133092-07d3-4ada-91f6-2c44f0518569
+1.0
+ha
+0384d833-f3fb-4ab0-b7ed-c5d2af9d96b4
+Documento do Imóvel ou de Relação com a Terra.pdf
+221bda6f-3ba0-4b57-bc8e-685effade4ec
+1.0
+ha
+4700b2b7-f399-43f9-bc91-881e27cfdde5
+Documento do Imóvel ou de Relação com a Terra.pdf
+710d1b2a-49d4-4ee0-b60c-cb77b1fdbad8
+13.01
+ha
+5988dc03-0afa-40b3-bd30-7e206a703bf6
+Documento do Imóvel ou de Relação com a Terra.pdf
+0c5d10ef-1f4a-437c-b8f2-63077374ea82
+0.6
+ha
+5083efed-e651-4ff7-80b7-da519a143bfd
+Documento do Imóvel ou de Relação com a Terra.pdf
+e898cc0b-d8e5-4dbd-ab4a-d1b985389f0b
+1.5
+ha
+262aaae9-029d-4c95-8253-b06128f6d8ab
+Documento do Imóvel ou de Relação com a Terra.pdf
+ca6975c7-2b44-4265-a23a-ba1740f9c282
+0.05
+ha
+3fbded33-8832-43d2-b804-7c4b37a0a678
+Documento do Imóvel ou de Relação com a Terra.pdf
+f7bbccdc-ffa3-4159-bafb-f045969e75de
+43.07
+ha
+b29a843f-577f-40e8-990c-dd6cc78fe8d6
+Documento do Imóvel ou de Relação com a Terra.pdf
+c1d911ec-8b30-4094-9fbc-1cf5094a0c52
+12.79
+ha
+ab671c2d-4d6a-4d05-9e40-1eee9916f7d4
+Documento do Imóvel ou de Relação com a Terra.pdf
+cf239ef7-ad65-441a-b3e1-82b5c22d38eb
+0.33
+ha
+6a8a5c60-3043-43fc-8e8e-e1b0c2498bfe
+Documento do Imóvel ou de Relação com a Terra.pdf
+be9763c5-5177-401c-bb3e-26f9ec133514
+0.9
+ha
+1ea8765e-d1f3-4359-9576-8f3c09e24f1b
+Documento do Imóvel ou de Relação com a Terra.pdf
+5c95c4a8-8be5-4bb9-a8b4-a42573d8bde2
+1.0
+ha
+92638391-0bf8-453a-a1db-df6fcc8b1fc4
+Documento do Imóvel ou de Relação com a Terra.pdf
+5a678c25-b632-45ac-9f04-f9f82c135d79
+2.0
+ha
+59e4626f-e46f-4db1-b33f-20dfd0eee471
+Documento do Imóvel ou de Relação com a Terra.pdf
+b1daa345-5a77-4d28-b1fe-5720b707a6e7
+2.0
+ha
+53043c09-742e-4a6b-8e38-e5ff84dc91d4
+Documento do Imóvel ou de Relação com a Terra.pdf
+f7d91597-f87c-47c1-b286-e3d0f00ae3aa
+1.0
+ha
+6e2d2460-664d-43b3-8af5-6d1c62838bd7
+Documento do Imóvel ou de Relação com a Terra.pdf
+3935893a-6044-45f7-b143-ba94296b4eff
+89.78
+ha
+d3b70201-42cd-491f-b31e-619770b67e71
+Documento do Imóvel ou de Relação com a Terra.pdf
+652fe54f-6964-4137-acc7-9360c3554faa
+0.6
+ha
+cfd2570f-e264-4341-bcb7-adb4b3bc192c
+Documento do Imóvel ou de Relação com a Terra.pdf
+f8b30a9e-57b9-4f3b-8f56-9f5c805243f8
+9.29
+ha
+a125cc4a-d176-4e28-8aa6-5ebd9fbfe413
+Documento do Imóvel ou de Relação com a Terra.pdf
+b45778e1-c24e-471b-86e8-77a5d8e16bc6
+21.23
+ha
+24b51439-da73-4d7a-bf49-a1007c0ecfd9
+Documento do Imóvel ou de Relação com a Terra.pdf
+40a7e180-72e8-4c0c-89fb-f79a5114b906
+8.21
+ha
+4ebd4019-1178-427e-bfd0-d23ccef86924
+Documento do Imóvel ou de Relação com a Terra.pdf
+bd5fc317-68ed-40ec-aaa7-927c32354c9b
+4.0
+ha
+8f3b9736-7b6e-4a1c-a630-417d747d3dbb
+Documento do Imóvel ou de Relação com a Terra.pdf
+abb0b0cc-1311-4b1c-add4-50b9a024647e
+37.31
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 3 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+9382d515-a2f0-4e8d-907e-71cb00ae281b
+Documento do Imóvel ou de Relação com a Terra.pdf
+42b2f17e-2795-40de-b7c3-4fef3efdf8fa
+7.13
+ha
+56047054-e2ed-43e1-8a11-04f319c70dfd
+Documento do Imóvel ou de Relação com a Terra.pdf
+3ccb716e-6650-4850-ba5c-da7e43560dcb
+1.5
+ha
+f84e8c68-f391-46ca-bf30-342474d0fa87
+Documento do Imóvel ou de Relação com a Terra.pdf
+d9c7e4ec-0ec9-4686-a510-272bf258bda3
+2.0
+ha
+fa281cf3-c699-42b6-9c5d-ddd5f9ba265a
+Documento do Imóvel ou de Relação com a Terra.pdf
+a75987c5-fbeb-4e57-a64e-a81af95ec5ee
+3.0
+ha
+da588482-e74b-4653-9599-a5afeb3c5494
+Documento do Imóvel ou de Relação com a Terra.pdf
+9df8aced-3fca-45f7-ab51-65580d8d7f96
+0.6
+ha
+9d13efa8-24cf-4b82-afcd-09151191617e
+Documento do Imóvel ou de Relação com a Terra.pdf
+4cecd028-2f76-4fda-941b-da93675d4471
+2.0
+ha
+e4f6998d-7972-4b66-b386-229c5a3b66d7
+TERRA ALFREDO.pdf
+07ad88a7-5099-4346-b6fb-36fe72784198
+1.0
+ha
+ca691dac-118e-495a-903a-9745c3413604
+Documento do Imóvel ou de Relação com a Terra.pdf
+5e22fc7c-6f48-4dee-a2f1-ed3518ff4903
+2.0
+ha
+3974840d-4c8c-4e94-a14b-69e1a87460df
+Documento do Imóvel ou de Relação com a Terra.pdf
+df75659e-b676-4f70-87c5-5f6f1deb3a06
+0.5
+ha
+7c32fa2a-c812-44b9-9bd1-38ea922c74a2
+Documento do Imóvel ou de Relação com a Terra.pdf
+3807d39c-cfbf-44b8-8660-d8276c1e46a3
+33.1
+ha
+7066ca6c-5bf6-4c29-86c8-32d0cf56a421
+Documento do Imóvel ou de Relação com a Terra.pdf
+e0377603-d6b4-4289-9a6f-43f752970c7c
+1.5
+ha
+a5b9193d-3aa3-4d5f-9171-7618d0f5a857
+Documento do Imóvel ou de Relação com a Terra.pdf
+75eea9b5-8dba-4a53-91e0-d6c3922fbc5c
+19.13
+ha
+76fd9ca1-0f8a-4dea-a35b-7e8754fd3254
+Documento do Imóvel ou de Relação com a Terra.pdf
+aa1a00cd-9c87-46f6-b240-d8722436f0c0
+7.7
+ha
+7985fe15-ce52-47c1-9a44-62b6ddcaf7ef
+Documento do Imóvel ou de Relação com a Terra.pdf
+b543c58e-9ec9-4b0f-ba5c-b6c569a86070
+1.81
+ha
+8360f213-3076-4c77-9e32-4e74d2480736
+Documento do Imóvel ou de Relação com a Terra.pdf
+42f3663b-f8cc-4848-a432-d433a7a3bcae
+2.4
+ha
+1ae814cf-abac-4776-a6c0-d5e386a5decf
+Documento do Imóvel ou de Relação com a Terra.pdf
+4a33584d-ff33-45cc-9104-e7826c639a08
+10.0
+ha
+fb253fd9-1ce6-467f-9f9a-217e0f289a75
+Documento do Imóvel ou de Relação com a Terra.pdf
+d0724c4d-0b9c-434f-b09f-a191254953f6
+14.15
+ha
+688f9ff9-77cc-4581-94df-e34bb925237f
+Documento do Imóvel ou de Relação com a Terra.pdf
+3fc6c566-cb00-4d37-aa2c-16011beb4087
+6.43
+ha
+341d27ef-6552-4945-8d1f-0cf60aa182a5
+Documento do Imóvel ou de Relação com a Terra.pdf
+181d31b5-74a9-43bd-86bf-3bbdb9f591db
+1.0
+ha
+ddd9ccc9-df2a-4418-b491-e1da7b446f69
+Documento do Imóvel ou de Relação com a Terra.pdf
+75bf0215-5cda-4a1f-8f75-771d6f8842c4
+30.5
+ha
+81227cd0-c9ad-4cd3-900f-7f48c0ce11ca
+Documento do Imóvel ou de Relação com a Terra.pdf
+a8478427-31a0-4fea-835c-585a957a9765
+0.64
+ha
+6c13815d-8cc4-4b7d-bfee-cd817356572d
+Documento do Imóvel ou de Relação com a Terra.pdf
+88c61efe-0a6f-47ba-b747-939659a86021
+1.5
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 4 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+f24403d1-2d0f-436c-a727-2c005cf5e942
+Documento do Imóvel ou de Relação com a Terra.pdf
+1c5fef45-d7e8-4018-a6ff-31ebc0177198
+3.0
+ha
+3e3f8492-6e9b-47b0-8405-c34d3a868a75
+Documento do Imóvel ou de Relação com a Terra.pdf
+77339d2f-8932-479c-a19a-07100552f84a
+1.0
+ha
+ecd9767a-b6f6-4d70-8a2d-f262e3e51c78
+Documento do Imóvel ou de Relação com a Terra.pdf
+50eac4ea-b8f0-4846-807d-59972d924392
+35.0
+ha
+5550b0d1-9b6e-43ce-8ca1-77476890ad3f
+Documento do Imóvel ou de Relação com a Terra.pdf
+5232237f-5595-4396-abfa-d83dbed18876
+12.5
+ha
+a5c4d80e-d5b3-4928-b3e4-512970f12c4a
+Documento do Imóvel ou de Relação com a Terra.pdf
+35558e14-2dfd-4054-892e-2ff67a5b1656
+3.0
+ha
+78a97440-3b3e-4fa5-84ec-2818b7a9f614
+Documento do Imóvel ou de Relação com a Terra.pdf
+83d3d66b-19f7-4d04-a1b7-e386631f96ce
+2.0
+ha
+01467b76-814c-40b2-b255-410743c955ce
+Documento do Imóvel ou de Relação com a Terra.pdf
+d321de21-3826-4e74-897e-99d208561a7d
+1.0
+ha
+075a9b01-800f-4f11-b0ee-8c48b5552926
+Documento do Imóvel ou de Relação com a Terra.pdf
+5b1d2b3c-479d-492e-9177-81090bf857a9
+11.0
+ha
+7280cd7b-a940-42fa-9e18-3f4c67e4a9de
+Documento do Imóvel ou de Relação com a Terra.pdf
+1390fb97-dd26-4c06-b99a-6c5a5de7cb25
+1.0
+ha
+e28eb921-536a-4e20-b5cc-be57b9bb9f4c
+Documento do Imóvel ou de Relação com a Terra.pdf
+b070f1a6-16a4-4447-98e1-b4deaec34f40
+40.0
+ha
+b5e8753a-bf75-4fb4-992c-46d86845a93e
+Documento do Imóvel ou de Relação com a Terra.pdf
+c86b25ab-c84a-4284-b2b2-588ccfcccb3f
+1.19
+ha
+220b95b0-b845-481c-a3c4-f761891111e3
+Documento do Imóvel ou de Relação com a Terra.pdf
+b1373620-35dd-48c9-89cb-f78f1bcb8cb1
+0.3
+ha
+3efce169-ff04-49e2-9cac-de626dbafd09
+Documento do Imóvel ou de Relação com a Terra.pdf
+fbcb193f-f90e-4748-9081-1bb31dcaea4c
+3.9
+ha
+efba7e01-8b65-4c7c-a2d4-106e06df00e8
+Documento do Imóvel ou de Relação com a Terra.pdf
+048d17e7-0ec6-4e74-8f99-04df8cd1e7b2
+9.03
+ha
+365ec663-0cbc-4a3f-8c2e-4e492a38b217
+Documento do Imóvel ou de Relação com a Terra.pdf
+7a30fefc-522c-48dd-8050-e6a4d2add87e
+24.2
+ha
+80407c1a-3c07-40d0-8ba0-c1f626249daa
+Documento do Imóvel ou de Relação com a Terra.pdf
+abb75181-49d9-4ca4-b681-eacf562b7244
+25.45
+ha
+348e6bc9-e4b6-463b-889b-59bc2a8b8101
+Documento do Imóvel ou de Relação com a Terra.pdf
+4a713069-e875-4fa4-925c-b7c039ae65e1
+2.66
+ha
+0bcb21f2-a17a-44c2-9da7-4bf03b629cd1
+Documento do Imóvel ou de Relação com a Terra.pdf
+a7db933f-b2f5-48fb-b43a-3ac8fb34c239
+1.31
+ha
+f147303c-8368-4433-b887-fe2c99f131c6
+Documento do Imóvel ou de Relação com a Terra.pdf
+70e71411-0ce6-46b0-a32b-b19b4fc026cc
+1.0
+ha
+dc38e2d3-e0c7-41b3-987e-ca4219312ad9
+Documento do Imóvel ou de Relação com a Terra.pdf
+6331ba35-2199-4fa0-bf77-5b3d34ca9ac6
+1.59
+ha
+81519478-d745-4c89-95f4-77c409002784
+Documento do Imóvel ou de Relação com a Terra.pdf
+a9ff72e4-45b0-4e6d-853e-50175d6ffc05
+1.0
+ha
+d26c1325-936f-45f9-87b2-c1c209c2de25
+Documento do Imóvel ou de Relação com a Terra.pdf
+dde3d261-b75a-4635-9d6c-5699ed4fd16d
+3.0
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 5 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+e0b788d7-8c46-4956-8376-971b167255c1
+Documento do Imóvel ou de Relação com a Terra.pdf
+e781a1b3-8a1a-49f9-9f49-7c3f4937abd7
+1.0
+ha
+a8e3296c-07b2-444c-aa3e-e4ebbfb7ff3c
+Documento do Imóvel ou de Relação com a Terra.pdf
+0070973d-295e-4edb-abb6-addc4828a01d
+4.89
+ha
+aa1041db-d12f-431a-8146-607feaa616a0
+Documento do Imóvel ou de Relação com a Terra.pdf
+4812a811-cc9c-4375-9860-c8648d8772d9
+5.0
+ha
+a4deee89-4b1c-4d42-a32b-505a15ec97df
+Documento do Imóvel ou de Relação com a Terra.pdf
+5c74adfc-9f31-4afa-8f39-b02b76a28db4
+1.0
+ha
+59211ae1-e28c-4e76-b7dc-d4a243e277e7
+Documento do Imóvel ou de Relação com a Terra.pdf
+30435793-7006-4d8f-8ac7-108cacfe46c3
+11.5
+ha
+5601b903-803d-47ca-9cc6-7ad424bfa96c
+Documento do Imóvel ou de Relação com a Terra.pdf
+102e74df-a2d4-437f-87a8-bc421477c7a1
+12.0
+ha
+7feb4184-c4e1-4686-b740-a662a8bcd996
+Documento do Imóvel ou de Relação com a Terra.pdf
+eb4a7487-5a78-46b3-8b3d-38b50fb493da
+12.0
+ha
+b5a09b9c-ba0f-4313-8873-3cb18a5cc627
+Documento do Imóvel ou de Relação com a Terra.pdf
+06ae0414-5edb-4cb0-848d-c925669af50a
+16.97
+ha
+f947af20-c9b0-4db4-90fc-1c74ee69158d
+Documento do Imóvel ou de Relação com a Terra.pdf
+630c6b19-c091-4fea-b2db-6d77ee1d7a73
+0.89
+ha
+22637f80-9af3-4721-9eac-7eeb615c343e
+Documento do Imóvel ou de Relação com a Terra.pdf
+65285a45-3278-4681-abec-f6685b14f992
+0.5
+ha
+acf22567-03a7-4bec-8443-d92d8a29e7d9
+Documento do Imóvel ou de Relação com a Terra.pdf
+a4454c22-1329-4318-a8e9-af148944329f
+3.3
+ha
+f3eed19c-3504-4c07-a33a-3d181e9652a9
+Documento do Imóvel ou de Relação com a Terra.pdf
+6df511df-3138-44e1-a12c-c26606e3d062
+4.39
+ha
+967aa4bb-a714-4258-a737-72afb50ab5bf
+Documento do Imóvel ou de Relação com a Terra.pdf
+1d6f7991-9520-4d77-add6-50c857f5c242
+1.0
+ha
+6efab071-85a9-4edb-9f33-93fdb84a3e08
+Documento do Imóvel ou de Relação com a Terra.pdf
+db2af1ac-33ca-48ec-b79a-2ba81ee23d9f
+1.0
+ha
+eecd3c43-bb28-40ac-bc9c-bfc1dafe685e
+Documento do Imóvel ou de Relação com a Terra.pdf
+a13c80a3-a280-429d-8adc-4207e8e39ff4
+3.0
+ha
+55bcfcce-56fe-4b4c-88c2-b427e8b96a66
+Documento do Imóvel ou de Relação com a Terra.pdf
+704959a6-9c4d-4f93-955e-d425cdd68164
+0.01
+M²
+4d2ba8f1-1f16-47cd-a623-e6a3b4749096
+TERRA AD.pdf
+3fc1cc82-191d-47a2-859b-9959ad6cfe2a
+4.0
+ha
+5e8b5065-35aa-4dc7-ab83-6079baaea04b
+Documento do Imóvel ou de Relação com a Terra.pdf
+5aca119e-97d3-4e7e-89f7-ca4691718d1f
+16.0
+ha
+a79ab6ee-f662-499e-86c2-643ccc3b331b
+Documento do Imóvel ou de Relação com a Terra.pdf
+e2f03f33-0ce3-4903-ba43-c42495c9e22a
+8.89
+ha
+312485a5-f357-427a-9501-63d0e066c300
+Documento do Imóvel ou de Relação com a Terra.pdf
+6f281853-385a-4f9f-be21-7181659cdaed
+23.51
+ha
+d30cd323-16e4-4ada-888e-641e74200013
+Documento do Imóvel ou de Relação com a Terra.pdf
+1498b527-542c-4fdb-a567-c533cd52461e
+30.0
+ha
+1e96c7b5-72c6-4bc8-b724-09187ab077c8
+Documento do Imóvel ou de Relação com a Terra.pdf
+b73f6303-d90b-4403-beab-0d6dbc5993fe
+1.0
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 6 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+37882ecd-131d-4ab1-8f3d-ce5785d790fa
+Documento do Imóvel ou de Relação com a Terra.pdf
+46c52cda-f3ee-4fab-851e-ef20276ba9b8
+0.6
+ha
+beb11972-5b53-41e7-8ce6-d26b4f73b40d
+Documento do Imóvel ou de Relação com a Terra.pdf
+4cafdad4-9eab-4f73-be33-aae46e92eff7
+1.0
+ha
+fb4ba081-1937-4aac-86aa-31e3e3591145
+Documento do Imóvel ou de Relação com a Terra.pdf
+6161b8dc-40f5-44ae-bc74-c22bad156004
+1.0
+ha
+0e6ffeb8-8885-4b95-91ef-51143495b635
+Documento do Imóvel ou de Relação com a Terra.pdf
+87cdec40-358d-4ccb-b0bb-f5cc00692503
+12.0
+ha
+16f6c779-3356-4cc4-8c41-aa0bade8abb4
+Documento do Imóvel ou de Relação com a Terra.pdf
+c45f9805-6310-4aba-bc0a-fb5d961a7e2a
+10.0
+ha
+ef878ef4-aa0c-4305-ac35-d6fbbbb16130
+Documento do Imóvel ou de Relação com a Terra.pdf
+54b2deb2-27fa-4851-996c-a4ef52c2bddd
+8.8
+ha
+52007045-82ba-4512-bc21-b0b269669423
+Documento do Imóvel ou de Relação com a Terra.pdf
+4f80c8e0-c94b-4f9f-8b98-7e9c8db01b37
+1.0
+ha
+327e7aa5-7c28-46f3-ba9e-85a8fa189f09
+Documento do Imóvel ou de Relação com a Terra.pdf
+1dd3d06f-c400-4e5c-bcf8-21fd59cebdb8
+1.0
+ha
+2ade8568-25ac-4756-9fb8-ecffecd61bd3
+Documento do Imóvel ou de Relação com a Terra.pdf
+06f59052-79b4-4a5c-abc3-6d6ddcbe5b33
+1.1
+ha
+00c85c2d-291d-49ce-9877-b29862e78f2f
+Documento do Imóvel ou de Relação com a Terra.pdf
+c9e1e605-0669-4796-ba5b-58d63ff46a18
+30.0
+ha
+7213dcf5-437a-48ba-948e-fa45efa0a425
+Documento do Imóvel ou de Relação com a Terra.pdf
+603432a4-35f9-44cc-bf10-cc72d68ba309
+11.33
+ha
+22ee57f2-bb0a-466e-91a7-ce9e75328957
+Documento do Imóvel ou de Relação com a Terra.pdf
+db7c26d5-daa5-4b81-af9a-35225a7c6ea5
+17.0
+ha
+5dcd73ab-68a0-4107-9c2a-93a09ca3a6c0
+Documento do Imóvel ou de Relação com a Terra.pdf
+45fd43fd-4eb7-4549-9d1f-d58cc875bd5f
+3.0
+ha
+144ba347-e5ba-4c8b-a222-a309f1f33796
+Documento do Imóvel ou de Relação com a Terra.pdf
+92e1feb2-a1a1-4eeb-81ed-8ecdb0f8f14a
+5.0
+ha
+30888021-c8d3-487b-8bc1-a965cf974208
+Documento do Imóvel ou de Relação com a Terra.pdf
+16b2fe67-7154-4248-a4ce-410313de8211
+4.5
+ha
+32e696b3-7eea-452e-bb35-3d336c80639e
+Documento do Imóvel ou de Relação com a Terra.pdf
+8c5e0357-f9c2-413d-820b-6fa73631b42e
+15.32
+ha
+4ae88501-8b05-4f1b-853d-43152cdbecbf
+DOCUMENTOS DA TERRA DE MARIA DA LUZ .pdf
+494e50ef-642e-4085-84c2-3b8f5048e500
+2.0
+ha
+ee92032a-a705-4bee-b370-585dfc8d48f6
+Documento do Imóvel ou de Relação com a Terra.pdf
+9297122c-3da5-4715-a7e6-6233efa4669e
+6.01
+ha
+090f76c7-255d-404f-a5a6-a266060b30e1
+Documento do Imóvel ou de Relação com a Terra.pdf
+67b16caa-8fb2-40c5-b100-343d3ac81430
+1.31
+ha
+6b038cb6-6811-4a85-94be-388b9f6126da
+Documento do Imóvel ou de Relação com a Terra.pdf
+36d9b93e-7a70-479b-b7fa-437c119d5983
+2.0
+ha
+8e9f94eb-452a-4712-b356-29c334b7e653
+Documento do Imóvel ou de Relação com a Terra.pdf
+a8b81abe-9c01-412b-81df-9ffbc2b7935a
+24.8
+ha
+8ac66a03-6871-41f9-8975-d2eb83fa4a3c
+Documento do Imóvel ou de Relação com a Terra.pdf
+37c2a9be-c762-4207-beaf-42c43e7f8821
+19.36
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 7 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+26f6081e-8185-433d-9df2-348bb0248f5b
+Documento do Imóvel ou de Relação com a Terra.pdf
+b470baa9-dfba-4c5c-9c6b-7e8b0640dbbb
+82.84
+ha
+3af892a3-12b9-4efc-ac29-f3ba2bcb35c4
+Documento do Imóvel ou de Relação com a Terra.pdf
+f324bfbb-dc39-4631-96d9-164bb498c85e
+7.2
+ha
+57263eb2-d8b1-44b9-8ec1-69a1126fc0a0
+Documento do Imóvel ou de Relação com a Terra.pdf
+dcbf6b3c-c63b-484c-acd2-f48d0e90924d
+1.66
+ha
+bf24d8aa-2db7-42c5-8321-f27e7091fa22
+Documento do Imóvel ou de Relação com a Terra.pdf
+43ecdfe0-1468-4392-ba07-0946742c9fc2
+15.0
+ha
+fa893f6f-b4e6-49b0-9454-0f1da2c6864d
+Documento do Imóvel ou de Relação com a Terra.pdf
+528fb8a3-29f5-4168-9c18-ebf94ee259f1
+15.0
+ha
+15aff884-96de-45ec-b8d2-88f28f8eb876
+Documento do Imóvel ou de Relação com a Terra.pdf
+25fa74d7-26f8-47a6-9b42-7e572a1973f8
+10.0
+ha
+4291167c-d2b6-4173-9b9a-515353f51bac
+Documento do Imóvel ou de Relação com a Terra.pdf
+d3ea7cc3-44c3-4459-9290-f9a83b61e14a
+8.14
+ha
+1132ea69-6087-410b-9b32-f4b17b1b4cd8
+Documento do Imóvel ou de Relação com a Terra.pdf
+3baf276d-7d06-49d7-b16d-494e9637cc2a
+1.0
+ha
+abb3bac2-6037-401b-ab71-281e2d79aa55
+Documento do Imóvel ou de Relação com a Terra.pdf
+f1acdb28-92b9-4020-824d-bf52181643de
+8.0
+ha
+a70d57f4-a0d9-4a1b-88c9-863cfafca528
+Documento do Imóvel ou de Relação com a Terra.pdf
+7b694480-ff46-4b02-952d-622a326dc40b
+26.75
+ha
+841d428f-60d1-4f5c-8a18-8248c0f1bbd5
+Documento do Imóvel ou de Relação com a Terra.pdf
+9fe798a8-82ad-4543-9137-99fc27981fce
+28.0
+ha
+5f292ee1-5fee-407a-8b72-e64aeb4981ab
+Documento do Imóvel ou de Relação com a Terra.pdf
+3af57fcd-d877-4cc5-adde-49b2287b1049
+12.3
+ha
+6016d409-496c-4746-bf82-94748980fcd0
+Documento do Imóvel ou de Relação com a Terra.pdf
+ed4a1e16-62ee-448d-b9df-890779526f9b
+0.5
+ha
+396430f0-447e-4c9b-8cdd-4acc70db7ad8
+Documento do Imóvel ou de Relação com a Terra.pdf
+428281ca-4179-488d-9669-e043a10fb5d1
+4.21
+ha
+4daf4661-2fe0-40e3-9e83-a93b03698a9a
+DOC DA TERRA.pdf
+a36390f5-0f16-40a2-9ec1-ff2bbc5e0a46
+2.0
+ha
+ce049295-4d73-4d95-a231-c2d4c508390e
+Documento do Imóvel ou de Relação com a Terra.pdf
+cad768c2-83f1-4b0c-9324-320b5dae58c1
+0.5
+ha
+ab58b3fe-8b42-4dba-a6fe-07f7e460c57d
+Documento do Imóvel ou de Relação com a Terra.pdf
+3ea76ece-c61e-4a5b-a2ef-c973100befe7
+1.9
+ha
+b16167e8-d5fa-4748-a1cc-4d3834c73706
+Documento do Imóvel ou de Relação com a Terra.pdf
+d23cc236-3dcf-4ef0-b37b-fde9bf228158
+3.1
+ha
+4ec5d043-a3f6-4c9e-a2b8-c3801893420a
+Documento do Imóvel ou de Relação com a Terra.pdf
+44894d41-7b20-4ae0-8b4f-eb64a9e9793c
+7.0
+ha
+ebb40b2f-706a-4147-90e7-7ad95f68d151
+Documento do Imóvel ou de Relação com a Terra.pdf
+bb37d7e5-877d-48b0-99ce-79aefe433dc3
+1.01
+ha
+4eef6fc9-3ddf-408f-b114-834d36aded04
+Documento do Imóvel ou de Relação com a Terra.pdf
+9aa11c5f-cf73-4188-967c-a991da84820b
+28.8
+ha
+2e85c189-3e8f-474b-aa71-8286c8756c3f
+Documento do Imóvel ou de Relação com a Terra.pdf
+98a5650f-1352-41bf-9262-f9505f2a68ef
+12.0
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 8 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+7e92cf4f-33b7-41bd-a958-679d7202b4d2
+Documento do Imóvel ou de Relação com a Terra.pdf
+6fea885c-b1c5-485c-bad1-270b651646ad
+2.0
+ha
+660e1053-6fc2-44f1-bd00-3644c84039f7
+Documento do Imóvel ou de Relação com a Terra.pdf
+184eb27b-bf96-43d9-965c-9d5ddc9ce5d5
+2.42
+ha
+9f52a49a-d31f-490f-9b33-ebb81330a920
+Documento do Imóvel ou de Relação com a Terra.pdf
+a7341c4e-c723-4fde-9eac-4c98a63dadaf
+7.5
+ha
+5a775964-3b8e-45b7-9448-d1c5656dfd39
+Documento do Imóvel ou de Relação com a Terra.pdf
+fe4ac5e7-2841-479d-b2d9-197d26fa28b2
+124.8
+ha
+ed543dea-9623-432b-bb19-b9995c052406
+Documento do Imóvel ou de Relação com a Terra.pdf
+8fe17449-5a28-4fa4-94cf-aa30a9800672
+7.0
+ha
+ed0c4d4b-dc6b-44c4-9a52-7e5c0ba8ee34
+Documento do Imóvel ou de Relação com a Terra.pdf
+f6762f97-c156-4742-aa67-7f398c824f87
+107.09
+ha
+806b6a0f-c477-4b4b-8c37-f482e4ab27c8
+Documento do Imóvel ou de Relação com a Terra.pdf
+9ae93e24-8618-43d9-8c7d-7273a3c1cb99
+2.0
+ha
+c8990b7e-348c-4516-b2d2-0c6b11a0002d
+Documento do Imóvel ou de Relação com a Terra.pdf
+fd9bf954-52a8-40c6-ab41-787b91d5469b
+2.0
+ha
+d66ec0e7-1f3f-4aa6-9f96-4c4a581c9757
+Documento do Imóvel ou de Relação com a Terra.pdf
+c5387998-bde2-4381-836d-b9b7bfb186be
+44.35
+ha
+a628cde3-2f40-44c1-8e72-6f01a9679f23
+Documento do Imóvel ou de Relação com a Terra.pdf
+1eff747d-8ee2-4ee0-9fca-a97b14de50e3
+3.0
+ha
+929715fa-d7e1-492f-9e76-3dd090c4273a
+Documento do Imóvel ou de Relação com a Terra.pdf
+f385a7dd-ed44-432c-9583-ad750e1dfb47
+5.0
+ha
+17b0d26d-62b2-44f6-a463-44203116df8d
+Documento do Imóvel ou de Relação com a Terra.pdf
+a3363e35-ef6c-4035-8658-1491ded84998
+5.18
+ha
+64b4695d-f9a1-41fb-93f1-30f2270c12a8
+Documento do Imóvel ou de Relação com a Terra.pdf
+c7408fed-2933-470e-8688-f8ff5b163097
+4.0
+ha
+9e8102c2-3351-4383-8fd0-c6a0d948755a
+Documento do Imóvel ou de Relação com a Terra.pdf
+b5da55b4-b0be-4c0c-9430-5d62a422e444
+0.4
+ha
+b8558ae7-d4e0-44c8-aba4-61e8470544ef
+Documento do Imóvel ou de Relação com a Terra.pdf
+ec2e8b4c-51a5-4883-8482-955f68ef84e5
+3.0
+ha
+a79468cc-a21f-48fe-8459-f007eefbd37f
+Documento do Imóvel ou de Relação com a Terra.pdf
+be90ea42-0759-4beb-a5a9-a04cf6d4f083
+10.0
+ha
+c966b191-1a31-494e-b97b-22d9c23f0ee8
+Documento do Imóvel ou de Relação com a Terra.pdf
+3f091f81-67a4-4c20-aba8-fdf504e7eb14
+0.53
+ha
+ec94e26b-3a93-435f-934f-290c75c769b6
+Documento do Imóvel ou de Relação com a Terra.pdf
+88917dac-0b82-45ec-8f49-87d06df40e04
+6.0
+ha
+1e260772-c199-4a14-a3f1-9ce0bba0dcdb
+Documento do Imóvel ou de Relação com a Terra.pdf
+ad8df9b8-c428-47c8-8ca3-70c18a57e619
+19.03
+ha
+da892a0e-ccc5-4130-b081-cb5381fe0f7c
+Documento do Imóvel ou de Relação com a Terra.pdf
+9067ffae-1892-443c-a5ea-63b16332f739
+2.0
+ha
+5d5ecaf2-ff09-4576-8c88-cf8e8063229e
+Documento do Imóvel ou de Relação com a Terra.pdf
+5399fca6-c986-4175-a6cd-dd55d876aba7
+23.6
+ha
+62683440-d738-473a-a34c-ebab94f19d4d
+Documento do Imóvel ou de Relação com a Terra.pdf
+71c50d03-11c5-40ee-8e88-59c04c817ea3
+0.01
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 9 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+c8e78352-2e85-4c4c-b7e3-f307dd98ae08
+Documento do Imóvel ou de Relação com a Terra.pdf
+faf85635-efbf-4a79-b457-f44a03abe5eb
+5.41
+ha
+bf110b6e-d647-4134-9507-d4c23b347f19
+Documento do Imóvel ou de Relação com a Terra.pdf
+48207436-628a-46ee-a1b9-0c0cd0aad4d6
+5.0
+ha
+3933c243-e84a-449e-b96a-fded6487f15e
+Documento do Imóvel ou de Relação com a Terra.pdf
+24bce19a-3f1d-4fa8-8204-cb314efbafd6
+3.0
+ha
+42a24bed-b1c5-43b5-b354-18147afb7d79
+Documento do Imóvel ou de Relação com a Terra.pdf
+d03820b7-cfb3-40f4-bdd3-5eb3b186c165
+9.4
+ha
+f04a6895-debe-4555-9ff3-958637fc60b7
+Documento do Imóvel ou de Relação com a Terra.pdf
+d9b187ab-d2b0-43ea-ba97-f436dddeba9f
+48.14
+ha
+c3eaf25d-fabb-4793-b568-d366066d2e06
+Documento do Imóvel ou de Relação com a Terra.pdf
+cc7b0f5d-2f5f-4578-b8a4-e2090ab91b7d
+4.52
+ha
+3340bb82-7bde-44b0-b64c-40211502f5ba
+DOCUMENTO DA TERRA DE SILVANA MARIA NERY TEIXEIRA.pdf
+af07e915-ec9e-465b-8c41-2f081ffa73b1
+110.14
+ha
+362228ef-264f-45c7-8d32-a123413971ce
+Documento do Imóvel ou de Relação com a Terra.pdf
+f64078fb-3267-4722-87ac-bf71d234d5a5
+15.59
+ha
+5754dcd1-1d47-4d5b-afca-a2925c475cf7
+Documento do Imóvel ou de Relação com a Terra.pdf
+3891680b-134f-4e92-8562-63b720622ce2
+2.6
+ha
+e4ee141e-c373-4265-abb3-113793bbbfc1
+Documento do Imóvel ou de Relação com a Terra.pdf
+e5790ec8-df38-40e5-a346-aa0c9e077889
+1.9
+ha
+e19bdd85-1ec7-4771-8e4a-f1a94b9154c5
+Documento do Imóvel ou de Relação com a Terra.pdf
+efda9d1f-7291-4f4c-b28f-d300903bcc71
+0.53
+ha
+dc918e2c-0fd9-4f9b-89d2-eb380a98b072
+Documento do Imóvel ou de Relação com a Terra.pdf
+bdddf847-c4de-45cb-9b12-771cf3517202
+50.0
+ha
+cb181c10-c6dd-4a33-934f-5e0f6fd77e6f
+Documento do Imóvel ou de Relação com a Terra.pdf
+359fa4a3-e02b-483e-a59b-289384bb321d
+3.63
+ha
+f0f51e3d-4bd5-49d1-af98-f894e900c566
+Documento do Imóvel ou de Relação com a Terra.pdf
+510f935d-f726-4e75-bcfa-14d8c9eaefc8
+67.0
+ha
+9b997b5c-8045-404b-b28e-4789d623a85e
+Documento do Imóvel ou de Relação com a Terra.pdf
+d88672f4-8257-401e-b93d-ead96142e631
+10.0
+ha
+d5affb4f-468c-4b9e-8747-566d8b299e4a
+Documento do Imóvel ou de Relação com a Terra.pdf
+4b310d6d-9508-4157-b76c-c43a3f260421
+11.97
+ha
+e13be62c-058b-4931-94dd-4c422bc2d308
+Documento do Imóvel ou de Relação com a Terra.pdf
+f17cb1b0-0668-4490-b7b7-403616e7d0b3
+0.5
+ha
+af4194cf-c2d4-4c79-a734-d73e7a49f2ad
+Documento do Imóvel ou de Relação com a Terra.pdf
+d277f772-b9db-4c50-8f8d-526dc4b4df3f
+5.0
+ha
+811d7f9f-a2a1-47f3-ae01-db548848d9a8
+Documento do Imóvel ou de Relação com a Terra.pdf
+7f15abb7-87ad-454d-a33c-6f8719eaca18
+1.5
+ha
+4eaab499-5aac-4d6e-96bc-e09a609dbcb6
+Documento do Imóvel ou de Relação com a Terra.pdf
+5c8572cc-002f-493a-b674-23ff9587fdc0
+10.14
+ha
+aa4a22c1-730c-4e3c-9787-950ed7551b9f
+Documento do Imóvel ou de Relação com a Terra.pdf
+1188d5b8-b68f-4ca1-bff9-10f85456410b
+3.0
+ha
+e11261e5-5c5d-4ce2-9612-3219d6406e72
+DOCUMENTAÃ■Ã■O DA TERRA.pdf
+00aa9df2-614f-4ff8-95a7-164ceb3cd2e0
+2.0
+ha
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.
+
+--- Página 10 ---
+ID do Documento
+Nome do Documento
+ID da Área do Imóvel
+Área (Banco)
+Unidade
+814b8593-4ff5-4db3-8db2-98acbf99cd0c
+Documento do Imóvel ou de Relação com a Terra.pdf
+40c1b0be-8dbb-44fa-ac60-73532f8264c6
+5.0
+ha
+04a233a5-4e1a-4697-8976-e0a079712bfd
+Documento do Imóvel ou de Relação com a Terra.pdf
+951f3009-7e4b-4baf-9b3e-5b639ade5790
+1.02
+ha
+b05c20c9-339a-403b-8e6a-051a2f589b92
+terra mira.pdf
+bef5b547-2781-4831-b8a0-fbac04d89c86
+0.86
+ha
+0c95462b-e553-4493-b754-97fd89b1828a
+Documento do Imóvel ou de Relação com a Terra.pdf
+686fcda6-3b37-4bc2-9e8f-42690e23f82b
+41.46
+ha
+00d69800-4532-4541-94f3-42ced4d229e2
+Apolo Terra (2).pdf
+1ca870ef-3cb2-4132-9eb8-8fd11424c359
+43.77
+ha
+ab3cc0d6-e040-440d-9a97-e4b7900dd02b
+Documento do Imóvel ou de Relação com a Terra.pdf
+fe8d6a2c-2c93-48f9-9c5c-792a8b0ef735
+1.5
+ha
+dd276d5a-9b0e-42ba-ba3f-aecb17b56236
+Documento do Imóvel ou de Relação com a Terra.pdf
+7d264064-eb75-4d9a-941b-174d609b04f3
+16.6
+ha
+f2439511-f01c-43fc-91a4-c89eccdda863
+Documento do Imóvel ou de Relação com a Terra.pdf
+e86a3f9a-44ec-495c-9fac-6f151501f011
+82.79
+ha
+43982aaa-9dc3-4c0a-bb7a-9dff8b1f9c82
+Documento do Imóvel ou de Relação com a Terra.pdf
+9bee1aeb-a4a2-4a69-9fd7-3e90619ee765
+3.3
+ha
+9e5be66e-3d5e-40da-81bd-00f1da91efdd
+Documento do Imóvel ou de Relação com a Terra.pdf
+6af3d0e3-4d4a-489b-a1ca-fb4ac436fa4f
+2.0
+ha
+Total de Documentos na Amostra: 201
+Observação: Este documento contém a relação de documentos utilizados na amostra de auditoria para validação de áreas de imóveis rurais. Os documentos originais estão armazenados no bucket S3
+caf-prod-mda.
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79197572.

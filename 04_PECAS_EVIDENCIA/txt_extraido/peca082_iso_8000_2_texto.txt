@@ -1,0 +1,1464 @@
+--- Página 1 ---
+Data quality —
+Part 2:  
+Vocabulary
+Qualité des données —
+Partie 2: VocabulaireINTERNATIONAL 
+STANDARDISO 
+8000-2
+Fifth edition  
+2022-09
+Reference number  
+ISO 8000-2:2022(E)
+© ISO 2022Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 2 ---
+iiISO 8000-2:2022(E)
+COPYRIGHT PROTECTED DOCUMENT
+©  ISO 2022
+All rights reserved. Unless otherwise specified, or required in the context of its implementation, no part of this publication may 
+be reproduced or utilized otherwise in any form or by any means, electronic or mechanical, including photocopying, or posting on 
+the internet or an intranet, without prior written permission. Permission can be requested from either ISO at the address below 
+or ISO’s member body in the country of the requester.
+ISO copyright office
+CP 401 • Ch. de Blandonnet 8
+CH-1214 Vernier, Geneva
+Phone: +41 22 749 01 11
+Email: copyright@iso.org
+Website: www.iso.org
+Published in Switzerland
+   © ISO 2022 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 3 ---
+ISO 8000-2:2022(E)
+Foreword  ........................................................................................................................................................................................................................................ iv
+Introduction  ................................................................................................................................................................................................................................. v
+1 Scope  ................................................................................................................................................................................................................................. 1
+2 Normative references  ..................................................................................................................................................................................... 1
+3	 Terms	and	definitions  .................................................................................................................................................................................... 1
+3.1 Terms relating to quality  ............................................................................................................................................................... 1
+3.2 Terms relating to data and information  ........................................................................................................................... 3
+3.3 Terms relating to identifier  ......................................................................................................................................................... 4
+3.4 Terms relating to measurement  .............................................................................................................................................. 5
+3.5 Terms relating to industrial data  ........................................................................................................................................... 6
+3.6 Terms relating to data dictionary .......................................................................................................................................... 7
+3.7 Terms relating to characteristic data  ................................................................................................................................. 8
+3.8 Terms relating to data quality  .................................................................................................................................................. 8
+3.9 Terms relating to syntax and semantics ....................................................................................................................... 12
+3.10 Terms relating to transaction data  .................................................................................................................................... 13
+3.11 Terms relating to master data  ............................................................................................................................................... 13
+3.12 Terms relating to product data  ............................................................................................................................................. 13
+3.13 Terms relating to item of production and item of supply  .............................................................................. 15
+3.14 Terms relating to data quality role  .................................................................................................................................... 16
+3.15 Terms relating to process assessment ............................................................................................................................ 17
+3.16 Terms relating to data governance  .................................................................................................................................... 20
+Annex A (informative) 	Document 	identification  ................................................................................................................................. 21
+Bibliography  ........................................................................................................................................... .................................................................................. 22
+Index  ................................................................................................................................................................................................................................................. 24
+iii © ISO 2022 – All rights reserved  Contents PageExemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 4 ---
+ISO 8000-2:2022(E)
+Foreword
+ISO (the International Organization for Standardization) is a worldwide federation of national standards 
+bodies (ISO member bodies). The work of preparing International Standards is normally carried out 
+through ISO technical committees. Each member body interested in a subject for which a technical 
+committee has been established has the right to be represented on that committee. International 
+organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. 
+ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of 
+electrotechnical standardization.
+The procedures used to develop this document and those intended for its further maintenance are 
+described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria needed for the 
+different types of ISO documents should be noted. This document was drafted in accordance with the 
+editorial rules of the ISO/IEC Directives, Part 2 (see www.iso.org/directives ).
+Attention is drawn to the possibility that some of the elements of this document may be the subject of 
+patent rights. ISO shall not be held responsible for identifying any or all such patent rights. Details of 
+any patent rights identified during the development of the document will be in the Introduction and/or 
+on the ISO list of patent declarations received (see www.iso.org/patents ).
+Any trade name used in this document is information given for the convenience of users and does not 
+constitute an endorsement.
+For an explanation of the voluntary nature of standards, the meaning of ISO specific terms and 
+expressions related to conformity assessment, as well as information about ISO's adherence to 
+the World Trade Organization (WTO) principles in the Technical Barriers to Trade (TBT), see 
+www.iso.org/iso/foreword.html .
+This document was prepared by Technical Committee ISO/TC  184, Automation systems and integration , 
+Subcommittee SC 4, Industrial data .
+This fifth edition cancels and replaces the fourth edition (ISO 8000-2:2020), which has been technically 
+revised. It also incorporates the Amendment ISO 8000-2:2020/Amd 1:2021.
+The main changes are as follows:
+— additional terminological entries to align the ISO 8000 series further with ISO 9000;
+— updates where the updates originate from a new edition of ISO 8000-110;
+— updates where the updates originate from converting ISO 8000-150 to an International Standard 
+from a Technical Specification;
+— updates where the updates originate from a new edition of ISO 10303-59;
+— other minor improvements to entries to improve consistency and readability of entries.
+A list of all parts in the ISO 8000 series can be found on the ISO website.
+Any feedback or questions on this document should be directed to the user’s national standards body. A 
+complete listing of these bodies can be found at www.iso.org/members.html .
+iv    © ISO 2022 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 5 ---
+ISO 8000-2:2022(E)
+Introduction
+0.1 Foundations of the ISO 8000 series
+Digital data deliver value by enhancing all aspects of organizational performance including:
+— operational effectiveness and efficiency;
+— safety and security;
+— reputation with customers and the wider public;
+— compliance with statutory regulations;
+— innovation;
+— consumer costs, revenues and stock prices.
+In addition, many organizations are now addressing these considerations with reference to the United 
+Nations Sustainable Development Goals1).
+The influence on performance originates from data being the formalized representation of 
+information2). This information enables organizations to make reliable decisions. Such decision making 
+can be performed by human beings directly and also by automated data processing including artificial 
+intelligence systems.
+Through widespread adoption of digital computing and associated communication technologies, 
+organizations become dependent on digital data. This dependency amplifies the negative consequences 
+of lack of quality in these data. These consequences are the decrease of organizational performance.
+The biggest impact of digital data comes from two key factors:
+— the data having a structure that reflects the nature of the subject matter;
+EXAMPLE 1 A research scientist writes a report using a software application for word processing. This report 
+includes a table that uses a clear, logical layout to show results from an experiment. These results indicate how 
+material properties vary with temperature. The report is read by a designer, who uses the results to create a 
+product that works in a range of different operating temperatures.
+— the data being computer processable (machine readable) rather than just being for a person to read 
+and understand.
+EXAMPLE 2 A research scientist uses a database system to store the results of experiments on a material. 
+This system controls the format of different values in the data set. The system generates an output file of digital 
+data. This file is processed by a software application for engineering analysis. The application determines the 
+optimum geometry when using the material to make a product.
+ISO 9000 explains that quality is not an abstract concept of absolute perfection. Quality is actually 
+the conformance of characteristics to requirements. This actuality means that any item of data can 
+be of high quality for one purpose but not for a different purpose. The quality is different because the 
+requirements are different between the two purposes.
+EXAMPLE 3 Time data are processed by calendar applications and also by control systems for propulsion 
+units on spacecraft. These data include start times for meetings in a calendar application and activation times in 
+a control system. These start times require less precision than the activation times.
+1)  https://sdgs.un.org/goals
+2)  This document defines information as “knowledge concerning objects, such as facts, events, things, processes, 
+or ideas, including concepts, that within a certain context has a particular meaning”.
+v © ISO 2022 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 6 ---
+ISO 8000-2:2022(E)
+The nature of digital data is fundamental to establishing requirements that are relevant to the specific 
+decisions made by an organization.
+EXAMPLE 4 ISO 8000-1 identifies that data have syntactic (format), semantic (meaning) and pragmatic 
+(usefulness) characteristics.
+To support the delivery of high-quality data, the ISO 8000 series addresses:
+— data governance, data quality management and maturity assessment;
+EXAMPLE 5 ISO 8000-61 specifies a process reference model for data quality management.
+— creating and applying requirements for data and information;
+EXAMPLE 6 ISO 8000-110 specifies how to exchange characteristic data that are master data.
+— monitoring and measuring information and data quality;
+EXAMPLE 7 ISO 8000-8 specifies approaches to measuring information and data quality.
+— improving data and, consequently, information quality;
+EXAMPLE 8 ISO/TS 8000-81 specifies an approach to data profiling, which identifies opportunities to improve 
+data quality.
+— issues that are specific to the type of content in a data set.
+EXAMPLE 9 ISO/TS 8000-311 specifies how to address quality considerations for product shape data.
+Data quality management covers all aspects of data processing, including creating, collecting, storing, 
+maintaining, transferring, exploiting and presenting data to deliver information.
+Effective data quality management is systemic and systematic, requiring an understanding of the 
+root causes of data quality issues. This understanding is the basis for not just correcting existing 
+nonconformities but also implementing solutions that prevent future reoccurrence of those 
+nonconformities.
+EXAMPLE 10 If a data set includes dates in multiple formats including “yyyy -mm -dd”, “mm -dd-yy” and 
+“dd-mm -yy”, then data cleansing can correct the consistency of the values. Such cleansing requires additional 
+information, however, to resolve ambiguous entries (such as, “04 -05-20”). The cleansing also cannot address any 
+process issues and people issues, including training, that have caused the inconsistency.
+0.2 Understanding more about the ISO 8000 series
+ISO 8000-1 provides a detailed explanation of the structure and scope of the whole ISO 8000 series.
+ISO has identified this document, ISO 8000-1 and ISO 8000-8 as horizontal deliverables3).
+0.3 Role of this document
+As a contribution to the capability of the ISO 8000 series, this document specifies the single, common 
+vocabulary for the ISO 8000 series. This vocabulary is ideal reading material by which to understand 
+the overall subject matter of data quality. This document presents the vocabulary structured by a series 
+of topic areas (for example, terms relating to quality and terms relating to data and information).
+This document supports activities that affect:
+— one or more information systems;
+— data flows within the organization and with external organizations;
+— any phase of the data life cycle.
+3)  A horizontal deliverable is a deliverable dealing with a subject relevant to a number of committees or sectors or 
+of crucial importance to ensure coherence across standardization deliverables.
+vi    © ISO 2022 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 7 ---
+ISO 8000-2:2022(E)
+Organizations can use this document on its own or in conjunction with other parts of the ISO 8000 
+series.
+Annex  A contains an identifier that conforms to ISO/IEC 8824-1. The identifier unambiguously identifies 
+this document in an open information system.
+0.4	 Benefits	of	the	ISO	8000	series
+By implementing parts of the ISO 8000 series to improve organizational performance, an organization 
+achieves the following benefits:
+— objective validation of the foundations for digital transformation of the organization;
+— a sustainable basis for data in digital form becoming a fundamental asset class the organization 
+relies on to deliver value;
+— securing evidence -based trust from other parties (including supply chain partners and regulators) 
+about the repeatability and reliability of data and information processing in the organization;
+— portability of data with resulting protection against loss of intellectual property and reusability 
+across the organization and applications;
+— effective and efficient interoperability between all parties in a supply chain to achieve traceability 
+of data back to original sources;
+— readiness to acquire or supply services where the other party expects to work with common 
+understanding of explicit data requirements.
+vii © ISO 2022 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 8 ---
+Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 9 ---
+INTERNATIONAL ST ANDARD ISO 8000-2:2022(E)
+Data quality —
+Part 2:  
+Vocabulary
+1 Scope
+This document defines terms relating to data quality. These terms are used by the parts in the ISO 8000 
+series.
+2 Normative references
+There are no normative references in this document.
+3	 Terms	and	definitions
+ISO and IEC maintain terminology databases for use in standardization at the following addresses:
+— ISO Online browsing platform: available at h t t p s ://  www  .iso .org/  obp
+— IEC Electropedia: available at h t t p s ://  www  .electropedia  .org/  
+3.1 Terms relating to quality
+3.1.1
+process , noun
+set of interrelated or interacting activities that use inputs to deliver an intended result
+[SOURCE: ISO 9000:2015, 3.4.1, modified — Notes to entry have been removed.]
+3.1.2
+requirement
+need or expectation that is stated, generally implied or obligatory
+[SOURCE: ISO 9000:2015, 3.6.4, modified — Notes to entry have been removed.]
+3.1.3
+quality
+degree to which a set of inherent characteristics of an object fulfils requirements  (3.1.2 )
+Note 1 to entry: The term “quality” can be used with adjectives such as poor, good or excellent.
+Note 2 to entry: “Inherent”, as opposed to “assigned”, means existing in the object.
+[SOURCE: ISO 9000:2015, 3.6.2]
+3.1.4
+quality management system
+part of a management system with regard to quality  (3.1.3 )
+[SOURCE: ISO 9000:2015, 3.5.4]
+1 © ISO 2022 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 10 ---
+ISO 8000-2:2022(E)
+3.1.5
+nonconformity
+non-fulfilment of a requirement  (3.1.2 )
+[SOURCE: ISO 9000:2015, 3.6.9, modified — Note 1 to entry has been removed.]
+3.1.6
+defect
+nonconformity  (3.1.5 ) related to an intended or specified use
+Note 1 to entry: The distinction between the concepts defect and nonconformity is important as it has legal 
+connotations, particularly those associated with product  (3.5.2 ) and service liability issues.
+Note 2 to entry: The intended use as intended by the customer can be affected by the nature of the information  
+(3.2.1 ), such as operating or maintenance instructions, provided by the provider.
+[SOURCE: ISO 9000:2015, 3.6.10]
+3.1.7
+quality management
+management with regard to quality  (3.1.3 )
+Note 1 to entry: Quality management can include establishing quality policies and quality objectives, and 
+processes  (3.1.1 ) to achieve these quality objectives through quality planning  (3.1.8 ), quality control  (3.1.9 ), quality 
+assurance  (3.1.10 ) and quality improvement  (3.1.11 ).
+[SOURCE: ISO 9000:2015, 3.3.4]
+3.1.8
+quality planning
+part of quality management  (3.1.7 ) focused on setting quality  (3.1.3 ) objectives and specifying necessary 
+operational processes  (3.1.1 ) and related resources to achieve the quality objectives
+Note 1 to entry: Establishing quality plans can be part of quality planning.
+[SOURCE: ISO 9000:2015, 3.3.5]
+3.1.9
+quality control
+part of quality management  (3.1.7 ) focused on fulfilling quality  (3.1.3 ) requirements  (3.1.2 )
+[SOURCE: ISO 9000:2015, 3.3.7]
+3.1.10
+quality assurance
+part of quality management  (3.1.7 ) focused on providing confidence that quality  (3.1.3 ) requirements  
+(3.1.2 ) will be fulfilled
+[SOURCE: ISO 9000:2015, 3.3.6]
+3.1.11
+quality improvement
+part of quality management  (3.1.7 ) focused on increasing the ability to fulfil quality  (3.1.3 ) requirements  
+(3.1.2 )
+Note 1 to entry: The quality requirements can be related to any aspect such as effectiveness, efficiency or 
+traceability.
+[SOURCE: ISO 9000:2015, 3.3.8]
+   © ISO 2022 – All rights reserved
+  2Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 11 ---
+ISO 8000-2:2022(E)
+3.1.12
+inspection
+determination of conformity to specified requirements  (3.1.2 )
+[SOURCE: ISO 9000:2015, 3.11.7, modified — Notes to entry have been removed.]
+3.2 Terms relating to data and information
+3.2.1
+information
+knowledge concerning objects, such as facts, events, things, processes  (3.1.1 ), or ideas, including 
+concepts, that within a certain context has a particular meaning
+[SOURCE: ISO/IEC 2382:2015, 2121271, modified — Field of application and notes to entry have been 
+removed.]
+3.2.2
+data
+reinterpretable representation of information  (3.2.1 ) in a formalized manner suitable for communication, 
+interpretation, or processing
+[SOURCE: ISO/IEC 2382:2015, 2121272, modified — Notes to entry have been removed.]
+3.2.3
+data exchange
+storing, accessing, transferring, and archiving of data  (3.2.2 )
+[SOURCE: ISO 10303- 1:2021, 3.1.31]
+3.2.4
+data set
+logically meaningful grouping of data  (3.2.2 )
+EXAMPLE 1 Computer-aided design (CAD) files.
+EXAMPLE 2 Electronic data interchange (EDI) transactions.
+3.2.5
+metadata
+data  (3.2.2 ) defining and describing other data
+[SOURCE: ISO/IEC 11179 -1:2015, 3.2.16, modified — The words “that defines and describes” have been 
+replaced with “defining and describing”.]
+3.2.6
+objective evidence
+data  (3.2.2 ) supporting the existence or verity of something
+Note 1 to entry: Objective evidence can be obtained through observing, measuring  (3.4.1 ), testing or other means.
+[SOURCE: ISO 9000:2015, 3.8.3, modified — Note 1 to entry has been modified and Note 2 to entry has 
+been removed.]
+3.2.7
+data element
+unit of data  (3.2.2 ) that is considered in context to be indivisible
+Note 1 to entry: The definition states that a data element is “indivisible” in some context. This means it is possible 
+that a data element considered indivisible in one context (e.g. telephone number) can be divisible in another 
+context (e.g. country code, area code, local number).
+© ISO 2022 – All rights reserved   
+ 3Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 12 ---
+ISO 8000-2:2022(E)
+[SOURCE: ISO/IEC 11179 -1:2015, 3.3.8, modified — The abbreviated term “DE” has been removed and 
+the word “may” has been replaced by “can” in Note 1 to entry.]
+3.2.8
+value domain
+set of permissible values
+Note 1 to entry: The permissible values in a value domain can either be enumerated or expressed via a description.
+[SOURCE: ISO/IEC 11179 -1:2015, 3.3.31, modified — The abbreviated term “VD” has been removed and 
+the word “may” has been replaced by “can” in Note 1 to entry.]
+3.2.9
+data element concept
+concept that is an association of a property with an object class
+Note 1 to entry: A data element concept is implicitly associated with both the property and the object class whose 
+combination it expresses.
+Note 2 to entry: A data element concept can also be associated with zero or more conceptual domains, each of 
+which expresses its value meanings.
+Note 3 to entry: A data element concept can also be associated with zero or more data elements  (3.2.7 ) each, of 
+which provides representation for the data element concept via its associated value domain  (3.2.8 ).
+[SOURCE: ISO/IEC 11179 -1:2015, 3.3.9, modified — The abbreviated term “DEC” has been removed and 
+the word “may” has been replaced by “can” in Notes 2 and 3 to entry.]
+3.3	 Terms	relating	to	identifier
+3.3.1
+identifier
+string of characters created by an organization to reference a data set  (3.2.4 )
+3.3.2
+identifier 	resolution
+process  (3.1.1 ) that, when applied to an identifier  (3.3.1 ), returns an associated data set  (3.2.4 )
+3.3.3
+entity
+concrete or abstract thing in the domain under consideration
+[SOURCE: ISO 19439:2006, 3.29, modified — The word “any” has been removed at the start of the 
+definition.]
+3.3.4
+organization 	identifier
+reference that can be resolved unambiguously to the legal name, the location and the administrator of 
+the organization
+3.3.5
+legal entity
+physical or juridical person granted legal status by the governing body of a nation, state or community
+3.3.6
+authoritative 	identifier
+identifier  (3.3.1 ) issued by an organization that is the originator of the object identified or that is a legal 
+authority
+EXAMPLE The original part manufacturer issues the authoritative identifier for that part. Distributors can 
+also assign identifiers, which are proxy identifiers  (3.3.8 ) (not authoritative identifiers).
+   © ISO 2022 – All rights reserved
+  4Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 13 ---
+ISO 8000-2:2022(E)
+Note 1 to entry: An authoritative legal entity identifier  (3.3.7 ) is an authoritative identifier issued by an 
+organization that is a legal authority.
+3.3.7
+authoritative 	legal	entity	identifier
+ALEI
+identifier  (3.3.1 ) that identifies a legal entity  (3.3.5 ) and is issued by the administrative agency for a 
+governing body of the nation, state, or community with the authority to grant legal status
+EXAMPLE For the State of Delaware (in the United States), the Division of Corporations is the administrative 
+agency that issues identifiers for juridical persons represented on documents of formation. This agency issued 
+the authoritative legal entity identifier “3031657” to identify the formation of the Code Management Association 
+as a legal entity.
+3.3.8
+proxy	identifier
+identifier  (3.3.1 ) issued by an organization that is not the originator of the object identified
+3.3.9
+proxy	legal	entity	identifier
+identifier  (3.3.1 ) that identifies a legal entity  (3.3.5 ) and is issued by an organization that is not the 
+administrative agency for a government and, thus, has no authority to grant legal status
+3.3.10
+vital record
+record of life events kept under governmental authority
+EXAMPLE Birth certificates, marriage licenses and death certificates.
+3.3.11
+free decoding
+identifier resolution  (3.3.2 ) that, without the need to pay a fee, returns an associated data set  (3.2.4 )
+3.3.12
+fee-based decoding
+identifier resolution  (3.3.2 ) that, only after paying a fee, returns an associated data set  (3.2.4 )
+3.3.13
+free encoding
+without the need to pay a fee, using terms and definitions to discover concept identifiers  (3.3.1 )
+3.4 Terms relating to measurement
+3.4.1
+measure , verb
+ascertain or determine the magnitude or quantity of something
+3.4.2
+measurement
+result of measuring  (3.4.1 ) something
+3.4.3
+measurement data
+data  (3.2.2 ) representing a measurement  (3.4.2 )
+© ISO 2022 – All rights reserved   
+ 5Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 14 ---
+ISO 8000-2:2022(E)
+3.4.4
+unit of measurement
+measurement unit
+unit
+real scalar quantity, defined and adopted by convention, with which any other quantity of the same 
+kind can be compared to express the ratio of the second quantity to the first one as a number
+[SOURCE: ISO 80000 -1:2009, 3.9, modified — Notes to entry have been removed.]
+3.4.5
+qualifier 	of	measurement
+indication of a value not being an actual, exact representation of a single instance of a measurement  
+(3.4.2 )
+EXAMPLE Qualifiers can include “nominal”, “maximum”, “minimum” and “typical”.
+3.5 Terms relating to industrial data
+3.5.1
+industrial data
+data  (3.2.2 ) representing information  (3.2.1 ) that enables and supports the life -cycle of goods and 
+services
+EXAMPLE 1 Industrial data includes data about: products  (3.5.2 ); life -cycle processes  (3.1.1 ), including 
+manufacturing, distribution and maintenance; facilities that are used by life -cycle processes; digital twins; 
+product geometry, topology and visualization; technical dictionaries; and parts catalogues.
+EXAMPLE 2 The ISO 10303 series, the ISO 13584 series, the ISO 15926 series, the ISO 22745 series and the 
+ISO/TS 29002 series each specifies requirements  (3.1.2 ) applicable to industrial data.
+EXAMPLE 3 The term “industrial” is distinct from the terms “agricultural” and “commercial”.
+Note 1 to entry: Supporting the life -cycle includes supporting the processes of the life -cycle and the facilities that 
+are used by those processes.
+Note 2 to entry: Although the ISO 8000 series is developed by ISO/TC 184/SC 4 (Industrial Data), most parts in 
+the series are applicable to all types of data.
+3.5.2
+product
+thing or substance produced by a natural or artificial process  (3.1.1 )
+[SOURCE: ISO 10303- 1:2021, 3.1.49, modified — Note 1 to entry has been removed.]
+3.5.3
+product data
+data that is a representation of product  (3.5.2 ) information  (3.2.1 )
+[SOURCE: ISO 10303- 1:2021, 3.1.50]
+3.5.4
+application
+one or more processes  (3.1.1 ) creating or using product data  (3.5.3 )
+[SOURCE: ISO 10303- 1:2021, 3.1.5]
+   © ISO 2022 – All rights reserved
+  6Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 15 ---
+ISO 8000-2:2022(E)
+3.5.5
+application protocol
+AP
+part of ISO 10303 that specifies an application interpreted model satisfying the scope and information  
+(3.2.1 ) requirements  (3.1.2 ) for a specific application  (3.5.4 )
+Note 1 to entry: This definition differs from the definition used in open system interconnection (OSI) standards. 
+No part of the ISO 8000 series, however, contains content referring specifically to OSI communication, so this 
+definition applies in all parts of the ISO 8000 series.
+[SOURCE: ISO 10303- 1:2021, 3.1.17, modified — Note 1 to entry has been modified.]
+3.5.6
+application reference model
+ARM
+information  (3.2.1 ) model that describes the information requirements  (3.1.2 ) and constraints of an 
+application  (3.5.4 ) within an application protocol  (3.5.5 ) or module
+[SOURCE: ISO 10303- 1:2021, 3.1.18]
+3.5.7
+application software
+application program
+software or program that is specific to the solution of an application  (3.5.4 ) problem
+[SOURCE: ISO/IEC 2382:2015, 2121364, modified — Notes to entry have been removed.]
+3.6 Terms relating to data dictionary
+3.6.1
+data dictionary entry
+description of an entity  (3.3.3 ) type containing, at a minimum, an unambiguous identifier  (3.3.1 ), a term 
+and a definition
+Note 1 to entry: In the data  (3.2.2 ) architecture specified by the ISO 8000 series, a property need not be associated 
+with a specific data type in a data dictionary  (3.6.2 ). The association between a property and a data type can be 
+made in a data specification  (3.6.3 ).
+Note 2 to entry: In order to exchange a value corresponding to a data dictionary entry, more information  (3.2.1 ) 
+than an identifier, a name and a definition can be needed. For a property, a data type is needed. Depending on the 
+kind of property, other data items (e.g. unit of measurement  (3.4.4 ), language) can also be needed. These elements 
+can be given in the data dictionary, in a data specification that references the data dictionary entry, or directly 
+associated with the data.
+Note 3 to entry: In the data architecture of the ISO 13584 series, the dictionary entry for a property is required 
+to reference a specific data type. Thus, a dictionary entry in the ISO 13584 series is a special case of the more 
+general concept, as it includes elements of a data specification.
+[SOURCE: ISO 22745 -2:2010, B.2.17, modified — The notes to entry have been replaced.]
+3.6.2
+data dictionary
+collection of data dictionary entries  (3.6.1 ) that allows lookup by entity  (3.3.3 ) identifier  (3.3.1 )
+[SOURCE: ISO 22745 -2:2010, B.2.16]
+© ISO 2022 – All rights reserved   
+ 7Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 16 ---
+ISO 8000-2:2022(E)
+3.6.3
+data	specification
+set of requirements  (3.1.2 ) covering the characteristics of data  (3.2.2 ) being fit for one or more particular 
+purposes
+Note 1 to entry: ISO 8000-110 requires a data specification to describe how items belong to a particular class by 
+using entries from a data dictionary  (3.6.2 ).
+Note 2 to entry: In collaborative relationships, the supplier of data and the user of that data agree the content 
+of the data specification in order to ensure the collaboration will be successful (i.e. the supplier can supply 
+conforming data and the user is able to exploit the data for the intended purposes).
+Note 3 to entry: An effective data specification is one where the creator of the specification intends for the 
+requirements to be necessary and sufficient for the data to meet the particular purposes.
+Note 4 to entry: All stakeholders will be able to understand the data specification more effectively if there is an 
+explicit statement of the intended purposes for the data.
+3.7 Terms relating to characteristic data
+3.7.1
+property -value tuple
+property-value pair
+instance of a value tuple together with an identifier  (3.3.1 ) for a data dictionary entry  (3.6.1 ) that defines 
+a property
+EXAMPLE 1 ISO 8000-110 specifies requirements  (3.1.2 ) on property -value tuples when exchanging master 
+data  (3.11.1 ).
+EXAMPLE 2 A flat washer has a property value “bolt thread diameter for which designed = 10 mm nominal”. 
+This property value is represented by the property -value tuple that consists of the identifier of the data dictionary 
+entry for “bolt thread diameter for which designed” and the value tuple “10 mm nominal”.
+Note 1 to entry: The value tuple consists of a data  (3.2.2 ) value, indication (if applicable) of the unit of measurement  
+(3.4.4 ) for the value and indication (if applicable) of a qualifier of measurement  (3.4.5 ) for the value.
+3.7.2
+characteristic data
+description of an entity  (3.3.3 ) by the class to which it belongs and a set of property values
+EXAMPLE 1 The ISO 13584 series, the ISO 15926 series, the ISO 22745 series, the ISO 13399 series and the 
+ISO/TS 29002 series all include characteristic data in their data  (3.2.2 ) models.
+EXAMPLE 2 The item “O-ring — 100,00x2,65. NBR 70” appears in a manufacturer's catalogue. It can be 
+described as:
+— class: O-ring;
+— property values: [material specification, nitrile-butadiene rubber (NBR)]; [inner diameter, 100 
+millimetres]; [cross section, 2,65 millimetres]; [Shore hardness rating, 70 durometer]; [colour, 
+black]; [operating temperature range, −30 °C to +100 °C].
+In actual characteristic data, the first element of each bracketed pair would be an identifier  (3.3.1 ) for a data 
+dictionary entry  (3.6.1 ). The elements are shown decoded here for clarity.
+3.8 Terms relating to data quality
+3.8.1
+data quality
+degree to which a set of inherent characteristics of data  (3.2.2 ) fulfils requirements  (3.1.2 )
+Note 1 to entry: See also quality  (3.1.3 ).
+   © ISO 2022 – All rights reserved
+  8Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 17 ---
+ISO 8000-2:2022(E)
+3.8.2
+data quality management
+coordinated activities to direct and control an organization with regard to data quality  (3.8.1 )
+3.8.3
+data error
+non-fulfilment of a data  (3.2.2 ) requirement  (3.1.2 )
+Note 1 to entry: In this term, “error” is synonymous with nonconformity  (3.1.5 ).
+3.8.4
+data provenance record
+record of the ultimate derivation and passage of a piece of data  (3.2.2 ) through its various owners or 
+custodians
+Note 1 to entry: A data provenance record can include information  (3.2.1 ) about creation, update, transcription, 
+abstraction, validation  (3.8.6 ), and transferring ownership of data.
+3.8.5
+verification
+confirmation, through the provision of objective evidence  (3.2.6 ), that specified requirements  (3.1.2 ) 
+have been fulfilled
+[SOURCE: ISO 9000:2015, 3.8.12, modified — Notes to entry have been removed.]
+3.8.6
+validation
+confirmation, through the provision of objective evidence  (3.2.6 ), that the requirements  (3.1.2 ) for a 
+specific intended use or application  (3.5.4 ) have been fulfilled
+[SOURCE: ISO 9000:2015, 3.8.13, modified — Notes to entry have been removed.]
+3.8.7
+authoritative data source
+owner of a process  (3.1.1 ) that creates data  (3.2.2 )
+EXAMPLE The Department of Transportation of the Commonwealth of Pennsylvania, USA, is the 
+authoritative data source for Pennsylvania motor vehicle registration records.
+3.8.8
+accepted reference value
+value that serves as an agreed-upon reference for comparison
+Note 1 to entry: The accepted reference value is derived as:
+a) a theoretical or established value, based on scientific principles;
+b) an assigned or certified value, based on experimental work of some national or international organization;
+c) a consensus or certified value, based on collaborative experimental work under the auspices of a scientific or 
+technical group;
+d) the expectation, i.e. the mean of a specified set of measurements  (3.4.2 ), when a), b) and c) are not available.
+[SOURCE: ISO 3534 -2:2006, 3.2.7]
+3.8.9
+true value
+value that characterizes a characteristic perfectly defined in the conditions that exist when the 
+characteristic is considered
+Note 1 to entry: The true value is a theoretical concept and, in general, cannot be known exactly.
+© ISO 2022 – All rights reserved   
+ 9Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 18 ---
+ISO 8000-2:2022(E)
+[SOURCE: ISO 3534 -2:2006, 3.2.5 modified — "quantity or quantitative" has been removed in the 
+definition and Note 1 to entry. Note 2 to entry was removed.]
+3.8.10
+data accuracy
+accuracy
+quality  (3.1.3 ) of data  (3.2.2 ) in respect of the represented value agreeing with the corresponding true 
+value  (3.8.9 ) to a degree necessary for an intended purpose
+EXAMPLE 1 When creating a data specification  (3.6.3 ) to address data accuracy considerations, an 
+organization decides to include in the specification a requirement  (3.1.2 ) for a length value to have three decimal 
+places.
+EXAMPLE 2 An inherent characteristic of some data is the use of three decimal places to represent a length 
+value.
+Note 1 to entry: For data accuracy, the relevant inherent characteristics of the data are those that determine how 
+to interpret the value.
+Note 2 to entry: No universal specification for data accuracy exists. Data accuracy depends on the details of the 
+data representation, the subject matter of the data and the purpose to which the user intends to put the data.
+Note 3 to entry: In practice, when assessing data accuracy, an organization can make use of an accepted reference 
+value  (3.8.8 ) rather than the true value.
+Note 4 to entry: Not all aspects of data accuracy can be verified  (3.8.5 ) by just assessing, as a closed system, the 
+consistency of the data and the applicable data specification. If the data, for example, represents the length of a 
+particular screw in a warehouse then the screw is in the real world, requiring an appropriate test to look beyond 
+the content of the data set  (3.2.4 ) and the data specification. Such testing is addressed by ISO 8000-8.
+Note 5 to entry: ISO 8000-130 specifies the mechanisms by which an organization can state the accuracy of 
+data (including identification of the method that has assessed the data) or assert the accuracy of data (including 
+identification of the remediation that the organization will perform if the data in fact fails to meet the asserted 
+level of accuracy).
+3.8.11
+data accuracy record
+record of the information  (3.2.1 ) provided about the data accuracy  (3.8.10 ) of a specified data set  (3.2.4 )
+Note 1 to entry: A data accuracy record can include representations and warranties of the data's accuracy.
+3.8.12
+data completeness
+completeness
+quality  (3.1.3 ) of a data set  (3.2.4 ) in respect of the content being all that is necessary for an intended 
+purpose
+EXAMPLE 1 When creating a data specification  (3.6.3 ) that addresses data completeness considerations, an 
+organization includes in the specification a requirement  (3.1.2 ) for a data set to identify explicitly the applicable 
+unit of measurement  (3.4.4 ) for each physical quantity in the set.
+EXAMPLE 2 When calculating the average speed of a journey, a user decides to use the start and end times 
+of the journey and the total distance travelled. This decision determines the basis for data completeness of the 
+required data set.
+EXAMPLE 3 When calculating the maximum speed during a journey, a user decides to use a list of points in 
+time and, for each point, the distance travelled to that point. The user decides an appropriate duration between 
+each point in time. This duration being longer makes the calculation less accurate but prevents the data set 
+becoming inappropriately large. These decisions determine the basis for data completeness of the required data 
+set.
+EXAMPLE 4 A buyer wants a supplier to send a list of all products  (3.5.2 ) that are available for purchase. The 
+supplier uses ISO 8000-140, which specifies how to provide a statement to confirm the supplier has created a 
+data set representing a list that meets the buyer’s requirement.
+   © ISO 2022 – All rights reserved
+  10Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 19 ---
+ISO 8000-2:2022(E)
+Note 1 to entry: For data completeness, the relevant inherent characteristics of the data set are those that 
+determine which data  (3.2.2 ) exist as part of the data set.
+Note 2 to entry: No universal specification for data completeness exists. Data completeness depends on the 
+content of the data set, the subject matter of the data and the purpose to which the user intends to put the data 
+set.
+Note 3 to entry: Not all aspects of data completeness can be verified  (3.8.5 ) by just assessing, as a closed system, 
+the consistency of the data set and the applicable data specification. If the data set claims, for example, to be a 
+complete list of the employees of an organization then the actual human beings are in the real world, requiring an 
+appropriate test to look beyond the content of the data set and the data specification. Such testing is addressed 
+by ISO 8000-8.
+Note 4 to entry: ISO 8000-140 specifies the mechanisms by which an organization can state the completeness of 
+a data set (including identification of the method that has assessed the data) or assert the completeness of a data 
+set (including identification of the remediation that the organization will perform if the data in fact fails to meet 
+the asserted level of completeness).
+3.8.13
+data completeness record
+record of the information  (3.2.1 ) provided about the data completeness  (3.8.12 ) of a specified data set  
+(3.2.4 )
+Note 1 to entry: A data completeness record can include representations and warranties of the data completeness.
+3.8.14
+data quality issue
+issue where data  (3.2.2 ) is either a nonconformity  (3.1.5 ) or a defect  (3.1.6 )
+3.8.15
+data quality planning
+part of data quality management  (3.8.2 ) focused on setting data quality  (3.8.1 ) objectives and specifying 
+necessary operational processes  (3.1.1 ) and related resources to achieve the quality objectives
+EXAMPLE The process reference model in ISO 8000-61 specifies more detail as to the purpose, outcomes 
+and activities of data quality planning.
+3.8.16
+data quality control
+part of data quality management  (3.8.2 ) focused on fulfilling data quality  (3.8.1 ) requirements  (3.1.2 )
+EXAMPLE The process  (3.1.1 ) reference model in ISO 8000-61 specifies more detail as to the purpose, 
+outcomes and activities of data quality control.
+3.8.17
+data quality assurance
+part of data quality management  (3.8.2 ) focused on providing confidence that data quality  (3.8.1 ) 
+requirements  (3.1.2 ) will be fulfilled
+EXAMPLE The process  (3.1.1 ) reference model in ISO 8000-61 specifies more detail as to the purpose, 
+outcomes and activities of data quality assurance.
+3.8.18
+data quality improvement
+part of data quality management  (3.8.2 ) focused on increasing the ability to fulfil data quality  (3.8.1 ) 
+requirements  (3.1.2 )
+EXAMPLE The process  (3.1.1 ) reference model in ISO 8000-61 specifies more detail as to the purpose, 
+outcomes and activities of data quality improvement.
+© ISO 2022 – All rights reserved   
+ 11Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 20 ---
+ISO 8000-2:2022(E)
+3.9 Terms relating to syntax and semantics
+3.9.1
+formal syntax
+specification of the valid sentences of a formal language using a formal grammar
+EXAMPLE 1 An Extensible Markup Language (XML) document type definition (DTD) is a formal syntax.
+EXAMPLE 2 ISO 10303-21 contains a formal syntax in Wirth Syntax Notation (WSN) for ISO 10303 physical 
+files.
+EXAMPLE 3 When exchanging master data  (3.11.1 ) using messages, ISO 8000-110 specifies requirements  
+(3.1.2 ) on each message identifying the formal syntax to which the message conforms.
+Note 1 to entry: A formal language is computer-interpretable.
+Note 2 to entry: Formal grammars are usually Chomsky context-free grammars.
+Note 3 to entry: Variants of Backus-Naur Form (BNF) such as Augmented Backus-Naur Form (ABNF) and Wirth 
+Syntax Notation (WSN) are often used to specify the syntax of computer programming languages and data  
+(3.2.2 ) languages.
+3.9.2
+semantic encoding
+concept encoding
+technique of replacing natural language terms in a message with identifiers  (3.3.1 ) that reference data 
+dictionary entries  (3.6.1 )
+EXAMPLE ISO 8000-110 specifies how semantic encoding supports the exchange of master data  (3.11.1 ) that 
+is characteristic data  (3.7.2 ).
+Note 1 to entry: By applying semantic encoding to data  (3.2.2 ), an organization creates a basis for portable data  
+(3.9.4 ) by ensuring the semantics of the data are explicit.
+Note 2 to entry: Semantic encoding is necessary to create characteristic data, where the replaced natural 
+language terms are properties (for each of which the data set  (3.2.4 ) includes a corresponding value).
+3.9.3
+semantically	coded	data	specification
+data requirements statement
+data specification  (3.6.3 ) that uses entries from a data dictionary  (3.6.2 )
+EXAMPLE 1 An identification guide conforming to ISO/TS 22745-30.
+EXAMPLE 2 ISO 13584-501.
+Note 1 to entry: A semantically coded data specification can be used to specify rules for describing items 
+belonging to a particular class using semantic encoding  (3.9.2 ).
+3.9.4
+portable data
+data  (3.2.2 ) where the formal syntax  (3.9.1 ), semantics and any use restrictions are explicit
+Note  1 to entry:  When the use restrictions so allow, a set of portable data is useable in more than one application 
+software  (3.5.7 ) without incurring subsequent claims of ownership to any of the data by third parties.
+Note 2 to entry: The semantics are provided by metadata  (3.2.5 ), reference data and relationship data.
+Note 3 to entry: Use of a data dictionary  (3.6.2 ) is the basis for semantic encoding  (3.9.2 ), which, in combination 
+with identifying the applicable syntax for a data set  (3.2.4 ), provides a foundation for being portable. Portable 
+data can pass from one system to another reliably because the receiver can guarantee being able to process the 
+format and the meaning of the data.
+   © ISO 2022 – All rights reserved
+  12Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 21 ---
+ISO 8000-2:2022(E)
+Note 4 to entry: By choosing a data dictionary that is not subject to use restrictions, i.e. offers free decoding  
+(3.3.11 ), organizations can ensure a data set is portable without incurring subsequent claims of ownership to any 
+of the data by third parties.
+Note 5 to entry: Portable data is structured data but not all structured data is portable data.
+3.10 Terms relating to transaction data
+3.10.1
+business transaction
+completion of a business action or a course of action
+3.10.2
+transaction data
+data  (3.2.2 ) representing a business transaction  (3.10.1 )
+3.11 Terms relating to master data
+3.11.1
+master data
+data  (3.2.2 ) held by an organization to describe the entities  (3.3.3 ) that are both independent and 
+fundamental for that organization, and referenced in order to perform its transactions
+EXAMPLE A credit card transaction is related to two entities that are represented by master data. The 
+first is the credit card account at the issuing bank and is identified by the credit card number, with the master 
+data representing information  (3.2.1 ) required by the issuing bank about that specific account. The second is 
+the merchant account at the accepting bank and is identified by the merchant number, with the master data 
+representing information required by the accepting bank about that specific merchant.
+Note 1 to entry: Types of master data include records that describe customers, products  (3.5.2 ), employees, 
+materials, suppliers, services, shareholders, facilities, equipment, and rules and regulations.
+Note 2 to entry: The determination of what is considered master data depends on the viewpoint of the 
+organization.
+Note 3 to entry: The term “entity” is used in the general sense, not as used in data modelling.
+3.11.2
+master data message
+data  (3.2.2 ) message used to exchange master data  (3.11.1 )
+3.12 Terms relating to product data
+3.12.1
+product data quality
+PDQ
+degree to which a set of inherent characteristics of product data  (3.5.3 ) fulfils requirements  (3.1.2 )
+EXAMPLE 1 These requirements include consistency, completeness  (3.8.12 ) and suitability for purpose.
+EXAMPLE 2 ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about product data quality.
+[SOURCE: ISO 10303- 59:2021, 3.1.6.7, modified — An additional EXAMPLE has been added.]
+3.12.2
+quality criterion
+<quality of product shape data> criterion for evaluating product data quality  (3.12.1 )
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about quality criteria for product shape data  (3.12.3 ).
+© ISO 2022 – All rights reserved   
+ 13Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 22 ---
+ISO 8000-2:2022(E)
+[SOURCE: ISO 10303- 59:2021, 3.1.6.10, modified — Domain and an EXAMPLE have been added.]
+3.12.3
+product shape data
+<the ISO 10303 series> data  (3.2.2 ) representing product  (3.5.2 ) shape with geometric and topological 
+information  (3.2.1 ) in accordance with ISO 10303-42
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about product data quality  (3.12.1 ).
+[SOURCE: ISO 10303- 59:2021, 3.1.6.9, modified — An EXAMPLE has been added.]
+3.12.4
+threshold
+<quality of product shape data> reference value used for the assessment of a measured  (3.4.1 ) value of 
+product data quality  (3.12.1 ) by numerical test
+EXAMPLE 1 A distance threshold of 0,01 mm is specified for evaluating the gap between a base surface and 
+bounding curves for trimming the effective portion of the surface. This threshold implies that if the measured 
+maximum distance between the surface and the curves is greater than or equal to 0,01 mm then the gap is a data 
+quality defect  (3.12.5 ).
+EXAMPLE 2 ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about thresholds in the context of product shape data  (3.12.3 ) quality  (3.1.3 ).
+[SOURCE: ISO 10303- 59:2021, 3.1.6.12, modified — Domain and an EXAMPLE have been added.]
+3.12.5
+data quality defect
+product data quality defect
+<quality of product shape data> characteristic of product  (3.5.2 ) model data  (3.2.2 ), where the 
+characteristic does not fulfil an applicable requirements  (3.1.2 ) according to a threshold  (3.12.4 ) 
+specified by a user
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data about 
+product data quality defects.
+[SOURCE: ISO 10303- 59:2021, 3.1.6.11, modified — Domain and an EXAMPLE have been added.]
+3.12.6
+inspection
+product data quality inspection
+<quality of product shape data> check of the quality  (3.1.3 ) of product data  (3.5.3 ) by application 
+software  (3.5.7 ) against criteria that take account of thresholds  (3.12.4 ) specified by a user
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about product data quality inspections.
+[SOURCE: ISO 10303- 59:2021, 3.1.6.3, modified — Domain and an EXAMPLE have been added.]
+3.12.7
+inspection result
+product data quality inspection result
+<quality of product shape data> result of inspection  (3.12.6 ) to determine whether or not product data  
+(3.5.3 ) contain data quality defects  (3.12.5 )
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about the results from product data quality inspections  (3.12.6 ).
+Note 1 to entry: Such results can also include detailed information  (3.2.1 ) on what type of data quality defects 
+exist, how serious the defect is and identification of the shape element data that has the defect.
+[SOURCE: ISO 10303- 59:2021, 3.1.6.4, modified — Domain and an EXAMPLE have been added.]
+   © ISO 2022 – All rights reserved
+  14Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 23 ---
+ISO 8000-2:2022(E)
+3.12.8
+accuracy
+convergence accuracy
+<quality of product shape data> specification to control the convergence condition of an approximate 
+solution
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about accuracy in the context of product shape data  (3.12.3 ) quality  (3.1.3 ).
+Note 1 to entry: This concept corresponds to the convergence condition of iterative numerical calculation 
+required in the evaluation of shapes involving free-form geometry. There are two types of accuracy:
+— general accuracy applied to all the measurements  (3.4.2 ), and
+— specific accuracy applied only to specified measurements.
+Note 2 to entry: This term is distinct from the term data accuracy  (3.8.10 ).
+[SOURCE: ISO 10303- 59:2021, 3.1.6.1, modified — Domain and an EXAMPLE have been added.]
+3.12.9
+measurement requirement
+<quality of product shape data> specification of the necessary conditions for a measurement  (3.4.2 ) to 
+be capable of ensuring that a quality criterion  (3.12.2 ) holds
+EXAMPLE ISO/TS 8000-311 provides guidance on using ISO 10303-59 to represent and exchange data  
+(3.2.2 ) about measurement requirements.
+Note 1 to entry: A measurement requirement is a textual description of the method for measuring  (3.4.1 ) the 
+target data to determine the satisfaction (or not) of the identified quality criterion, which represents a particular 
+quality  (3.1.3 ) concern. The description identifies any necessary additional attributes and rules to control the 
+test and also the element or elements that will be the subject of the test. The measurement requirement serves as 
+an external specification on which to base reliable measurement algorithms.
+Note 2 to entry: A measurement requirement does not specify an algorithm for the measurement process  (3.1.1 ). 
+Such algorithms are outside the scope of standards because algorithms are subject to continual improvement 
+from innovation and competition between engineering system vendors.
+[SOURCE: ISO 10303- 59:2021, 3.1.6.6, modified — Domain and an EXAMPLE have been added.]
+3.13 Terms relating to item of production and item of supply
+3.13.1
+item of production
+goods or service that conforms to a specification defined by a supplier
+Note 1 to entry: Items of production are commonly tracked by part numbers  (3.13.4 ), model numbers, or 
+procedure codes.
+[SOURCE: ISO 22745 -2:2010, 22.2, modified — The word “good” has been replaced with “goods”.]
+3.13.2
+serial number
+asset tracking number
+asset number
+number used to identify an individual occurrence of an item of production  (3.13.1 )
+EXAMPLE Company A makes an item of production with part number  (3.13.4 ) 253144-22, which has the 
+following description: two piece ball valve, size 1/2 in, FNPT connection, max. pressure 600 PSI (pounds per 
+square inch) WOG (water, oil, and gas), 150 PSI WSP (working steam pressure), full port, material of construction 
+forged brass, ball material polytetrafluoroethylene, temperature range −40 °F to 400 °F. Company A assigns 
+serial number 31552984 to the particular valve (physical object) with part number 253144-22 that comes off the 
+production line at 2009-04-16T15:51:31.
+© ISO 2022 – All rights reserved   
+ 15Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 24 ---
+ISO 8000-2:2022(E)
+3.13.3
+item of supply
+class of substitutable goods or services that fulfil a fit, form or function defined by a buyer
+[SOURCE: ISO 22745 -2:2010, 22.1]
+3.13.4
+part number
+unique alphanumeric designation assigned to an object in a manufacturing system
+[SOURCE: ISO 22745 -2:2010, 22.4, modified — Notes to entry have been removed.]
+3.13.5
+stockkeeping unit
+sku
+identifier  (3.3.1 ) of a set of product  (3.5.2 ) characteristics for the purpose of inventory control or 
+procurement
+EXAMPLE 1 A NATO stock number is a stockkeeping unit.
+EXAMPLE 2 A material identifier in an enterprise resource planning system is a stockkeeping unit.
+Note 1 to entry: A stockkeeping unit is usually assigned by the buyer of products.
+3.14 Terms relating to data quality role
+3.14.1
+responsibility
+combination of activities, decision making and achieving outcomes, where the combination is performed 
+by a specified party
+EXAMPLE ISO 8000-150 describes groups of responsibility for data quality management  (3.8.2 ).
+Note 1 to entry: Combination means
+— zero or more activities,
+— zero or more decisions,
+— zero or more outcomes, and
+— at least one activity, decision or outcome.
+Note 2 to entry: The specified party is either a person or an organization. The party can take on the responsibility 
+either through voluntary commitment or under direction from another party.
+3.14.2
+role
+set of responsibilities  (3.14.1 ), where the set can be assigned by an organization to a person and this 
+assignment directs the person to perform each responsibility
+EXAMPLE 1 Roles include data manager  (3.14.5 ), data administrator  (3.14.4 ) and data technicians  (3.14.3 ).
+EXAMPLE 2 An organization directs one person to perform the roles of chief information  (3.2.1 ) officer and 
+chief information security officer.
+EXAMPLE 3 ISO 8000-150 identifies the role level for groups of responsibility for data quality management  
+(3.8.2 ).
+Note 1 to entry: Typically, a role has a label.
+Note 2 to entry: An organization can assign more than one role to a person.
+   © ISO 2022 – All rights reserved
+  16Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 25 ---
+ISO 8000-2:2022(E)
+Note 3 to entry: An organization can assign the same role to more than one person. In this case, typically, the 
+organization will also implement mechanisms to ensure:
+— more than one person does not perform the same instance of an activity (unless teamwork is necessary);
+— each person does not leave an instance of an activity to someone else with the result that nobody performs 
+that instance.
+3.14.3
+data technician
+person who creates, reads, modifies, and deletes data  (3.2.2 ) in accordance with the guidelines for data 
+quality management  (3.8.2 ), and measures  (3.4.1 ) data quality  (3.8.1 ) and corrects data errors  (3.8.3 ) 
+found as a result of measuring  (3.4.1 ) data quality
+Note 1 to entry: The data administrator  (3.14.4 ) sets the guidelines for data quality management.
+3.14.4
+data administrator
+person who controls and coordinates the work of data technicians  (3.14.3 ) by defining criteria needed to 
+maintain data quality  (3.8.1 ), by designing data  (3.2.2 ) schemata, and by analysing the causes of errors 
+to prevent their recurrence
+Note 1 to entry: By providing supporting resources and guidelines to data technicians, the data administrator 
+puts the data quality plan into practice.
+3.14.5
+data manager
+person who establishes plans for data quality  (3.8.1 ) improvement in an organization, grants data 
+administrators  (3.14.4 ) the authority to trace and correct data  (3.2.2 ) over the information  (3.2.1 ) 
+systems or organization, and maintains data consistency in individual information systems through 
+the organization-wide data architecture
+3.14.6
+data steward
+person or organization delegated the responsibility  (3.14.1 ) for managing a specific set of data  (3.2.2 ) 
+resources
+[SOURCE: ISO 15143- 1:2010, 3.3.21]
+3.15 Terms relating to process assessment
+3.15.1
+process assessment model
+model suitable for the purpose of assessing a specified process  (3.1.1 ) quality  (3.1.3 ) characteristic, 
+based on one or more process reference models
+Note 1 to entry: Process assessment models addressing a specific process quality characteristic can include 
+the identification of the characteristic in the title; for example, a process assessment model addressing process 
+capability  (3.15.15 ) can be termed a “process capability assessment model”.
+[SOURCE: ISO/IEC 33001:2015, 3.3.9]
+3.15.2
+process dimension
+set of elements in a process assessment model  (3.15.1 ) explicitly related to the processes  (3.1.1 ) defined in 
+the relevant process reference model(s)
+Note 1 to entry: For example, in ISO/IEC 33063, the elements of the process dimension include processes, process 
+purpose statements, process outcomes  (3.15.17 ), and process performance indicators.
+[SOURCE: ISO/IEC 33001:2015, 3.3.10, modified — In Note 1 to entry, “ISO/IEC 33061” has been replaced 
+with “ISO/IEC 33063”.]
+© ISO 2022 – All rights reserved   
+ 17Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 26 ---
+ISO 8000-2:2022(E)
+3.15.3
+maturity model
+model derived from one or more specified process assessment models  (3.15.1 ) that identify the process  
+(3.1.1 ) sets associated with the levels in a specified scale of organizational process maturity
+[SOURCE: ISO/IEC 33001:2015, 3.3.7, modified — The words “model(s) that identifies” have been 
+replaced with “models that identify”.]
+3.15.4
+organizational unit
+identified part of an organization that deploys one or more processes  (3.1.1 ) that operate within a 
+coherent set of business goals and which forms the basis for the scope of an assessment
+Note 1 to entry: An organizational unit is typically part of a larger organization, although in a small organization, 
+the organizational unit can be the whole organization.
+[SOURCE: ISO/IEC 33001:2015, 3.2.14]
+3.15.5
+maturity level
+point on an ordinal scale of organizational process  (3.1.1 ) maturity that characterises the maturity of 
+the organizational unit  (3.15.4 ) assessed in the scope of the maturity model  (3.15.3 ) used
+[SOURCE: ISO/IEC 33001:2015, 3.4.1]
+3.15.6
+process assessment
+disciplined evaluation of an organizational unit’s  (3.15.4 ) processes  (3.1.1 ) against a process assessment 
+model  (3.15.1 )
+[SOURCE: ISO/IEC 33001:2015, 3.2.15]
+3.15.7
+assessment input
+information  (3.2.1 ) required before a process assessment  (3.15.6 ) can commence
+[SOURCE: ISO/IEC 33001:2015, 3.2.3, modified — Note 1 to entry has been removed.]
+3.15.8
+assessment output
+all of the tangible results from a process assessment  (3.15.6 )
+Note 1 to entry: See also assessment record  (3.15.13 ).
+[SOURCE: ISO/IEC 33001:2015, 3.2.4, modified — The words “an assessment” have been replaced with 
+“a process assessment” and Note 1 to entry has been added.]
+3.15.9
+assessment team
+one or more individuals who jointly perform a process assessment  (3.15.6 )
+[SOURCE: ISO/IEC 33001:2015, 3.2.10]
+3.15.10
+process attribute
+process quality attribute
+measurable property of a process  (3.1.1 ) quality  (3.1.3 ) characteristic
+[SOURCE: ISO/IEC 33001:2015, 3.4.3]
+   © ISO 2022 – All rights reserved
+  18Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 27 ---
+ISO 8000-2:2022(E)
+3.15.11
+process attribute rating
+judgement of the degree of achievement of the process attribute  (3.15.10 ) for the assessed process  (3.1.1 )
+[SOURCE: ISO/IEC 33001:2015, 3.4.5]
+3.15.12
+process	profile
+set of process attribute ratings  (3.15.11 ) for an assessed process  (3.1.1 )
+[SOURCE: ISO/IEC 33001:2015, 3.2.18]
+3.15.13
+assessment record
+orderly documented collection of the information  (3.2.1 ) which is pertinent to a process assessment  
+(3.15.6 ) and adds to the understanding and verification  (3.8.5 ) of the process profiles  (3.15.12 ) generated 
+by the assessment
+[SOURCE: ISO/IEC 33001:2015, 3.2.7, modified — The words “pertinent to the assessment” have been 
+replaced with “pertinent to a process assessment”.]
+3.15.14
+assessment indicator
+sources of objective evidence  (3.2.6 ) used to support the assessor's judgement in rating process attributes  
+(3.15.10 )
+[SOURCE: ISO/IEC 33001:2015, 3.3.1 — Note 1 to entry has been removed.]
+3.15.15
+process capability
+characterization of the ability of a process  (3.1.1 ) to meet current or projected business goals
+[SOURCE: ISO/IEC 33020:2019, 3.4]
+3.15.16
+process capability level
+characterization of a process  (3.1.1 ) on an ordinal measurement  (3.4.2 ) scale of a process capability  
+(3.15.15 )
+[SOURCE: ISO/IEC 33020:2019, 3.5]
+3.15.17
+process outcome
+observable result of the successful achievement of process  (3.1.1 ) purpose
+Note 1 to entry: An outcome statement describes one of the following: production of an artefact; a significant 
+change in state; meeting of specified constraints, e.g. requirements  (3.1.2 ), goals, etc.
+[SOURCE: ISO/IEC 33001:2015, 3.3.11]
+3.15.18
+maturity level category
+collection of one or more numeric maturity levels  (3.15.5 ) that are described by the label of the category
+3.15.19
+quality management area
+aspect of a process  (3.1.1 ) for data quality management  (3.8.2 ) where the aspect is to be subject to 
+evaluation during a process maturity assessment
+© ISO 2022 – All rights reserved   
+ 19Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 28 ---
+ISO 8000-2:2022(E)
+3.15.20
+maturity level target
+metric value that indicates a corresponding quality management area  (3.15.19 ) has reached the 
+identified maturity level  (3.15.5 )
+3.15.21
+quality management area value
+value that indicates the degree to which implementation of a process  (3.1.1 ) is meeting the needs of an 
+organization with respect to the scope of the quality management area  (3.15.19 )
+3.15.22
+target level matrix
+matrix that indicates the target value for each combination of quality management area  (3.15.19 ) and 
+maturity level  (3.15.5 )
+3.16 Terms relating to data governance
+3.16.1
+data governance
+development and enforcement of policies related to the management of data  (3.2.2 )
+Note 1 to entry: ISO/IEC 38500 specifies six principles of information  (3.2.1 ) technology governance: responsibility  
+(3.14.1 ); strategy; acquisition; performance; conformance; human behaviour. These principles also apply to data.
+3.16.2
+computer-processable data policy statement
+computer-processable statement that directs how an organization is to manage data  (3.2.2 ) and to 
+generate evidence to demonstrate compliance with the policy
+3.16.3
+data governance authority
+authority responsible for data governance  (3.16.1 ) within an organization
+   © ISO 2022 – All rights reserved
+  20Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 29 ---
+ISO 8000-2:2022(E)
+Annex A  
+(informative)  
+ 
+Document	identification
+To provide for unambiguous identification of an information object in an open system, the following 
+object identifier is assigned to this document. The meaning of this value is defined in ISO 10303-1.
+{ iso standard 8000 part (2) version (5) }
+© ISO 2022 – All rights reserved   
+ 21Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 30 ---
+ISO 8000-2:2022(E)
+Bibliography
+[1] ISO/IEC 2382:2015, Information technology — Vocabulary
+[2] ISO 3534-2:2006, Statistics — Vocabulary and symbols — Part 2: Applied statistics
+[3] ISO 8000 (all parts),  Data quality
+[4] ISO 8000-1, Data quality — Part 1: Overview
+[5] ISO 8000-8, Data quality — Part 8: Information and data quality: Concepts and measuring
+[6] ISO 8000-61, Data quality — Part 61: Data quality management: Process reference model
+[7] ISO/TS 8000-81, Data quality — Part 81: Data quality assessment: Profiling
+[8] ISO 8000-110, Data quality — Part 110: Master data: Exchange of characteristic data: Syntax, 
+semantic encoding, and conformance to data specification
+[9] ISO 8000-130, Data quality — Part 130: Master data: Exchange of characteristic data: Accuracy
+[10]  ISO 8000-140, Data quality — Part 140: Master data: Exchange of characteristic data: Completeness
+[11] ISO 8000-150, Data quality — Part 150: Data quality management: Roles and responsibilities
+[12]  ISO/TS  8000-311, Data quality — Part 311: Guidance for the application of product data quality for 
+shape (PDQ-S)
+[13] ISO/IEC 8824-1, Information technology — Abstract Syntax Notation One (ASN.1) — Part 1: 
+Specification of basic notation
+[14] ISO 9000:2015, Quality management systems — Fundamentals and vocabulary
+[15] ISO 10303 (all parts), Industrial automation systems and integration — Product data representation 
+and exchange
+[16] ISO 10303-1:2021, Industrial automation systems and integration — Product data representation 
+and exchange — Part 1: Overview and fundamental principles
+[17] ISO 10303-21, Industrial automation systems and integration — Product data representation and 
+exchange — Part 21: Implementation methods: Clear text encoding of the exchange structure
+[18] ISO 10303-42, Industrial automation systems and integration — Product data representation and 
+exchange — Part 42: Integrated generic resource: Geometric and topological representation
+[19] ISO 10303-59:2021, Industrial automation systems and integration — Product data representation 
+and exchange — Part 59: Integrated generic resource: Quality of product shape data
+[20]  ISO/IEC  11179-1:2015, Information technology — Metadata registries (MDR) — Part 1: Framework
+[21] ISO 13399 (all parts), Cutting tool data representation and exchange
+[22] ISO 13584 (all parts), Industrial automation systems and integration — Parts library
+[23] ISO 13584-501, Industrial automation systems and integration — Parts library — Part 501: 
+Reference dictionary for measuring instruments — Registration procedure
+[24] ISO 15143-1:2010, Earth-moving machinery and mobile road construction machinery — Worksite 
+data exchange — Part 1: System architecture
+[25] ISO 15926 (all parts), Industrial automation systems and integration — Integration of life cycle 
+data for process plants including oil and gas production facilities
+   © ISO 2022 – All rights reserved
+  22Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 31 ---
+ISO 8000-2:2022(E)
+[26] ISO 19439:2006, Enterprise integration — Framework for enterprise modelling
+[27] ISO 22745 (all parts), Industrial automation systems and integration — Open technical dictionaries 
+and their application to master data
+[28] ISO 22745-2:2010, Industrial automation systems and integration — Open technical dictionaries 
+and their application to master data — Part 2: Vocabulary
+[29] ISO/TS 22745-30, Industrial automation systems and integration — Open technical dictionaries 
+and their application to master data — Part 30: Identification guide representation
+[30] ISO/TS 29002 (all parts), Industrial automation systems and integration — Exchange of 
+characteristic data
+[31] ISO/IEC 33001:2015, Information technology — Process assessment — Concepts and terminology
+[32] ISO/IEC 33020:2019, Information technology — Process assessment — Process measurement 
+framework for assessment of process capability
+[33] ISO/IEC 33063, Information technology — Process assessment — Process assessment model for 
+software testing
+[34] ISO/IEC 38500, Information technology — Governance of IT for the organization
+[35]  ISO 80000-1:2009, Quantities and units — Part 1: General
+© ISO 2022 – All rights reserved   
+ 23Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 32 ---
+24ISO 8000-2:2022(E)
+Index
+A
+accepted reference value  3.8.8
+accuracy  3.8.10
+accuracy  3.12.8
+ALEI  3.3.7
+AP  3.5.5
+application  3.5.4
+application program  3.5.7
+application protocol  3.5.5
+application reference model  3.5.6
+application software  3.5.7
+ARM  3.5.6
+assessment indicator  3.15.14
+assessment input  3.15.7
+assessment output  3.15.8
+assessment record  3.15.13
+assessment team  3.15.9
+asset number  3.13.2
+asset tracking number  3.13.2
+authoritative data source  3.8.7
+authoritative identifier  3.3.6
+authoritative legal entity identifier  3.3.7
+B
+business transaction  3.10.1
+C
+characteristic data  3.7.2
+completeness  3.8.12
+computer-processable data policy 
+statement  3.16.2
+concept encoding  3.9.2
+convergence accuracy  3.12.8
+D
+data  3.2.2
+data accuracy  3.8.10
+data accuracy record  3.8.11
+data administrator  3.14.4
+data completeness  3.8.12
+data completeness record  3.8.13
+data dictionary  3.6.2
+data dictionary entry  3.6.1
+data element  3.2.7
+data element concept  3.2.9
+data error  3.8.3
+data exchange  3.2.3
+data governance  3.16.1
+data governance authority  3.16.3
+data manager  3.14.5
+data provenance record  3.8.4
+data quality  3.8.1
+data quality assurance  3.8.17data quality control  3.8.16
+data quality defect  3.12.5
+data quality improvement  3.8.18
+data quality issue  3.8.14
+data quality management  3.8.2
+data quality planning  3.8.15
+data requirements statement  3.9.3
+data set  3.2.4
+data specification  3.6.3
+data steward  3.14.6
+data technician  3.14.3
+defect  3.1.6
+E
+entity  3.3.3
+F
+fee-based decoding  3.3.12
+formal syntax  3.9.1
+free decoding  3.3.11
+free encoding  3.3.13
+I
+identifier  3.3.1
+identifier resolution  3.3.2
+industrial data  3.5.1
+information  3.2.1
+inspection  3.1.12
+inspection  3.12.6
+inspection result  3.12.7
+item of production  3.13.1
+item of supply  3.13.3
+L
+legal entity  3.3.5
+M
+master data  3.11.1
+master data message  3.11.2
+maturity level  3.15.5
+maturity level category  3.15.18
+maturity level target  3.15.20
+maturity model  3.15.3
+measure, verb  3.4.1
+measurement  3.4.2
+measurement data  3.4.3
+measurement requirement  3.12.9
+measurement unit  3.4.4
+metadata  3.2.5
+N
+nonconformity  3.1.5
+   © ISO 2022 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 33 ---
+25ISO 8000-2:2022(E)
+O
+objective evidence  3.2.6
+organization identifier  3.3.4
+organizational unit  3.15.4
+P
+part number  3.13.4
+PDQ  3.12.1
+portable data  3.9.4
+process assessment  3.15.6
+process assessment model  3.15.1
+process attribute  3.15.10
+process attribute rating  3.15.11
+process capability  3.15.15
+process capability level  3.15.16
+process dimension  3.15.2
+process outcome  3.15.17
+process profile  3.15.12
+process quality attribute  3.15.10
+process, noun  3.1.1
+product  3.5.2
+product data  3.5.3
+product data quality  3.12.1
+product data quality defect  3.12.5
+product data quality inspection  3.12.6
+product data quality inspection result  3.12.7
+product shape data  3.12.3
+property -value pair  3.7.1
+property -value tuple  3.7.1
+proxy identifier  3.3.8
+proxy legal entity identifier  3.3.9
+Q
+qualifier of measurement  3.4.5
+quality  3.1.3
+quality assurance  3.1.10
+quality control  3.1.9
+quality criterion  3.12.2
+quality improvement  3.1.11
+quality management  3.1.7
+quality management area  3.15.19
+quality management area value  3.15.21
+quality management system  3.1.4
+quality planning  3.1.8
+R
+requirement  3.1.2
+responsibility  3.14.1
+role  3.14.2
+S
+semantic encoding  3.9.2
+semantically coded data specification  3.9.3
+serial number  3.13.2
+sku  3.13.5
+stockkeeping unit  3.13.5T
+target level matrix  3.15.22
+threshold  3.12.4
+transaction data  3.10.2
+true value  3.8.9
+U
+unit  3.4.4
+unit of measurement  3.4.4
+V
+validation  3.8.6
+value domain  3.2.8
+verification  3.8.5
+vital record  3.3.10
+© ISO 2022 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.
+
+--- Página 34 ---
+ISO 8000-2:2022(E)
+ICS 01.040.25;	25.040.40
+Price group A
+© ISO 2022 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192775.

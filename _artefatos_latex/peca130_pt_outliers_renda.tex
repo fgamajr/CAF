@@ -1,0 +1,378 @@
+% ================================================================================
+% PECA 130 / PAPEL DE TRABALHO PT-XX - ANALISE DE OUTLIERS DE RENDA NO CAF
+% ================================================================================
+% Data: 02/dezembro/2025
+% Objetivo: Documentar analise estatistica de valores atipicos (outliers) de renda
+%           declarada no CAF, utilizando metodologia Tukey e agregacao por UF.
+% Referencia: peca130_pt_outliers_renda.pdf
+% ================================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ========== PACOTES PADRAO ==========
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[breakable]{tcolorbox}
+
+% ========== CORES TCU OFICIAIS ==========
+\definecolor{tcured}{RGB}{204,0,0}      % Vermelho TCU #CC0000
+\definecolor{tcublue}{RGB}{0,51,102}    % Azul TCU #003366
+\definecolor{tcugreen}{RGB}{0,153,76}   % Verde TCU #006633
+
+% ========== CONFIGURACAO DE CABECALHO ==========
+\pagestyle{fancy}
+\fancyhead[L]{Peca 130 / PT - Outliers de Renda no CAF}
+\fancyhead[R]{TCU}
+\setlength{\headheight}{14pt}
+
+% ========== CONFIGURACAO DE LISTINGS ==========
+\lstset{
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{tcublue}\bfseries,
+    commentstyle=\color{tcugreen}\itshape,
+    stringstyle=\color{tcured},
+    columns=fullflexible
+}
+
+% ========== INFORMACOES DO DOCUMENTO ==========
+\title{Papel de Trabalho de Auditoria Tecnica\\
+\textbf{Peca 130: Analise Estatistica de Outliers de Renda no CAF}}
+\author{Equipe de Auditoria --- Fiscalizacao CAF-MAPA}
+\date{02 de dezembro de 2025}
+
+\begin{document}
+
+\maketitle
+
+% ================================================================================
+\section{Objetivo}
+% ================================================================================
+
+Este papel de trabalho documenta a \textbf{analise estatistica de valores atipicos (outliers)
+de renda declarada} no Cadastro da Agricultura Familiar (CAF), com o objetivo de:
+
+\begin{itemize}
+    \item Identificar unidades familiares com rendas declaradas estatisticamente anomalas;
+    \item Quantificar a extensao do problema de qualidade de dados relacionado a renda;
+    \item Fornecer base documental para as constatacoes do relatorio de auditoria.
+\end{itemize}
+
+\textbf{Contexto}: A analise de outliers e fundamental para avaliar a confiabilidade dos
+dados de renda no CAF, que sao utilizados para definicao de politicas publicas voltadas
+a agricultura familiar.
+
+% ================================================================================
+\section{Metodologia}
+% ================================================================================
+
+\subsection{Base de Dados}
+
+\begin{itemize}
+    \item \textbf{Fonte}: Tabela \texttt{caf\_mapa.S\_RENDA}
+    \item \textbf{Populacao}: 12.849.431 registros de renda
+    \item \textbf{Unidades Familiares ativas}: 3.304.174 UFs
+    \item \textbf{Filtros aplicados}:
+    \begin{itemize}
+        \item Apenas UFs com situacao ativa (\texttt{id\_tipo\_situacao\_unidade\_familiar = 1})
+        \item \textbf{Exclusao}: Tipo de renda ``Autoconsumo UFPA'' (1.795.891 registros)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Justificativa da Exclusao do Autoconsumo}
+
+O tipo de renda ``Autoconsumo UFPA'' representa o valor estimado da producao consumida
+pela propria familia, \textbf{nao constituindo renda monetaria efetiva}. Sua inclusao
+distorceria a analise de outliers, pois:
+
+\begin{enumerate}
+    \item Representa producao para subsistencia, nao transacao comercial;
+    \item Os valores sao estimativas, nao declaracoes de receita;
+    \item Soma-lo a renda monetaria criaria valores inflacionados artificialmente.
+\end{enumerate}
+
+\subsection{Unidade de Analise}
+
+A analise foi realizada por \textbf{Unidade Familiar (UF)}, somando todas as rendas
+declaradas de cada UF. Esta abordagem evita a duplicacao que ocorreria ao analisar
+por individuo, quando multiplos membros da mesma familia reportam a mesma renda.
+
+\subsection{Metodo de Deteccao de Outliers}
+
+Foi utilizada a \textbf{Regra de Tukey} (fence method), metodo estatistico robusto
+amplamente aceito:
+
+\begin{align*}
+\text{IQR} &= Q3 - Q1 \\
+\text{Limiar Superior} &= Q3 + 1,5 \times \text{IQR}
+\end{align*}
+
+Onde:
+\begin{itemize}
+    \item $Q1$ = Primeiro quartil (25\% dos dados)
+    \item $Q3$ = Terceiro quartil (75\% dos dados)
+    \item IQR = Amplitude interquartil
+\end{itemize}
+
+Valores de renda acima do limiar superior sao classificados como \textbf{outliers moderados}.
+
+\subsection{Query SQL Principal}
+
+\begin{lstlisting}[language=SQL, caption={Calculo de estatisticas de renda por UF}]
+WITH renda_uf AS (
+    SELECT
+        r.id_unidade_familiar,
+        SUM(r.vl_renda_auferida) AS renda_total_uf
+    FROM caf_mapa."S_RENDA" r
+    INNER JOIN caf_mapa."S_UNIDADE_FAMILIAR" uf
+        ON r.id_unidade_familiar = uf.id_unidade_familiar
+    INNER JOIN caf_mapa."S_TIPO_RENDA" tr
+        ON r.id_tipo_renda = tr.id_tipo_renda
+    WHERE uf.id_tipo_situacao_unidade_familiar = 1
+      AND tr.ds_tipo_renda != 'Autoconsumo UFPA'
+    GROUP BY r.id_unidade_familiar
+)
+SELECT
+    ROUND(PERCENTILE_CONT(0.25) WITHIN GROUP
+        (ORDER BY renda_total_uf)::NUMERIC, 2) AS q1,
+    ROUND(PERCENTILE_CONT(0.50) WITHIN GROUP
+        (ORDER BY renda_total_uf)::NUMERIC, 2) AS mediana,
+    ROUND(PERCENTILE_CONT(0.75) WITHIN GROUP
+        (ORDER BY renda_total_uf)::NUMERIC, 2) AS q3,
+    ROUND(AVG(renda_total_uf)::NUMERIC, 2) AS media,
+    COUNT(*) AS total_ufs
+FROM renda_uf;
+\end{lstlisting}
+
+% ================================================================================
+\section{Resultados}
+% ================================================================================
+
+\subsection{Estatisticas Descritivas}
+
+\begin{table}[H]
+\centering
+\caption{Estatisticas de Renda Total por Unidade Familiar}
+\label{tab:estatisticas}
+\begin{tabular}{lrl}
+\toprule
+\textbf{Parametro} & \textbf{Valor} & \textbf{Observacao} \\
+\midrule
+Primeiro Quartil (Q1) & R\$ 9.440,00 & 25\% das UFs \\
+\textbf{Mediana (Q2)} & \textbf{R\$ 18.830,75} & Valor central \\
+Terceiro Quartil (Q3) & R\$ 48.874,75 & 75\% das UFs \\
+\midrule
+Amplitude Interquartil (IQR) & R\$ 39.434,75 & Q3 - Q1 \\
+\textbf{Limiar Tukey} & \textbf{R\$ 108.026,88} & Q3 + 1,5 $\times$ IQR \\
+\midrule
+Media & R\$ 58.307,00 & Influenciada por outliers \\
+Total de UFs analisadas & 3.304.174 & 100\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Outliers Identificados}
+
+\begin{table}[H]
+\centering
+\caption{Classificacao de Outliers}
+\label{tab:outliers}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Categoria} & \textbf{Quantidade} & \textbf{Percentual} \\
+\midrule
+Renda normal ($\leq$ R\$ 108.027) & 2.809.875 & 85,04\% \\
+\midrule
+\textbf{Outliers Tukey} (R\$ 108k - 200k) & 231.883 & 7,02\% \\
+Outliers altos (R\$ 200k - 500k) & 254.317 & 7,70\% \\
+Outliers muito altos (R\$ 500k - 1M) & 7.192 & 0,22\% \\
+\textbf{Outliers extremos} (R\$ 1M - 10M) & 768 & 0,02\% \\
+\textbf{Outliers absurdos} ($>$ R\$ 10M) & 139 & $<$0,01\% \\
+\midrule
+\textbf{Total de outliers Tukey} & \textbf{494.299} & \textbf{14,96\%} \\
+\textbf{Total $>$ R\$ 1 milhao} & \textbf{907} & 0,03\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{TOP 10 Rendas Mais Extremas}
+
+\begin{table}[H]
+\centering
+\caption{Maiores Outliers de Renda Declarada}
+\label{tab:top10}
+\begin{tabular}{crr}
+\toprule
+\textbf{Rank} & \textbf{Renda Anual Declarada} & \textbf{Renda Mensal Implicita} \\
+\midrule
+1 & R\$ 167.320.132,00 & R\$ 13.943.344,33 \\
+2 & R\$ 105.347.730,00 & R\$ 8.778.977,50 \\
+3 & R\$ 97.322.000,00 & R\$ 8.110.166,67 \\
+4 & R\$ 92.228.407,00 & R\$ 7.685.700,58 \\
+5 & R\$ 78.912.359,00 & R\$ 6.576.029,92 \\
+6 & R\$ 78.258.000,00 & R\$ 6.521.500,00 \\
+7 & R\$ 68.570.000,00 & R\$ 5.714.166,67 \\
+8 & R\$ 67.921.000,00 & R\$ 5.660.083,33 \\
+9 & R\$ 63.825.000,00 & R\$ 5.318.750,00 \\
+10 & R\$ 62.025.822,00 & R\$ 5.168.818,50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observacao}: O maior outlier representa uma renda mensal implicita de
+\textbf{R\$ 13,9 milhoes}, valor incompativel com o perfil da agricultura familiar.
+
+% ================================================================================
+\section{Analise}
+% ================================================================================
+
+\subsection{Significancia Estatistica}
+
+O percentual de \textbf{14,96\% de outliers} e estatisticamente significativo e indica
+problemas sistemicos na validacao de dados de renda no CAF:
+
+\begin{itemize}
+    \item Pela regra de Tukey, espera-se que outliers representem uma fracao pequena
+    (tipicamente $<$5\%) em distribuicoes normais;
+    \item A presenca de quase 15\% de outliers sugere: (a) erros de digitacao,
+    (b) falta de validacao de limites, ou (c) declaracoes fraudulentas.
+\end{itemize}
+
+\subsection{Implicacoes para Politicas Publicas}
+
+A agricultura familiar e definida, entre outros criterios, por limites de renda.
+Outliers extremos como rendas acima de R\$ 1 milhao (907 casos) sao \textbf{incompativeis}
+com o conceito de agricultura familiar e podem indicar:
+
+\begin{enumerate}
+    \item \textbf{Erros de digitacao}: Valores inseridos sem ponto decimal (ex: 18900 ao
+    inves de 189,00);
+    \item \textbf{Falta de validacao}: O sistema nao rejeita valores implausveis;
+    \item \textbf{Declaracoes incorretas}: Informacoes nao condizentes com a realidade.
+\end{enumerate}
+
+\subsection{Comparacao com Limite de Enquadramento}
+
+O limite de renda para enquadramento como agricultor familiar (Lei 11.326/2006) e de
+aproximadamente R\$ 500.000 anuais. Identificamos:
+
+\begin{itemize}
+    \item \textbf{8.099 UFs} com renda acima de R\$ 500.000 (0,25\% do total)
+    \item \textbf{907 UFs} com renda acima de R\$ 1.000.000 (0,03\% do total)
+\end{itemize}
+
+Estes casos requerem verificacao para confirmar enquadramento legal.
+
+% ================================================================================
+\section{Conclusao}
+% ================================================================================
+
+A analise estatistica de outliers de renda no CAF revela \textbf{problemas significativos
+de qualidade de dados}:
+
+\begin{enumerate}
+    \item \textbf{494.299 unidades familiares} (14,96\%) apresentam rendas consideradas
+    outliers pela regra de Tukey;
+
+    \item \textbf{907 UFs} declararam rendas acima de R\$ 1 milhao, com o caso mais
+    extremo atingindo R\$ 167 milhoes --- valor claramente incompativel com agricultura
+    familiar;
+
+    \item A \textbf{ausencia de validacao de limites} no sistema permite a insercao de
+    valores implausveis, comprometendo a confiabilidade estatistica da base;
+
+    \item Os outliers \textbf{distorcem a media} de renda: com todos os registros,
+    a media e R\$ 58.307; excluindo apenas os 139 casos acima de R\$ 10 milhoes,
+    a media cai para R\$ 57.129 (distorcao de +2,06\%). A diferenca expressiva
+    entre media (R\$ 58.307) e mediana (R\$ 18.831) evidencia a assimetria causada
+    pelos outliers.
+\end{enumerate}
+
+\textbf{Recomendacao}: Implementar controles preventivos de validacao de renda no CAF,
+incluindo alertas para valores acima de limiares razoaveis e verificacao cruzada com
+bases externas (ex: Receita Federal).
+
+% ================================================================================
+\section{Anexos}
+% ================================================================================
+
+\subsection{Parametros de Conexao}
+
+\begin{verbatim}
+Host: 172.23.80.1
+Port: 5433
+Database: caf_mapa
+User: postgres
+Data de execucao: 02/dezembro/2025
+\end{verbatim}
+
+\subsection{Query de Outliers Tukey}
+
+\begin{lstlisting}[language=SQL, caption={Identificacao de outliers pela regra de Tukey}]
+WITH renda_uf AS (
+    SELECT
+        r.id_unidade_familiar,
+        SUM(r.vl_renda_auferida) AS renda_total_uf
+    FROM caf_mapa."S_RENDA" r
+    INNER JOIN caf_mapa."S_UNIDADE_FAMILIAR" uf
+        ON r.id_unidade_familiar = uf.id_unidade_familiar
+    INNER JOIN caf_mapa."S_TIPO_RENDA" tr
+        ON r.id_tipo_renda = tr.id_tipo_renda
+    WHERE uf.id_tipo_situacao_unidade_familiar = 1
+      AND tr.ds_tipo_renda != 'Autoconsumo UFPA'
+    GROUP BY r.id_unidade_familiar
+),
+quartis AS (
+    SELECT
+        PERCENTILE_CONT(0.25) WITHIN GROUP
+            (ORDER BY renda_total_uf) AS q1,
+        PERCENTILE_CONT(0.75) WITHIN GROUP
+            (ORDER BY renda_total_uf) AS q3
+    FROM renda_uf
+)
+SELECT
+    COUNT(*) AS outliers_tukey,
+    ROUND(COUNT(*)::NUMERIC * 100 /
+        (SELECT COUNT(*) FROM renda_uf), 3) AS percentual
+FROM renda_uf, quartis
+WHERE renda_total_uf > q3 + 1.5 * (q3 - q1);
+-- Resultado: 494.300 outliers (14,96%)
+\end{lstlisting}
+
+\subsection{Tipos de Renda Analisados}
+
+Foram considerados 25 tipos de renda (excluindo Autoconsumo UFPA):
+
+\begin{itemize}[noitemsep]
+    \item Lavouras Temporarias (3.811.686 registros)
+    \item Rendas fora do estabelecimento (2.773.381)
+    \item Producao Animal (2.315.362)
+    \item Lavouras Permanentes (930.697)
+    \item E outros 21 tipos menores
+\end{itemize}
+
+\subsection{Artefatos Gerados}
+
+\begin{itemize}
+    \item \texttt{peca130\_pt\_outliers\_renda.tex} --- Este documento (codigo fonte)
+    \item \texttt{peca130\_pt\_outliers\_renda.pdf} --- Versao compilada (Peca 130)
+\end{itemize}
+
+\end{document}

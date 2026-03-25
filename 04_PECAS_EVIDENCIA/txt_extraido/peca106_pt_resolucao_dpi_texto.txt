@@ -1,0 +1,588 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria T´ ecnica
+An´ alise de Resolu¸ c˜ ao de Imagens (DPI)
+Cadastro da Agricultura Familiar (CAF)
+Valida¸ c˜ ao de Qualidade T´ ecnica de Documentos Digitalizados
+Equipe de Auditoria Operacional - TCU
+23 de Outubro de 2025
+Sum´ ario
+1 Introdu¸ c˜ ao 2
+1.1 Contexto e Motiva¸ c˜ ao . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.2 Objetivo do Trabalho . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.3 Popula¸ c˜ ao Analisada . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2 Metodologia 3
+2.1 Ferramenta Utilizada . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Script de An´ alise Automatizada . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.3 Categoriza¸ c˜ ao de DPI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.4 Fundamenta¸ c˜ ao Estat´ ıstica para Inferˆ encia Populacional . . . . . . . . . . . . . . 3
+2.4.1 Natureza da Amostra e Limita¸ c˜ oes Inferenciais . . . . . . . . . . . . . . . 3
+2.4.2 Justificativa para An´ alise Descritiva e Extrapola¸ c˜ ao Indicativa . . . . . . 4
+2.5 Limita¸ c˜ oes Metodol´ ogicas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3 Resultados 6
+3.1 Resultados Consolidados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.2 Visualiza¸ c˜ ao Gr´ afica dos Resultados . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.3 Estat´ ısticas Descritivas Completas . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.4 Achados Cr´ ıticos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.4.1 Viola¸ c˜ ao do Padr˜ ao CONARQ . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.4.2 Qualidade Criticamente Baixa . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.4.3 M´ edia e Mediana Muito Abaixo do Padr˜ ao . . . . . . . . . . . . . . . . . 8
+3.4.4 Conformidade M´ ınima . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+4 Exemplos Representativos 9
+4.1 Categoria: Cr´ ıtico (¡ 150 DPI) - 12,2% . . . . . . . . . . . . . . . . . . . . . . . . 9
+4.2 Categoria: Inadequado (150-299 DPI) - 56,5% . . . . . . . . . . . . . . . . . . . . 10
+4.3 Categoria: Aceit´ avel (300-599 DPI) - 26,8% . . . . . . . . . . . . . . . . . . . . . 11
+4.4 Categoria: Alta Qualidade ( ≥600 DPI) - 3,6% . . . . . . . . . . . . . . . . . . . 12
+5 Implica¸ c˜ oes e Conclus˜ oes 14
+5.1 Valida¸ c˜ ao das Hip´ oteses de Auditoria . . . . . . . . . . . . . . . . . . . . . . . . . 14
+5.1.1 Hip´ otese 1: Ausˆ encia de Controles de Qualidade no Upload . . . . . . . . 14
+5.1.2 Hip´ otese 2: Magnitude Subestimada na An´ alise Manual . . . . . . . . . . 14
+5.1.3 Hip´ otese 3: Viola¸ c˜ ao da Resolu¸ c˜ ao CONARQ n º31/2010 . . . . . . . . . 14
+5.2 Estimativa de Impacto na Popula¸ c˜ ao Total . . . . . . . . . . . . . . . . . . . . . 14
+5.3 Implica¸ c˜ oes para o Relat´ orio de Auditoria . . . . . . . . . . . . . . . . . . . . . . 15
+1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 2 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+5.3.1 Fortalecimento do §43 (Causa 2) . . . . . . . . . . . . . . . . . . . . . . . 15
+5.3.2 Valida¸ c˜ ao Quantitativa da Recomenda¸ c˜ ao 2 . . . . . . . . . . . . . . . . . 15
+5.4 Limita¸ c˜ oes e Ressalvas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+5.4.1 Amostra N˜ ao Probabil´ ıstica . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+5.4.2 Varia¸ c˜ ao de DPI Entre P´ aginas . . . . . . . . . . . . . . . . . . . . . . . . 15
+5.5 Conclus˜ ao Final . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+6 Anexos 17
+6.1 Anexo I - Exemplos Visuais de Documentos com Baixo DPI . . . . . . . . . . . . 17
+6.2 Anexo II - Tabela Completa de An´ alise DPI (646 documentos) . . . . . . . . . . 17
+6.3 Anexo IV - Comando pdfimages Executado . . . . . . . . . . . . . . . . . . . . . 20
+6.4 Anexo V - Arquivo JSON com Resultados Detalhados . . . . . . . . . . . . . . . 20
+6.5 Anexo VI - Referˆ encias Normativas . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 3 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+1 Introdu¸ c˜ ao
+1.1 Contexto e Motiva¸ c˜ ao
+Durante a auditoria operacional na base de dados do Sistema CAF, identificou-se na an´ alise de
+valida¸ c˜ ao semˆ antica de 201 documentos (papel de trabalho principal, 22/10/2025) que aproxi-
+madamente 4,98% dos documentos (10 de 201 analisados) apresentam problemas t´ ecnicos
+reais que impedem extra¸ c˜ ao de ´ area mesmo ap´ os re-an´ alise profunda de at´ e 10 p´ aginas.
+Na an´ alise das causas (Se¸ c˜ ao V do relat´ orio, §43), foi identificada a ausˆ encia de controles
+de qualidade t´ ecnica no upload de documentos como uma das cinco causas raiz da taxa
+de n˜ ao conformidade de 68,7%. Especificamente, o sistema CAF n˜ ao valida:
+•Resolu¸ c˜ ao ´ optica m´ ınima (DPI - dots per inch)
+•Integridade do arquivo PDF
+•Presen¸ ca de texto extra´ ıvel via OCR
+•Orienta¸ c˜ ao correta da imagem
+AResolu¸ c˜ ao CONARQ n º31/2010 (Conselho Nacional de Arquivos) estabelece na
+Tabela 1 e nota de rodap´ e 39 que “a resolu¸ c˜ ao ´ optica m´ ınima de 300 dpi ´ e a recomend´ avel
+quando se deseja utilizar a tecnologia OCR (Optical Character Recognition)” .
+1.2 Objetivo do Trabalho
+Realizar an´ alise t´ ecnica complementar mediante ferramenta pdfimages (utilit´ ario Poppler) para:
+1.Quantificar empiricamente a distribui¸ c˜ ao de DPI na amostra de documentos do CAF
+2.Validar a hip´ otese de que a maioria dos documentos possui DPI inferior ao padr˜ ao
+recomendado de 300 DPI
+3.Fornecer evidˆ encias t´ ecnicas objetivas para sustentar os argumentos de causa raiz no
+relat´ orio de auditoria
+4.Calcular estat´ ısticas descritivas (m´ ınimo, m´ aximo, m´ edia, mediana, desvio padr˜ ao,
+percentis) da resolu¸ c˜ ao de imagens
+5.Estimar a magnitude do problema na popula¸ c˜ ao total
+1.3 Popula¸ c˜ ao Analisada
+A an´ alise foi realizada sobre 646 documentos PDF armazenados no diret´ orio:
+/home/fgamajr/dev/docs/document-validator-mcp/downloads_correspondentes
+Estes documentos representam uma amostra dos documentos do Sistema CAF previamente
+baixados para an´ alises de valida¸ c˜ ao semˆ antica, incluindo documentos de im´ oveis, renda e de-
+clara¸ c˜ oes.
+Importante: Esta amostra N ˜AO ´ e a mesma amostra probabil´ ıstica de 201 documentos da
+an´ alise principal, mas constitui evidˆ encia t´ ecnica complementar sobre a qualidade de digita-
+liza¸ c˜ ao dos documentos do sistema.
+3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 4 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+2 Metodologia
+2.1 Ferramenta Utilizada
+pdfimages - Utilit´ ario de linha de comando do pacote Poppler Utils
+•Vers˜ ao : Poppler 22.02.0 (Ubuntu 22.04 LTS)
+•Comando :pdfimages -list <arquivo.pdf>
+•Fun¸ c˜ ao : Extrai metadados t´ ecnicos de todas as imagens embutidas em um PDF
+•Output : Lista com largura, altura, x-ppi, y-ppi de cada imagem
+2.2 Script de An´ alise Automatizada
+Foi desenvolvido script Python ( analyze pdfdpifixed.py ) para:
+1. Iterar sobre todos os PDFs do diret´ orio
+2. Executar pdfimages -list em cada arquivo
+3. Extrair DPI de todas as imagens (colunas x-ppi e y-ppi)
+4. Identificar a imagem principal de cada PDF (maior ´ area em pixels)
+5. Calcular DPI m´ edio: ( xppi+yppi)/2
+6. Categorizar documentos por faixa de DPI
+7. Gerar estat´ ısticas agregadas
+2.3 Categoriza¸ c˜ ao de DPI
+Os documentos foram classificados em cinco categorias:
+Categoria Faixa DPI Avalia¸ c˜ ao
+Cr´ ıtico ¡ 150 DPI Muito abaixo do padr˜ ao, legibilidade severamente comprometida
+Inadequado 150-299 DPI Abaixo do padr˜ ao CONARQ (300 DPI), OCR comprometido
+Aceit´ avel 300-599 DPI Atende padr˜ ao m´ ınimo recomendado
+Alta Qualidade ≥600 DPI Supera padr˜ ao, alta qualidade de digitaliza¸ c˜ ao
+Sem Imagens N/A PDFs sem imagens embutidas (texto nativo ou vazios)
+Tabela 1: Categoriza¸ c˜ ao de resolu¸ c˜ ao DPI
+2.4 Fundamenta¸ c˜ ao Estat´ ıstica para Inferˆ encia Populacional
+2.4.1 Natureza da Amostra e Limita¸ c˜ oes Inferenciais
+A amostra de 646 documentos analisados N˜AO ´ e uma amostra probabil´ ıstica , mas sim
+umaamostra de conveniˆ encia composta por documentos previamente baixados para an´ alises
+t´ ecnicas de valida¸ c˜ ao semˆ antica. Como consequˆ encia:
+•N˜ ao se aplicam m´ etodos tradicionais de inferˆ encia estat´ ıstica (intervalos de confian¸ ca,
+testes de hip´ otese baseados em aleatoriza¸ c˜ ao)
+•N˜ ao ´ e poss´ ıvel calcular margem de erro estat´ ıstica para extrapola¸ c˜ ao populacional
+•Pode haver vi´ es de sele¸ c˜ ao : documentos problem´ aticos podem estar sobre-representados
+na amostra local
+4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 5 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+2.4.2 Justificativa para An´ alise Descritiva e Extrapola¸ c˜ ao Indicativa
+N˜ ao obstante as limita¸ c˜ oes amostrais, a an´ alise de 646 documentos ´ e metodologicamente
+justificada para os seguintes fins:
+1. Tamanho amostral suficiente para estat´ ısticas descritivas robustas
+Com n=646 (640 com imagens), o tamanho amostral ´ e suficientemente grande para:
+•Caracterizar distribui¸ c˜ ao de DPI mediante estat´ ısticas descritivas confi´ aveis
+•Identificar padr˜ oes sistem´ aticos (concentra¸ c˜ ao em 72, 100, 150 DPI)
+•Reduzir variabilidade amostral nas estimativas de m´ edia e mediana
+Estat´ ısticas obtidas (n=640 com imagens):
+•M´ edia: 241,03 DPI
+•Mediana: 200,00 DPI
+•Desvio padr˜ ao: 127,53 DPI
+•Percentil 25: 176,0 DPI
+•Percentil 75: 300,0 DPI
+•Percentil 90: 300,1 DPI
+•Percentil 95: 348,2 DPI
+•Percentil 99: 719,0 DPI
+Adistribui¸ c˜ ao observada apresenta forte assimetria ` a direita, com concentra¸ c˜ ao massiva
+nas faixas mais baixas (mediana ¡ m´ edia), indicando padr˜ ao sistem´ atico de baixa qualidade.
+2. Evidˆ encia suficiente de ausˆ encia de controle sistˆ emico
+O achado cr´ ıtico deste trabalho N˜AO depende de extrapola¸ c˜ ao populacional exata ,
+mas sim da constata¸ c˜ ao de que:
+Se o Sistema CAF implementasse valida¸ c˜ ao de DPI m´ ınimo de 300 no upload,
+68,7% dos documentos analisados (444 de 646) teriam sido rejeitados au-
+tomaticamente .
+Esta constata¸ c˜ ao independe da representatividade estat´ ıstica da amostra, pois evidencia
+de forma irrefut´ avel que:
+•O sistema aceita documentos com DPI extremamente baixo (m´ ınimo observado: 72 DPI)
+•N˜ ao h´ a barreira t´ ecnica impedindo upload de documentos com qualidade inadequada
+•A presen¸ ca de documentos com 72, 100, 150 DPI demonstra ausˆ encia de valida¸ c˜ ao
+3. Proje¸ c˜ ao populacional como estimativa indicativa (n˜ ao inferencial)
+As proje¸ c˜ oes populacionais apresentadas na Se¸ c˜ ao 5.2 devem ser interpretadas como esti-
+mativas indicativas de magnitude , e n˜ ao como inferˆ encias estat´ ısticas com intervalos de
+confian¸ ca calcul´ aveis. Servem para:
+•Ilustrar a escala potencial do problema (milh˜ oes de documentos)
+•Sustentar a urgˆ encia da Recomenda¸ c˜ ao 2 (implementa¸ c˜ ao de valida¸ c˜ ao DPI)
+•Contextualizar o achado como problema sistˆ emico , n˜ ao isolado
+Recomenda¸ c˜ ao metodol´ ogica: Para estimativa populacional precisa com intervalo de
+confian¸ ca formal, seria necess´ ario selecionar amostra probabil´ ıstica estratificada da popula¸ c˜ ao
+de 3.392.881 documentos, com c´ alculo a priori do tamanho amostral necess´ ario para margem de
+erro desejada.
+5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 6 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+2.5 Limita¸ c˜ oes Metodol´ ogicas
+•A an´ alise considerou apenas a imagem principal de cada PDF (maior por ´ area de pixels)
+•PDFs com m´ ultiplas imagens de tamanhos diferentes podem ter varia¸ c˜ ao de DPI entre
+p´ aginas
+•A amostra de 646 documentos n˜ ao ´ e probabil´ ıstica, mas oportun´ ıstica (documentos dis-
+pon´ ıveis localmente)
+•N˜ ao foi poss´ ıvel estratificar por tipo de documento (im´ ovel, renda, declara¸ c˜ ao) devido ` a
+heterogeneidade da amostra
+•Proje¸ c˜ oes populacionais devem ser interpretadas como estimativas indicativas, n˜ ao in-
+ferˆ encias estat´ ısticas formais
+6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 7 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+3 Resultados
+3.1 Resultados Consolidados
+A an´ alise de 646 documentos PDF revelou os seguintes resultados:
+Categoria DPI Quantidade Percentual Status
+¡ 150 DPI (Cr´ ıtico) 79 12,2% CR´ITICO
+150-299 DPI (Inadequado) 365 56,5% INADEQUADO
+300-599 DPI (Aceit´ avel) 173 26,8% Aceit´ avel
+≥600 DPI (Alta Qualidade) 23 3,6% ´Otimo
+Sem imagens detectadas 6 0,9% N/A
+TOTAL 646 100,0%
+Tabela 2: Distribui¸ c˜ ao de documentos por faixa de DPI (n=646)
+3.2 Visualiza¸ c˜ ao Gr´ afica dos Resultados
+Figura 1: Distribui¸ c˜ ao de resolu¸ c˜ ao DPI e propor¸ c˜ ao por categoria (n=646 documentos)
+O gr´ afico da Figura 1 ilustra visualmente a distribui¸ c˜ ao cr´ ıtica identificada: 68,7% dos docu-
+mentos (444 de 646) posicionam-se ` a esquerda da linha verde que marca o padr˜ ao CONARQ
+de 300 DPI, evidenciando viola¸ c˜ ao massiva do padr˜ ao t´ ecnico estabelecido.
+7
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 8 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+Figura 2: Estat´ ısticas descritivas de DPI comparadas ao padr˜ ao CONARQ (n=640 documentos
+com imagens)
+A Figura 2 demonstra que tanto a m´ edia (241,0 DPI) quanto a mediana (200 DPI) situam-se
+abaixo do padr˜ ao CONARQ de 300 DPI, representando d´ eficits aproximados de 20% e 33% em
+rela¸ c˜ ao ` a resolu¸ c˜ ao m´ ınima recomendada.
+3.3 Estat´ ısticas Descritivas Completas
+Dos 640 documentos com imagens detectadas:
+Estat´ ıstica Valor (DPI)
+M´ ınimo 72,0
+Percentil 25 (Q1) 176,0
+Mediana (Q2) 200,0
+Percentil 75 (Q3) 300,0
+Percentil 90 300,1
+Percentil 95 348,2
+Percentil 99 719,0
+M´ aximo 1774,0
+M´ edia 241,0
+Desvio Padr˜ ao 127,5
+Padr˜ ao CONARQ 31/2010 300,0
+D´ eficit vs. Padr˜ ao (m´ edia) -179,5 (-59,8%)
+D´ eficit vs. Padr˜ ao (mediana) -200,0 (-66,7%)
+Tabela 3: Estat´ ısticas descritivas completas de DPI (n=640 com imagens)
+Interpreta¸ c˜ ao estat´ ıstica:
+•50% dos documentos (mediana) tˆ em DPI ≤200 - dois ter¸ cos do padr˜ ao CONARQ
+•75% dos documentos tˆ em DPI ≤300, atingindo no m´ aximo o padr˜ ao m´ ınimo
+8
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 9 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+•Apenas 5% dos documentos superam 348 DPI e 1%ultrapassa 719 DPI
+•Desvio padr˜ ao de 127,5 indica alta variabilidade , com grande massa concentrada at´ e
+300 DPI
+3.4 Achados Cr´ ıticos
+3.4.1 Viola¸ c˜ ao do Padr˜ ao CONARQ
+68,7% dos documentos (444 de 646) apresentam DPI abaixo do padr˜ ao m´ ınimo de 300 DPI
+estabelecido pela Resolu¸ c˜ ao CONARQ n º31/2010, Tabela 1 e nota 39.
+3.4.2 Qualidade Criticamente Baixa
+12,2% dos documentos (79 de 646) tˆ em DPI inferior a 150, representando menos da metade
+do padr˜ ao recomendado. Esta qualidade severamente compromete:
+•Legibilidade visual do documento
+•Capacidade de extra¸ c˜ ao via OCR
+•Valida¸ c˜ ao manual de informa¸ c˜ oes cr´ ıticas (´ area do im´ ovel)
+•Auditabilidade futura dos documentos
+3.4.3 M´ edia e Mediana Muito Abaixo do Padr˜ ao
+•M´ edia de 241,0 DPI : Representa aproximadamente 80% do padr˜ ao recomendado (300
+DPI)
+•Mediana de 200 DPI : Indica que metade dos documentos tem resolu¸ c˜ ao igual ou
+inferior a dois ter¸ cos do padr˜ ao
+A mediana inferior ` a m´ edia sugere assimetria ` a direita na distribui¸ c˜ ao, indicando con-
+centra¸ c˜ ao de documentos nas faixas mais baixas de DPI, com poucos valores extremos elevados
+(outliers) puxando a m´ edia para cima.
+3.4.4 Conformidade M´ ınima
+Apenas 196 documentos (30,4%) atendem ou superam o padr˜ ao m´ ınimo de 300 DPI:
+•173 documentos entre 300-599 DPI (26,8%)
+•23 documentos com ≥600 DPI (3,6%)
+9
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 10 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+4 Exemplos Representativos
+4.1 Categoria: Cr´ ıtico (¡ 150 DPI) - 12,2%
+Arquivo:
+DOC039RENDA ADEQUADO A9c458e Comprovante
+de renda.pdf
+DPI m´ edio: 72
+x-ppi / y-ppi: 72×72
+Resolu¸ c˜ ao: 848×1169
+Imagens detectadas: 1
+Categoria: ¡150 DPI (Cr´ ıtico)
+Figura 3: Documento representativo da categoria cr´ ıtica (¡150 DPI). A imagem da direita mostra
+os metadados extra´ ıdos pelo pdfimages .
+10
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 11 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+4.2 Categoria: Inadequado (150-299 DPI) - 56,5%
+Arquivo:
+DOC002IMOVEL ADEQUADO Cd62c93 Documento
+do Imvel ou de Relao com a
+Terra.pdf
+DPI m´ edio: 200
+x-ppi / y-ppi: 200×200
+Resolu¸ c˜ ao: 1654×2338
+Imagens detectadas: 5
+Categoria: 150-299 DPI (Inadequado)
+Figura 4: Documento representativo da categoria inadequada (150-299 DPI).
+11
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 12 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+4.3 Categoria: Aceit´ avel (300-599 DPI) - 26,8%
+Arquivo:
+DOC005IMOVEL ADEQUADO ITR0dba65 Documento
+do Imvel ou de Relao com a
+Terra.pdf
+DPI m´ edio: 300
+x-ppi / y-ppi: 300×300
+Resolu¸ c˜ ao: 2481×3506
+Imagens detectadas: 1
+Categoria: 300-599 DPI (Aceit´ avel)
+Figura 5: Documento representativo dentro do padr˜ ao m´ ınimo (300-599 DPI).
+12
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 13 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+4.4 Categoria: Alta Qualidade ( ≥600 DPI) - 3,6%
+Arquivo:
+DOC008IMOVEL ADEQUADO ITR78b097 Documento
+do Imvel ou de Relao com a
+Terra.pdf
+DPI m´ edio: 1774
+x-ppi / y-ppi: 1774×1774
+Resolu¸ c˜ ao: 1747×1725
+Imagens detectadas: 17
+Categoria: ≥600 DPI (Alta quali-
+dade)
+Figura 6: Documento representativo da categoria de alta qualidade ( ≥600 DPI).
+Observa¸ c˜ ao: Apenas 23 documentos de 646 (3,6%) apresentam qualidade de digitaliza¸ c˜ ao
+superior ao padr˜ ao.
+Galeria Adicional de Baixa Qualidade
+Para fins de documenta¸ c˜ ao visual dos casos mais cr´ ıticos identificados, a Figura 7 apresenta
+outros dois exemplos reais de documentos com DPI muito aqu´ em do padr˜ ao.
+13
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 14 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+Arquivo: DOC003DECLARACAO INDEF DECLARACAO VERA 74f8b8 Declarao
+de Veracidade.pdf
+DPI m´ edio: 144 x-ppi / y-ppi: 144×144
+Resolu¸ c˜ ao: 640×876 Imagens detecta-
+das: 1
+Categoria: ¡150 DPI (Cr´ ıtico)
+Arquivo: DOC215IMOVEL ADEQUADO T383bd3 Documento
+do Imvel ou de Relao com a Terra.pdf
+DPI m´ edio: 200 x-ppi / y-ppi: 200×200
+Resolu¸ c˜ ao: 1606×2291 Imagens detecta-
+das: 4
+Categoria: 150-299 DPI (Inadequado)
+Figura 7: Outros exemplos de documentos com DPI muito abaixo do padr˜ ao m´ ınimo.
+14
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 15 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+5 Implica¸ c˜ oes e Conclus˜ oes
+5.1 Valida¸ c˜ ao das Hip´ oteses de Auditoria
+A an´ alise t´ ecnica de DPI confirma empiricamente as hip´ oteses levantadas na auditoria:
+5.1.1 Hip´ otese 1: Ausˆ encia de Controles de Qualidade no Upload
+CONFIRMADA. Se o Sistema CAF implementasse valida¸ c˜ ao de DPI m´ ınimo de 300 no
+momento do upload:
+•68,7% dos documentos da amostra seriam rejeitados automaticamente
+•O sistema alertaria o usu´ ario para re-digitalizar com qualidade adequada
+•A situa¸ c˜ ao atual (m´ edia 241 DPI, mediana 200 DPI) n˜ ao poderia existir
+5.1.2 Hip´ otese 2: Magnitude Subestimada na An´ alise Manual
+CONFIRMADA. O§43 da Se¸ c˜ ao V estimou que “aproximadamente 60% dos 10 casos com
+problemas t´ ecnicos reais apresentam DPI inferior a 150”.
+A an´ alise t´ ecnica revelou magnitude muito mais grave :
+•12,2% de toda a amostra tˆ em DPI ¡ 150 (n˜ ao apenas dos problem´ aticos)
+•68,7% tˆ em DPI ¡ 300 (viola¸ c˜ ao massiva do padr˜ ao CONARQ)
+5.1.3 Hip´ otese 3: Viola¸ c˜ ao da Resolu¸ c˜ ao CONARQ n º31/2010
+CONFIRMADA COM GRAVIDADE CR ´ITICA. A Resolu¸ c˜ ao CONARQ estabelece 300
+DPI como m´ ınimo recomend´ avel para OCR.
+Apenas 30,4% dos documentos atendem este padr˜ ao. A m´ edia de 241,0 DPI representa apro-
+ximadamente 80% do padr˜ ao , ainda insuficiente para garantir legibilidade e reconhecimento
+autom´ atico, constituindo viola¸ c˜ ao sistem´ atica de norma t´ ecnica nacional de arquiv´ ıstica.
+5.2 Estimativa de Impacto na Popula¸ c˜ ao Total
+Assumindo que a amostra de 646 documentos seja representativa da popula¸ c˜ ao de 3.392.881
+documentos do Sistema CAF (com ressalvas metodol´ ogicas da Se¸ c˜ ao 2.4):
+Categoria DPI Percentual Estimativa Popula¸ c˜ ao*
+¡ 150 DPI (Cr´ ıtico) 12,2% 414.919 documentos
+150-299 DPI (Inadequado) 56,5% 1.917.030 documentos
+300-599 DPI (Aceit´ avel) 26,8% 908.620 documentos
+≥600 DPI (Alta Qualidade) 3,6% 120.799 documentos
+Abaixo do padr˜ ao (¡ 300) 68,7% 2.331.949 documentos
+Tabela 4: Proje¸ c˜ ao para popula¸ c˜ ao total (3.392.881 documentos)
+*Interpreta¸ c˜ ao: Estimativa indicativa de magnitude, n˜ ao inferˆ encia estat´ ıstica formal (ver
+Se¸ c˜ ao 2.4). Se a distribui¸ c˜ ao observada na amostra for representativa, estima-se que 2,33
+milh˜ oes de documentos (68,7%) do Sistema CAF violam o padr˜ ao t´ ecnico de 300 DPI esta-
+belecido pela Resolu¸ c˜ ao CONARQ n º31/2010.
+15
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 16 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+5.3 Implica¸ c˜ oes para o Relat´ orio de Auditoria
+5.3.1 Fortalecimento do §43 (Causa 2)
+A an´ alise DPI fornece evidˆ encias t´ ecnicas objetivas para complementar o §43 da Se¸ c˜ ao V:
+“An´ alise t´ ecnica complementar de 646 documentos da amostra mediante ferramenta
+pdfimages confirmou empiricamente a gravidade do problema de qualidade t´ ecnica:
+12,2% dos documentos apresentam DPI inferior a 150 (79 de 646), 56,5%
+apresentam DPI entre 150-299 (365 documentos) e 30,4% atendem ou su-
+peram o padr˜ ao m´ ınimo de 300 DPI estabelecido pela Resolu¸ c˜ ao CONARQ n º
+31/2010 (196 documentos). A m´ edia de DPI identificada foi de 241,0 DPI e a me-
+diana de 200 DPI , evidenciando que a maioria dos documentos opera em patamar
+inferior ao recomendado (300 DPI), comprometendo severamente a capacidade de
+extra¸ c˜ ao via OCR e valida¸ c˜ ao manual futura.”
+5.3.2 Valida¸ c˜ ao Quantitativa da Recomenda¸ c˜ ao 2
+A Recomenda¸ c˜ ao 2 do relat´ orio ( §69 da Se¸ c˜ ao VIII) prop˜ oe implementa¸ c˜ ao de valida¸ c˜ ao de DPI
+m´ ınimo de 300 no upload.
+A an´ alise DPI demonstra que esta recomenda¸ c˜ ao ´ e cr´ ıtica e urgente :
+•Sem valida¸ c˜ ao autom´ atica, 68,7% dos documentos continuar˜ ao sendo aceitos com qualidade
+inadequada
+•Implementa¸ c˜ ao bloquearia documentos problem´ aticos antes de entrarem no sistema
+•Orienta¸ c˜ ao ao usu´ ario no momento do upload pode reduzir drasticamente documentos com
+DPI baixo
+5.4 Limita¸ c˜ oes e Ressalvas
+5.4.1 Amostra N˜ ao Probabil´ ıstica
+A amostra de 646 documentos N˜AO ´ e probabil´ ıstica , sendo uma amostra de conveniˆ encia
+dos documentos dispon´ ıveis localmente. Portanto:
+•As estimativas de proje¸ c˜ ao populacional devem ser interpretadas com cautela como esti-
+mativas indicativas
+•Pode haver vi´ es de sele¸ c˜ ao (documentos problem´ aticos podem estar sobre-representados)
+•A margem de erro e intervalo de confian¸ ca n˜ ao podem ser calculados estatisticamente
+Recomenda¸ c˜ ao: Para estimativa populacional precisa com intervalo de confian¸ ca formal,
+seria necess´ ario selecionar amostra probabil´ ıstica estratificada da popula¸ c˜ ao de 3,39 milh˜ oes de
+documentos.
+5.4.2 Varia¸ c˜ ao de DPI Entre P´ aginas
+A an´ alise considerou apenas a imagem principal (maior) de cada PDF. Documentos com m´ ultiplas
+p´ aginas podem ter:
+•P´ aginas com DPI diferentes (exemplo: primeira p´ agina 150 DPI, segunda 72 DPI)
+•P´ aginas sem imagens (texto nativo PDF)
+16
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 17 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+•Varia¸ c˜ ao de qualidade entre scanner/cˆ amera usados
+A an´ alise representa o limite superior de qualidade (melhor imagem do PDF), sugerindo
+que a situa¸ c˜ ao real pode ser ainda pior.
+5.5 Conclus˜ ao Final
+A an´ alise t´ ecnica de DPI de 646 documentos do Sistema CAF revelou viola¸ c˜ ao massiva do
+padr˜ ao t´ ecnico de digitaliza¸ c˜ ao estabelecido pela Resolu¸ c˜ ao CONARQ n º31/2010:
+•68,7% dos documentos tˆ em DPI abaixo do padr˜ ao m´ ınimo de 300
+•12,2% apresentam qualidade extremamente baixa (¡ 150 DPI)
+•M´ edia de 241,0 DPI representa apenas 80% do padr˜ ao
+•Mediana de 200 DPI indica que metade tem DPI ≤67% do padr˜ ao
+•Desvio padr˜ ao de 127,5 e percentis indicam concentra¸ c˜ ao massiva at´ e o limite de 300 DPI
+Estes achados:
+1.Validam empiricamente a Causa 2 identificada na auditoria (ausˆ encia de controles de
+qualidade t´ ecnica no upload)
+2.Demonstram a gravidade do problema em magnitude muito superior ` a inicialmente
+estimada
+3.Justificam plenamente a Recomenda¸ c˜ ao 2 (implementa¸ c˜ ao de valida¸ c˜ ao DPI no upload)
+4.Evidenciam viola¸ c˜ ao de norma t´ ecnica nacional de arquiv´ ıstica (CONARQ Res. 31/2010)
+17
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 18 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+6 Anexos
+6.1 Anexo I - Exemplos Visuais de Documentos com Baixo DPI
+Nota: Este anexo deveria conter capturas de tela ou extra¸ c˜ oes de p´ aginas dos documentos
+com DPI cr´ ıtico para demonstrar visualmente o impacto da baixa resolu¸ c˜ ao na legibilidade e
+capacidade de extra¸ c˜ ao via OCR.
+Documentos recomendados para inclus˜ ao:
+•DOC 003 (72 DPI) - Resolu¸ c˜ ao de tela, extremamente baixa
+•DOC 002 (100 DPI) - Representa a mediana da distribui¸ c˜ ao
+•DOC 001 (140 DPI) - Categoria cr´ ıtica, pr´ oxima ao limite de 150
+•DOC 005 (150 DPI) - Categoria inadequada, metade do padr˜ ao
+•DOC 099 (308 DPI) - Aceit´ avel, atende padr˜ ao m´ ınimo
+Limita¸ c˜ ao t´ ecnica: Para inclus˜ ao neste papel de trabalho, seria necess´ ario:
+1. Extrair p´ aginas individuais dos PDFs originais
+2. Converter para formato de imagem (PNG)
+3. Incluir no documento LaTeX com \includegraphics
+Recomenda¸ c˜ ao: Os documentos originais est˜ ao dispon´ ıveis em:
+/home/fgamajr/dev/docs/document-validator-mcp/downloads_correspondentes/
+6.2 Anexo II - Tabela Completa de An´ alise DPI (646 documentos)
+A tabela completa com todos os 646 documentos analisados, incluindo ID, nome do arquivo,
+DPI calculado (m´ edio, x-ppi, y-ppi), resolu¸ c˜ ao em pixels, n´ umero de imagens e categoria, est´ a
+dispon´ ıvel em dois formatos:
+1. Formato CSV e derivados (para an´ alise em planilha):
+achado_02/evidencias/caso_dpi/documentos/anexo_II_tabela_completa_dpi_CORRECTED.csv
+achado_02/evidencias/caso_dpi/documentos/anexo_II_tabela_completa_dpi_CORRECTED.xlsx
+achado_02/evidencias/caso_dpi/documentos/anexo_II_tabela_completa_dpi_CORRECTED.pdf
+2. Inser¸ c˜ ao resumida neste papel de trabalho
+Devido ao volume de linhas, a tabela completa n˜ ao ´ e reproduzida diretamente aqui. As
+referˆ encias e orienta¸ c˜ oes de uso est˜ ao sintetizadas no arquivo auxiliar:
+achado_02/evidencias/caso_dpi/analises/anexo_II_tabela_latex.tex
+Para inserir a s´ ıntese no documento, utiliza-se:
+\input{anexo_II_tabela_latex.tex}
+Estrutura da tabela:
+•ID: N´ umero sequencial (1-646)
+•DPI : DPI m´ edio calculado ( xppi+yppi)/2
+•Nome do Arquivo : Nome do PDF analisado
+18
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 19 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+•x-ppi : Resolu¸ c˜ ao horizontal
+•y-ppi : Resolu¸ c˜ ao vertical
+•Resolu¸ c˜ ao : Dimens˜ oes em pixels (largura ×altura)
+•Imgs : N´ umero de imagens detectadas no PDF
+•Categoria : Classifica¸ c˜ ao por faixa de DPI
+Anexo II – Tabela Completa de DPI
+A listagem integral dos 646 documentos analisados, com respectivas resolu¸ c˜ oes m´ edias (DPI),
+valores de x-ppi, y-ppi, resolu¸ c˜ ao em pixels e classifica¸ c˜ ao por faixa de DPI, est´ a disponibilizada
+nos arquivos:
+•anexo IItabela completa dpiCORRECTED.xlsx
+•anexo IItabela completa dpiCORRECTED.pdf
+Ambos os arquivos s˜ ao derivados diretamente do script analyze pdfdpifixed.py e corres-
+pondem ` a vers˜ ao atualizada consolidada com os valores utilizados neste papel de trabalho. Para
+evitar a inser¸ c˜ ao de uma tabela com milhares de linhas no presente documento, as evidˆ encias
+encontram-se anexadas separadamente na pasta de evidˆ encias do achado.
+19
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 20 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+Anexo III – Script Utilizado
+O processamento automatizado dos metadados de DPI foi executado com o script analyze pdfdpifixed.py .
+O c´ odigo-fonte est´ a versionado no reposit´ orio de trabalho da auditoria (diret´ orio scripts/ ) e
+foi respons´ avel por:
+1. Iterar sobre os 646 arquivos PDF analisados;
+2. Invocar o utilit´ ario pdfimages -list do Poppler para coletar x-ppi e y-ppi de cada ima-
+gem;
+3. Selecionar a imagem principal (maior ´ area em pixels) de cada documento;
+4. Calcular o DPI m´ edio e classificar o documento nas faixas descritas neste papel de trabalho;
+5. Exportar os resultados consolidados para anexo IItabela completa dpiCORRECTED.csv .
+O script pode ser reexecutado a partir do diret´ orio de evidˆ encias utilizando Python 3 e os
+requisitos documentados no reposit´ orio.
+20
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.
+
+--- Página 21 ---
+Papel de Trabalho - Auditoria CAF - An´ alise DPI Outubro 2025
+6.3 Anexo IV - Comando pdfimages Executado
+pdfimages -list <arquivo.pdf>
+Output t´ ıpico:
+page num type width height color comp bpc enc interp object ID x-ppi y-ppi
+------------------------------------------------------------------------------------
+1 0 image 2312 3080 rgb 3 8 jpeg no 10 0 140 140
+Colunas relevantes:
+•width : Largura da imagem em pixels
+•height : Altura da imagem em pixels
+•x-ppi : Resolu¸ c˜ ao horizontal em pontos por polegada (DPI)
+•y-ppi : Resolu¸ c˜ ao vertical em pontos por polegada (DPI)
+6.4 Anexo V - Arquivo JSON com Resultados Detalhados
+Resultados completos da an´ alise de 646 documentos salvos em:
+/tmp/pdf_dpi_analysis_fixed.json
+Estrutura do JSON:
+•total pdfs : Quantidade total analisada
+•dpidistribution : Contagem por categoria
+•details[] : Array com informa¸ c˜ oes de cada PDF
+–filename : Nome do arquivo
+–main image : DPI e resolu¸ c˜ ao da imagem principal
+–allimages : Metadados de todas as imagens
+–category : Classifica¸ c˜ ao DPI
+6.5 Anexo VI - Referˆ encias Normativas
+Resolu¸ c˜ ao CONARQ n º31/2010
+Conselho Nacional de Arquivos. Resolu¸ c˜ ao n º31, de 28 de abril de 2010. Disp˜ oe sobre a
+ado¸ c˜ ao das Recomenda¸ c˜ oes para Digitaliza¸ c˜ ao de Documentos Arquiv´ ısticos Permanentes.
+Tabela 1, nota de rodap´ e 39: “a resolu¸ c˜ ao ´ optica m´ ınima de 300 dpi ´ e a recomend´ avel quando
+se deseja utilizar a tecnologia OCR (Optical Character Recognition)”
+Dispon´ ıvel em: https://www.gov.br/conarq/pt-br/centrais-de-conteudo/publicacoes
+21
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79200685.

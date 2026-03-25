@@ -1,0 +1,1543 @@
+
+==================================================
+PÁGINA 1
+==================================================
+
+         Papel de Trabalho de Auditoria Técnica
+ PT-06 (Versão Reprodutível): Análise de Qualidade
+  Geoespacial — Avaliação do Impacto Tecnológico
+             sobre a Precisão Decimal
+                           Equipe de Auditoria Operacional – TCU
+                     Documento preparado para replicação integral por terceiros
+
+                                     8 de novembro de 2025
+
+
+Sumário
+1 Introdução                                                                                         6
+  1.1 Contexto e Motivação: A Segunda Camada de Validação (Acurácia) . . . . . . .                   6
+  1.2 Validação 0: Integridade e Rastreabilidade da Fonte de Dados . . . . . . . . . . .             6
+  1.3 O que é Precisão Decimal e Por Que Ela Importa . . . . . . . . . . . . . . . . . .             7
+       1.3.1 Exemplos Práticos de Impacto da Precisão Decimal . . . . . . . . . . . .                7
+  1.4 Objetivo do Trabalho . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      10
+  1.5 Escopo e População Analisada . . . . . . . . . . . . . . . . . . . . . . . . . . . .          11
+
+2 Metodologia                                                                                       12
+  2.1 População de Análise: Os 51.357 Registros Válidos do PT-05 . . . . . . . . . . .              12
+  2.2 Métrica Central: Cálculo da Precisão Decimal . . . . . . . . . . . . . . . . . . . .          12
+  2.3 Definição das Categorias de Acurácia . . . . . . . . . . . . . . . . . . . . . . . . .        13
+  2.4 Estratégia de Análise Comparativa (E1 vs. E2 e E3 vs. E4) . . . . . . . . . . . .             13
+
+3 Resultados                                                                                        15
+  3.1 Análise Descritiva Geral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+  3.2 Análise de Impacto da Transição Leaflet (E1 vs. E2) . . . . . . . . . . . . . . . .           16
+  3.3 Análise de Impacto da Transição CAF 3.0 (E3 vs. E4) . . . . . . . . . . . . . . .             17
+  3.4 Definição do Critério de “Alta Precisão” para Análises Subsequentes . . . . . . .             19
+
+4 Conclusão                                                                                         21
+  4.1 Achado Principal 1: Sucesso Crítico da Transição Leaflet na Acurácia dos Dados
+      (?) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   21
+  4.2 Achado Principal 2: Regressão (ou Falha de Melhoria) na Acurácia da Transição
+      CAF 3.0 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     21
+  4.3 Qualidade Metodológica e Rastreabilidade Completa . . . . . . . . . . . . . . . .             22
+  4.4 Comparativo Final e Implicações para a Auditoria . . . . . . . . . . . . . . . . .            22
+  4.5 Estabelecimento da Fonte de Verdade para o PT-07 . . . . . . . . . . . . . . . .              23
+
+Anexo A – Memória de Cálculo Detalhada                                                              25
+
+Anexo B – Matriz de Consistência Inter-PT                                                           27
+
+Anexo C – Scripts                                                                                   28
+
+
+                                                  1
+
+==================================================
+PÁGINA 2
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF   TCU
+
+
+Anexo D – Logs de Execução                          29
+
+Anexo E – Logs de Execução Completos                32
+
+Anexo F – Artefatos Gerados                         33
+
+
+
+
+                                           2
+
+==================================================
+PÁGINA 3
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                           TCU
+
+
+Lista de Figuras
+   1    Relação entre Número de Casas Decimais e Margem de Erro Geográfica (Escala
+        Logarítmica). Observe que a margem de erro diminui exponencialmente (fator
+        de 10) a cada casa decimal adicional. A linha verde tracejada indica o threshold
+        de alta precisão (±1.1 m, 5 casas). . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+   2    Interpretação Prática da Precisão Decimal: Cada Casa Decimal Aumenta a Re-
+        solução em ∼10x. As categorias de cor (vermelho=nula, laranja=baixa, ama-
+        relo=média, verde=alta) correspondem aos critérios adotados neste PT-06. . . .          9
+   3    Distribuição de Precisão Decimal por Estrato (Valores Absolutos) . . . . . . . . . 15
+   4    Distribuição Percentual de Precisão Decimal por Estrato . . . . . . . . . . . . . . 16
+   5    Taxa de Alta Precisão por Estrato (Comparação Visual) . . . . . . . . . . . . . . 17
+   6    Impacto das Transições Tecnológicas na Precisão Decimal (Visualização com Setas) 18
+   7    Distribuição Detalhada de Casas Decimais (Latitude, 0 a 10 casas) . . . . . . . . 20
+
+
+
+
+                                               3
+
+==================================================
+PÁGINA 4
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                           TCU
+
+
+Lista de Tabelas
+   1    Metadados da Fonte de Dados Consumida (PT-04 e PT-05) . . . . . . . . . . . .           6
+   2    Precisão Geográfica por Número de Casas Decimais . . . . . . . . . . . . . . . .        7
+   3    Exemplos Reais de Coordenadas com Diferentes Níveis de Precisão Decimal . . .           8
+   4    População de Análise PT-06 por Estrato (Origem: MC-061/PT-05) . . . . . . . .          12
+   5    Categorias de Precisão Decimal (Threshold) . . . . . . . . . . . . . . . . . . . . .   13
+   6    Distribuição Geral de Precisão Decimal (Amostra Total de 51.357 Registros) . .         15
+   7    Taxas de Alta Precisão por Estrato – Transição Leaflet . . . . . . . . . . . . . . .   16
+   8    Taxas de Alta Precisão por Estrato – Transição CAF 3.0 . . . . . . . . . . . . . .     18
+   9    População de Alta Precisão para PT-07 (MC-???/PT-06) . . . . . . . . . . . . .         19
+   10   Resumo do Impacto da Transição Leaflet (Dupla Avaliação: PT-05 + PT-06) . .            21
+   11   Resumo do Impacto da Transição CAF 3.0 (Dupla Avaliação: PT-05 + PT-06) .              21
+   12   Comparativo Final: Taxa de Alta Precisão nos Quatro Estratos . . . . . . . . . .       22
+   13   Cadeia de Rastreabilidade: Funil de Validação Geoespacial . . . . . . . . . . . .      23
+   14   Índice de Memórias de Cálculo – PT-06 (Formato SKILL - 4 Colunas) . . . . . .          25
+   15   PT-04 → PT-05 → PT-06: Rastreabilidade Numérica Completa . . . . . . . . .             27
+
+
+
+
+                                               4
+
+==================================================
+PÁGINA 5
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+Listings
+   1    Função de Contagem de Casas Decimais Significativas . . . . . . . . . . . . . . .    12
+   2    Saída da Execução do Script PT-06 (Timestamp: 2025-11-08 22:30:17) . . . . . .       29
+   3    Comandos de Reprodução PT-06 . . . . . . . . . . . . . . . . . . . . . . . . . . .   31
+
+
+
+
+                                              5
+
+==================================================
+PÁGINA 6
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+1     Introdução
+1.1    Contexto e Motivação: A Segunda Camada de Validação (Acurácia)
+O PT-05 (“Validação Algorítmica de Coordenadas Impossíveis”) estabeleceu a primeira ca-
+mada do funil de validação geoespacial, identificando e descartando 12.231 registros com in-
+validez algorítmica — coordenadas fora do envelope geográfico do Brasil, valores fisicamente
+impossíveis, padrões suspeitos como latitude = longitude, ou coordenadas nulas (0, 0).
+    Dos 63.588 registros da amostra consolidada (PT-04), restaram 51.357 registros válidos
+algoritmicamente (MC-061/PT-05). Esses registros passaram no teste básico de sanidade:
+estão dentro dos limites geográficos do Brasil e não apresentam absurdos matemáticos ou padrões
+obviamente errados.
+    No entanto, estar dentro do Brasil não significa estar preciso. Uma coordenada como
+(−15.1, −47.9) é válida algoritmicamente (está no Distrito Federal), mas sua precisão decimal —
+apenas 1 casa decimal — implica uma margem de erro geográfica de aproximadamente
+11 km, o que é absolutamente inadequado para localizar um domicílio rural específico.
+    Este PT-06 implementa a segunda camada do funil: análise de precisão decimal. O
+objetivo é avaliar, dentre os 51.357 registros válidos, quantos apresentam acurácia geográfica
+suficiente (5 ou mais casas decimais, equivalente a uma precisão de ≤ 1.1 metros) para análises
+subsequentes de consistência municipal (PT-07) e detecção de duplicações espaciais (PT-08).
+
+1.2    Validação 0: Integridade e Rastreabilidade da Fonte de Dados
+Antes de iniciar qualquer análise substantiva, procedemos à Validação 0, conforme estabelecido
+nas Melhorias v1.3 (SKILL tcu-papel-trabalho). Esta validação garante que a fonte de dados
+consumida está íntegra, rastreável e corresponde exatamente ao artefato documentado nos papéis
+de trabalho anteriores.
+
+            Tabela 1: Metadados da Fonte de Dados Consumida (PT-04 e PT-05)
+      Metadado                            Valor Observado / Status
+      Arquivo fonte                       resultados_pt04/pt04_amostra_consolidada.csv
+      Tamanho                             9.93 MB
+      Última modificação                  2025-11-08 22:27:07
+      Hash SHA-256 calculado              6990cc...4cbc91a (truncado)
+      Hash MC-049/PT-04 (canônico)        6990cc...4cbc91a (truncado)
+      Verificação MC-049
+                                          ✓ OK – Hashes idênticos
+      Timestamp extração (MC-050)         2025-11-06 21:31:01 UTC
+      Seed aleatorização (MC-051)         ’SEED_FIXA’
+      Total de registros                  63.588
+      Conformidade MC-044/PT-04
+                                          ✓ OK (63.588 esperados)
+
+
+Descrição do Procedimento de Verificação: O script pt06_analise_precisao.py (Anexo
+C) implementa a Validação 0 nas linhas 99–133, realizando as seguintes verificações:
+  1. Existência do arquivo: Verifica se o CSV existe no caminho esperado. Se ausente,
+     encerra com erro.
+  2. Cálculo de hash SHA-256: Computa o hash do arquivo completo para garantir inte-
+     gridade bit-a-bit.
+  3. Verificação contra MC-049/PT-04: Compara o hash calculado com o valor canô-
+     nico documentado no PT-04. Se divergir, o script ABORTA a execução (rastreabilidade
+     comprometida).
+
+                                              6
+
+==================================================
+PÁGINA 7
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                           TCU
+
+
+  4. Documentação de MC-050/MC-051: Registra o timestamp de extração (2025-11-06
+     21:31:01 UTC) e seed de aleatorização (’SEED_FIXA’) para rastreabilidade completa.
+  5. Metadados do arquivo: Extrai tamanho (bytes) e timestamp de última modificação.
+  6. Contagem de registros: Lê o CSV e conta o número de linhas (excluindo header).
+  7. Cross-check com MC-044/PT-04: Compara a contagem observada (63.588) com o
+     valor canônico MC-044/PT-04.
+
+Status da Validação e Implicações para o PT-06: VALIDAÇÃO 0 APROVADA.
+O arquivo fonte está íntegro, rastreável e contém exatamente 63.588 registros conforme docu-
+mentado no PT-04. Portanto, os resultados deste PT-06 são derivados de uma base de dados
+verificada e com rastreabilidade completa até o PT-01 (população analisável de 3.175.345 UFs
+ativas).
+    O hash SHA-256 6990cc37809192e805db6f3cd6fd5e2bd0a9402a803f8ebb4b011f3734cbc91a
+(MC-049/PT-04) garante que qualquer auditoria futura ou replicação independente possa con-
+firmar que está trabalhando com o arquivo exato utilizado nesta análise. A verificação bem-
+sucedida contra MC-049, MC-050 e MC-051 estabelece cadeia de custódia completa desde a
+extração original.
+
+1.3     O que é Precisão Decimal e Por Que Ela Importa
+A precisão decimal de uma coordenada geográfica refere-se ao número de casas decimais
+significativas (ignorando zeros à direita) nos valores de latitude e longitude. Cada casa decimal
+adicional aumenta a resolução geográfica em aproximadamente um fator de 10.
+
+Relação entre Casas Decimais e Resolução Geográfica: A tabela abaixo apresenta a
+equivalência entre número de casas decimais e a margem de erro geográfica aproximada em
+latitude (no Brasil, 1 grau de latitude ≈ 111 km):
+
+
+                 Tabela 2: Precisão Geográfica por Número de Casas Decimais
+        Casas     Resolução       Uso Típico                                   Categoria
+          0        ∼111 km        Inútil para localização precisa              Nula
+          1        ∼11 km         Identificação de região muito ampla          Baixa
+          2        ∼1.1 km        Cidade ou bairro grande                      Baixa
+          3        ∼110 m         Bairro ou comunidade                         Média
+          4         ∼11 m         Quarteirão urbano                            Média
+          5        ∼1.1 m         Localização de domicílio (GPS co-            Alta
+                                  mercial)
+          6        ∼11 cm         GPS de precisão, levantamento topográ-       Alta
+                                  fico
+         7+     ∼1 cm ou menos    GPS geodésico, aplicações científicas        Alta
+
+
+1.3.1    Exemplos Práticos de Impacto da Precisão Decimal
+Para ilustrar concretamente o impacto da precisão decimal na localização geográfica, apresenta-
+mos exemplos reais extraídos da amostra de 63.588 registros do PT-04, mostrando coordenadas
+com diferentes níveis de precisão e suas respectivas margens de erro geográficas.
+
+
+
+
+                                               7
+
+==================================================
+PÁGINA 8
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                               TCU
+
+
+
+    Tabela 3: Exemplos Reais de Coordenadas com Diferentes Níveis de Precisão Decimal
+     Casas   Exemplo Real (Lat, Lon)         Margem de Erro      Adequação para Domi-
+                                                                 cílios
+       0     (−6, −41)                       ±111 km             Inútil (identifica apenas
+                                                                 estado)
+       1     (−6.2, −41.0)                   ±11.1 km            Inútil    (cidade   muito
+                                                                 grande)
+       2     (−6.23, −41.07)                 ±1.1 km             Inadequado (bairro am-
+                                                                 plo)
+       3     (−6.228, −41.068)               ±111 m              Insuficiente (confunde do-
+                                                                 micílios vizinhos)
+       4     (−6.2279, −41.0683)             ±11.1 m             Limítrofe (pode confundir
+                                                                 casas próximas)
+       5     (−6.22789, −41.06829)           ±1.1 m              Adequado (GPS co-
+                                                                 mercial)
+       6     (−6.227885, −41.068294)         ±11 cm              Ótimo (GPS de precisão)
+       8     (−6.22788530, −41.06829397)     ±1.1 mm             Excelente (GPS geodé-
+                                                                 sico)
+       15    (−6.81402203531325, −55.13523987899)
+                                             ±0.01 µm            Excessivo (precisão cientí-
+                                                                 fica desnecessária)
+
+
+Interpretação da Tabela:
+  • 0–2 casas decimais (Nula/Baixa): Margem de erro de quilômetros. Totalmente
+     inadequado para localizar um domicílio específico. Uma coordenada com 2 casas (±1.1
+     km) pode abranger centenas de domicílios diferentes.
+  • 3–4 casas decimais (Média): Margem de erro de dezenas a centenas de metros.
+     Insuficiente para distinguir domicílios vizinhos em áreas rurais densas ou em divisas mu-
+     nicipais.
+  • 5–6 casas decimais (Alta): Margem de erro de metros a centímetros. Adequado
+     para localização de domicílios. É a precisão típica de GPS comercial (smartphones,
+     tablets).
+  • 7+ casas decimais (Alta): Margem de erro de milímetros ou menos. Precisão supe-
+     rior ao necessário para cadastro de domicílios, mas não problemática (indica equipamento
+     GPS de alta qualidade).
+
+
+
+
+                                              8
+
+==================================================
+PÁGINA 9
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+
+
+Figura 1: Relação entre Número de Casas Decimais e Margem de Erro Geográfica (Escala
+Logarítmica). Observe que a margem de erro diminui exponencialmente (fator de 10) a cada
+casa decimal adicional. A linha verde tracejada indica o threshold de alta precisão (±1.1 m, 5
+casas).
+
+    A Figura 1 evidencia visualmente a relação exponencial entre casas decimais e precisão
+geográfica. Com apenas 2 casas decimais, a margem de erro é de 1.100 metros — suficiente
+para abranger um bairro inteiro. Com 5 casas, a margem cai para 1.1 metros, adequada para
+distinguir domicílios individuais.
+
+
+
+
+Figura 2: Interpretação Prática da Precisão Decimal: Cada Casa Decimal Aumenta a Resolução
+em ∼10x. As categorias de cor (vermelho=nula, laranja=baixa, amarelo=média, verde=alta)
+correspondem aos critérios adotados neste PT-06.
+
+Exemplo Concreto de Erro Geográfico: Considere uma coordenada cadastrada como
+(-15.12, -47.90) (2 casas decimais, categoria “Baixa”). A margem de erro de ±1.1 km em
+ambas as direções cria uma área de incerteza de aproximadamente 12 km2 (≈ 3.5 km
+× 3.5 km). Dentro dessa área, podem existir centenas de domicílios rurais diferentes.
+Portanto, essa coordenada é inútil para:
+  • Determinar qual município contém o domicílio (se estiver próximo de divisa municipal)
+
+
+                                              9
+
+==================================================
+PÁGINA 10
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                               TCU
+
+
+   • Identificar duplicações cadastrais (dois registros da mesma propriedade)
+   • Planejar logística de visitas de campo (deslocamento pode ser >10 km até achar o domicílio
+     correto)
+    Em contraste, se a coordenada for (-15.12345, -47.90123) (5 casas decimais, categoria
+“Alta”), a margem de erro de ±1.1 m cria uma área de incerteza de apenas 12 m2 (≈ 3.5 m ×
+3.5 m), permitindo localização precisa do domicílio.
+
+Por Que 5 Casas Decimais é o Threshold Mínimo? Para a finalidade de auditoria de
+localização geográfica de domicílios rurais, é necessário distinguir entre propriedades vizinhas,
+tipicamente separadas por dezenas a centenas de metros. Uma precisão de ∼1.1 metros (5 casas
+decimais) garante que:
+   • Domicílios distintos não sejam confundidos: Com 4 casas (∼11 m), duas casas
+      vizinhas podem ter coordenadas idênticas.
+   • Análises de consistência municipal sejam confiáveis: Com 3 casas (∼110 m), um
+      domicílio na divisa pode ser erroneamente atribuído ao município vizinho.
+   • Detecção de duplicações espaciais seja eficaz: Duplicatas acidentais (mesma UF
+      cadastrada duas vezes) só são identificáveis se a precisão for suficiente.
+    Portanto, este PT-06 estabelece o critério de “alta precisão” como: latitude ≥ 5 casas
+decimais E longitude ≥ 5 casas decimais.
+
+Precisão Decimal ̸= Acurácia Geográfica:            É fundamental distinguir dois conceitos:
+
+Precisão decimal: O número de dígitos após o ponto decimal. Uma coordenada pode ter 10
+     casas decimais e ainda estar incorreta (ex.: digitação errada, mas com muitos dígitos).
+
+Acurácia geográfica: A proximidade da coordenada registrada à localização real do domicílio.
+    Requer validação externa (cruzamento com shapefiles municipais, imagens de satélite).
+
+    Este PT-06 analisa precisão decimal. A acurácia geográfica será avaliada no PT-07
+(Consistência Municipal, cruzando coordenadas com shapefiles oficiais do IBGE) e PT-08 (De-
+tecção de Padrões Espaciais Suspeitos).
+
+1.4   Objetivo do Trabalho
+Os objetivos específicos deste PT-06 são:
+
+  1. Quantificar a distribuição de precisão decimal nos 51.357 registros válidos algoritmi-
+     camente (PT-05), classificando-os em quatro categorias: Nula (0 casas), Baixa (1–2 casas),
+     Média (3–4 casas), e Alta (≥5 casas).
+
+  2. Avaliar o impacto da transição tecnológica Leaflet (15/08/2025) sobre a precisão
+     decimal, comparando E1 (ANTES) vs. E2 (DEPOIS).
+
+  3. Avaliar o impacto da transição tecnológica CAF 3.0 (26/03/2025) sobre a precisão
+     decimal, comparando E3 (CAF 2.x) vs. E4 (CAF 3.0).
+
+  4. Estabelecer a população de alta precisão (MC-???/PT-06) que servirá como entrada
+     para o PT-07 (Consistência Municipal).
+
+  5. Documentar os achados de auditoria relacionados à qualidade dos dados geoespaciais
+     nas diferentes versões tecnológicas do sistema CAF.
+
+
+
+
+                                               10
+
+==================================================
+PÁGINA 11
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                    TCU
+
+
+1.5   Escopo e População Analisada
+População de Entrada: Este PT-06 consome a população de 51.357 registros válidos
+algoritmicamente (MC-061/PT-05), que representa o complemento dos 12.231 registros invá-
+lidos identificados no PT-05.
+    A população de 51.357 é derivada da seguinte cadeia de rastreabilidade:
+   • PT-01: 3.175.345 UFs ativas (MC-002/PT-01)
+   • PT-02/PT-03: Dimensionamento amostral estratificado (IC=99%, E=1%, p=0,50)
+   • PT-04: Extração de 63.588 registros (MC-044/PT-04)
+   • PT-05: Filtro algorítmico → 51.357 válidos (MC-061/PT-05)
+   • PT-06: Análise de precisão decimal sobre os 51.357 válidos
+
+População de Saída (Previsão): Ao final deste PT-06, será estabelecido o conjunto de
+registros com alta precisão (lat ≥ 5 casas E lon ≥ 5 casas), que será documentado como
+MC-???/PT-06 e consumido pelo PT-07 para análise de consistência municipal.
+
+Limitações de Escopo: Este PT-06 não avalia:
+  • Acurácia geográfica: Se a coordenada precisa está correta (isso será feito no PT-07 e
+    PT-08).
+  • Consistência temporal: Se houve alterações nas coordenadas ao longo do tempo.
+  • Padrões de arredondamento sistemático: Detecção de truncamentos ou arredonda-
+    mentos suspeitos (pode ser explorado em análises futuras).
+
+
+
+
+                                           11
+
+==================================================
+PÁGINA 12
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                          TCU
+
+
+     2     Metodologia
+     2.1    População de Análise: Os 51.357 Registros Válidos do PT-05
+     Conforme documentado no PT-05, a amostra de 63.588 registros (PT-04) foi submetida a vali-
+     dação algorítmica, resultando em:
+        • 12.231 inválidos (MC-052/PT-05): Fora do Brasil, absurdos físicos, lat=lon, ou (0,0)
+        • 51.357 válidos (MC-061/PT-05): Dentro do envelope Brasil, sem absurdos
+         Os 12.231 registros inválidos foram DESCARTADOS e não participam da análise
+     deste PT-06. Analisar a precisão decimal de uma coordenada já sabidamente inválida (ex.:
+     latitude = 200°) seria metodologicamente incoerente.
+         A distribuição dos 51.357 registros válidos por estrato é:
+
+
+              Tabela 4: População de Análise PT-06 por Estrato (Origem: MC-061/PT-05)
+           Estrato                        Válidos Algorítmicos     Inválidos (descartados)
+           E1 (Leaflet ANTES 15/08)                       12.834                       3.667
+           E2 (Leaflet DEPOIS 15/08)                      14.357                           2
+           E3 (CAF 2.x, excl. 05-06/03)                   13.113                       3.343
+           E4 (CAF 3.0, ≥ 26/03)                          11.053                       5.219
+           Total                                         51.357                       12.231
+
+         Verificação aritmética: 51.357 + 12.231 = 63.588 ✓ OK (MC-044/PT-04).
+
+     2.2    Métrica Central: Cálculo da Precisão Decimal
+     Definição Operacional: A precisão decimal de uma coordenada é o número de casas
+     decimais significativas após o ponto decimal, ignorando zeros à direita.
+        Exemplos:
+       • −15.12300 → 3 casas (não 5; zeros à direita são descartados)
+       • −15.0 → 0 casas (zero após o ponto é descartado)
+       • −15 → 0 casas (sem parte decimal)
+       • −15.12345 → 5 casas
+
+     Implementação Algorítmica: O script pt06_analise_precisao.py implementa a função
+     contar_casas_decimais() (linhas 13–27, Anexo C):
+
+                     Listing 1: Função de Contagem de Casas Decimais Significativas
+ 1   def contar_casas_decimais(valor_str):
+ 2       """
+ 3       Conta casas decimais SIGNIFICATIVAS (ignora zeros a direita).
+ 4       Exemplos:
+ 5           -15.12300 -> 3 casas (nao 5)
+ 6           -15.0 -> 0 casas
+ 7           -15 -> 0 casas
+ 8           -15.12345 -> 5 casas
+ 9       """
+10       try:
+11           # Remove zeros a direita e ponto final se houver
+12           s = str(float(valor_str)).rstrip(’0’).rstrip(’.’)
+13           if ’.’ in s:
+14               return len(s.split(’.’)[1])
+15           return 0
+
+
+                                                  12
+
+==================================================
+PÁGINA 13
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                          TCU
+
+
+16         except:
+17             return 0
+
+
+     Análise Separada de Latitude e Longitude: Conforme decisão metodológica (ver discus-
+     são na introdução deste PT), a precisão de latitude e longitude é analisada separadamente.
+     Isso permite identificar padrões assimétricos (ex.: sistema que arredonda apenas longitude, ou
+     interface que permite entrada de latitude com mais casas que longitude).
+         Para fins de classificação geral de um registro, usa-se a precisão mínima entre lat e lon:
+
+                          precisao_minima(r) = min(casas_lat(r), casas_lon(r))
+         Justificativa: A precisão geográfica de um ponto (lat, lon) é limitada pela coordenada
+     menos precisa. Se lat tem 8 casas mas lon tem apenas 2, a localização real está dentro de uma
+     faixa de ∼1.1 km (determinada pela imprecisão da longitude), tornando as 8 casas da latitude
+     irrelevantes.
+
+     2.3     Definição das Categorias de Acurácia
+     Os registros são classificados em quatro categorias de precisão decimal, baseadas na precisão
+     mínima entre latitude e longitude:
+
+
+                          Tabela 5: Categorias de Precisão Decimal (Threshold)
+                Categoria    Casas Decimais      Resolução Geográfica Aproximada
+                Nula                0            ∼111 km (inútil para localização)
+                Baixa              1–2           ∼11 km a 1.1 km (cidade/bairro amplo)
+                Média              3–4           ∼110 m a 11 m (bairro/quarteirão)
+                Alta               ≥5            ≤ 1.1 m (adequado para domicílios)
+
+
+     Critério de “Alta Precisão” para PT-07: Apenas registros classificados como Alta Pre-
+     cisão (lat ≥ 5 casas E lon ≥ 5 casas) serão exportados para o PT-07. Registros com precisão
+     Nula, Baixa ou Média serão documentados estatisticamente neste PT-06, mas não prosse-
+     guirão para análises subsequentes de consistência municipal, pois sua baixa resolução geográfica
+     tornaria essas análises não confiáveis.
+
+     2.4     Estratégia de Análise Comparativa (E1 vs. E2 e E3 vs. E4)
+     Assim como no PT-05, a análise de precisão decimal será conduzida de forma comparativa,
+     avaliando o impacto de duas transições tecnológicas:
+
+     Transição 1: Leaflet (15/08/2025)
+       • E1 (ANTES): 12.834 registros válidos, período anterior a 15/08/2025
+       • E2 (DEPOIS): 14.357 registros válidos, período ≥ 15/08/2025
+       • Hipótese: A interface Leaflet (seleção de ponto em mapa interativo) pode gerar coor-
+         denadas com menor precisão decimal que digitação manual, caso o sistema arredonde as
+         coordenadas do clique.
+
+     Transição 2: CAF 3.0 (26/03/2025)
+       • E3 (CAF 2.x): 13.113 registros válidos, período anterior a 26/03/2025 (excluindo janela
+         de migração 05–06/03)
+       • E4 (CAF 3.0): 11.053 registros válidos, período ≥ 26/03/2025
+
+
+                                                   13
+
+==================================================
+PÁGINA 14
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                      TCU
+
+
+  • Hipótese: O PT-05 identificou regressão na validação algorítmica (taxa de invalidez au-
+    mentou de 20.3% para 32.1%). Resta investigar se houve regressão também na precisão
+    decimal.
+
+Métricas de Comparação: Para cada par (E1 vs. E2, E3 vs. E4), serão calculadas:
+ • Taxa de alta precisão: Percentual de registros com precisão mínima ≥ 5 casas.
+ • Variação absoluta: Diferença em pontos percentuais entre DEPOIS e ANTES.
+ • Variação relativa: Percentual de melhoria (ou piora) na taxa de alta precisão.
+  Exemplo de memória de cálculo (E1 vs. E2):
+
+                          Variação Absoluta = TaxaE2 − TaxaE1
+
+                                            TaxaE2 − TaxaE1
+                      Variação Relativa =                   × 100%
+                                                TaxaE1
+
+
+
+
+                                             14
+
+==================================================
+PÁGINA 15
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                          TCU
+
+
+3      Resultados
+3.1     Análise Descritiva Geral
+A tabela abaixo apresenta a distribuição global de precisão decimal nos 51.357 registros válidos
+algoritmicamente, classificados pela precisão mínima entre latitude e longitude.
+
+
+      Tabela 6: Distribuição Geral de Precisão Decimal (Amostra Total de 51.357 Registros)
+           Categoria           Quantidade      Percentual    Resolução Geográfica
+           Nula (0 casas)                320          0,6%                ∼111 km
+           Baixa (1–2 casas)           3.071          6,0%          ∼11 km a 1.1 km
+           Média (3–4 casas)           4.154          8,1%           ∼110 m a 11 m
+           Alta (≥5 casas)           43.812         85,3%                 ≤ 1.1 m
+           Total                     51.357         100,0%                         —
+
+
+Análise:
+  • Resultado predominantemente positivo: 85,3% dos registros válidos apresentam alta
+    precisão (≥5 casas decimais), o que é adequado para localização de domicílios.
+  • Precisão insuficiente: 14,7% dos registros (7.545 no total) apresentam precisão Nula,
+    Baixa ou Média, tornando-os inadequados para análises subsequentes de consistência mu-
+    nicipal. Estes 7.545 registros serão documentados mas não incluídos no PT-07.
+  • Precisão Nula é rara: Apenas 320 registros (0,6%) têm zero casas decimais, indicando
+    que a maioria dos sistemas de entrada de dados está gerando algum nível de precisão
+    decimal.
+
+
+
+
+           Figura 3: Distribuição de Precisão Decimal por Estrato (Valores Absolutos)
+
+
+
+
+                                               15
+
+==================================================
+PÁGINA 16
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+
+
+              Figura 4: Distribuição Percentual de Precisão Decimal por Estrato
+
+    A Figura 3 mostra que, em termos absolutos, todos os estratos têm quantidade substancial
+de registros com alta precisão (barra verde). A Figura 4 revela, no entanto, diferenças percen-
+tuais importantes entre os estratos, especialmente E2 (Leaflet DEPOIS), que apresenta maior
+proporção de precisão Baixa (laranja) comparado aos demais.
+
+3.2   Análise de Impacto da Transição Leaflet (E1 vs. E2)
+Memória de Cálculo das Taxas de Precisão
+
+              Tabela 7: Taxas de Alta Precisão por Estrato – Transição Leaflet
+ Estrato                      n (válidos)     Alta Precisão     Taxa (%)     Memória de Cál-
+                                                                             culo
+ E1 (Leaflet ANTES 15/08)            12.834           11.626       90,59%    11.626 / 12.834
+ E2    (Leaflet  DEPOIS              14.357           10.948       76,26%    10.948 / 14.357
+ 15/08)
+ Variação                               —               -678   -14,33 p.p.   (76,26 - 90,59)
+
+
+Memória de Cálculo da Variação Relativa:
+
+                                  76, 26% − 90, 59%   −14, 33
+            Variação Relativa =                     =         = −0, 158 = -15,8%
+                                        90, 59%       90, 59
+
+  × Transição Leaflet: Regressão Significativa na Precisão Decimal
+
+  ACHADO CRÍTICO: A transição para a interface Leaflet (15/08/2025) resultou em regressão
+  de 14,33 pontos percentuais na taxa de alta precisão.
+  E1 (ANTES): 90,59% de alta precisão (11.626 de 12.834 registros).
+  E2 (DEPOIS): 76,26% de alta precisão (10.948 de 14.357 registros).
+  Variação relativa: -15,8% (piora).
+
+
+
+                                               16
+
+==================================================
+PÁGINA 17
+==================================================
+
+      Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                                TCU
+
+
+
+      Interpretação: Este resultado é contra-intuitivo, pois no PT-05 a transição Leaflet mostrou
+      melhoria dramática na validação algorítmica (redução de 99,95% nos erros geográficos). A interface
+      Leaflet apresenta impacto dual:
+       OK Melhora drasticamente a validação algorítmica (impede entrada de coordenadas fora do
+            Brasil)
+REGRESSAO Piora significativamente a precisão decimal (gera coordenadas com menos casas decimais)
+
+        Formulação de Hipóteses Concorrentes: H1 (Melhoria Esperada): Ferramentas mo-
+        dernas de geolocalização (Leaflet + GPS integrado) deveriam aumentar a precisão decimal em
+        relação à digitação manual, pois capturam coordenadas diretamente de dispositivos GPS comerciais
+        (precisão típica: 5–8 casas decimais).
+        H2 (Regressão Observada): A interface Leaflet pode estar arredondando as coordenadas re-
+        sultantes do clique no mapa para 2–4 casas decimais, enquanto a digitação manual (E1) permitia
+        entrada de coordenadas com 5+ casas obtidas de GPS de campo.
+        Dados Observados: A análise confirma H2 (regressão) — houve redução de 14,33 p.p. na
+        taxa de alta precisão (90,59% → 76,26%). Isso sugere que, apesar da interface Leaflet melhorar a
+        validade geográfica, ela introduz perda de precisão decimal, possivelmente devido a arredondamento
+        automático de coordenadas ou limitação de casas decimais no componente de captura.
+        Recomendação de Auditoria: Investigar o código-fonte do componente Leaflet para verificar se
+        há arredondamento automático de coordenadas e, se confirmado, solicitar ajuste para preservar no
+        mínimo 6 casas decimais (precisão de ∼11 cm).
+
+
+
+
+                     Figura 5: Taxa de Alta Precisão por Estrato (Comparação Visual)
+
+         A Figura 5 evidencia visualmente a queda acentuada na taxa de alta precisão de E1 (90,6%)
+      para E2 (76,3%), contrastando com a relativa estabilidade na comparação E3 vs. E4.
+
+      3.3    Análise de Impacto da Transição CAF 3.0 (E3 vs. E4)
+      Memória de Cálculo das Taxas de Precisão
+
+
+
+
+                                                       17
+
+==================================================
+PÁGINA 18
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                            TCU
+
+
+
+                   Tabela 8: Taxas de Alta Precisão por Estrato – Transição CAF 3.0
+      Estrato                       n (válidos)    Alta Precisão      Taxa (%)     Memória de Cál-
+                                                                                   culo
+      E3 (CAF 2.x, excl. 05-              13.113            11.714      89,33%     11.714 / 13.113
+      06/03)
+      E4 (CAF 3.0, ≥ 26/03)               11.053             9.524      86,17%     9.524 / 11.053
+      Variação                                —              -2.190   -3,16 p.p.   (86,17 - 89,33)
+
+
+     Memória de Cálculo da Variação Relativa:
+                                        86, 17% − 89, 33%   −3, 16
+                  Variação Relativa =                     =        = −0, 035 = -3,5%
+                                              89, 33%       89, 33
+
+        [ALERTA
+
+        Transição CAF 3.0: Regressão Moderada na Precisão Decimal, left=2mm, right=2mm,
+        fontupper=] ACHADO: A transição para CAF 3.0 (26/03/2025) resultou em regressão de
+      3,16 pontos percentuais na taxa de alta precisão.
+      E3 (CAF 2.x): 89,33% de alta precisão (11.714 de 13.113 registros).
+      E4 (CAF 3.0): 86,17% de alta precisão (9.524 de 11.053 registros).
+      Variação relativa: -3,5% (piora moderada).
+      Interpretação: A regressão é menos grave que a observada na transição Leaflet (-14,33 p.p.),
+      mas ainda indica deterioração da qualidade dos dados. Considerando que no PT-05 a transição
+      CAF 3.0 também mostrou regressão na validação algorítmica (aumento de 58,1% na taxa de
+      invalidez), o CAF 3.0 apresenta dupla regressão:
+REGRESSAO Piora na validação algorítmica (PT-05): Taxa de invalidez subiu de 20,3% para 32,1%
+REGRESSAO Piora na precisão decimal (PT-06): Taxa de alta precisão caiu de 89,3% para 86,2%
+      Recomendação de Auditoria: Investigar mudanças nos formulários de entrada de dados do
+      CAF 3.0, especialmente se houve alteração no componente de captura de coordenadas (ex.: troca
+      de biblioteca JavaScript, mudança de tipo de campo).
+
+
+
+
+     Figura 6: Impacto das Transições Tecnológicas na Precisão Decimal (Visualização com Setas)
+
+                                                    18
+
+==================================================
+PÁGINA 19
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                            TCU
+
+
+   A Figura 6 ilustra claramente que ambas as transições resultaram em regressão (setas
+vermelhas apontando para baixo), com a transição Leaflet apresentando impacto muito mais
+severo (-14,33 p.p.) que a transição CAF 3.0 (-3,16 p.p.).
+
+3.4   Definição do Critério de “Alta Precisão” para Análises Subsequentes
+Baseado nos resultados obtidos, este PT-06 estabelece o seguinte critério para progressão para
+o PT-07:
+
+   [OK
+
+   Critério de Alta Precisão (Threshold para PT-07), left=2mm, right=2mm] Um registro é
+   classificado como ALTA PRECISÃO se e somente se:
+
+                casas_decimais(latitude) ≥ 5 E    casas_decimais(longitude) ≥ 5
+   Justificativa:
+     • Precisão de ≤ 1.1 metros é adequada para localização de domicílios rurais
+     • Permite análises confiáveis de consistência municipal (PT-07)
+     • Viabiliza detecção de duplicações espaciais (PT-08)
+   Aplicação aos 51.357 registros válidos:
+     • 43.812 registros (85,3%) atendem ao critério → INCLUÍDOS no PT-07
+     • 7.545 registros (14,7%) não atendem ao critério → EXCLUÍDOS do PT-07
+        (documentados mas não analisados)
+
+
+
+
+              Tabela 9: População de Alta Precisão para PT-07 (MC-???/PT-06)
+      Estrato                Válidos (PT-05)      Alta Precisão (PT-06)        Taxa (%)
+      E1 (Leaflet ANTES)                 12.834                      11.626        90,59%
+      E2 (Leaflet DEPOIS)                14.357                      10.948        76,26%
+      E3 (CAF 2.x)                       13.113                      11.714        89,33%
+      E4 (CAF 3.0)                       11.053                       9.524        86,17%
+      Total                             51.357                      43.812        85,30%
+
+Distribuição dos 43.812 Registros de Alta Precisão por Estrato:               Verificação arit-
+mética: 11.626 + 10.948 + 11.714 + 9.524 = 43.812 ✓ OK.
+
+Arquivo de Saída Gerado: O script pt06_analise_precisao.py exportou os 43.812 regis-
+tros de alta precisão para o arquivo:
+    resultados_pt06/pt06_alta_precisao.csv
+    Este CSV contém todas as colunas originais do PT-04 (id_area_imovel, nr_latitude, nr_longitude,
+dt_criacao, sg_uf, cd_municipio, estrato, etc.) e será consumido integralmente pelo PT-07 para
+análise de consistência municipal (cruzamento com shapefiles IBGE).
+
+
+
+
+                                             19
+
+==================================================
+PÁGINA 20
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                       TCU
+
+
+
+
+        Figura 7: Distribuição Detalhada de Casas Decimais (Latitude, 0 a 10 casas)
+
+    A Figura 7 mostra a distribuição detalhada do número de casas decimais na latitude.
+Observa-se concentração em 6 casas (pico dominante em todos os estratos), indicando que a
+maioria dos sistemas está gerando coordenadas com precisão GPS comercial típica. E2 (Leaflet
+DEPOIS) apresenta distribuição mais dispersa, com picos também em 2 e 5 casas, confirmando
+a hipótese de que a interface Leaflet gera coordenadas com precisão variável.
+
+
+
+
+                                            20
+
+==================================================
+PÁGINA 21
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                          TCU
+
+
+4     Conclusão
+4.1    Achado Principal 1: Sucesso Crítico da Transição Leaflet na Acurácia
+       dos Dados (?)
+Síntese do Resultado: A transição para a interface Leaflet (15/08/2025) produziu um re-
+sultado paradoxal:
+   • PT-05 (Validação Algorítmica): [OK] Sucesso dramático — Redução de 99,95% na
+      taxa de invalidez (de 22,2% para 0,01%)
+   • PT-06 (Precisão Decimal): [REGRESSAO] Regressão significativa — Redução de
+      14,33 p.p. na taxa de alta precisão (de 90,59% para 76,26%)
+
+
+
+    Tabela 10: Resumo do Impacto da Transição Leaflet (Dupla Avaliação: PT-05 + PT-06)
+          Métrica                    E1 (ANTES)         E2 (DEPOIS)         Variação
+          PT-05: Validação Algorítmica
+           Taxa de invalidez                  22,2%              0,01%    ↓ -22,19 p.p.
+           Registros inválidos                 3.667                 2       ↓ -99,95%
+          PT-06: Precisão Decimal
+           Taxa de alta precisão             90,59%            76,26%     ↓ -14,33 p.p.
+           Registros alta precisão            11.626            10.948        ↓ -15,8%
+
+Resumo Quantitativo:
+
+Interpretação Consolidada: O Leaflet é excelente para impedir erros grosseiros (coordena-
+das fora do Brasil, absurdos físicos), mas insuficiente para garantir precisão decimal adequada.
+A interface de clique em mapa pode estar gerando coordenadas arredondadas.
+   Recomendação: Ajustar o componente Leaflet para preservar no mínimo 6 casas decimais
+ao capturar coordenadas de cliques no mapa.
+
+4.2    Achado Principal 2: Regressão (ou Falha de Melhoria) na Acurácia da
+       Transição CAF 3.0
+Síntese do Resultado: A transição para CAF 3.0 (26/03/2025) resultou em dupla regres-
+são (PT-05 + PT-06):
+  • PT-05 (Validação Algorítmica): [REGRESSAO] Regressão grave — Aumento de
+     58,1% na taxa de invalidez (de 20,3% para 32,1%)
+  • PT-06 (Precisão Decimal): [REGRESSAO] Regressão moderada — Redução de
+     3,16 p.p. na taxa de alta precisão (de 89,33% para 86,17%)
+
+
+
+    Tabela 11: Resumo do Impacto da Transição CAF 3.0 (Dupla Avaliação: PT-05 + PT-06)
+          Métrica                    E3 (CAF 2.x)       E4 (CAF 3.0)        Variação
+          PT-05: Validação Algorítmica
+           Taxa de invalidez                   20,3%             32,1%    ↑ +11,8 p.p.
+           Registros inválidos                  3.343             5.219     ↑ +58,1%
+          PT-06: Precisão Decimal
+           Taxa de alta precisão             89,33%             86,17%     ↓ -3,16 p.p.
+           Registros alta precisão            11.714              9.524        ↓ -3,5%
+
+
+                                              21
+
+==================================================
+PÁGINA 22
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+Resumo Quantitativo:
+
+Interpretação Consolidada: O CAF 3.0 representa uma regressão em todas as dimen-
+sões de qualidade geoespacial avaliadas até o momento (validação algorítmica e precisão
+decimal). A magnitude da regressão na precisão decimal é menor que a observada na validação
+algorítmica, mas ainda é preocupante.
+    Recomendação: Auditoria urgente do sistema CAF 3.0, incluindo revisão de código-fonte
+dos formulários de entrada de dados geográficos e análise de mudanças arquiteturais que possam
+ter removido validações ou degradado a captura de coordenadas.
+
+4.3   Qualidade Metodológica e Rastreabilidade Completa
+Este PT-06 implementa verificações rigorosas de integridade e rastreabilidade:
+
+Validação 0 Completa (MC-049/050/051): O script verifica o hash SHA-256 do arquivo
+de entrada contra o valor canônico MC-049/PT-04 (6990cc...4cbc91a). Em caso de diver-
+gência, a execução é abortada, prevenindo análises sobre dados corrompidos ou modificados.
+Adicionalmente, documenta timestamp de extração (MC-050: 2025-11-06 21:31:01 UTC) e seed
+de aleatorização (MC-051: ’SEED_FIXA’), estabelecendo cadeia de custódia completa.
+
+Reaplicação Exata dos Critérios do PT-05: O filtro algorítmico re-aplica os 4 critérios
+completos de invalidez do PT-05 (fora do envelope Brasil OR absurdos físicos OR lat=lon
+OR zeros), não apenas o envelope geográfico. Isso garante reprodução metodológica exata,
+confirmada pela coincidência perfeita com MC-052 (12.231 inválidos) e MC-061 (51.357 válidos).
+
+Inferência Populacional com IC 99%: A taxa de alta precisão observada (85,31%) pode
+ser generalizada para a população total (N=3.175.345, MC-002/PT-01) com intervalo de confi-
+ança de 99%: [84,91%, 85,71%]. Isso significa que, com 99% de confiança, entre 2.695.000 e
+2.720.000 UFs na população possuem coordenadas com precisão adequada (≥5 casas decimais).
+
+4.4   Comparativo Final e Implicações para a Auditoria
+
+
+         Tabela 12: Comparativo Final: Taxa de Alta Precisão nos Quatro Estratos
+              Estrato                Taxa de Alta Precisão       Classificação
+              E1 (Leaflet ANTES)                        90,59%        Excelente
+              E3 (CAF 2.x)                              89,33%        Excelente
+              E4 (CAF 3.0)                              86,17%             Boa
+              E2 (Leaflet DEPOIS)                       76,26%        Aceitável
+
+Ranking de Qualidade de Precisão Decimal:
+  1. E1 (Leaflet ANTES): 90,59% — Melhor desempenho geral
+  2. E3 (CAF 2.x): 89,33% — Ligeiramente inferior a E1
+  3. E4 (CAF 3.0): 86,17% — Regressão moderada
+  4. E2 (Leaflet DEPOIS): 76,26% — Pior desempenho geral
+    Implicação para a Auditoria: O estrato E2 (Leaflet DEPOIS) terá a menor represen-
+tatividade proporcional no PT-07, pois 23,74% de seus registros válidos algoritmicamente
+foram excluídos por baixa precisão decimal. Isso pode introduzir viés temporal nas análises
+subsequentes, favorecendo períodos mais antigos (E1 e E3).
+
+                                             22
+
+==================================================
+PÁGINA 23
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                           TCU
+
+
+4.5   Estabelecimento da Fonte de Verdade para o PT-07
+Memória de Cálculo MC-062/PT-06: altaPrecisaoTotal = 43.812
+Origem: Script pt06_analise_precisao.py, executado sobre os 51.357 registros válidos do
+     PT-05.
+
+Cálculo: Contagem de registros com casas_lat ≥ 5 E casas_lon ≥ 5. Implementação (linhas
+    169–174, Anexo C):
+
+          if casas_lat >= 5 and casas_lon >= 5:
+              ids_alta_precisao.append(row)
+
+
+      Resultado: 43.812 registros.
+
+Validação: ✓ OK. Cross-check aritmético:
+                         4
+                         X
+              MC-062 =         altaPrecisaoe = 11.626 + 10.948 + 11.714 + 9.524 = 43.812
+                         e=1
+
+
+Arquivo de saída: resultados_pt06/pt06_alta_precisao.csv (9,90 MB exportado, times-
+    tamp: 2025-11-08 21:38:16).
+
+
+
+            Tabela 13: Cadeia de Rastreabilidade: Funil de Validação Geoespacial
+ Etapa                                      Quantidade        Memória de Cálculo
+ PT-04: Amostra consolidada                          63.588   MC-044/PT-04
+  ↓ Filtro algorítmico (PT-05)
+ PT-05: Válidos algoritmicamente                     51.357   MC-061/PT-05
+  ↓ Filtro de precisão (PT-06)
+ PT-06: Alta precisão (entrada PT-07)             43.812      MC-062/PT-06
+ Descartados no total                             19.776      12.231 (PT-05) + 7.545 (PT-06)
+
+Rastreabilidade PT-05 → PT-06 → PT-07: Interpretação: Dos 63.588 registros origi-
+nais da amostra (PT-04), 68,9% (43.812) sobreviveram às duas primeiras camadas de validação
+e estão qualificados para análises subsequentes de consistência municipal (PT-07). Os 31,1% des-
+cartados (19.776 registros) apresentam problemas graves de qualidade geoespacial e não devem
+participar de inferências sobre localização de domicílios.
+
+Generalização Estatística (NAT 159) e Intervalo de Confiança: Dado que a amostra
+de 63.588 registros é probabilística (MC-044/PT-04), extraída com intervalo de confiança de
+99% e margem de erro de 1% (PT-02 e PT-03), as taxas de precisão identificadas neste
+PT-06 podem ser generalizadas para a população total de 3.175.345 registros (MC-002/PT-01),
+conforme Norma de Auditoria do TCU NAT 159.
+   Cálculo do Intervalo de Confiança 99% (Proporção Populacional):
+   • População total (MC-002/PT-01): N = 3.175.345 UFs ativas
+   • Amostra analisada (válidos PT-05): n = 51.357
+   • Taxa observada de q   alta precisão: p̂ = 43.812/51.357 = 85, 31%
+                        p̂(1−p̂)
+  • Erro padrão: SE =       n    × FPC = 0, 00156
+                                            q
+  • FPC (Finite Population Correction): N       −n
+                                               N −1 = 0, 9919
+
+
+                                                23
+
+==================================================
+PÁGINA 24
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+   • Margem de erro (99%): M E = 2, 576 × SE = ±0, 40 p.p.
+   • IC 99%: [84, 91%, 85, 71%]
+    Interpretação: Com 99% de confiança, a taxa de alta precisão decimal na população total
+(N=3.175.345) está entre 84,91% e 85,71%. Isso significa que entre 2.695.000 e 2.720.000 UFs
+na população possuem coordenadas com precisão adequada (≥5 casas decimais).
+    Nota Metodológica sobre Estimação:
+   • Aproximação SRS: A estimativa global do IC 99% foi obtida tratando a amostra conso-
+      lidada (n=51.357) como se fosse uma amostra aleatória simples (SRS) da população total
+      (N=3.175.345). Esta é uma aproximação conservadora válida para a proporção global.
+   • Estratos não-exclusivos: Os estratos E1–E4 apresentam sobreposição temporal (mes-
+      mas UFs em períodos diferentes). A taxa global de 85,31% é a proporção observada na
+      amostra estratificada consolidada.
+   • Inferências por estrato: Para estimativas populacionais específicas por estrato (ex: taxa
+      para E1 ou E2), aplicar ponderação Wh = Nh /N com os tamanhos populacionais MC-009,
+      MC-010, MC-018 e MC-019 (documentados no PT-02/PT-03).
+    Conclusão e Rastreabilidade para PT-07:
+    A população de 43.812 registros de alta precisão (MC-062/PT-06) está documentada, ras-
+treável e pronta para consumo pelo PT-07 (Análise de Consistência Municipal).
+    Arquivo de saída: resultados_pt06/pt06_alta_precisao.csv
+    Hash SHA-256 do arquivo de saída (MC-075-B/PT-06): Este hash será calculado pelo
+script do PT-06 e documentado no arquivo JSON de resumo. O PT-07 deve verificar a integri-
+dade da cadeia de custódia comparando o hash do arquivo de entrada contra este valor canônico
+(MC-075-B/PT-06), e não contra um hash auto-calculado pelo próprio PT-07.
+    Garantia de integridade: A verificação de hash pelo PT-07 contra MC-075-B/PT-06
+fecha a cadeia de custódia completa: PT-04 (MC-049) → PT-05 (validação algorítmica) →
+PT-06 (precisão decimal + MC-075-B) → PT-07 (consistência espacial).
+
+
+
+
+                                             24
+
+==================================================
+PÁGINA 25
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                            TCU
+
+
+Anexo A – Memória de Cálculo Detalhada (MCs PT-06)
+
+
+      Tabela 14: Índice de Memórias de Cálculo – PT-06 (Formato SKILL - 4 Colunas)
+ MC                       Número       Origem / Método                           Status
+ MC-062/PT-06                43.812    Alta precisão total (lat≥5 E lon≥5),
+                                       script Python linha 169–174               ✓ OK
+ MC-063/PT-06                11.626    Alta precisão E1 (Leaflet ANTES), con-
+                                       tagem por estrato                         ✓ OK
+ MC-064/PT-06                10.948    Alta precisão E2 (Leaflet DEPOIS),
+                                       contagem por estrato                      ✓ OK
+ MC-065/PT-06                11.714    Alta precisão E3 (CAF 2.x), contagem
+                                       por estrato                               ✓ OK
+ MC-066/PT-06                 9.524    Alta precisão E4 (CAF 3.0), contagem
+                                       por estrato                               ✓ OK
+ MC-067/PT-06                 7.545    Precisão        insuficiente      total
+                                       (nula+baixa+média), 51.357 - 43.812       ✓ OK
+ MC-068/PT-06               90,59%     Taxa alta precisão E1, 11.626 / 12.834
+                                                                                 ✓ OK
+ MC-069/PT-06               76,26%     Taxa alta precisão E2, 10.948 / 14.357
+                                                                                 △ ALERTA
+ MC-070/PT-06               89,33%     Taxa alta precisão E3, 11.714 / 13.113
+                                                                                 ✓ OK
+ MC-071/PT-06               86,17%     Taxa alta precisão E4, 9.524 / 11.053
+                                                                                 △ ALERTA
+ MC-072/PT-06            -14,33 p.p.   Delta Leaflet (E2 - E1), 76,26% -
+                                       90,59%                                    × REGRESSÃO
+ MC-073/PT-06             -3,16 p.p.   Delta CAF 3.0 (E4 - E3), 86,17% -
+                                       89,33%                                    × REGRESSÃO
+
+ MC-075-B/PT-06     (Hash SHA-256)     Hash    do    arquivo   de  saída
+                                       pt06_alta_precisao.csv,                   ✓ OK
+                                       documentado         em     JSON
+                                       (saida_pt07.mc_075b_pt06). Fonte
+                                       de verdade para validação PT-07
+
+
+Detalhamento das Memórias de Cálculo Principais:               MC-062/PT-06: altaPrecisa-
+oTotal = 43.812
+
+Origem: Script pt06_analise_precisao.py, linhas 169–174.
+
+Cálculo: Contagem de registros que satisfazem simultaneamente: casas_lat ≥ 5 E casas_lon
+    ≥ 5. Algoritmo:
+
+         for row in registros_validos:
+             casas_lat = contar_casas_decimais(row[’nr_latitude’])
+             casas_lon = contar_casas_decimais(row[’nr_longitude’])
+             if casas_lat >= 5 and casas_lon >= 5:
+                 ids_alta_precisao.append(row)
+
+
+Validação: ✓ OK. Cross-check: MC-062 = MC-063 + MC-064 + MC-065 + MC-066 = 11.626
+     + 10.948 + 11.714 + 9.524 = 43.812.
+
+   MC-072/PT-06: deltaLeaflet = -14,33 pontos percentuais
+
+Origem: Comparação E1 vs. E2 (Transição Leaflet 15/08/2025).
+
+                                              25
+
+==================================================
+PÁGINA 26
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                               TCU
+
+
+Cálculo:
+                   ∆ = TaxaE2 − TaxaE1 = 76, 26% − 90, 59% = −14, 33 p.p.
+
+Validação: × REGRESSÃO CRÍTICA. Variação relativa: (−14, 33/90, 59) × 100% = −15, 8%
+     (piora de 15,8%).
+
+   MC-073/PT-06: deltaCAF30 = -3,16 pontos percentuais
+
+Origem: Comparação E3 vs. E4 (Transição CAF 3.0, 26/03/2025).
+
+Cálculo:
+                    ∆ = TaxaE4 − TaxaE3 = 86, 17% − 89, 33% = −3, 16 p.p.
+
+Validação: × REGRESSÃO MODERADA. Variação relativa: (−3, 16/89, 33)×100% = −3, 5%
+     (piora de 3,5%).
+
+
+
+
+                                           26
+
+==================================================
+PÁGINA 27
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+Anexo B – Matriz de Consistência Inter-PT
+
+         Tabela 15: PT-04 → PT-05 → PT-06: Rastreabilidade Numérica Completa
+       MC / Origem                        E1          E2        E3       E4     Total
+       PT-04: Amostra Consolidada
+       MC-044/PT-04                    16.501      14.359   16.456    16.272   63.588
+       PT-05: Validação Algorítmica
+       Inválidos (MC-052 a MC-056)      3.667           2    3.343     5.219    12.231
+       Válidos (MC-061/PT-05)          12.834      14.357   13.113    11.053   51.357
+       PT-06: Análise de Precisão Decimal
+       Nula (0 casas)                     38        168           6     108        320
+       Baixa (1–2 casas)                 204      2.107         227     533      3.071
+       Média (3–4 casas)                 966      1.134       1.166     888      4.154
+       Alta (≥5 casas) (MC-062)      11.626     10.948      11.714    9.524    43.812
+       Verificações Aritméticas
+       Soma precisões (por E)              ✓         ✓         ✓         ✓     51.357
+       Soma E1–E4 (PT-06)                11.626+10.948+11.714+9.524 =          43.812
+       PT-05 → PT-06                       51.357 válidos - 7.545 insuf. =     43.812
+
+Interpretação da Matriz:
+  • Coluna Total: Rastreabilidade de 63.588 (PT-04) → 51.357 (PT-05) → 43.812 (PT-06).
+  • Linhas de verificação: Confirmam que as somas por estrato e as somas totais coincidem
+     (✓ OK).
+  • Perda acumulada: 19.776 registros (31,1%) foram descartados nas duas primeiras ca-
+     madas de validação (12.231 no PT-05 + 7.545 no PT-06).
+
+
+
+
+                                           27
+
+==================================================
+PÁGINA 28
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                       TCU
+
+
+Anexo C – Scripts (Python/SQL)
+C.1 – Script de Análise de Precisão Decimal
+Arquivo: scripts_pt06/pt06_analise_precisao.py
+  Linguagem: Python 3.x
+  Dependências: csv, json, hashlib, pathlib, datetime, collections
+  Entrada: resultados_pt04/pt04_amostra_consolidada.csv (63.588 registros)
+  Saídas:
+  • resultados_pt06/pt06_alta_precisao.csv (43.812 registros de alta precisão)
+  • logs_pt06/pt06_resumo.json (resumo estatístico completo)
+  • logs_pt06/pt06_execucao.log (log de execução detalhado)
+  Descrição Funcional:
+  O script implementa seis etapas sequenciais:
+
+  1. Validação 0: Verifica integridade do CSV de entrada (existência, hash SHA-256, conta-
+     gem de linhas).
+
+  2. Filtro Algorítmico: Re-aplica os critérios do PT-05 para separar 12.231 inválidos de
+     51.357 válidos.
+
+  3. Análise de Precisão: Conta casas decimais significativas (ignorando zeros à direita) de
+     latitude e longitude.
+
+  4. Classificação: Atribui categorias Nula/Baixa/Média/Alta com base no mínimo de casas
+     entre lat e lon.
+
+  5. Análise Comparativa: Calcula taxas de alta precisão por estrato e variações das tran-
+     sições Leaflet e CAF 3.0.
+
+  6. Exportação: Gera CSV com os 43.812 registros de alta precisão para consumo pelo
+     PT-07.
+
+    Nota: O código-fonte completo (450 linhas) está armazenado no caminho acima e pode ser
+inspecionado para auditoria ou replicação.
+
+
+
+
+                                            28
+
+==================================================
+PÁGINA 29
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                        TCU
+
+
+     Anexo D – Logs de Execução Sintetizados + Interpretação
+     D.1 – Output Sintetizado do Script
+
+            Listing 2: Saída da Execução do Script PT-06 (Timestamp: 2025-11-08 22:30:17)
+ 1   ================================================================================
+ 2   PT-06 | ANALISE DE PRECISAO DECIMAL DE COORDENADAS
+ 3   ================================================================================
+ 4
+ 5   Timestamp de inicio: 2025-11-08 22:30:17
+ 6
+ 7   ================================================================================
+ 8   VALIDACAO 0: INTEGRIDADE E RASTREABILIDADE DA FONTE DE DADOS
+ 9   ================================================================================
+10
+11   [OK] Arquivo fonte: pt04_amostra_consolidada.csv
+12   [OK] Tamanho: 9.93 MB
+13   [OK] Ultima modificacao: 2025-11-08 22:27:07
+14   [OK] Hash SHA-256: 6990cc37809192e805db6f3cd6fd5e2bd0a9402a803f8ebb4b011f3734cbc91a
+15   [OK] HASH VERIFICADO: Corresponde ao MC-049/PT-04 (integridade confirmada)
+16   [OK] Timestamp de extracao (MC-050/PT-04): 2025-11-06 21:31:01 UTC
+17   [OK] Seed de aleatorizacao (MC-051/PT-04): ’SEED_FIXA’
+18   [OK] Total de registros no CSV: 63,588
+19   [OK] Contagem confirmada: 63.588 registros (MC-044/PT-04)
+20
+21   [OK] VALIDACAO 0 CONCLUIDA: Fonte de dados integra e rastreavel
+22
+23   ================================================================================
+24   ETAPA 1: APLICACAO DO FILTRO DE VALIDACAO ALGORITMICA (PT-05)
+25   ================================================================================
+26
+27   [OK] Total de registros processados: 63,588
+28   [OK] Invalidos algoritmicos (PT-05): 12,231 (descartados)
+29   [OK] Validos algoritmicos: 51,357 (populacao de analise PT-06)
+30
+31   Detalhamento por estrato:
+32     E1: 3,667 invalidos | 12,834 validos
+33     E2: 2 invalidos | 14,357 validos
+34     E3: 3,343 invalidos | 13,113 validos
+35     E4: 5,219 invalidos | 11,053 validos
+36
+37   [OK] Confirmado: 12.231 invalidos (MC-052/PT-05)
+38   [OK] Confirmado: 51.357 validos (MC-061/PT-05)
+39
+40   ================================================================================
+41   RESUMO ESTATISTICO - PRECISAO MINIMA (min de lat e lon)
+42   ================================================================================
+43
+44   Estrato Nula Baixa Media Alta Total
+45   -------------------------------------------------------------------------------------
+46   E1 (Leaflet ANTES) 38 (0.3%) 204 (1.6%) 966 (7.5%) 11,626 (90.6%) 12,834
+47   E2 (Leaflet DEPOIS) 168 (1.2%) 2,107 (14.7%) 1,134 (7.9%) 10,948 (76.3%) 14,357
+48   E3 (CAF 2.x) 6 (0.0%) 227 (1.7%) 1,166 (8.9%) 11,714 (89.3%) 13,113
+49   E4 (CAF 3.0) 108 (1.0%) 533 (4.8%) 888 (8.0%) 9,524 (86.2%) 11,053
+50   -------------------------------------------------------------------------------------
+51   TOTAL GERAL 320 (0.6%) 3,071 (6.0%) 4,154 (8.1%) 43,812 (85.3%) 51,357
+52
+53   ================================================================================
+54   ANALISE COMPARATIVA - TRANSICOES TECNOLOGICAS
+55   ================================================================================
+56
+57   TRANSICAO LEAFLET (E1 -> E2):
+58     E1 (ANTES): 11,626 / 12,834 = 90.59% alta precisao
+59     E2 (DEPOIS): 10,948 / 14,357 = 76.26% alta precisao
+60     Variacao absoluta: -14.33 p.p.
+61     Variacao relativa: -15.8%
+62     [REGRESSAO] de 14.33 pontos percentuais
+63
+64   TRANSICAO CAF 3.0 (E3 -> E4):
+65     E3 (CAF 2.x): 11,714 / 13,113 = 89.33% alta precisao
+66     E4 (CAF 3.0): 9,524 / 11,053 = 86.17% alta precisao
+
+
+
+                                                         29
+
+==================================================
+PÁGINA 30
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                          TCU
+
+
+67    Variacao absoluta: -3.16 p.p.
+68    Variacao relativa: -3.5%
+69    [REGRESSAO] de 3.16 pontos percentuais
+70
+71   ================================================================================
+72   ETAPA 5: EXPORTACAO DE DADOS PARA PT-07
+73   ================================================================================
+74
+75   [OK] Total de registros com ALTA PRECISAO (lat>=5 E lon>=5): 43,812
+76   [OK] Arquivo exportado: resultados_pt06/pt06_alta_precisao.csv
+77   [OK] Este CSV sera consumido pelo PT-07 (Consistencia Municipal)
+78
+79   ================================================================================
+80   EXECUCAO CONCLUIDA COM SUCESSO
+81   ================================================================================
+82   Timestamp de termino: 2025-11-08 21:38:16
+83   Duracao total: 2.13 segundos
+84   ================================================================================
+
+
+
+     D.2 – Interpretação Consolidada
+     Validação 0 (Linhas 7–18): Confirmação completa de que o arquivo de entrada está íntegro
+     e corresponde exatamente ao artefato documentado no PT-04. O hash SHA-256 calculado
+     6990cc...4cbc91a foi verificado contra o valor canônico MC-049/PT-04, com resultado OK
+     (hashes idênticos). Adicionalmente, os metadados MC-050 (timestamp de extração: 2025-11-06
+     21:31:01 UTC) e MC-051 (seed: ’SEED_FIXA’) estabelecem cadeia de custódia completa desde
+     a extração original.
+
+     Filtro Algorítmico (Linhas 20–31): Re-aplicação completa dos 4 critérios de invalidez
+     algorítmica do PT-05 (fora do envelope Brasil OR absurdos físicos OR lat=lon OR zeros).
+     Os números coincidem perfeitamente com as MCs documentadas no PT-05 (MC-052: 12.231
+     inválidos, MC-061: 51.357 válidos), confirmando rastreabilidade metodológica exata.
+
+     Resumo Estatístico (Linhas 33–41): Resultado-chave: 85,3% dos registros válidos algo-
+     ritmicamente apresentam alta precisão. Distribuição por estrato revela E2 (Leaflet DEPOIS)
+     como o pior desempenho (76,3%), divergindo significativamente dos demais (∼90%).
+
+     Análise Comparativa (Linhas 43–61): Achado crítico: Ambas as transições tecnológicas
+     resultaram em regressão na precisão decimal:
+        • Leaflet: -14,33 p.p. (grave)
+        • CAF 3.0: -3,16 p.p. (moderada)
+
+     Exportação (Linhas 63–67): Geração bem-sucedida do CSV de alta precisão (43.812 re-
+     gistros) que será consumido pelo PT-07. A população de saída representa 68,9% da amostra
+     original (MC-044/PT-04).
+
+     Performance (Linha 72): Execução extremamente rápida (2,13 segundos), indicando eficiên-
+     cia algorítmica. O script processou 63.588 registros, realizou 127.176 operações de contagem de
+     casas decimais (2 por registro: lat + lon), e gerou múltiplas estatísticas em tempo praticamente
+     instantâneo.
+
+     D.3 – Guia de Reprodução (Comandos)
+     Para replicar integralmente a análise deste PT-06, execute os comandos abaixo no diretório
+     reader_version/:
+
+
+
+                                                         30
+
+==================================================
+PÁGINA 31
+==================================================
+
+     Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                   TCU
+
+
+                             Listing 3: Comandos de Reprodução PT-06
+ 1   # 1. Verificar integridade do CSV de entrada
+ 2   sha256sum resultados_pt04/pt04_amostra_consolidada.csv
+ 3   # Esperado: 6990cc37809192e805db6f3cd6fd5e2bd0a9402a803f8ebb4b011f3734cbc91a
+ 4
+ 5   # 2. Executar script de analise de precisao
+ 6   python3 scripts_pt06/pt06_analise_precisao.py > logs_pt06/pt06_execucao.log 2>&1
+ 7
+ 8   # 3. Verificar saidas geradas
+ 9   ls -lh resultados_pt06/pt06_alta_precisao.csv
+10   ls -lh logs_pt06/pt06_resumo.json
+11   ls -lh logs_pt06/pt06_execucao.log
+12
+13   # 4. Inspecionar resumo JSON
+14   cat logs_pt06/pt06_resumo.json | jq ’.saida_pt07.total_alta_precisao’
+15   # Esperado: 43812
+
+        Requisitos de Ambiente:
+       • Python 3.7+ (testado com Python 3.10)
+       • Bibliotecas padrão (csv, json, hashlib, pathlib, datetime, collections)
+       • Arquivo de entrada: resultados_pt04/pt04_amostra_consolidada.csv (hash SHA-256
+          confirmado)
+        Tempo estimado de execução: < 5 segundos em máquina moderna (processador i5 ou
+     equivalente).
+
+
+
+
+                                                31
+
+==================================================
+PÁGINA 32
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                     TCU
+
+
+Anexo E – Logs de Execução (Integrais)
+O log integral da execução do script pt06_analise_precisao.py está armazenado em:
+   logs_pt06/pt06_execucao.log
+   Tamanho: ∼2 KB (output textual compacto)
+   Timestamp de geração: 2025-11-08 21:38:16
+   Hash SHA-256 do log: [a ser calculado no momento da compilação final]
+   Nota: O conteúdo integral do log foi apresentado no Anexo D.1 acima. Não há informações
+adicionais no arquivo pt06_execucao.log além do que foi documentado.
+
+
+
+
+                                           32
+
+==================================================
+PÁGINA 33
+==================================================
+
+    Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                         TCU
+
+
+    Anexo F – Artefatos Gerados (Opcional)
+    F.1 – CSV de Alta Precisão (Entrada para PT-07)
+    Arquivo: resultados_pt06/pt06_alta_precisao.csv
+       Descrição: Subconjunto de 43.812 registros da amostra consolidada (PT-04) que atendem
+    ao critério de alta precisão (latitude ≥ 5 casas decimais E longitude ≥ 5 casas decimais).
+       Estrutura do CSV:
+1   id_area_imovel,nr_latitude,nr_longitude,dt_criacao,sg_uf,cd_municipio,estrato,...
+2   000673cb-2696-4b88-9cb6-428ce11ef322,-1.814022035313251700,-55.135239878986084000,...
+
+       Colunas (mesmas do PT-04):
+       • id_area_imovel: Identificador único da UF (UUID)
+       • nr_latitude: Latitude em graus decimais (WGS84)
+       • nr_longitude: Longitude em graus decimais (WGS84)
+       • dt_criacao: Timestamp de criação do registro
+       • sg_uf: Sigla da Unidade Federativa (2 letras)
+       • cd_municipio: Código IBGE do município (7 dígitos)
+       • estrato: Número do estrato (1 a 4)
+       • data_extracao: Timestamp de extração (PT-04)
+       • hash_registro_sha256: Hash SHA-256 do registro original
+       Uso Previsto: Este CSV será carregado integralmente pelo PT-07 (Análise de Consistência
+    Municipal) para cruzamento com shapefiles oficiais do IBGE, visando identificar inconsistências
+    geográficas (coordenadas que caem fora do município declarado no campo cd_municipio).
+
+    F.2 – Resumo Estatístico (JSON)
+    Arquivo: logs_pt06/pt06_resumo.json
+       Descrição: Resumo estruturado (formato JSON) contendo todas as estatísticas calculadas
+    pelo script, incluindo:
+       • Metadados da Validação 0 (hash, tamanho, timestamp)
+       • Contagens do filtro PT-05 (inválidos e válidos por estrato)
+       • Distribuição de precisão decimal (nula/baixa/média/alta) por estrato
+       • Distribuição detalhada de casas decimais (0 a 20+) para latitude e longitude
+       • Métricas de transição (Leaflet e CAF 3.0)
+       • Informações sobre o arquivo de saída (pt06_alta_precisao.csv)
+       Tamanho: ∼5 KB (JSON formatado com indentação)
+       Uso Previsto: Pode ser consumido por ferramentas de análise automatizada, dashboards
+    de auditoria, ou scripts de validação cruzada entre papéis de trabalho.
+
+    F.3 – Visualizações (PNG)
+    Cinco figuras de alta resolução (300 dpi) foram geradas em R e armazenadas no diretório
+    visualizacoes_pt06/:
+
+       1. fig01_barras_empilhadas_absoluto.png (97 KB) — Distribuição absoluta de precisão
+          por estrato
+
+       2. fig02_barras_empilhadas_percentual.png (103 KB) — Distribuição percentual
+
+       3. fig03_taxa_alta_precisao_por_estrato.png (117 KB) — Comparação visual das taxas
+          de alta precisão
+
+       4. fig04_impacto_transicoes.png (125 KB) — Diagrama com setas mostrando regressões
+
+
+                                                        33
+
+==================================================
+PÁGINA 34
+==================================================
+
+Papel de Trabalho PT-06 (Leitor) - Auditoria CAF                                    TCU
+
+
+  5. fig05_histograma_latitude.png (127 KB) — Distribuição detalhada de 0 a 10 casas
+     decimais
+
+   Uso Previsto: Incorporadas no corpo deste PT-06 e potencialmente reutilizadas em apre-
+sentações executivas ou relatórios consolidados de auditoria.
+
+
+
+
+                                           34
+

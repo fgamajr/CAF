@@ -1,0 +1,101 @@
+--- Página 1 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+Secretaria-Geral de Controle Externo 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+ 
+Ofício 000.192/2025 - AudTI 
+Brasília – DF, 07/08/2025. 
+ 
+A Sua Excelência a Senhora 
+Fernanda Machiaveli 
+Secretária-Executiva do Ministério do Desenvolvimento Agrário e Agricultura Familiar 
+C/C 
+Assessoria Especial de Controle Interno do Ministério do Desenvolvimento Agrário e Agricultura 
+Familiar 
+(envio de cópia a cargo do próprio Ministério) 
+ 
+Processo: 011.073/2025-0 Tipo do processo: RELATÓRIO DE AUDITORIA 
+Relator do processo: ANTONIO ANASTASIA 
+Unidade responsável: Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+Assunto: Requisição de informações e/ou documentos. 
+ 
+Senhora Secretária-Executiva, 
+Em prosseguimento aos trabalhos da auditoria em andamento nesse Ministério do 
+Desenvolvimento Agrário e Agricultura Familiar, comunicada por meio do Ofício 0132/2025-TCU/AudTI 
+e em complemento ao Ofício 000.149/2025-AudTI, solicitamos a Vossa Senhoria que seja 
+disponibilizada a base de dados completa do Cadastro Nacional da Agricultura Familiar (CAF). 
+A requisição se faz necessária para aprofundar as análises planejadas no âmbito da 
+fiscalização, que visa a avaliar a consistência e a fidedignidade dos dados que suportam as políticas 
+públicas de agricultura familiar. 
+Para viabilizar a análise, a base de dados do Cadastro Nacional da Agricultura Familiar (CAF), 
+com volume estimado de 33Gb, deverá ser disponibilizada por meio de Acesso Seguro de Transferência 
+de Arquivos (FTPS) e seguir as seguintes especificações técnicas: 
+ a) Formato do Arquivo: Os dados, oriundos do Sistema de Gerenciamento de Banco de 
+Dados (SGBD) PostgreSQL, deverão ser apresentados em formato "dump" binário compactado, gerado 
+pela ferramenta "pg_dump" utilizando a opção "copy" e sem a opção "--inserts". O arquivo deve ser 
+compatível com a versão 9.6.24 do PostgreSQL. 
+ b) Codificação e Collation: O encoding do arquivo deverá ser "UTF8" e o collation "en-
+US.UTF8". 
+Solicitamos, ainda, que sejam fornecidas as credenciais de acesso (endereço do servidor 
+FTPS, usuário e senha) para que a equipe de auditoria possa realizar o download dos arquivos. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78646336.
+
+--- Página 2 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+2 de 3 
+O prazo para o cumprimento desta requisição é de 10 (dez) dias corridos, a contar do 
+recebimento deste ofício, nos termos dos arts. 42 e 87 da Lei 8.443/92 c/c o art. 245 do Regimento 
+Interno do TCU. 
+Eventuais dúvidas podem ser direcionadas ao coordenador da equipe, Auditor Federal de 
+Controle Externo Fernando Lima Gama Júnior (fernando.gama@tcu.gov.br), bem como aos demais 
+membros da equipe, Auditores Federais de Controle Externo Kalenus Pires da Nóbrega 
+(kalenusnobrega@tcu.gov.br) e Sylvio Xavier Júnior ( sylvio@tcu.gov.br ). 
+ 
+Assinado eletronicamente 
+HARLEY ALVES FERREIRA 
+Supervisor de auditoria 
+  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78646336.
+
+--- Página 3 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+3 de 3 
+INFORMAÇÕES COMPLEMENTARES 
+1) O acesso ao processo indicado nesta comunicação pode ser realizado por meio da plataforma de 
+serviços digitais Conecta-TCU, disponível no Portal TCU ( www.tcu.gov.br ). A visualização de processos 
+e documentos sigilosos depende de solicitação formal e posterior autorização do relator. Informações 
+detalhadas sobre o uso da plataforma, inclusive para fins de cadastro e credenciamento, podem ser 
+consultadas ao acionar o ícone “Conecta-TCU” do Portal TCU. 
+2) O envio de documentos e informações deve observar as seguintes orientações: 
+a) indicar, com destaque, o número do processo e deste ofício; 
+b) utilizar dos serviços da plataforma digital Conecta-TCU ou do protocolo eletrônico disponíveis 
+no Portal TCU. 
+3) A informação classificada na origem com restrição de acesso deve ser acompanhada dos seguintes 
+elementos, consoante a Lei de Acesso à Informação (Lei nº 12.527, de 18 de novembro de 2011), caso 
+contrário será considerada de acesso público pelo Tribunal:  
+a) indicação objetiva da hipótese de restrição de acesso: informação imprescindível à segurança 
+da sociedade ou do Estado; informação com sigilo atribuído por legislação específica; 
+informação pessoal relativa à intimidade, vida privada, honra e imagem; 
+b) na hipótese de informação imprescindível à segurança da sociedade ou do Estado, indicar:  
+b.1) o grau de sigilo da classificação (reservado, secreto ou ultrassecreto); 
+b.2) o fundamento legal da classificação; 
+b.3) o prazo de restrição de acesso ou o evento que defina o termo final; 
+b.4) o assunto sobre o qual versa a informação.  
+c) na hipótese de informação com sigilo atribuído por legislação específica, indicar o fundamento 
+legal da classificação;  
+d) na hipótese de informação pessoal relativa à intimidade, vida privada, honra e imagem, indicar 
+o prazo de restrição de acesso e a pessoa a que se refere. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78646336.

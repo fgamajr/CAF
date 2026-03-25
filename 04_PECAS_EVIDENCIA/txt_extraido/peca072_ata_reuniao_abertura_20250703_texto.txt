@@ -1,0 +1,145 @@
+--- Página 1 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 1 
+ATA DA REUNIÃO 
+Nome do órgão ou entidade participante: Data: 
+TCU, MDA 3/7/2025 
+ 
+SUMÁRIO DA REUNIÃO 
+Participantes Nome: Fernando de Britto e Silva, Cargo/Função: Chefe da divisão de 
+sistemas 
+Nome: Tatiana Freitas, Cargo/Função: Chefe da assessoria especial de 
+controle interno 
+Nome: Michelle Inácio, Cargo/Função: Assessoria especial de controle 
+interno 
+Nome: Arthur Lopes, Cargo/Função: Coordenador de integração e 
+informação do CAF 
+Nome: Arthur Rimoldi, Cargo/Função: Diretor do Departamento de 
+Cadastro Nacional da Agricultura Familiar 
+Nome: Ingrid Lima, Cargo/Função: Coordenação geral de monitoramento e 
+governança do CAF 
+Nome: Glaucio Coimbra, Cargo/Função: Coordenador geral substituto da 
+operação do Cadastro da Agricultura Familiar 
+Nome: Pamela Hilario, Cargo/Função: Coordenadora geral de TI do MDA 
+Nome: Matheus Lavareda, Cargo/Função: Coordenador de sistema 
+substituto da CGTI 
+Nome: Rafael Albuquerque, Cargo/Função: Auditor-chefe da AudTI do 
+TCU 
+Fernando Gama: Cargo/Função: Coordenador da auditoria da AudTI do 
+TCU 
+Nome: Kalenus Nóbrega, Cargo/Função: Equipe da auditoria da AudTI do 
+TCU 
+Nome: Sylvio Xavier, Cargo/Função: Equipe da auditoria da AudTI do 
+TCU 
+Objetivos - A reunião teve como objetivo principal iniciar os trabalhos de auditoria de 
+qualidade de dados realizados pelo Tribunal de Contas da União (TCU) nas 
+bases do Cadastro Nacional da Agricultura Familiar (CAF) e do Cadastro 
+Ambiental Rural (CAR). O foco foi compreender os sistemas, processos e 
+práticas de governança de dados no Ministério do Desenvolvimento Agrário 
+(MDA), visando identificar possíveis pontos de melhoria e promover 
+avanços na qualidade e confiabilidade dos dados.  
+ 
+- Além disso, buscou-se estabelecer um diálogo inicial entre as equipes do 
+TCU e do MDA, promovendo uma troca de conhecimentos sobre as regras 
+de negócios, as políticas públicas dependentes do CAF, e os desafios 
+enfrentados na gestão e segurança dos dados. Esse primeiro contato foi 
+essencial para definir os próximos passos da auditoria e planejar uma 
+apresentação técnica futura. 
+Resumo - A reunião começou com apresentações das equipes participantes, incluindo 
+representantes do TCU e do MDA. Foi destacado que a auditoria está em sua 
+fase inicial de planejamento, e o objetivo principal é avaliar a qualidade das 
+bases de dados do CAF e do CAR. A equipe do TCU reforçou que a iniciativa 
+busca apoiar os órgãos públicos na melhoria da governança de dados, 
+permitindo que esses dados sejam mais confiáveis e usados para gerar valor 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190589.
+
+--- Página 2 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 2 
+em decisões administrativas.  
+ 
+- Durante o encontro, foi explicado que o CAF é gerenciado pelo MDA e 
+que ele é essencial para mais de 20 políticas públicas, como o Pronaf, o 
+Seguro Especial Rural, e o PNAE. Os participantes detalharam as 
+integrações do sistema com outras bases governamentais, como CNIS e 
+Receita Federal, e apresentaram os controles e validações automáticas 
+aplicados para garantir a consistência dos dados. Também foram abordados 
+desafios relacionados à informalidade no meio rural e à confiabilidade de 
+dados autodeclaratórios.  
+ 
+- A reunião concluiu com o agendamento de uma apresentação técnica do 
+sistema CAF no TCU, prevista para o dia 10, às 14h30. Ficou acordado que 
+as perguntas enviadas pelo TCU serão respondidas por e-mail e que o ponto 
+focal para comunicação será a Tatiana Freitas, do MDA. A equipe do TCU 
+agradeceu a colaboração e reforçou que o objetivo da auditoria é atuar como 
+parceiro e consultor, promovendo melhorias na governança de dados e 
+apoiando os gestores públicos em suas demandas. 
+Destaques 1. 📊 **Foco na Auditoria de Qualidade de Dados**: Reunião inicial para 
+planejamento de auditoria, com objetivo de avaliar a qualidade dos dados 
+dos cadastros CAF (Cadastro da Agricultura Familiar) e CAR (Cadastro 
+Ambiental Rural). 
+2. 🌐 **Estratégia de Governança de Dados do TCU**: Discutiu-se a 
+necessidade de apoiar os órgãos na melhoria da governança de dados, 
+incluindo treinamento, capacitação e fiscalização. 
+3. 🛠￿ **Ferramentas e Integrações**: O CAF realiza cruzamentos 
+automáticos com bases como CNIS, Receita Federal e, futuramente, CAR. 
+Informações são validadas para garantir a consistência e qualidade dos 
+dados. 
+4. 🔐 **Segurança de Dados**: Sistema CAF implementa autenticação 
+GOVBR com múltiplos fatores de verificação, criptografia, controle de 
+perfis de acesso e monitoramento contínuo para proteção de dados. 
+5. 🏢 **Rede de Emissores**: A rede é composta por entidades públicas e 
+privadas, com cadastradores vinculados a CNPJs específicos, garantindo 
+controle regional de operações. 
+6. 📋 **Auditoria de Dados e Versionamento**: O CAF 3.0 permite 
+rastrear alterações de dados, garantindo histórico e versionamento das 
+informações sensíveis. 
+7. 📅 **Próximos Passos**: Agendamento de uma apresentação do 
+sistema CAF no TCU para maior compreensão do funcionamento e 
+navegabilidade. 
+Conclusão A reunião destacou a importância da auditoria de qualidade de dados como 
+um passo inicial para aprimorar a governança e a confiabilidade das 
+informações gerenciadas pelo CAF e pelo CAR. Foi enfatizado que, embora 
+o TCU seja especialista em TI e dados, é necessário compreender 
+profundamente o negócio dos gestores para formular critérios objetivos de 
+auditoria. A troca de conhecimento entre as equipes foi considerada essencial 
+para o sucesso da auditoria. 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190589.
+
+--- Página 3 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 3 
+O sistema CAF demonstrou ter avanços significativos em segurança e 
+rastreabilidade, especialmente com a implementação do CAF 3.0, que trouxe 
+maior controle sobre alterações de dados sensíveis e integração com bases 
+federais. No entanto, desafios como a defasagem de algumas bases externas, 
+como o SNCR-CGF do INCRA, e a necessidade de maior acesso a dados da 
+Receita Federal foram levantados, com sugestões de apoio do TCU para 
+destravar essas engrenagens. 
+ 
+Por fim, foram estabelecidos próximos passos concretos, como o envio de 
+perguntas complementares e o agendamento de uma reunião técnica no TCU 
+para apresentação do sistema CAF. Esse alinhamento inicial foi considerado 
+produtivo e abriu caminho para maior colaboração entre as equipes, com o 
+objetivo de aprimorar tanto a auditoria quanto os processos de governança e 
+gestão de dados no CAF e no CAR. 
+ 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190589.

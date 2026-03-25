@@ -1,0 +1,1231 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E
+AGRICULTURA FAMILIAR
+Secretaria de Agricultura Familiar e Agroecologia
+Departamento de Cadastro Nacional da Agricultura
+Familiar
+Coordenação-Geral de Monitoramento e Governança do
+CAF
+Coordenação de Monitoramento do CAF
+ 
+RELATÓRIO DE MONITORAMENTO DO CAF
+2º Semestre/2024
+Documento assinado eletronicamente por 
+Andre Marques de Almeida Pessoa
+,
+Coordenador (a)
+, em 26/12/2024, às 17:33, conforme horário oficial de Brasília,
+com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+38049656
+ e o código CRC 
+C3BFDA4F
+.
+1
+.
+OBJETIVO
+1
+.
+1
+.
+Relatar os resultados obtidos com a aplicação da metodologia de análise
+para implementação do Monitoramento do Cadastro Nacional da Agricultura Familiar
+(CAF), realizada nos meses de setembro e outubro de 2024, sob responsabilidade do
+Departamento de Cadastro Nacional da Agricultura Familiar (DCAF).
+2
+.
+FUNDAMENTAÇÃO LEGAL
+2
+.
+1
+.
+Lei nº 11.326, de 24 de julho de 2006. Estabelece as diretrizes para a
+formulação da Política Nacional da Agricultura Familiar e Empreendimentos Familiares
+Rurais.
+2
+.
+2
+.
+Lei nº 14.129, de 29 de março de 2021. Dispõe sobre princípios, regras e
+instrumentos para o Governo Digital e para o aumento da eficiência pública.
+2
+.
+3
+.
+Decreto nº 9.064 de 31 de maio de 2017. Dispõe sobre a Unidade Familiar
+de Produção Agrária, institui o Cadastro Nacional da Agricultura Familiar e
+regulamenta a Lei nº 11.326/2006.
+2
+.
+4
+.
+Decreto nº 10.046, de 9 de outubro de 2019. Dispõe sobre a governança
+no compartilhamento de dados no âmbito da administração pública federal e institui o
+Cadastro Base do Cidadão e o Comitê Central de Governança de Dados.
+2
+.
+5
+.
+Decreto 11.396, de 21 de janeiro de 2023. Aprova a Estrutura Regimental
+e o Quadro Demonstrativo dos Cargos em Comissão e das Funções de Conﬁança do
+Ministério do Desenvolvimento Agrário e Agricultura Familiar e remaneja e transforma
+cargos em comissão e funções de confiança.
+2
+.
+6
+.
+Decreto 11.968, de 27 de março de 2024. Altera o Decreto nº 11.396, de
+21 de janeiro de 2023.
+2
+.
+7
+.
+Portaria SAF/MAPA nº 242, de 8 de novembro de 2021. Estabelece as
+condições e os procedimentos gerais para inscrição no Cadastro Nacional da
+Agricultura Familiar (CAF). Revogada em 20/12/2022.
+2
+.
+8
+.
+Portaria MDA nº 20, de 27 de junho de 2023. Estabelece as condições e os
+procedimentos gerais para inscrição no Cadastro Nacional da Agricultura Familiar.
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 2 ---
+3
+.
+INTRODUÇÃO
+3
+.
+1
+.
+O Cadastro Nacional da Agricultura Familiar (CAF) foi instituído pelo
+Decreto nº 9.064, de 31 de maio de 2017, que regulamentou a Lei 11.326, de 24 de
+julho de 2006. Contudo, somente entrou plenamente em vigor em 31 outubro de
+2022, com o ﬁm da emissão de DAP (Declaração de Aptidão ao Pronaf), conforme art.
+81-A da Portaria SAF/MAPA nº 242, de 8 de novembro de 2021:
+"Art. 81-A. Revoga-se, em 31 de outubro de 2022, a Portaria SEAD/CC/PR nº
+523, de 24 de agosto de 2018."
+3
+.
+2
+.
+Cabe esclarecer que o CAF é um cadastro com características
+autodeclaratórias. De acordo com o arcabouço legal e normativo, podem ser
+cadastradas no CAF as famílias, representadas pela Unidade Familiar de Produção
+Agrária (UFPA), desde que atendam aos requisitos mínimos relacionados à 
+área
+, 
+mão
+de obra
+, 
+renda 
+e forma de 
+gestão
+.
+"Art. 3º Para os efeitos desta Lei, considera-se agricultor familiar e
+empreendedor familiar rural aquele que pratica atividades no meio rural,
+atendendo, simultaneamente, aos seguintes requisitos:
+I - não detenha, a qualquer título, 
+área
+ maior do que 4 (quatro) módulos fiscais;
+II - utilize predominantemente 
+mão-de-obra
+ 
+da própria família
+ nas atividades
+econômicas do seu estabelecimento ou empreendimento;
+III - tenha percentual mínimo da 
+renda
+ familiar originada de atividades
+econômicas do seu estabelecimento ou empreendimento, na forma deﬁnida
+pelo Poder Executivo;
+IV - 
+dirija
+ seu estabelecimento ou empreendimento 
+com sua família
+."
+(Lei 11.326, de 24 de julho de 2006 - destacamos)
+ 
+"Art. 3º A UFPA e o empreendimento familiar rural deverão atender aos
+seguintes requisitos:
+I - possuir, a qualquer título, 
+área
+ de até quatro módulos fiscais;
+II - utilizar, predominantemente, 
+mão de obra familiar
+ nas atividades
+econômicas do estabelecimento ou do empreendimento;
+III - auferir, no mínimo, metade da 
+renda
+ familiar de atividades econômicas do
+seu estabelecimento ou empreendimento; e
+IV - ser a 
+gestão
+ do estabelecimento ou do empreendimento 
+estritamente
+familiar
+."
+(Decreto 9.064, 31 de maio de 2017 - destacamos)
+ 
+"Art. 5º A Unidade Familiar de Produção Agrária e o Empreendimento Familiar
+Rural deverão atender aos seguintes requisitos:
+I - detenham, a qualquer título, 
+área
+ (s) que perfaça (m) a soma total de até 04
+(quatro) módulos fiscais;
+II - utilizem, predominantemente, 
+mão de obra familiar
+ nas atividades
+econômicas do estabelecimento ou Empreendimento Familiar Rural;
+III - obtenham, no mínimo, metade da 
+renda
+ bruta familiar de atividades
+econômicas do seu estabelecimento ou empreendimento; e
+IV - tenham a 
+gestão
+ do estabelecimento ou do empreendimento
+estritamente familiar
+."
+(Portaria MDA nº 20, de 27 de junho de 2023 - destacamos)
+3
+.
+3
+.
+Atualmente, a responsabilidade pelo monitoramento do Cadastro Nacional
+da Agricultura Familiar (CAF) cabe ao Departamento de Cadastro Nacional da
+Agricultura Familiar (DCAF), criado no âmbito do MDA pelo Decreto nº 11.968, de 27
+de março de 2024, que alterou a Estrutura Regimental do Ministério estabelecida pelo
+Decreto nº 11.396, de 21 de janeiro de 2023:
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 3 ---
+"Art. 22-A. Ao Departamento de Cadastro Nacional da Agricultura Familiar
+compete:
+I - coordenar a implementação e a gestão do Cadastro Nacional da Agricultura
+Familiar - CAF;
+II - promover o acesso dos agricultores familiares e as suas formas associativas
+organizadas em pessoas jurídicas ao CAF;
+III - fomentar a inscrição e difundir informações sobre o CAF e as suas formas de
+cadastramento;
+IV - promover ações de capacitação e comunicação para apoio à inscrição de
+agricultores familiares no CAF;
+V - monitorar e fiscalizar a operacionalização do CAF;
+VI - gerir as ações inerentes à interoperabilidade de dados no âmbito do CAF;
+VII - apoiar e subsidiar a Secretaria de Agricultura Familiar e Agroecologia na
+edição de normas que regulamentem a operacionalização do CAF;
+VIII - propor e coordenar ações de manutenção e aperfeiçoamento do sistema
+digital do CAF; e
+IX - articular e coordenar parcerias e ações interinstitucionais necessárias à
+operacionalização do CAF."
+(Destacamos)
+3
+.
+4
+.
+O art. 35 da Portaria MDA nº 20, de 27 de junho de 2023, também
+estabelece que a Secretaria de Agricultura Familiar e Agroecologia (SAF) deverá
+adotar medidas periódicas e permanentes para verificação da consistência cadastral:
+"Art. 35 A Secretaria de Agricultura Familiar e Agroecologia adotará 
+medidas
+periódicas
+ para a 
+veriﬁcação permanente
+ da consistência das informações
+cadastrais."
+(Destacamos)
+3
+.
+5
+.
+Além disso, o inciso II, do art. 44 e o inciso III, art. 85 da Portaria MDA nº
+20, de 2023 também determinam a realização de ﬁscalização e auditoria da Rede CAF
+e da regulamentação dos seus procedimentos:
+"Art. 44 Compete à Secretaria de Agricultura Familiar e Agroecologia:
+I - divulgar, em sítio eletrônico, a relação atualizada de todas as entidades da
+Rede CAF Pública e da Rede CAF Privada autorizadas a realizarem a inscrição no
+CAF e a emissão do RICAF, bem como as respectivas áreas de atuação; e
+II - orientar, capacitar, treinar, fiscalizar e 
+auditar a Rede CAF
+."
+(...)
+"Art. 85 Competirá à Secretaria de Agricultura Familiar e Agroecologia
+estabelecer os procedimentos operacionais necessários ao cumprimento desta
+Portaria, tais como:
+I - celebrar Convênios, Acordos de Cooperação Técnica e parcerias com
+entidades públicas do Governo Federal ou Governos Estaduais para apoio em
+ações de ﬁscalização e monitoramento da emissão de CAF por parte das
+entidades emissoras;
+II - celebrar Acordos de Cooperação Técnica com entidades públicas do Governo
+Federal, Governos Estaduais e Governos Municipais para apoio em ações de
+inscrição no CAF; e
+III - 
+regulamentar os procedimentos de ﬁscalização e auditoria
+ do
+processo de emissão e utilização do CAF."
+(Destacamos)
+3
+.
+6
+.
+Neste sentido, conforme disposto na Nota Técnica 80 (SEI nº 
+37978952
+),
+foi elaborada uma metodologia de trabalho voltada para a construção de um
+Monitoramento contínuo e cíclico, com ênfase na melhoria da qualidade do cadastro e
+em medidas educativas para orientar a Rede credenciada. Esse método foi testado
+nos meses de setembro e outubro de 2024. Para isso, foi utilizada uma amostra
+extraída de um total de 1.534.571 registros de inscrição ativos em 18/07/2024. O
+Presente relatório pretende registrar o trabalho realizado de acordo com a
+metodologia aplicada, como um primeiro teste de monitoramento do CAF.
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 4 ---
+4
+.
+METODOLOGIA
+4
+.
+1
+.
+De acordo com o Cronograma (SEI nº 
+37990460
+), previsto para o biênio
+2024-2025, a extração dos dados foi disponibilizado pela Coordenação de Integração
+e Informação do CAF (CICAF) em setembro de 2024. Durante os meses de setembro e
+outubro foram realizados as análises da amostra por meio do preenchimento de
+uma Planilha de Monitoramento, bem como a disponibilização do Guia de
+Preenchimento (SEI nº 
+37978711
+).
+4
+.
+2
+.
+Atualmente, para efetuar uma inscrição no CAFWeb, é necessário que o
+agente cadastrador preencha as informações da UFPA ou das formas associativas da
+agricultura familiar e realize o upload da documentação comprobatória. Para a UFPA é
+necessário cadastrar:
+1. Identidade do declarante e demais membros familiares;
+2. Comprovante de endereço;
+3. Comprovante de renda;
+4. Comprovante de área.
+4
+.
+3
+.
+Já para o registro de inscrição de CAF para pessoas jurídicas o Agente
+Cadastrador realiza o upload de dois documentos:
+1. Identidade do responsável legal;
+2. Comprovante de endereço.
+4
+.
+4
+.
+Ao ﬁnal do registro, o pretenso beneﬁciário declarante também preenche
+a data e assina uma 
+Declaração de Veracidade
+, que é anexada em campo
+específico no sistema para validar aquele registro de inscrição.
+4
+.
+5
+.
+Nesse contexto, para o Monitoramento do CAF, foram desconsideradas no
+primeiro momento os registros de inscrição de pessoas jurídicas (cooperativa,
+associação e empreendimentos familiar rural), uma vez que nessa tipologia de
+registro é somente anexada no sistema o documento de identidade do responsável
+legal, comprovante de endereço e a declaração de veracidade. Cabe esclarecer que,
+pra as formas associativas da Agricultura Familiar e EFR também deve ser
+apresentado ao Agente Cadastrador outros documentos listados pelo inciso II, art. 8º
+da Portaria MDA nº 20, de 2023, mas não presentes no sistema:
+"Art. 8º A documentação obrigatória para a inscrição no CAF será:
+(...)
+II - para os Empreendimentos Familiares Rurais e as formas associativas de
+organização da agricultura familiar:
+a) Cadastro Nacional de Pessoa Jurídica (CNPJ);
+b) documentação comprobatória da legitimidade dos prepostos responsáveis
+pela pessoa jurídica, ata de eleição e posse, nomeação, detalhando o nome
+completo, CPF e a cédula de identidade;
+c) cópia da ata de fundação, ou do contrato social, ou estatuto social, ou
+regimentos internos ou instrumentos equivalentes, e respectivas alterações
+vigentes depositadas e registradas junto ao órgão competente;
+d) para cooperativas, deverá ser apresentada, adicionalmente, cópia do livro de
+matrícula (ou documento de equivalente valor legal) contendo a relação dos
+(as) cooperados (as), detalhando nome completo, CPF (ou CNPJ) e data de
+filiação; e
+e) para associações, deverá ser apresentada, adicionalmente, relação dos (as)
+associados (as), detalhando nome completo, CPF (ou CNPJ), data de ﬁliação e
+respectivas assinaturas e, na parte ﬁnal, local, data e assinatura do responsável
+legal pela entidade."
+4
+.
+6
+.
+Quanto às UFPAs também foram dispensadas da análise os documentos
+de identidade e de comprovante de endereço. É importante esclarecer que
+os documentos de identidade e os comprovantes de endereço não serão mais
+anexados no futuro sistema CAF 3.0, devido à sua desnecessidade e à integração do
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 5 ---
+CAF com o sistema de Busca/CEP dos Correios. Além disso, considerando que as
+atividades de veriﬁcação do cadastro são realizadas à distância, também não foram
+avaliados os quesitos de mão de obra e gestão familiar, uma vez que, para tanto,
+exigir-se-ia uma atividade de fiscalização 
+in loco.
+4
+.
+7
+.
+Nesses termos, foram analisadas as seguintes variáveis: área do
+estabelecimento, renda declarada, presença de autodeclaração de quilombola ou
+indígena, e declaração de veracidade assinada pelo declarante. Para facilitar o
+acompanhamento, foi elaborada uma planilha modelo (SEI nº 
+37978878
+) com caixas
+de seleção para cada um desses itens. Os quesitos avaliados foram os seguintes:
+I
+ -
+Quanto ao imóvel (área do estabelecimento):
+a. Documento do imóvel previsto em normativo;
+b. Documento do imóvel reflete as informações cadastrais;
+c. Documento do imóvel em nome de algum membro familiar;
+d. Documento do imóvel datado, assinado e válido.
+II
+ -
+Quanto à renda declarada:
+a. Renda do Cadastro Nacional de Informações Sociais (CNIS)
+cadastrada na faixa correta;
+b. Documento de renda reflete as informações cadastrais;
+c. Documento de renda previsto em normativo;
+d. Documento de renda em nome de algum membro familiar;
+e. Documento de renda datado e assinado (quando couber),
+referente aos 12 meses que antecedem o CAF.
+III
+ -
+Quanto à Declaração de Veracidade:
+a. Documento datado e assinado pelo declarante;
+b. Data da declaração igual à data da última atualização.
+4
+.
+8
+.
+Na planilha de monitoramento, cada quesito foi avaliado como FALSO
+(caixa de seleção desmarcada:  ) quando a condição não havia sido atendida, ou
+VERDADEIRO (caixa de seleção marcada: ✔) quando a condição havia sido cumprida.
+Ao ﬁnal da análise, foi identiﬁcado o nível de conformidade do cadastro de acordo
+com a porcentagem de UFPAs da amostra que estavam de acordo com a norma
+vigente. Ou seja, quanto mais próximo de 1, mais próximo da norma estará o
+cadastro.
+4
+.
+9
+.
+Embora cada registro de inscrição siga a portaria válida no dia de sua
+emissão, foram considerados como “previstos em normativo” aqueles especiﬁcados
+no inciso I, art. 8º da Portaria MDA nº 20, de 27 de junho de 2023:
+"Art. 8º A documentação obrigatória para a inscrição no CAF será:
+I - para a Unidade Familiar de Produção Agrária:
+a) Cadastro Nacional de Pessoa Física (CPF) dos integrantes da Unidade Familiar
+de Produção Agrária maiores de 16 anos;
+b) cópia da documentação comprobatória de propriedade, sendo pelo menos
+um dos seguintes documentos:
+1. Certidão de matrícula do imóvel;
+2. Escritura pública;
+3. Cadastro nacional de imóveis rurais (CNIR);
+4. Imposto sobre a Propriedade Territorial Rural (ITR).
+c) cópia da documentação comprobatória de posse legal da terra, sendo pelo
+menos um dos seguintes documentos:
+1. contrato de arrendamento;
+2. contrato de parceria agrícola;
+3. contrato de comodato;
+4. contrato de meação;
+5. cessão de direito sobre o imóvel;
+6. termo de autorização de uso sustentável, expedido pela Secretaria de
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 6 ---
+Patrimônio da União quando se tratar de áreas de várzea de domínio da União
+ou expedido pela Prefeitura Municipal; quando se tratar de áreas de várzea de
+domínio do município;
+7. autodeclaração de ocupação de área de terra, de acordo com o modelo do
+Anexo IV;
+8. declaração de consentimento para ocupação de área de terra, de acordo com
+o modelo do Anexo V;
+9. autodeclaração de extrativista não ocupante de área de terra, de acordo com
+o modelo do Anexo VI;
+10. escritura pública de doação com reserva de usufruto ou escritura pública de
+compra e venda com a instituição do usufruto; e
+11. Certificado de Cadastro do Imóvel Rural (CCIR).
+d) cópia da documentação comprobatória de renda, sendo uma ou mais,
+conforme o caso:
+1. Imposto de Renda Pessoa Física (IRPF);
+2. Bloco de Produtor Rural;
+3. Declaração Comprobatória de Percepção de Rendimentos (Decore) contábil; e
+4. autodeclaração da renda auferida pela Unidade Familiar de Produção Agrária,
+de acordo com o modelo do Anexo I."
+4
+.
+10
+.
+É importante destacar que as portarias que sucederam a Portaria MDA nº
+242, de 2021 — a primeira a regulamentar o CAF — tornaram-se progressivamente
+mais inclusivas em relação a suas versões anteriores. Assim, ao adotar a Portaria
+MDA nº 20, de 2023 como referência normativa, o Monitoramento do CAF buscou a
+eﬁciência e a padronização no método de análise, garantindo a qualidade do processo
+de verificação.
+5
+.
+OBSERVAÇÕES DE ANÁLISE
+Guia de preenchimento
+5
+.
+1
+.
+Foi utilizado como ferramenta de padronização de análise do
+monitoramento do CAF o documento Guia de Preenchimento (SEI nº 
+37978711
+). Ao
+longo do processo, na medida em que novas dúvidas eram compartilhadas e novos
+documentos eram analisados, o documento foi atualizado para uma versão
+melhorada. Após a realização dos trabalhos, foi produzido uma versão ﬁnalizada do
+Guia de Preenchimento (SEI nº 
+38985606
+). A ideia é que este documento seja
+utilizado nos próximos monitoramentos que tenham a UFPA como objeto de análise,
+para que seja possível uma comparação entre os resultados obtidos ao longo do
+tempo.
+Datas de Declaração de Veracidade
+5
+.
+2
+.
+Para o quesito de veriﬁcação das datas de Declaração de Veracidade,
+foram consideradas aqueles documentos assinados até o dia anterior, em relação à
+data da última atualização cadastral. Tal escolha metodológica se dá pela
+compreensão da diﬁculdade na utilização de internet em várias regiões do interior do
+Brasil, e de vários casos de altas distâncias entre declarante do CAF e Unidade
+Cadastradora, bem como de relatos de diversas inconsistências no sistema,
+principalmente logo após o lançamento do CAF, em novembro de 2022, até meados
+do início de 2023. Datas superiores a 1 dia foram classificados como desconformes.
+Aceite de Documen
+tos de orgãos estaduais de Reforma Agrária
+5
+.
+3
+.
+Ao longo da atividade também foi identiﬁcado documentos emitidos pela
+CDA (antiga Coordenação de Desenvolvimento Agrário do estado da Bahia), hoje
+representada pela Superintendência de Desenvolvimento Agrário - SDA do estado da
+Bahia. Tais documentos, embora não previstos pela Portaria MDA nº 20, de 2023,
+eram emitidos para os assentamentos estaduais daquele estado. Dessa forma, esses
+títulos estaduais foram aceitos por similaridade ao Título de Domínio do INCRA,
+destinado aos assentamentos federais.
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 7 ---
+Autodeclaração d
+e Renda
+5
+.
+4
+.
+Foram identiﬁcados ao longo do trabalho diversos documentos de
+autodeclaração de renda distintos daquele disposto na Portaria modelo. Neste
+sentido, foram aceitos como "conformes" aqueles documentos que tinham
+minimamente as informações de renda dentro e fora do estabelecimento, data e
+assinatura do declarante. Não foram aceitos formulários e entrevistas de DAP e outros
+documentos sem informações suficientes.
+6
+.
+PLANO AMOSTRAL PARA UFPA
+6
+.
+1
+.
+O Plano amostral para UFPA foi realizado e disponibilizado pela
+Coordenação de Integração e Informação do CAF (CICAF). Para isso, foi considerada a
+extração da base do CAF de 18/07/2024, totalizando um universo de 1.534.571 de
+registros ativos. Conforme a CICAF, a amostra é composta por meio de uma seleção
+probabilística aleatória estratiﬁcada com o intuito de garantir a proporcionalidade dos
+registros na formação da amostra por unidade da federação, permitindo a análise da
+conformidade dos registros entre os estratos.
+6
+.
+2
+.
+Para o cálculo do tamanho da amostra, utilizando-se um Nível de
+Confiança de 95% e admitindo-se um erro amostral de 5%, foi utilizada a fórmula:
+Onde:
+n
+ é o tamanho da amostra
+z
+ é o valor crítico para o nível de confiança (1,96 para 95% de IC)
+p
+ é a proporção estimada (0,5 para a situação mais
+desfavorável)
+e
+ é a margem de erro (5%)
+N
+ é o tamanho da população (total de registros ativos
+considerados para este monitoramento: 1.534.571)
+ 
+6
+.
+3
+.
+Para o cálculo amostral de cada estrato foi considerada a quantidade de
+CAFs ativos em cada Unidade da Federação, de modo que o estado com maior
+número de inscrições seria mais representativo da amostra em relação à UF com o
+menor número de cadastros ativos. O número de cadastros selecionados em cada
+estrado foi calculado pela fórmula:
+ 
+Onde:
+n
+estrato
+ é o tamanho do estrato da UF
+round
+ é um critério de arredondamento para obtenção de
+números inteiros
+N
+estrato
+ é a quantidade de inscrições ativas no estrato da UF
+correspondente
+N
+ é o tamanho da população (total de registros ativos
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 7
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 8 ---
+considerados para este monitoramento: 1.534.571)
+n
+ é o tamanho da amostra
+ 
+6
+.
+4
+.
+Para a população monitorada, calculou-se uma amostra de 385 registros
+de inscrições do CAF. Na Figura 1 está disposta a representação da amostra analisada
+considerando a estratificação por UF.
+Figura 1. Disposição das amostras de 385 UFPAs estratificadas por UF que
+foram analisadas no Monitoramento.
+7
+.
+ERROS DE SISTEMA OBSERVADOS
+Possível falso negativo para renda do CNIS
+7
+.
+1
+.
+Foi identiﬁcado ao longo do monitoramento alguns casos em que há
+divergência entre informações de renda do CNIS a depender do usuário do DCAF
+logado no sistema. Enquanto para um usuário a informação de renda do CNIS de um
+membro familiar aparecia zerada, para outro apresentava-se algum registrado. Para
+contornar esse problema, foi realizada uma dupla checagem neste quesito com
+usuários distintos. De toda forma, há possibilidade de que este quesito tenha tido
+algum percentual de falso negativo para renda zerada. Esse possível erro deve servir
+como um sinal de alerta para a implantação do CAF 3.0, considerando que, no futuro
+sistema, a renda extraída do CNIS será automatizada, eliminando o preenchimento
+manual pelo Agente Cadastrador. 
+7
+.
+2
+.
+Considerando que a regra atual do CAF para a aferição da renda anual da
+UFPA abrange os 12 meses anteriores ao registro de inscrição, é crucial observar um
+aspecto relevante relacionado ao CNIS: a data em que a renda fora do
+estabelecimento foi obtida. É essencial que a regra para o cálculo da renda, deﬁnida
+no novo normativo do CAF, esteja plenamente alinhada à lógica implementada no
+sistema CAF 3.0, garantindo que a renda identiﬁcada no CNIS esteja dentro do limite
+de data estabelecido pelo normativo.
+UFPA sem membro familiar
+7
+.
+3
+.
+Foram identiﬁcados alguns casos de CAFs ativos que não possuíam
+membros familiares, não sendo possível proceder com a análise de monitoramento
+padrão. Para estes casos possivelmente o membro familiar que constava
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 8
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 9 ---
+anteriormente foi excluído daquele registro de inscrição. Ocorre que o sistema, por
+algum motivo, deixou de inativar o registro de inscrição sem membros.
+Registro de Inscrição ativo com data da declaração desatualizada
+7
+.
+4
+.
+Em alguns casos, houve a identiﬁcação que a data de atualização
+cadastral não correspondia à data do último documento anexado no CAFWeb. Ou
+seja, o próprio sistema acusava uma declaração de veracidade desatualizada mas
+mantinha o registro de inscrição ativo. Esses erros foram inclusos quantitativamente
+nas desconformidades de Declaração de Veracidade.
+CAF inativo sem motivo aparente
+7
+.
+5
+.
+Em outros casos foi identiﬁcado que o CAF estava inativo mas não foi
+possível veriﬁcar a motivação. Aparentemente os registros estavam todos
+preenchidos e com o  documento de veracidade atualizado em relação à data da
+última atualização cadastral.
+Área zero com produção agropecuária
+7
+.
+6
+.
+Foi identiﬁcado um caso em que o beneﬁciário declarou rendas de
+psicultura e pesca, pecuária de corte, extração vegetal e ovinocaprinocultura mas não
+declarou qualquer área de estabelecimento. Há necessidade de veriﬁcar se no futuro
+CAF 3.0, a existência da renda de psicultura e pesca está inﬂuenciando a ausência de
+necessidade de registro do imóvel para a produção das demais culturas.
+Inscrição ativa sem documento de área
+7
+.
+7
+.
+Também foi identiﬁcado um caso de comunidade quilombola em que não
+há documento de área do estabelecimento disponível para verificação.
+7
+.
+8
+.
+Foram identiﬁcados aproximadamente 4% de casos de erro de sistema,
+conforme detalhado na Tabela 1, que apresenta um resumo de todos os erros
+identiﬁcados e quantiﬁcados. Os casos observados, mas não quantiﬁcados, não foram
+incluídos na tabela. Vale esclarecer que os campos destinados ao relato das falhas
+durante o monitoramento possuíam preenchimento livre, o que pode ter inﬂuenciado
+na ausência de categorização e na diminuição das informações registradas.
+Tabela 1. Relação de erros de sistema identificados e quantificados no
+monitoramento do CAF.
+Erro de sistema identificado
+Qtde.
+Imóvel com produção agropecuária e área zero
+1
+CAF inativo sem motivo aparente
+2
+Erro no documento de renda
+1
+Inscrição ativa sem documento de área
+1
+UFPA sem membro familiar
+3
+8
+.
+RESULTADOS
+8
+.
+1
+.
+O índice de conformidade encontrado para a amostra analisada foi de
+32%. Insta lembrar que o índice obtido refere-se aos casos em que todos os quesitos
+de todas as categorias analisadas foram avaliadas positivamente. Além disso, cabe
+lembrar que a conformidade não se confunde com irregularidade. Enquanto o
+primeiro pretende analisar os documentos dispostos no sistema CAF em comparação
+com o normativo vigente, o segundo trata de analisar o caso concreto sobre
+uma possível fraude. Logo, tendo em vista que existem diversas razões para um
+registro de inscrição não estar conforme a norma vigente, não é possível aﬁrmar que
+68% da amostra seriam tentativas de fraude da Agricultura Familiar.
+8
+.
+2
+.
+Ao longo do Monitoramento também foram realizadas algumas medidas
+de conformidade do cadastro para a parcela analisada até aquele momento, de modo
+a tentar estimar o percentual que seria obtido com o trabalho. De acordo com as 19
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 9
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 10 ---
+mensurações realizadas, foi obtida uma previsão de 34% de conformidade para a
+amostra analisada, de acordo com a equação logarítmica:
+y = 0,058 ⋅ 
+ln
+(x) +
+0,3425
+Onde:
+x
+ é o percentual de análise da amostra
+y
+ é o percentual de conformidade do cadastro
+8
+.
+3
+.
+Para a equação encontrada obteve-se a curva apresentada na Figura 2,
+com regressão (R²) de 0,867. O valor estimado pela curva (34%) aproximou-se do
+valor real calculado de conformidade: 32%. Os resíduos da conformidade estimada
+variaram entre -3% e 3%, obtendo-se uma média de -0,002%, indicando um relação
+significativa entre as varáveis.
+Figura 2. Curva de regressão obtida com as 19 mensurações de conformidade do cadastro ao longo do
+monitoramento realizado.
+8
+.
+4
+.
+Ao analisarmos cada quesito individualmente, veriﬁca-se que
+a conformidade atinge valores signiﬁcativamente maiores. Uma média global das
+conformidades de todos os quesitos analisados, por exemplo, ﬁcaria em torno de
+75%. A menor conformidade obtida foi para o documento do imóvel previsto na
+norma (64%), enquanto a maior conformidade identiﬁcada foi para o documento de
+renda em nome de algum membro familiar (89%). Um resumo da conformidade
+individual de cada quesito analisado está disposto na Tabela 2.
+Tabela 2. Resumo dos resultados de conformidade obtidos individualmente por cada quesito verificado.
+Tipo
+Quesito
+verificado
+Conformidade
+Inconformidade
+Quantidade
+Porcentagem
+Quantidade
+Porcentagem
+Imóvel
+Agrário
+Documento do
+imóvel previsto em
+normativo
+247
+64%
+138
+36%
+Documento do
+imóvel reflete as
+informações
+cadastrais
+274
+71%
+111
+29%
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 10
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 11 ---
+Documento do
+imóvel em nome
+de algum membro
+familiar
+305
+79%
+80
+21%
+Documento do
+imóvel datado,
+assinado e válido
+245
+64%
+140
+36%
+Renda
+Renda do CNIS
+cadastrada na
+faixa correta
+285
+74%
+99
+26%
+Documento de
+renda reflete as
+informações
+cadastrais
+256
+66%
+129
+34%
+Documento de
+renda previsto em
+normativo
+322
+84%
+63
+16%
+Documento de
+renda em nome de
+algum membro
+familiar
+342
+89%
+43
+11%
+Documento de
+renda datado e
+assinado, referente
+aos 12 meses que
+antecedem o CAF
+322
+84%
+63
+16%
+Declaração 
+de
+Veracidade
+Documento datado
+e assinado pelo
+declarante
+303
+79%
+82
+21%
+Data da declaração
+igual à data da
+última atualização
+282
+73%
+103
+27%
+8
+.
+5
+.
+Percebe-se pelos resultados apresentados na Tabela 2, que há uma
+diﬁculdade maior da Agricultura Familiar em apresentar os comprovantes do imóvel
+rural utilizado pela UFPA de acordo com o art. 8º da Portaria MDA nº 20, de 2023.
+Parte desses resultados coadunam à histórica reivindicação dos produtores rurais
+mais pobres pelo acesso à terra.
+8
+.
+6
+.
+Quanto às inconformidades identiﬁcadas, dispomos na Tabela 3 as
+principais observações para cada tipo de quesito analisado.
+Tabela 3. Principais causas de inconformidades identificadas para cada tipo de quesito analisado no Monitoramento do CAF.
+Tipo de Quesito
+Principais causas de inconformidades
+Imóvel Agrário
+CAR/Documento de órgão ambiental
+Declaração de terceiro ou de associação/sindicato
+Instrumento particular de compra e venda/doação
+Informações incompletas (documentos faltando informações
+necessárias, faltando páginas, sem assinatura, sem data
+e/ou ilegível)
+Dados divergentes entre comprovante e sistema
+Outro documento não previsto em normativo
+Informação de renda do CNIS não registrada no sistema
+Dados divergentes entre comprovante e sistema
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 11
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 12 ---
+Renda
+Informações incompletas (documentos faltando informações
+necessárias, faltando páginas, sem assinatura, sem data, e/ou
+ilegível)
+Declaração de veracidade
+Declaração/Documento de terceiro
+Outro documento/modelo não previsto em normativo
+Declaração de
+Veracidade
+Informações incompletas (documentos faltando informações
+necessárias, faltando páginas, sem assinatura, sem data, e/ou
+ilegível)
+Documento desatualizado em relação à data da última atualização
+do sistema
+Documento assinado por terceiro
+Outro documento
+8
+.
+7
+.
+Comparando as Tabelas 2 e 3, percebe-se que parte das inconformidades
+identiﬁcadas para o imóvel utilizado advém da baixa instrução dos Agentes
+Cadastradores da Rede CAF em reconhecer quais os documentos previstos pelos
+normativos e quais não são aceitos. A utilização do Cadastro Ambiental Rural (CAR)
+como um documento para comprovar a utilização do imóvel, por exemplo, embora
+não seja um documento previsto pela Portaria MDA nº 20, de 2023, é amplamente
+utilizados por dois fatores: 1) Já possui coordenadas geográﬁcas, facilitando o
+preenchimento deste campo no sistema; 2) Pode ser exigido por agências
+bancárias na contratação de crédito rural, conforme disposto pelo art. 78-A da Lei
+12.651, de :
+"Art. 78-A. (...) as instituições ﬁnanceiras só concederão crédito agrícola, em
+qualquer de suas modalidades, para proprietários de imóveis rurais que estejam
+inscritos no CAR."
+8
+.
+8
+.
+Esse problema, relacionado ao uso de documentos não previstos no
+normativo, pode ser mitigado com o avanço das capacitações da Rede CAF, já
+iniciadas pelo Departamento, por meio da Coordenação de Gestão da Rede CAF
+(CRCAF), em novembro de 2024. Adicionalmente, as Divisões de Rede identiﬁcadas
+pelo Monitoramento por realizarem emissões problemáticas receberão orientações
+específicas para contribuir com o correto preenchimento do sistema.
+8
+.
+9
+.
+A Tabela 3 também evidencia a diﬁculdade dos Agentes Cadastradores
+em lidar com as ferramentas tecnológicas, considerando que parte dos problemas
+decorre do envio de documentos incompletos, com páginas faltantes ou ilegíveis.
+Espera-se que as orientações direcionadas às Divisões de Rede contribuam para a
+redução dessas falhas práticas.
+9
+.
+CASOS IDENTIFICADOS PARA ANÁLISE DETALHADA
+9
+.
+1
+.
+Ao longo do Monitoramento também foram identiﬁcados 9 registros de
+inscrição que necessitam de análise mais detalhada. Um resumo dos casos é
+apresentado na Tabela 4:
+Tabela 4. Lista de casos que serão encaminhados para análise detalhada.
+Registro de Inscrição no
+CAF
+Razão Social da
+Unidade
+Cadastradora
+Agregadora
+Inconformidade
+identificada
+BA022024.01.001200332CAF
+Sindicato dos
+Trabalhadores Rurais
+de Milagres
+CONTAG
+Mesmo documento em
+todos os campos
+BA072023.01.000497011CAF
+Secretaria de
+Desenvolvimento Rural
+- SDR - BAHIATER
+-
+Declaração de
+Veracidade em branco
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 12
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 13 ---
+MA042024.01.001392832CAF
+Sindicato dos
+Trabalhadores Rurais
+de Santa Luzia
+CONTAG
+Mesmo documento em
+todos os campos:
+Declaração de
+Veracidade em branco
+MG082023.01.000585887CAF
+Sindicato dos
+Agricultores Familiares
+e Empreendedores
+Familiares Rurais de
+Januária, Bonito de
+Minas e Conego
+CONAFER
+Mesmo documento em
+todos os campos:
+Declaração de
+Veracidade em branco
+PB012023.01.000132306CAF
+Empresa Paraibana de
+Pesquisa, Extensão
+Rural e Regularização
+Fundiária - EMPAER/PB
+-
+Mesmo documento em
+todos os campos: PDF
+em branco
+PB032024.01.001333620CAF
+Empresa Paraibana de
+Pesquisa, Extensão
+Rural e Regularização
+Fundiária - EMPAER/PB
+-
+Apresentou documento
+em branco no lugar da
+Declaração de
+Veracidade
+PE112023.01.000932376CAF
+Sindicato dos
+Agricultores Familiares
+Regional do Agreste
+Central de Pernambuco
+CONTRAF
+Mesmo documento em
+todos os campos: CNH
+PE072023.01.000576162CAF
+Sindicato dos
+Agricultores Familiares
+Regional do Agreste
+Central de Pernambuco
+CONTRAF
+Documento de renda é
+um PDF com uma lista
+de documentos.
+Declaração de
+Veracidade em branco
+PR012024.01.001106912CAF
+Instituto de
+Desenvolvimento Rural
+do Paraná - IAPAR-
+EMATER
+-
+Conta de energia para
+comprovação do
+imóvel. Declaração de
+Veracidade em branco
+ 
+9
+.
+2
+.
+Para esses casos identiﬁcados na Tabela 4, será solicitada a extração de
+todos os registros de inscrição realizados pela Unidade Cadastradora sob suspeita.
+Considerando que foram identiﬁcados dois casos na EMPAER/PB e dois casos para um
+sindicato da CONTRAF, serão realizados 7 análises aprofundadas. O objetivo é
+veriﬁcar, por amostragem, a existência de possível má fé por parte dos Agentes
+Cadastradores que atuam naquela unidade. Caso sejam constatadas irregularidades,
+será instaurado um processo administrativo de apuração, conforme disposto no art.
+60 da Portaria MDA nº 20, de 27 de junho de 2023:
+"Art. 60 A Secretaria de Agricultura Familiar e Agroecologia, de ofício ou
+mediante requerimento da parte interessada, adotará procedimentos
+administrativos para a apuração de denúncias e/ou comunicação de possíveis
+irregularidades relativas à inscrição no CAF e à emissão do RICAF."
+9
+.
+3
+.
+Além disso, os municípios envolvidos poderão contribuir para a seleção
+amostral na realização de fiscalização 
+in loco
+ ao longo do ano de 2025.
+10
+.
+RECOMENDAÇÕES
+10
+.
+1
+.
+Em atenção às inconformidades identiﬁcadas neste Monitoramento,
+recomendamos que todos os casos observados sejam inativados sem bloqueio, para
+atualização cadastral, conforme disposto na Lista de Inativações (SEI nº 
+39719508
+).
+Em complementação, nos termos do inciso II, art. 44, da Portaria MDA nº 20, de 27 de
+junho de 2023, a Divisão de Rede responsável pelo registro de inscrição inativado
+deverá ser orientada quanto ao cumprimento da Portaria vigente que regulamenta o
+CAF.
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 13
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 14 ---
+10
+.
+2
+.
+Considerando a quantidade de utilização do Cadastro Ambiental Rural
+(CAR) como documento de comprovação de utilização de imóvel agrário, e tendo em
+vista a necessidade de se informar as coordenadas de cada UFPA, é interessante
+estudar a possibilidade de integração da base do CAF com a base do CAR, visando a
+simpliﬁcação dos serviços públicos, em atenção à Lei 14.129, de 29 de março de
+2021, e ao Decreto nº 10.046, de 9 de outubro de 2019.
+10
+.
+3
+.
+É importante destacar a ampla utilização do documento "autodeclaração
+de renda" como comprovante de renda para os inscritos no CAF, incluindo aqueles
+com rendimentos próximos ou acima de R$ 500.000,00. Vale ressaltar que esse
+documento foi originalmente introduzido nas normas do CAF com o objetivo de
+atender a famílias de baixa renda, que enfrentam diﬁculdades para comprovar sua
+renda por meios convencionais, além de ser uma forma de comprovação de renda
+para aquelas famílias que somente possuem rendas de autoconsumo. Diante disso,
+consideramos relevante estabelecer um limite máximo de renda anual para a
+utilização da autodeclaração, ou realizar alguma recomendação para a Rede CAF, a
+ﬁm de incentivar a apresentação de Notas Fiscais eletrônicas ou outros meios de
+comprovação estabelecidos por norma.
+10
+.
+4
+.
+Por ﬁm, considerando os documentos previstos na Portaria MDA nº 20, de
+2023, para as formas associativas da agricultura familiar, recomendamos estudar a
+possibilidade de incluir campos específicos no CAFWeb para que seja feito o upload da
+documentação necessária para o registro do CAF de pessoa jurídica. Somente com
+estes documentos em sistema é que futuramente será possível  realizar o
+monitoramento destes tipos de registros.
+11
+.
+CONCLUSÃO
+11
+.
+1
+.
+Considerando o objetivo inicial de testar a metodologia de análise do
+cadastro, a ação de monitoramento foi bem-sucedida e executada de forma
+satisfatória. Ressalta-se que o primeiro teste foi fundamental para a ﬁnalização do
+Guia de Preenchimento, alinhado aos documentos previstos na Portaria MDA nº 20, de
+27 de junho de 2023. No entanto, com a implementação do CAF 3.0, a futura
+publicação do novo Decreto da Agricultura Familiar e a consequente chegada da
+nova portaria que regulamenta o CAF, será necessário atualizar o documento
+produzido. Parte deste conhecimento também servirá de base para a ﬁnalização do
+Manual de Monitoramento.
+11
+.
+2
+.
+O número de conformidade dos registros de inscrição do CAF encontrado
+para esta análise (32%) está dentro do esperado e provavelmente vinculado a uma
+carência de informações e de capacitação dos Agentes Cadastradores. Também
+foram identificados possíveis dificuldades no manuseio de ferramentas de informática.
+Espera-se que, com a implementação da rotina de capacitação, e com os Ofícios de
+orientação encaminhados a partir dos achados deste Monitoramento, haja uma
+gradual melhoria nos índices mensurados ao longo dos anos.
+11
+.
+3
+.
+Foram identiﬁcadas aproximadamente 4% de casos de possível erro de
+sistema. Destaca-se a questão de falsos negativos de CNIS, uma vez que essa
+informação pode inﬂuenciar diretamente na obtenção do registro de inscrição no CAF
+3.0. Além disso, é importante veriﬁcar se as informações do CNIS correspondem, de
+fato, à renda obtida nos 12 meses anteriores à data do registro. Uma possível
+contabilização equivocada de renda no sistema poderia, inadvertidamente, inviabilizar
+um registro de inscrição de uma UFPA regular perante a norma.
+11
+.
+4
+.
+Serão realizadas 7
+ 
+análises detalhadas para os casos de inconformidade
+considerados mais graves.
+11
+.
+5
+.
+Há necessidade de revisão dos prazos e cronogramas das próximas
+atividades de Monitoramento a serem realizadas em 2025, para se adequar ao futuro
+planejamento das ações do Departamento para 2025 e 2026.
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 14
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.
+
+--- Página 15 ---
+ 
+Encaminhe-se à COCAF-MDA para conhecimento e inativação dos
+Registros de Inscrição listados como desconformes.
+Encaminhe-se à CGMCAF e ao DCAF para conhecimento.
+ 
+ANDRÉ MARQUES DE ALMEIDA PESSOA
+Coordenador de Monitoramento do CAF
+ 
+Referência:
+ Processo nº 55000.013099/2024-87
+SEI nº 38049656
+Relatório de Atividades - Monitoramento CAF - 2º Sem/2024 (38049656)         SEI 55000.013099/2024-87 / pg. 15
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990623.

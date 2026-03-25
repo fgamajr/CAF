@@ -1,0 +1,56 @@
+{
+  "terminologia_padronizada": {
+    "sistema_caf": "Sistema de Cadastro da Agricultura Familiar (CAF)",
+    "ufpa": "Unidades Familiares de Produção Agrária (UFPA)",
+    "pronaf": "Programa Nacional de Fortalecimento da Agricultura Familiar (PRONAF)",
+    "paa": "Programa de Aquisição de Alimentos (PAA)",
+    "pnae": "Programa Nacional de Alimentação Escolar (PNAE)",
+    "mda": "Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA)",
+    "nat": "Normas de Auditoria do Tribunal de Contas da União (NAT)",
+    "tcu": "Tribunal de Contas da União (TCU)"
+  },
+
+  "citacoes_legais": {
+    "lei_agricultura_familiar": "Lei nº 11.326/2006",
+    "decreto_caf": "Decreto nº 9.064/2017",
+    "portaria_mda_2025": "Portaria MDA nº 19/2025",
+    "nat_resolucao": "Resolução TCU nº 280/2016"
+  },
+
+  "formatacao_numeros": {
+    "percentual": "25,7%",
+    "valor_monetario": "R$ 1.234.567,89",
+    "milhoes": "2,74 milhões",
+    "intervalo_confianca": "IC 99%",
+    "margem_erro": "±4,2 pontos percentuais"
+  },
+
+  "referencias_padrao": {
+    "paragrafo": "parágrafo {numero}",
+    "secao": "Seção {numero}",
+    "artigo": "Art. {numero}",
+    "inciso": "inciso {numero}",
+    "alinea": "alínea {letra}"
+  },
+
+  "status_secoes": {
+    "pending": "Pendente",
+    "in_progress": "Em elaboração",
+    "completed": "Concluída",
+    "validated": "Validada",
+    "blocked": "Bloqueada",
+    "approved": "Aprovada"
+  },
+
+  "tipos_evidencia": {
+    "base_dados": "Base de dados",
+    "oficio_requisicao": "Ofício de requisição",
+    "oficio_resposta": "Ofício de resposta",
+    "ata_reuniao": "Ata de reunião",
+    "entrevista": "Entrevista",
+    "documento_sistema": "Documentação do sistema",
+    "papel_trabalho": "Papel de trabalho",
+    "script_analise": "Script de análise",
+    "resultado_analise": "Resultado de análise"
+  }
+}

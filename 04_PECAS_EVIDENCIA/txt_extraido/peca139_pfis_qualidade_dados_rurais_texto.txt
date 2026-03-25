@@ -1,0 +1,188 @@
+--- Página 1 ---
+TRIBUNAL DE CONTAS DA UNIÃO   
+PROPOSTA  DE AÇÃO  DE CONTROLE  
+ 
+Identificação  
+Proposta  nº : 3019  Data  : 28/05/2025 Responsável  técnica  : AudTI  
+Ação  de fiscalização  : 10610 - Auditoria de governança de dados sobre políticas públicas selecionadas  
+Título  : Auditoria de Qualidade de Dados na Área Ambiental  e Rural  
+Objetivo : Avaliar informações que constam das bases de dados relacionadas ao Cadastro Ambiental Rural 
+(CAR) e ao Cadastro Nacional da Agricultura Familiar (CAF), com foco na identificação de inconsistências e 
+fragilidades nos dados que possam comprometer a execução das políticas públicas da área ambiental e da 
+agricultura familiar . 
+Relator  : A SORTEAR  RELATOR  
+Instrumento  de fiscalização:  
+Auditoria  Modalidade  de fiscalização:  Natureza  Operacional  - 
+Desempenho Operacional  
+É FOC?  : NÃO  
+Integrada  com aspectos  financeiros?  : NÃO  
+Integrada  com aspectos  de conformidade?  : SIM 
+Integrada  com aspectos  operacionais?  : NÃO  
+Envolve  obra?  : NÃO  
+Objetivo  Estratégico:  Contribuir para efetividade das políticas públicas; Contribuir para responsabilidade e 
+eficiência na gestão pública  
+Diretriz : Sem vinculação  
+Tema:  
+GIR : 4 Indicador  : 
+Objetos  relacionados  
+Objetos  relacionados  : 
+Função  
+- GESTÃO AMBIENTAL  
+- ORGANIZAÇÃO AGRÁRIA  
+- AGRICULTURA  
+- CIÊNCIA E TECNOLOGIA  
+- ADMINISTRAÇÃO  
+Orgão Máximo  
+- MINISTÉRIO DA GESTÃO E DA INOVAÇÃO EM SERVIÇOS PÚBLICOS  
+- MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO – MDA  
+- MINISTÉRIO DA AGRICULTURA E PECUÁRIA  
+- MINISTÉRIO DO MEIO AMBIENTE E MUDANÇA DO CLIMA – MMA  
+- MINISTÉRIO DA CIÊNCIA, TECNOLOGIA  E INOVAÇÃO  
+Subfunção  
+- TECNOLOGIA  DA INFORMACAO  
+Órgão/Entidade  : 
+- 006071103  - Secretaria  de Governo Digital  
+- 006294861 - MINISTÉRIO DA GESTÃO E DA INOVAÇÃO EM SERVIÇOS PÚBLICOS  
+- 006294855 - MINISTÉRIO DO DESENVOLVIMENTO AGR ÁRIO E AGRICULTURA FAMILIAR  
+- 006294846 – MINISTÉRIO DA AGRICULTURA E PECUÁRIA  
+- 003072380 - MINISTÉRIO DO MEIO AMBIENTE E MUDANÇA DO CLIMA - MMA  
+- 003060180 - INSTITUTO BRASILEIRO DO MEIO AMBIENTE E DOS RECURSOS NATURAIS 
+RENOVÁVEIS - IBAMA  
+- 003001099 - INSTITUTO CHICO MENDES DE CONSERVAÇÃO DA BIODIVERSIDADE – ICMBIO  
+- 001043519 – INSTITUTO NACIONAL DE PESQUISAS ESPACIAIS  
+- 003001064  - SERVIÇO FLORESTAL BRASILEIRO - SFB/MMA  
+Planejamento  
+HD planejamento: 40HD HD execução:  
+96HD HD relatório: 4 0HD HD total  da proposta:  
+176HD 
+Custo  total  de HD da  proposta: R$475.000,00  
+Detalhamento  das diárias:  
+Viagem  a Brasília  durante a fase de planejamento e outra 
+durante a fase de execução.   
+QTD  diárias:  20 Custo estimado de 
+diárias:  R$20.000,00  
+Detalhamento  das passagens:  
+Cuiabá  - Brasília  - Cuiabá  (duas  ou três vezes)  Custo estimado de 
+passagens: R$5.000,00  
+Detalhamento  dos treinamentos  necessários  (externos  ou contratados):  
+ Custo estimado de 
+treinamentos: R$ 
+0,00 
+Detalhamento  de outros  custos:  
+Não haverá  outros  custos  Outros  custos:  R$0,00  
+Custo  total  estimado  da ação  de controle: R$ 500.000,00  
+
+--- Página 2 ---
+TRIBUNAL DE CONTAS DA UNIÃO   
+Critérios  utilizados  para  proposição  
+Risco  : 
+ 
+O CAR, sob gestão do  Ministério da Gestão e da Inovação em Serviços Públicos  (MGI), consolida informações 
+georreferenciadas de todos os imóveis rurais, conforme o Código Florestal, e é crucial para licenciamento, 
+monitoramento de desmatamento e regularização ambiental. Por sua vez, o CAF, gerido pelo Ministério do 
+Desenvolvimento Agrári o e Agricultura Familiar (MDA), identifica e qualifica agricultores familiares, habilitando -
+os a programas como o PRONAF e outras políticas de inclusão produtiva.  
+ 
+Esses cadastros são centrais p ara duas políticas públicas estratégicas e interdependentes: o combate ao 
+desmatamento e o fomento à agricultura familiar. Juntas, essas bases concentram mais de sete milhões de 
+registrosi e alavancam cerca de R$ 70 bilhões anuais em crédito rural e incentivosii. 
+Nesse contexto, a qualidade dos dados nesses cadastros – abrangendo dimensões como exatidão, 
+completude, consistência e atualidade – é um fator crítico para o sucesso das políticas públicas. No entanto, 
+dificuldades associadas à qualidade de dados são prob lemas antigos e persistentes na APF, figurando na Lista 
+de Alto Risco do TCU devido ao impacto negativo na execução das políticas, sob o tema “Governança e gestão 
+de dados governamentais”.  
+Essas deficiências se manifestam em riscos específicos, como inconsistências em dados geoespaciais no CAR 
+devido à ausência de validação cruzada, levando a licenças imprecisas; incompletude de atributos essenciais 
+que comprometem análises de elegibilidade;  obsolescência de informações pela falta de rotinas de atualização; 
+e carência de interoperabilidade entre CAR e CAF, dificultando ações conjuntas. Adicionalmente, falhas de 
+segurança e conformidade com a LGPD expõem dados pessoais sensíveis a violações.  
+Este quadro de vulnerabilidades é exacerbado e, em certa medida, autodeclarado pelos próprios órgãos 
+gestores. Conforme evidenciado no iGovSisp 2024, instituições centrais como MMA, Ibama, ICMBio, SFB e 
+MDA autoavaliaram -se predominantemente nos níveis 'Nã o Iniciado' ou 'Iniciado' na questão específica sobre 
+'Dimensões da Qualidade de Dados', reconhecendo internamente as deficiências e sinalizando um potencial 
+retorno  a iniciativas de melhoria.  
+ 
+Oportunidade  :  
+A fiscalização é particularmente oportuna devido à convergência de fatores favoráveis no curto prazo:  
+• Avanços tecnológicos:  O lançamento recente do CAF 3.0 em março de 2025iii e a expansão de IA 
+em monitoramento ambiental (ex: SisMOM) criam forte demanda por dados íntegros.  
+• Marco institucional e receptividade:  Iniciativas da SGD/MGI para governança de dados , como a 
+Portaria – SGD/MGI  6.618/24 – Estratégia Federal de Governo Digital  (EFGD ) e a futur a Política 
+Nacional  de Governança de Dados  (portaria em minuta)  abrem uma janela para melhorias em bases 
+críticas (CAR, CAF). Além disso , o recente autodiagnóstico dos órgãos ambientais (MMA, Ibama, etc., 
+no iGovSisp 2024), onde se autoavaliaram com baixa qualidade de dados ("Não Iniciado"/"Iniciado"), 
+reconhecendo deficiências, sinaliza conscientização e potencial receptividade a melhorias.  
+• Contexto político -social:  Debates no Congresso sobre CAR e transparência do gasto agrícola 
+aumentam a visibilidade e a expectativa por respostas.  
+• Realização da COP 30 no Pará em 2025:  A Conferência das Nações Unidas sobre Mudança do Clima 
+(COP 30), que será sediada no Brasil, no estado do Pará, em 2025, traz uma oportunidade única para 
+o país demonstrar avanços concretos em governança ambiental e gestão de dados. A visibilidade 
+internac ional do evento aumenta a pressão por resultados efetivos e pela adoção de boas práticas, 
+especialmente em áreas estratégicas como o combate ao desmatamento e o fomento à agricultura 
+sustentável.  
+ 
+Assim, a realização da auditoria no presente momento permite catalisar a atenção interna e externa, 
+acelerando a adoção de boas práticas antes que novos investimentos consolidem sistemas com dados 
+deficientes. Assim, maximiza -se a probabilidade de implementação das recomendações , potencializando a 
+eficiência e o valor de projetos estratégicos.  
+
+--- Página 3 ---
+TRIBUNAL DE CONTAS DA UNIÃO   
+ 
+Materialidade:  
+O tema revela materialidade expressiva sob múltiplas dimensões. Do ponto de vista financeiro, os dados que 
+alimentam o Plano Safra – agora na ordem de cerca de R$ 7 0 bilhões anuais apenas para a agricultura familiar 
+– orientam milhões de operações de crédito subsidiado; qualquer distorção quantitativa ou qualitativa 
+compromete tanto a eficiência do gasto público quanto a justiça distributiva dessas transferências. No mesmo 
+sentido, falhas de qualidade no Cadastro Ambiental Rural, que já reúne mais de seis milhões de imóveis rurais 
+inscritos, repercutem em perda de arrecadação de multas a mbientais, aumento de litígios e retrabalho na 
+regularização fundiária, implicando custos administrativos adicionais e potencial desperdício de recursos.  
+A materialidade socioambiental é ainda mais sensível: dados imprecisos ou incompletos dificultam o 
+monitoramento de desmatamento em todos os seis biomas brasileiros, retardam ações de recuperação de 
+áreas degradadas e, em última instância, ameaçam compromi ssos internacionais do País em clima e 
+biodiversidade. Ademais, a qualidade de informações sobre beneficiários da agricultura familiar influencia 
+diretamente a segurança alimentar de populações vulneráveis e a efetividade de políticas de assistência 
+técnic a ou seguro agrícola. Assim, a robustez desses dados é requisito fundamental à integridade das políticas 
+públicas, ao desempenho das organizações fiscalizadas e à confiança da sociedade nos resultados entregues 
+pelo Estado.  
+ 
+ 
+Relevância :  
+ 
+Ao avaliar as informações  que sustentam programas críticos nas áreas ambiental e da agricultura familiar, o 
+TCU atua sobre um ponto de alavancagem sistêmico: dados confiáveis são pré -condição para decisões mais 
+assertivas, para a adequada prestação de contas e para a concretização  de resultados sociais previstos no 
+Plano Plurianual federal e nos compromissos internacionais assumidos pelo Brasil em matéria de clima, 
+biodiversidade e segurança alimentar. Ao mesmo tempo, a auditoria dialoga com a Estratégia F ederal de 
+Governo Digital 2024 -2027, que estabelece a gestão de dados como eixo estruturante da transformação digital 
+do Estado, reforçando a relevância institucional da iniciativa.  
+ 
+Além disso, os resultados  dessa fiscalização têm potencial de irradiar benefícios para além das entidades 
+examinadas. Recomendações e boas práticas que promovam a melhoria das bases  de dados poderão ser 
+adotadas por todo o ecossistema de órgãos que operam sistemas transversais — como o Cadastro Ambiental 
+Rural (CAR) e o Cadastro Nacional da Agricultura Familiar (CAF) — fomentando maior interoperabilidade, 
+transparência e confiança social. Com dados mais íntegros e tempestivos, espera- se aprimorar a focalização 
+de programas como o PRONAF, incrementar a efetividade da fiscalização ambiental e proporcionar ao cidadão 
+acesso a informações públicas mais fidedi gnas, fortalecendo o controle social e a legitimidade das políticas 
+públicas.  
+ 
+ 
+Retorno ou benefício(s) esperado(s):  
+• Redução de concessões indevidas, garantindo maior justiça na distribuição de recursos.  
+• Simplificação do acesso a serviços públicos, com redução de burocracia e maior agilidade.  
+• Aumento da transparência e do controle social, com dados mais acessíveis e confiáveis.  
+• Inclusão de mais agricultores familiares legítimos em programas de apoio.  
+• Preservação ambiental e proteção dos biomas brasileiros, beneficiando a sociedade como um todo.  
+• Maior segurança e privacidade dos dados pessoais dos cidadãos.  
+• Facilitação do acesso a crédito e incentivos para agricultores familiares.  
+ 
+ 
+ 
+i https://www.cnabrasil.org.br/noticias/cna- debate- desafios -do-car-e-do-georreferenciamento- de-imoveis -
+rurais?utm_source=chatgpt.com  
+ 
+ii https://agenciagov.ebc.com.br/noticias/202407/com- reducao- de-juros -para- alimentos -basicos -plano- safra- da-
+agricultura- familiar -tem-recorde- de-r-76-bilhoes -no-credito- rural 
+ 
+iii https://www.sistemafaep.org.br/cadastro- nacional -da-agricultura- familiar -passa- por-
+atualizacao/?utm_source=chatgpt.com  

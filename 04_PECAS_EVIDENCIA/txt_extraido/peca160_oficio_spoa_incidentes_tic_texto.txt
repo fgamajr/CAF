@@ -1,0 +1,712 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA EXECUTIVA
+SUBSECRETARIA DE PLANEJAMENTO, ORÇAMENTO E ADMINISTRAÇÃO
+          
+OFÍCIO - MDA Nº 154/2024/SPOA - MDA/MDA
+Brasília, 20 de fevereiro de 2024.
+Ao Senhor
+CAMILO MUSSI
+Subsecretário de Tecnologia da Informação
+Ministério da Agricultura e Pecuária (MAPA)
+ 
+ 
+Assunto: Incidentes Infraestrutura e Ações de Tecnologia da Informação e
+Comunicação (TIC).
+ 
+Senhor Subsecretário, 
+ 
+1
+.
+Cumprimentando-a, sirvo-me do presente documento para solicitar os
+bons préstimos no sentido de apoiar este Ministério do Desenvolvimento Agrário e
+Agricultura Familiar (MDA) veriﬁcando os fatos descritos e apoiando com as devidas
+soluções pertinentes.
+2
+.
+Sendo assim, o presente relatório tem como objetivo relatar uma série
+de problemas operacionais enfrentados pelo Ministério do MDA em diferentes áreas
+de seu ambiente tecnológico. Cada incidente e/ou ações Tecnologia da Informação e
+Comunicação (TIC) serão detalhados, incluindo sua origem, impacto e sugestões de
+ações técnicas necessárias para saneamento:​
+ 
+2
+.
+1
+.
+Incidente 1: 
+Sistema CAF 2.0 Inoperante
+ 
+2
+.
+1
+.
+1
+.
+Contextualização: 
+2
+.
+1
+.
+2
+.
+No dia 21/09/2023, o sistema CAF (Cadastro de Agricultores Familiares),
+hospedado no ambiente tecnológico do Ministério da Agricultura e Pecuária (MAPA)
+e utilizado pelo MDA, tornou-se inoperante devido à manutenção do banco de dados.
+A parada abrupta do sistema impactou significativamente as operações diárias. 
+ 
+2
+.
+1
+.
+3
+.
+Causa: 
+2
+.
+1
+.
+4
+.
+Manutenção do banco de dados realizado na madrugada do mesmo dia.
+Contudo, o MDA não foi previamente informado sobre essa intervenção. 
+ 
+2
+.
+1
+.
+5
+.
+Recomendações: 
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.
+
+--- Página 2 ---
+2
+.
+1
+.
+6
+.
+Estabelecer um protocolo de comunicação entre os setores de TIC do
+MAPA e do MDA para futuras manutenções críticas;
+2
+.
+1
+.
+7
+.
+Implementar procedimentos de contingência para minimizar impactos
+em casos semelhantes; e
+2
+.
+1
+.
+8
+.
+Maior transparência das ações realizadas e daquelas, que ainda serão
+realizadas.
+ 
+2
+.
+2
+.
+Incidente 2: 
+Migração 
+Office
+ 365 não comunicada 
+ 
+2
+.
+2
+.
+1
+.
+Contextualização: 
+2
+.
+2
+.
+2
+.
+Entre os dias 02/11/2023 e 05/11/2023, houve uma migração realizada
+pelo MAPA do ambiente 
+Google
+ para o ambiente Microsoft 
+Oﬃce 
+365. A
+Coordenação-Geral de Tecnologia da Informação (CGTI) do MDA foi informada
+apenas no final de Outubro/2023.
+ 
+2
+.
+2
+.
+3
+.
+Causa: 
+2
+.
+2
+.
+4
+.
+A comunicação da migração foi realizada sem permitir que a CGTI/MDA
+se planejasse, adequadamente, para a mudança de ambiente impactando os
+usuários do serviço. 
+ 
+2
+.
+2
+.
+5
+.
+Recomendações: 
+2
+.
+2
+.
+6
+.
+Estabelecer um protocolo de comunicação entre os setores de TIC do
+MAPA e do MDA para futuras manutenções críticas, dando maior transparência das
+ações realizadas e daquelas, que ainda serão realizadas.
+ 
+2
+.
+2
+.
+7
+.
+Incidente 3: 
+Emissão de Certiﬁcado Digital SSL para Integração do
+B-Cadastro com o CAF 3.0 
+ 
+2
+.
+2
+.
+8
+.
+Contextualização: 
+2
+.
+2
+.
+9
+.
+No dia 14/11/2023, ocorreu um problema na emissão de certiﬁcados
+necessários para a integração entre o B-Cadastro e o CAF 3.0. 
+ 
+2
+.
+2
+.
+10
+.
+Causa: 
+2
+.
+2
+.
+11
+.
+A emissão dos certiﬁcados é realizada pelo Serviço Federal de
+Processamento de Dados (SERPRO) por solicitação do MAPA. A solicitação realizada,
+inicialmente, pelo MAPA não continha especiﬁcações suﬁcientes para atender à
+demanda do MDA, o que gerou impasses na operacionalização da emissão por parte
+do SERPRO. 
+2
+.
+2
+.
+12
+.
+Até o momento, o certiﬁcado não foi emitido da forma exigida pelo
+SERPRO, sendo que isso está prejudicando o andamento das ações planejadas
+do projeto CAF 3.0.
+2
+.
+2
+.
+13
+.
+A CGTI/MDA tem insistido em obter apoio técnico e operacional do MAPA,
+até porque este órgão já emitiu esse tipo de certiﬁcado para a sua própria
+integração com o B-Cadastro, porém, somente após mais de 30 (trinta) se obteve
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.
+
+--- Página 3 ---
+um retorno claro quanto às informações a serem encaminhadas, por meio de
+contato com o SERPRO.
+ 
+2
+.
+2
+.
+14
+.
+Recomendações: 
+2
+.
+2
+.
+15
+.
+Realizar uma análise detalhada das falhas no processo de emissão de
+certificados e propor correções no fluxo; 
+2
+.
+2
+.
+16
+.
+Implementar uma Base de Conhecimento na CGTI do MDA, a ﬁm de
+reunir e disponibilizar informações e procedimentos de monitoramento contínuo
+para evitar futuros problemas; e
+2
+.
+2
+.
+17
+.
+Maior transparência das ações realizadas e daquelas, que ainda serão
+realizadas.
+ 
+2
+.
+2
+.
+18
+.
+Incidente 4: 
+Problema na Contratação de Serviço de Suporte da
+Sala Cofre – Data Center 
+ 
+2
+.
+2
+.
+19
+.
+Contextualização: 
+2
+.
+2
+.
+20
+.
+Desde Outubro/2023, a sala cofre do Data Center do MDA está sem
+garantia de serviço de suporte.
+2
+.
+2
+.
+21
+.
+Um processo de contratação desse foi iniciado pelo MAPA desde
+Abril/2024, porém ainda não foi ﬁnalizado. Cumpre ressaltar que o processo
+encontra-se sem nenhum andamento, no SEI, desde o dia 22/12/2023.
+2
+.
+2
+.
+22
+.
+Após interações entre os Integrantes Técnicos da referida contratação,
+levantou-se que o processo aguarda ﬁnalização da pesquisa de preços. Etapa esta
+que já havia sido realizada dentro do mesmo processo de contratação.
+2
+.
+2
+.
+23
+.
+ A sala cofre do Data Center do MDA permanecerá sem garantia de
+serviço de suporte até que a contratação seja finalizada. 
+ 
+2
+.
+2
+.
+24
+.
+Causa: 
+2
+.
+2
+.
+25
+.
+Não se sabe informar se houve falta de realização de processo de gestão
+de tempo quanto ao início do planejamento da referida contratação ou se em algum
+momento do processo houve falhas operacionais, que resultou no atraso da
+contratação.
+2
+.
+2
+.
+26
+.
+O MDA está sem  garantia de serviço de suporte desde Out/2023.
+ 
+2
+.
+2
+.
+27
+.
+Recomendações: 
+2
+.
+2
+.
+28
+.
+Auxiliar na resolução dos obstáculos no processo de contratação,
+respeitada a competência da equipe de contratação de cada órgão;
+2
+.
+2
+.
+29
+.
+Estabelecer um protocolo de comunicação entre os setores de TIC do
+MAPA e MDA para melhor planejamento e operacionalização das ações de
+coordenação das atividades que envolvem a sala cofre do Data Center do MDA; e
+2
+.
+2
+.
+30
+.
+Maior transparência quanto às ações decorrentes do planejamento da
+contratação.
+ 
+2
+.
+3
+.
+Incidente 5: 
+Migração dos Serviços 
+On-Premise
+ para Nuvem 
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.
+
+--- Página 4 ---
+ 
+2
+.
+3
+.
+1
+.
+Contextualização: 
+2
+.
+3
+.
+2
+.
+A migração dos serviços 
+On-Premise
+ para a Nuvem prevista para o 2º
+semestre de 2023 ainda não foi concluída, gerando riscos iminentes de perda de
+dados e interrupção dos serviços, já que o 
+Data Center
+ do MDA está sem o serviço
+de suporte e manutenção do ambiente e dos respectivos equipamentos,
+que compõem o 
+Data Center.
+ 
+2
+.
+3
+.
+3
+.
+Causas: 
+2
+.
+3
+.
+4
+.
+Ausência de contato e comunicação eﬁciente por parte da equipe de
+servidores ou colaboradores designados como ponto focal do MAPA para realizar a
+comunicação e coordenação junto ao MDA das fases de execução do serviço;
+2
+.
+3
+.
+5
+.
+Atualmente, a migração tem ocorrido por interações realizadas
+diretamente entre os colaboradores terceirizados do MAPA e a equipe da CGTI do
+MDA, sem coordenação formal dos gestores do MAPA;
+2
+.
+3
+.
+6
+.
+Conforme relatado na Nota Técnica Nº 3/2023/COORDENAÇÃO DE
+INFRAESTRUTURA (Processo SEI 55000.014124/2023-69), a qual ainda não obteve
+resposta formal por parte do MAPA até a presente data, há uma preocupação desde
+Jul/2023, quando foram identiﬁcadas diﬁculdades na execução da atividade de
+migração, já que é necessário o esforço conjunto do MAPA e do MDA;
+2
+.
+3
+.
+7
+.
+Foi informado pela empresa Hepta – atuante no MAPA e responsável pela
+implementação da migração – a necessidade de aproximadamente 10 (dez) dias
+para a efetivação  da “virada de chave” da migração - o que deixará inoperantes
+serviços críticos, como por exemplo: Extrato DAP, CAF, Garantia Safra, BANCO
+PRONAF, etc... durante esse longo período;
+2
+.
+3
+.
+8
+.
+O MDA apresentou objeções a esse prazo, devido aos impactos críticos
+nos serviços de interesse público, porém sem ainda obter uma reconsideração por
+parte do MAPA e o prazo foi reduzido para 05 (cinco) dias.
+2
+.
+3
+.
+9
+.
+O processo de migração iniciou no dia 09/02/2024 e está em
+andamento. 
+ 
+2
+.
+3
+.
+10
+.
+Recomendações: 
+2
+.
+3
+.
+11
+.
+Estabelecer um Plano de Migração, com responsabilidades bem
+definidas, cujo prazo para a implementação total da migração não ultrapasse 48h;
+2
+.
+3
+.
+12
+.
+A sugestão é que ocorra durante o ﬁnal de semana, a ﬁm de diminuir os
+impactos da inoperabilidade dos sistemas críticos durante a migração, já que a
+utilização desses sistemas é comprovadamente menor durante os finais de semana;
+2
+.
+3
+.
+13
+.
+Estabelecer um protocolo de comunicação entre os setores de TIC do
+MAPA e do MDA para evitar falhas na migração e possíveis atrasos; e
+2
+.
+3
+.
+14
+.
+Maior transparência das ações realizadas e daquelas, que ainda serão
+realizadas.
+ 
+2
+.
+4
+.
+Ação 1: 
+Aquisição de serviço de instalação, ativação, suporte e
+garantia de solução de rede de alta performance e alta disponibilidade
+ 
+2
+.
+4
+.
+1
+.
+Contextualização: 
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.
+
+--- Página 5 ---
+2
+.
+4
+.
+2
+.
+O MAPA ﬁrmou contrato com a empresa LAYER TECNOLOGIA DA
+INFORMAÇÃO LTDA, em Dezembro/2023, para contratação de serviço de instalação,
+ativação, suporte e garantia de solução de rede de alta performance e alta
+disponibilidade.
+2
+.
+4
+.
+3
+.
+Nesse sentido, a CGTI/MDA, diante da sua situação atual
+da infraestrutura de TIC deste Ministério, realizou levantamento, onde concluiu que
+os dispositivos atuais não oferecem mais o desempenho necessário para suportar as
+demandas atuais. Os usuários do MDA experimentam interrupções frequentes,
+lentidão na transmissão de dados e quedas na conectividade. Ou seja, para garantir
+a eﬁciência operacional e acompanhar as demandas de crescimento do MDA, faz-se
+necessário investir em uma infraestrutura de rede moderna.
+2
+.
+4
+.
+4
+.
+Diante disso, o MDA realizou descentralização orçamentária para o MAPA
+no valor de de 
+R$ 5.115.163,00 
+(cinco milhões, cento e quinze, cento sessenta e
+três mil reais) para compra de equipamentos e serviços necessários para
+conectividade de rede dados corporativos do MDA, visando ao melhoramento da
+infraestrutura atual.
+2
+.
+4
+.
+5
+.
+Em Janeiro/2024, a CGTI/MDA realizou reunião de alinhamento inicial
+com a empresa LAYER TECNOLOGIA DA INFORMAÇÃO LTDA, onde fora tratada a
+situação do MDA, suas respectivas necessidades e também a questão de prioridade
+de atendimento acerca das localidades do MDA, tendo em vista que a necessidade
+de 
+Switches
+ e 
+Access Point 
+em uma determinada localidade depende de vários
+fatores, incluindo o tamanho da área a ser coberta, a densidade de dispositivos e
+usuários, as demandas de largura de banda e as configurações de rede específicas.
+2
+.
+4
+.
+6
+.
+Entretanto, a empresa informou à CGTI/MDA que o MAPA abriu Ordem de
+Serviço (OS) demandando a realização de mapeamento da demanda (
+Site Survey
+)
+com base em uma ordem de prioridade estabelecida sem envolver o MDA. Ou seja,
+por exemplo, o 5º (quinto) andar do Bloco C da Esplanada dos Ministérios, que aloca
+as unidades do MDA, tais como Gabinete do Ministro (GM) e Secretaria-Executiva
+(SE), não foram consideradas na primeira entrega a ser realizada pela empresa
+LAYER.
+ 
+2
+.
+4
+.
+7
+.
+Causas: 
+2
+.
+4
+.
+8
+.
+Os usuários alocados no 5º (quinto) andar do Bloco C da Esplanada dos
+Ministérios enfrentam:
+Desempenho lento  no que se refere às capacidades de
+processamento e transferência de dados limitadas, resultando
+em rede lenta e congestionada, gerando uma experiência
+negativa e turbulenta no dia a dia desses usuários, gerando
+demora nas entregas prioritárias do Ministro;
+Reclamações frequentes do usuários com relação à instabilidade
+da conexão ou quedas de conexão intermitentes, levando a
+interrupções no serviço e frustração para os usuários;
+Cobertura Insuﬁciente de sinal 
+Wi-Fi
+ limitada, resultando em
+áreas com sinal fraco ou sem cobertura.
+ 
+2
+.
+4
+.
+9
+.
+Recomendações: 
+2
+.
+4
+.
+10
+.
+Tendo em vista que o MDA também se tornou um usuário cliente do
+referido contrato assinado entre o MAPA e a empresa LAYER, faz-se necessário que
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.
+
+--- Página 6 ---
+este Ministério, por meio da CGTI/MDA, participe das decisões acerca do processo de
+levantamento, priorização e aprovação do projeto de mapeamento da necessidade.
+ 
+3
+.
+Cumpre ressaltar que este relatório destaca a urgência em solucionar os
+problemas operacionais identiﬁcados no ambiente tecnológico do MDA, sendo que a
+implementação das recomendações propostas é imprescindível para estabelecer a
+resiliência e eﬁciência das atividades do MDA, garantindo a continuidade
+operacional do Ministério. 
+4
+.
+Certo de sua atenção, agradeço-lhe a parceria e a cooperação na
+implementação das ações de TIC, que envolvem este Ministério.
+5
+.
+ Nesse sentido, encaminha-se à Subsecretária de Tecnologia da
+Informação (STI) para análise e devidas providências.
+ 
+                          Atenciosamente, 
+ 
+DIEGO DONIZETTI GONÇALVES MACHADO
+Subsecretário de Planejamento, Orçamento e Administração (SPOA)
+Documento assinado eletronicamente por 
+Diego Donizetti Goncalves
+Machado
+, 
+Subsecretário de Planejamento, Orçamento e Administração
+,
+em 20/02/2024, às 15:09, conforme horário oficial de Brasília, com fundamento no
+art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+33628883
+ e o código CRC 
+ED805574
+.
+ 
+ 
+Referência:
+ Processo nº 55000.002591/2024-27
+SEI nº 33628883
+Ofício - MDA 154 (33628883)         SEI 55000.002591/2024-27 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990627.

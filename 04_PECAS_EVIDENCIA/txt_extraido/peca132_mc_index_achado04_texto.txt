@@ -1,0 +1,329 @@
+--- Página 1 ---
+Índice de Memórias de Cálculo
+Achado 4 - Incompletude do Dicionário de Dados
+CAF
+Equipe de Auditoria Operacional – TCU
+15 de novembro de 2025
+Informações do Documento
+Achado: Achado 4 - Incompletude e baixa qualidade do Dicionário de Dados do Sistema
+CAF
+Total de MCs: 23 memórias de cálculo
+Distribuição: 5 PTs×(4 a 7 MCs cada)
+Data:15 de novembro de 2025
+Versão: 2.0
+
+--- Página 2 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+Sumário
+1 Visão Geral 3
+1.1 Estrutura de Numeração . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Resumo Consolidado . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 PT-A04-01: Análise de Cobertura 4
+2.1 MC-A04-01: Total de Tabelas no Banco . . . . . . . . . . . . . . . . . . . . . . . 4
+2.2 MC-A04-02: Total de Tabelas Documentadas . . . . . . . . . . . . . . . . . . . . 4
+2.3 MC-A04-03: Tabelas Não Documentadas . . . . . . . . . . . . . . . . . . . . . . . 4
+2.4 MC-A04-04: Déficit Percentual . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 PT-A04-02: Análise de Qualidade Semântica 5
+3.1 MC-A04-10: Total de Campos Analisados . . . . . . . . . . . . . . . . . . . . . . 5
+3.2 MC-A04-11: Campos Tautológicos . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.3 MC-A04-12: Campos Genéricos . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.4 MC-A04-13: Campos Técnicos . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.5 MC-A04-14: Campos Funcionais (Adequados) . . . . . . . . . . . . . . . . . . . . 6
+3.6 MC-A04-15: Total de Campos Inadequados . . . . . . . . . . . . . . . . . . . . . 6
+3.7 MC-A04-16: Percentual de Inadequação . . . . . . . . . . . . . . . . . . . . . . . 6
+4 PT-A04-03: Análise de Foreign Keys 6
+4.1 MC-A04-20: Total de Foreign Keys . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+4.2 MC-A04-21: FKs Documentadas . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4.3 MC-A04-22: FKs Não Documentadas . . . . . . . . . . . . . . . . . . . . . . . . 7
+4.4 MC-A04-23: Percentual de FKs Não Documentadas . . . . . . . . . . . . . . . . 7
+5 PT-A04-04: Análise de Unidades de Medida 7
+5.1 MC-A04-30: Total de Campos Numéricos . . . . . . . . . . . . . . . . . . . . . . 7
+5.2 MC-A04-31: Campos com Unidade Documentada . . . . . . . . . . . . . . . . . . 8
+5.3 MC-A04-32: Campos Sem Unidade Documentada . . . . . . . . . . . . . . . . . . 8
+5.4 MC-A04-33: Percentual Sem Unidade . . . . . . . . . . . . . . . . . . . . . . . . 8
+6 PT-A04-05: Análise de Ambiguidade Temporal 8
+6.1 MC-A04-40: Total de Campos Temporais . . . . . . . . . . . . . . . . . . . . . . 8
+6.2 MC-A04-41: Campos com Ambiguidade . . . . . . . . . . . . . . . . . . . . . . . 9
+6.3 MC-A04-42: Grupos de Descrições Idênticas . . . . . . . . . . . . . . . . . . . . . 9
+6.4 MC-A04-43: Percentual de Ambiguidade . . . . . . . . . . . . . . . . . . . . . . . 9
+6.5 MC-A04-44: Casos de Gravidade Alta . . . . . . . . . . . . . . . . . . . . . . . . 9
+7 Rastreabilidade Completa 9
+7.1 Arquivos Relacionados . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+7.1.1 Scripts Python (Evidências Primárias) . . . . . . . . . . . . . . . . . . . . 10
+7.1.2 CSVs (Resultados Completos) . . . . . . . . . . . . . . . . . . . . . . . . . 10
+7.1.3 Papéis de Trabalho (PDFs) . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+2
+
+--- Página 3 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+1 Visão Geral
+Este documento consolida todas as memórias de cálculo (MCs) utilizadas para fundamentar
+as métricas quantitativas apresentadas na Seção II do Achado 4. Cada MC está vinculada a
+um Papel de Trabalho (PT) específico que contém metodologia completa, scripts de análise e
+evidências.
+1.1 Estrutura de Numeração
+•MC-A04-01 a MC-A04-04: Análise de Cobertura (PT-A04-01)
+•MC-A04-10 a MC-A04-16: Análise de Qualidade Semântica (PT-A04-02)
+•MC-A04-20 a MC-A04-23: Análise de Foreign Keys (PT-A04-03)
+•MC-A04-30 a MC-A04-33: Análise de Unidades de Medida (PT-A04-04)
+•MC-A04-40 a MC-A04-44: Análise de Ambiguidade Temporal (PT-A04-05)
+1.2 Resumo Consolidado
+MC Descrição Valor PT Fonte
+MC-A04-01 Total tabelas no banco 109 PT-A04-01
+MC-A04-02 Tabelas documentadas 93 PT-A04-01
+MC-A04-03 Tabelas não documentadas 16PT-A04-01
+MC-A04-04 Déficit percentual 14,7% PT-A04-01
+MC-A04-10 Total campos analisados 527 PT-A04-02
+MC-A04-11 Campos tautológicos 296 PT-A04-02
+MC-A04-12 Campos genéricos 181 PT-A04-02
+MC-A04-13 Campos técnicos 19 PT-A04-02
+MC-A04-14 Campos funcionais 31 PT-A04-02
+MC-A04-15 Campos inadequados 496PT-A04-02
+MC-A04-16 Percentual inadequação 94,1% PT-A04-02
+MC-A04-20 Total FKs identificadas 146 PT-A04-03
+MC-A04-21 FKs documentadas 72 PT-A04-03
+MC-A04-22 FKs não documentadas 74PT-A04-03
+MC-A04-23 % FKs não documentadas 50,7% PT-A04-03
+MC-A04-30 Total campos numéricos 125 PT-A04-04
+MC-A04-31 Campos com unidade 20 PT-A04-04
+MC-A04-32 Campos sem unidade 105PT-A04-04
+MC-A04-33 % sem unidade 84,0% PT-A04-04
+MC-A04-40 Total campos temporais 87 PT-A04-05
+MC-A04-41 Campos com ambiguidade 80PT-A04-05
+MC-A04-42 Grupos descrições idênticas 0 PT-A04-05
+MC-A04-43 % ambíguos 92,0% PT-A04-05
+MC-A04-44 Casos gravidade Alta 59 PT-A04-05
+Tabela 1: Resumo de Todas as Memórias de Cálculo
+3
+
+--- Página 4 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+2 PT-A04-01: Análise de Cobertura
+Informações do PT-A04-01
+Arquivo: pt_achado04_cobertura_dicionario.pdf (8 páginas, 258KB)
+Questão: O dicionário possui cobertura completa de todas as tabelas?
+2.1 MC-A04-01: Total de Tabelas no Banco
+Descrição: Contagem total de tabelas base no schema caf_mapa
+Método: Consulta SQL ao information_schema.tables
+Valor: 109 tabelas
+Evidência: Seção 3.1 do PT-A04-01, página 4
+Script: consultar_tabelas_producao.py (linhas 15-25)
+2.2 MC-A04-02: Total de Tabelas Documentadas
+Descrição: Tabelas presentes no arquivo CSV do dicionário
+Método: Parse do CSV identificando cabeçalhos de tabela
+Valor: 93 tabelas
+Evidência: Seção 3.2 do PT-A04-01, página 4
+Script: consultar_tabelas_producao.py (linhas 40-55)
+2.3 MC-A04-03: Tabelas Não Documentadas
+Descrição: Diferença entre total no banco e total documentado
+Fórmula: naoDocumentadas = totalTabelasDB - totalTabelasDict
+Cálculo: 109−93 = 16
+Valor: 16 tabelas não documentadas
+Evidência: Tabela 2 do PT-A04-01, página 5 (lista completa)
+2.4 MC-A04-04: Déficit Percentual
+Descrição: Percentual de tabelas não documentadas
+Fórmula: deficitPercentual = (naoDocumentadas / totalTabelasDB) ×100
+Cálculo: (16/109)×100 = 14 ,68%(arredondado para 14,7%)
+Valor: 14,7%
+Evidência: Seção 3.3 do PT-A04-01, página 5
+Ref. Seção II: Parágrafo 13, linha 21
+4
+
+--- Página 5 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+3 PT-A04-02: Análise de Qualidade Semântica
+Informações do PT-A04-02
+Arquivo: pt_achado04_qualidade_semantica.pdf (43 páginas, 409KB)
+Questão: As descrições fornecem significado de negócio ou são tautológicas?
+3.1 MC-A04-10: Total de Campos Analisados
+Descrição: Contagem total de campos documentados no dicionário
+Método: Parse censitário do CSV (100% dos campos)
+Valor: 527 campos
+Evidência: Seção 3.1 do PT-A04-02, página 4
+Script: analisar_qualidade_semantica.py (linha 189)
+3.2 MC-A04-11: Campos Tautológicos
+Descrição: Campos cuja descrição apenas traduz o nome técnico
+Método: Classificação automatizada + critérios ISO/IEC 11179
+Exemplos: dt_criacao →“Data criação”
+Valor: 296 campos
+Evidência: Tabela 3 do PT-A04-02 | Anexo C
+Script: analisar_qualidade_semantica.py (linhas 45-65)
+3.3 MC-A04-12: Campos Genéricos
+Descrição: Campos com descrição vaga ou incompleta
+Método: Classificação automatizada (descrições ≤4 palavras)
+Exemplos: nr_area→“Tamanho da área imóvel” (sem unidade)
+Valor: 181 campos
+Evidência: Tabela 3 do PT-A04-02 | Anexo C
+Script: analisar_qualidade_semantica.py (linhas 80-90)
+3.4 MC-A04-13: Campos Técnicos
+Descrição: Campos que informam valores mas não significado de negócio
+Método: Classificação automatizada (menção de status sem contexto)
+Exemplos: st_ativo →“Situação ativo ou inativo”
+Valor: 19 campos
+Evidência: Tabela 3 do PT-A04-02 | Anexo C
+Script: analisar_qualidade_semantica.py (linhas 70-78)
+5
+
+--- Página 6 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+3.5 MC-A04-14: Campos Funcionais (Adequados)
+Descrição: Campos com descrição que explica propósito e contexto
+Método: Classificação automatizada (descrição inicia com “Se”)
+Exemplos: st_imovel_principal →“Se é o imóvel principal da unidade familiar”
+Valor: 31 campos
+Evidência: Tabela 3 do PT-A04-02 | Anexo C
+Script: analisar_qualidade_semantica.py (linhas 38-43)
+3.6 MC-A04-15: Total de Campos Inadequados
+Descrição: Soma de Tautológicos + Genéricos + Técnicos
+Fórmula: inadequados = tautologicos + genericos + tecnicos
+Cálculo: 296 + 181 + 19 = 496
+Valor: 496 campos inadequados
+Evidência: Seção 3.2 do PT-A04-02, página 7
+3.7 MC-A04-16: Percentual de Inadequação
+Descrição: Percentual de campos com descrições inadequadas
+Fórmula: pctInadequado = (inadequados / totalCampos) ×100
+Cálculo: (496/527)×100 = 94 ,12%(arredondado para 94,1%)
+Valor: 94,1%
+Evidência: Seção 3.2 do PT-A04-02, página 7
+Ref. Seção II: Parágrafos 11 e 15, Tabela 10
+4 PT-A04-03: Análise de Foreign Keys
+Informações do PT-A04-03
+Arquivo: pt_achado04_foreign_keys.pdf (13 páginas, 337KB)
+Questão: Os campos FK documentam as tabelas que referenciam?
+4.1 MC-A04-20: Total de Foreign Keys
+Descrição: Campos com padrão de nomenclatura FK ( id_*, alguns cd_*)
+Método: Parse do CSV identificando convenção de nomenclatura
+Valor: 146 campos FK
+Evidência: Seção 3.1 do PT-A04-03, página 5
+Script: analisar_foreign_keys.py (linhas 95-110)
+6
+
+--- Página 7 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+4.2 MC-A04-21: FKs Documentadas
+Descrição: FKs cuja descrição menciona a tabela referenciada
+Método: Análise textual automatizada
+Exemplo: id_pessoa →“ID da pessoa da tabela S_PESSOA”
+Valor: 72 campos FK documentadas
+Evidência: Seção 3.1 do PT-A04-03 | Anexo A
+Script: analisar_foreign_keys.py (linhas 50-70)
+4.3 MC-A04-22: FKs Não Documentadas
+Descrição: FKs que NÃO mencionam a tabela referenciada
+Fórmula: fksNaoDoc = totalFKs - fksDocumentadas
+Cálculo: 146−72 = 74
+Valor: 74 campos FK não documentadas
+Evidência: Seção 3.2 do PT-A04-03, páginas 6-7 | Anexo A
+Exemplo crítico: id_tipo_unidade_medida
+4.4 MC-A04-23: Percentual de FKs Não Documentadas
+Descrição: Percentual de FKs sem documentação de tabela referenciada
+Fórmula: pctNaoDoc = (fksNaoDoc / totalFKs) ×100
+Cálculo: (74/146)×100 = 50 ,68%(arredondado para 50,7%)
+Valor: 50,7%
+Evidência: Seção 3.1 do PT-A04-03, página 5
+Ref. Seção II: Parágrafo 18, Tabela 10
+5 PT-A04-04: Análise de Unidades de Medida
+Informações do PT-A04-04
+Arquivo: pt_achado04_unidades_medida.pdf (13 páginas, 283KB)
+Questão: Os campos numéricos documentam suas unidades de medida?
+5.1 MC-A04-30: Total de Campos Numéricos
+Descrição: Campos com tipos numéricos (numeric, integer, bigint, etc.)
+Método: Parse do CSV identificando tipos de dados numéricos
+Valor: 125 campos numéricos
+Evidência: Seção 3.1 do PT-A04-04, página 5
+Script: analisar_unidades_medida.py (linhas 12-15, linha 100)
+7
+
+--- Página 8 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+5.2 MC-A04-31: Campos com Unidade Documentada
+Descrição: Campos cuja descrição menciona unidade de medida
+Método: Busca textual por palavras-chave (hectare, reais, percentual, etc.)
+Exemplos: nr_latitude →“Latitude em graus decimais”
+Valor: 20 campos com unidade
+Evidência: Seção 3.1 do PT-A04-04 | Tabela 5
+Script: analisar_unidades_medida.py (linhas 18-25, 44-56)
+5.3 MC-A04-32: Campos Sem Unidade Documentada
+Descrição: Campos numéricos sem menção à unidade de medida
+Fórmula: semUnidade = totalNumericos - comUnidade
+Cálculo: 125−20 = 105
+Valor: 105 campos sem unidade
+Evidência: Seção 3.2 do PT-A04-04, páginas 6-7 | Anexo A
+Exemplo crítico: nr_area→“Tamanho da área imóvel”
+5.4 MC-A04-33: Percentual Sem Unidade
+Descrição: Percentual de campos numéricos sem unidade documentada
+Fórmula: pctSemUnidade = (semUnidade / totalNumericos) ×100
+Cálculo: (105/125)×100 = 84 ,0%
+Valor: 84,0%
+Evidência: Seção 3.1 do PT-A04-04, página 5
+Ref. Seção II: Parágrafo 19, Tabela 10
+6 PT-A04-05: Análise de Ambiguidade Temporal
+Informações do PT-A04-05
+Arquivo: pt_achado04_ambiguidade_temporal.pdf (16 páginas, 303KB)
+Questão: Os campos temporais resolvem ambiguidades semânticas?
+6.1 MC-A04-40: Total de Campos Temporais
+Descrição: Contagem de campos com tipos temporais (date, timestamp)
+Método: Parse do CSV identificando tipos de dados temporais
+Valor: 87 campos temporais
+Evidência: Seção 3.1 do PT-A04-05, página 5
+Script: analisar_ambiguidade_temporal.py (linhas 9-17)
+8
+
+--- Página 9 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+6.2 MC-A04-41: Campos com Ambiguidade
+Descrição: Campos com ambiguidades semânticas não resolvidas
+Método: Classificação em 5 categorias (Técnico vs. Negócio: 81,6%)
+Valor: 80 campos com ambiguidade
+Evidência: Seção 3.2 do PT-A04-05, página 6 | Anexo A
+Script: analisar_ambiguidade_temporal.py (linhas 60-120)
+6.3 MC-A04-42: Grupos de Descrições Idênticas
+Descrição: Grupos de campos com descrições idênticas
+Método: Agrupamento por (tabela, descrição)
+Valor: 0 grupos (nenhum caso significativo)
+Evidência: Saída do script de análise
+6.4 MC-A04-43: Percentual de Ambiguidade
+Descrição: Percentual de campos temporais ambíguos
+Fórmula: pctAmbiguos = (80 / 87) ×100
+Cálculo: (80/87)×100 = 92 ,0%
+Valor: 92,0%
+Evidência: Seção 3.1 do PT-A04-05, página 5
+Ref. Seção II: Parágrafo 20, Tabela 10
+6.5 MC-A04-44: Casos de Gravidade Alta
+Descrição: Campos com ambiguidades de gravidade Alta
+Método: Contagem de campos onde gravidade == ’Alta’
+Valor: 59 campos (67,8% do total)
+Evidência: Seção 3.3 do PT-A04-05, páginas 7-9
+Casos validados: Tabela 9 da Seção II (4 exemplos críticos)
+7 Rastreabilidade Completa
+Todas as 23 memórias de cálculo possuem:
+Descrição clara do que está sendo medido
+Metodologia explícita (manual, automatizada, ou híbrida)
+Fórmula matemática (quando aplicável)
+Valor final com precisão documentada
+Evidência primária (seção do PT + script Python)
+Referência cruzada com parágrafos da Seção II
+9
+
+--- Página 10 ---
+Índice de Memórias de Cálculo - Achado 4 TCU
+7.1 Arquivos Relacionados
+7.1.1 Scripts Python (Evidências Primárias)
+•consultar_tabelas_producao.py →MC-A04-01, MC-A04-02
+•analisar_qualidade_semantica.py →MC-A04-10 a MC-A04-16
+•analisar_foreign_keys.py →MC-A04-20 a MC-A04-23
+•analisar_unidades_medida.py →MC-A04-30 a MC-A04-33
+•analisar_ambiguidade_temporal.py →MC-A04-40 a MC-A04-44
+7.1.2 CSVs (Resultados Completos)
+•analise_semantica_completa.csv (527 linhas)
+•analise_fks_completa.csv (146 linhas)
+•analise_unidades_completa.csv (125 linhas)
+•analise_ambiguidade_completa.csv (87 linhas)
+7.1.3 Papéis de Trabalho (PDFs)
+•pt_achado04_cobertura_dicionario.pdf (8 páginas, 258KB)
+•pt_achado04_qualidade_semantica.pdf (43 páginas, 409KB)
+•pt_achado04_foreign_keys.pdf (13 páginas, 337KB)
+•pt_achado04_unidades_medida.pdf (13 páginas, 283KB)
+•pt_achado04_ambiguidade_temporal.pdf (16 páginas, 303KB)
+Documento elaborado por: Equipe de Auditoria Operacional - TCU
+Data: 15 de novembro de 2025 | Versão: 1.0 | Status: Completo e Auditável
+10

@@ -1,0 +1,173 @@
+--- Página 1 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+Secretaria-Geral de Controle Externo 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+ 
+Ofício 000.149/2025 - AudTI 
+Brasília – DF, 07/07/2025. 
+ 
+Fernanda Machiaveli 
+Secretária-Executiva do Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA) 
+ 
+c/c 
+Tatiana Freitas de Oliveira  
+Chefe da Assessoria Especial de Controle Interno do MDA 
+(envio a cargo do próprio Ministério) 
+ 
+Processo: 011.073/2025-0 Tipo do processo: RELATÓRIO DE AUDITORIA 
+Relator do processo: ANTONIO ANASTASIA 
+Unidade responsável: Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+Assunto: Requisição de informações e/ou documentos. 
+ 
+ 
+Senhora Secretária-Executiva, 
+1. Em prosseguimento aos trabalhos da auditoria em andamento nesse Ministério do 
+Desenvolvimento Agrário e Agricultura Familiar, comunicada por meio do Ofício 0132/2025-
+TCU/AudTI, informo que a equipe de fiscalização se encontra na fase de planejamento. O objetivo 
+desta auditoria é avaliar informações que constam das bases de dados relacionadas ao Cadastro 
+Ambiental Rural (CAR) e ao Cadastro Nacional da Agricultura Familiar (CAF), com foco na 
+identificação de inconsistências e fragilidades nos dados que possam comprometer a execução das 
+políticas públicas da área ambiental e da agricultura familiar. 
+2. Para a adequada execução desta etapa, que visa a compreender o ambiente tecnológico, os 
+processos de negócio e a estrutura de dados para definir o escopo detalhado da fiscalização, é 
+imprescindível obter um conjunto abrangente de documentos e informações. 
+3. Dessa forma, para subsidiar o desenvolvimento dos trabalhos, solicito, nos termos dos arts. 
+42 e 87 da Lei 8.443/92 c/c o art. 245 do Regimento Interno do TCU, sejam encaminhadas à equipe de 
+auditoria na forma indicada no expediente de requisição, no prazo de 10 (dez) dias corridos do 
+recebimento desta, as seguintes informações e/ou documentos:  
+I - Documentação da Base de Dados: 
+a) Dicionário de Dados: Completo e atualizado, contendo, para cada atributo de cada tabela da base: 
+nome da tabela, nome do campo, descrição funcional detalhada (incluindo o propósito do campo e como 
+ele é preenchido), tipo de dado, tamanho, obrigatoriedade, regras de domínio (valores válidos, formatos 
+esperados) e chaves primárias/estrangeiras. 
+b) Modelo de Entidade-Relacionamento (MER): Modelo lógico e/ou conceitual que ilustre o 
+relacionamento entre as principais entidades da base de dados. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78439839.
+
+--- Página 2 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+2 de 4 
+c) Esquema do Banco de Dados: Script .sql ou similar contendo os comandos de criação de todas as 
+estruturas (CREATE TABLE), incluindo todas as restrições (constraints) e relacionamentos. 
+d) Documento de Regras de Negócio: Documentação que detalhe as validações, cálculos, derivações e 
+verificações automáticas aplicadas aos dados, tanto na camada de aplicação quanto no banco de dados. 
+II - Documentação do Ambiente Tecnológico e Integrações: 
+a) Especificações do Ambiente: Informações sobre o Sistema de Gerenciamento de Banco de Dados 
+(SGBD) utilizado (fabricante, produto e versão), sistema operacional e outras tecnologias relevantes. 
+b) Mapeamento de Integrações: Documentação sobre as integrações do Sistema CAF com outros 
+sistemas (APIs, Web Services, processos de ETL), detalhando quais dados são trocados e a frequência. 
+III - Contatos e Informações Adicionais: 
+a) Ponto de Contato Técnico: Indicação de nome, cargo, e-mail e telefone de um ou mais servidores 
+da área técnica do MDA e do MAPA que possam atuar como ponto focal para esclarecimentos sobre a 
+documentação enviada. 
+4. Destaca-se que, devido ao prazo de resposta estabelecido, espera-se que o ministério 
+encaminhe apenas documentos e artefatos já existentes, não sendo necessária a elaboração de novos 
+materiais para responder a alguma questão específica deste ofício. 
+5. Preferencialmente, solicita-se responder às questões registrando as respostas abaixo de cada 
+questão ou subquestão, de modo a facilitar a associação entre os questionamentos formulados pela 
+equipe de auditoria e as respostas dadas pela instituição a cada item. 
+6. Em caso de indisponibilidade, inexistência ou dificuldade para obtenção de alguma das 
+informações ou documentos, solicita-se registrar formalmente o fato, no mesmo prazo. 
+7. Com o fito de agilizar os trabalhos e análises, à medida que as informações forem obtidas, 
+podem ser disponibilizadas à equipe de auditoria, não sendo necessário aguardar a consolidação da 
+totalidade das informações requeridas para posterior envio. 
+8. Por oportuno, solicita-se especial atenção às informações complementares que acompanham 
+este ofício, bem assim para a necessidade de utilizar – para resposta a comunicações e envio de 
+documentos – os serviços da plataforma Conecta-TCU ou do protocolo eletrônico, disponíveis no 
+Portal TCU ( www.tcu.gov.br ), endereço em que também é possível acessar os autos do processo. 
+9. Eventuais dúvidas podem ser direcionadas ao coordenador da equipe, Auditor Federal de 
+Controle Externo Fernando Lima Gama Júnior ( fernando.gama@tcu.gov.br ), bem como aos demais 
+membros da equipe, Auditores Federais de Controle Externo Kalenus Pires da Nóbrega 
+(kalenusnobrega@tcu.gov.br ) e Sylvio Xavier Júnior ( sylvio@tcu.gov.br ). 
+ 
+Respeitosamente, 
+Assinado eletronicamente 
+FERNANDO LIMA GAMA JÚNIOR 
+Coordenador de auditoria 
+  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78439839.
+
+--- Página 3 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+3 de 4 
+INFORMAÇÕES COMPLEMENTARES 
+1) O acesso ao processo indicado nesta comunicação pode ser realizado por meio da plataforma de 
+serviços digitais Conecta-TCU, disponível no Portal TCU ( www.tcu.gov.br ). A visualização de 
+processos e documentos sigilosos depende de solicitação formal e posterior autorização do relator. 
+Informações detalhadas sobre o uso da plataforma, inclusive para fins de cadastro e credenciamento, 
+podem ser consultadas ao acionar o ícone “Conecta-TCU” do Portal TCU. 
+2) O envio de documentos e informações deve observar as seguintes orientações: 
+a) indicar, com destaque, o número do processo e deste ofício; 
+b) utilizar dos serviços da plataforma digital Conecta-TCU ou do protocolo eletrônico disponíveis 
+no Portal TCU. 
+3) A informação classificada na origem com restrição de acesso deve ser acompanhada dos seguintes 
+elementos, consoante a Lei de Acesso à Informação (Lei nº 12.527, de 18 de novembro de 2011), caso 
+contrário será considerada de acesso público pelo Tribunal:  
+a) indicação objetiva da hipótese de restrição de acesso: informação imprescindível à segurança 
+da sociedade ou do Estado; informação com sigilo atribuído por legislação específica; 
+informação pessoal relativa à intimidade, vida privada, honra e imagem; 
+b) na hipótese de informação imprescindível à segurança da sociedade ou do Estado, indicar:  
+b.1) o grau de sigilo da classificação (reservado, secreto ou ultrassecreto); 
+b.2) o fundamento legal da classificação; 
+b.3) o prazo de restrição de acesso ou o evento que defina o termo final; 
+b.4) o assunto sobre o qual versa a informação.  
+c) na hipótese de informação com sigilo atribuído por legislação específica, indicar o fundamento 
+legal da classificação;  
+d) na hipótese de informação pessoal relativa à intimidade, vida privada, honra e imagem, indicar 
+o prazo de restrição de acesso e a pessoa a que se refere. 
+ 
+Respeitosamente, 
+O nome e o cargo serão preenchidos automaticamente quando do uso da operação "Enviar ofício de 
+requisição". Não acrescentar ao modelo essas informações. Esse texto deve ser excluído do modelo. 
+Assinado eletronicamente 
+FERNANDO LIMA GAMA JÚNIOR 
+Coordenador de auditoria 
+  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78439839.
+
+--- Página 4 ---
+ 
+ 
+ 
+Tribunal de Contas da União 
+ 
+4 de 4 
+INFORMAÇÕES COMPLEMENTARES 
+1) O acesso ao processo indicado nesta comunicação pode ser realizado por meio da plataforma de 
+serviços digitais Conecta-TCU, disponível no Portal TCU ( www.tcu.gov.br ). A visualização de processos 
+e documentos sigilosos depende de solicitação formal e posterior autorização do relator. Informações 
+detalhadas sobre o uso da plataforma, inclusive para fins de cadastro e credenciamento, podem ser 
+consultadas ao acionar o ícone “Conecta-TCU” do Portal TCU. 
+2) O envio de documentos e informações deve observar as seguintes orientações: 
+c) indicar, com destaque, o número do processo e deste ofício; 
+d) utilizar dos serviços da plataforma digital Conecta-TCU ou do protocolo eletrônico disponíveis 
+no Portal TCU. 
+3) A informação classificada na origem com restrição de acesso deve ser acompanhada dos seguintes 
+elementos, consoante a Lei de Acesso à Informação (Lei nº 12.527, de 18 de novembro de 2011), caso 
+contrário será considerada de acesso público pelo Tribunal:  
+a) indicação objetiva da hipótese de restrição de acesso: informação imprescindível à segurança 
+da sociedade ou do Estado; informação com sigilo atribuído por legislação específica; 
+informação pessoal relativa à intimidade, vida privada, honra e imagem; 
+b) na hipótese de informação imprescindível à segurança da sociedade ou do Estado, indicar:  
+b.1) o grau de sigilo da classificação (reservado, secreto ou ultrassecreto); 
+b.2) o fundamento legal da classificação; 
+b.3) o prazo de restrição de acesso ou o evento que defina o termo final; 
+b.4) o assunto sobre o qual versa a informação.  
+c) na hipótese de informação com sigilo atribuído por legislação específica, indicar o fundamento 
+legal da classificação;  
+d) na hipótese de informação pessoal relativa à intimidade, vida privada, honra e imagem, indicar 
+o prazo de restrição de acesso e a pessoa a que se refere. 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78439839.

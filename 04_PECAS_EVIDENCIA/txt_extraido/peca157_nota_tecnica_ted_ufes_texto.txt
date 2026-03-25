@@ -1,0 +1,591 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA DE AGRICULTURA FAMILIAR E AGROECOLOGIA
+DEPARTAMENTO DE CADASTRO NACIONAL DA AGRICULTURA FAMILIAR
+COORDENAÇÃO-GERAL DO CADASTRO NACIONAL DA AGRICULTURA FAMILIAR
+NOTA TÉCNICA Nº 27/2025/CGMCAF-MDA/MDA
+PROCESSO Nº 55000.019435/2025-86
+INTERESSADO: DEPARTAMENTO DE CADASTRO NACIONAL DA AGRICULTURA
+FAMILIAR, SECRETARIA DE AGRICULTURA FAMILIAR E AGROECOLOGIA
+1
+.
+ASSUNTO
+1
+.
+1
+.
+Termo de Execução Descentralizada, para o desenvolvimento de ações
+de formação no âmbito do Plano de Formação do Cadastro Nacional da Agricultura
+Familiar.
+2
+.
+REFERÊNCIAS
+2
+.
+1
+.
+Lei Nº 11.326, de 24
+ d
+e
+ julho de 2006.
+2
+.
+2
+.
+Decreto Nº 9.064, de 31 de maio de 2017.
+2
+.
+3
+.
+Decreto Nº 11.396, de 21 de janeiro de 2023.
+2
+.
+4
+.
+Portaria MDA nº 19, de 21 de março de 2025.
+2
+.
+5
+.
+Portaria MDA nº 20, de 21 de março de 2025.
+3
+.
+SUMÁRIO EXECUTIVO
+3
+.
+1
+.
+A Nota Técnica analisa a celebração de Termo de Execução
+Descentralizada (TED) entre o MDA e a UFES para execução do Plano de Formação
+do Cadastro Nacional da Agricultura Familiar (CAF), instrumento central de
+identiﬁcação da agricultura familiar sob gestão do DCAF. Dada a relevância do CAF
+para mais de 20 políticas públicas e os desaﬁos de expansão territorial, qualiﬁcação
+da RedeCAF, integração tecnológica e melhoria da qualidade cadastral, o Plano
+organiza-se em quatro metas: produção de conteúdos formativos; implementação de
+plataformas digitais e certiﬁcação; realização de atividades presenciais, híbridas e
+remotas; e estruturação de equipe e gestão do TED, abrangendo emissores,
+responsáveis técnicos, agentes públicos e parceiros institucionais. Com valor global
+de R$ 7.997.588,24, executado em três parcelas com recursos da Ação
+21.608.1191.210V.0009 (PO 0009 – CAF), a iniciativa está alinhada às competências
+do DCAF, é tecnicamente adequada para execução pela UFES e não incorre nas
+vedações do Decreto nº 10.426/2020, recomendando-se o prosseguimento para
+formalização do TED.
+4
+.
+ANÁLISE
+4
+.
+1
+.
+A Lei nº 11.326, de 24 de julho de 2005, que institui as diretrizes para a
+Política Nacional da Agricultura Familiar e Empreendimentos Familiares Rurais,
+consolidou o reconhecimento da agricultura familiar como segmento estratégico
+para o desenvolvimento rural sustentável. A regulamentação dessa lei, por meio do
+Decreto nº 9.064, de 31 de maio de 2017, estabeleceu o Cadastro Nacional da
+Agricultura Familiar (CAF) como instrumento central para identiﬁcação e qualiﬁcação
+da Unidade Familiar de Produção Agrária (UFPA), dos empreendimentos familiares
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 2 ---
+rurais e suas formas associativas de organização.
+4
+.
+2
+.
+O CAF substituiu a Declaração de Aptidão ao Pronaf (DAP) como
+documento de comprovação do enquadramento da agricultura familiar para ﬁns de
+acesso às políticas públicas federais. Sua gestão está sob a responsabilidade do
+Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA), por meio da
+Secretaria de Agricultura Familiar e Agroecologia (SAF), com coordenação direta do
+Departamento de Cadastro Nacional da Agricultura Familiar (DCAF).
+4
+.
+3
+.
+Diante da relevância estratégica do CAF como porta de entrada para
+mais de 20 políticas públicas federais voltadas à agricultura familiar, e considerando
+os desaﬁos crescentes de gestão, expansão territorial, integração tecnológica e
+garantia da qualidade das informações cadastrais, foi elaborada a estratégia de
+Formação do Cadastro Nacional da Agricultura Familiar, estruturada em três eixos
+de atuação: formação e atualização formativa contínua aos técnicos credenciadores,
+vinculados às unidades operacionais e unidades administrativas operacionais das
+divisões de rede da Rede CAF; formação de multiplicadores do CAF, com a ﬁnalidade
+de garantir a formação de técnicos capazes de auxiliar, por meio de atividades de
+multiplicação de formação às entidades habilitadas à realizar a inscrição no CAF; e a
+formação de difusores do CAF, que tem por objetivo difundir informações sobre o
+CAF em nível nacional.
+4
+.
+4
+.
+Sobre o tamanho, a heterogeneidade e os desaﬁos estruturais
+da Rede Emissora do CAF:
+4
+.
+4
+.
+1
+.
+A Rede Emissora do CAF, atualmente composta por mais de 7.500
+entidades e aproximadamente 24 mil técnicos, apresenta uma capilaridade ímpar no
+setor público brasileiro. Essa rede é fundamental para a universalização do acesso
+ao CAF, alcançando realidades produtivas, territoriais, sociais e culturais
+extremamente diversas — das regiões metropolitanas às áreas de difícil acesso na
+Amazônia, no Semiárido e nos territórios tradicionais.
+4
+.
+4
+.
+2
+.
+Essa amplitude, porém, aumenta signiﬁcativamente a complexidade de
+sua gestão e exige a implementação de políticas formativas massivas, permanentes
+e descentralizadas, com metodologias robustas e adaptadas às diferentes
+realidades locais. A própria desigualdade territorial da oferta de serviços — com
+apenas cerca de 1.000 prefeituras atuando como emissoras e alta concentração de
+atendimentos em determinadas regiões — reforça a necessidade de programas que
+nivelam capacidades e garantam padrões mínimos de qualidade e integridade
+cadastral.
+4
+.
+4
+.
+3
+.
+A diversidade institucional da rede (sindicatos, cooperativas,
+movimentos sociais, prefeituras, autarquias estaduais, organizações de
+representação de povos e comunidades tradicionais, entre outras) gera assimetrias
+de práticas, interpretações normativas e qualidade no atendimento, criando risco de
+inconsistências cadastrais, retrabalhos, insegurança jurídica e fragilização das
+políticas públicas que dependem do CAF. Sem processos formativos estruturados,
+esse cenário tende a se agravar, especialmente diante da crescente integração do
+CAF a sistemas federais, estaduais e municipais.
+4
+.
+5
+.
+Necessidade de padronização Nacional das emissões do CAF:
+4
+.
+5
+.
+1
+.
+A padronização das emissões do CAF é condição indispensável para
+assegurar a consistência e a conﬁabilidade da base nacional única. O Decreto nº
+11.396/2023 atribui ao DCAF a competência de gerir a interoperabilidade de dados,
+o que implica articulação direta com sistemas estruturantes como CNIS, SiCAR,
+SNCR, CadÚnico, Renaf, Incra, IBGE, entre outros.
+4
+.
+5
+.
+2
+.
+A ausência de padrões claros e nacionais de atendimento pode gerar
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 3 ---
+divergências interpretativas, erros operacionais, emissões indevidas e fragilidades
+jurídicas, comprometendo tanto agricultores familiares quanto agentes públicos que
+se baseiam nessas informações para formular, operacionalizar e avaliar políticas
+públicas.
+4
+.
+5
+.
+3
+.
+A formação contínua é, portanto, a principal ferramenta para:
+I
+ -
+Assegurar padrões de atendimento para os agricultores e
+agricultoras familiares;
+II
+ -
+Estabelecer diretrizes nacionais de coleta, veriﬁcação e
+validação de dados;
+III
+ -
+Uniformizar critérios de interpretação normativa;
+IV
+ -
+Garantir a adoção coerente de ﬂuxos e protocolos pelos mais
+de 24 mil técnicos;
+V
+ -
+Evitar retrabalhos e mitigar riscos de irregularidades;
+VI
+ -
+Assegurar que o CAF cumpra sua função de registro público de
+dados para políticas de Estado e de fortalecimento da Agricultura
+Familiar.
+4
+.
+6
+.
+Atendimentos às recomendações do Acórdão TCU nº
+1197/2018:
+ O Acórdão TCU nº 1197/2018 analisou a transição da DAP para o CAF e
+apresentou recomendações diretas ao MDA quanto ao fortalecimento da
+governança, da padronização e da qualidade da Rede Emissora. O Plano de
+Formação do CAF responde de forma direta e estruturante às determinações do
+Tribunal, especialmente nos seguintes eixos:
+I
+ -
+Fortalecimento da governança, supervisão e controle da
+Rede Emissora:
+ O TCU recomendou aprimorar mecanismos de
+supervisão e padronização para reduzir inconsistências e ampliar a
+integridade cadastral. O Plano de Formação responde a essa
+recomendação ao:
+a
+)
+produzir conteúdos oficiais e padronizados;
+b
+)
+estabelecer protocolos uniformes de atendimento;
+c
+)
+criar mecanismos digitais de certiﬁcação e rastreabilidade dos
+técnicos;
+d
+)
+oferecer supervisão formativa permanente.
+II
+ -
+ 
+Capacitação contínua como instrumento preventivo: 
+O
+TCU destacou que irregularidades decorrem, em grande parte, de
+falhas de capacitação. Com a parceria com a UFES, o MDA implementa
+um modelo de formação:
+a
+)
+contínuo;
+b
+)
+atualizado;
+c
+)
+metodologicamente validado;
+d
+)
+adaptado às realidades territoriais;
+e
+)
+e com capacidade para alcançar toda a rede emissora.
+III
+ -
+Padronização nacional dos procedimentos de coleta e
+validação:
+ O Acórdão mostrou que a falta de padronização resultava
+em divergências e baixa conﬁabilidade dos dados. O Plano de
+Formação enfrentará diretamente essa lacuna ao:
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 4 ---
+a
+)
+produzir manuais oﬁciais, trilhas de formação e materiais de
+referência,
+b
+)
+qualificar a interpretação das normas,
+c
+)
+implementar plataformas digitais com certificação,
+d
+)
+oferecer subsídios técnicos para garantir clareza, precisão e
+uniformidade no atendimento.
+4
+.
+7
+.
+Este Plano está ancorado nas competências do DCAF, inscritas no art.
+22-A do Decreto 11.396, de 2023:
+Art. 22-A. Ao Departamento de Cadastro Nacional da Agricultura Familiar
+compete:
+I - coordenar a implementação e a gestão do Cadastro Nacional da Agricultura
+Familiar - CAF;
+II - promover o acesso dos agricultores familiares e as suas formas
+associativas organizadas em pessoas jurídicas ao CAF; 
+III - fomentar a inscrição e difundir informações sobre o CAF e as suas
+formas de cadastramento;
+IV - promover ações de capacitação e comunicação para apoio à
+inscrição de agricultores familiares no CAF;
+V - monitorar e fiscalizar a operacionalização do CAF;
+VI - gerir as ações inerentes à interoperabilidade de dados no âmbito do CAF;
+VII - apoiar e subsidiar a Secretaria de Agricultura Familiar e Agroecologia na
+edição de normas que regulamentem a operacionalização do CAF;
+VIII - propor e coordenar ações de manutenção e aperfeiçoamento do sistema
+digital do CAF; e
+IX - articular e coordenar parcerias e ações interinstitucionais
+necessárias à operacionalização do CAF.
+(grifo nosso).
+4
+.
+8
+.
+Nesse sentido, por meio do Ofício n°. 653/2025/GR/UFES (SEI 
+46832480
+),
+a Universidade Federal do Espírito Santo (UFES), manifestou interesse em efetivar
+parceria por meio de Termo de Execução Descentralizada - TED, entre o MDA e a
+instituição com a ﬁnalidade de executar as ações de formação no âmbito do Plano
+de Formação do Cadastro Nacional da Agricultura Familiar. Junto ao ofício a
+instituição apresentou as declarações necessárias à formalização do TED (SEI
+46832306
+ e 
+46832395
+), bem como Minuta do Termo de Execução Descentralizada
+(SEI 
+46832147
+), Minuta do Plano de Trabalho (SEI 
+46832226
+) e Memória de Cálculo
+(SEI 
+48504784
+).
+4
+.
+9
+.
+A decisão de executar os créditos orçamentários por meio da UFES
+fundamenta-se na necessidade de suporte técnico especializado, considerando a
+reconhecida expertise da instituição na formulação de processos formativos
+adequados à realidade da Rede CAF. 
+4
+.
+10
+.
+O Plano de Trabalho apresentado, tem como objetivo estruturar as ações
+necessárias à execução do Plano de Formação já descrito, considerando a
+constituição de processos formativos adequados aos diferentes públicos que o Plano
+pretende alcançar: agentes emissores do CAF, responsáveis técnicos pelas
+instituições parceiras, agentes de políticas públicas endereçadas ao público do CAF,
+e parceiros institucionais estratégicos no processo de difusão de informação e
+fomento à inscrição no Cadastro.
+4
+.
+11
+.
+Nesse sentido, o documento apresenta as quatro metas necessárias ao
+processo de estruturação do Plano de Formação: (I) Desenvolvimento Metodológico
+e Produção de Conteúdos Formativos; (II) Implementação de Plataformas Digitais e
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 5 ---
+Certiﬁcação; (III) Realização e apoio a atividades presenciais, híbridas e remotas; e
+(IV) estruturação de equipe de trabalho e gestão do TED. Para isso, o projeto está
+orçado em R$ 7.997.588,24 (sete milhões, novecentos e noventa e sete mil
+quinhentos e oitenta e oito reais e vinte e quatro centavos), a ser desembolsado em
+três parcelas: a primeira ao formalizar o TED, no valor de R$ 1.500.000,00 (um
+milhão quinhentos mil reais); a segunda em março de 2026, no valor de R$
+3.500.000,00 (três milhões quinhentos mil reais); e a terceira, em março de 2027,
+no valor de R$ 2.997.588,24 (dois milhões, novecentos e noventa e sete mil
+quinhentos e oitenta e oito reais e vinte e quatro centavos).
+4
+.
+12
+.
+Os recursos 
+sairão da Ação 21.608.1191.210V.0009 - Estruturação
+Produtiva, Promoção e Fortalecimento da Agricultura Familiar e da Agroecologia ,
+do
+ 
+PO 0009 - Cadastro Nacional da Agricultura Familiar (CAF).
+4
+.
+13
+.
+Com a parceria, o MDA busca dar um salto qualitativo na gestão da
+RedeCAF, bem como no seu papel institucional de garantir a formação e a difusão
+de informação tanto à Rede Credenciada quanto aos agentes implementadores de
+políticas públicas e aos povos dos campos das águas e das florestas.
+4
+.
+14
+.
+A ação formativa é estratégica para a consolidação do CAF 3.0 porque a
+modernização tecnológica só se sustenta com uma mudança cultural na RedeCAF,
+capaz de alinhar técnicos e entidades à nova lógica de validação, cruzamento e
+interoperabilidade de dados. O crescimento acelerado do cadastramento — com o
+encerramento da DAP em julho de 2025, a emissão de mais de 1,57 milhão de novos
+CAFs e um total acumulado que supera 3,7 milhões de UFPAs cadastradas — reforça
+ainda mais a necessidade de qualiﬁcação contínua para garantir a qualidade das
+informações e a conﬁabilidade de que o público atendido é, de fato, da agricultura
+familiar.
+4
+.
+15
+.
+Diante disso, a capacitação torna-se fundamental para assegurar
+qualidade, conﬁabilidade, uniformidade e equidade nas informações registradas no
+CAF, fortalecendo a solidez das políticas públicas da Agricultura Familiar. À medida
+que o CAF se consolida como infraestrutura informacional de múltiplas ações
+governamentais, a consistência dessa base depende diretamente da formação dos
+emissores, reaﬁrmando a capacitação como um pilar essencial para a eﬁciência do
+sistema e para o fortalecimento das políticas de Estado.
+4
+.
+16
+.
+Atesta-se que a presente iniciativa não incorre nas vedações previstas
+no §2º do art. 3º e no §2º do art. 4º do Decreto nº 10.426, de 2020.
+5
+.
+DOCUMENTOS RELACIONADOS
+5
+.
+1
+.
+Ofício n° 653/2025/GR/UFES (SEI 
+46832480
+)
+5
+.
+2
+.
+Memória de cálculo (SEI 
+48504784
+)
+5
+.
+3
+.
+Minuta Termo de Execução Descentralizada (SEI 
+46832147
+)
+5
+.
+4
+.
+Minuta Plano de Trabalho (SEI 
+46832226
+)
+5
+.
+5
+.
+Declaração de Compatibilidade de custos (SEI 
+46832306
+)
+5
+.
+6
+.
+Declaração de Capacidade Técnica (SEI 
+46832395
+)
+6
+.
+CONCLUSÃO
+6
+.
+1
+.
+Diante de todo o exposto nesta Nota Técnica, o Departamento de
+Cadastro Nacional da Agricultura Familiar (DCAF) manifesta, de forma plenamente
+justiﬁcada, seu interesse na formalização da parceria com a Universidade Federal do
+Espírito Santo (UFES), visando à execução do Plano de Formação do Cadastro
+Nacional da Agricultura Familiar (CAF). A iniciativa demonstra-se estratégica e
+indispensável para o fortalecimento da governança, da padronização nacional e da
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 6 ---
+qualidade da Rede Emissora, especialmente frente às exigências crescentes
+decorrentes da consolidação do CAF 3.0 e da ampliação expressiva do
+cadastramento em nível nacional.
+6
+.
+2
+.
+A parceria proposta está alinhada às competências regimentais do DCAF,
+às recomendações do Tribunal de Contas da União e às diretrizes estruturantes do
+Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA), traduzindo-se
+em ação prioritária para qualiﬁcar o atendimento, aprimorar a integridade da base
+cadastral, ampliar o acesso dos agricultores familiares e fortalecer a implementação
+das políticas públicas federais que dependem do CAF. Ao articular expertise técnica,
+metodologia de formação contínua e capilaridade institucional, a cooperação com a
+UFES permite ao MDA avançar de forma consistente na construção de uma rede
+emissora mais preparada, coesa e alinhada às necessidades do Estado brasileiro.
+6
+.
+3
+.
+Assim, atesta-se a pertinência, a oportunidade e a necessidade da
+celebração do Termo de Execução Descentralizada (TED) com a UFES, como medida
+essencial para assegurar a efetividade do Plano de Formação, consolidar o CAF
+como infraestrutura informacional estratégica e garantir maior eﬁciência, segurança
+e equidade na implementação das políticas públicas da Agricultura Familiar.
+ 
+Encaminhe-se ao 
+DCAF/MDA
+,
+ 
+(assinado eletronicamente)
+ARTHUR AUGUSTO LOPES DA SILVA
+Coordenador Geral de Monitoramento e Governança do Cadastro Nacional da
+Agricultura Familiar
+ 
+ 
+ 
+De acordo. Encaminha-se a
+SAF/MDA
+para conhecimento e demais
+trâmites que se façam necessários.
+ 
+(assinado eletronicamente)
+ARTHUR REIS RIMOLDI
+Diretor do Departamento de Cadastro Nacional da Agricultura Familiar
+ 
+ 
+Documento assinado eletronicamente por 
+Arthur Augusto Lopes da Silva
+,
+Coordenador (a) Geral
+, em 25/11/2025, às 20:45, conforme horário oficial de
+Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro
+de 2020.
+Documento assinado eletronicamente por 
+Arthur Reis Rimoldi
+, 
+Diretor (a)
+, em
+25/11/2025, às 21:11, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.
+
+--- Página 7 ---
+Documento assinado eletronicamente por 
+Vanderley Ziger
+, 
+Secretário(a)
+, em
+26/11/2025, às 15:21, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+48513384
+ e o código CRC 
+19E7A524
+.
+Referência:
+ Processo nº 55000.019435/2025-86
+SEI nº 48513384
+Nota Técnica - MDA 27 (48513384)         SEI 55000.019435/2025-86 / pg. 7
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990624.

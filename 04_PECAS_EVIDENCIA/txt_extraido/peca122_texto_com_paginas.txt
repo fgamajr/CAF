@@ -1,0 +1,1264 @@
+
+==================================================
+PÁGINA 1
+==================================================
+
+MC Master Index - Achado 02
+Índice Centralizado de Memórias de Cálculo
+Documento: Índice de Memórias de Cálculo (MC) Versão: 2.9 (PT-12 CORRIGIDO: Conversão de
+Unidades Implementada | MC-119 a MC-130 atualizados) Data: 12 de novembro de 2025 Referência:
+GOVERNANCA_FONTES_DE_VERDADE.md
+
+
+
+� FONTES DE VERDADE PRIMÁRIAS (PT-01)
+
+ID        PT      Nome Variável              Valor         Fonte / Observação
+MC-     PT-01     populacaoTotal             3.775.811     SELECT COUNT(*) FROM
+001/PT-                                                    S_AREA_IMOVEL� IMUTÁVEL (fonte
+01                                                         origem)
+MC-     PT-01     populacaoAnalisavel        3.175.345     SELECT COUNT(*) FROM
+002/PT-                                                    tmp_populacao_analisavel� FONTE
+01                                                         PRIMÁRIA� Alteração requer
+                                                           reexecução PT-02 a PT-07� Script:
+                                                           pt01_script2_populacao.sql� Lógica:
+                                                           _CRITERIO_UF_ATIVA_CANONICAL.sql
+                                                           (v1.0)� Documentação: PT-01 Seção 2.2
+                                                           (Definição B)
+MC-       PT-01   ufInativas                 600.466       MC-001 − MC-002� IMUTÁVEL
+003/PT-                                                    (derivado de MC-001 e MC-002)
+01
+MC-       PT-01   ufSemAtivacao              34.708        COUNT(*) FROM tmp_areas_uf_ativa
+004/PT-                                                    WHERE dt_ativacao IS NULL�
+01                                                         IMUTÁVEL (diagnóstico)
+MC-       PT-01   percAtivas                 84,10 %       (MC-002 / MC-001) × 100
+005/PT-
+01
+MC-       PT-01   percInativas               15,90 %       100 − MC-005
+006/PT-
+01
+MC-       PT-01   percSemAtivacao            0,92 %        (MC-004 / MC-001) × 100
+007/PT-
+01
+
+
+
+
+� FONTES DE VERDADE SECUNDÁRIAS (PT-02: Leaflet)
+
+ID        PT      Nome Variável              Valor         Fonte / Observação
+MC-       PT-02   N                          3.175.345     População total (herdada de
+008/PT-                                                    MC-002/PT-01)� Validação: Deve
+02                                                         igualar MC-002/PT-01
+MC-       PT-02   N1                         3.068.583     COUNT(*) FROM
+009/PT-                                                    tmp_populacao_analisavel WHERE
+02                                                         dt_criacao < '2025-08-15'�
+                                                           IMUTÁVEL
+
+
+
+
+                                              1
+
+==================================================
+PÁGINA 2
+==================================================
+
+MC-       PT-02   N2                106.762     COUNT(*) FROM
+010/PT-                                         tmp_populacao_analisavel WHERE
+02                                              dt_criacao >= '2025-08-15'�
+                                                IMUTÁVEL� Validação: MC-009 +
+                                                MC-010 = MC-008
+MC-     PT-02     n1Calc            16.500,24   Fórmula FPC com N1=MC-009, NC=99
+011/PT-                                         %, E=1 %, p=0,5� Script:
+02                                              pt02_script3_calculo_amostral.py
+MC-     PT-02     n2Calc            14.358,46   Fórmula FPC com N2=MC-010, NC=99
+012/PT-                                         %, E=1 %, p=0,5� Script:
+02                                              pt02_script3_calculo_amostral.py
+MC-     PT-02     n1Adotada         16.501      CEIL(MC-011)� FONTE
+013/PT-                                         SECUNDÁRIA� PT-04 DEVE usar
+02                                              este valor em LIMIT�
+                                                Arredondamento: +0,76 (0,005%)
+MC-     PT-02     n2Adotada         14.359      CEIL(MC-012)� FONTE
+014/PT-                                         SECUNDÁRIA� PT-04 DEVE usar
+02                                              este valor em LIMIT�
+                                                Arredondamento: +0,54 (0,004%)
+MC-     PT-02     nTotalLeaflet     30.860      MC-013 + MC-014� FONTE
+015/PT-                                         SECUNDÁRIA� Total de registros
+02                                              Leaflet a extrair
+MC-     PT-02     verificacaoN1N2   3.175.345   MC-009 + MC-010� Validação: Deve
+016/PT-                                         igualar MC-008 e MC-002/PT-01
+02
+MC-     PT-02     percN1            96,64 %     (MC-009 / MC-008) × 100
+033/PT-
+02
+MC-     PT-02     percN2            3,36 %      (MC-010 / MC-008) × 100
+034/PT-
+02
+MC-     PT-02     zCritico          2,576       Valor crítico Z para NC=99 % (�=0,01)
+035/PT-
+02
+
+
+
+
+� FONTES DE VERDADE SECUNDÁRIAS (PT-03: CAF 3.0)
+
+ID        PT      Nome Variável     Valor       Fonte / Observação
+MC-       PT-03   popJanela         2.879.646   MC-008 − 295.699 (população após
+017/PT-                                         exclusão janela temporal)� Janela
+03                                              excluída: 05-06/03/2025
+MC-       PT-03   N3                2.031.030   COUNT(*) WHERE dt_criacao <
+018/PT-                                         '2025-03-26' AND NOT (dt_criacao
+03                                              >= '2025-03-05' AND dt_criacao <
+                                                '2025-03-07')� IMUTÁVEL
+MC-       PT-03   N4                848.616     COUNT(*) FROM
+019/PT-                                         tmp_populacao_analisavel WHERE
+03                                              dt_criacao >= '2025-03-26'�
+                                                IMUTÁVEL� Validação: MC-018 +
+                                                MC-019 + MC-020 = MC-008
+
+
+
+
+                                    2
+
+==================================================
+PÁGINA 3
+==================================================
+
+MC-     PT-03   registrosExcluidos   295.699     COUNT(*) WHERE dt_criacao IN
+020/PT-                                          ('2025-03-05','2025-03-06')�
+03                                               Migração CAF 2.x → CAF 3.0
+MC-     PT-03   n3Calc               16.455,04   Fórmula FPC com N3=MC-018, NC=99
+021/PT-                                          %, E=1 %, p=0,5� Script:
+03                                               pt03_script3_calculo_amostral.py
+MC-     PT-03   n4Calc               16.271,37   Fórmula FPC com N4=MC-019, NC=99
+022/PT-                                          %, E=1 %, p=0,5� Script:
+03                                               pt03_script3_calculo_amostral.py
+MC-     PT-03   n3Adotada            16.456      CEIL(MC-021)� FONTE
+023/PT-                                          SECUNDÁRIA� PT-04 DEVE usar
+03                                               este valor em LIMIT�
+                                                 Arredondamento: +0,96 (0,006%)
+MC-     PT-03   n4Adotada            16.272      CEIL(MC-022)� FONTE
+024/PT-                                          SECUNDÁRIA� PT-04 DEVE usar
+03                                               este valor em LIMIT�
+                                                 Arredondamento: +0,63 (0,004%)
+MC-     PT-03   nTotalCAF            32.728      MC-023 + MC-024� FONTE
+025/PT-                                          SECUNDÁRIA� Total de registros
+03                                               CAF a extrair
+
+
+
+
+� FONTES DE VERDADE TERCIÁRIAS (PT-04: Extração Amostral)
+
+ID     PT       Nome Variável        Valor       Fonte / Observação
+MC-     PT-04   n1Extraida           16.501      COUNT(*) FROM
+040/PT-                                          tmp_amostra_e1_leaflet_antes�
+04                                               FONTE TERCIÁRIA� Validação:
+                                                 Deve igualar MC-013/PT-02� Extração:
+                                                 Estrato 1 (Leaflet ANTES)
+MC-     PT-04   n2Extraida           14.359      COUNT(*) FROM
+041/PT-                                          tmp_amostra_e2_leaflet_depois�
+04                                               FONTE TERCIÁRIA� Validação:
+                                                 Deve igualar MC-014/PT-02� Extração:
+                                                 Estrato 2 (Leaflet DEPOIS)
+MC-     PT-04   n3Extraida           16.456      COUNT(*) FROM
+042/PT-                                          tmp_amostra_e3_caf2x� FONTE
+04                                               TERCIÁRIA� Validação: Deve
+                                                 igualar MC-023/PT-03� Extração:
+                                                 Estrato 3 (CAF 2.x)
+MC-     PT-04   n4Extraida           16.272      COUNT(*) FROM
+043/PT-                                          tmp_amostra_e4_caf30� FONTE
+04                                               TERCIÁRIA� Validação: Deve
+                                                 igualar MC-024/PT-03� Extração:
+                                                 Estrato 4 (CAF 3.0)
+MC-     PT-04   nTotalExtraida       63.588      MC-040 + MC-041 + MC-042 + MC-043�
+044/PT-                                          FONTE TERCIÁRIA� Validação:
+04                                               Deve igualar MC-015 + MC-025 (30.860 +
+                                                 32.728)� Total de registros extraídos
+
+
+
+
+                                     3
+
+==================================================
+PÁGINA 4
+==================================================
+
+MC-       PT-04   hashE1_SHA256                          SHA-256 de
+                                           be6a391f91a7dade941d7fe8c26f27b96e2900132b55273379785a3da436
+045/PT-                                                  pt04_amostra_e1_leaflet_antes.csv�
+04                                                       Integridade do arquivo CSV Estrato 1�
+                                                         Script: pt04_calcular_hashes.py
+MC-       PT-04   hashE2_SHA256                          SHA-256 de
+                                           552dd05665d4c3bee65e7d1bebc2774d6d94209f660052667f6cc7f3c7d9
+046/PT-                                                  pt04_amostra_e2_leaflet_depois.csv�
+04                                                       Integridade do arquivo CSV Estrato 2�
+                                                         Script: pt04_calcular_hashes.py
+MC-       PT-04   hashE3_SHA256                          SHA-256 de
+                                           1ef1efec3e75f621889d18a5ed5ac070cfbb61dccddd589566d260507e74
+047/PT-                                                  pt04_amostra_e3_caf2x.csv�
+04                                                       Integridade do arquivo CSV Estrato 3�
+                                                         Script: pt04_calcular_hashes.py
+MC-       PT-04   hashE4_SHA256                          SHA-256 de
+                                           c32d8bdc8d72fbb4503d8811d4d80e36eeecca46538aeb1ff0ec9c95a6ab
+048/PT-                                                  pt04_amostra_e4_caf30.csv�
+04                                                       Integridade do arquivo CSV Estrato 4�
+                                                         Script: pt04_calcular_hashes.py
+MC-       PT-04   hashConsolidado_SHA256                 SHA-256 de
+                                           6990cc37809192e805db6f3cd6fd5e2bd0a9402a803f8ebb4b011f3734cb
+049/PT-                                                  pt04_amostra_consolidada.csv�
+04                                                       Integridade do arquivo CSV consolidado
+                                                         (4 estratos)� Script:
+                                                         pt04_calcular_hashes.py
+MC-       PT-04   timestampExtracao        2025-11-06    Timestamp da execução da extração�
+050/PT-                                    21:31:01 UTC Formato: YYYY-MM-DD HH:MM:SS UTC�
+04                                                       Capturado via NOW() no PostgreSQL
+MC-       PT-04   seedAleatorizacao        'SEED_FIXA'   Seed para ordenação determinística�
+051/PT-                                                  Método: ORDER BY
+04                                                       md5(concat_ws('|', id_area_imovel,
+                                                         'SEED_FIXA'))� Garante
+                                                         reprodutibilidade das extrações
+
+
+
+
+� FONTES DE VERDADE TERCIÁRIAS (PT-05: Validação Algorítmica)
+
+ID        PT      Nome Variável            Valor         Fonte / Observação
+MC-     PT-05     invalidosAlgTotal        12.231        União dos critérios (fora_BR � absurdos
+052/PT-                                                  � latEqLon � zeros) sobre
+05                                                       pt04_amostra_consolidada.csv
+MC-     PT-05     invalidosAlgE1           3.667         Inválidos algoritmicamente no Estrato 1
+053/PT-
+05
+MC-     PT-05     invalidosAlgE2           2             Inválidos algoritmicamente no Estrato 2
+054/PT-
+05
+MC-     PT-05     invalidosAlgE3           3.343         Inválidos algoritmicamente no Estrato 3
+055/PT-
+05
+MC-     PT-05     invalidosAlgE4           5.219         Inválidos algoritmicamente no Estrato 4
+056/PT-
+05
+MC-     PT-05     foraBR_Total             12.231        Fora do envelope Brasil (lat�[-34,6],
+057/PT-                                                  lon�[-74,-34])
+05
+
+
+                                           4
+
+==================================================
+PÁGINA 5
+==================================================
+
+MC-     PT-05      absurdos_Total              4.387     lat�[-90,90] � lon�[-180,180]
+058/PT-
+05
+MC-     PT-05      latEqLon_Total              1.291     Casos com nr_latitude ==
+059/PT-                                                  nr_longitude
+05
+MC-     PT-05      zeros_Total                 135       Casos (0,0)
+060/PT-
+05
+MC-     PT-05      validosAlgTotal             51.357    MC-044 − MC-052 (63.588 − 12.231)�
+061/PT-                                                  Validação: Complemento dos inválidos�
+05                                                       Registros válidos algoritmicamente
+
+
+
+
+� ANÁLISES DERIVADAS (PT-05: Taxas de Invalidez)
+
+ID        PT       Nome Variável               Valor     Fonte / Observação
+MC-        PT-05   reducaoLeaflet              99,95 %   (MC-053/MC-040 − MC-054/MC-041) /
+Taxa-                                                    (MC-053/MC-040)� Redução relativa da
+01/PT-                                                   taxa de invalidez E1→E2� Cálculo:
+05                                                       (22,2% − 0,01%) / 22,2%
+MC-        PT-05   aumentoCAF                  58,1 %    (MC-056/MC-043 − MC-055/MC-042) /
+Taxa-                                                    (MC-055/MC-042)� Aumento relativo da
+02/PT-                                                   taxa de invalidez E3→E4� Cálculo:
+05                                                       (32,1% − 20,3%) / 20,3%
+MC-        PT-05   fatorE4vsE2                 3.210     (MC-056/MC-043) / (MC-054/MC-041)�
+Taxa-                                                    Fator de piora CAF 3.0 vs Leaflet
+03/PT-                                                   pós-transição� Cálculo: 32,1% / 0,01%
+05
+MC-        PT-05   reducaoLeafletConsolidada   99,95 %   Consolidação do MC-Taxa-01 na
+Conclusão-                                               conclusão� Fórmula: (TaxaE1 − TaxaE2)
+01/PT-                                                   / TaxaE1
+05
+MC-        PT-05   aumentoCAFConsolidado       58,1 %    Consolidação do MC-Taxa-02 na
+Conclusão-                                               conclusão� Fórmula: (TaxaE4 − TaxaE3)
+02/PT-                                                   / TaxaE3
+05
+MC-        PT-05   fatorE4vsE2Consolidado      3.210     Consolidação do MC-Taxa-03 na
+Conclusão-                                               conclusão� Fórmula: TaxaE4 / TaxaE2
+03/PT-
+05
+
+
+
+
+� FONTES DE VERDADE TERCIÁRIAS (PT-06: Precisão Decimal)
+
+
+
+
+                                               5
+
+==================================================
+PÁGINA 6
+==================================================
+
+MC-     PT-06     altaPrecisaoTotal           43.812        Registros com casas_lat � 5 AND
+062/PT-                                                     casas_lon � 5 (filtro sobre
+06                                                          MC-061/PT-05)� FONTE
+                                                            TERCIÁRIA� Script:
+                                                            pt06_analise_precisao.py (linhas
+                                                            169-174)� Entrada para PT-07
+                                                            (Consistência Municipal)
+MC-       PT-06   altaPrecisaoE1              11.626        Alta precisão no Estrato 1 (Leaflet
+063/PT-                                                     ANTES)� Taxa: 90,59% (11.626/12.834)
+06
+MC-       PT-06   altaPrecisaoE2              10.948        Alta precisão no Estrato 2 (Leaflet
+064/PT-                                                     DEPOIS)� Taxa: 76,26% (10.948/14.357)
+06
+MC-       PT-06   altaPrecisaoE3              11.714        Alta precisão no Estrato 3 (CAF 2.x)�
+065/PT-                                                     Taxa: 89,33% (11.714/13.113)
+06
+MC-       PT-06   altaPrecisaoE4              9.524         Alta precisão no Estrato 4 (CAF 3.0)�
+066/PT-                                                     Taxa: 86,17% (9.524/11.053)
+06
+MC-       PT-06   taxaAltaPrecisaoGlobal      85,31 %       MC-062 / MC-061 × 100� Proporção de
+067/PT-                                                     registros com alta precisão decimal
+06
+MC-       PT-06   ic99Inferior                84,91 %       Limite inferior do IC 99% para
+068/PT-                                                     proporção populacional� Fórmula: p̂ − Z
+06                                                          × SE × FPC� Onde p̂=0,8531, Z=2,576,
+                                                            SE=0,00156, FPC=0,9919
+MC-       PT-06   ic99Superior                85,71 %       Limite superior do IC 99% para
+069/PT-                                                     proporção populacional� Fórmula: p̂ + Z
+06                                                          × SE × FPC
+MC-       PT-06   margemErro99                ±0,40 p.p.    Margem de erro (99%) para inferência
+070/PT-                                                     populacional� Com 99% de confiança:
+06                                                          taxa populacional � [84,91%, 85,71%]
+MC-       PT-06   reducaoLeafletPrecisao      −14,33 p.p.   Variação absoluta E1→E2 (90,59% →
+071/PT-                                                     76,26%)� Variação relativa: −15,8%�
+06                                                          REGRESSÃO na precisão decimal
+MC-       PT-06   reducaoCAFPrecisao          −3,16 p.p.    Variação absoluta E3→E4 (89,33% →
+072/PT-                                                     86,17%)� Variação relativa: −3,5%�
+06                                                          REGRESSÃO moderada na precisão
+MC-       PT-06   hashConsolidadoVerificado   � OK          Verificação de MC-049/PT-04 contra hash
+073/PT-                                                     calculado� Hash esperado:
+06                                                          6990cc...4cbc91a� Hash calculado:
+                                                            6990cc...4cbc91a� Integridade
+                                                            confirmada (rastreabilidade completa)
+MC-       PT-06   mc050Verificado             � OK          Timestamp de extração (MC-050):
+074/PT-                                                     2025-11-06 21:31:01 UTC� Cadeia de
+06                                                          custódia estabelecida
+MC-       PT-06   mc051Verificado             � OK          Seed de aleatorização (MC-051):
+075/PT-                                                     'SEED_FIXA'� Reprodutibilidade
+06                                                          garantida
+
+
+
+
+                                              6
+
+==================================================
+PÁGINA 7
+==================================================
+
+MC-       PT-06   hashSaidaPT07                (Hash        Hash do arquivo de saída
+075-                                           SHA-256)     pt06_alta_precisao.csv� FONTE
+B/PT-                                                       DE VERDADE para validação no
+06                                                          PT-07� Documentado em
+                                                            pt06_resumo.json (campo
+                                                            saida_pt07.mc_075b_pt06)� Cadeia de
+                                                            custódia: PT-04 (MC-049) → PT-06
+                                                            (MC-075-B) → PT-07 (MC-086 verifica
+                                                            contra MC-075-B)� CRÍTICO:
+                                                            MC-086/PT-07 é o resultado da
+                                                            verificação, NÃO a fonte
+
+
+
+
+� FONTES DE VERDADE QUATERNÁRIAS (PT-07: Consistência Municipal)
+
+ID        PT      Nome Variável                Valor        Fonte / Observação
+MC-     PT-07     consistenteTotal             36.836       Registros com coordenadas dentro do
+076/PT-                                                     município declarado� FONTE
+07                                                          QUATERNÁRIA (3ª camada de
+                                                            validação)� Taxa global: 84,08%
+                                                            (36.836/43.812)� Script:
+                                                            pt07_consistencia_municipal.py
+                                                            (PostGIS ST_Contains)� População final
+                                                            após 3 filtros (Algorítmico + Precisão +
+                                                            Espacial)
+MC-       PT-07   consistenteE1                10.034       Consistentes no Estrato 1 (Leaflet
+077/PT-                                                     ANTES)� Taxa: 86,31% (10.034/11.626)
+07
+MC-       PT-07   consistenteE2                8.734        Consistentes no Estrato 2 (Leaflet
+078/PT-                                                     DEPOIS)� Taxa: 79,78% (8.734/10.948)�
+07                                                          MENOR TAXA entre todos estratos
+MC-       PT-07   consistenteE3                10.042       Consistentes no Estrato 3 (CAF 2.x)�
+079/PT-                                                     Taxa: 85,73% (10.042/11.714)
+07
+MC-       PT-07   consistenteE4                8.026        Consistentes no Estrato 4 (CAF 3.0)�
+080/PT-                                                     Taxa: 84,27% (8.026/9.524)
+07
+MC-       PT-07   inconsistenteMesmaUF         5.980        Inconsistentes dentro do mesmo estado
+081/PT-                                                     (13,65%)� Coordenada cai em município
+07                                                          vizinho/distante (mesma UF)
+MC-       PT-07   inconsistenteUFErrada        722          Inconsistentes em estado errado (1,65%)�
+082/PT-                                                     ERRO GRAVE: Coordenada cai em
+07                                                          UF completamente diferente
+MC-       PT-07   semMatch                     274          Coordenadas não caíram em nenhum
+083/PT-                                                     polígono (0,63%)� Possíveis causas:
+07                                                          offshore, ilhas, imprecisão no limite
+MC-       PT-07   reducaoLeafletConsistencia   −6,53 p.p.   Variação absoluta E1→E2 (86,31% →
+084/PT-                                                     79,78%)� Variação relativa: −7,6%�
+07                                                          REGRESSÃO na consistência
+                                                            espacial (além da regressão em precisão)
+
+
+
+
+                                               7
+
+==================================================
+PÁGINA 8
+==================================================
+
+MC-       PT-07   reducaoCAFConsistencia     −1,46 p.p.    Variação absoluta E3→E4 (85,73% →
+085/PT-                                                    84,27%)� Variação relativa: −1,7%�
+07                                                         REGRESSÃO leve na consistência
+MC-       PT-07   hashPT06Verificado         � OK          Verificação de integridade do CSV de
+086/PT-                                                    entrada (PT-06)� Hash:
+07                                                         e39d4f...5376d6� 43.812 registros
+                                                           confirmados (MC-062/PT-06)
+MC-       PT-07   numMunicipiosIBGE          5.573         Polígonos na malha municipal (banco
+087/PT-                                                    PostGIS)� Fonte: municipios_limites
+07                                                         (caf_mapa)� SRID: 4326 (WGS 84)
+
+
+
+
+� FONTES DE VERDADE QUATERNÁRIAS (PT-08: Análise de Duplicações Espa-
+ciais)
+ARQUITETURA PARALELA: PT-07 e PT-08 operam em paralelo, ambos consumindo MC-062/PT-06 (43.812
+registros)
+
+ID        PT      Nome Variável              Valor         Fonte / Observação
+MC-       PT-08   hashPT06Verificado         � OK          Verificação de integridade do CSV de
+086/PT-                                                    entrada (PT-06)� Hash MC-075-B/PT-06:
+08                                                         e39d4f...5376d6� 43.812 registros
+                                                           confirmados (MC-062/PT-06)� Arquivo:
+                                                           pt06_alta_precisao.csv
+MC-     PT-08     duplicatasExatas           24.215        Registros com coordenadas idênticas
+088/PT-                                                    (haversine = 0m)� FONTE
+08                                                         QUATERNÁRIA� Taxa: 55,27%
+                                                           (24.215/43.812)� Script:
+                                                           01_haversine_distance.sql�
+                                                           ACHADO CRÍTICO: Mais da
+                                                           metade tem duplicações exatas
+MC-     PT-08     duplicatasProximas         158           Registros com 0 < haversine � 10m
+089/PT-                                                    (excluindo DUPLICATA_EXATA)�
+08                                                         Taxa: 0,36% (158/43.812)� Script:
+                                                           01_haversine_distance.sql�
+                                                           Coordenadas suspeitas (possível erro de
+                                                           geolocalização)
+MC-     PT-08     clustersDensos             35            Registros com �3 vizinhos em raio de
+090/PT-                                                    100m� Taxa: 0,08% (35/43.812)� Script:
+08                                                         02_cluster_detection.sql� Podem
+                                                           indicar assentamentos legítimos ou
+                                                           concentrações anômalas
+MC-     PT-08     totalAnalisado             43.812        Total de registros analisados
+091/PT-                                                    (MC-062/PT-06)� Validação: MC-088 +
+08                                                         MC-089 + MC-090 + MC-092 = 43.812
+MC-     PT-08     unicosEspacialmente        19.404        Registros espacialmente únicos (sem
+092/PT-                                                    duplicações)� FONTE
+08                                                         QUATERNÁRIA� Taxa: 44,29%
+                                                           (19.404/43.812)� Script:
+                                                           03_hierarchical_classification.sql�
+                                                           População validada para PT-09
+                                                           (Sobreposição com Áreas Protegidas)
+
+
+
+                                              8
+
+==================================================
+PÁGINA 9
+==================================================
+
+MC-       PT-08   totalProblematico     24.408         Total com problemas espaciais (MC-088
+093/PT-                                                + MC-089 + MC-090)� Taxa: 55,71%
+08                                                     (24.408/43.812)� ACHADO: 55,7% dos
+                                                       registros de alta precisão têm problemas
+                                                       espaciais
+MC-       PT-08   maiorCluster          5 vizinhos     Maior cluster identificado (Seabra/BA:
+094/PT-                                                -12.878245, -38.757470)� Município IBGE:
+08                                                     2927309� Representa 14,29% dos clusters
+                                                       densos (5/35)� Estrato: E2 (Leaflet)
+MC-       PT-08   pontoMaisDuplicado    39 registros   Coordenada mais duplicada
+095/PT-                                                (Guanambi/BA: -14.2196, -42.7778)�
+08                                                     Município IBGE: 2916104� 0,089% do
+                                                       total (39/43.812)� Estratos: E2 + E4
+                                                       (múltiplos sistemas)
+
+
+� Análise por Estrato (PT-08)
+
+ID        PT      Nome Variável         Valor          Fonte / Observação
+MC-       PT-08   E1_duplicacoes        92,40 %        Entrada Manual (pré-15/08): 10.743
+096/PT-                                                problemáticos de 11.626� CRÍTICO:
+08                                                     Apenas 7,60% únicos� Dup. Exatas:
+                                                       10.738 (92,36%)� Prática de
+                                                       “copiar/colar” coordenadas
+MC-       PT-08   E2_duplicacoes        17,74 %        Leaflet (pós-15/08): 1.942 problemáticos
+097/PT-                                                de 10.948� MELHORIA: 82,26%
+08                                                     únicos� Dup. Exatas: 1.816 (16,59%)�
+                                                       Redução de 74,66 p.p. vs. E1
+MC-       PT-08   E3_duplicacoes        66,78 %        CAF 2.x: 7.823 problemáticos de 11.714�
+098/PT-                                                Dup. Exatas: 7.793 (66,53%)� Alta
+08                                                     incidência de duplicações
+MC-       PT-08   E4_duplicacoes        40,95 %        CAF 3.0: 3.900 problemáticos de 9.524�
+099/PT-                                                Melhoria: 59,05% únicos� Dup. Exatas:
+08                                                     3.868 (40,61%)� Redução de 25,83 p.p.
+                                                       vs. E3
+MC-       PT-08   reducaoLeafletDup     −74,66 p.p.    Variação E1→E2: 92,40% → 17,74%�
+100/PT-                                                IMPLEMENTAÇÃO DO
+08                                                     LEAFLET FOI CRÍTICA� Leaflet
+                                                       forçou captura de coordenadas reais no
+                                                       mapa� Redução de 74,66 pontos
+                                                       percentuais
+MC-       PT-08   reducaoCAFDup         −25,83 p.p.    Variação E3→E4: 66,78% → 40,95%�
+101/PT-                                                CAF 3.0 melhorou, mas ainda
+08                                                     problemático� 41% de duplicações
+                                                       persistem� Redução de 25,83 pontos
+                                                       percentuais
+
+
+� Artefatos e Rastreabilidade (PT-08)
+
+
+
+
+                                        9
+
+==================================================
+PÁGINA 10
+==================================================
+
+MC-       PT-08    hashAnexoA                            SHA-256 de
+                                           283af7b0...5c045df4
+102/PT-                                                  anexoA_memoria_calculo.csv (48
+08                                                       bytes)� Integridade do resumo de MCs
+MC-       PT-08    hashClassificacao                     SHA-256 de
+                                           fa2f55fd...536e962b2
+103/PT-                                                  classificacao_espacial_final.csv
+08                                                       (3,6 MB)� 43.812 registros classificados
+MC-       PT-08    hashDuplicatasGeoJSON                 SHA-256 de
+                                           4cc1c015...34004e3f
+104/PT-                                                  duplicatas_exatas.geojson (5,9 MB)�
+08                                                       24.215 duplicatas em formato GeoJSON
+MC-       PT-08    hashClustersGeoJSON                   SHA-256 de clusters_densos.geojson
+                                           009afe90...f094e5e3
+105/PT-                                                  (9,1 KB)� 35 clusters em formato
+08                                                       GeoJSON
+MC-       PT-08    hashResumoJSON                        SHA-256 de resumo_pt08.json (1,4
+                                           54b9a77f...2f056ada
+106/PT-                                                  KB)� Metadados da execução
+08
+MC-       PT-08    timestampExecucao       2025-11-09      Data de execução da análise espacial�
+107/PT-                                                    Scripts SQL executados via PostGIS
+08
+
+
+
+
+� VARIÁVEIS AUXILIARES (PT-01: Painel Visual)
+
+ID        PT       Nome Variável           Valor           Fonte / Observação
+MC-       PT-01    varLeafletAntes         +0,15 pp       Variação populacional ANTES Leaflet
+026/PT-                                                   (painel visual)
+01
+MC-       PT-01    varLeafletDepois        +0,11 pp       Variação populacional DEPOIS Leaflet
+027/PT-                                                   (painel visual)
+01
+MC-       PT-01    varCAF30Antes           −0,12 pp        Variação populacional CAF 2.x (painel
+028/PT-                                                    visual)
+01
+MC-       PT-01    varCAF30Depois          −0,12 pp        Variação populacional CAF 3.0 (painel
+029/PT-                                                    visual)
+01
+MC-       PT-01    mediaVariacoes          +0,01 pp        Média aritmética das 4 variações
+030/PT-
+01
+MC-       PT-01    dataReuniao             07/10/2025     Marco temporal pactuado com MDA
+031/PT-                                                   (ata reunião)
+01
+MC-       PT-01    dataDump                02/09/2025      Data do dump CAF/MDA (snapshot da
+032/PT-                                                    base)
+01
+
+
+
+
+� MATRIZ DE DEPENDÊNCIAS
+PT-01 (MC-002: 3.175.345)
+  �
+  ���> PT-02 (MC-008: 3.175.345)
+
+
+                                           10
+
+==================================================
+PÁGINA 11
+==================================================
+
+  �      ���> MC-014: n2Adotada = 14.359
+  �      ���> MC-015: nTotalLeaflet = 30.860
+  �
+  ���> PT-03 (MC-017: 2.879.646 após janela)
+          ���> MC-023: n3Adotada = 16.456
+          ���> MC-024: n4Adotada = 16.272
+          ���> MC-025: nTotalCAF = 32.728
+
+PT-02 + PT-03 ��> PT-04 (Extração)
+                    ���> MC-040: n1Extraida = 16.501 (LIMIT MC-013)
+                    ���> MC-041: n2Extraida = 14.359 (LIMIT MC-014)
+                    ���> MC-042: n3Extraida = 16.456 (LIMIT MC-023)
+                    ���> MC-043: n4Extraida = 16.272 (LIMIT MC-024)
+                    ���> MC-044: nTotalExtraida = 63.588
+                    ���> MC-045 a MC-049: Hashes SHA-256 (integridade)
+                          MC-050: Timestamp | MC-051: Seed
+
+PT-04 ��> PT-05 (Validação Algorítmica)
+           ���> MC-052: invalidosAlgTotal = 12.231 (união de critérios)
+           ���> MC-053 a MC-056: Inválidos por estrato (E1..E4)
+           ���> MC-057 a MC-060: Categorias (fora_BR, absurdos, lat=lon, zeros)
+           ���> MC-061: validosAlgTotal = 51.357 (complemento)
+           ���> Análises Derivadas (Taxas):
+                 ���> MC-Taxa-01: Redução Leaflet = 99,95%
+                 ���> MC-Taxa-02: Aumento CAF = 58,1%
+                 ���> MC-Taxa-03: Fator E4 vs E2 = 3.210x
+                 ���> MC-Conclusão-01/02/03 (consolidações)
+
+PT-05 ��> PT-06 (Análise de Precisão Decimal)
+           ���> Validação 0 (Rastreabilidade):
+           �     ���> MC-073: hashConsolidadoVerificado (vs MC-049)
+           �     ���> MC-074: mc050Verificado (timestamp extração)
+           �     ���> MC-075: mc051Verificado (seed aleatorização)
+           ���> Filtro de Precisão (4 critérios PT-05 reaplicados):
+           �     ���> MC-062: altaPrecisaoTotal = 43.812
+           �           �
+           �           ���> [PARALELO] PT-07 (Consistência Municipal)
+           �           �               ���> MC-076: consistenteTotal = 36.836 (84,08%)
+           �           �               ���> MC-077 a MC-080: Por estrato
+           �           �               ���> MC-086/PT-07: Hash PT-06 verificado
+           �           �
+           �           ���> [PARALELO] PT-08 (Duplicações Espaciais)
+           �                            ���> MC-088: duplicatasExatas = 24.215 (55,27%)
+           �                            ���> MC-089: duplicatasProximas = 158 (0,36%)
+           �                            ���> MC-090: clustersDensos = 35 (0,08%)
+           �                            ���> MC-092: unicosEspacialmente = 19.404 (44,29%)
+           �                            ���> MC-086/PT-08: Hash PT-06 verificado
+           �                            ���> MC-102 a MC-107: Hashes e artefatos
+           ���> Distribuição por Estrato:
+           �     ���> MC-063: altaPrecisaoE1 = 11.626 (90,59%)
+           �     ���> MC-064: altaPrecisaoE2 = 10.948 (76,26%)
+           �     ���> MC-065: altaPrecisaoE3 = 11.714 (89,33%)
+           �     ���> MC-066: altaPrecisaoE4 = 9.524 (86,17%)
+           ���> Inferência Populacional (IC 99%):
+           �     ���> MC-067: taxaAltaPrecisaoGlobal = 85,31%
+
+
+
+                                                  11
+
+==================================================
+PÁGINA 12
+==================================================
+
+          �     ���> MC-069: ic99Superior = 85,71%
+          �     ���> MC-070: margemErro99 = ±0,40 p.p.
+          ���> Análise de Transições:
+                 ���> MC-071: reducaoLeafletPrecisao = −14,33 p.p. (REGRESSÃO)
+                 ���> MC-072: reducaoCAFPrecisao = −3,16 p.p. (REGRESSÃO)
+
+PT-06 ��> PT-07 (Consistência Espacial - Point-in-Polygon)
+           ���> Validação 0 (Integridade Dupla):
+           �     ���> MC-086/PT-07: hashPT06Verificado (e39d4f...5376d6)
+           �     ���> MC-087: numMunicipiosIBGE = 5.573 (PostGIS caf_mapa)
+           ���> Spatial Join (ST_Contains - PostGIS):
+           �     ���> MC-076: consistenteTotal = 36.836 (84,08%)
+           �            � FONTE QUATERNÁRIA (3ª camada: Alg + Prec + Espacial)
+           ���> Distribuição por Estrato:
+           �     ���> MC-077: consistenteE1 = 10.034 (86,31%)
+           �     ���> MC-078: consistenteE2 = 8.734 (79,78%) ← PIOR
+           �     ���> MC-079: consistenteE3 = 10.042 (85,73%)
+           �     ���> MC-080: consistenteE4 = 8.026 (84,27%)
+           ���> Categorização de Inconsistências:
+           �     ���> MC-081: inconsistenteMesmaUF = 5.980 (13,65%)
+           �     ���> MC-082: inconsistenteUFErrada = 722 (1,65%) ← GRAVE
+           �     ���> MC-083: semMatch = 274 (0,63%)
+           ���> Análise de Transições:
+                  ���> MC-084: reducaoLeafletConsistencia = −6,53 p.p. (REGRESSÃO)
+                  �     � Leaflet: DUPLA REGRESSÃO (precisão −14,33 p.p. + consistência −6,53 p.p.)
+                  ���> MC-085: reducaoCAFConsistencia = −1,46 p.p. (REGRESSÃO)
+
+PT-06 ��> PT-08 (Duplicações Espaciais - Análise de Distância Haversine)
+           ���> Validação 0 (Integridade):
+           �     ���> MC-086/PT-08: hashPT06Verificado (e39d4f...5376d6)
+           �            � Mesmo hash do PT-07 (arquitetura paralela)
+           ���> Análise de Distância Haversine (PostGIS):
+           �     ���> MC-088: duplicatasExatas = 24.215 (55,27%)
+           �     �     � Coordenadas idênticas (haversine = 0m)
+           �     ���> MC-089: duplicatasProximas = 158 (0,36%)
+           �     �     � 0 < haversine � 10m (suspeitas)
+           �     ���> MC-090: clustersDensos = 35 (0,08%)
+           �     �     � �3 vizinhos em raio de 100m
+           �     ���> MC-092: unicosEspacialmente = 19.404 (44,29%)
+           �            � Registros espacialmente únicos
+           ���> Análise por Estrato (Taxas de Duplicação):
+           �     ���> MC-096: E1_duplicacoes = 92,40% (10.743/11.626)
+           �     �     � CRÍTICO: Entrada Manual (pré-Leaflet)
+           �     ���> MC-097: E2_duplicacoes = 17,74% (1.942/10.948)
+           �     �     � MELHORIA: Leaflet (pós-15/08)
+           �     ���> MC-098: E3_duplicacoes = 66,78% (7.823/11.714)
+           �     �     � CAF 2.x: Alta incidência
+           �     ���> MC-099: E4_duplicacoes = 40,95% (3.900/9.524)
+           �            � CAF 3.0: Melhoria parcial
+           ���> Análise de Transições (Impacto das Interfaces):
+           �     ���> MC-100: reducaoLeafletDup = −74,66 p.p.
+           �     �     � Variação E1→E2: 92,40% → 17,74%
+           �     �     � LEAFLET FOI CRÍTICO para redução de duplicações
+           �     ���> MC-101: reducaoCAFDup = −25,83 p.p.
+           �            � Variação E3→E4: 66,78% → 40,95%
+
+
+
+                                                 12
+
+==================================================
+PÁGINA 13
+==================================================
+
+          ���> Casos Extremos Identificados:
+          �     ���> MC-094: maiorCluster = 5 vizinhos
+          �     �     � Seabra/BA (-12.878245, -38.757470)
+          �     ���> MC-095: pontoMaisDuplicado = 39 registros
+          �            � Guanambi/BA (-14.2196, -42.7778)
+          ���> Artefatos e Rastreabilidade:
+                 ���> MC-102: hashAnexoA (283af7b0...5c045df4)
+                 ���> MC-103: hashClassificacao (fa2f55fd...536e962b2)
+                 ���> MC-104: hashDuplicatasGeoJSON (4cc1c015...34004e3f)
+                 ���> MC-105: hashClustersGeoJSON (009afe90...f094e5e3)
+                 ���> MC-106: hashResumoJSON (54b9a77f...2f056ada)
+                 ���> MC-107: timestampExecucao (2025-11-09)
+
+PT-04 ��> PT-09 (Análise Temporal Leaflet - Impacto da Interface)
+           ���> Validação 0 (Rastreabilidade das Amostras):
+           �     ���> MC-091/PT-09: populacaoLeafletAntes = 16.501
+           �     �     � Valida MC-013/PT-02 = MC-040/PT-04
+           �     ���> MC-092/PT-09: populacaoLeafletDepois = 14.359
+           �            � Valida MC-014/PT-02 = MC-041/PT-04
+           ���> Análise Comparativa de Erros (ANTES vs DEPOIS Leaflet):
+           �     ���> Aplicação dos critérios PT-05 (erros algorítmicos)
+           �     ���> Aplicação dos critérios PT-07 (erros geoespaciais)
+           �     ���> MC-093/PT-09: taxaErroLeafletAntes = 34,05%
+           �     �     � Taxa total de erros no período pré-Leaflet (E1)
+           �     �     � Breakdown: Alg 22,22% + Geo 11,83%
+           �     �     � 5.619 erros em 16.501 registros
+           �     ���> MC-094/PT-09: taxaErroLeafletDepois = 32,47%
+           �            � Taxa total de erros no período pós-Leaflet (E2)
+           �            � Breakdown: Alg 0,01% + Geo 32,46%
+           �            � 4.662 erros em 14.359 registros
+           ���> Análise da Transformação do Problema:
+           �     ���> MC-095/PT-09: reducaoErrosAlgoritmicos = -22,21 p.p.
+           �     �     � Variação E1→E2: 22,22% → 0,01% (redução de 99,95%)
+           �     �     � Sucesso crítico: Leaflet eliminou erros de sintaxe
+           �     �     � De 3.667 erros (E1) para apenas 1 erro (E2)
+           �     ���> MC-096/PT-09: aumentoErrosGeoespaciais = +20,63 p.p.
+           �            � Variação E1→E2: 11,83% → 32,46% (aumento de 174%)
+           �            � Problema novo: Leaflet introduziu erros de município
+           �            � De 1.952 erros (E1) para 4.661 erros (E2)
+           ���> Descoberta Crítica - Transformação do Perfil de Erros:
+           �     ���> Trade-off Algorítmico-Geoespacial:
+           �            � Redução massiva de erros algorítmicos (~99,95%)
+           �            � Aumento de erros geoespaciais (município errado)
+           �            � Leaflet: Resolveu SINTAXE, piorou SEMÂNTICA
+           ���> Descoberta Salvador (Heterogeneidade Espacial):
+           �     ���> N=1.124 imóveis CAF (análise censitária completa)
+           �     ���> ANTES Leaflet: 88,00% erro → DEPOIS: 4,17% erro
+           �     ���> Variação Salvador: -83,83 p.p. (OPOSTO ao nacional +20,63 p.p.)
+           �     ���> Hipóteses: Cartografia municipal prévia + treinamento + curadoria
+           ���> Teste Estatístico (Two-proportion Z-test):
+           �     ���> z = -43,87 (p < 10�¹�)
+           �     ���> Significância EXTREMA (quase 2× PT-10: z=24,74)
+           ���> Fonte de Verdade Estabelecida:
+                  ���> Documentação técnica: PT-09 Seções 2.3 (R), 3.4 (IBGE), 4.3 (Z-test)
+                  ���> Apêndice Salvador (linhas 2301-2419): 118 linhas
+
+
+
+                                                 13
+
+==================================================
+PÁGINA 14
+==================================================
+
+               ���> Validação: Sylvio (98% NAT) + Harley (9.7/10 qualidade)
+
+PT-04 ��> PT-10 (Análise Temporal CAF 3.0 - Impacto da Interface)
+           ���> Validação 0 (Rastreabilidade das Amostras):
+           �     ���> MC-091/PT-10: populacaoCAFAntes = 16.456
+           �     �     � Valida MC-023/PT-03 = MC-042/PT-04 (E3)
+           �     ���> MC-092/PT-10: populacaoCAFDepois = 16.272
+           �            � Valida MC-024/PT-03 = MC-043/PT-04 (E4)
+           ���> Análise Comparativa de Erros (ANTES vs DEPOIS CAF 3.0):
+           �     ���> Aplicação dos critérios PT-05 (erros algorítmicos)
+           �     ���> Aplicação dos critérios PT-07 (erros geoespaciais)
+           �     ���> MC-099/PT-10: taxaErroCAFAntes = 32.66%
+           �     �     � Taxa total de erros no período CAF 2.x (E3)
+           �     �     � Breakdown: Alg 20.31% + Geo 12.35%
+           �     �     � 5.375 erros em 16.456 registros
+           �     ���> MC-100/PT-10: taxaErroCAFDepois = 45.92%
+           �            � Taxa total de erros no período CAF 3.0 (E4)
+           �            � Breakdown: Alg 32.07% + Geo 13.85%
+           �            � 7.472 erros em 16.272 registros
+           ���> Análise de Variações E3→E4:
+           �     ���> MC-101/PT-10: variacaoAbsoluta = +13.26 p.p.
+           �     �     � Variação: 32.66% → 45.92%
+           �     �     � DETERIORAÇÃO absoluta de 13,26 pontos percentuais
+           �     ���> MC-102/PT-10: variacaoRelativa = +40.60%
+           �            � Aumento relativo: ((45.92 - 32.66) / 32.66) × 100
+           �            � **DETERIORAÇÃO CRÍTICA**: +40,60% de piora
+           ���> Análise Detalhada por Tipo de Erro:
+           �     ���> MC-103/PT-10: taxaAlgoritmicaE3 = 20.31%
+           �     �     � 3.343 erros algorítmicos em E3 (CAF 2.x)
+           �     ���> MC-104/PT-10: taxaAlgoritmicaE4 = 32.07%
+           �     �     � 5.219 erros algorítmicos em E4 (CAF 3.0)
+           �     �     � Variação: +11.76 p.p. (+57.9% relativo)
+           �     ���> MC-105/PT-10: taxaGeoespacialE3 = 12.35%
+           �     �     � 2.032 erros geoespaciais em E3 (CAF 2.x)
+           �     ���> MC-106/PT-10: taxaGeoespacialE4 = 13.85%
+           �            � 2.253 erros geoespaciais em E4 (CAF 3.0)
+           �            � Variação: +1.50 p.p. (+12.1% relativo)
+           ���> Análise de "Valores Absurdos" (Bug de Malformação):
+           �     ���> MC-107/PT-10: taxaAbsurdosE3 = 0.00%
+           �     �     � BASELINE NORMAL: Nenhum valor fora do range mundial
+           �     �     � CAF 2.x não gerava coordenadas absurdas (lat>90, lon>180)
+           �     ���> MC-108/PT-10: taxaAbsurdosE4 = 0.00%
+           �            � SEM EXPLOSÃO: Nenhum valor fora do range mundial
+           �            � CAF 3.0 NÃO introduziu bug de malformação
+           �            � DESCOBERTA: Plan esperava 0% → 19.79%, real: 0% → 0%
+           ���> Descoberta Crítica - Natureza dos Erros:
+           �     ���> Deterioração CAF 3.0 é diferente do esperado:
+           �            � ESPERADO (do Plano): Bug de "valores absurdos" (+1.749%)
+           �            � REAL: Aumento de erros algorítmicos dentro do Brasil
+           �            � Erros são coordenadas fora do Brasil (-90<lat<90, -180<lon<180)
+           �            � Mas fora da bbox Brasil: lat � [-34, 6] ou lon � [-74, -34]
+           �            � Deterioração REAL: +40.60%, não +97.6% como previsto
+           ���> Contraste com PT-09 (Leaflet):
+           �     ���> Comparação de Impactos das Interfaces:
+           �            PT-09 (Leaflet): 34,05% → 32,47% (−1,58 p.p., −5% relativo)
+
+
+
+                                                 14
+
+==================================================
+PÁGINA 15
+==================================================
+
+          �             � Piorou erros geoespaciais (+20,63 p.p.)
+          �             � Resolveu SINTAXE, piorou SEMÂNTICA
+          �           PT-10 (CAF 3.0): 32,66% → 45,92% (+13,26 p.p., +40,60% relativo)
+          �             � Regressão crítica: Piorou ambos os tipos
+          �             � Erros algorítmicos: +11,76 p.p. (+57,9%)
+          �             � Erros geoespaciais: +1,50 p.p. (+12,1%)
+          �             � Piorou SINTAXE E SEMÂNTICA
+          ���> Fonte de Verdade Estabelecida:
+                ���> Tabela criada: tmp_pt10_analise_completa (32.728 registros)
+                ���> Script executado: pt10_analise_completa.sql
+                ���> Timestamp: 2025-11-10 17:49:31
+                ���> MCs PT-10 são consumidas pelo PT-21 (Linha do Tempo)
+                      � Narrativa temporal da crise de qualidade CAF
+
+---
+
+## � FONTES DE VERDADE QUINTENÁRIAS (PT-11: Validação Temporal com Estratos Equivalentes)
+
+**OBJETIVO:** Validar robustez do achado PT-10 usando janelas temporais equivalentes (6 meses antes/depois
+
+| ID | PT | Nome Variável | Valor | Fonte / Observação |
+|----|----|---------------|-------|--------------------|
+| **MC-107/PT-11** | **PT-11** | `totalE3PeriodoEquivalente` | 4.905 | População E3-Longo (6 meses pré-CAF
+| **MC-108/PT-11** | **PT-11** | `totalE4PeriodoEquivalente` | 16.272 | População E4-Longo (6 meses pós-CAF
+| **MC-109/PT-11** | **PT-11** | `errosE3PeriodoEquivalente` | 1.547 | Nº de erros cartográficos no Estrato
+| **MC-110/PT-11** | **PT-11** | `errosE4PeriodoEquivalente` | 7.472 | Nº de erros cartográficos no Estrato
+| **MC-111/PT-11** | **PT-11** | `taxaErroE3PeriodoEquivalente` | 31,54 % | Taxa de erro total no Estrato E
+| **MC-112/PT-11** | **PT-11** | `taxaErroE4PeriodoEquivalente` | 45,92 % | Taxa de erro total no Estrato E
+| **MC-113/PT-11** | **PT-11** | `deterioracaoPercPeriodoEquivalente` | +45,59 % | Deterioração relativa en
+| **MC-114/PT-11** | **PT-11** | `zTestStatisticRobustez` | 17,85 | Estatística Z para teste de robustez (J
+| **MC-115/PT-11** | **PT-11** | `pValueRobustez` | < 0,0001 | Valor P do teste de robustez (Janelas Longas
+| **MC-116/PT-11** | **PT-11** | `IC95inferiorDeterioracao` | 12,87 p.p. | Limite inferior do IC 95% para d
+| **MC-117/PT-11** | **PT-11** | `IC95superiorDeterioracao` | 15,89 p.p. | Limite superior do IC 95% para d
+| **MC-118/PT-11** | **PT-11** | `idadeMediaE3E4Equivalente` | ~180 dias | Idade média dos registros nos es
+
+### � Análise de Robustez (PT-11)
+
+**TESTE 1 - Janelas Curtas (90 dias):**
+- E3-Curto: 712 registros | E4-Curto: 2.905 registros
+- Deterioração: +46,53% | Z-score: 11,97
+- Status: � CONFIRMATORY (não usado para MCs oficiais)
+
+**TESTE 2 - Janelas Longas (6 meses) � PRINCIPAL:**
+- E3-Longo: 4.905 registros | E4-Longo: 16.272 registros
+- Deterioração: +45,59% | Z-score: 17,85
+- Status: � PRIMARY (fonte de MC-107 a MC-118)
+- Rastreabilidade: MC-108/PT-11 = MC-092/PT-10 (IDÊNTICO)
+
+**TESTE 3 - Teste Placebo (controle negativo):**
+- Dois períodos ANTES CAF 3.0 (sem mudança de sistema)
+- Resultado: -14,57% (MELHORA, não piora)
+- Status: � REFUTATION TEST
+- Conclusão: REFUTA viés de curadoria progressiva
+
+### � Validação Cruzada PT-10 vs PT-11
+
+
+
+                                               15
+
+==================================================
+PÁGINA 16
+==================================================
+
+|---------|----------------------|-------------------------|--------------|
+| **População E4** | 16.272 | 16.272 | � IDÊNTICO |
+| **Taxa E4** | 45,92% | 45,92% | � IDÊNTICO |
+| **Deterioração** | +40,60% | +45,59% | � CONVERGENTE |
+| **Z-score** | 24,74 | 17,85 | � Ambos extremos |
+| **Conclusão** | Deterioração CAF 3.0 | Validação robustez | � ROBUSTO |
+
+### � Artefatos e Rastreabilidade (PT-11)
+
+- **statistic_queries_pt11.json** (322 linhas): 12 MCs + 3 testes robustez
+- **FASE 1 changes** (nov/11):
+  - Underscores escapados (linhas 884, 1022)
+  - 4 figuras redistribuídas (Anexo E → corpo)
+  - Anexo E reescrito (notas técnicas, 86 linhas)
+- **Compilação:** � 28 páginas, 912 KB, 3 passes, zero erros
+- **Validação:** Sylvio (99% NAT) + Harley (9.9/10 qualidade)
+
+
+
+� PROTOCOLO DE VALIDAÇÃO
+Validações Obrigatórias
+PT-01 → PT-02:
+-- Validação 1: População base idêntica
+SELECT CASE
+  WHEN (SELECT COUNT(*) FROM tmp_populacao_analisavel) = 3175345
+  THEN '� MC-002/PT-01 = 3.175.345'
+  ELSE '� ERRO: População diverge!'
+END;
+PT-02 → PT-04:
+# Validação 2: Tamanhos amostrais corretos
+assert n1_adotada == 16501, "MC-013/PT-02 violado!"
+assert n2_adotada == 14359, "MC-014/PT-02 violado!"
+assert n1_adotada + n2_adotada == 30860, "MC-015/PT-02 violado!"
+PT-03 → PT-04:
+# Validação 3: Tamanhos amostrais CAF corretos
+assert n3_adotada == 16456, "MC-023/PT-03 violado!"
+assert n4_adotada == 16272, "MC-024/PT-03 violado!"
+assert n3_adotada + n4_adotada == 32728, "MC-025/PT-03 violado!"
+
+
+
+� IMPACTO DE MUDANÇAS
+Cenário 1: Alteração em MC-002/PT-01 (População Base)
+Impacto: � CRÍTICO - Requer reexecução de TODOS os PTs downstream
+MC-002/PT-01 alterado
+  �� PT-01: Reexecutar scripts 1-5, recompilar PDF
+  �� PT-02: Recalcular MC-008 a MC-016, recompilar PDF
+  �� PT-03: Recalcular MC-017 a MC-025, recompilar PDF
+  �� PT-04: Reextrair 4 amostras (novos CSVs)
+  �� PT-05: Revalidar coordenadas impossíveis
+
+
+                                               16
+
+==================================================
+PÁGINA 17
+==================================================
+
+  �� PT-07: Revalidar consistência municipal
+Justificativa Obrigatória: Mudança requer: 1. Documento formal explicando motivo técnico/jurídico 2.
+Aprovação do supervisor/coordenador 3. Registro em ata de reunião 4. Versionamento no MC_MASTER_INDEX.md
+
+Cenário 2: Alteração em MC-013 ou MC-014 (Tamanhos Amostrais Leaflet)
+Impacto: � MÉDIO - Requer reexecução PT-02 e downstream
+MC-013 ou MC-014 alterado
+  �� PT-02: Revisar cálculo FPC, atualizar MC-015, recompilar PDF
+  �� PT-04: Reextrair Estratos 1 e 2 (novos CSVs)
+  �� PT-05: Revalidar coordenadas (Estratos 1 e 2)
+  �� PT-06: Revalidar precisão (Estratos 1 e 2)
+  �� PT-07: Revalidar consistência (Estratos 1 e 2)
+
+NÃO AFETA: PT-03 (dimensionamento independente)
+
+Cenário 3: Alteração em MC-023 ou MC-024 (Tamanhos Amostrais CAF)
+Impacto: � MÉDIO - Requer reexecução PT-03 e downstream
+MC-023 ou MC-024 alterado
+  �� PT-03: Revisar cálculo FPC, atualizar MC-025, recompilar PDF
+  �� PT-04: Reextrair Estratos 3 e 4 (novos CSVs)
+  �� PT-05: Revalidar coordenadas (Estratos 3 e 4)
+  �� PT-06: Revalidar precisão (Estratos 3 e 4)
+  �� PT-07: Revalidar consistência (Estratos 3 e 4)
+
+NÃO AFETA: PT-02 (dimensionamento independente)
+
+
+
+� GLOSSÁRIO DE SÍMBOLOS
+  • � IMUTÁVEL: Valor estabelecido e não deve mudar (salvo revisão formal)
+  • � FONTE PRIMÁRIA: Verdade canônica que alimenta múltiplos PTs downstream
+  • � FONTE SECUNDÁRIA: Verdade derivada de fonte primária, consumida por PTs específicos
+  • � ALERTA: Alteração requer protocolo de mudança e reexecução em cascata
+  • � BLOQUEADO: Não alterar sem justificativa formal e aprovação
+  • � SCRIPT: Arquivo SQL/Python que gera ou valida o valor
+  • � DOCUMENTAÇÃO: Localização da explicação metodológica detalhada
+  • � TEMPORAL: Marco temporal ou janela de exclusão
+  • � ESTATÍSTICO: Valor obtido por cálculo estatístico (FPC, percentuais)
+  • � CRÍTICO: Impacto alto - requer reexecução de toda cadeia
+  • � MÉDIO: Impacto médio - requer reexecução parcial
+
+
+
+� CONTATOS E RESPONSABILIDADES
+
+Papel            Responsável                    Ação em Caso de Mudança
+PT-01            Coordenador de Auditoria       Aprovar mudanças em MC-002
+(População)
+PT-02/PT-03      Estatístico                    Validar cálculos FPC
+(Dimensiona-
+mento)
+
+
+
+                                                  17
+
+==================================================
+PÁGINA 18
+==================================================
+
+PT-04                Analista de Dados                 Executar extrações com LIMIT correto
+(Extração)
+PT-05/06/07          Equipe de Auditoria               Validar resultados analíticos
+(Análises)
+
+
+
+
+� NOTAS HISTÓRICAS E ESCLARECIMENTOS
+Nota 1: Correção do Esqueleto PT-09 - MC-014/PT-02 (10/11/2025)
+Durante a preparação do PT-09, identificou-se que o esqueleto LaTeX continha um valor desatualizado para
+MC-014/PT-02:
+  • Valor no Esqueleto PT-09: 14.491 registros (� incorreto)
+  • Valor Real (MC-014/PT-02 = MC-041/PT-04): 14.359 registros (� correto)
+  • Diferença: 132 registros (0,9%)
+Origem da Divergência: O valor 14.491 era provavelmente uma estimativa preliminar ou placeholder que nunca
+foi a fonte de verdade. A extração real do PT-04 (executada em 2025-11-07 16:49:13 UTC) sempre produziu
+14.359 registros, conforme o cálculo definitivo do PT-02 (MC-014: CEIL(14.358,46) = 14.359).
+Validações Realizadas:
+-- PostgreSQL
+SELECT COUNT(*) FROM tmp_amostra_pt04_consolidada WHERE estrato = 2;
+-- Resultado: 14.359 �
+
+-- Metadata JSON (pt04_metadata.json)
+"mc041_n2_extraida": 14359 �
+
+-- Hash SHA-256 (pt04_hashes_sha256.txt)
+92b891b393fb8fd6d790441f7e7ad14e066a9d15f58442aa0dee8b005c562033 �
+Ação Corretiva: O esqueleto PT-09 foi corrigido em 4 localizações para refletir o valor correto (14.359). A cadeia
+de custódia PT-02 → PT-04 → PT-09 foi validada e está íntegra.
+Status: � Resolvido. Todos os documentos agora referenciam o valor correto.
+Documento Técnico: PT09_ESCLARECIMENTO_MC014.md (investigação completa)
+
+
+
+
+� PT-12: ÁREAS MUNICIPAIS IMPOSSÍVEIS (Inflação Cadastral)
+        � CORREÇÃO CRÍTICA (12/nov/2025): Identificado e corrigido erro de conversão de unidades.
+        Campo nr_area contém valores em hectares (ha) e m², não km². Impacto: Todos os valores originais
+        estavam inflados 100×. Ação: Função caf_mapa.converter_area_para_km2() implementada em todos
+        os scripts. Validação: Penalva corrigido = 2.248,77× (convergência 98,6% com valor histórico 2.217×).
+        Resultado: PDF PT-12 regenerado com valores corretos (32 páginas, 20MB).
+
+
+
+
+                                                         18
+
+==================================================
+PÁGINA 19
+==================================================
+
+MC-     PT-12     municipiosComInflacao        632             COUNT(municípios WHERE
+119/PT-                                        municípios      multiplicador > 1.0)� 11,43% dos
+12                                                             municípios
+                                                               (632 de 5.527) apresentam inflação� Script:
+                                                               02_calcular_inflacao_municipal.sql�
+                                                               CORREÇÃO: Conversão de unidades
+                                                               implementada (ha/m² → km²)�
+                                                               Documentação: PT-12 Seção 3.1
+MC-     PT-12     penalvaAreaCadastrada        1.801.074       SUM(converter_area_para_km2(nr_area,
+120/PT-                                        km²             id_tipo_unidade_medida)) WHERE
+12                                                             cd_municipio = '2108306'�
+                                                               CRÍTICO: Equivale a 21,16% do
+                                                               Brasil ou 2,24× Minas Gerais�
+                                                               2.248,77× a área oficial (800,92 km²)�
+                                                               Validação vs Cap 5: 2.217×
+                                                               (convergência 98,6%)� Script:
+                                                               02_calcular_inflacao_municipal.sql
+MC-     PT-12     penalvaMultiplicador         2.248,77×       MC-120 / 800,92 km²�
+121/PT-                                                        IMPOSSIBILIDADE FÍSICA: 2.249
+12                                                             camadas sobrepostas� Convergência com
+                                                               valor histórico (2.217×): diferença de
+                                                               1,4%� Equivale a 2,24× estado de
+                                                               Minas Gerais ou 3,21× região
+                                                               Nordeste
+MC-       PT-12   penalvaPercentualBrasil      21,16 %         (MC-120 / 8.510.820) × 100� Penalva
+122/PT-                                                        “cadastrado” = 21,16% do território
+12                                                             brasileiro
+MC-       PT-12   top20AreaExcedente           3.646.622 km²   SUM(area_excedente TOP 20
+123/PT-                                                        municípios)� TOP 20 = 42,88% do
+12                                                             Brasil (3,65 milhões km²)
+MC-       PT-12   areaTotalCadastradaBrasil    8.767.644 km²   SUM(area_cadastrada_km2) de todos
+124/PT-                                                        municípios� 1,15× a área oficial do
+12                                                             Brasil (8,49 milhões km²)� Valor
+                                                               compatível com expectativa (conversão
+                                                               correta de unidades)
+MC-       PT-12   multiplicadorMedioNacional   1,15×           MC-124 / 8.489.854 km²� Problema
+125/PT-                                                        presente em 11,43% dos municípios�
+12                                                             CAF 3.0 reduziu drasticamente a inflação
+MC-       PT-12   penalvaImoveisTotal          3.206 imóveis   COUNT(*) WHERE cd_municipio =
+126/PT-                                                        '2108306'População Penalva: 38.470
+12                                                             habitantes (IBGE 2019)Razão: 8,34
+                                                               imóveis / 100 habitantes
+MC-       PT-12   penalvaAreaMaximaImovel      9.624,36 km²    MAX(converter_area_para_km2(...))
+127/PT-                                                        WHERE cd_municipio = '2108306'� 1
+12                                                             único imóvel = 12,02× Penalva
+                                                               inteiro� Maior que Distrito Federal
+                                                               (5.760 km²)� 1,64× o estado de
+                                                               Sergipe (5.875 km²)
+MC-     PT-12     percMunicipiosInflacaoAntes 10,89%           Percentual municípios com inflação
+128/PT-                                                        ANTES CAF 3.0� Período: dt_criacao <
+12                                                             '2025-03-26'� 601 de 5.518 municípios�
+                                                               Script:
+                                                               03_analise_temporal_caf30.sql
+
+
+
+
+                                               19
+
+==================================================
+PÁGINA 20
+==================================================
+
+MC-     PT-12         percMunicipiosInflacaoDepois0,31%                  Percentual municípios com inflação
+129/PT-                                                                  DEPOIS CAF 3.0� Período: dt_criacao
+12                                                                       >= '2025-03-26'� 17 de 5.435
+                                                                         municípios� CAF 3.0 praticamente
+                                                                         eliminou o problema (redução de
+                                                                         10,58 p.p.)
+MC-     PT-12         reducaoPercentualPenalva          99,998%          Redução temporal Penalva
+130/PT-                                                                  ANTES→DEPOIS CAF 3.0� 1.801.040,75
+12                                                                       km² → 32,98 km²� Multiplicador
+                                                                         pós-CAF 3.0: 0,04× (problema
+                                                                         eliminado em novos cadastros)
+
+
+� Contexto PT-12: Magnitude do Problema (VALORES CORRIGIDOS)
+Penalva/MA é o caso extremo de um problema que afeta 11,43% dos municípios:
+     • 1 município: Penalva = 2.248,77× sua área oficial (21,16% do Brasil)
+     • 20 municípios: TOP 20 = 3,65 milhões km² de área excedente (42,88% do Brasil)
+     • 632 municípios: 11,43% do total com inflação (não 90,87% como antes da correção)
+     • Nacional: Área cadastrada total = 1,15× o Brasil oficial (não 107×)
+Comparações Ilustrativas (Penalva/MA): | Entidade | Área (km²) | Equivalência | |———-|————|————–|
+| Penalva cadastrado | 1.801.074 | = 2.248,77× Penalva oficial | | Penalva cadastrado | 1.801.074 | = 21,16% do
+Brasil | | Penalva cadastrado | 1.801.074 | = 2,24× Minas Gerais | | Penalva cadastrado | 1.801.074 | = 3,21× região
+Nordeste | | 1 imóvel Penalva | 9.624,36 | = 12,02× Penalva inteiro | | 1 imóvel Penalva | 9.624,36 | = 1,64× estado
+de Sergipe |
+
+� Hipóteses Explicativas (ATUALIZADO)
+     1. � CONFIRMADO - Erro de Conversão de Unidades: Campo nr_area contém valores em hectares (ha)
+        e m², mas análise original tratava todos como km²
+          • Impacto: Inflação artificial de 100× em todos os números
+          • Correção: Função caf_mapa.converter_area_para_km2() implementada
+          • Validação: Penalva corrigido = 2.248,77× (vs 2.217× histórico = convergência 98,6%)
+     2. Sobreposição Espacial: Múltiplos imóveis nas mesmas coordenadas (ver PT-08)
+          • � PT-08 documentou 656 coordenadas com até 6.892 imóveis duplicados
+          • Contribui para inflação mas não explica totalmente o fator 2.248×
+     3. Outliers Extremos: Minoria de cadastros com áreas absurdas inflam o total
+          • � Histograma mostra: mediana = 2 km², média = 561,78 km² (fator 281×)
+          • � Distribuição altamente assimétrica com cauda longa à direita
+          • � Imóvel de 962.436 km² sugere erro sistêmico, não digitação isolada
+     4. Ausência de Validação: Sistema CAF não valida plausibilidade física das áreas
+          • � Confirmado: não há validação de área > área_municipio_ibge
+
+� Rastreabilidade PT-12
+     • Scripts SQL:
+         – 01_agregar_areas_municipais_v2.sql (agregação por município)
+         – 02_calcular_inflacao_municipal.sql (cálculo multiplicadores + JOIN IBGE)
+     • Logs:
+         – 02_calcular_inflacao_municipal.log (outputs completos)
+     • Documento de MCs:
+         – MCs_PT12_CALCULADOS.md (detalhamento completo de todas as MCs)
+     • Data de Extração: 11 de novembro de 2025, 21:45 BRT
+     • Banco: caf_mapa (PostgreSQL 14.2, host 172.23.80.1:5433)
+
+
+
+                                                        20
+
+==================================================
+PÁGINA 21
+==================================================
+
+PT-12 suporta os seguintes claims do Capítulo 5 (Integridade Geoespacial):
+  • C5.5: Sistema CAF não valida plausibilidade física das áreas declaradas
+      – � Confirmado: 11,43% dos municípios com inflação cadastral
+  • C5.6: Inflação cadastral afeta parcela significativa dos municípios
+      – � 632 municípios com multiplicador > 1,0
+      – � CAF 3.0 reduziu drasticamente (de 10,89% para 0,31% nos novos cadastros)
+  • C5.7: Casos extremos evidenciam falhas críticas de validação
+      – � Penalva 2.248,77× (não 224.876×, erro de conversão corrigido)
+      – � Passivo histórico permanece (cadastros pré-CAF 3.0)
+
+
+Última Atualização: 12 de novembro de 2025, 01:45 BRT Versão: 2.9 (PT-12 CORRIGIDO: Erro de con-
+versão de unidades identificado e corrigido | Todos valores atualizados) Responsável: Equipe de Auditoria Op-
+eracional - TCU Documentos Relacionados: - GOVERNANCA_FONTES_DE_VERDADE.md - Protocolo completo -
+achado02/sql/_CRITERIO_UF_ATIVA_CANONICAL.sql - Script canônico - PT-01 (Seção “Fonte de Verdade Estab-
+elecida”) - PT-02 (Seção “Fonte de Verdade Estabelecida”) - PT09_ESCLARECIMENTO_MC014.md - Nota Técnica sobre
+MC-014 - MCs_PT12_CALCULADOS.md - Memórias de Cálculo PT-12 (completo)
+
+
+
+
+                                                     21
+
+==================================================
+PÁGINA 22
+==================================================
+

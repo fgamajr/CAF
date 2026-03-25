@@ -1,0 +1,59 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA EXECUTIVA
+SUBSECRETARIA DE PLANEJAMENTO, ORÇAMENTO E ADMINISTRAÇÃO
+          
+OFÍCIO - MD A Nº 969/2025/SPO A-MD A/MD A
+Brasília, na da ta da assina tura ele trônic a.
+À Senhor a
+TATIANA FREIT AS DE OLIVEIRA
+Chefe da Assessoria Especial de Con trole In terno - AE CI
+Esplanada dos Minis térios, Bloc o C
+70043-900 - Br asília/DF
+ 
+Assun to: Ofício 000.356/2025 - AudTI - T C 011.073/2025-0 - Dilig ência - Audit oria em andamen to.
+ 
+Senhor a Che fe da Assessoria Especial de Con trole In terno ,
+ 
+1. Em atenção ao Ofício MDA nº 155 (SEI nº 45688368 ), encaminhado pela Assessoria
+Especial de Controle Interno , que apresen ta esclar ecimen tos referentes ao Processo TC 011.073/2025-0,
+do Tribunal de Contas da União (TCU), acer ca de divergências quan to ao númer o de tabelas existentes e
+de registros de documen tos anexados com links expirados relacionados ao Cadas tro Nacional da
+Agricultur a Familiar (CAF), informamos que, em respos ta a essas ques tões, encaminhamos o Ofício nº 76
+(SEI nº 45798933 ), que c ontém os seguin tes esclar ecimen tos:
+2. Com r elação  às div ergências quan to ao númer o de t abelas:
+a)Atualmen te, encontram-se em uso 95 tabelas no banc o de dados do CAF 3.0,
+devidamen te descrit as no dicionário de dados a tualiz ado.
+b)As tabelas que inicia vam com os preﬁxos tb_ e id_ correspondiam a estrutur as
+tempor árias, utiliz adas em processos de migr ação e testes, e já foram remo vidas da base
+de dados.
+c)A tabela S_MO TIVO_INA TIVACAO, não contemplada na documen tação anteriormen te
+enviada, f oi incluída na v ersão a tualiz ada, já disponibiliz ada à equipe de audit oria.
+d)Para subsidiar a análise, foram disponibiliz ados, via FTPS do domínio
+agricultur a.gov.br (com acessos previamen te enviados), o dicionário de dados
+atualiz ado, o modelo de dados e um dump da base r evisado.
+3. Com relação aos registros de documen tos anexados com links expirados, informamos que
+os link s permanecem v álidos, por ém demandam cr edenciais especíﬁc as par a acesso.
+4. Permanecem os à disposiç ão para quaisquer informaç ões complemen tares e
+encaminhamos os aut os par a as de vidas pr ovidências. 
+ 
+Atenciosamen te,
+ 
+DIEGO DONIZET TI GONÇAL VES MA CHADO
+Subsecretário de Planejamen to, Orçamen to e Adminis tração 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78957543.
+
+--- Página 2 ---
+Documento assinado eletronicamente por Diego Donizetti Goncalves Machado, Subsecretário de
+Planejamento, Orçamento e Administração, em 23/09/2025, às 16:30, conforme horário oﬁcial de
+Brasília, com fundamento no art. 4º,§ 3º, do Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 , informando o código veriﬁcador 45916217
+e o código CRC D5E80640.
+ 
+Esplanada dos Ministérios, Bloco D, 4º andar, sala 406 – Telefone: (61) 3218-2886
+CEP70043-900 Brasília/DF
+ 
+Referência:  Processo nº 55000.012930/2025-64 SEI nº 45916217
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78957543.

@@ -1,0 +1,1178 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+ 
+     
+CONTRATO MDA Nº 6/2026
+  
+A União, por intermédio do 
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+, com
+sede na Esplanada dos Ministérios, Bloco C, 4º andar, Brasília/DF, CEP: 70.046-900, inscrito no CNPJ sob o nº 01.612.452/0001-97
+neste ato 
+representado pela Senhora
+ 
+FERNANDA MACHIAVELI MORÃO DE OLIVEIRA
+, Secretária-Executiva, nomeada pelo
+Decreto de 12 de janeiro de 2023, seção Extra do Diário Oﬁcial da União, no uso da delegação de competência conferida pela
+Portaria MDA nº 65, de 7 de janeiro de 2026, para celebração de contratos administrativos, portadora da matrícula SIAPE nº
+1909074, doravante denominado 
+CONTRATANTE
+, e a 
+EMPRESA DE TECNOLOGIA E INFORMAÇÕES DA PREVIDÊNCIA S.A.
+- DATAPREV
+, inscrita no CNPJ/MF sob o nº 42.422.253/0001-01, 
+sediada no Setor de Autarquias Sul - SAS, Quadra 01, Bloco E/F,
+CEP: 70070-931
+, na cidade de Brasília/DF, doravante designado 
+CONTRATADO
+, neste ato representado por seu Diretor,
+ÁLVARO LUIS PEREIRA BOTELHO
+, e por seu Diretor, 
+ALAN DO NASCIMENTO SANTOS
+, conforme atos constitutivos da
+empresa (Resolução 4.085/2025 com delegação de competência), tendo em vista o que consta no Processo nº
+55000.008167/2025-77 e em observância às disposições da Lei nº 14.133, de 1º de abril de 2021, e demais legislação aplicável,
+resolvem celebrar o presente Termo de Contrato, decorrente 
+de Contratação Direta por Dispensa de Licitação, fundamentada no
+art. 75, inciso IX, da Lei nº 14.133, de 1º de abril de 2021.
+ 
+1
+.
+CLÁUSULA PRIMEIRA – DO OBJETO
+1
+.
+1
+.
+O objeto do presente instrumento é a contratação de solução de tecnologia da informação e comunicação
+de Soluções e Serviços Especializados de Tecnologia da Informação e Comunicação, sob demanda, com Empresas
+Públicas a serem prestados pelo prazo inicial de 60 (sessenta) meses, nas condições estabelecidas no Termo de Referência.
+1
+.
+2
+.
+Objeto da contratação:
+ 
+ 
+GRUPO
+EMPRESA
+ITEM
+DESCRIÇÃO DO
+SERVIÇO
+CATSER
+QUANTIDADE
+MÉTRICA
+VALOR
+UNITÁRIO
+VALOR 60
+MESES
+2
+DATAPREV
+13
+GovCloud - Multinuvem
+de Governo
+27049
+304.505
+USN
+R$ 1,50
+R$
+27.405.471,60
+2
+DATAPREV
+14
+Serviços de Produção de
+Soluções
+27324
+1
+taxa mensal
+R$
+498.937,95
+R$
+29.936.277,00
+2
+DATAPREV
+15
+Serviços Especiais
+27260
+1
+Proposta
+Técnica de
+Atendimento
+- PTA
+R$
+1.543.708,46
+R$
+92.622.507,60
+2
+DATAPREV
+16
+Consultoria de Negócio
+27332
+50
+Profissional
+Hora - PH
+R$ 258,23
+R$ 774.690,00
+2
+DATAPREV
+17
+Consultoria de Ciência de
+Dados
+27332
+50
+Profissional
+Hora - PH
+R$ 272,92
+R$ 818.760,00
+2
+DATAPREV
+18
+Consultoria de Tecnologia
+27332
+50
+Profissional
+Hora - PH
+R$ 286,90
+R$ 860.700,00
+2
+DATAPREV
+19
+Serviço de Análise de
+Risco
+ 
+1
+taxa mensal
+R$
+372.480,54
+R$
+22.348.832,40
+2
+DATAPREV
+20
+SEI! Como serviço
+27260
+1
+taxa mensal
+R$
+46.129,38
+R$ 2.767.762,80
+TOTAL DATAPREV
+R$
+177.535.001,40
+ 
+1
+.
+3
+.
+Vinculam esta contratação, independentemente de transcrição: 
+1
+.
+3
+.
+1
+.
+O Termo de Referência; 
+1
+.
+3
+.
+2
+.
+A Autorização de Contratação Direta; 
+1
+.
+3
+.
+3
+.
+A Proposta do contratado
+; 
+1
+.
+3
+.
+4
+.
+Eventuais anexos dos documentos supracitados. 
+2
+.
+CLAUSULA SEGUNDA – VIGÊNCIA E VINCULAÇÃO
+2
+.
+1
+.
+O prazo de vigência da contratação é de 05 (cinco) anos contados da assinatura do termo contratual, prorrogável por
+até 10 anos, na forma dos artigos 106 e 107 da Lei n° 14.133, de 2021.
+2
+.
+2
+.
+A prorrogação de que trata esse item é condicionada à avaliação, por parte do Gestor do Contrato, da vantajosidade
+da prorrogação, a qual deverá ser realizada motivadamente, com base no Histórico de Gestão do Contrato, nos princípios da
+manutenção da necessidade, economicidade e oportunidade da contratação e nos demais aspectos que forem julgados
+relevantes, atentando, ainda, para o cumprimento dos seguintes requisitos:
+2
+.
+2
+.
+1
+.
+Estar formalmente demonstrado no processo que a forma de prestação dos serviços tem natureza continuada;
+2
+.
+2
+.
+2
+.
+Seja juntado relatório que discorra sobre a execução do contrato, com informações de que os serviços tenham sido
+prestados regularmente;
+2
+.
+2
+.
+3
+.
+Seja juntada justificativa e motivo, por escrito, de que a Administração mantém interesse na realização do serviço;
+2
+.
+2
+.
+4
+.
+Haja manifestação expressa do CONTRATADO informando o interesse na prorrogação;
+2
+.
+2
+.
+5
+.
+Seja comprovado que o CONTRATADO mantém as condições iniciais de habilitação; e
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.
+
+--- Página 2 ---
+2
+.
+2
+.
+6
+.
+Não haja registro no Cadastro Informativo de créditos não quitados do setor público federal (Cadin).
+2
+.
+3
+.
+O CONTRATADO não tem direito subjetivo à prorrogação contratual.
+2
+.
+4
+.
+A prorrogação de contrato deverá ser promovida mediante celebração de termo aditivo.
+2
+.
+5
+.
+Nas eventuais prorrogações contratuais, os custos não renováveis já pagos ou amortizados ao longo do primeiro
+período de vigência da contratação deverão ser reduzidos ou eliminados como condição para a renovação.
+2
+.
+6
+.
+O contrato não poderá ser prorrogado quando o CONTRATADO tiver sido penalizado nas sanções de declaração de
+inidoneidade ou impedimento de licitar e contratar com poder público, observadas as abrangências de aplicação.
+3
+.
+CLÁUSULA TERCEIRA – MODELOS DE EXECUÇÃO E GESTÃO CONTRATUAIS
+3
+.
+1
+.
+O regime de execução contratual, os modelos de gestão e de execução, assim como os prazos e condições de
+conclusão, entrega, observação e recebimento do objeto constam no Termo de Referência, anexo a este Contrato.
+4
+.
+CLÁUSULA QUARTA – DA SUBCONTRATAÇÃO
+4
+.
+1
+.
+As regras sobre a subcontratação do objeto são aquelas estabelecidas no Termo de Referência, anexo a este
+Contrato.
+5
+.
+CLÁUSULA QUINTA – PREÇO
+5
+.
+1
+.
+O valor total da contratação é de 
+R$ 177.535.001,40 (cento e setenta e sete milhões, quinhentos e trinta e
+cinco mil um real e quarenta centavos).
+5
+.
+2
+.
+No valor acima estão incluídas todas as despesas ordinárias diretas e indiretas decorrentes da execução do objeto,
+inclusive tributos e/ou impostos, encargos sociais, trabalhistas, previdenciários, ﬁscais e comerciais incidentes, taxa de
+administração, frete, seguro e outros necessários ao cumprimento integral do objeto da contratação.
+5
+.
+3
+.
+O valor acima é meramente estimativo, de forma que os pagamentos devidos ao contratado dependerão dos
+quantitativos efetivamente fornecidos.
+6
+.
+CLÁUSULA SEXTA – PAGAMENTO
+6
+.
+1
+.
+O prazo para pagamento ao contratado e demais condições a ele referentes encontram-se deﬁnidos no Termo de
+Referência, anexo a este Contrato. 
+7
+.
+CLÁUSULA SÉTIMA – REAJUSTE
+7
+.
+1
+.
+As regras acerca do reajuste do valor contratual são aquelas deﬁnidas no Termo de Referência, anexo a este
+Contrato. 
+8
+.
+CLÁUSULA OITAVA – DAS OBRIGAÇÕES DO CONTRATANTE
+8
+.
+1
+.
+São obrigações do CONTRATANTE:
+8
+.
+1
+.
+1
+.
+Exigir o cumprimento de todas as obrigações assumidas pelo CONTRATADO, de acordo com o contrato e seus
+anexos;
+8
+.
+1
+.
+2
+.
+Receber o objeto no prazo e condições estabelecidas no Termo de Referência;
+8
+.
+1
+.
+3
+.
+Notiﬁcar o CONTRATADO, por escrito, sobre vícios, defeitos, incorreções, imperfeições, falhas ou irregularidades
+veriﬁcadas na execução do objeto contratual, ﬁxando prazo para que seja substituído, reparado ou corrigido, total ou
+parcialmente, às suas expensas, certificando-se de que as soluções por ele propostas sejam as mais adequadas;
+8
+.
+1
+.
+4
+.
+Acompanhar e fiscalizar a execução do contrato e o cumprimento das obrigações pelo CONTRATADO;
+8
+.
+1
+.
+5
+.
+Comunicar a empresa para emissão de Nota Fiscal relativa à parcela incontroversa da execução do objeto, para
+efeito de liquidação e pagamento, quando houver controvérsia sobre a execução do objeto, quanto à dimensão, qualidade e
+quantidade, conforme o art. 143 da Lei nº 14.133, de 2021;
+8
+.
+1
+.
+6
+.
+Efetuar o pagamento ao CONTRATADO do valor correspondente à execução do objeto, no prazo, forma e condições
+estabelecidos no presente Contrato e no Termo de Referência;
+8
+.
+1
+.
+7
+.
+Aplicar ao CONTRATADO as sanções previstas na lei e neste Contrato;
+8
+.
+1
+.
+8
+.
+Não praticar atos de ingerência na administração do CONTRATADO, tais como:
+8
+.
+1
+.
+8
+.
+1
+.
+indicar pessoas expressamente nominadas para executar direta ou indiretamente o objeto contratado;
+8
+.
+1
+.
+8
+.
+2
+.
+fixar salário inferior ao definido em lei ou em ato normativo a ser pago pelo CONTRATADO;
+8
+.
+1
+.
+8
+.
+3
+.
+estabelecer vínculo de subordinação com funcionário do CONTRATADO;
+8
+.
+1
+.
+8
+.
+4
+.
+definir forma de pagamento mediante exclusivo reembolso dos salários pagos;
+8
+.
+1
+.
+8
+.
+5
+.
+demandar a funcionário do CONTRATADO a execução de tarefas fora do escopo do objeto da contratação; e
+8
+.
+1
+.
+8
+.
+6
+.
+prever exigências que constituam intervenção indevida da Administração na gestão interna do CONTRATADO.
+8
+.
+1
+.
+9
+.
+Cientiﬁcar o órgão de representação judicial da Advocacia-Geral da União para adoção das medidas cabíveis quando
+do descumprimento de obrigações pelo CONTRATADO;
+8
+.
+1
+.
+10
+.
+Explicitamente emitir decisão sobre todas as solicitações e reclamações relacionadas à execução do presente
+Contrato, ressalvados os requerimentos manifestamente impertinentes, meramente protelatórios ou de nenhum interesse para a
+boa execução do ajuste;
+8
+.
+1
+.
+11
+.
+A Administração terá o prazo de 30 (trinta) dias, a contar da data do protocolo do requerimento para decidir,
+admitida a prorrogação motivada, por igual período.
+8
+.
+1
+.
+12
+.
+Responder eventuais pedidos de reestabelecimento do equilíbrio econômico-ﬁnanceiro feitos pelo CONTRATADO no
+prazo máximo de 60 (sessenta) dias;
+8
+.
+1
+.
+13
+.
+Comunicar o CONTRATADO na hipótese de posterior alteração do projeto pelo CONTRATANTE, no caso do art. 93, §2º,
+da Lei nº 14.133, de 2021.
+8
+.
+1
+.
+14
+.
+A Administração não responderá por quaisquer compromissos assumidos pelo CONTRATADO com terceiros, ainda
+que vinculados à execução do contrato, bem como por qualquer dano causado a terceiros em decorrência de ato do
+CONTRATADO, de seus empregados, prepostos ou subordinados.
+9
+.
+CLÁUSULA NONA – OBRIGAÇÕES DO CONTRATADO
+9
+.
+1
+.
+O CONTRATADO deve cumprir todas as obrigações constantes deste Contrato e de seus anexos, assumindo como
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.
+
+--- Página 3 ---
+exclusivamente seus os riscos e as despesas decorrentes da boa e perfeita execução do objeto, observando, ainda, as
+obrigações a seguir dispostas: 
+9
+.
+2
+.
+Atender às determinações regulares emitidas pelo ﬁscal ou gestor do contrato ou autoridade superior e prestar todo
+esclarecimento ou informação por eles solicitados; 
+9
+.
+3
+.
+Reparar, corrigir, remover, reconstruir ou substituir, às suas expensas, no total ou em parte, no prazo ﬁxado pelo
+ﬁscal do contrato, os bens e serviços nos quais se veriﬁcarem vícios, defeitos ou incorreções resultantes da execução ou dos
+materiais empregados; 
+9
+.
+4
+.
+Responsabilizar-se pelos vícios e danos decorrentes da execução do objeto, bem como por todo e qualquer dano
+causado à Administração ou terceiros, não reduzindo essa responsabilidade a ﬁscalização ou o acompanhamento da execução
+contratual pelo CONTRATANTE, que ﬁcará autorizado a descontar dos pagamentos devidos ou da garantia, caso exigida, o valor
+correspondente aos danos sofridos; 
+9
+.
+5
+.
+Quando não for possível a veriﬁcação da regularidade no Sistema de Cadastro de Fornecedores – SICAF, o
+CONTRATADO deverá entregar ao setor responsável pela ﬁscalização do contrato, até o dia trinta do mês seguinte ao da
+prestação dos serviços, os seguintes documentos: 
+9
+.
+5
+.
+1
+.
+prova de regularidade relativa à Seguridade Social; 
+9
+.
+5
+.
+2
+.
+certidão conjunta relativa aos tributos federais e à Dívida Ativa da União; 
+9
+.
+5
+.
+3
+.
+certidões que comprovem a regularidade perante a Fazenda Municipal ou Distrital do domicílio ou sede do
+CONTRATADO; 
+9
+.
+5
+.
+4
+.
+Certidão de Regularidade do FGTS – CRF; e 
+9
+.
+5
+.
+5
+.
+Certidão Negativa de Débitos Trabalhistas – CNDT. 
+9
+.
+6
+.
+Responsabilizar-se pelo cumprimento das obrigações previstas em Acordo, Convenção, Dissídio Coletivo de Trabalho
+ou equivalentes das categorias abrangidas pelo contrato, por todas as obrigações trabalhistas, sociais, previdenciárias,
+tributárias, ﬁscais, comerciais e as demais previstas em legislação especíﬁca, cuja inadimplência não transfere a
+responsabilidade ao CONTRATANTE e não poderá onerar o objeto do contrato; 
+9
+.
+7
+.
+Comunicar ao Fiscal do contrato tempestivamente, observada a urgência da situação, qualquer ocorrência anormal
+ou acidente que se verifique no local da execução do objeto contratual, não ultrapassando o prazo de 24 (vinte e quatro) horas; 
+9
+.
+8
+.
+Paralisar, por determinação do CONTRATANTE, qualquer atividade que não esteja sendo executada de acordo com a
+boa técnica ou que ponha em risco a segurança de pessoas ou bens de terceiros; 
+9
+.
+9
+.
+Manter, durante toda a vigência do contrato, em compatibilidade com as obrigações assumidas, todas as condições
+exigidas para habilitação na contratação ou para qualificação na contratação direta; 
+9
+.
+10
+.
+Cumprir, durante todo o período de execução do contrato, a reserva de cargos prevista em lei para pessoa com
+deficiência, para reabilitado da Previdência Social ou para aprendiz, bem como as reservas de cargos previstas na legislação; 
+9
+.
+11
+.
+Comprovar a reserva de cargos a que se refere a cláusula acima, no prazo ﬁxado pelo ﬁscal do contrato, com a
+indicação dos empregados que preencheram as referidas vagas; 
+9
+.
+12
+.
+Guardar sigilo sobre todas as informações obtidas em decorrência do cumprimento do contrato; 
+9
+.
+13
+.
+Arcar com o ônus decorrente de eventual equívoco no dimensionamento dos quantitativos de sua proposta, inclusive
+quanto aos custos variáveis decorrentes de fatores futuros e incertos, devendo complementá-los, caso o previsto inicialmente
+em sua proposta não seja satisfatório para o atendimento do objeto da contratação, exceto quando ocorrer algum dos eventos
+arrolados no art. 124, II, d, da Lei nº 14.133, de 2021; 
+9
+.
+14
+.
+Cumprir, além dos postulados legais vigentes de âmbito federal, estadual ou municipal, as normas de segurança do
+CONTRATANTE; 
+9
+.
+15
+.
+Alocar os empregados necessários ao perfeito cumprimento das cláusulas deste contrato, com habilitação e
+conhecimento adequados; 
+9
+.
+16
+.
+Prestar os serviços dentro dos parâmetros e rotinas estabelecidos; 
+9
+.
+17
+.
+Fornecer todos os materiais, equipamentos, ferramentas e utensílios demandados, em quantidade, qualidade e
+tecnologia adequadas, com a observância às recomendações aceitas pela boa técnica, normas e legislação de regência; 
+9
+.
+18
+.
+Conduzir os trabalhos com estrita observância às normas da legislação pertinente, cumprindo as determinações dos
+Poderes Públicos, mantendo sempre limpo o local de execução do objeto e nas melhores condições de segurança, higiene e
+disciplina; 
+9
+.
+19
+.
+Submeter previamente, por escrito, ao CONTRATANTE, para análise e aprovação, quaisquer mudanças nos métodos
+executivos que fujam às especificações do memorial descritivo ou instrumento congênere; 
+9
+.
+20
+.
+Cumprir as normas de proteção ao trabalho, inclusive aquelas relativas à segurança e à saúde no trabalho; 
+9
+.
+21
+.
+Não submeter os trabalhadores a condições degradantes de trabalho, jornadas exaustivas, servidão por dívida ou
+trabalhos forçados; 
+9
+.
+22
+.
+Não permitir a utilização de qualquer trabalho do menor de dezesseis anos de idade, exceto na condição de aprendiz
+para os maiores de quatorze anos de idade, observada a legislação pertinente; 
+9
+.
+23
+.
+Não submeter o menor de dezoito anos de idade à realização de trabalho noturno e em condições perigosas e
+insalubres e à realização de atividades constantes na Lista de Piores Formas de Trabalho Infantil, aprovada pelo Decreto nº
+6.481, de 12 de junho de 2008; 
+9
+.
+24
+.
+Receber e dar o tratamento adequado a denúncias de discriminação, violência e assédio no ambiente de trabalho; 
+9
+.
+25
+.
+Manter preposto aceito pela Administração no local da obra ou do serviço para representá-lo na execução do
+contrato; 
+9
+.
+26
+.
+A indicação ou a manutenção do preposto da empresa poderá ser recusada pelo órgão ou entidade, desde que
+devidamente justificada, devendo a empresa designar outro para o exercício da atividade. 
+9
+.
+27
+.
+Não contratar, durante a vigência do contrato, cônjuge, companheiro ou parente em linha reta, colateral ou por
+aﬁnidade, até o terceiro grau, de dirigente do CONTRATANTE ou de agente público que tenha desempenhado função na
+contratação ou que atue na ﬁscalização ou gestão do contrato, nos termos do art. 48, parágrafo único, da Lei nº 14.133, de
+2021; 
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 3
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.
+
+--- Página 4 ---
+9
+.
+28
+.
+Prestar todo esclarecimento ou informação solicitada pelo CONTRATANTE ou por seus prepostos, garantindo-lhes o
+acesso, a qualquer tempo, ao local dos trabalhos, bem como aos documentos relativos à execução do contrato; 
+9
+.
+29
+.
+Promover a guarda, manutenção e vigilância de materiais, ferramentas, e tudo o que for necessário à execução do
+objeto, durante a vigência do contrato; 
+9
+.
+30
+.
+Assegurar aos seus trabalhadores ambiente de trabalho e instalações em condições adequadas ao cumprimento das
+normas de saúde, segurança e bem-estar no trabalho; 
+9
+.
+31
+.
+Fornecer equipamentos de proteção individual (EPI) e equipamentos de proteção coletiva (EPC),quando for o caso; 
+9
+.
+32
+.
+Garantir o acesso do CONTRATANTE, a qualquer tempo, ao local dos trabalhos, bem como aos documentos relativos
+à execução do contrato; 
+9
+.
+33
+.
+Promover a organização técnica e administrativa dos serviços, de modo a conduzi-los eﬁcaz e eﬁcientemente, de
+acordo com os documentos e especificações que integram o Termo de Referência, no prazo determinado; 
+9
+.
+34
+.
+Instruir seus empregados quanto à necessidade de acatar as normas internas da Administração; 
+9
+.
+35
+.
+Instruir seus empregados a respeito das atividades a serem desempenhadas, alertando-os a não executar atividades
+não abrangidas pelo contrato, devendo o CONTRATADO relatar ao CONTRATANTE toda e qualquer ocorrência neste sentido, a ﬁm
+de evitar desvio de função; 
+9
+.
+36
+.
+Realizar a transição contratual com transferência de conhecimento, tecnologia e técnicas empregadas, sem perda de
+informações, podendo exigir, inclusive, a capacitação dos técnicos do CONTRATANTE ou da nova empresa que continuará a
+execução dos serviços; 
+9
+.
+37
+.
+Ceder ao CONTRATANTE todos os direitos patrimoniais relativos ao objeto contratado, o qual poderá ser livremente
+utilizado e/ou alterado em outras ocasiões, sem necessidade de nova autorização do CONTRATADO. 
+9
+.
+38
+.
+Considerando que o projeto contratado se refere a obra imaterial de caráter tecnológico, insuscetível de privilégio, a
+cessão dos direitos a que se refere o subitem acima inclui o fornecimento de todos os dados, documentos e elementos de
+informação pertinentes à tecnologia de concepção, desenvolvimento, ﬁxação em suporte físico de qualquer natureza e aplicação
+da obra. 
+10
+.
+CLÁUSULA DÉCIMA  – OBRIGAÇÕES PERTINENTES À LGPD
+10
+.
+1
+.
+As partes deverão cumprir a Lei nº 13.709, de 14 de agosto de 2018 (LGPD), quanto a todos os dados pessoais a que
+tenham acesso em razão do certame ou do contrato administrativo que eventualmente venha a ser ﬁrmado, a partir da
+apresentação da proposta no procedimento de contratação, independentemente de declaração ou de aceitação expressa.  
+10
+.
+2
+.
+Os dados obtidos somente poderão ser utilizados para as ﬁnalidades que justiﬁcaram seu acesso e de acordo com a
+boa-fé e com os princípios do art. 6º da LGPD.  
+10
+.
+3
+.
+É vedado o compartilhamento com terceiros dos dados obtidos fora das hipóteses permitidas em Lei. 
+10
+.
+4
+.
+A Administração deverá ser informada no prazo de 5 (cinco) dias úteis sobre todos os contratos de suboperação
+firmados ou que venham a ser celebrados pelo Contratado.  
+10
+.
+5
+.
+Terminado o tratamento dos dados nos termos do art. 15 da LGPD, é dever do contratado eliminá-los, com exceção
+das hipóteses do art. 16 da LGPD, incluindo aquelas em que houver necessidade de guarda de documentação para ﬁns de
+comprovação do cumprimento de obrigações legais ou contratuais e somente enquanto não prescritas essas obrigações.  
+10
+.
+6
+.
+É dever do contratado orientar e treinar seus empregados sobre os deveres, requisitos e responsabilidades
+decorrentes da LGPD.  
+10
+.
+7
+.
+O Contratado deverá exigir de suboperadores e subcontratados o cumprimento dos deveres da presente cláusula,
+permanecendo integralmente responsável por garantir sua observância. 
+10
+.
+8
+.
+O Contratante poderá realizar diligência para aferir o cumprimento dessa cláusula, devendo o Contratado atender
+prontamente eventuais pedidos de comprovação formulados.  
+10
+.
+9
+.
+O Contratado deverá prestar, no prazo ﬁxado pelo Contratante, prorrogável justiﬁcadamente, quaisquer informações
+acerca dos dados pessoais para cumprimento da LGPD, inclusive quanto a eventual descarte realizado.  
+10
+.
+10
+.
+Bancos de dados formados a partir de contratos administrativos, notadamente aqueles que se proponham a
+armazenar dados pessoais, devem ser mantidos em ambiente virtual controlado, com registro individual rastreável de
+tratamentos realizados (LGPD, art. 37), com cada acesso, data, horário e registro da ﬁnalidade, para efeito de responsabilização,
+em caso de eventuais omissões, desvios ou abusos. 
+10
+.
+11
+.
+Os referidos bancos de dados devem ser desenvolvidos em formato interoperável, a ﬁm de garantir a reutilização
+desses dados pela Administração nas hipóteses previstas na LGPD. 
+10
+.
+12
+.
+O contrato está sujeito a ser alterado nos procedimentos pertinentes ao tratamento de dados pessoais, quando
+indicado pela autoridade competente, em especial a ANPD por meio de opiniões técnicas ou recomendações, editadas na forma
+da LGPD. 
+10
+.
+13
+.
+Os contratos e convênios de que trata o § 1º do art. 26 da LGPD deverão ser comunicados à autoridade nacional. 
+11
+.
+CLÁUSULA DÉCIMA PRIMEIRA – GARANTIA DA EXECUÇÃO
+11
+.
+1
+.
+Não haverá exigência de garantia contratual da execução. 
+12
+.
+CLÁUSULA DÉCIMA SEGUNDA – INFRAÇÕES E SANÇÕES ADMINISTRATIVAS
+12
+.
+1
+.
+As regras acerca de infrações e sanções administrativas referentes à execução do contrato são aquelas deﬁnidas no
+Termo de Referência, anexo a este Contrato. 
+13
+.
+CLÁUSULA DÉCIMA SÉTIMA – DA EXTINÇÃO CONTRATUAL
+13
+.
+1
+.
+O contrato será extinto quando vencido o prazo nele estipulado, independentemente de terem sido cumpridas ou
+não as obrigações de ambas as partes contraentes. 
+13
+.
+2
+.
+O contrato poderá ser extinto antes do prazo nele ﬁxado, sem ônus para o contratante, quando esta não dispuser de
+créditos orçamentários para sua continuidade ou quando entender que o contrato não mais lhe oferece vantagem. 
+13
+.
+3
+.
+A extinção nesta hipótese ocorrerá na próxima data de aniversário do contrato, desde que haja a notiﬁcação do
+contratado pelo contratante nesse sentido com pelo menos 2 (dois) meses de antecedência desse dia. 
+13
+.
+4
+.
+Caso a notiﬁcação da não-continuidade do contrato de que trata este subitem ocorra com menos de 2 (dois) meses
+da data de aniversário, a extinção contratual ocorrerá após 2 (dois) meses da data da comunicação. 
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 4
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.
+
+--- Página 5 ---
+13
+.
+5
+.
+O contrato poderá ser extinto antes de cumpridas as obrigações nele estipuladas, ou antes do prazo nele ﬁxado, por
+algum dos motivos previstos no art. 137 da Lei nº 14.133/21, bem como amigavelmente, assegurados o contraditório e a ampla
+defesa. 
+13
+.
+5
+.
+1
+.
+Nesta hipótese, aplicam-se também os arts. 138 e 139 da mesma Lei. 
+13
+.
+5
+.
+2
+.
+A alteração social ou a modiﬁcação da ﬁnalidade ou da estrutura da empresa não ensejará a extinção se não
+restringir sua capacidade de concluir o contrato. 
+13
+.
+5
+.
+3
+.
+Se a operação implicar mudança da pessoa jurídica contratada, deverá ser formalizado termo aditivo para alteração
+subjetiva. 
+13
+.
+6
+.
+O termo de extinção, sempre que possível, será precedido de: 
+13
+.
+6
+.
+1
+.
+Balanço dos eventos contratuais já cumpridos ou parcialmente cumpridos; 
+13
+.
+6
+.
+2
+.
+Relação dos pagamentos já efetuados e ainda devidos; 
+13
+.
+6
+.
+3
+.
+Indenizações e multas. 
+13
+.
+7
+.
+A extinção do contrato não conﬁgura óbice para o reconhecimento do desequilíbrio econômico-ﬁnanceiro, hipótese
+em que será concedida indenização por meio de termo indenizatório.  
+13
+.
+8
+.
+O CONTRATANTE poderá ainda: 
+13
+.
+8
+.
+1
+.
+ nos casos de obrigação de pagamento de multa pelo CONTRATADO, reter a garantia prestada a ser executada,
+conforme legislação que rege a matéria; e 
+13
+.
+8
+.
+2
+.
+nos casos em que houver necessidade de ressarcimento de prejuízos causados à Administração, nos termos do inciso
+IV do art. 139 da Lei n.º 14.133, de 2021, reter os eventuais créditos existentes em favor do CONTRATADO decorrentes do
+contrato. 
+13
+.
+9
+.
+O contrato poderá ser extinto caso se constate que o contratado mantém vínculo de natureza técnica, comercial,
+econômica, ﬁnanceira, trabalhista ou civil com dirigente do órgão ou entidade contratante ou com agente público que tenha
+desempenhado função na licitação ou na contratação direta ou que atue na ﬁscalização ou na gestão do contrato, ou que deles
+seja cônjuge, companheiro ou parente em linha reta, colateral ou por aﬁnidade, até o terceiro grau (art. 14, inciso IV, da Lei n.º
+14.133, de 2021). 
+14
+.
+CLÁUSULA DÉCIMA QUARTA – ALTERAÇÕES
+14
+.
+1
+.
+Eventuais alterações contratuais reger-se-ão pela disciplina dos arts. 124 e seguintes da Lei nº 14.133, de 2021. 
+14
+.
+2
+.
+O CONTRATADO é obrigado a aceitar, nas mesmas condições contratuais, os acréscimos ou supressões que se
+fizerem necessários, até o limite de 25% (vinte e cinco por cento) do valor inicial atualizado do contrato. 
+14
+.
+3
+.
+As supressões resultantes de acordo celebrado entre as partes contratantes poderão exceder o limite de 25% (vinte
+e cinco por cento) do valor inicial atualizado do contrato. 
+14
+.
+4
+.
+As alterações contratuais deverão ser promovidas mediante celebração de termo aditivo, submetido à prévia
+aprovação da consultoria jurídica do CONTRATANTE, salvo nos casos de justiﬁcada necessidade de antecipação de seus efeitos,
+hipótese em que a formalização do aditivo deverá ocorrer no prazo máximo de 1 (um) mês. 
+14
+.
+5
+.
+Registros que não caracterizam alteração do contrato podem ser realizados por simples apostila, dispensada a
+celebração de termo aditivo, na forma do art. 136 da Lei nº 14.133, de 2021. 
+15
+.
+CLÁUSULA DÉCIMA QUINTA – DOTAÇÃO ORÇAMENTÁRIA
+15
+.
+1
+.
+As despesas decorrentes da presente contratação correrão à conta de recursos especíﬁcos consignados no
+Orçamento Geral da União deste exercício, na dotação abaixo discriminada: 
+I) Gestão/Unidade: 490011; 
+II) Fonte de Recursos: 1000000000;
+III) Programa de Trabalho: 227380;
+IV) Elemento de Despesa: 
+339040 - SERVIÇO DE TIC;
+V) Plano Interno: 
+C0100T00DF5;
+VI) Nota de Empenho: 2026NE000115; 
+15
+.
+2
+.
+A dotação relativa aos exercícios ﬁnanceiros subsequentes será indicada após aprovação da Lei Orçamentária
+respectiva e liberação dos créditos correspondentes, mediante apostilamento. 
+16
+.
+CLÁUSULA DÉCIMA SEXTA – DOS CASOS OMISSOS
+16
+.
+1
+.
+Os casos omissos serão decididos pelo contratante, segundo as disposições contidas na Lei nº 14.133, de 2021, e
+demais normas federais aplicáveis e, subsidiariamente, segundo as disposições contidas na Lei nº 8.078, de 1990 – Código de
+Defesa do Consumidor – e normas e princípios gerais dos contratos.
+17
+.
+CLÁUSULA DÉCIMA SÉTIMA – PUBLICAÇÃO
+17
+.
+2
+.
+Incumbirá ao contratante divulgar o presente instrumento no Portal Nacional de Contratações Públicas (PNCP), na
+forma prevista no 
+art. 94 da Lei 14.133, de 2021
+, bem como no respectivo sítio oﬁcial na Internet, em atenção ao art. 91, caput,
+da Lei n.º 14.133, de 2021, e ao 
+art. 8º, §2º, da Lei n. 12.527, de 2011
+, c/c 
+art. 7º, §3º, inciso V, do Decreto n. 7.724, de 2012.
+18
+.
+CLÁUSULA DÉCIMA OITAVA– FORO
+18
+.
+3
+.
+Fica eleito o Foro da Justiça Federal em Brasília, Seção Judiciária do Distrito Federal para dirimir os litígios que
+decorrerem da execução deste Termo de Contrato que não puderem ser compostos pela conciliação, conforme 
+art. 92, §1º, da
+Lei nº 14.133/21.
+ 
+ 
+FERNANDA MACHIAVELI MORÃO DE
+OLIVEIRA
+Representante da Contratante
+ÁLVARO LUIS PEREIRA BOTELHO
+Representante da Contratada
+ALAN DO NASCIMENTO SANTOS
+Representante da Contratada
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 5
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.
+
+--- Página 6 ---
+Documento assinado eletronicamente por 
+ALAN DO NASCIMENTO SANTOS
+, 
+Usuário Externo
+, em 11/03/2026, às 17:34,
+conforme horário oficial de Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Fernanda Machiaveli Morão de Oliveira
+, 
+Secretária-Executiva
+, em 11/03/2026, às
+17:50, conforme horário oficial de Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Álvaro Luis Pereira Botelho
+, 
+Usuário Externo
+, em 11/03/2026, às 20:46, conforme
+horário oficial de Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Welder Almeida de Oliveira
+, 
+Testemunha
+, em 12/03/2026, às 21:19, conforme horário
+oficial de Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Documento assinado eletronicamente por 
+Alice Lobão Freitas de Andrade
+, 
+Testemunha
+, em 13/03/2026, às 11:55, conforme
+horário oficial de Brasília, com fundamento no art. 4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+A autenticidade deste documento pode ser conferida no site: 
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código verificador 
+50816828
+ e o código CRC 
+2C8C8C2D
+.
+Referência:
+ Processo nº 55000.008167/2025-77
+SEI nº 50816828
+Contrato MDA 6 (50816828)         SEI 55000.008167/2025-77 / pg. 6
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990626.

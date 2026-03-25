@@ -1,0 +1,49 @@
+
+==================================================
+PÁGINA 1
+==================================================
+
+Especificações do Ambiente
+
+Componentes Básicos do Sistema
+Sistema Gerenciador de Banco de Dados (SGBD)
+
+       SGBD principal: PostgreSQL 14.17
+       Plataforma: aarch64-unknown-linux-gnu
+       Compilador: GCC 7.3.1 20180712 (Red Hat 7.3.1-17)
+       Arquitetura: 64-bit
+       Fabricante: Versão Community
+       Hospedagem: Amazon RDS (AWS)
+
+Demais bancos de dados utilizados:
+
+      MongoDB: versão 8.0.1, fabricante: MongoDB Inc.
+      Redis Ltd., Redis, 7.2.4
+
+Tecnologias de Frontend:
+
+      React.js
+      Next.js
+      Material UI (MUI)
+
+Tecnologias de Backend:
+
+      Node.js;
+      TypeORM;
+      Swagger;
+      Express.js.
+      Jest
+
+Infraestrutura em Nuvem
+
+      Serviços de nuvem: Amazon Web Services (AWS)
+
+
+
+
+           Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190830.
+
+==================================================
+PÁGINA 2
+==================================================
+

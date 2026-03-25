@@ -1,0 +1,142 @@
+--- Página 1 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 1 
+ATA DA REUNIÃO 
+Nome do órgão ou entidade participante: Data: 
+Ministério do Desenvolvimento Agrário e 
+Agricultura Familiar (MDA) 10/07/2025 
+ 
+SUMÁRIO DA REUNIÃO 
+Participantes Nome: Fernando Lima Gama Júnior Cargo/Função: Coordenador da equipe 
+de fiscalização do TCU 
+Nome: Sylvio Xavier Júnior Cargo/Função: Integrante da equipe de 
+fiscalização do TCU 
+Nome: Harley Alves Ferreira Cargo/Função: Supervisor da equipe de 
+fiscalização do TCU 
+Nome: Arthur Reis Rimoldi Cargo/Função: Diretor do CAF (de férias 
+durante a reunião) 
+Nome: Glaucio Coimbra Cardoso Cargo/Função: PO do sistema do CAF 
+Nome: Michelle Inacio da Silva Cargo/Função: Representante da AECI do 
+MDA e responsável por demandas do TCU e CGU 
+Nome: Tatiana Freitas de Oliveira, Cargo/Função: Assessoria Especial de 
+Controle Interno/MDA 
+Objetivos - A reunião teve como objetivo principal discutir o planejamento e 
+estruturação das auditorias relacionadas ao sistema CAF (Cadastro de 
+Agricultores Familiares), focando na governança de dados e na integração 
+entre as bases de dados disponíveis. O propósito era identificar e corrigir 
+inconsistências, além de avaliar as possibilidades de melhoria no processo 
+de validação e cruzamento de informações com outras bases, como CPF, 
+INSS, e dados fundiários. 
+- Além disso, a reunião abordou estratégias para aprimorar o CAF, 
+destacando desafios operacionais, limitações técnicas e oportunidades de 
+avanço no uso de inteligência artificial e automação para validação de 
+documentos e informações. Foi reforçada a importância de garantir a 
+confiabilidade dos dados, a inclusão social dos agricultores e a eficiência no 
+atendimento às políticas públicas voltadas para o setor rural. 
+Resumo - Durante a reunião, os participantes discutiram o funcionamento atual do 
+sistema CAF, que foi reformulado em diferentes versões desde sua criação 
+em 2022. A versão mais recente, lançada em março de 2025, trouxe 
+melhorias significativas, como maior estabilidade, integração com múltiplas 
+bases de dados e regras de negócio mais robustas. A equipe explicou os 
+procedimentos para validação de dados dos agricultores familiares e 
+detalhou os processos de cadastro, incluindo as verificações sobre óbitos, 
+renda, áreas de produção e documentação. Foram destacadas as dificuldades 
+de integração com algumas bases de dados, como as do INCRA, devido à 
+desatualização de informações. 
+ 
+- Outro ponto importante discutido foi a relevância da auto declaração dos 
+agricultores no processo de cadastramento, as limitações de checagem de 
+algumas informações e os impactos disso na qualidade dos dados. Os 
+participantes debateram sobre a importância de garantir a precisão dos dados 
+para evitar concessões indevidas de benefícios e reforçar a efetividade das 
+políticas públicas voltadas ao setor rural. Foi abordada a necessidade de 
+aprimorar o uso de ferramentas como a inteligência artificial para validar 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190515.
+
+--- Página 2 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 2 
+documentos e informações de maneira mais eficiente e acessível. 
+ 
+- Por fim, a reunião também enfatizou a relevância do CAF como ferramenta 
+central para políticas públicas, como crédito agrícola e benefícios sociais, e 
+a necessidade de ampliar sua abrangência para alcançar mais agricultores 
+familiares. Foram sugeridas melhorias no sistema, como a adoção de 
+processos automatizados para validação, a integração com novas bases de 
+dados e o desenvolvimento de um módulo de autocadastro, apesar dos 
+desafios relacionados ao perfil do público-alvo. A equipe também destacou 
+o impacto positivo do CAF na organização de dados estatísticos e na 
+formulação de políticas públicas voltadas para o setor rural. 
+Destaques - 🖥￿ Discussão sobre auditoria e planejamento: A reunião abordou o 
+processo de planejamento da auditoria, que será executada em agosto, 
+incluindo a análise das bases de dados e a necessidade de informações 
+específicas para definir os procedimentos. 
+- 📊 Problemas com bases de dados: Identificado que muitos sistemas 
+públicos ainda não utilizam o CPF como chave primária, causando 
+dificuldades no cruzamento de informações e resultando em inconsistências, 
+como pagamentos indevidos a beneficiários falecidos. 
+- 🔍 Governança de dados e integração: Debate sobre a necessidade de 
+melhorar a estrutura das bases de dados, incluindo informações geoespaciais 
+e integração com sistemas como CAF, CIPRA e Cadastro Único. 
+- 💻 Apresentação do sistema CAF: Explicação detalhada sobre o 
+funcionamento e validação do sistema CAF, incluindo cadastramento de 
+pessoas e propriedades, validação de dados e integração com outras bases 
+como BCPF, BCPJ, INCRA e Dataprev. 
+- 🌐 Desafios do cadastro e validação: Foram discutidas dificuldades no 
+cadastro de áreas e rendas, com validações automatizadas e dependências de 
+bases externas como o INCRA, Dataprev e Receita Federal. 
+- 📑 Uso do CAF para políticas públicas: O CAF, apesar de recente, está 
+sendo utilizado como ferramenta para políticas públicas e para integração 
+com programas como Minha Casa Minha Vida e outras iniciativas sociais e 
+agrícolas. 
+- 🏷￿ Carteirinha do CAF: Apresentação de um modelo de identificação 
+para agricultores familiares que será lançado em agosto, com potencial de 
+uso em feiras e políticas locais. 
+Conclusão A reunião destacou a importância do planejamento detalhado na auditoria, 
+evidenciando os desafios encontrados na análise das bases de dados do 
+governo. Foi identificado que a falta de integração e uso de chaves primárias 
+como o CPF em algumas bases dificulta a governança de dados e a eficiência 
+na identificação de inconsistências, como pagamentos indevidos a pessoas 
+falecidas. Para resolver essas questões, foi enfatizada a necessidade de um 
+melhor entendimento e estruturação das bases sociais. 
+ 
+O sistema CAF foi apresentado como uma solução robusta e integrada para 
+o cadastramento e validação de dados de agricultores familiares. Apesar dos 
+avanços tecnológicos e das integrações realizadas, ainda há espaço para 
+melhorias, como a inclusão de inteligência artificial para validação de 
+documentos e a superação de limitações técnicas e orçamentárias em 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190515.
+
+--- Página 3 ---
+  
+ 
+TRIBUNAL DE CONTAS DA UNIÃO 
+Diretoria de Avaliação de Governança de Dados e Sistemas de Informação 
+Unidade de Auditoria Especializada em Tecnologia da Informação 
+ 
+SisDoc: Documento1 - 2024 - DADSIS 3 
+algumas áreas, especialmente nas regiões com menor acesso a políticas 
+públicas. 
+ 
+Por fim, a reunião reforçou o papel do CAF como um instrumento de apoio 
+à formulação e execução de políticas públicas voltadas para a agricultura 
+familiar e populações vulneráveis. A implementação de novas 
+funcionalidades, como a carteirinha de identificação, e a expansão das 
+integrações com outras bases de dados e programas governamentais são 
+passos importantes para garantir um maior alcance e eficiência dessas 
+políticas, além de fortalecer o acesso ao Estado em áreas rurais e menos 
+estruturadas. 
+ 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190515.

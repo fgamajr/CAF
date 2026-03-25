@@ -1,0 +1,408 @@
+% ================================================================================
+% PECA 131 / PAPEL DE TRABALHO PT - ANALISE DE CAPACIDADE CIVIL NO CAF
+% ================================================================================
+% Data: 03/dezembro/2025
+% Objetivo: Documentar inconsistencias de capacidade civil identificadas no CAF
+%           atraves de cruzamento com bases SISOBI (obitos) e RFB (CPF) via LABCONTAS.
+% Referencia: peca131_pt_capacidade_civil.pdf
+% ================================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ========== PACOTES PADRAO ==========
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[breakable]{tcolorbox}
+
+% ========== CORES TCU OFICIAIS ==========
+\definecolor{tcured}{RGB}{204,0,0}      % Vermelho TCU #CC0000
+\definecolor{tcublue}{RGB}{0,51,102}    % Azul TCU #003366
+\definecolor{tcugreen}{RGB}{0,153,76}   % Verde TCU #006633
+
+% ========== CONFIGURACAO DE CABECALHO ==========
+\pagestyle{fancy}
+\fancyhead[L]{Peca 131 / PT - Capacidade Civil no CAF}
+\fancyhead[R]{TCU}
+\setlength{\headheight}{14pt}
+
+% ========== CONFIGURACAO DE LISTINGS ==========
+\lstset{
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{tcublue}\bfseries,
+    commentstyle=\color{tcugreen}\itshape,
+    stringstyle=\color{tcured},
+    columns=fullflexible
+}
+
+% ========== INFORMACOES DO DOCUMENTO ==========
+\title{Papel de Trabalho de Auditoria Tecnica\\
+\textbf{Peca 131: Analise de Capacidade Civil dos Responsaveis no CAF}}
+\author{Equipe de Auditoria --- Fiscalizacao CAF-MAPA}
+\date{03 de dezembro de 2025}
+
+\begin{document}
+
+\maketitle
+
+% ================================================================================
+\section{Objetivo}
+% ================================================================================
+
+Este papel de trabalho documenta a \textbf{analise de capacidade civil dos responsaveis}
+cadastrados no Sistema CAF, verificando:
+
+\begin{itemize}
+    \item Responsaveis falecidos ainda ativos no cadastro (cruzamento com SISOBI);
+    \item Menores de 16 anos cadastrados como responsaveis (absolutamente incapazes);
+    \item Adolescentes de 16-17 anos nao emancipados (relativamente incapazes);
+    \item Divergencias de data de nascimento entre CAF e Receita Federal;
+    \item CPFs nao localizados na base da Receita Federal.
+\end{itemize}
+
+\textbf{Fundamentacao Legal}: Artigos 3\textordmasculine{} e 4\textordmasculine{} do Codigo Civil
+(Lei 10.406/2002) definem a incapacidade civil, tornando nulos ou anulaveis os atos
+praticados por incapazes.
+
+% ================================================================================
+\section{Metodologia}
+% ================================================================================
+
+\subsection{Base de Dados}
+
+A analise foi realizada no ambiente \textbf{LABCONTAS} do TCU, utilizando:
+
+\begin{itemize}
+    \item \textbf{Fonte CAF}: \texttt{[BD\_AGRO\_CAF\_AUD\_2025].[dbo].[S\_*]}
+    \item \textbf{Fonte Obitos}: \texttt{[BD\_SISOBI].[dbo].[SISOBI]}
+    \item \textbf{Fonte CPF}: \texttt{[BD\_RECEITA].[dbo].[CPF]}
+    \item \textbf{Populacao}: Responsaveis de Unidades Familiares ativas
+\end{itemize}
+
+\subsection{Criterio de Selecao}
+
+Foi aplicado o \textbf{JOIN Triplo canonico} para identificar responsaveis de UFs ativas:
+
+\begin{lstlisting}[language=SQL, caption={Selecao de responsaveis ativos}]
+SELECT DISTINCT
+    pf.nr_cpf,
+    pf.dt_nascimento AS dt_nascimento_caf,
+    uf.dt_ativacao,
+    uf.dt_atualizacao
+FROM [BD_AGRO_CAF_AUD_2025].[dbo].[S_RESPONSAVEL_UFPR] r
+INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_UNIDADE_FAMILIAR] uf
+    ON r.id_unidade_familiar = uf.id_unidade_familiar
+INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_PESSOA_FISICA] pf
+    ON r.id_pessoa_fisica = pf.id_pessoa_fisica
+WHERE uf.id_tipo_situacao_unidade_familiar = 1  -- UF ativa
+  AND r.st_excluido = 0;
+\end{lstlisting}
+
+\subsection{Cruzamentos Externos}
+
+\begin{enumerate}
+    \item \textbf{SISOBI}: Verificacao de obito pelo CPF do responsavel;
+    \item \textbf{RFB}: Validacao de data de nascimento e existencia do CPF.
+\end{enumerate}
+
+% ================================================================================
+\section{Resultados}
+% ================================================================================
+
+\subsection{Responsaveis Falecidos (SISOBI)}
+
+O cruzamento com a base SISOBI identificou \textbf{12.820 responsaveis falecidos}
+ainda ativos no CAF.
+
+\begin{table}[H]
+\centering
+\caption{Obitos por Periodo}
+\label{tab:obitos}
+\begin{tabular}{lrrl}
+\toprule
+\textbf{Periodo do Obito} & \textbf{Quantidade} & \textbf{\%} & \textbf{Observacao} \\
+\midrule
+Antes de 2020 & 132 & 1,0\% & Obitos antigos \\
+2020-2022 & 2.891 & 22,5\% & Periodo COVID \\
+2023 & 3.647 & 28,4\% & --- \\
+2024 & 4.812 & 37,5\% & --- \\
+2025 & 1.338 & 10,4\% & Ano corrente \\
+\midrule
+\textbf{Total} & \textbf{12.820} & \textbf{100\%} & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Casos Extremos de Obitos Antigos}
+
+\begin{table}[H]
+\centering
+\caption{Obitos Mais Antigos com Cadastros Ainda Ativos}
+\label{tab:obitos_antigos}
+\begin{tabular}{cccr}
+\toprule
+\textbf{Ano Obito} & \textbf{Data Ativacao} & \textbf{Data Atualizacao} & \textbf{Anos Pos-Obito} \\
+\midrule
+\textbf{1985} & 28/ago/2024 & 08/out/2024 & \textbf{39 anos} \\
+1997 & --- & --- & 28 anos \\
+1998 & --- & --- & 27 anos \\
+2011 & 05/mar/2025 & 05/mar/2025 & 14 anos \\
+2011 & 05/mar/2025 & 05/mar/2025 & 14 anos \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Achado critico}: Responsavel falecido ha \textbf{39 anos} (1985) com cadastro
+\textbf{ativado em agosto/2024} e \textbf{atualizado em outubro/2024}.
+
+% ----------------
+
+\subsection{Menores Absolutamente Incapazes}
+
+Foram identificados \textbf{40 menores de 16 anos} cadastrados como responsaveis de
+Unidades Familiares --- atos \textbf{nulos} conforme Art. 3\textordmasculine{} do Codigo Civil.
+
+\begin{table}[H]
+\centering
+\caption{Distribuicao por Idade na Ativacao}
+\label{tab:menores}
+\begin{tabular}{crr}
+\toprule
+\textbf{Idade na Ativacao} & \textbf{Quantidade} & \textbf{Observacao} \\
+\midrule
+-1 ano (erro de data) & 5 & Divergencia com RFB \\
+0 ano (recem-nascido) & 9 & Impossivel \\
+1 ano & 10 & Impossivel \\
+2-6 anos & 1 & Criancas \\
+7-10 anos & 3 & Criancas \\
+\textbf{11 anos} & \textbf{1} & \textbf{Caso extremo} \\
+13-15 anos & 11 & Pre-adolescentes \\
+\midrule
+\textbf{Total} & \textbf{40} & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Achado critico}: \textbf{Crianca de 11 anos} cadastrada como responsavel de
+Unidade Familiar --- caso de absoluta incapacidade civil.
+
+% ----------------
+
+\subsection{Adolescentes Nao Emancipados}
+
+Foram identificados \textbf{210 adolescentes de 16-17 anos} nao emancipados cadastrados
+como responsaveis --- atos \textbf{anulaveis} conforme Art. 4\textordmasculine{}, I do Codigo Civil.
+
+\begin{table}[H]
+\centering
+\caption{Adolescentes 16-17 Anos}
+\label{tab:adolescentes}
+\begin{tabular}{lrl}
+\toprule
+\textbf{Categoria} & \textbf{Quantidade} & \textbf{Status} \\
+\midrule
+16 anos & 98 & Nao emancipados \\
+17 anos & 112 & Nao emancipados \\
+\midrule
+\textbf{Total} & \textbf{210} & \texttt{st\_declarante\_emancipado = False} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observacao}: O campo \texttt{st\_declarante\_emancipado = False} indica expressamente
+que estes adolescentes \textbf{nao sao emancipados}, configurando incapacidade relativa.
+
+% ----------------
+
+\subsection{Divergencias de Data de Nascimento}
+
+O cruzamento CAF vs RFB identificou \textbf{12.777 divergencias} de data de nascimento.
+
+\begin{table}[H]
+\centering
+\caption{TOP 10 Maiores Divergencias}
+\label{tab:divergencias}
+\begin{tabular}{cccr}
+\toprule
+\textbf{Data CAF} & \textbf{Data RFB} & \textbf{Diferenca} & \textbf{Observacao} \\
+\midrule
+10/nov/1879 & 10/nov/1989 & \textbf{110 anos} & Seculo errado \\
+10/dez/2028 & 20/nov/1921 & 107 anos & Data futura no CAF \\
+12/out/2082 & 12/out/1982 & 100 anos & Data futura no CAF \\
+15/mar/2045 & 15/mar/1945 & 100 anos & Data futura no CAF \\
+04/out/2049 & 04/out/1949 & 100 anos & Data futura no CAF \\
+21/jul/1885 & 21/jul/1985 & 100 anos & Seculo errado \\
+20/jan/2039 & 20/jan/1939 & 100 anos & Data futura no CAF \\
+01/jan/2019 & 01/jan/1919 & 100 anos & Data futura no CAF \\
+18/set/2024 & 18/set/1924 & 100 anos & Data futura no CAF \\
+10/abr/2045 & 10/abr/1945 & 100 anos & Data futura no CAF \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Achado critico}: Divergencia maxima de \textbf{110 anos} entre data no CAF
+(10/nov/1879) e data na RFB (10/nov/1989).
+
+% ----------------
+
+\subsection{Datas de Nascimento Futuras}
+
+Foram identificados \textbf{48 registros} com data de nascimento no \textbf{futuro}
+(apos 2025), resultando em ``idades negativas''.
+
+\begin{table}[H]
+\centering
+\caption{Datas de Nascimento Futuras por Ano}
+\label{tab:futuras}
+\begin{tabular}{crl}
+\toprule
+\textbf{Ano no CAF} & \textbf{Quantidade} & \textbf{Observacao} \\
+\midrule
+2084 & 1 & 59 anos no futuro \\
+2083 & 1 & 58 anos no futuro \\
+2082 & 1 & 57 anos no futuro \\
+2049 & 8 & --- \\
+2048 & 5 & --- \\
+2045-2047 & 9 & --- \\
+2028-2044 & 23 & --- \\
+\midrule
+\textbf{Total} & \textbf{48} & Todas invalidas \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Observacao}: Estes registros evidenciam \textbf{falha critica de validacao} ---
+o sistema aceita datas de nascimento no futuro sem qualquer verificacao.
+
+% ----------------
+
+\subsection{CPFs Nao Localizados na RFB}
+
+Foram identificados \textbf{520 CPFs} cadastrados no CAF que \textbf{nao existem}
+na base da Receita Federal.
+
+% ================================================================================
+\section{Analise}
+% ================================================================================
+
+\subsection{Consolidacao dos Achados}
+
+\begin{table}[H]
+\centering
+\caption{Resumo das Inconsistencias de Capacidade Civil}
+\label{tab:resumo}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Categoria} & \textbf{Quantidade} & \textbf{\%} & \textbf{Impacto Juridico} \\
+\midrule
+Responsaveis falecidos & 12.820 & 49,1\% & Cadastro invalido \\
+Menores $<$16 anos & 40 & 0,2\% & Atos nulos \\
+Adolescentes 16-17 & 210 & 0,8\% & Atos anulaveis \\
+Divergencias nascimento & 12.777 & 48,9\% & Dado incorreto \\
+Datas futuras & 48 & 0,2\% & Validacao ausente \\
+CPFs inexistentes & 520 & 2,0\% & Cadastro irregular \\
+\midrule
+\textbf{Total de registros} & \textbf{26.415} & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Nota}: Ha sobreposicao entre categorias (ex: divergencias podem incluir datas futuras).
+O total consolidado de registros unicos com problemas e de aproximadamente \textbf{26.000 casos}.
+
+\subsection{Falhas de Validacao Identificadas}
+
+\begin{enumerate}
+    \item \textbf{Ausencia de cruzamento com SISOBI}: O sistema nao verifica obito do
+    responsavel antes de permitir ativacao ou atualizacao de cadastro;
+
+    \item \textbf{Nao verificacao de maioridade}: O sistema permite cadastrar menores de
+    16 anos como responsaveis, sem alertas ou bloqueios;
+
+    \item \textbf{Campo de emancipacao nao validado}: Adolescentes 16-17 anos nao emancipados
+    (\texttt{st\_declarante\_emancipado = False}) sao aceitos como responsaveis;
+
+    \item \textbf{Validacao de data insuficiente}: O sistema aceita datas de nascimento no
+    futuro e datas incompativeis com a idade do titular do CPF.
+\end{enumerate}
+
+% ================================================================================
+\section{Conclusao}
+% ================================================================================
+
+A analise de capacidade civil dos responsaveis no CAF revela \textbf{falhas sistemicas
+de validacao}:
+
+\begin{enumerate}
+    \item \textbf{12.820 responsaveis falecidos} ainda ativos no cadastro, incluindo
+    caso extremo de obito em \textbf{1985} (39 anos atras) com atualizacao em \textbf{2024};
+
+    \item \textbf{40 menores absolutamente incapazes} ($<$16 anos), incluindo caso de
+    \textbf{crianca de 11 anos} cadastrada como responsavel;
+
+    \item \textbf{210 adolescentes relativamente incapazes} (16-17 anos nao emancipados);
+
+    \item \textbf{12.777 divergencias} de data de nascimento entre CAF e RFB, incluindo
+    divergencia maxima de \textbf{110 anos};
+
+    \item \textbf{48 datas de nascimento no futuro}, evidenciando ausencia total de
+    validacao temporal.
+\end{enumerate}
+
+\textbf{Impacto juridico}: Os atos praticados por absolutamente incapazes sao \textbf{nulos}
+(Art. 166, I do CC), enquanto os praticados por relativamente incapazes sao \textbf{anulaveis}
+(Art. 171, I do CC). A manutencao de cadastros de pessoas falecidas pode caracterizar
+irregularidade administrativa e, em casos extremos, fraude.
+
+% ================================================================================
+\section{Anexos}
+% ================================================================================
+
+\subsection{Parametros de Conexao LABCONTAS}
+
+\begin{verbatim}
+Ambiente: LABCONTAS (SQL Server)
+Base CAF: [BD_AGRO_CAF_AUD_2025]
+Base SISOBI: [BD_SISOBI]
+Base RFB: [BD_RECEITA]
+Data de execucao: Novembro/2025
+\end{verbatim}
+
+\subsection{Artefatos Gerados (CSVs)}
+
+Os seguintes arquivos CSV foram exportados das queries executadas no LABCONTAS e
+servem como evidencia primaria dos achados:
+
+\begin{itemize}
+    \item \texttt{ACHADO\_CRITICO\_responsaveis\_com\_obito.csv} (12.820 registros)
+    \item \texttt{ACHADO\_CRITICO\_menores\_16\_anos.csv} (40 registros)
+    \item \texttt{ACHADO\_16\_17\_anos\_nao\_emancipados.csv} (210 registros)
+    \item \texttt{ACHADO\_datas\_nascimento\_divergentes.csv} (12.777 registros)
+    \item \texttt{ACHADO\_cpf\_nao\_encontrado\_receita.csv} (520 registros)
+\end{itemize}
+
+\subsection{Artefatos deste Documento}
+
+\begin{itemize}
+    \item \texttt{peca131\_pt\_capacidade\_civil.tex} --- Este documento (codigo fonte)
+    \item \texttt{peca131\_pt\_capacidade\_civil.pdf} --- Versao compilada (Peca 131)
+\end{itemize}
+
+\end{document}

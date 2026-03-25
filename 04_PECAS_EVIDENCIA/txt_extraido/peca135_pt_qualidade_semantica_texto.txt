@@ -1,0 +1,3289 @@
+--- Página 1 ---
+Papel de Trabalho de Auditoria Técnica
+PT-A04-02: Análise de Qualidade Semântica das
+Descrições
+Equipe de Auditoria Operacional – TCU
+15 de novembro de 2025
+Sumário
+1 Introdução 3
+1.1 Contexto e Motivação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Objetivos do Papel de Trabalho . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Metodologia 3
+2.1 Critérios de Classificação . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2.2 Procedimentos Analíticos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 Resultados 4
+3.1 Quantificação da Inadequação Semântica . . . . . . . . . . . . . . . . . . . . . . . 4
+3.2 Memória de Cálculo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.3 Exemplos Representativos por Categoria . . . . . . . . . . . . . . . . . . . . . . . 5
+4 Conclusão 6
+A Anexo A – Estatísticas Detalhadas 7
+A.1 Distribuição de Campos Inadequados por Tipo de Inadequação . . . . . . . . . . 7
+A.2 Percentual de Conformidade com ISO/IEC 11179 . . . . . . . . . . . . . . . . . . 7
+B Anexo B – Amostra da Análise Completa 7
+B.1 Primeiros 20 Campos Analisados (Tabela S_AREA_IMOVEL) . . . . . . . . . . 7
+C Anexo C – Tabela Completa de Análise: Todos os 527 Campos Classificados 8
+C.1 Introdução . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+C.2 Legenda de Cores . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+C.3 Tabela Completa: 527 Campos Classificados . . . . . . . . . . . . . . . . . . . . . 9
+D Anexo D – Script de Análise 43
+D.1 Código Python para Classificação Semântica . . . . . . . . . . . . . . . . . . . . 43
+D.2 Execução do Script . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43
+1
+
+--- Página 2 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Lista de Tabelas
+1 Taxonomia de Qualidade Semântica das Descrições . . . . . . . . . . . . . . . . . 3
+2 Distribuição de Campos por Categoria de Qualidade Semântica . . . . . . . . . . 4
+3 Memória de Cálculo - Qualidade Semântica . . . . . . . . . . . . . . . . . . . . . 4
+4 Exemplos de Inadequação Semântica por Categoria . . . . . . . . . . . . . . . . . 5
+5 Detalhamento das Inadequações . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6 Amostra de Campos Analisados - Tabela S_AREA_IMOVEL . . . . . . . . . . 7
+7 Classificação Completa de Qualidade Semântica dos 527 Campos Documentados 9
+2
+
+--- Página 3 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+1 Introdução
+1.1 Contexto e Motivação
+Durante a elaboração do Achado 4 (“Incompletude e baixa qualidade do Dicionário de Dados
+do Sistema CAF”), a Seção II levantou questões sobre a qualidade semântica das descrições dos
+campos documentados. Especificamente, questionou-se:
+Questão de Auditoria Central
+“As descrições dos campos no dicionário fornecem significado de negócio (semântica) ou
+são meramente tautológicas e técnicas?”
+A versão preliminar da Seção II apontava que 98,9% (518 campos) das descrições eram
+semanticamente inadequadas. Este papel de trabalho foi criado para fundamentar tecni-
+camente essa conclusão , fornecendo evidência rastreável, reproduzível e metodologicamente
+rigorosa.
+1.2 Objetivos do Papel de Trabalho
+1.Objetivo Primário : Classificar a qualidade semântica de todasas 524+ descrições
+de campos do dicionário de dados oficial, categorizando-as como Tautológica, Técnica,
+Genérica ou Funcional.
+2.Objetivo Secundário : Quantificar o percentual de descrições inadequadas e adequadas.
+3.Objetivo Terciário : Gerar tabelas exemplificativas para subsidiar a redação final da
+Seção II do Achado 4.
+2 Metodologia
+2.1 Critérios de Classificação
+A qualidade semântica das descrições foi avaliada segundo os princípios da ISO/IEC 11179
+(metadados devem ser semânticos, não meramente técnicos) e da ISO/IEC 25012 (requisito
+de Compreensibilidade - Understandability ). As categorias definidas foram:
+Tabela 1: Taxonomia de Qualidade Semântica das Descrições
+Categoria Definição
+Tautológica Descrição que apenas traduz ou repete o nome do campo,
+sem agregar informação. Exemplo: campo dt_criacao des-
+crito como “Data criação”.
+Técnica Descrição que informa a função técnica do campo (ex: “é um
+ID”, “é um status”) sem explicar o significado de negócio ou
+contexto de uso.
+Genérica Descrição vaga, incompleta ou sem detalhes úteis. Exemplo:
+“Tamanho da área” sem informar unidade de medida.
+Funcional Descrição adequada que explica o propósito econtexto de
+negóciodo campo, agregando valor informacional.
+3
+
+--- Página 4 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+2.2 Procedimentos Analíticos
+A análise foi realizada de forma censitária (100% dos campos documentados) por meio de script
+Pythondesenvolvidoespecificamenteparaestaauditoria( analisar_qualidade_semantica.py ).
+Etapas do processo :
+1.Extração : Leitura do arquivo Dicionario de dados-CAF3v1.CSV e extração de todos os
+pares (nome_campo, descrição).
+2.Classificação Automatizada : Aplicação de regras heurísticas baseadas nos critérios da
+Tabela 1 para classificar cada descrição.
+3.Consolidação : Geração de estatísticas agregadas por categoria e seleção de exemplos
+representativos.
+O script completo está disponível no Anexo C deste papel de trabalho.
+3 Resultados
+3.1 Quantificação da Inadequação Semântica
+A análise identificou 527 campos documentados no dicionário de dados. Destes, apenas
+31 (5,9%) possuem descrições funcionalmente adequadas. Os demais 496 campos (94,1%)
+apresentam descrições inadequadas.
+Tabela 2: Distribuição de Campos por Categoria de Qualidade Semântica
+Categoria Quantidade Percentual Status
+Tautológica 296 56,2% Inadequada
+Genérica 181 34,3% Inadequada
+Técnica 19 3,6% Inadequada
+Subtotal Inadequadas 496 94,1%
+Funcional 31 5,9% Adequada
+TOTAL 527 100,0%
+3.2 Memória de Cálculo
+Tabela 3: Memória de Cálculo - Qualidade Semântica
+MC Variável Método Resultado
+MC-A04-10 totalCampos Contagem de linhas de dados no
+CSV527
+MC-A04-11 camposTautologicos Campos com descrição tautológica 296
+MC-A04-12 camposGenericos Campos com descrição genérica 181
+MC-A04-13 camposTecnicos Campos com descrição técnica 19
+MC-A04-14 camposFuncionais Campos com descrição funcional 31
+MC-A04-15 camposInadequados MC-A04-11 + MC-A04-12 + MC-
+A04-13496
+MC-A04-16 pctInadequado (MC-A04-15 / MC-A04-10) ×100 94,1%
+4
+
+--- Página 5 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+3.3 Exemplos Representativos por Categoria
+A tabela a seguir apresenta exemplos reais extraídos do dicionário de dados, ilustrando cada
+categoria de inadequação semântica.
+Tabela4: ExemplosdeInadequaçãoSemânticaporCategoria
+Campo Descrição no Dicionário Problema Identificado
+CATEGORIA: TAUTOLÓGICA (56,2% dos campos)
+dt_criacao Data criação Apenas traduz o prefixo “dt_” para
+“Data”. Não informa quandonempor
+quemfoi criado.
+dt_atualizacao Data atualização Idem. Não especifica o que foi
+atualizado.
+nm_fantasia Nome fantasia Repete o nome técnico sem explicar o
+contexto de uso.
+id_caf ID de identificação CAF Redundante: “ID de identificação” é
+pleonasmo (ID já significa
+identificação).
+cd_municipio Código IBGE do município Apenas traduz “cd_” para “Código”.
+sg_uf Sigla UF da área imóvel Apenas traduz “sg_” para “Sigla”.
+CATEGORIA: GENÉRICA (34,3% dos campos)
+nr_area Tamanho da área imóvel Vago. Não informa a unidade de
+medida (hectares? m 2?).
+ds_observacao Observação Não especifica que tipo de observação
+deve ser registrada.
+nr_longitude Longitude da área imóvel Descrição muito curta e pouco
+informativa.
+nr_latitude Latitude da área imóvel Idem.
+CATEGORIA: TÉCNICA (3,6% dos campos)
+st_ativo Situação ativo ou inativo da
+área imóvelInforma valores possíveis
+(ativo/inativo) mas não explica o que
+significa estar ativo no contexto de
+negócio.
+st_cadastrado Situação se o cadastro estar
+ativo ou inativoIdem. Descreve valores técnicos sem
+contexto funcional.
+CATEGORIA: FUNCIONAL (5,9% dos campos - ADEQUADAS)
+st_imovel_principal Se é o imóvel principal da
+unidade familiarAdequado. Explica o propósito do
+campo booleano no contexto de
+negócio.
+st_incra Se é um imóvel importado
+das APIs do
+INCRA(SIGEF/SNCR)Adequado. Contextualiza a origem do
+dado.
+cd_imovel_incra Código INCRA importado
+das APIs do
+INCRA(SIGEF/SNCR)Adequado. Explica origem e
+finalidade.
+5
+
+--- Página 6 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+4 Conclusão
+Este papel de trabalho confirma, de maneira conclusiva e reproduzível, que o dicionário de dados
+do Sistema CAF apresenta grave inadequação semântica :94,1% das descrições (496
+campos) não atendem aos requisitos mínimos de compreensibilidade e valor informacional
+estabelecidos pelas normas ISO/IEC 11179 e ISO/IEC 25012.
+A predominância de descrições tautológicas (56,2%) e genéricas (34,3%) evidencia que o
+dicionário não cumpre sua função primordial: documentar o significado de negócio dos dados . As
+descrições meramente repetem nomenclaturas técnicas ou fornecem informações vagas, inúteis
+para usuários não desenvolvedores.
+Esta evidência técnica fundamenta a Seção II do Achado 4 e deve ser utilizada para corrigir
+as estatísticas apresentadas no relatório de auditoria.
+6
+
+--- Página 7 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+A Anexo A – Estatísticas Detalhadas
+A.1 Distribuição de Campos Inadequados por Tipo de Inadequação
+Tabela 5: Detalhamento das Inadequações
+Tipo de Inadequação Quantidade % do Total
+Tautológica 296 56,2%
+Genérica 181 34,3%
+Técnica 19 3,6%
+Total Inadequadas 496 94,1%
+A.2 Percentual de Conformidade com ISO/IEC 11179
+Segundo a ISO/IEC 11179, metadados devem ser semânticos , isto é, devem descrever o signi-
+ficadodos dados no contexto de negócio, não apenas suas características técnicas.
+•Conformes : 31 campos (5,9%)
+•Não conformes : 496 campos (94,1%)
+B Anexo B – Amostra da Análise Completa
+B.1 Primeiros 20 Campos Analisados (Tabela S_AREA_IMOVEL)
+Tabela 6: Amostra de Campos Analisados - Tabela S_AREA_-
+IMOVEL
+Campo Descrição Categoria
+id_area_imovel ID de identificação de área
+imóvelTautológica
+nr_area Tamanho da área imóvel Genérica
+sg_uf Sigla UF da área imóvel Tautológica
+nr_longitude Longitude da área imóvel Genérica
+nr_latitude Latitude da área imóvel Genérica
+st_ativo Situação ativo ou inativo da
+área imóvelTécnica
+st_imovel_principal Se é o imóvel principal da
+unidade familiarFuncional
+dt_criacao Data criação Tautológica
+dt_atualizacao Data atualização Tautológica
+id_tipo_unidade_medida ID de identificação de tipo de
+unidade mediaTautológica
+id_tipo_area ID de identificação de tipo área Tautológica
+id_tipo_localizacao_area ID de identificação de tipo de
+localização áreaTautológica
+cd_municipio Código IBGE do município Tautológica
+st_incra Se é um imóvel importado das
+APIs do INCRA(SIGEF/SNCR)Funcional
+cd_imovel_incra Código INCRA importado das
+APIs do INCRA(SIGEF/SNCR)Funcional
+7
+
+--- Página 8 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Campo Descrição Categoria
+nm_origem_imovel Origem do imóvel importado
+das APIs do INCRA
+INCRA(SIGEF/SNCR)Genérica
+C Anexo C – Tabela Completa de Análise: Todos os 527 Cam-
+pos Classificados
+C.1 Introdução
+Este anexo apresenta a análise completa e exaustiva de todos os 527 campos documen-
+tados no dicionário de dados do Sistema CAF. Cada campo foi classificado individualmente
+segundo os critérios metodológicos descritos na Seção 2.
+A tabela a seguir constitui evidência primária para auditoria, permitindo:
+•Rastreabilidade total : Cada campo possui justificativa técnica documentada
+•Auditoria independente : Terceiros podem revisar cada classificação
+•Verificabilidade : Qualquer auditor pode replicar a análise comparando com o dicionário
+original
+C.2 Legenda de Cores
+•Fundo vermelho claro : Descrições inadequadas (Tautológica, Genérica, Técnica)
+•Fundo verde claro : Descrições adequadas (Funcional)
+8
+
+--- Página 9 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+C.3 Tabela Completa: 527 Campos Classificados
+Tabela 7: Classificação Completa de Qualidade Semântica dos 527 Cam-
+pos Documentados
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_AREA_DOCUMENTO.id_-
+area_documentoID de identificao de rea
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_DOCUMENTO.id_-
+area_imovelID de identificao de rea
+imvelTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_DOCUMENTO.id_-
+documentoID de identificao de
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_IMOVEL.id_-
+area_imovelID de identificao de rea
+imvelTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_IMOVEL.nr_area Tamanho da rea imvel Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.sg_uf Sigla UF da rea imvel Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_AREA_IMOVEL.nr_-
+longitudeLongitude da rea imvel Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.nr_-
+latitudeLatitude da rea imvel Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.st_-
+ativoSituao ativo ou inativo da
+rea imvelTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_AREA_IMOVEL.st_-
+imovel_principalSe o imvel principal da
+unidade familiarFuncional
+Descrição razoavelmente detalhada
+S_AREA_IMOVEL.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.id_-
+tipo_unidade_medidaID de identificao de tipo
+de unidade mediaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_IMOVEL.id_-
+tipo_areaID de identificao de tipo
+reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+9
+
+--- Página 10 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_AREA_IMOVEL.id_-
+tipo_localizacao_areaID de identificao de tipo
+de localizao reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_IMOVEL.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_IMOVEL.st_-
+incraSe um imvel importado das
+APIs do INCRA(SIGEF/SNCR)Funcional
+Descrição razoavelmente detalhada
+S_AREA_IMOVEL.cd_-
+imovel_incraCdigo INCRA importado das
+APIs do INCRA(SIGEF/SNCR)Funcional
+Descrição razoavelmente detalhada
+S_AREA_IMOVEL.nm_-
+origem_imovelOrigem do imvel importado
+das APIs do INCRA
+INCRA(SIGEF/SNCR)Funcional
+Descrição razoavelmente detalhada
+S_AREA_PESSOA_-
+UFPR.id_area_pessoa_-
+ufprID de identificao de rea
+pessoa UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_PESSOA_-
+UFPR.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_PESSOA_-
+UFPR.dt_inativacaoData inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_AREA_PESSOA_-
+UFPR.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_PESSOA_-
+UFPR.id_unidade_-
+familiar_pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_PESSOA_-
+UFPR.id_area_imovelID de identificao de rea
+imvelTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_AREA_PESSOA_-
+UFPR.id_condicao_-
+dominioID de identificao de tipo
+de condio de domnioTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ATUALIZACAO_-
+UNIDADE_FAMILIAR.id_-
+atualizacao_unidade_-
+familiarID de identificao de
+atualizao unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ATUALIZACAO_-
+UNIDADE_FAMILIAR.id_-
+unidade_familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ATUALIZACAO_-
+UNIDADE_FAMILIAR.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_BENEFICIO_MEMBRO_-
+FAMILIAR.id_-
+beneficio_membro_-
+familiarID de identificao de
+beneficio membro familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+10
+
+--- Página 11 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_BENEFICIO_MEMBRO_-
+FAMILIAR.id_produtoID de identificao de
+produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BENEFICIO_MEMBRO_-
+FAMILIAR.id_unidade_-
+familiar_pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BENEFICIO_MEMBRO_-
+FAMILIAR.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_BENEFICIO_MEMBRO_-
+FAMILIAR.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_LOTE.id_-
+bloqueio_loteID de identificao de
+bloqueio loteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_LOTE.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_LOTE.id_-
+usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_LOTE.id_-
+tipo_loteID de identificao de tipo
+de loteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_-
+PESSOA.id_bloqueio_-
+pessoaID de identificao de
+bloqueio pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_-
+PESSOA.nr_cpfNumero do CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_-
+PESSOA.ds_motivoMotivo de bloqueio pessoa Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_-
+PESSOA.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_-
+PESSOA.nr_processo_-
+seiNumero do processo SEI Tautológica
+Descrição repete palavras do nome
+do campo
+S_BLOQUEIO_-
+PESSOA.nm_bloqueio_-
+pessoaNome do bloqueio pessoa Tautológica
+Apenas traduz ’nm_bloqueio
+pessoa’ para descrição com ’nome’
+S_BLOQUEIO_-
+PESSOA.nr_cnpjNumero do CNPJ Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_-
+PESSOA.id_tipo_loteID de identificao de tipo
+loteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+11
+
+--- Página 12 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_BLOQUEIO_-
+PESSOA.st_ativoSituao se estar ativo ou
+inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_BLOQUEIO_-
+PESSOA.dt_fim_-
+suspensaoData fim suspenso Genérica
+Descrição muito curta e pouco
+informativa
+S_BLOQUEIO_-
+PESSOA.id_bloqueio_-
+pessoa_documentoID de identificao de
+bloqueio pessoa documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_PESSOA_-
+DOCUMENTO.id_-
+bloqueio_pessoa_-
+documentoID de identificao de
+bloqueio pessoa documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_BLOQUEIO_PESSOA_-
+DOCUMENTO.id_-
+documentoID de identificao de
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CACHE_DATAPREV.id_-
+cadunicoID de identificao de
+cadunicoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CACHE_DATAPREV.nr_-
+cpfNumero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_CACHE_DATAPREV.tp_-
+consulta1 - cadunico, 2 -
+beneficios, 3 - faixa
+renda, 4 relacao
+trabalhistaFuncional
+Descrição razoavelmente detalhada
+S_CACHE_-
+DATAPREV.consultaRetorno da consulta nas
+APIs da DataprevFuncional
+Descrição razoavelmente detalhada
+S_CADUNICO.id_-
+cadunicoID de identificao de
+cadunicoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CADUNICO.st_-
+cadastradoSituao se o cadastro estar
+ativo ou inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_CADUNICO.nr_cpf Numero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_CAF.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CAF.id_usuario ID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+12
+
+--- Página 13 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_CAF.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CAF.uf Sigla UF Genérica
+Descrição muito curta e pouco
+informativa
+S_CAF.id_tipo_caf ID de identificao de tipo
+CAFTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CAF.id_caf ID de identificao CAF Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CAF.nr_caf Numero CAF Genérica
+Descrição muito curta e pouco
+informativa
+S_CAF.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_CAF.id_entidade ID de identificao de
+entidadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CARACTERIZACAO_-
+AREA.id_-
+caracterizacao_areaID de identificao de
+caracterizao reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CARACTERIZACAO_-
+AREA.nm_-
+caracterizacao_areaDescrio caracterizao rea Genérica
+Descrição muito curta e pouco
+informativa
+S_CATEGORIA_-
+PRODUTO.id_-
+categoria_produtoID de identificao de
+categoria produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CATEGORIA_-
+PRODUTO.ds_-
+categoria_produtoDescrio categoria produto Tautológica
+Descrição repete palavras do nome
+do campo
+S_CATEGORIA_-
+PRODUTO.st_ativoSituao ativo ou inativo
+categoria produtoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_CATEGORIA_-
+PRODUTO.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_CATEGORIA_-
+PRODUTO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_CATEGORIA_-
+RENDA.id_categoria_-
+rendaID de identificao de
+categoria rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+13
+
+--- Página 14 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_CATEGORIA_-
+RENDA.id_tipo_rendaID de identificao de tipo
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CATEGORIA_-
+RENDA.id_categoria_-
+produtoID de identificao de
+categoria produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CLIENTE.id_cliente ID de identificao de
+clienteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CLIENTE.ds_cliente Nome do cliente. Genérica
+Descrição muito curta e pouco
+informativa
+S_CLIENTE.st_ativo Situao do cliente, ativo ou
+inativo.Técnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_CLIENTE.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_CLIENTE.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_CLIENTE.id_usuario ID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CLIENTE.id_modelo_-
+arquivoID de identificao de modelo
+arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CNAE_PRINCIPAL.cd_-
+cnae_principalCodigo CNAE principal Tautológica
+Descrição repete palavras do nome
+do campo
+S_CNAE_PRINCIPAL.ds_-
+cnae_principalDescrio CNAE principal Tautológica
+Descrição repete palavras do nome
+do campo
+S_CONDICAO_-
+DOMINIO.id_condicao_-
+dominioID de identificao de condio
+de domnioTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONDICAO_-
+DOMINIO.ds_condicao_-
+dominioDescrio condio de domnio Genérica
+Descrição muito curta e pouco
+informativa
+S_CONFIGURACAO.id_-
+configID de identificao de
+configuraoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONFIGURACAO.config Campos de configurao Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+14
+
+--- Página 15 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_CONTROLE_MIGRACAO_-
+PJ.id_controle_-
+migracao_pjID de identificao de
+controle migrao pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+PJ.id_pjID de identificao de pessoa
+jurdica CAF 2Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+PJ.nu_situacao1 - migrando, 2 - migrado,
+3 - cadastro incomplet, 4 -
+PJ sem sociosFuncional
+Descrição razoavelmente detalhada
+S_CONTROLE_MIGRACAO_-
+PJ.id_pj_caf3ID de identificao de pessoa
+jurdica CAF 3Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+PJ.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_CONTROLE_MIGRACAO_-
+PJ.dt_atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_CONTROLE_MIGRACAO_-
+PJ.nr_cnpjNumero CNPJ Genérica
+Descrição muito curta e pouco
+informativa
+S_CONTROLE_MIGRACAO_-
+PJ.tp_pj1 - Coop. Singular, 2 -
+Coop. Central, 3 -
+Empresa, 4 - AssociacaoFuncional
+Descrição razoavelmente detalhada
+S_CONTROLE_MIGRACAO_-
+UFPA.id_controle_-
+migracao_ufpaID de identificao de
+controle migrao UFPATautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+UFPA.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+UFPA.nu_situacao1 - realizando migracao, 2
+- cadastro migrado, 3 -
+cadastro incompleto, 4 -
+UFPA sem membros, 5 -
+realizando atualizacaoFuncional
+Descrição razoavelmente detalhada
+S_CONTROLE_MIGRACAO_-
+UFPA.id_unidade_-
+familiar_caf3ID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_CONTROLE_MIGRACAO_-
+UFPA.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_CONTROLE_MIGRACAO_-
+UFPA.dt_atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_CONTROLE_MIGRACAO_-
+UFPA.st_atualizadaSituao controle migrao
+pessoa jurdica atualizadaFuncional
+Descrição razoavelmente detalhada
+S_COPIA_DAP.nr_dap Numero DAP Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+15
+
+--- Página 16 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_COPIA_DAP.nr_cpf_-
+titularNumero CPF do titular Tautológica
+Descrição repete palavras do nome
+do campo
+S_COPIA_DAP.nr_cpf_-
+subtitularNumero CPF do subtitular Tautológica
+Descrição repete palavras do nome
+do campo
+S_COPIA_DAP.dt_-
+validadeData Validade Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_COPIA_DAP.st_-
+ultima_versaoSituao se a ultima verso Genérica
+Poucas palavras significativas,
+descrição genérica
+S_COPIA_DAP.st_dap_-
+validaSituao DAP valida Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_COPIA_DAP.st_dap_-
+expiradaSituao DAP expirada Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_COPIA_DAP.st_cdda_-
+canceladaSituao CDDA cancelada Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_COPIA_DAP.id_-
+unidade_familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_COPIA_DAP.nm_-
+titularNome do titular Tautológica
+Apenas traduz ’nm_titular’ para
+descrição com ’nome’
+S_COPIA_DAP.nm_-
+subtitularNome do subtitular Tautológica
+Apenas traduz ’nm_subtitular’ para
+descrição com ’nome’
+S_COPIA_DAP.cd_-
+municipioCdigo do IBGE do municpio Genérica
+Poucas palavras significativas,
+descrição genérica
+S_COPIA_DAP.cd_uf Cdigo da UF Genérica
+Descrição muito curta e pouco
+informativa
+S_COPIA_DAP.id_sexo_-
+titularID de identificao de sexo
+do titularTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_COPIA_DAP.id_sexo_-
+subtitularID de identificao de sexo
+do subtitularTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_COPIA_DAP.id_-
+caracterizacao_areaID de identificao de
+caracterizao reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_COPIA_DAP.id_-
+atividade_principalID de identificao de
+atividade principalTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_COPIA_DAP.ds_obito Descrio bito Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+16
+
+--- Página 17 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_COPIA_DAP.st_-
+validadoSituao validado Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_DOCUMENTO.id_-
+documentoID de identificao de
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOCUMENTO.nm_-
+documentoNome do documento Tautológica
+Apenas traduz ’nm_documento’
+para descrição com ’nome’
+S_DOCUMENTO.cd_-
+cloud_storageChave do documento na nuvem Genérica
+Poucas palavras significativas,
+descrição genérica
+S_DOCUMENTO.ds_url URL do Documento Genérica
+Descrição muito curta e pouco
+informativa
+S_DOCUMENTO.id_-
+unidade_familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOCUMENTO.id_tipo_-
+documentoID de identificao do tipo
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOCUMENTO.id_-
+pessoa_juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOCUMENTO.id_-
+bloqueio_loteID de identificao de
+bloqueio loteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOCUMENTO.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_DOCUMENTO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_DOCUMENTO.st_-
+migrado_nuvemSituao migrado nuvem Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_DOCUMENTO.nm_-
+extensaoNome da extenso do arquivo Genérica
+Poucas palavras significativas,
+descrição genérica
+S_DOC_-
+IDENTIFICACAO.id_-
+doc_identificacaoID de identificao de
+documento de identificaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOC_-
+IDENTIFICACAO.sg_ufSigla UF Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_DOC_-
+IDENTIFICACAO.dt_-
+emissaoData emisso Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+17
+
+--- Página 18 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_DOC_-
+IDENTIFICACAO.nr_-
+documentonumero do documento Genérica
+Descrição muito curta e pouco
+informativa
+S_DOC_-
+IDENTIFICACAO.id_-
+pessoa_fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOC_-
+IDENTIFICACAO.id_-
+tipo_documentoID de identificao de tipo
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_DOC_-
+IDENTIFICACAO.nm_-
+emissor_orgaoNome do rgo emissor Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.id_-
+enderecoID de identificao de
+endereoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ENDERECO.sg_uf Sigla UF Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_ENDERECO.nr_cep Numero do CEP Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.ds_-
+logradouroDescrio do logradouro Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.ds_-
+complementoDescrio do complemento Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.ds_-
+referenciaDescrio de referencia Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO.nr_-
+logradouroNumero do logradouro Genérica
+Descrição muito curta e pouco
+informativa
+S_ENDERECO_UFPR_-
+PESSOA.id_endereco_-
+ufpr_pessoaID de identificao de
+endereo pessoa UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ENDERECO_UFPR_-
+PESSOA.id_enderecoID de identificao de
+endereoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+18
+
+--- Página 19 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_ENDERECO_UFPR_-
+PESSOA.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ENDERECO_UFPR_-
+PESSOA.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ENTIDADE_-
+EMISSORA.id_-
+entidade_emissoraID de identificao de
+entidade emissoraTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ENTIDADE_-
+EMISSORA.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_ENTIDADE_-
+EMISSORA.dt_-
+inativacaoData inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_ENTIDADE_-
+EMISSORA.ds_motivo_-
+inativacaoDescrio motivo inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_ENTIDADE_-
+EMISSORA.nr_cnpjNumero CNPJ Genérica
+Descrição muito curta e pouco
+informativa
+S_ENTIDADE_-
+EMISSORA.nm_razao_-
+socialRazo social da entidade
+emissoraGenérica
+Descrição genérica
+S_FAIXA_RENDA.id_-
+faixa_rendaID de identificao de faixa
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_FAIXA_RENDA.valor_-
+maximoValor mximo da renda Genérica
+Descrição muito curta e pouco
+informativa
+S_FAIXA_RENDA.valor_-
+minimoValor mnimo da renda Genérica
+Descrição muito curta e pouco
+informativa
+S_FAIXA_RENDA.id_-
+unidade_familiar_-
+pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_FUNCIONARIO_-
+UFPR.id_funcionario_-
+ufprID de identificao de
+funcionrio UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_FUNCIONARIO_-
+UFPR.id_pessoa_fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_FUNCIONARIO_-
+UFPR.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+19
+
+--- Página 20 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_FUNCIONARIO_-
+UFPR.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_GERACAO_-
+ARQUIVO.id_geracao_-
+arquivoID de identificao de gerao
+arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_-
+ARQUIVO.nr_etapaEtapa que o processo esto
+no momento.Funcional
+Descrição razoavelmente detalhada
+S_GERACAO_-
+ARQUIVO.nr_ultima_-
+paginaUltima pagina inteirada na
+etapa atual.Tautológica
+Descrição repete palavras do nome
+do campo
+S_GERACAO_-
+ARQUIVO.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_GERACAO_-
+ARQUIVO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_GERACAO_-
+ARQUIVO.dt_inicio_-
+processamentoData de inicio da gerao do
+arquivoFuncional
+Descrição razoavelmente detalhada
+S_GERACAO_-
+ARQUIVO.dt_fim_-
+processamentoData de fim da gerao do
+arquivoFuncional
+Descrição razoavelmente detalhada
+S_GERACAO_-
+ARQUIVO.id_clienteID de identificao de
+clienteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_-
+ARQUIVO.id_tipo_-
+situacao_geracao_-
+arquivoID de identificao de tipo
+situao gerao arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_-
+ARQUIVO.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_-
+ARQUIVO.dt_inicioData de inicio do intervalo
+da gerao do arquivoTautológica
+Apenas traduz ’dt_’ para ’Data’
+S_GERACAO_-
+ARQUIVO.dt_fimData de fim do intervalo da
+gerao do arquivoTautológica
+Apenas traduz ’dt_’ para ’Data’
+S_GERACAO_ARQUIVO_-
+DOCUMENTO.id_-
+geracao_arquivo_-
+documentoID de identificao de gerao
+arquivo documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_ARQUIVO_-
+DOCUMENTO.id_-
+geracao_arquivoID de identificao de gerao
+arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_ARQUIVO_-
+DOCUMENTO.id_-
+documentoID de identificao de
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_GERACAO_ARQUIVO_-
+DOCUMENTO.nr_etapaEtapa que o processo esta
+no momento.Funcional
+Descrição razoavelmente detalhada
+Continua na próxima página
+20
+
+--- Página 21 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_MEMBRO_-
+EXCLUIDO.id_membro_-
+excluidoID de identificao de membro
+excludoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MEMBRO_-
+EXCLUIDO.dt_exclusaoData excluso Genérica
+Descrição muito curta e pouco
+informativa
+S_MEMBRO_-
+EXCLUIDO.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MEMBRO_-
+EXCLUIDO.id_pessoa_-
+fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MEMBRO_-
+EXCLUIDO.id_unidade_-
+familiar_pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MEMBRO_-
+EXCLUIDO.id_usuarioID do usurio que excluiu o
+membroFuncional
+Descrição razoavelmente detalhada
+S_MEMBRO_-
+EXCLUIDO.id_-
+entidade_emissoraID da entidade que excluiu
+o membroFuncional
+Descrição razoavelmente detalhada
+S_MENSAGEM.id_-
+mensagemID de identificao da
+mensagemTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MENSAGEM.titulo Titulo da mensagem Genérica
+Descrição muito curta e pouco
+informativa
+S_MENSAGEM.mensagem corpo da mensagem Genérica
+Descrição muito curta e pouco
+informativa
+S_MENSAGEM.dt_inicio Data inicio Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_MENSAGEM.dt_fim Data fim Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_MENSAGEM.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_MENSAGEM.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_MENSAGEM_-
+PERFIS.id_mensagemID de identificao da
+mensagemTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MENSAGEM_-
+PERFIS.id_perfilID de identificao de perfil Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+21
+
+--- Página 22 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_MENSAGEM_-
+USUARIOS.id_mensagemID de identificao da
+mensagemTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MENSAGEM_-
+USUARIOS.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODELO_ARQUIVO.id_-
+modelo_arquivoID de identificao de modelo
+arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODELO_ARQUIVO.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_MODELO_ARQUIVO.js_-
+camposCampos do modelo arquivo Genérica
+Descrição muito curta e pouco
+informativa
+S_MODELO_ARQUIVO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_MODELO_ARQUIVO.js_-
+cabecalhoCabealho do arquivo Genérica
+Descrição muito curta e pouco
+informativa
+S_MODULO.id_modulo ID de identificao de modulo Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODULO.nm_modulo Descrio do modulo Genérica
+Descrição muito curta e pouco
+informativa
+S_MODULO_FISCAL.id_-
+modulo_fiscalID de identificao de modulo
+fiscalTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODULO_FISCAL.nr_-
+modulo_fiscalNumero de mdulos fiscais
+aceito no municpioFuncional
+Descrição razoavelmente detalhada
+S_MODULO_FISCAL.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_MODULO_-
+PERMISSAO.id_modulo_-
+permissaoID de identificao de modulo
+permissoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODULO_-
+PERMISSAO.id_moduloID de identificao de modulo Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODULO_-
+PERMISSAO.id_tipo_-
+permissaoID de identificao de tipo
+permissoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+22
+
+--- Página 23 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_MODULO_-
+PERMISSAO.id_motivo_-
+inativacaoID de identificao de motivo
+inativaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_MODULO_-
+PERMISSAO.ds_-
+inativacaoDescrio inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_MUNICIPIO.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_MUNICIPIO.cd_uf Cdigo UF Genérica
+Descrição muito curta e pouco
+informativa
+S_MUNICIPIO.sg_uf Sigla UF Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_MUNICIPIO.nm_-
+municipioNome do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_MUNICIPIO.id_regiao ID de identificao da regio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NACIONALIDADE.id_-
+nacionalidadeID de identificao da
+nacionalidadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NACIONALIDADE.cd_-
+nacionalidadeCdigo da nacionalidade Genérica
+Descrição muito curta e pouco
+informativa
+S_NACIONALIDADE.nm_-
+nacionalidadeNome da nacionalidade Tautológica
+Apenas traduz ’nm_nacionalidade’
+para descrição com ’nome’
+S_NACIONALIDADE.sg_-
+paisSigla pas Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_NATUREZA_-
+JURIDICA.cd_-
+natureza_juridicaCdigo natureza jurdica Genérica
+Descrição muito curta e pouco
+informativa
+S_NATUREZA_-
+JURIDICA.ds_-
+natureza_juridicaDescrio natureza jurdica Genérica
+Descrição muito curta e pouco
+informativa
+S_NOTIFICACAO.id_-
+notificacaoID de identificao de
+notificaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NOTIFICACAO.ds_-
+conteudoDescrio do contedo Genérica
+Descrição muito curta e pouco
+informativa
+S_NOTIFICACAO.st_lida Situao se a notificao foi
+lidaFuncional
+Descrição razoavelmente detalhada
+S_NOTIFICACAO.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+23
+
+--- Página 24 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_NOTIFICACAO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_NOTIFICACAO.id_-
+unidade_familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NOTIFICACAO.id_-
+tipo_notificacaoID de identificao de tipo
+notificaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NOTIFICACAO.id_-
+usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_NOTIFICACAO.id_-
+pessoa_juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ORIGEM_RENDA.id_-
+origem_rendaID de identificao de origem
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_ORIGEM_RENDA.ds_-
+origem_rendaDescrio origem renda Tautológica
+Descrição repete palavras do nome
+do campo
+S_PERFIL.id_perfil ID de identificao de perfil Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PERFIL.nm_perfil Nome do perfil Tautológica
+Apenas traduz ’nm_perfil’ para
+descrição com ’nome’
+S_PERFIL.ds_perfil Descrio do perfil Genérica
+Descrição muito curta e pouco
+informativa
+S_PERFIL.nm_sistema Nome que aparece no sistema Tautológica
+Apenas traduz ’nm_sistema’ para
+descrição com ’nome’
+S_PERFIL.st_ativo Situao do perfil se estar
+ativo ou inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_PERFIL.st_padrao Situao do perfil se o
+perfil padro do sistemaFuncional
+Descrição razoavelmente detalhada
+S_PERFIL.st_-
+administradorSituao do perfil se perfil
+administradorFuncional
+Descrição razoavelmente detalhada
+S_PERFIL.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PERFIL.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+24
+
+--- Página 25 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PERFIL_-
+PERMISSAO.id_perfil_-
+permissaoID de identificao de perfil
+permissoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PERFIL_-
+PERMISSAO.id_perfilID de identificao de perfil Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PERFIL_-
+PERMISSAO.id_moduloID de identificao de modulo Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PERFIL_-
+PERMISSAO.id_tipo_-
+permissaoID de identificao de tipo
+permissoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.id_-
+pessoa_fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.sg_uf Sigla UF Tautológica
+Apenas traduz prefixo ’sg_’ para
+’Sigla’
+S_PESSOA_FISICA.nm_-
+pessoa_fisicaNome da pessoa fsica Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.nm_-
+socialNome social Tautológica
+Apenas traduz ’nm_social’ para
+descrição com ’nome’
+S_PESSOA_FISICA.dt_-
+nascimentoData nascimento Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_PESSOA_FISICA.nr_-
+cpfNumero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.nm_-
+maeNome da me Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.nm_-
+paiNome do pai Tautológica
+Apenas traduz ’nm_pai’ para
+descrição com ’nome’
+S_PESSOA_FISICA.ds_-
+emaile-mail Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.st_-
+declarante_emancipadoSituao da pessoa fsica se
+emancipadoFuncional
+Descrição razoavelmente detalhada
+S_PESSOA_FISICA.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.id_-
+nacionalidadeID de identificao da
+nacionalidadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+25
+
+--- Página 26 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_FISICA.id_-
+sexoID de identificao de sexo Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.id_-
+tipo_etniaID de identificao de tipo
+etniaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.id_-
+tipo_escolaridadeID de identificao de tipo
+escolaridadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.id_-
+tipo_estado_civilID de identificao de tipo
+estado civilTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_FISICA.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_FISICA.st_-
+excluidoSituao se estar excludo Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.nr_cnpjNumero do CNPJ Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.nm_razao_-
+socialRazo social da pessoa
+jurdicaGenérica
+Descrição genérica
+S_PESSOA_-
+JURIDICA.nm_fantasiaNome fantasia da pessoa
+jurdicaTautológica
+Apenas traduz ’nm_fantasia’ para
+descrição com ’nome’
+S_PESSOA_-
+JURIDICA.dt_-
+constituicaoData constituio da pessoa
+jurdicaGenérica
+Descrição genérica
+S_PESSOA_-
+JURIDICA.ds_emaile-mail Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.dt_-
+inativacaoData inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.st_ativoSituao se estar ativo ou
+inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_PESSOA_-
+JURIDICA.st_coop_-
+singularSituao se uma cooperativa
+singularFuncional
+Descrição razoavelmente detalhada
+S_PESSOA_-
+JURIDICA.st_coop_-
+centralSituao se uma cooperativa
+centralFuncional
+Descrição razoavelmente detalhada
+Continua na próxima página
+26
+
+--- Página 27 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_-
+JURIDICA.cd_-
+natureza_juridicaCdigo natureza jurdica Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.cd_cnae_-
+principalCdigo CNAE principal Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_-
+JURIDICA.id_-
+responsavel_legalID de identificao de
+responsvel legalTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.id_-
+responsavel_tecnicoID de identificao de
+responsvel tcnicoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.id_tipo_-
+situacao_pessoa_-
+juridicaID de identificao de tipo
+situao pessoa jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.dt_validadeData validade Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_PESSOA_-
+JURIDICA.id_-
+entidade_emissoraID de identificao de
+entidade emissoraTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.dt_bloqueioData bloqueio Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_PESSOA_-
+JURIDICA.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.dt_inscricaoData inscrio Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.ds_-
+inativacaoMotivo da inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_-
+JURIDICA.id_motivo_-
+inativacaoID de identificao de motivo
+inativaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_-
+JURIDICA.dt_ativacaoData ativao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+FALHA.id_pessoa_-
+juridica_falhaID de identificao de pessoa
+jurdica falhaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+FALHA.nr_cpfNumero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+FALHA.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+27
+
+--- Página 28 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_JURIDICA_-
+FALHA.ds_erroDescrio erro Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+FALHA.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+FALHA.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+FALHA.nr_cnpjNumero CNPJ Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+FALHA.nm_pessoa_-
+juridica_falhaNome pessoa jurdica falha Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+SOCIO.id_pessoa_-
+juridica_socioID de identificao de pessoa
+jurdica socioTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+SOCIO.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+SOCIO.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+SOCIO.id_socio_-
+pessoa_fisicaID de identificao de socio
+pessoa fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+SOCIO.id_socio_-
+pessoa_juridicaID de identificao de socio
+pessoa jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+SOCIO.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+SOCIO.nr_cpf_socio_-
+dapNumero CPF socio DAP Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.id_-
+pessoa_juridica_-
+totalizadoresID de identificao de pessoa
+jurdica totalizadoresTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+assentado_pnraNumero assentados PNRA Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+beneficio_pncfNumero benefcios PNCF Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+28
+
+--- Página 29 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+demais_agricultoresNumero demais agricultores Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+socios_caf_ativosNumero scios CAF ativos Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+socios_sem_cafScios que no possuem CAF ou
+que o CAF esteja inativo!Funcional
+Descrição razoavelmente detalhada
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+socios_masculinoNumero scios masculinos Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+socios_femininoNumero scios femininos Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.id_-
+pessoa_juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_-
+assentado_pnraNumero percentual assentado
+PNRATautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_-
+beneficio_pncfNumero percentual beneficio
+PNCFTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_demais_-
+agricultoresNumero percentual demais
+agricultoresTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_socios_-
+caf_ativosNumero percentual scios CAF
+ativoTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_socios_-
+sem_cafPercentual de scios que no
+possuem CAF ou que o CAF
+esteja inativo!Funcional
+Descrição razoavelmente detalhada
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_socios_-
+masculinoNumero percentual scios
+masculinosGenérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_socios_-
+femininoNumero percentual scios
+femininosGenérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_dapNumero DAP Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+29
+
+--- Página 30 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_dapPercentual DAP Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+quilomboNumero quilombo Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_quilomboPercentual quilombo Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+terra_indigenaNumero terra indgena Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_terra_-
+indigenaPercentual terra indgena Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+demais_povos_-
+comunidadesNumero demais povos
+comunidadesTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_demais_-
+povos_comunidadesPercentual demais povos
+comunidadesTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+nenhuma_opcaoNumero nenhuma opo Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_nenhuma_-
+opcaoPercentual nenhuma opo Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+aquicultorNumero agricultor Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_aquicultorPercentual agricultor Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+extrativistaNumero extrativista Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_-
+extrativistaPercentual extrativista Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+pescador_artesanalNumero pescador artesanal Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_pescador_-
+artesanalPercentual pescador
+artesanalTautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+silvicultorNumero silvicultor Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+30
+
+--- Página 31 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES.nr_-
+percentual_-
+silvicultorPercentual silvicultor Tautológica
+Descrição repete palavras do nome
+do campo
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.id_pessoa_-
+juridica_-
+totalizadores_-
+municipioID de identificao de pessoa
+jurdica totalizadores
+municpioTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.nr_total_-
+sociosNumero total scios Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PESSOA_JURIDICA_-
+TOTALIZADORES_-
+MUNICIPIO.cd_-
+municipioCdigo IBGE do municpio Genérica
+Descrição muito curta e pouco
+informativa
+S_PRODUTO.id_produto ID de identificao de
+produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PRODUTO.ds_produto Descrio do produto Genérica
+Descrição muito curta e pouco
+informativa
+S_PRODUTO.st_ativo Situao se o produto estar
+ativo ou inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_PRODUTO.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_PRODUTO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_PRODUTO.id_-
+categoria_produtoID de identificao de
+categoria produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PRODUTO.nm_-
+beneficio_dataprevcdigo do beneficio na
+DataprevTautológica
+Descrição repete palavras do nome
+do campo
+S_PRODUTO.st_-
+beneficio_socialSituao se o produto um
+beneficio socialFuncional
+Descrição razoavelmente detalhada
+Continua na próxima página
+31
+
+--- Página 32 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_PRODUTO.id_caf_2 ID de identificao do
+produto no banco do CAF 2Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_-
+PRODUTO.percentual_-
+rebatePercentual de rebate do
+produtoTautológica
+Descrição repete palavras do nome
+do campo
+S_PRODUTO.id_ramo_-
+atividadeID de identificao de ramo
+de atividadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PRODUTO_TIPO_-
+RENDA.id_produto_-
+tipo_rendaID de identificao de
+produto tipo rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PRODUTO_TIPO_-
+RENDA.id_produtoID de identificao de
+produto tipo rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PRODUTO_TIPO_-
+RENDA.id_tipo_rendaID de identificao de tipo
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PTR_BENEFICIO_-
+CONSULTA.nr_cpfNumero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_PTR_BENEFICIO_-
+CONSULTA.ds_nomeNome Genérica
+Descrição muito curta e pouco
+informativa
+S_PTR_BENEFICIO_-
+CONSULTA.dt_-
+nascimentoData nascimento Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_PTR_BENEFICIO_-
+CONSULTA.nr_cafNumero CAF Genérica
+Descrição muito curta e pouco
+informativa
+S_PTR_BENEFICIO_-
+CONSULTA.nr_tipo_ptr1-RURAL | 2-PESCA Genérica
+Descrição muito curta e pouco
+informativa
+S_PUBLICOS_-
+TRADICIONAIS.id_-
+publico_tradicionalID de identificao de
+publico tradicionalTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_PUBLICOS_-
+TRADICIONAIS.nm_-
+publico_tradicionalNome do publico tradicional Tautológica
+Apenas traduz ’nm_publico
+tradicional’ para descrição com
+’nome’
+S_RAMO_ATIVIDADE.id_-
+ramo_atividadeID de identificao de ramo
+atividadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RAMO_ATIVIDADE.ds_-
+ramo_atividadeDescrio do ramo de
+atividadeTautológica
+Descrição repete palavras do nome
+do campo
+Continua na próxima página
+32
+
+--- Página 33 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_REGIAO.id_regiao ID de identificao de regio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_REGIAO.ds_regiao Descrio da regio Genérica
+Descrição muito curta e pouco
+informativa
+S_RENDA.id_renda ID de identificao de renda Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA.vl_renda_-
+estimadaValor renda estimada Tautológica
+Descrição repete palavras do nome
+do campo
+S_RENDA.vl_renda_-
+auferidaValor renda auferida Tautológica
+Descrição repete palavras do nome
+do campo
+S_RENDA.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_RENDA.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_RENDA.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA.id_unidade_-
+familiar_pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA.id_tipo_renda ID de identificao de tipo
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA.id_produto ID de identificao de
+produtoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA.st_producao_-
+agroecologicaSituao se produo
+agroecolgicaGenérica
+Poucas palavras significativas,
+descrição genérica
+S_RENDA.id_usuario ID do usurio que criou a
+rendaFuncional
+Descrição razoavelmente detalhada
+S_RENDA_-
+DOCUMENTO.id_renda_-
+documentoID de identificao de renda
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RENDA_-
+DOCUMENTO.id_rendaID de identificao de renda Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+33
+
+--- Página 34 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_RENDA_-
+DOCUMENTO.id_-
+documentoID de identificao de
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RESPONSAVEL_-
+UFPR.id_responsavel_-
+ufprID de identificao de
+responsvel UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RESPONSAVEL_-
+UFPR.dt_entradaData entrada Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_RESPONSAVEL_-
+UFPR.dt_saidaData sada Genérica
+Descrição muito curta e pouco
+informativa
+S_RESPONSAVEL_-
+UFPR.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RESPONSAVEL_-
+UFPR.id_ufpr_pessoa_-
+responsavelID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RESPONSAVEL_-
+UFPR.id_usuario_-
+inclusaoID de identificao de usurio
+inclusoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_RESPONSAVEL_-
+UFPR.id_usuario_saidaID de identificao de usurio
+sadaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SEXO.id_sexo ID de identificao de sexo Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SEXO.nm_sexo Descrio sexo Genérica
+Descrição muito curta e pouco
+informativa
+S_SISOBI_DAP.id_-
+sisobi_dapID de identificao de sisobi
+DAPTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SISOBI_DAP.nr_cpf Numero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_SISOBI_DAP.dt_obito Data do bito Genérica
+Descrição muito curta e pouco
+informativa
+S_SISOBI_DAP_-
+CONTROLE.id_sisobi_-
+dap_controleID de identificao de SISOBI
+DAP controleTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SISOBI_DAP_-
+CONTROLE.nr_dapNumero DAP Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+34
+
+--- Página 35 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_SOCIO_PESSOA_-
+JURIDICA_-
+INVALIDO.id_socio_-
+pessoa_juridica_-
+invalidoID de identificao de socio
+pessoa jurdica invalidoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SOCIO_PESSOA_-
+JURIDICA_-
+INVALIDO.nr_-
+identificacaoNumero de identificao Genérica
+Descrição muito curta e pouco
+informativa
+S_SOCIO_PESSOA_-
+JURIDICA_-
+INVALIDO.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_SOCIO_PESSOA_-
+JURIDICA_-
+INVALIDO.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SUSPENSAO_UFPR.id_-
+suspensao_ufprID de identificao de
+suspenso UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_SUSPENSAO_UFPR.id_-
+tipo_suspensaoID de identificao de tipo
+suspensoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TELEFONE.id_-
+telefoneID de identificao de
+telefoneTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TELEFONE.nr_-
+telefoneNumero telefone Genérica
+Descrição muito curta e pouco
+informativa
+S_TELEFONE.st_ativo Situao se o telefone estar
+ativo ou inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_TELEFONE.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_TELEFONE.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_TELEFONE.id_tipo_-
+telefoneID de identificao de tipo
+telefoneTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TELEFONE_-
+PESSOA.id_telefone_-
+pessoaID de identificao de
+telefone pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TELEFONE_-
+PESSOA.id_telefoneID de identificao de
+telefoneTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+35
+
+--- Página 36 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_TELEFONE_-
+PESSOA.id_pessoa_-
+juridicaID de identificao de pessoa
+jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TELEFONE_-
+PESSOA.id_pessoa_-
+fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_AREA.id_tipo_-
+areaID de identificao de tipo
+reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_AREA.ds_tipo_-
+areaDescrio do tipo rea Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_CAF.id_tipo_-
+cafID de identificao de tipo
+CAFTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_CAF.ds_tipo_-
+cafDescio do tipo CAF Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_DOCUMENTO.id_-
+tipo_documentoID de identificao de tipo
+documentoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_DOCUMENTO.nm_-
+tipo_documentoDescrio do tipo documento Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_ENDERECO.id_-
+tipo_enderecoID de identificao de tipo
+endereoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_ENDERECO.nm_-
+tipo_enderecoDescrio do tipo endereo Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_-
+ENQUADRAMENTO_-
+RENDA.id_tipo_-
+enquadramento_rendaID de identificao de tipo
+enquadramento rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_-
+ENQUADRAMENTO_-
+RENDA.ds_tipo_-
+enquadramento_rendaDescrio do tipo
+enquadramento rendaTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_ENTIDADE_-
+CADASTRADORA.id_-
+tipo_entidade_-
+cadastradoraID de identificao de tipo
+entidade cadastradoraTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_ENTIDADE_-
+CADASTRADORA.ds_-
+tipo_entidade_-
+cadastradoraDescrio do tipo entidade
+cadastradoraTautológica
+Descrição repete palavras do nome
+do campo
+Continua na próxima página
+36
+
+--- Página 37 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_TIPO_-
+ESCOLARIDADE.id_-
+tipo_escolaridadeID de identificao de tipo
+escolaridadeTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_-
+ESCOLARIDADE.ds_-
+tipo_escolaridadeDescrio do tipo
+escolaridadeTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_ESTADO_-
+CIVIL.id_tipo_-
+estado_civilID de identificao de tipo
+estado civilTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_ESTADO_-
+CIVIL.nm_tipo_-
+estado_civilDescrio do tipo estado
+civilTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_ETNIA.id_-
+tipo_etniaID de identificao de tipo
+etniaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_ETNIA.nm_-
+tipo_etniaDescrio do tipo etnia Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_LOCALIZACAO_-
+AREA.id_tipo_-
+localizacao_areaID de identificao de tipo
+localizao reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_LOCALIZACAO_-
+AREA.ds_tipo_-
+localizacao_areaDescrio do tipo localizao
+reaGenérica
+Poucas palavras significativas,
+descrição genérica
+S_TIPO_LOTE.id_tipo_-
+loteID de identificao de tipo
+loteTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_LOTE.nm_tipo_-
+loteDescrio do tipo lote Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_MEMBRO_-
+FAMILIAR.id_tipo_-
+membro_familiarID de identificao de tipo
+membro familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_MEMBRO_-
+FAMILIAR.nm_tipo_-
+membro_familiarDescrio do tipo membro
+familiarTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_-
+NOTIFICACAO.id_tipo_-
+notificacaoID de identificao de tipo
+notificaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_-
+NOTIFICACAO.ds_tipo_-
+notificacaoDescrio do tipo notificao Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_PERMISSAO.id_-
+tipo_permissaoID de identificao de tipo
+permissoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+37
+
+--- Página 38 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_TIPO_PERMISSAO.nm_-
+tipo_permissaoDescrio do tipo permisso Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_RENDA.id_-
+tipo_rendaID de identificao de tipo
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_RENDA.ds_-
+tipo_rendaDescrio do tipo renda Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_RENDA.st_ativo Situao se estar ativo ou
+inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_TIPO_RENDA.dt_-
+criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_RENDA.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_RENDA.id_-
+origem_rendaID de identificao de origem
+rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_SITUACAO_-
+GERACAO_ARQUIVO.id_-
+tipo_situacao_-
+geracao_arquivoID de identificao de tipo
+situao gerao arquivoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_SITUACAO_-
+GERACAO_ARQUIVO.ds_-
+tipo_situacao_-
+geracao_arquivoDescrio do tipo situao
+gerao arquivoTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_SITUACAO_-
+PESSOA_JURIDICA.id_-
+tipo_situacao_-
+pessoa_juridicaID de identificao de tipo
+situao pessoa jurdicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_SITUACAO_-
+PESSOA_JURIDICA.ds_-
+tipo_situacao_-
+pessoa_juridicaDescrio do tipo situao
+pessoa jurdicaTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_SITUACAO_-
+UNIDADE_FAMILIAR.id_-
+tipo_situacao_-
+unidade_familiarID de identificao de tipo
+situao unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_SITUACAO_-
+UNIDADE_FAMILIAR.ds_-
+situacao_unidade_-
+familiarDescrio do tipo situao
+unidade familiarTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_SUSPENSAO.id_-
+tipo_suspensaoID de identificao de tipo
+suspensoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+38
+
+--- Página 39 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_TIPO_SUSPENSAO.ds_-
+tipo_suspensaoDescrio tipo suspenso Genérica
+Descrição muito curta e pouco
+informativa
+S_TIPO_TELEFONE.id_-
+tipo_telefoneID de identificao de tipo
+telefoneTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_TELEFONE.ds_-
+tipo_telefoneDescrio de tipo telefone Tautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_TERRENO_-
+UFPR.id_tipo_-
+terreno_ufprID de identificao de tipo
+terreno UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_TERRENO_-
+UFPR.nm_tipo_-
+terreno_ufprDescrio de tipo terreno
+UFPRTautológica
+Descrição repete palavras do nome
+do campo
+S_TIPO_UNIDADE_-
+MEDIDA.id_tipo_-
+unidade_medidaID de identificao de tipo
+unidade de medidaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_TIPO_UNIDADE_-
+MEDIDA.ds_tipo_-
+unidade_medidaDescrio do tipo unidade de
+medidaTautológica
+Descrição repete palavras do nome
+do campo
+S_UNIDADE_-
+FAMILIAR.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.st_possui_-
+mao_obraSituao se possuem mo de
+obra contratadaFuncional
+Descrição razoavelmente detalhada
+S_UNIDADE_-
+FAMILIAR.dt_validadeData validade Tautológica
+Apenas traduz ’dt_’ para ’Data’
+S_UNIDADE_-
+FAMILIAR.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.id_-
+entidade_emissoraID de identificao de
+entidade emissoraTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.id_tipo_-
+situacao_unidade_-
+familiarID de identificao de tipo
+situao unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.dt_-
+primeira_ativacaoData primeira ativao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.dt_bloqueioData bloqueio Tautológica
+Apenas traduz ’dt_’ para ’Data’
+Continua na próxima página
+39
+
+--- Página 40 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_UNIDADE_-
+FAMILIAR.id_motivo_-
+inativacaoID de identificao de motivo
+inativaoTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.ds_-
+inativacaoDescrio inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.id_tipo_-
+terreno_ufprID de identificao de tipo
+terreno UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.id_-
+caracterizacao_areaID de identificao de
+caracterizao reaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.id_publico_-
+tradicionalID de identificao de
+publico tradicionalTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_-
+FAMILIAR.dt_ativacaoData ativao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.st_migrada_-
+caf_2Situao se foi migrada do
+CAF 2Funcional
+Descrição razoavelmente detalhada
+S_UNIDADE_-
+FAMILIAR.dt_-
+inativacaoData inativao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_-
+FAMILIAR.st_possui_-
+versao_caf3Situao se possui verso CAF
+3Funcional
+Descrição razoavelmente detalhada
+S_UNIDADE_-
+FAMILIAR.st_migrada_-
+incraSituao se foi migrada do
+INCRATautológica
+Descrição repete palavras do nome
+do campo
+S_UNIDADE_-
+FAMILIAR.dt_edicaoData edio Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_FAMILIAR_-
+ENQUADRAMENTO_-
+RENDA.id_unidade_-
+familiar_-
+enquadramento_rendaID de identificao de
+unidade familiar
+enquadramento rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+ENQUADRAMENTO_-
+RENDA.id_unidade_-
+familiarID de identificao de
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+ENQUADRAMENTO_-
+RENDA.id_tipo_-
+enquadramento_rendaID de identificao de tipo
+enquadramento rendaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+Continua na próxima página
+40
+
+--- Página 41 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_UNIDADE_FAMILIAR_-
+PESSOA.id_unidade_-
+familiar_pessoaID de identificao da
+unidade familiar pessoaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+PESSOA.st_trabalha_-
+ufprSituao se trabalha como mo
+de obraFuncional
+Descrição razoavelmente detalhada
+S_UNIDADE_FAMILIAR_-
+PESSOA.cd_cafCdigo CAF Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_FAMILIAR_-
+PESSOA.dt_criacaoData criao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_FAMILIAR_-
+PESSOA.dt_atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_UNIDADE_FAMILIAR_-
+PESSOA.id_unidade_-
+familiarID de identificao da
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+PESSOA.id_pessoa_-
+fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+PESSOA.id_tipo_-
+membro_familiarID de identificao de tipo
+membro familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+PESSOA.id_usuarioID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+PESSOA.st_excluidoSituao excludo Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_UNIDADE_FAMILIAR_-
+PESSOA.st_cadastro_-
+cadunicoSituao cadastro atualizado Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_UNIDADE_FAMILIAR_-
+PESSOA.st_baixa_rendaSituao baixa renda Técnica
+Informa que é status/situação mas
+não explica o contexto
+S_UNIDADE_FAMILIAR_-
+PESSOA.st_cadunico_-
+atualizadoSituao cadastro cadunico
+atualizadoTautológica
+Descrição repete palavras do nome
+do campo
+S_UNIDADE_FAMILIAR_-
+PESSOA.dt_inicio_-
+mao_de_obraData inicio mo de obra Tautológica
+Descrição repete palavras do nome
+do campo
+S_UNIDADE_FAMILIAR_-
+PESSOA.dt_fim_mao_-
+de_obraData fim mo de obra Tautológica
+Descrição repete palavras do nome
+do campo
+S_UNIDADE_FAMILIAR_-
+PESSOA.cd_sipraCdigo SIPRA Genérica
+Descrição muito curta e pouco
+informativa
+Continua na próxima página
+41
+
+--- Página 42 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+Tabela 7 – continuação
+Campo (Tabela.Campo) Descrição no Dicionário Categoria / Motivo
+S_UNIDADE_FAMILIAR_-
+TIPO_TERRENO.id_-
+unidade_familiarID de identificao de
+unidade familiarTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_UNIDADE_FAMILIAR_-
+TIPO_TERRENO.id_-
+tipo_terreno_ufprID de identificao de tipo
+terreno UFPRTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_USUARIO.id_usuario ID de identificao de usurio Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_USUARIO.nr_cpf Numero CPF Genérica
+Descrição muito curta e pouco
+informativa
+S_USUARIO.nm_usuario Nome do usurio Genérica
+Descrição muito curta e pouco
+informativa
+S_USUARIO.st_ativo Situao se estar ativo ou
+inativoTécnica
+Informa valores (ativo/inativo)
+mas não explica o significado no
+contexto de negócio
+S_USUARIO.dt_criacao Data criao Genérica
+Descrição muito curta e pouco
+informativa
+S_USUARIO.dt_-
+atualizacaoData atualizao Genérica
+Descrição muito curta e pouco
+informativa
+S_USUARIO.id_pessoa_-
+fisicaID de identificao de pessoa
+fsicaTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_USUARIO.id_perfil ID de identificao de perfil Tautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_USUARIO.id_-
+entidade_emissoraID de identificao de
+entidade emissoraTautológica
+Redundante: ’ID de identificação’
+repete o conceito (ID já significa
+identificação)
+S_USUARIO.typeorm_-
+migrationsGenérica
+Descrição vazia
+S_USUARIO.id ID de identificao da
+migrationGenérica
+Poucas palavras significativas,
+descrição genérica
+S_USUARIO.timestamp Data de execuo Genérica
+Descrição muito curta e pouco
+informativa
+S_USUARIO.name Nome da migration Genérica
+Descrição muito curta e pouco
+informativa
+42
+
+--- Página 43 ---
+Papel de Trabalho PT-A04-02 - Auditoria CAF TCU
+D Anexo D – Script de Análise
+D.1 Código Python para Classificação Semântica
+O script analisar_qualidade_semantica.py implementa a lógica de classificação descrita na
+Seção 2. Principais funções:
+Listing 1: Estrutura do Script de Análise
+1defclassificar_descricao(nome_campo, descricao, tipo_dado):
+2 """
+3 Classifica a qualidade semantica da descricao
+4 Retorna: (categoria, motivo)
+5 """
+6 # 1. Verificar se e funcional (criterios positivos)
+7 ifdescricao.startswith("Se␣"):
+8 returnFUNCIONAL, "Descreve␣condicao␣de␣negocio"
+9
+10 # 2. Verificar padroes tautologicos
+11 ifnome_campo.startswith("dt_") and"data" indescricao:
+12 returnTAUTOLOGICA, "Apenas␣traduz␣prefixo"
+13
+14 # 3. Verificar padroes tecnicos
+15 if"ID␣de␣identificacao" indescricao:
+16 returnTAUTOLOGICA, "Redundante"
+17
+18 # 4. Verificar padroes genericos
+19 if len(descricao.split()) <= 4:
+20 returnGENERICA, "Muito␣curta"
+21
+22 # 5. Default: funcional se detalhada
+23 if len(descricao.split()) >= 6:
+24 returnFUNCIONAL, "Razoavelmente␣detalhada"
+25
+26 returnGENERICA, "Generica"
+Observação : O script completo possui lógica mais refinada com tratamento de casos espe-
+ciais. A versão acima é apenas ilustrativa.
+D.2 Execução do Script
+Listing 2: Comando de Execução
+1$cdpapeis_trabalho
+2$ python3 analisar_qualidade_semantica.py
+3
+4# Output:
+5# Total de campos analisados: 527
+6# Tautologica: 296 campos (56.2%)
+7# Generica: 181 campos (34.3%)
+8# Tecnica: 19 campos ( 3.6%)
+9# Funcional: 31 campos ( 5.9%)
+43

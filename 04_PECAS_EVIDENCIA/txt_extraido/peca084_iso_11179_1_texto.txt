@@ -1,0 +1,1861 @@
+--- Página 1 ---
+Information technology — Metadata 
+registries (MDR) —
+Part 1:  
+Framework
+Technologies de l'information — Registres de métadonnées (RM) —
+Partie 1: Cadre de référenceINTERNATIONAL 
+STANDARDISO/IEC  
+11179-1
+Fourth edition  
+2023-01
+Reference number  
+ISO/IEC 11179-1:2023(E)
+© ISO/IEC 2023Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 2 ---
+iiISO/IEC 11179-1:2023(E)
+COPYRIGHT PROTECTED DOCUMENT
+©  ISO/IEC 2023
+All rights reserved. Unless otherwise specified, or required in the context of its implementation, no part of this publication may 
+be reproduced or utilized otherwise in any form or by any means, electronic or mechanical, including photocopying, or posting on 
+the internet or an intranet, without prior written permission. Permission can be requested from either ISO at the address below 
+or ISO’s member body in the country of the requester.
+ISO copyright office
+CP 401 • Ch. de Blandonnet 8
+CH-1214 Vernier, Geneva
+Phone: +41 22 749 01 11
+Email: copyright@iso.org
+Website: www.iso.org
+Published in Switzerland
+   © ISO/IEC 2023 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 3 ---
+ISO/IEC 11179-1:2023(E)
+Foreword  .......................................................................................................................................................................................................................................... v
+Introduction  ............................................................................................................................................................................................................................. vii
+1 Scope  ................................................................................................................................................................................................................................. 1
+2 Normative references  ..................................................................................................................................................................................... 1
+3	 Terms,	definitions	and	abbreviated	terms  .............................................................................................................................. 1
+3.1 Terms related to modelling constructs  ............................................................................................................................ 1
+3.2 General terms  .......................................................................................................................................................................................... 2
+3.3 Terms used in the 11179 metamodel  .................................................................................................................................. 7
+3.4 Abbreviated terms  ........................................................................................................................................................................... 11
+4 Theory of terminology  ................................................................................................................................................................................ 12
+5 Metadata  .................................................................................................................................................................................................................... 12
+5.1 General  ........................................................................................................................................................................................................ 12
+5.2 Concepts  .................................................................................................................................................................................................... 13
+5.2.1  General  ..................................................................................................................................................................................... 13
+5.2.2  Management  ........................................................................................................................................................................ 13
+5.3 Fundamental model of data elements  ............................................................................................................................. 13
+5.4 Data elements in data management and interchange ....................................................................................... 15
+6 Metadata registries  ........................................................................................................................................... ............................................. 15
+6.1 General  ........................................................................................................................................................................................................ 15
+6.2 Fundamentals of registration  ................................................................................................................................................ 16
+7 Overview of ISO/IEC 11179  .......................................................................................................................................... .......................... 17
+7.1 General  ........................................................................................................................................................................................................ 17
+7.2 ISO/IEC 11179-1 — Part 1: Framework  ......................................................................................................................... 17
+7.3 ISO/IEC TR 11179-2 — Part 2: Classification  ........................................................................................................... 17
+7.4 ISO/IEC 11179-3 — Part 3: Metamodel for registry common facilities ............................................ 17
+7.5 ISO/IEC 11179-30 — Part 30: Basic attributes of metadata  ....................................................................... 18
+7.6 ISO/IEC 11179-31 — Part 31: Metamodel for data specification registration  ........................... 18
+7.7 ISO/IEC 11179-32 — Part 32: Metamodel for concept system registration  ................................. 18
+7.8 ISO/IEC 11179-33 — Part 33: Metamodel for data set registration  .................................................... 19
+7.9 ISO/IEC 11179-34 — Part: 34 Metamodel for computable data registration  ............................. 20
+7.10 ISO/IEC 11179-35 — Part 35: Metamodel for model registration  ......................................................... 20
+7.11 ISO/IEC 11179-4 — Part 4: Formulation of data definitions  ...................................................................... 20
+7.12 ISO/IEC 11179-5 — Part 5: Naming principles  ....................................................................................................... 20
+7.13 ISO/IEC 11179-6 — Part 6: Registration  ...................................................................................................................... 21
+8 Relationship to other JTC 1/SC 32 standards, TRs and TSs on metadata  ............................................. 21
+8.1 ISO/IEC 19763 series — Metamodel framework for interoperability (MFI)  ............................... 21
+8.1.1  General  ..................................................................................................................................................................................... 21
+8.1.2 ISO/IEC 19763-1 — Part 1: Framework  ...................................................................................................... 22
+8.1.3 ISO/IEC 19763-10 — Part 10: Core model and basic mapping ................................................ 22
+8.1.4 ISO/IEC 19763-6 — Part 6: Registry summary  ................................................................................... 23
+8.1.5 ISO/IEC 19763-3 — Part 3: Metamodel for ontology registration  ...................................... 23
+8.1.6 ISO/IEC 19763-5 — Part 5: Metamodel for process model registration  ........................ 23
+8.1.7 ISO/IEC 19763-7 — Part 7: Metamodel for service model registration  ......................... 24
+8.1.8 ISO/IEC 19763-8 — Part 8: Metamodel for role and goal model registration  .......... 24
+8.1.9 ISO/IEC TR 19763-9 — Part 9: On-demand model selection  ................................................... 24
+8.1.10 ISO/IEC 19763-12 — Part 12: Metamodel for information model registration  ......24
+8.1.11 ISO/IEC TS 19763-13 — Part 13: Metamodel for form design registration  ................ 25
+8.1.12 ISO/IEC 19763-16 — Part 16: Metamodel for document model registration  ............ 25
+8.2 ISO/IEC 19773 Metadata Registries (MDR) modules  ........................................................................................ 25
+8.3 ISO/IEC 20943 series — Procedures for achieving metadata registry content 
+consistency  ............................................................................................................................................................................................. 26
+iii © ISO/IEC 2023 – All rights reserved  Contents PageExemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 4 ---
+ISO/IEC 11179-1:2023(E)
+8.3.1  General  ..................................................................................................................................................................................... 26
+8.3.2 ISO/IEC TR 20943-1 — Part 1: Data elements  ...................................................................................... 26
+8.3.3 ISO/IEC TR 20943-3 — Part 3: Value domains  ..................................................................................... 27
+8.3.4 ISO/IEC TR 20943-5 — Part 5: Metadata mapping procedure  .............................................. 27
+8.3.5 ISO/IEC TR 20943-6 — Part 6: Framework for generating ontologies  ........................... 27
+8.4 ISO/IEC 20944 series — Metadata Registries Interoperability and Bindings (MDR-
+IB) .................................................................................................................................................................................................................... 27
+8.4.1  General  ..................................................................................................................................................................................... 27
+8.4.2 ISO/IEC 20944-1 — Part 1: Framework, common vocabulary and common 
+provisions for conformance  .................................................................................................................................. 28
+8.4.3 ISO/IEC 20944-2 — Part 2: Coding bindings  ......................................................................................... 28
+8.4.4 ISO/IEC 20944-3 — Part 3: API bindings  .................................................................................................. 28
+8.4.5 ISO/IEC 20944-4 — Part 4: Protocol bindings  ..................................................................................... 28
+8.4.6 ISO/IEC 20944-5 — Part 5: Profiles  ............................................................................................................... 28
+8.5 ISO/IEC 19583 series — Concepts and uses of metadata  .............................................................................. 28
+8.5.1  General  ..................................................................................................................................................................................... 28
+8.5.2 ISO/IEC TR 19583-1 — Part 1: Metadata concepts  ........................................................................... 28
+8.5.3 ISO/IEC TR 19583-21 — Part 21: 11179-3 data model in SQL  ................................................ 29
+8.5.4 ISO/IEC TR 19583-22 — Part 22: Registering and mapping processes using 
+ISO/IEC 19763  .................................................................................................................................................................... 29
+8.5.5 ISO/IEC TR 19583-23 — Part 23: Data element exchange (DEX)  ........................................ 29
+8.6 ISO/IEC 14957 Representation of data element values — Notation of the format  ................. 29
+8.7 ISO/IEC 5218 Codes for the representation of human sexes  ...................................................................... 29
+8.8 ISO/IEC 11404 General purpose datatypes  ............................................................................................................... 29
+8.9 ISO/IEC 24707 Common Logic (CL)  ................................................................................................................................... 29
+8.10 ISO/IEC 21838 series — Top level ontologies  .......................................................................................................... 30
+8.10.1  General  ..................................................................................................................................................................................... 30
+8.10.2 ISO/IEC 21838-1 — Part 1: Requirements  ............................................................................................... 30
+8.10.3 ISO/IEC 21838-2 — Part 2: Basic Formal Ontology (BFO)  ......................................................... 30
+8.10.4 ISO/IEC 21838-3 — Part 3: Descriptive ontology for linguistic and 
+cognitive engineering (DOLCE)  ......................................................................................................................... 31
+8.10.5 ISO/IEC 21838-4 — Part 4: TUpper  ............................................................................................................... 31
+9 Conformance  ......................................................................................................................................................................................................... 31
+Bibliography  ........................................................................................................................................... .................................................................................. 32
+iv    © ISO/IEC 2023 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 5 ---
+ISO/IEC 11179-1:2023(E)
+Foreword
+ISO (the International Organization for Standardization) and IEC (the International Electrotechnical 
+Commission) form the specialized system for worldwide standardization. National bodies that are 
+members of ISO or IEC participate in the development of International Standards through technical 
+committees established by the respective organization to deal with particular fields of technical 
+activity. ISO and IEC technical committees collaborate in fields of mutual interest. Other international 
+organizations, governmental and non-governmental, in liaison with ISO and IEC, also take part in the 
+work.
+The procedures used to develop this document and those intended for its further maintenance 
+are described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria 
+needed for the different types of document should be noted. This document was drafted in 
+accordance with the editorial rules of the ISO/IEC Directives, Part 2 (see www.iso.org/directives  or 
+www.iec.ch/members_experts/refdocs ).
+Attention is drawn to the possibility that some of the elements of this document may be the subject 
+of patent rights. ISO and IEC shall not be held responsible for identifying any or all such patent 
+rights. Details of any patent rights identified during the development of the document will be in the 
+Introduction and/or on the ISO list of patent declarations received (see www.iso.org/patents ) or the IEC 
+list of patent declarations received (see https:/ /patents.iec.ch ).
+Any trade name used in this document is information given for the convenience of users and does not 
+constitute an endorsement.
+For an explanation of the voluntary nature of standards, the meaning of ISO specific terms and 
+expressions related to conformity assessment, as well as information about ISO's adherence to 
+the World Trade Organization (WTO) principles in the Technical Barriers to Trade (TBT) see 
+www.iso.org/iso/foreword.html . In the IEC, see www.iec.ch/understanding-standards .
+This document was prepared by Joint Technical Committee ISO/IEC/JTC 1, Information technology , 
+Subcommittee SC 32, Data management and interchange .
+This fourth edition cancels and replaces the third edition (ISO/IEC 11179-1:2015), which has been 
+technically revised.
+The main changes are as follows:
+— some of the detailed descriptions from the Introduction and Clause  5 have been removed to avoid 
+duplication with other parts;
+— Clause  7 has been updated to:
+— revise the description for ISO/IEC 11179-3 to reflect its focus on the core metamodel of a 
+metadata registry, and the creation of separate parts to handle other aspects;
+— add a description for ISO/IEC 11179-30;
+— add a description for ISO/IEC 11179-31;
+— add a description for ISO/IEC 11179-32;
+— add a description for ISO/IEC 11179-33;
+— add a description for ISO/IEC 11179-34;
+— add a description for ISO/IEC 11179-35;
+— Clause  8 has been added to describe the relationship of other ISO/IEC JTC 1/SC 32 standards on 
+metadata to the ISO/IEC 11179 series;
+— references to other standards have been updated, especially ISO 1087, to the latest edition.
+v © ISO/IEC 2023 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 6 ---
+ISO/IEC 11179-1:2023(E)
+A list of all parts in the ISO/IEC 11179 series can be found on the ISO and IEC websites.
+Any feedback or questions on this document should be directed to the user’s national standards 
+body. A complete listing of these bodies can be found at www.iso.org/members.html  and 
+www.iec.ch/national-committees .
+vi    © ISO/IEC 2023 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 7 ---
+ISO/IEC 11179-1:2023(E)
+Introduction
+The ISO/IEC 11179 series addresses the semantics of data, the representation of data and the registration 
+of the descriptions of that data. It is through these descriptions that an accurate understanding of the 
+semantics and a useful depiction of the data are found.
+The purposes of ISO/IEC 11179 are to promote the following:
+— standard description of data;
+— common understanding of data across organizational elements and between organizations;
+— re-use and standardization of data over time, space, and applications;
+— harmonization and standardization of data within an organization and across organizations;
+— management of the components of descriptions of data;
+— re-use of the components of descriptions of data.
+Each part of ISO/IEC 11179 is devoted to addressing a different aspect of these needs, as described in 
+Clause  7.
+Generally, descriptive data are known as metadata. Metadata can describe books, phone calls, data, etc. 
+ISO/IEC  11179 focuses upon metadata that describe data.
+A metadata registry (MDR) is a system for maintaining a database of metadata. Registration is 
+one possible function of that system. Registration accomplishes three main goals: identification, 
+provenance, and monitoring quality. Identification is accomplished by assigning a unique identifier 
+(within the registry) to each object registered there. Provenance addresses the source of the metadata 
+and the object described. Monitoring quality ensures that the metadata does the job it is designed to do.
+An MDR may contain the semantics of data. An understanding of data is fundamental to their design, 
+harmonization, standardization, use, re-use and interchange. The underlying model for an MDR is 
+designed to capture all the basic components of the semantics of data, independent of any application or 
+subject matter area.
+MDRs, typically, are organized so that those designing applications can ascertain whether a suitable 
+object described in the MDR already exists. Where it is established that a new object is essential, its 
+derivation from an existing description with appropriate modifications is encouraged, thus avoiding 
+unnecessary variations in the way similar objects are described. Registration will also allow two or 
+more administered items describing identical objects to be identified, and more importantly, it will 
+help to identify situations where similar or identical names are in use for administered items that are 
+significantly different in one or more respects.
+The names, definitions, datatype and related attributes that are associated with the description of an 
+object in an MDR give that object meaning. The depth of this meaning is limited, because names and 
+definitions convey limited information about the object. The relationships object descriptions have 
+with semantically related object descriptions in a registry provide additional information, but this 
+additional information is dependent on how many semantically related object descriptions there are.
+A metadata registry that conforms to ISO/IEC 11179 can describe a wide variety of data. In fact, the 
+attributes described in ISO/IEC 11179 are data elements, and they can be registered in an ISO/IEC 11179 
+metadata registry. Moreover, any set of descriptors or metadata attributes may be interpreted as data 
+elements and registered in the metadata registry.
+There are two main consequences to this:
+— the metadata registry can describe itself;
+— metadata layers or levels are not defined in ISO/IEC 11179.
+vii © ISO/IEC 2023 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 8 ---
+ISO/IEC 11179-1:2023(E)
+As a result, ISO/IEC 11179 is a general description framework for data of any kind, in any organization 
+and for any purpose. ISO/IEC 11179 does not address other data management needs, such as data 
+models, application specifications, programming code, program plans, business plans and business 
+policies. These need to be addressed elsewhere. ISO/IEC 19763 specifies facilities to extend a metadata 
+registry so that information about models can be registered. Such models include information (or data) 
+models, ontologies, process models, role and goal models, and form designs.
+The increased use of data processing and electronic data interchange heavily relies on accurate, reliable, 
+controllable and verifiable data recorded in databases. One of the prerequisites for a correct and proper 
+use and interpretation of data is that both users and owners of data have a common understanding 
+of the meaning and descriptive characteristics (e.g. representation) of that data, guaranteed by the 
+definition of several basic attributes.
+The basic attributes specified are applicable for the definition and specification of the contents of data 
+dictionaries and interchanging or referencing among various collections of administered items. The 
+“basic” in basic attributes means that the attributes are commonly needed in specifying administered 
+items completely enough to ensure that they will be applicable for a variety of functions, such as:
+— design of information processing systems;
+— retrieval of data from databases;
+— design of messages for data interchange;
+— maintenance of metadata registries;
+— data management;
+— dictionary design;
+— dictionary control;
+— use of information processing systems.
+Basic also implies that they are independent of any:
+— application environment;
+— function of an object described by an administered item;
+— level of abstraction;
+— grouping of administered items;
+— method for designing information processing systems or data interchange messages;
+— MDR system.
+Basic does not imply that all attributes specified in ISO/IEC 11179 are required in all cases. Distinction 
+is made between those attributes that are mandatory, conditional, or optional.
+viii    © ISO/IEC 2023 – All rights reserved
+ Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 9 ---
+INTERNATIONAL ST ANDARD ISO/IEC 11179-1:2023(E)
+Information technology — Metadata registries (MDR) —
+Part 1:  
+Framework
+1 Scope
+This document provides the means for understanding and associating the individual parts of 
+ISO/IEC 11179 and is the foundation for a conceptual understanding of metadata and metadata 
+registries. This document also describes the relationship of ISO/IEC 11179 to other JTC 1/SC 32 
+standards, technical specifications and technical reports on metadata.
+In all parts of ISO/IEC 11179, metadata refers to descriptions of data. It does not contain a general 
+treatment of metadata.
+2 Normative references
+The following documents are referred to in the text in such a way that some or all of their content 
+constitutes requirements of this document. For dated references, only the edition cited applies. For 
+undated references, the latest edition of the referenced document (including any amendments) applies.
+ISO 704, Terminology work — Principles and methods
+ISO 1087, Terminology work and terminology science — Vocabulary
+3	 Terms,	definitions 	and	abbreviated	terms
+For the purposes of this document, the terms and definitions given in ISO 704, ISO 1087 and the 
+following apply.
+ISO and IEC maintain terminological databases for use in standardization at the following addresses:
+— ISO Online browsing platform: available at h t t p s ://  www  .iso .org/  obp
+— IEC Electropedia: available at h t t p s ://  www  .electropedia  .org/  
+3.1 Terms related to modelling constructs
+3.1.1
+attribute
+characteristic  (3.2.6 ) of an object  (3.2.4 ) or set of objects
+[SOURCE: ISO/IEC 11179-3:2023, 3.1.11]
+3.1.2
+class
+description of a set of object s (3.2.4 ) that share the same attribute s (3.1.1 ), operations, methods, 
+relationship s (3.1.4 ) and semantics
+Note 1 to entry: Adapted from ISO/IEC 19505-2:2012, 7.3.7.
+1 © ISO/IEC 2023 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 10 ---
+ISO/IEC 11179-1:2023(E)
+3.1.3
+identifier
+<metadata registry> sequence of characters, capable of uniquely identifying that with which it is 
+associated, within a specified context  (3.3.3 )
+Note 1 to entry: Unlike a name  (3.2.17 ), an identifier is linguistically neutral.
+Note  2 to entry:  It is possible to define an identifier from the point of view of terminology as defined in ISO 1087 
+and described in ISO 704, as follows: representation of an object by a sign which denotes it, and is intended for 
+dereferencing that object. Note the parallel with the definition of designation  (3.2.16 ), except this applies to any 
+object rather than just for concepts.
+[SOURCE: ISO/IEC 11179-3:2023, 3.1.16, modified — Note 2 to entry has been added.]
+3.1.4
+relationship
+<UML> semantic connection among model elements
+[SOURCE: ISO 19103:2015, 4.30]
+3.2 General terms
+3.2.1
+subject
+area of interest or expertise
+[SOURCE: ISO 1087:2019, 3.1.5]
+3.2.2
+domain
+subject field
+field of special knowledge
+Note  1 to entry:  The borderlines and the granularity of a domain are determined from a purpose-related point of 
+view. If a domain is sub-divided, the result is again a domain.
+[SOURCE: ISO 1087:2019, 3.1.4]
+3.2.3
+entity
+any concrete or abstract thing that exists, did exist, or might exist, including associations among these 
+things
+EXAMPLE A person, object, event, idea, process, etc.
+Note 1 to entry: An entity exists whether data about it are available or not.
+[SOURCE: ISO/IEC 2382:2015, 2121433, modified — some Notes to entry have been deleted.]
+3.2.4
+object
+anything perceivable or conceivable
+Note 1 to entry: Objects can be material (e.g. 'engine', 'sheet of paper', 'diamond'), immaterial (e.g. 'conversion 
+ratio', 'project plan') or imagined (e.g. 'unicorn', 'scientific hypothesis').
+[SOURCE: ISO 1087:2019, 3.1.1]
+3.2.5
+property
+<terminology> feature of an object  (3.2.4 )
+EXAMPLE 1 'Being made of wood' as a property of a given 'table'.
+   © ISO/IEC 2023 – All rights reserved
+  2Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 11 ---
+ISO/IEC 11179-1:2023(E)
+EXAMPLE 2 'Belonging to person A' as a property of a given 'pet'.
+EXAMPLE 3 'Having been formulated by Einstein' as a property of the equation 'E = mc2'.
+EXAMPLE 4 'Being compassionate' as a property of a given 'person'.
+EXAMPLE 5 'Having a given cable' as a property of a given 'computer mouse'.
+Note 1 to entry: One or more objects can have the same property.
+Note 2 to entry: See also 3.3.2 .
+[SOURCE: ISO 1087:2019, 3.1.3, modified — Note 2 to entry added.]
+3.2.6
+characteristic
+abstraction of a property  (3.2.5 )
+EXAMPLE 'Having a cable for connecting with a computer' as a characteristic of the concept 'cord mouse'.
+Note 1 to entry: Characteristics are used for describing concepts  (3.2.8 ).
+[SOURCE: ISO 1087:2019, 3.2.1]
+3.2.7
+essential characteristic
+characteristic  (3.2.6 ) of a concept  (3.2.8 ) which is indispensable to understanding that concept
+[SOURCE: ISO 1087:2019, 3.2.3]
+3.2.8
+concept
+unit of knowledge created by a unique combination of characteristic s (3.2.6 )
+Note 1 to entry: Concepts are not necessarily bound to particular natural languages. They are, however, 
+influenced by the social or cultural background which often leads to different categorizations.
+Note 2 to entry: A concept is independent of its representation.
+[SOURCE: ISO 1087:2019, 3.2.7, modified — Note 2 to entry has been changed.]
+3.2.9
+general concept
+concept  (3.2.8 ) that corresponds to a potentially unlimited number of object s (3.2.4 ), which form a 
+group by reason of shared properties  (3.2.5 )
+EXAMPLE 'planet', 'tower', 'Nobel Prize in Physics', 'moon'.
+Note 1 to entry: For a general concept it is essential that a number of corresponding objects greater than 1 can 
+be perceived or conceived of. For example 'spaceship' has been a general concept before such a material object 
+existed, at the time when there existed only 1 such object, and later when there existed several such objects.
+[SOURCE: ISO 1087:2019, 3.2.9]
+3.2.10
+individual concept
+concept  (3.2.8 ) which corresponds to only one object  (3.2.4 )
+EXAMPLE ‘Saturn’, ‘Eiffel Tower’, 'Moon', 'serial number FRHR603928', '2016 Nobel Prize in Physics'.
+Note 1 to entry: Individual concepts are represented by proper names  (3.2.18 ).
+[SOURCE: ISO 1087:2019, 3.2.8]
+© ISO/IEC 2023 – All rights reserved   
+ 3Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 12 ---
+ISO/IEC 11179-1:2023(E)
+3.2.11
+definition
+representation of a concept  (3.2.8 ) by an expression that describes it and differentiates it from related 
+concepts
+[SOURCE: ISO 1087:2019, 3.3.1]
+3.2.12
+extension
+<terminology> set of all of the object s (3.2.4 ) to which a concept  (3.2.8 ) corresponds
+Note 1 to entry: This term has a different meaning in ISO/IEC 11179-3.
+[SOURCE: ISO 1087:2019, 3.1.2, modified — Note 1 to entry added.]
+3.2.13
+intension
+set of characteristic s (3.2.6 ) that make up a concept  (3.2.8 )
+[SOURCE: ISO 1087:2019, 3.2.6]
+3.2.14
+concept relation
+relation between two concept s (3.2.8 )
+[SOURCE: ISO 1087:2019, 3.2.11]
+3.2.15
+concept system
+set of concept s (3.2.8 ) structured in one or more related domains  (3.2.2 ) according to the concept 
+relations  (3.2.14 ) among its concepts
+[SOURCE: ISO 1087:2019, 3.2.28]
+3.2.16
+designation
+designator
+representation of a concept  (3.2.8 ) by a sign which denotes it in a domain  (3.2.2 ) or subject  (3.2.1 )
+Note 1 to entry: A designation can be linguistic or non-linguistic. It can consist of various types of characters, 
+but also punctuation marks such as hyphens or parentheses, governed by domain-, subject-, or language specific 
+conventions.
+Note 2 to entry: A designation can be a term  (3.2.19 ) including appellations  (3.2.20 ), a proper name  (3.2.18 ) or a 
+symbol  (3.2.21 ).
+[SOURCE: ISO 1087:2019, 3.4.1]
+3.2.17
+name
+designation  (3.2.16 ) of an object  (3.2.4 ) by a linguistic expression
+[SOURCE: ISO/IEC 15944-1:2011, 3.35]
+3.2.18
+proper name
+designation  (3.2.16 ) that represents an individual concept  (3.2.10 )
+[SOURCE: ISO 1087:2019, 3.4.4]
+   © ISO/IEC 2023 – All rights reserved
+  4Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 13 ---
+ISO/IEC 11179-1:2023(E)
+3.2.19
+term
+designation  (3.2.16 ) that represents a general concept  (3.2.9 ) by linguistics means
+EXAMPLE "laser printer", "planet", "pacemaker", "chemical compound", "¾ time", "Influenza A virus", "oil 
+painting".
+Note 1 to entry: Terms may be partly or wholly verbal.
+[SOURCE: ISO 1087:2019, 3.4.2, modified — EXAMPLE changed to EXAMPLES.]
+3.2.20
+appellation
+term  (3.2.19 ) that is applied to a group of objects  (3.2.4 ) whose relevant properties  (3.2.5 ) are identical
+EXAMPLE "Nokia 7 Plus®" (mobile phone), “Adobe® Acrobat® X Pro” (software), “Road King®” 
+(motorcycle)1)
+[SOURCE: ISO 1087:2019, 3.4.3]
+3.2.21
+symbol
+designation  (3.2.16 ) that represents a concept  (3.2.8 ) by non-linguistic means
+Note 1 to entry: There are several types of symbols such as graphical symbols [see ISO 3864 (all parts)] and 
+letter symbols [see ISO 80000[35] (all parts)].
+[SOURCE: ISO 1087:2019, 3.4.5]
+3.2.22
+terminological system
+concept system  (3.2.15 ) with designation s (3.2.16 ) for each concept  (3.2.8 )
+3.2.23
+data
+reinterpretable representation of information in a formalized manner suitable for communication, 
+interpretation or processing
+Note 1 to entry: Data can be processed by humans or by automatic means.
+Note 2 to entry: Data can also be described using the terminological notions defined in ISO 1087 and the 
+computational notions defined in ISO/IEC 11404. A datum is a designation of a concept with a notion of equality 
+defined for that concept.
+[SOURCE: ISO/IEC 2382:2015, 2121272 — Notes to entry have been modified.]
+3.2.24
+data model
+graphical, lexical or combined representation of data  (3.2.23 ), specifying their properties  (3.2.5 ), 
+structure, and interrelationships
+3.2.25
+conceptual model
+conceptual data model
+data model  (3.2.24 ) that represents an abstract view of the real world
+Note 1 to entry: A conceptual model represents the human understanding of a system, which can be anywhere 
+from a paper-based system to a complex database in an IT system.
+1)  Nokia 7 Plus® is a trademark of Nokia Corporation, Adobe® Acrobat® X Pro is a trademark of Adobe Systems, 
+Road King® is a trademark of Harley-Davidson. This information is given for the convenience of users of this 
+document and does not constitute an endorsement by ISO of the products named.
+© ISO/IEC 2023 – All rights reserved   
+ 5Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 14 ---
+ISO/IEC 11179-1:2023(E)
+3.2.26
+metadata
+data  (3.2.23 ) that define and describe other data
+3.2.27
+metamodel
+data model  (3.2.24 ) that specifies one or more other models, such as data models, process models, 
+ontologies, etc.
+3.2.28
+metadata 	object
+object type defined by a metamodel  (3.2.27 )
+Note 1 to entry: In all parts of ISO/IEC 11179, this term is applied only to metadata objects described by the 
+metamodels in those parts of ISO/IEC 11179 which specify potential registry content, including data elements  
+(3.3.4 ) in ISO/IEC 11179-31, concept systems  (3.2.15 ) in ISO/IEC 11179-32, data sets in ISO/IEC 11179-33, 
+computable data in ISO/IEC 11179-34, and models in ISO/IEC 11179-35.
+Note 2 to entry: The term also applies to metadata objects described by the metamodels in the various parts of 
+ISO/IEC  19763, which build upon the metamodel in ISO/IEC  11179-3.
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.31]
+3.2.29
+metadata item
+instance of a metadata object  (3.2.28 ) in a metadata registry  (3.2.31 )
+Note 1 to entry: In all parts of ISO/IEC 11179, this term is applied only to instances of metadata objects described 
+by the metamodels in parts of ISO/IEC 11179 which specify potential registry content, including data elements  
+(3.3.4 ) in ISO/IEC 11179-31, concept systems  (3.2.15 ) in ISO/IEC 11179-32, data sets in ISO/IEC 11179-33, 
+computable data in ISO/IEC 11179-34, and models in ISO/IEC 11179-35.
+Note 2 to entry: The term also applies to instances of metadata objects described by the metamodels in the 
+various parts of ISO/IEC 19763, which build upon the metamodel in ISO/IEC 11179-3.
+Note 3 to entry: A metadata item has associated attributes  (3.1.1 ), as appropriate for the metadata object  it 
+instantiates.
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.58]
+3.2.30
+basic	attribute
+attribute  (3.1.1 ) of a metadata item  (3.2.29 ) commonly needed in its specification
+3.2.31
+metadata registry
+MDR
+information system for registering metadata  (3.2.26 )
+3.2.32
+registry metamodel
+metamodel  (3.2.27 ) specifying a metadata registry  (3.2.31 )
+3.2.33
+registration
+set of rules, operations, and procedures for inclusion of an item in a registry  (3.2.34 )
+Note 1 to entry: A detailed description of registration as it applies in ISO/IEC 11179 is found in ISO/IEC 11179-6.
+3.2.34
+registry
+information system for registration  (3.2.32 )
+   © ISO/IEC 2023 – All rights reserved
+  6Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 15 ---
+ISO/IEC 11179-1:2023(E)
+3.2.35
+registry item
+item recorded in a registry  (3.2.34 )
+Note 1 to entry: A registry item  is recorded in the registry , but is not necessarily identified, named, defined, 
+classified, registered or administered. Specific information needs to be provided for each of these categories 
+which might or might not be provided when the item is initially recorded. C.f. registered item  (3.3.20 ).
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.54]
+3.2.36
+stewardship
+<metadata> responsibility for the maintenance of administrative information  (3.3.22 ) applicable to one 
+or more administered items  (3.3.21 )
+Note 1 to entry: The responsibility for the registration of metadata may be different from the responsibility for 
+stewardship of metadata.
+[SOURCE: ISO/IEC 11179 -3:2023, 3.2.102]
+3.2.37
+stewardship organization
+organization  (3.3.15 ) that maintains stewardship  (3.2.36 ) of an administered item  (3.3.21 )
+Note 1 to entry: In the second edition of ISO/IEC 11179-6, this was called responsible organization .
+[SOURCE: ISO/IEC 11179 -3:2023, 3.2.104]
+3.2.38
+submitting 	organization
+submission 	organization
+organization  (3.3.15 ) that submits a registry item  (3.2.35 ) for registration  (3.2.32 )
+[SOURCE: ISO/IEC 11179 -3:2023, 3.2.108]
+3.2.39
+data construct
+object  (3.2.4 ) that a metadata item  (3.2.29 ) describes
+Note 1 to entry: Individual data elements  (3.3.4 ), value domains  (3.3.9 ), data element concepts  (3.3.5 ), conceptual 
+domains  (3.3.11 ), object classes  (3.3.1 ), and properties  (3.3.2 ) are data constructs.
+3.3 Terms used in the 11179 metamodel
+3.3.1
+object	class
+set of ideas, abstractions, or things in the real world that are identified with explicit boundaries and 
+meaning and whose properties and behaviour follow the same rules
+[SOURCE: ISO/IEC 11179-31:2023, 3.1]
+3.3.2
+property
+<metamodel>quality common to all members of an object class  (3.3.1 )
+Note 1 to entry: See also 3.2.5 .
+[SOURCE: ISO/IEC 11179-31:2023, 3.2, modified — Domain and Note 1 to entry added.]
+3.3.3
+context
+circumstance, purpose, and perspective under which an object  (3.2.4 ) is defined or used
+© ISO/IEC 2023 – All rights reserved   
+ 7Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 16 ---
+ISO/IEC 11179-1:2023(E)
+3.3.4
+data element
+<organization of data> unit of data  (3.2.23 ) that is considered in context  (3.3.3 ) to be indivisible
+EXAMPLE The data element “age of a person” with values consisting of all combinations of 3 decimal digits.
+Note 1 to entry: The definition states that a data element is “indivisible” in some context. This means it is possible 
+that a data element considered indivisible in one context (e.g. telephone number) can be divisible in another 
+context (e.g. country code, area code, local number).
+[SOURCE: ISO/IEC 2382:2015, 2121599, modified — Notes to entry replaced.]
+3.3.5
+data element concept
+DEC
+concept  (3.2.8 ) that can be represented in the form of a data element  (3.3.4 ), described independently of 
+any particular representation
+Note 1 to entry: A data element concept is implicitly associated with both the property  (3.3.2 ) and the object class  
+(3.3.1 ) whose combination it expresses.
+Note 2 to entry: A data element concept may also be associated with zero or more conceptual domains  (3.3.11 ) 
+each of which expresses its value meanings  (3.3.7 ).
+Note 3 to entry: A data element concept may also be associated with zero or more data elements  (3.3.4 ) each of 
+which provides representation for the data element concept via its associated value domain  (3.3.9 ).
+[SOURCE: ISO/IEC 11179-31:2023, 3.25]
+3.3.6
+value
+<ISO 704> sign, used to represent data  (3.2.23 )
+Note 1 to entry: A value is a sign as used in ISO 1087:2019 and ISO 704:2022.
+Note 2 to entry: A value may be a character string, bitmap, or some other symbol.
+3.3.7
+value meaning
+semantic content of a value  (3.3.6 )
+Note 1 to entry: The representation of value meanings in a registry  (3.2.34 ) shall be independent of (and shall not 
+constrain) their representation in any corresponding value domain  (3.3.9 ).
+[SOURCE: ISO/IEC 11179-31:2023, 3.10]
+3.3.8
+datatype
+named set of distinct values  (3.3.6 ), characterized by properties of those values and by operations on 
+those values
+[SOURCE: ISO/IEC 11404:2007, 3.12, modified — Inserted ‘named’ before ‘set’ in the definition.]
+3.3.9
+value domain
+VD
+set of permissible values  (3.3.10 )
+Note 1 to entry: The value domain  provides representation but has no implication as to what data element concept  
+(3.3.5 ) the values might be associated with nor what the values mean.
+Note 2 to entry: The permissible values  can either be enumerated, expressed via a description, or a combination 
+of the two.
+   © ISO/IEC 2023 – All rights reserved
+  8Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 17 ---
+ISO/IEC 11179-1:2023(E)
+[SOURCE: ISO/IEC 11179-31:2023, 3.13]
+3.3.10
+permissible 	value
+designation  (3.2.16 ) of a value meaning  (3.3.7 )
+Note 1 to entry: Permissible values may be specified either as part of a value domain  (3.3.9 ) or only associated 
+with a value meaning  (3.3.7 ).
+Note 2 to entry: Within a value domain, permissible values may either be enumerated or described.
+Note 3 to entry: Explicit mapping of a single permissible value to a single value meaning is possible only when 
+both the value meaning and permissible value are enumerated, e.g. for code sets. For described permissible 
+values, the described meaning might be associated with a range of values, e.g. weight in kilograms.
+Note 4 to entry: As a designation , the value is the sign and the value meaning  is the concept  (3.2.8 ).
+[SOURCE: ISO/IEC 11179-31:2023, 3.19, modified — Note 4 to entry added.]
+3.3.11
+conceptual domain
+CD
+concept  (3.2.8 ) whose meaning is expressed as an enumerated set, a description of subordinate concepts 
+or both, which are value meanings  (3.3.7 )
+[SOURCE: ISO/IEC 11179-31:2023, 3.5]
+3.3.12
+classification 	scheme
+descriptive information for an arrangement or division of object s (3.2.4 ) into groups based on criteria 
+such as characteristic s (3.2.6 ), which the objects have in common
+Note 1 to entry: A classification scheme is a concept system  (3.2.15 ) used for classifying some objects.
+EXAMPLE Origin, composition, structure, application, function, etc.
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.5.]
+3.3.13
+classification 	scheme	item
+CSI
+item of content in a classification scheme  (3.3.12 )
+Note 1 to entry: This may be a node in a taxonomy or ontology, a term in a thesaurus, etc.
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.6.]
+3.3.14
+representation class
+classification of types of representations
+3.3.15
+organization
+unique framework of authority within which a person or persons act, or are designated to act, towards 
+some purpose
+[SOURCE: ISO/IEC 6523- 1:1998, 3.1, modified — Edited to conform to ISO/IEC Directives, and NOTE 
+with examples deleted.]
+© ISO/IEC 2023 – All rights reserved   
+ 9Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 18 ---
+ISO/IEC 11179-1:2023(E)
+3.3.16
+registration authority
+RA
+organization  (3.3.15 ) responsible for maintaining a register
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.92]
+3.3.17
+registration 	authority 	identifier
+RA	identifier
+identifier  (3.1.3 ) assigned to a registration authority  (3.3.16 )
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.93]
+3.3.18
+registrar
+representative of a registration authority  (3.3.16 )
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.90]
+3.3.19
+identified 	item
+registry item  (3.2.35 ) identified in a registry  (3.2.31 )
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.61]
+3.3.20
+registered item
+identified item  (3.3.19 ) that is recorded and managed in a registry  (3.2.34 )
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.65, modified — Notes to entry deleted.]
+3.3.21
+administered item
+registered item  (3.2.20 ) for which administrative information  (3.3.22 ) is recorded
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.66]
+3.3.22
+administrative information
+<registry> information about the administration of an item in a registry  (3.2.34 )
+EXAMPLE Creation date, last change date, origin, change description, explanatory comment.
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.67]
+3.3.23
+administrative status
+designation  (3.2.16 ) of the status in the administrative process of a registration authority  (3.3.16 ) for 
+handling registration requests
+Note 1 to entry: The values and associated meanings of “administrative status” are determined by each 
+registration authority . C.f. registration status  (3.3.24 ).
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.71]
+3.3.24
+registration status
+designation  (3.2.16 ) of the status in the registration life-cycle of an administered item  (3.3.21 )
+Note 1 to entry: Designation values are specified in ISO/IEC  11179-3:2023, 9.6.1 and described more fully in 
+ISO/IEC  11179-6:2023, 4.3.2.
+   © ISO/IEC 2023 – All rights reserved
+  10Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 19 ---
+ISO/IEC 11179-1:2023(E)
+[SOURCE: ISO/IEC 11179-3:2023, 3.2.70]
+3.3.25
+version
+unique form differing in certain aspects from an earlier or later form
+3.4	 Abbreviated	terms
+API application programming interface
+ASN.1 abstract syntax notation 1
+BFO basic formal ontology
+BMM business motivation model (see Reference [ 39])
+BPMN business process model and notation (see Reference [ 40])
+CIR coding-independent representation
+CL common logic
+CSR coding-specific representation
+DDL database definition language
+DIVP dotted identifier value pair
+DOLCE descriptive ontology for linguistic and cognitive engineering (see Reference [ 43])
+EPC event-driven process chain (see Reference [ 45])
+GPD general purpose datatypes
+HTML hyper text markup language
+HTTP hyper text transfer protocol
+IDEF1X integration definition for information modeling (see Reference [ 47])
+JSON JavaScript object notation
+KAOS keep all objects satisfied (see Reference [ 37])
+MDR metadata registry
+MFI metamodel framework for interoperability
+NFRF non-functional requirement framework (see Reference [ 42])
+NIAM natural language information analysis method
+OPI organization part identifier
+ORM object role modeling
+OWL web ontology language
+OWL-S semantic markup for web services (see Reference [ 48])
+RA registration authority
+RGPS role and goal, process, and service (see 8.1.9 )
+RM-ODP reference model of open distributed processing (see Reference [ 27])
+SA-REST semantic annotation of web resources (see Reference [ 49])
+SAWSDL semantic annotation for WSDL and XML Schema (see Reference [ 50])
+SSADM structured systems analysis and design method (see Reference [ 38])
+SWRL semantic web rule language (see Reference [ 51])
+SWSL semantic web service language (see Reference [ 52])
+TLO top-level ontology
+UML unified modeling language (see References [ 22] and [ 23])
+UPU Universal Postal Union
+URI uniform resource identifier
+© ISO/IEC 2023 – All rights reserved   
+ 11Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 20 ---
+ISO/IEC 11179-1:2023(E)
+URL uniform resource locator
+WADL web application description language (see Reference [ 53])
+WebDAV web distributed authoring and versioning
+WSDL web service description language (see Reference [ 54])
+WSML web service modelling language (see Reference [ 55])
+W3C World Wide Web Consortium
+XML extensible markup language
+4 Theory of terminology
+This clause describes the concepts from the theory of terminology that are used in this document. 
+They are mostly taken from ISO 704 and ISO 1087. They provide the background and a more thorough 
+explanation of the theory of terminology.
+In the theory of terminology, an object is something conceivable or perceivable. Concepts are mental 
+constructs, units of thought, or units of knowledge created by a unique combination of characteristics. 
+Concepts are organized or grouped by characteristics, which are also concepts. Any concept may be a 
+characteristic; being a characteristic is a role for a concept. Essential characteristics are indispensable 
+to understanding a concept, and they differentiate them, though which characteristics are essential 
+depends on context. For instance, the concept person has sex, age, marital status, educational 
+attainment, and race/ethnicity as essential characteristics in demography; however, it has name, sex, 
+date/time of birth, height, weight, and mother’s name as essential characteristics in a birth records 
+system. For zoology, the essential characteristics of a person are different still. Other characteristics 
+are inessential. The sum of characteristics for a concept is called its intension. The totality of objects a 
+concept corresponds to is its extension.
+In natural language, concepts are expressed through definitions, which specify a unique intension and 
+extension.
+A designation (term, appellation or symbol) is the representation of a concept by a sign, which denotes 
+it.
+A general concept has two or more objects that correspond to it. An individual concept has one object 
+that corresponds to it. That is, a general concept has two or more objects in its extension, and an 
+individual concept has one object in its extension.
+A concept system is set of concepts structured according to the concept relations among them. A 
+terminological system is a concept system with designations for each concept.
+5 Metadata
+5.1 General
+For ISO/IEC 11179 (all parts), metadata are defined to be data that define and describe other data.
+NOTE In general, metadata are descriptive data about an object; in ISO/IEC 11179 that object is “data”.
+This means that metadata are data, and data become metadata when they are used in this way. This 
+happens under particular circumstances, for particular purposes, and with certain perspectives, as no 
+data are always metadata. The set of circumstances, purposes, or perspectives for which some data are 
+used as metadata is called the context. So, metadata are data about data in some context.
+Since metadata are data, then metadata can be stored in a database and organized through the use of 
+a model. Some models are very application specific, and others are more general. The model presented 
+and described in ISO/IEC 11179 (particularly ISO/IEC 11179-3, ISO/IEC 11179-31, ISO/IEC 11179-32 
+and ISO/IEC 11179-33) is general. It is a representation of the human understanding of the metadata 
+   © ISO/IEC 2023 – All rights reserved
+  12Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 21 ---
+ISO/IEC 11179-1:2023(E)
+needed to describe data constructs, including the relationships that exist among those metadata, and 
+not necessarily how the metadata will be represented in an application of an MDR. A model of this kind 
+is called a conceptual model. Conceptual models are meant for people to read and understand.
+Models that describe metadata are often referred to as metamodels. The conceptual model presented in 
+ISO/IEC  11179-3 is a metamodel in this sense.
+Further description of metadata is provided in ISO/IEC TR 19583-1 (see 8.5.2 ).
+5.2 Concepts
+5.2.1 General
+Several data constructs used in ISO/IEC 11179 are concepts. They are: data element concept, object 
+class, property, conceptual domain and value meaning. These are discussed in more detail in 5.3.
+The semantics of data come from the concepts used in their descriptions. The meanings of all the 
+concepts used to describe a datum are combined into a story, sometimes called a fact. This is equivalent 
+to the information conveyed by some datum.
+As ISO/IEC 11179-5 describes, the names for data elements, which may convey some of the semantics 
+of their underlying data, can be constructed from the designations of their constituent concepts. So, 
+for some datum, the story it conveys might be written as “The temperature in Washington, DC at the 
+bottom of the Washington Monument on 14 June 2013 at 1600 ET was 25 °C”. The designations of 
+concepts (temperature; Washington, DC; Washington Monument, 1600 ET, and 25 °C) are interspersed 
+with English words to create a sentence, which contains the story.
+Finally, the relationships some concepts have with others, as defined in a concept system, add semantics 
+to data. For instance, the concept of a temperature measurement is different if it is a measure of the 
+kinetic activity of molecules of air in some location on Earth versus a measure of ambient infrared 
+radiation in inter-planetary space between Jupiter and Saturn. In both cases, instances of temperature 
+are ultimately measures of infrared radiation, but they are obtained far differently. The temperature of 
+air is directly determined by the motion of molecules. There are far too few molecules in inter-planetary 
+space for the same kind of measurement to be meaningful. A different sort of measurement is required.
+5.2.2 Management
+Looking across all the data elements found in an organization or across organizations, one finds many 
+concepts that are the same. For instance, in statistical survey organizations, data are collected, and 
+estimates produced for some population. But surveys are often conducted on a regular basis – monthly, 
+quarterly, yearly – so the population is repeated. Moreover, many surveys might be conducted on the 
+same population, each for its own specialized purpose. A similar situation applies in a scientific research 
+laboratory, where in a large program, the same scientific experiments are conducted repeatedly.
+Since some of the purposes of the MDR are understanding, re-use, harmonization, and standardization 
+of data, then managing meanings is critical for those needs. In the case of re-use in particular, where 
+the same meanings are applied in different situations, it is inefficient, error prone, redundant, and 
+inhibitory to store one concept multiple times. If the same concept is used to describe many data 
+elements, describe it once and re-use it.
+5.3 Fundamental model of data elements
+For the purposes of the ISO/IEC 11179 series, a data element comprises two parts:
+— data element concept;
+— value domain.
+© ISO/IEC 2023 – All rights reserved   
+ 13Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 22 ---
+ISO/IEC 11179-1:2023(E)
+A data element concept also comprises two parts:
+— object class;
+— property.
+Figure 1  illustrates the fundamental model of data elements.
+NOTE If a region B is contained within the boundary of a region A, then the region A comprises the region B 
+(and possibly others).
+Figure 1 — Fundamental, informal model of a data element
+The totality of objects for which data is collected and stored is the extension of an object class. Object 
+classes are concepts, and they correspond to the notions embodied in classes in object-oriented 
+models and entities in entity-relationship models. Examples are cars, persons, households, employees, 
+jobs, and orders. Properties are what humans use to distinguish or describe object classes. They are 
+characteristics, not necessarily essential ones, of the object class and form its intension. They are also 
+concepts, and they correspond to the notions embodied in attributes (without associated datatypes) 
+in object-oriented or entity-relationship models. Examples of properties are colour, model, sex, age, 
+income, address, salary or price.
+An object class may be a “general concept”. This happens when the totality of objects corresponding 
+to the object class has two or more members. The examples in the previous paragraph are of this type. 
+Record-level data are described this way. On the other hand, an object class may be an “individual 
+concept”. This happens when the totality of objects corresponding to the object class has one member. 
+An example is a concept corresponding to a single object, such as “the collection of all persons”. Another 
+example is “the collection of service sector establishments”. Aggregate data are described this way. 
+Examples of properties for these object classes are average income or total earnings, respectively.
+It is important to distinguish an actual object class or property from its name. This is the distinction 
+between concepts and their designations. Object classes and properties are concepts; their names are 
+designations. Complications arise because people convey concepts through words (designations), and 
+it is easy to confuse a concept with the designation used to represent it. For example, most people will 
+read the word “income” and be certain they have unambiguously interpreted it. But it is possible that 
+the designation “income” does not convey the same concept to all readers, and, more importantly, each 
+instance of “income” does not designate the same concept.
+Not all ideas are simply expressed in a natural language, either. For example, “women between the 
+ages of 15 and 45 who have had at least one live birth in the last 12 months” is a valid object class not 
+easily named in English. Some ideas can be more easily expressed in one language than in another. The 
+German word Götterdämmerung  has no simple English equivalent, for instance.
+Value domains are sets of permissible values for data elements. Datatype and possibly a unit of measure 
+are associated with a value domain. For example, the data element representing “annual household 
+income” can have the set of non-negative integers (with units of dollars) in Arabic numerals as a set 
+   © ISO/IEC 2023 – All rights reserved
+  14Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 23 ---
+ISO/IEC 11179-1:2023(E)
+of valid values. This is its value domain. The scaled datatype is appropriate for this situation (see 
+ISO/IEC  11404:2007[7], 8.1.9). “Currency” is a likely representation class, and “dollars” a unit of measure.
+A data element concept may be associated with different value domains as needed to form conceptually 
+similar data elements. There are many ways to represent similar details about the world, but the data 
+element concept for which the details are examples is the same. Take the data element concept “country 
+of person's birth” as an example. ISO 3166-1[2] contains seven different representations for countries 
+of the world. Each one of these seven representations contains a set of values that may be used in the 
+value domain associated with the data element concept. Each one of the seven associations is a data 
+element. For each representation of the data, the permissible values, the datatype, and possibly the 
+units of measure, are altered.
+See ISO/IEC TR 20943-1[28] for details about the registration and management of descriptions of data 
+elements.
+5.4 Data elements in data management and interchange
+Data elements appear in two basic situations: in databases and in messages. Databases are rendered 
+either in memory or in files stored separately. Data elements are the fundamental units of data that 
+an organization manages, therefore they are of necessity part of the design of databases within the 
+organization and all messages the organization builds to communicate data to other organizations.
+Within the organization, databases are composed of records, segments, tuples, rows within tables, etc., 
+which are composed of data elements. The data elements themselves contain various kinds of data that 
+include characters, images, sound, etc.
+When the organization needs to transfer data to another organization, data elements are the 
+fundamental units that make up the message. Messages occur between databases, between databases 
+and humans, and between humans. Moreover, the structure (i.e. the records or tuples) of databases 
+don't have to be the same across organizations. So, the common unit for transferring data and related 
+information is the data element.
+6 Metadata registries
+6.1 General
+Metadata are also data, so metadata might be stored in a database. A database of metadata that supports 
+the functionality of registration is a metadata registry (MDR). ISO/IEC 11179-3[11] provides a conceptual 
+model for the common facilities of an MDR and ISO/IEC  11179-31[16] provides a conceptual model for 
+describing data. The requirements and procedures for the ISO/IEC 11179 aspects of registration are 
+described in ISO/IEC 11179-6[14]. For actual metadata registries, there may be additional requirements 
+and procedures for registration, which are outside the scope of this document. Rules and guidelines for 
+providing good definitions and developing naming conventions are described in ISO/IEC  11179-4[12] 
+and ISO/IEC 11179-5[13], respectively. The role of classification is described in ISO/IEC TR 11179-2[10]. 
+Recommendations and practices for registering data elements are described in ISO/IEC TR 20943-1[28]. 
+Recommendations and practices for registering value domains are described in ISO/IEC TR 20943-3[29].
+An MDR contains metadata describing data constructs. The attributes for describing a particular 
+data construct (e.g. data elements, data element concept, conceptual domain and value domain) are 
+known, collectively, as a metadata object. When the attributes are instantiated with the description 
+of a particular data construct, they are known as a metadata item. Recording the metadata item in 
+an MDR makes it a registry item, represented by the Item  class in the MDR metamodel. Depending on 
+© ISO/IEC 2023 – All rights reserved   
+ 15Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 24 ---
+ISO/IEC 11179-1:2023(E)
+requirements, the registry item may further be identified, registered, administered, named, defined 
+and classified. See ISO/IEC 11179-3:2023, 6.4.2.1 Item  class for details.
+NOTE In common parlance, registering a metadata item describing a data construct is known as registering 
+that data construct. The data construct is not stored in the MDR, its description is. This is analogous to the 
+registries maintained by governments to keep track of motor vehicles. A description of each motor vehicle is 
+entered in the registry, but not the vehicle itself. However, people say they have registered their motor vehicles, 
+not the descriptions.
+6.2 Fundamentals of registration
+The registration and administration functions specified in ISO/IEC 11179-6 are what separate an MDR 
+from a database of metadata. The means to accomplish these functions are a large part of the design of 
+the MDR metamodel specified in ISO/IEC 11179-3.
+Registration is the set of rules, operations, and procedures that apply to an MDR. A detailed description 
+of registration as it applies in ISO/IEC 11179 is found in ISO/IEC 11179-6. The three most important 
+outcomes of registration are the ability to monitor the quality of metadata, provenance (the source of 
+the metadata), and the assignment of an identifier to each object described in an MDR. Registration 
+also requires a set of procedures for managing a registry, submitting metadata for registration of 
+objects, and maintaining subject matter responsibility for metadata already submitted. For actual 
+implementations of a metadata registry, there may be additional requirements, which are outside the 
+scope of this document.
+Each administered item is maintained in a uniform and prescribed manner. Identifiers, quality 
+measures, accountable organizations, names and definitions are all part of the general metadata that 
+falls under administration. Registration includes the process of creating or maintaining administrative 
+and other detailed metadata.
+The metadata lifecycle is recorded via the use of a registration status. The lifecycle stages, typically, 
+correspond to the level of quality of the metadata. Each level is specified in ISO/IEC 11179-6:2023, 4.3. 
+Every administered item is assigned a registration status, and this status can change over time. In 
+addition, metadata quality is multi-faceted. That is, there are several purposes to monitoring metadata 
+quality. The main purposes are:
+— monitoring adherence to rules for providing metadata for each attribute;
+— monitoring adherence to conventions for forming definitions, creating names, and performing 
+classifications;
+— determining whether an administered item still has relevance;
+— determining the similarity of related administered items and harmonizing their differences;
+— determining whether it is possible to ever get higher quality metadata for some administered items.
+The rules for creating and assigning identifiers are described in ISO/IEC 11179-6. Each administered 
+item within an MDR is assigned one or more unique identifiers.
+The registration authority is the organization responsible for setting the procedures, administering, 
+and maintaining an MDR. The individuals responsible are called registrars. The submitting organization 
+is responsible for requesting that a new metadata item be registered in the registry. The stewardship 
+organization is responsible for the subject matter content of each registered item. Each of these roles is 
+described in ISO/IEC 11179-6:2023, Annex B.
+   © ISO/IEC 2023 – All rights reserved
+  16Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 25 ---
+ISO/IEC 11179-1:2023(E)
+7 Overview of ISO/IEC 11179
+7.1 General
+ISO/IEC  11179 addresses the registration of the descriptions of data, including both the semantics and 
+the representation of that data. It is through these descriptions that an accurate understanding of the 
+semantics and a useful depiction of the data are found.
+Each part of ISO/IEC 11179 assists in a different aspect of metadata creation, organization, and 
+registration; and each part shall be used in conjunction with the other parts. ISO/IEC 11179-1 (this 
+document) establishes the relationships among the parts and gives guidance on their usage as a whole.
+Metadata items are registered as registered items and administered as administered items in an MDR. 
+ISO/IEC  11179-3 specifies the generic metamodel to support the registration process. ISO/IEC 11179-6 
+provides guidance on the registration procedures.
+The individual parts of ISO/IEC 11179 are described in 7.2 to 7.13 .
+7.2 ISO/IEC 11179-1 — Part 1: Framework
+ISO/IEC  11179-1 (this document) introduces and discusses fundamental ideas of data elements, value 
+domains, data element concepts, conceptual domains, concepts, and concept systems essential to the 
+understanding of this series of standards and provides the context for associating the individual parts 
+of ISO/IEC 11179. It also describes the relationships between ISO/IEC 11179 and other JTC 1/SC 32 
+standards, technical specifications and technical reports on metadata.
+7.3	 ISO/IEC	TR	11179-2	—	Part	2:	Classification
+The metamodel for registering classification schemes is specified as part of the ISO/IEC 11179-3. 
+ISO/IEC  TR 11179-2 expands on this specification to describe the meaning and benefits of classification, 
+and the use of classification schemes to classify other contents of the registry. Concepts from these 
+classification schemes can be associated with administered items through the process of classification. 
+Librarians, terminologists, linguists, and computer scientists are perfecting the classification process, 
+so it is not described here. The additional semantic content derived from classification is the important 
+point.
+Associating an object with one or more concepts from one or more classification schemes provides:
+— additional understanding of the object;
+— comparative information across similar objects;
+— understanding of an object within the context of a domain (defined by the scope of a classification 
+scheme);
+— ability to determine slight differences of meaning between similar objects.
+Therefore, managing classification schemes is an important part of maximizing the information 
+potential within an MDR. ISO/IEC TR 11179-2 provides the framework for this.
+7.4 ISO/IEC 11179-3 — Part 3: Metamodel for registry common facilities
+ISO/IEC  11179-3 specifies the core metamodel for a Metadata Registry (MDR), but it does so in a generic 
+way, so that the resulting registry could be used to register anything, not just metadata.
+The registry metamodel is expressed in the Unified Modelling Language (UML). It is divided into regions 
+for readability. The figures present an overview of each region. All the provisions represented in the 
+model are described in the text. Both text and UML class diagrams are normative and are intended to 
+be complementary. However, if a conflict exists between the text and the UML notation, the text takes 
+precedence.
+© ISO/IEC 2023 – All rights reserved   
+ 17Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 26 ---
+ISO/IEC 11179-1:2023(E)
+The registry metamodel is not a complete description of all the metadata an organization may wish to 
+record. So, the model is designed to be extended if required. However, extensions are, by their nature, 
+not part of ISO/IEC 11179-3.
+Some extensions to the ISO/IEC 11179-3 metamodel are specified in other parts of ISO/IEC 11179, such 
+as:
+— ISO/IEC 11179-31: Metamodel for data specification registration;
+— ISO/IEC 11179-32: Metamodel for concept system registration;
+— ISO/IEC 11179-33: Metamodel for data set registration;
+— ISO/IEC 11179-34: Metamodel for computable data registration;
+— ISO/IEC 11179-35: Metamodel for model registration;
+and in other standards, such as:
+— ISO/IEC 19763 series – Metamodel framework for interoperability.
+Organizations may specify their own extensions to any of the above metamodels.
+A clause describing conformance criteria is provided. Conformance is described as either strictly 
+conforming  (all provisions met, no extensions permitted) or conforming  (all provisions met, but 
+additional provisions may exist).
+7.5	 ISO/IEC	11179-30	 —	Part	30:	Basic	attributes	of	metadata
+ISO/IEC  11179-30 describes basic attributes for data elements and related metadata for use in contexts 
+where a full metadata registry is not appropriate, such as standards documents. It is limited to a set 
+of basic attributes for: data elements, data element concepts, value domains, conceptual domains and 
+other related classes.
+7.6	 ISO/IEC	11179-31	 —	Part	31:	Metamodel	for	data	specification	registration
+ISO/IEC  11179-31 provides a specification for an extension to a Metadata Registry (MDR), as specified 
+in ISO/IEC 11179-3, in which metadata that describe data elements and associated concepts, such as 
+data element concepts, conceptual domains and value domains can be registered.
+The specification in ISO/IEC 11179-31, together with the relevant clauses of the specification in 
+ISO/IEC  11179-3, provides the ability to record metadata about:
+— data elements, units of measure and derivation rules;
+— data element concepts and associated object classes and properties;
+— conceptual domains and value meanings;
+— value domains, value domain subsets and permissible values.
+ISO/IEC  11179-31 is applicable to the formulation of data representations, concepts, meanings and 
+relationships to be shared among people and machines, independent of the organization that produces 
+the data. It is not applicable to the physical representation of data as bits and bytes at the machine level.
+7.7 ISO/IEC 11179-32 — Part 32: Metamodel for concept system registration
+ISO/IEC  11179-32 provides a specification for an extension to a Metadata Registry (MDR), as specified 
+in ISO/IEC 11179-3, in which metadata that describe concept systems can be registered.
+   © ISO/IEC 2023 – All rights reserved
+  18Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 27 ---
+ISO/IEC 11179-1:2023(E)
+The specification in ISO/IEC 11179-32, together with the relevant clauses of the specification in 
+ISO/IEC  11179-3, provides the ability to record the following metadata:
+— concept systems and associated concepts;
+— relations among concepts in a concept system;
+— assertions about concepts in a concept system.
+The metamodel in ISO/IEC  11179-32 is intended to support the full description of a concept system, 
+including ontologies.
+Where there is a requirement to register an ontology where the details are defined elsewhere, consider 
+using ISO/IEC 19763-3 instead (see 8.1.5 ).
+7.8 ISO/IEC 11179-33 — Part 33: Metamodel for data set registration
+ISO/IEC  11179-33 provides a specification for an extension to a Metadata Registry (MDR), as specified 
+in ISO/IEC 11179-3, in which metadata that describe data sets, collections of data available for access 
+or download in one or more formats, can be registered. Since a set can contain a single element, this 
+specification will also allow the recording of metadata about a single data value.
+The registered metadata provide information about the data set that includes the provenance and the 
+quality of the data set.
+The specification in ISO/IEC 11179-33, together with the relevant clauses of the specification in 
+ISO/IEC  11179-3, provides the ability to record the following data set metadata:
+— one or more unique identifiers for the data set;
+— the designation or title of the data set;
+— a definition or description of the data set that provides sufficient detail to enable a user to quickly 
+understand whether this data set is of interest;
+— the date the data set was issued and, if appropriate, the date that subsequent versions of the data set 
+were, or will be, issued;
+— the access level and rights associated with the data set;
+— the provenance of the data set, i.e. information about the place and time of the origin of the data set, 
+its ownership and the method of the generation of the set;
+— a set of keywords or tags that help to explain the data set;
+— the language or languages used to describe the data set;
+— the temporal and spatial coverages of the data set;
+— the accrual periodicity of the data set, i.e. the frequency at which new, revised or updated versions 
+of the data set are made available;
+— the details of the distributions of the data set, including the identifier, the title, a description, the 
+media type or file format, the size, the issue date, languages, access level and rights and access and 
+download URLs;
+— annotations drawn from a concept system, such as an ontology, to describe the theme or category of 
+the data set or the collection of data sets;
+— details of any contexts, such as a programme, project or business area that use the data set;
+— details of any quality assessments made in respect of the data set;
+© ISO/IEC 2023 – All rights reserved   
+ 19Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 28 ---
+ISO/IEC 11179-1:2023(E)
+— any additional descriptions of the data set, including:
+— any data elements that are already registered that are included in the data set;
+— any information models that describe the structure of the information in the data set;
+— any documents which describe aspects of the data set, such as technical information about the 
+data set or developer documentation such as a graphical representation of the data model of the 
+data set;
+— details of any superset/subset hierarchies containing the data set;
+— details of any replacement data set if this data set is superseded;
+— the details of any collection of data sets of which this data set is a part, including the identifiers, 
+the designation or title, a definition or description, issue dates, languages, access level, rights, 
+the spatial coverage, the provenance and any quality assessments of the collection.
+7.9	 ISO/IEC	11179-34	 —	Part:	34	Metamodel	for	computable	data	registration
+ISO/IEC  11179-34 provides a specification for an extension to a Metadata Registry (MDR), as specified 
+in ISO/IEC 11179-3, in which metadata that describe computable data can be registered. Such metadata 
+can include details related to data pipelines to facilitate efficient communication and interoperability 
+between different platforms, industries, scientists and regulators and improve reproducibility and 
+replicability.
+7.10 ISO/IEC 11179-35 — Part 35: Metamodel for model registration
+ISO/IEC  11179-35 provides a specification for an extension to a Metadata Registry (MDR), as specified 
+in ISO/IEC 11179-3, in which metadata about models and their associated metamodels can be 
+registered. These models can be information or data models, process models, models of web services or 
+any other type of models used in software engineering or information processing. All such models can 
+be considered as metadata. As such, ISO/IEC 11179-35 provides a generic alternative to the facilities 
+specified in various parts of ISO/IEC 19763.
+7.11	ISO/IEC	11179-4	— 	Part	4:	Formulation	of 	data	definitions
+ISO/IEC  11179-4 provides guidance on how to develop unambiguous data definitions. Several rules and 
+guidelines are presented in ISO/IEC 11179-4 that specify exactly how a data definition should be formed. 
+A precise, well-formed definition is one of the most critical requirements for shared understanding of 
+data. Well-formed definitions are imperative for the exchange of information. Only if every user has a 
+common and exact understanding of the data can they be exchanged trouble-free.
+The usefulness of definitions is one aspect of metadata quality. Following the rules and guidelines 
+provided in ISO/IEC 11179-4 helps establish this usefulness.
+7.12 ISO/IEC 11179-5 — Part 5: Naming principles
+ISO/IEC  11179-5 provides guidance for the designation of administered items. Designation is a broad 
+term for naming or identifying a particular data construct.
+Names are applied to data constructs through the use of a naming convention. Naming conventions 
+are algorithms for generating names within a particular context. There are semantic, syntactic, and 
+lexical rules used to form a naming convention. Names are a simple means to provide some semantics 
+about data constructs, however the semantics are not complete. Syntactic and lexical rules address the 
+constituents (e.g. allowable characters), format, and other considerations.
+Data constructs may be assigned multiple names, and one name may be identified as preferred. Usually, 
+each assigned name is used within the context for which it was created.
+   © ISO/IEC 2023 – All rights reserved
+  20Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 29 ---
+ISO/IEC 11179-1:2023(E)
+The aim for any naming convention is to allow development of names that are clear and transparent 
+in meaning, concise, demanding minimal effort of interpretation by the end user, and subject to the 
+constraints of the system under which named items are processed. A naming convention can be used 
+to form names by which information about the data is expressed. Ideally, the names resemble short 
+summaries of the formal definition of the information being named.
+7.13 ISO/IEC 11179-6 — Part 6: Registration
+ISO/IEC  11179-6 provides instruction on how a registration applicant may register a data construct 
+with a registration authority (RA) and the assignment of unique identifiers for each data construct. 
+Maintenance of administered items already registered is also specified in ISO/IEC 11179-6. Registration 
+mainly addresses identification, quality, and provenance of metadata in an MDR.
+An administered item identifier may be formed by the combination of the RA identifier, the unique 
+identifier assigned to the administered item within an RA, and the version identifier of the administered 
+item. Other structures for administered item identifiers are permitted as well.
+Each registry is maintained by an RA, to which data constructs logically and functionally belong. 
+For example, data constructs related to chemical matter would likely be registered under a chemical 
+manufacturer registration authority.
+Registration is more complex than a simple indication whether a metadata item is either registered or 
+not. Although it is tempting to insist that only “good” metadata may be registered, that is not practical. 
+Therefore, improvement in the quality of administered items is divided into levels called “registration 
+status”. In addition, there are status levels for administration between each of these quality levels. 
+Collectively, these status levels are called “administrative status”. They indicate the point in the 
+registration life cycle currently attained for an administered item.
+The provenance of metadata, the chain of responsibility, is managed in an MDR, too. The tasks and roles 
+of the registration authority, stewardship organization, and submitting organization are described. A 
+framework for the registration process to be used in an MDR is provided.
+Registration is both a process and a goal. The assignment of an identifier, quality status, life-cycle 
+status, and describing provenance are goals. The rules by which these goals are accomplished is the 
+process.
+8 Relationship to other JTC 1/SC 32 standards, TRs and TSs on metadata
+8.1	 ISO/IEC	19763	series	—	Metamodel	framework	for	interoperability	(MFI)
+8.1.1 General
+The ISO/IEC 19763 series of standards provides a set of specifications that allow the registration of 
+models to facilitate interoperability among systems or persons. In this context, interoperability is 
+interpreted in its broadest sense: the capability to communicate, execute programs, or transfer data 
+among various functional units in a manner that requires the user to have little or no knowledge of 
+the unique characteristics of those units (see ISO/IEC 2382:2015[1], 2121317). The models that are 
+registered may be ontologies, information models, process models, service models, models of roles and 
+goals or any other type of model specified within MFI. The various parts of the standard are described 
+below. The MFI Core (see ISO/IEC 19763-10) uses the common facilities from ISO/IEC 11179-3 as shown 
+in Figure 2 .
+© ISO/IEC 2023 – All rights reserved   
+ 21Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 30 ---
+ISO/IEC 11179-1:2023(E)
+Figure	2	—	Relationships	between	MFI	Core	and	mapping	and	other	parts
+8.1.2 ISO/IEC 19763-1 — Part 1: Framework
+ISO/IEC  19763-1 provides an overview of the whole MFI series of standards. In particular, the purpose, 
+the underlying concepts, the overall architecture and the requirements for the development of other 
+standards within the MFI series are described. MFI provides a set of normative metamodels to enable 
+the registration of many different types of model. Each of these metamodels is expressed as a UML class 
+diagram.
+8.1.3	 ISO/IEC	19763-10	—	Part	10:	Core	model	and	basic	mapping
+ISO/IEC  19763-10 specifies the metamodel that provides a facility to register administrative information 
+and common semantics of models and mapping between two models.
+ISO/IEC  19763-10 does not specify the metamodel of models in a specific language but provides a 
+common core metamodel for the other parts of ISO/IEC  19763, each of which specifies a metamodel for 
+a registry that can register models of a specific type, such as ontologies, process models or information 
+models, in a number of different languages.
+   © ISO/IEC 2023 – All rights reserved
+  22Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 31 ---
+ISO/IEC 11179-1:2023(E)
+ISO/IEC  19763-10 also provides a metamodel for registering the mappings between two models 
+registered in those other parts of ISO/IEC 19763.
+NOTE The mapping facility in ISO/IEC 19763-10 is superseded by the mapping facility specified in 
+ISO/IEC  11179-3:2023, Clause 11.
+ISO/IEC  19763-10 utilises the common facilities specified in ISO/IEC 11179-3. These common facilities 
+provide the ability to identify and register models and their associated model elements and modelling 
+languages within a metadata registry used to register models.
+8.1.4 ISO/IEC 19763-6 — Part 6: Registry summary
+The ISO/IEC 19763 series of standards defines normative metamodels for the registration of models 
+(including information models and process models), ontologies, services and roles and goals. Currently, 
+a lot of metadata registries or model registries were constructed and utilized in many different business 
+domains, such as e-business, healthcare, automobile, electronics devices and civil construction.
+One of the key issues for cross-domain data or services integration is enabling the easy discovery 
+of metadata that are stored in the different registries that were scattered over different domains. 
+Therefore, it is necessary to provide specific metadata that describe the registry itself to enable 
+interoperation among different registries that were built following different standards.
+ISO/IEC  19763-6 specifies an information artefact called the “registry summary”. The registry 
+summary consists of information that describes administrative aspects, the summary of contents and 
+the technical access method of the registry.
+A collection of multiple registry summaries is called a “Registry of Registries” or RoR, however, this 
+standard does not mandate a particular implementation. Also, any specific protocol between registry 
+summaries and an RoR, such as creation of an RoR and synchronization of RoRs, is not specified in 
+ISO/IEC  19763-6. Those are to be specified by other standards.
+The registry summary and RoR concept should be applied to all Metamodel Framework for 
+Interoperability (MFI) registries, but its use can be applied to any kind of registry.
+8.1.5 ISO/IEC 19763-3 — Part 3: Metamodel for ontology registration
+ISO/IEC  19763-3 specifies a metamodel that provides a facility to register administrative and evolution 
+information related to ontologies. This metamodel is intended to promote interoperation among 
+application systems, by providing administrative and evolution information related to ontologies, 
+accompanied with standardized ontology repositories that register ontologies themselves in specific 
+languages.
+The metamodel consists of two packages:
+— the Basic_Model package is used to register administrative information related to ontologies, 
+independently of the languages that are used to express them. The basic idea is that almost any 
+ontology consists of several sentences and that each sentence uses several non-logical symbols;
+— the Evolution_Model package is used to register information on how an ontology evolves from one 
+version to another.
+8.1.6 ISO/IEC 19763-5 — Part 5: Metamodel for process model registration
+ISO/IEC  19763-5 specifies a metamodel that describes a facility to register administrative information 
+and selected metadata about process models. This metamodel is intended to promote semantic 
+discovery and reuse of process models within and across process model repositories. For this purpose, 
+it provides selected metadata and common semantics of process models created with a specific process 
+modelling language, including Business Process Model and Notation (BPMN)[40], UML (Unified Modeling 
+Language) Activity Diagram, and EPC (Event-driven Process Chain)[45], etc. The metamodel can help 
+© ISO/IEC 2023 – All rights reserved   
+ 23Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 32 ---
+ISO/IEC 11179-1:2023(E)
+discovery of the function and composition of a process and can promote reuse of its components at 
+different levels of granularity.
+8.1.7 ISO/IEC 19763-7 — Part 7: Metamodel for service model registration
+ISO/IEC  19763-7 specifies a metamodel for registering models of services, facilitating interoperability 
+through the reuse of services. ISO/IEC 19763-7 is only applicable to web services whose capabilities 
+are described by some web service description language, such as: OWL-S[48], WSDL[54], WSML[55], 
+SAWSDL[50], SWRL[51], SWSL[52], WADL[53], SA-REST[49].
+8.1.8 ISO/IEC 19763-8 — Part 8: Metamodel for role and goal model registration
+ISO/IEC  19763-8 specifies a metamodel for registering the role and goal models of users of services 
+and/or processes.
+The metamodel specified is intended to promote the reuse of goals by roles within and across role 
+and goal model repositories, and further promote services selection across service model repositories 
+based on goals. For this purpose, it provides administrative information and common semantics of 
+role and goal models created with a specific role and goal modelling language, including goal-oriented 
+requirements modelling (i*)[56], Keep All Objects Satisfied (KAOS)[37], Non-functional Requirement 
+Framework (NFRF)[42], Business Motivation Model (BMM)[39], Reference Model of Open Distributed 
+Processing (RM-ODP)[27], etc.
+8.1.9 ISO/IEC TR 19763-9 — Part 9: On-demand model selection
+ISO/IEC  TR 19763-9 specifies a technical guideline for how to use the Role and Goal, Process, and 
+Service (RGPS) metamodels to select appropriate combinations of models, services or both to support 
+user requests. The scope of ISO/IEC TR 19763-9 is limited to model selection based on ISO/IEC 19763-5, 
+ISO/IEC  19763-7, and ISO/IEC 19763-8.
+8.1.10 ISO/IEC 19763-12 — Part 12: Metamodel for information model registration
+ISO/IEC  19763-12 specifies a metamodel for registering information models. This metamodel was 
+developed taking into account two distinct types of information models such as:
+— those that are used to document the information requirements of a particular area of interest;
+— those that represent the structure of a database which are often expressed using a Database 
+Definition Language (DDL).
+Information models that represent information requirements can be developed using several different 
+common diagramming techniques and notations. The metamodel specified in ISO/IEC 19763-12 was 
+developed to cover the registration of models expressed using the following techniques and notations:
+— Express-G, an ISO standard entity-relationship modelling notation, as described in Reference [ 6];
+— IDEF1X, a US Federal standard entity-relationship modelling notation, as described in References [36] 
+and [ 47];
+— the entity-relationship modelling notation first developed by Harry Ellis and Richard Barker and 
+later adopted by Oracle for its CASE*Method and by the UK’s CCTA for SSADM (Structured Systems 
+Analysis and Design Method), as described in Reference [ 38];
+— the UML Class Diagram notation, as described in References [ 22] and [ 23];
+— the original entity-relationship modelling notation proposed by Peter Chen, as described in 
+Reference [ 41];
+— the Information Engineering entity-relationship modelling notation, as described in Reference [ 46].
+   © ISO/IEC 2023 – All rights reserved
+  24Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 33 ---
+ISO/IEC 11179-1:2023(E)
+It is understood that these selected techniques represent all the essential features of all information 
+modelling techniques used to represent information requirements.
+The registration of information models that represent the structure of a database is limited in the 
+metamodel specified in ISO/IEC 19763-12 to those database structures that conform to the Core SQL 
+specification. Core SQL is the set of features defined in the conformance requirements specified in 
+ISO/IEC  9075-2[4] and ISO/IEC 9075-11[5].
+The registration of information models that are expressed using notations such as Object Role Modeling 
+(ORM) and “Natural language Information Analysis Method” (NIAM), collectively known as fact-based 
+models, is out of scope for ISO/IEC 19763-12.
+8.1.11 ISO/IEC TS 19763-13 — Part 13: Metamodel for form design registration
+ISO/IEC  TS 19763-13 specifies a metamodel for registering form designs. Forms can be printed on 
+paper or encoded in electronic format. Electronic forms can be rendered natively in standard formats 
+such as HTML, XForms or PDF, or propriety ones such as Windows forms, Cocoa or Java Swing. They 
+can also be implemented in a common survey framework such as Survey Monkey or Lime Survey. 
+Despite this diversity, it is eminently possible to create forms in different formats that support the 
+same comparisons and downstream processing provided the spaces and instructions share the same 
+semantic intent. Such a collection of forms could be said to share the same design.
+A model that is adequate to record these form designs  is the subject of ISO/IEC TS 19763-13. 
+ISO/IEC  TS 19763-13 provides a metamodel to describe the structure and semantics of an implemented 
+form devoid of any specific, domain semantics – e.g. in healthcare, social science, e-government and 
+e-business – or representation format so that data can be faithfully exchanged between systems and 
+system components, and associations expressed between sets of form designs whose data can be 
+compared, joined or composed for analysis.
+8.1.12 ISO/IEC 19763-16 — Part 16: Metamodel for document model registration
+ISO/IEC  19763-16 specifies a metamodel for registering document models (or schemas). The metamodel 
+was developed considering the following requirements:
+— Specifications for XML documents (using XML Schema);
+— Specifications for JSON documents (using JSON Schema).
+8.2 ISO/IEC 19773 Metadata Registries (MDR) modules
+ISO/IEC  19773 describes the technical interoperability details of metadata modules, which are used in 
+the ISO/IEC 11179 series of standards. The current edition contains the following modules:
+— Module 10: Data structure for reference-or-literal (reflit)
+provides the description of the data structure for holding a reference to data, or a literal data value, 
+to be chosen at run-time;
+— Module 11: Data structure for multiple internationalized/localized values and data
+provides the description of the data structure for holding several values whose meaning is the 
+same, yet their presentation may differ;
+— Module 12: Data structure for multiple internationalized/localized strings and texts
+provides the description of the data structure for holding several textual strings whose meanings 
+are the same, yet their presentation may differ;
+— Module 13: Data structure for slot tuple
+describes the data structure for slot tuples, a mechanism for describing individual data values;
+© ISO/IEC 2023 – All rights reserved   
+ 25Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 34 ---
+ISO/IEC 11179-1:2023(E)
+— Module 14: Data structure for unstructured table of slot tuples
+provides the data structure for bundling a table of unstructured (or structured) data values, based 
+upon the identifier-kind-value slot tuple structure defined in Module 13;
+— Module 15: Data for reified relationships and relationship systems
+provides the data structure for representing data (reifying) about relationships and relationship 
+systems;
+— Module 16: Data structure for UPU postal data
+provides the description of the data structure for postal addresses. The UPU S42 address elements 
+are used as a basis for constructing a postal address;
+— Module 17: Data structure for ITU-T E.164 phone number data
+provides the description of the data structure for phone numbers that may conform to ITU-T 
+E.164. The data structure may store phone numbers of the international numbering plan (e.g. 
++12125551212) or of private numbering plans (e.g. 0800990011); the phone numbers may include a 
+PBX (private branch exchange) extension (e.g. +12125551212+234, 0800990011+234);
+— Module 18: Data structure for who-what-where-when-why-how (W5H) event data
+provides the description of the data structure for who-what-where-when-why-how event data, i.e. 
+an event described by Who (people/entities associated with the event), What (topic/subject data), 
+Where (spatial data), When (temporal data), Why (external relationships), and How (pragmatic 
+details);
+— Module 19: Data structure for entity-person-group (EPG) contact data
+provides the description of the data structure for contact data for a person, group, organization, or 
+other entity;
+— Module 20: Data structure for entity-person-group (EPG) security credentials data
+provides the description of the data structure for security credentials; specific security methods 
+are not defined, but a container structure for storing credentials and parameters with security 
+methods (e.g. access control and authentication mechanisms) is specified;
+— Module 21: Data structure for entity-person-group (EPG) relationships and grouping data
+provides the description of the data structure, a container, that contains relationships to EPGs. An 
+EPG (entity-person-group) is something that is either an entity (e.g. an organization), a person (e.g. 
+an individual), or a group (e.g. a combination of persons and/or entities). These data structures 
+allow the representation of relationships among EPGs.
+8.3 ISO/IEC 20943 series — Procedures for achieving metadata registry content 
+consistency
+8.3.1 General
+The ISO/IEC 20943 series of Technical Reports provides procedures for achieving content consistency 
+within or among metadata registries. Each part focuses on a particular type of content.
+8.3.2 ISO/IEC TR 20943-1 — Part 1: Data elements
+ISO/IEC  TR 20943-1 describes a set of procedures for the consistent registration of data elements and 
+their attributes in a metadata registry. It is not a data entry manual, but a user’s guide for conceptualizing 
+a data element and its associated metadata items for the purpose of consistently establishing good 
+quality data elements. An organization may adapt and add to these procedures as necessary.
+   © ISO/IEC 2023 – All rights reserved
+  26Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 35 ---
+ISO/IEC 11179-1:2023(E)
+8.3.3 ISO/IEC TR 20943-3 — Part 3: Value domains
+ISO/IEC  TR 20943-3 describes a set of procedures for the consistent registration of value domains 
+and their attributes in a metadata registry. This part is not a data entry manual, but a user’s guide for 
+conceptualizing a value domain and its components for the purpose of consistently establishing good 
+quality metadata. An organization may adapt and add to these procedures as necessary.
+8.3.4 ISO/IEC TR 20943-5 — Part 5: Metadata mapping procedure
+ISO/IEC  TR 20943-5 describes a metadata mapping procedure (MMP) for establishing metadata 
+crosswalks based on the ISO/IEC 11179 series, thereby improving mapping quality among metadata.
+8.3.5 ISO/IEC TR 20943-6 — Part 6: Framework for generating ontologies
+ISO/IEC  TR 20943-6 describes a method to generate ontologies for a context using concepts in 
+ISO/IEC  11179-3:2013. Most ontologies are basically composed of classes (concepts), properties, 
+relations between the classes, and instances (objects or individuals). ISO/IEC TR 20943-6 specifies the 
+method to generate ontologies using concepts in the ISO/IEC 11179-3:2013 Concept System and Data 
+Description metamodel regions.
+NOTE The ISO/IEC 11179-3:2013 Concept system metamodel region has been moved to ISO/IEC 11179-32 
+and the ISO/IEC  11179-3:2013 Data description metamodel region has been moved to ISO/IEC 11179-31.
+8.4	 ISO/IEC	20944	series	—	Metadata	Registries	Interoperability	and	Bindings	(MDR-
+IB)
+8.4.1 General
+The ISO/IEC 20944 series describes codings, APIs, and protocols for interacting with an ISO/IEC 11179-3 
+metadata registry (MDR). Bindings concern the mapping of one standard (or framework) into another 
+standard (or framework).2) More than one standard (or framework) may be used to complete the 
+mapping.3)
+The ISO/IEC 20944 series uses at least three tiers of mappings. The first tier concerns the main kind 
+of mapping for the binding: coding bindings, API bindings, and protocol bindings. The second tier of 
+mapping concerns the mapping of data model instances to a coding-independent representation (CIR) 
+of data — the ISO/IEC 11404[7] standard specifies the syntax and semantics of this CIR. The third tier 
+of mapping concerns the mapping of CIR to a coding-specific representation (CSR). Additional tiers of 
+mapping are possible, such as specifications of encoding mappings.4)
+The purpose of a common CIR of data is to support common semantics and interoperability among 
+coding bindings and other bindings, such as API and protocol bindings.
+EXAMPLE A CIR is developed for a data model. Based upon this CIR, it is possible to transform one coding 
+binding (e.g. XML coding binding) to another coding binding (e.g. ASN.1 coding binding) while sharing common 
+semantics (the CIR) among the coding bindings. Likewise, one coding-specific representation (e.g. XML) can be 
+transformed into another coding-specific representation (e.g. ASN.1).
+2)  For example, an ASN.1 binding of "technical specification XYZ" implies mapping the features and requirements 
+of "technical specification XYZ" to the features and capabilities of the ASN.1 standard.
+3)  When viewed as a series of layers (e.g., data model = Standard XYZ, coding binding = ASN.1, encoding = ASN.1 
+Basic Encoding Rules (BER)), bindings may also be viewed as "layered standards" or a "layering of standards".
+4)  The XML, ASN.1, and DIVP coding bindings all have additional tiers for encoding. XML has two additional 
+encoding tiers: character encoding (e.g., ASCII vs. UTF-8), and a lower level byte-ordering encoding for multi-octet 
+representations (e.g., little endian and big endian orderings for UTF-16 and UTF-32). ASN.1 has an additional layer 
+of encoding: Basic Encoding Rules (BER), Canonical Encoding Rules (CER), and Distinguished Encoding Rules (DER). 
+DIVP may have encoding rules specified by its outer wrapper, but they are not part of the DIVP coding binding.
+© ISO/IEC 2023 – All rights reserved   
+ 27Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 36 ---
+ISO/IEC 11179-1:2023(E)
+8.4.2	 ISO/IEC	20944-1	—	Part	1:	Framework,	common	vocabulary	and	common	provisions	for	
+conformance
+ISO/IEC  20944-1 provides the overview, framework, common vocabulary and common provisions for 
+conformance for the ISO/IEC 20944 series.
+8.4.3	 ISO/IEC	20944-2	—	Part	2:	Coding	bindings
+ISO/IEC  20944-2 specifies provisions that are common across coding bindings for the ISO/IEC 20944 
+series of standards and includes the actual coding bindings for XML and DIVP (Dotted Identifier Value 
+Pair).
+NOTE XML bindings are useful for integration with other XML technologies. The XML binding provides the 
+requirements of XML interchange without specifying the XML technologies (e.g. XML Schema) to implement the 
+features. DIVP bindings are useful for integration with name-value pair technologies, such as scripting systems, 
+E-mail, and web servers.
+8.4.4	 ISO/IEC	20944-3	—	Part	3:	API	bindings
+ISO/IEC  20944-3 specifies provisions that are common across API bindings for the ISO/IEC 20944 series 
+of standards and includes the actual API bindings for C, Java and EcmaScript programming languages. 
+The purpose of ISO/IEC 20944-3 is to provide a common set of services (common API provisions) and 
+standardized API bindings such that portable programs can be written to access the MDR repositories. 
+These programs are portable in the sense that the same program should behave similarly across all 
+operating environments and the same program should be able to access MDR repositories that conform 
+to ISO/IEC 20944-3.
+8.4.5	 ISO/IEC	20944-4	—	Part	4:	Protocol	bindings
+ISO/IEC  20944-4 specifies provisions that are common across protocol bindings for the ISO/IEC 20944 
+series of standards and includes the actual protocol bindings for HTTP 1.1 and WebDAV. The purpose of 
+ISO/IEC  20944-4 is to provide a common set of services (common protocol provisions) and standardized 
+protocol bindings such that interoperable systems can be created to access the MDR repositories. 
+These systems are interoperable in that they should be able to access MDR repositories that conform to 
+ISO/IEC  20944-4.
+8.4.6	 ISO/IEC	20944-5	—	Part	5:	Profiles
+ISO/IEC  20944-5 specifies the common provisions for profiles using the ISO/IEC 20944 series of 
+standards.
+This part specifies mapping of metamodel attributes, as specified in ISO/IEC 11179-3:2003, to identifiers 
+for the purpose of navigating metadata registries.
+8.5 ISO/IEC 19583 series — Concepts and uses of metadata
+8.5.1 General
+The ISO/IEC 19583 series of Technical Reports and Technical Specifications provides guidance in 
+various aspects of metadata concepts and usage.
+8.5.2 ISO/IEC TR 19583-1 — Part 1: Metadata concepts
+ISO/IEC  TR 19583-1 describes the basic concept of metadata, and its relationship to both data and 
+metamodels.
+For any data to be useful or shareable the meaning of the data (the semantics), the data type and format 
+of the data (the syntax) and the relationship of the data to other data (the structure) has to be known. 
+All of this information about data is metadata.
+   © ISO/IEC 2023 – All rights reserved
+  28Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 37 ---
+ISO/IEC 11179-1:2023(E)
+Metadata are independent of the systems that produce the data. Metadata are usually defined before 
+systems are built, either as part of the systems development of an individual system or as part of an 
+enterprise-wide data management initiative. However, metadata can be recorded after the data has 
+been created in less formal systems as part of a data documentation initiative. The only significant 
+difference between single-system metadata and enterprise-wide metadata is the scope of the metadata, 
+although there might be differences around the degree of formality applied to its creation.
+8.5.3 ISO/IEC TR 19583-21 — Part 21: 11179-3 data model in SQL
+ISO/IEC  TR 19583-21 describes a representation of the ISO/IEC 11179-3 data model in SQL as specified 
+in ISO/IEC 9075-2[4].
+8.5.4 ISO/IEC TR 19583-22 — Part 22: Registering and mapping processes using ISO/IEC 
+19763
+ISO/IEC  TR 19583-22 describes procedures for registering and mapping process models in an 
+ISO/IEC  19763 registry, based on ISO/IEC 19763-5.
+8.5.5 ISO/IEC TR 19583-23 — Part 23: Data element exchange (DEX)
+ISO/IEC  TR 19583-23 specifies a format for exchanging information about data elements based on a 
+subset of the ISO/IEC 11179-3 data element attributes.
+8.6 ISO/IEC 14957 Representation of data element values — Notation of the format
+ISO/IEC  14957 specifies the notation to be used for stating the format, i.e. the character classes, used in 
+the representation of data elements and the length of these representations. It also specifies additional 
+notations relative to the representation of numerical figures. The scope of ISO/IEC 14957 is limited 
+to graphic characters, such as digits, letters and special characters. The scope is limited to the basic 
+datatypes of characters, character strings, integers, reals and pointers. ISO/IEC 14957 can be used to 
+represent the values of data elements specified by an ISO/IEC 11179-3 metadata registry supporting 
+ISO/IEC  11179-31.
+8.7 ISO/IEC 5218 Codes for the representation of human sexes
+ISO/IEC  5218 specifies a uniform representation of human sexes for the interchange of information. 
+Human sex is represented by a one-character numeric code. This is an example of an ISO/IEC 11179 
+value domain.
+8.8 ISO/IEC 11404 General purpose datatypes
+ISO/IEC  11404 specifies the nomenclature and shared semantics for a collection of datatypes commonly 
+occurring in programming languages and software interfaces, referred to as the General-Purpose 
+Datatypes (GPD). It specifies both primitive datatypes, in the sense of being defined ab initio without 
+reference to other datatypes, and non-primitive datatypes, in the sense of being wholly or partly 
+defined in terms of other datatypes. These datatypes provide one possible scheme for use in defining 
+value domains within an ISO/IEC 11179 metadata registry.
+8.9 ISO/IEC 24707 Common Logic (CL)
+ISO/IEC  24707 specifies a family of logic languages designed for use in the representation and 
+interchange of information and data among disparate computer systems. The following are within its 
+scope:
+— representation of information in ontologies and knowledge bases;
+— specification of expressions that are the input or output of inference engines;
+© ISO/IEC 2023 – All rights reserved   
+ 29Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 38 ---
+ISO/IEC 11179-1:2023(E)
+— formal interpretations of the symbols in the language.
+ISO/IEC  24707 can represent information on ontologies stored in an ISO/IEC 11179-3 metadata registry 
+supporting ISO/IEC 11179-32 (see 7.7).
+8.10 ISO/IEC 21838 series — Top level ontologies
+8.10.1 General
+The ISO/IEC 21838 series of standards specifies requirements for top level ontologies, and some sample 
+ontologies that conform to these requirements. These ontologies are potential content for registries 
+based on either ISO/IEC 11179-32 or ISO/IEC 19763-3.
+8.10.2 ISO/IEC 21838-1 — Part 1: Requirements
+ISO/IEC  21838-1 specifies required characteristics of a domain-neutral top-level ontology (TLO) that 
+can be used in tandem with domain ontologies at lower levels to support data exchange, retrieval, 
+discovery, integration and analysis. One primary focus of the standard is to set forth the requirements 
+ontologies shall satisfy if they are to support the design and use of purpose-built suites of ontologies by 
+providing the overarching ontology content which the ontologies in the suite will be required to share 
+in order to promote interoperability. However, the standard is intended to serve also a variety of other 
+goals related to the achievement of semantic interoperability, for example as concerns legacy ontologies 
+developed using heterogeneous upper-level categories, where a coherently designed TLO can provide a 
+target for coordinated re-engineering.
+ISO/IEC  21838-1 specifies the characteristics that an ontology shall possess if it is to serve such 
+purposes in support of the goals of exchange, retrieval, integration and analysis of data by computer 
+systems.
+8.10.3 ISO/IEC 21838-2 — Part 2: Basic Formal Ontology (BFO)
+ISO/IEC  21838-2 specifies Basic Formal Ontology as an implementation of ISO/IEC 21838-1: Top-Level 
+Ontology. This standard defines the terms and relations used in the BFO-ISO version of Basic Formal 
+Ontology and specifies BFO-ISO in the Web Ontology Language (OWL) and in Common Logic (CL). Terms 
+and relations are defined in English, to support human users of the ontology and to enable effective 
+interaction between users and developers.
+ISO/IEC  21838-2 describes Basic Formal Ontology as a resource designed to support the interchange 
+of information among heterogeneous information systems. The following are within the scope of this 
+document:
+— definitions of BFO-ISO terms and relations;
+— axiomatizations of BFO-ISO in OWL 2 and CL;
+— documentation of the conformity of BFO-ISO to the requirements specified for top-level ontologies 
+in ISO/IEC 21838-1;
+— specification of the requirements a domain ontology shall meet if it is to serve as a module in a suite 
+of ontologies in which BFO serves as top-level ontology hub by providing a starting point for the 
+introduction of the most general terms in those domain ontologies which are its nearest neighbors 
+within the suite;
+— specification of the role played by the terms in BFO in the formulation of definitions and axioms in 
+ontologies at lower levels that conform to BFO.
+   © ISO/IEC 2023 – All rights reserved
+  30Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 39 ---
+ISO/IEC 11179-1:2023(E)
+8.10.4 ISO/IEC 21838-3 — Part 3: Descriptive ontology for linguistic and cognitive engineering 
+(DOLCE)
+ISO/IEC  21838-3 specifies DOLCE[43] as an implementation of ISO/IEC 21838-1: Top-Level Ontology. 
+DOLCE is widely used by a diverse array of domain ontologies, ranging from event recognition to 
+geographical information systems, through specialization of its backbone taxonomy.
+8.10.5 ISO/IEC 21838-4 — Part 4: TUpper
+ISO/IEC  21838-4 specifies TUpper[44] as an implementation of ISO/IEC 21838-1: Top-Level Ontology. 
+TUpper is an upper ontology designed by combining the ontologies specified within existing ISO 
+standards.
+9 Conformance
+There are no specific conformance criteria for this document. ISO/IEC 11179-1 is a framework that ties 
+the other parts of the ISO/IEC 11179 series together and shows the relationship to other standards. 
+As such, conformance is not an issue for ISO/IEC 11179-1. Each of the other documents has its own 
+conformance clause.
+© ISO/IEC 2023 – All rights reserved   
+ 31Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 40 ---
+ISO/IEC 11179-1:2023(E)
+Bibliography
+[1] ISO/IEC 2382:2015, Information technology — Vocabulary
+[2] ISO 3166-1, Codes for the representation of names of countries and their subdivisions — Part 1: 
+Country code
+[3] ISO/IEC 5218, Information technology — Codes for the representation of human sexes
+[4] ISO/IEC 9075-2, Information technology — Database languages — SQL — Part 2: Foundation (SQL 
+Foundation)
+[5] ISO/IEC 9075-11, Information technology — Database languages — SQL — Part 11: Information 
+and definition schemas (SQL/Schemata)
+[6] ISO 10303-11, Industrial automation systems and integration — Product data representation and 
+exchange — Part 11: Description methods: The EXPRESS language reference manual
+[7] ISO/IEC 11404:2007, Information technology — General-Purpose Datatypes (GPD)
+[8] ISO/IEC 14957, Information technology — Representation of data element values — Notation of the 
+format
+[9] ISO/IEC 15944-1:2011, Information technology — Business operational view — Part 1: Operational 
+aspects of open-edi for implementation
+[10] ISO/IEC/TR 11179-2, Information technology — Metadata registries (MDR) — Part 2: Classification
+[11] ISO/IEC 11179-3:2023, Information technology — Metadata registries (MDR) — Part 3: Metamodel 
+for registry common facilities
+[12] ISO/IEC 11179-4:2023, Information technology — Metadata registries (MDR) — Part 4: 
+Formulation of data definitions
+[13] ISO/IEC 11179-5:2023, Information technology — Metadata registries (MDR) — Part 5: Naming 
+principles
+[14] ISO/IEC 11179-6:2023, Information technology — Metadata registries (MDR) — Part 6: 
+Registration
+[15] ISO/IEC 11179-30, Information technology — Metadata registries (MDR) — Part 30: Basic 
+attributes of metadata
+[16] ISO/IEC 11179-31, Information technology — Metadata registries (MDR) — Part 31: Metamodel 
+for data specification registration 
+[17] ISO/IEC 11179-32, Information technology — Metadata registries (MDR) — Part 32: Metamodel 
+for concept system registration 
+[18] ISO/IEC 11179-33, Information technology — Metadata registries (MDR) — Part 33: Metamodel 
+for data set registration
+[19] ISO/IEC 11179-345), Information technology — Metadata registries (MDR) — Part 34: Metamodel 
+for computable data registration 
+[20] ISO/IEC 11179-35, Information technology — Metadata registries (MDR) — Part 35: Metamodel 
+for model registration
+[21] ISO 19103:2015, Geographic information — Conceptual schema language
+5)  Under development. Stage at the time of publication: ISO/IEC AWI 11179-34:2023.
+   © ISO/IEC 2023 – All rights reserved
+  32Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 41 ---
+ISO/IEC 11179-1:2023(E)
+[22] ISO/IEC 19505-1, Information technology — Object Management Group Unified Modeling Language 
+(OMG UML) — Part 1: Infrastructure
+[23] ISO/IEC 19505-2:2012, Information technology — Object Management Group Unified Modeling 
+Language (OMG UML) — Part 2: Superstructure
+[24] ISO/IEC 19583 (all parts), Information technology — Concepts and usage of metadata
+[25] ISO/IEC 19763 (all parts), Information technology — Metamodel framework for interoperability 
+(MFI)
+[26] ISO/IEC 19773, Information technology — Metadata Registries (MDR) modules
+[27] ISO/IEC 19793, Information technology — Open distributed processing — Use of UML for ODP 
+system specifications
+[28] ISO/IEC/TR 20943-1, Information technology — Procedures for achieving metadata registry 
+content consistency — Part 1: Data elements
+[29] ISO/IEC/TR 20943-3, Information technology — Procedures for achieving metadata registry 
+content consistency — Part 3: Value domains
+[30] ISO/IEC/TR 20943-5, Information technology — Procedures for achieving metadata registry 
+content consistency — Part 5: Metadata mapping procedure
+[31] ISO/IEC/TR 20943-6, Information technology — Procedures for achieving metadata registry 
+content consistency — Part 6: Framework for generating ontologies
+[32] ISO/IEC 20944 (all parts), Information technology — Metadata Registries Interoperability and 
+Bindings (MDR-IB)
+[33] ISO/IEC 21838, Information technology — Top-level ontologies (TLO)
+[34] ISO/IEC 24707, Information technology — Common Logic (CL) — A framework for a family of logic-
+based languages
+[35] ISO 80000 (all parts), Quantities and units
+[36] IEEE 1320.2-1998, IEEE Standard for Conceptual Modeling Language — Syntax and Semantics for 
+IDEF1X97
+[37]  van Lamsweerde   A., D arimont   R., M assonet   P., Goal-directed elaboration of requirements 
+for a meeting scheduler: problems and lessons learnt, Proceedings of the 2nd IEEE International 
+Symposium on Requirements Engineering, 1995.
+[38]  Barker   R., CASE*METHOD: Entity Relationship Modelling.  Addison-Wesley, 1989
+[39]  Business  Motivation  Model , (BMM v1.1), OMG Document Number: formal/2010-05-01, 
+h t t p s ://  www  .omg  .org/  spec/  BMM/  1 .1/ PDF .
+[40] Business Process Model and Notation (BPMN) Version 2.0, OMG Document Number: 
+formal/2011-01-03, January, 2011. Available at: h t t p s ://  www  .omg  .org / spec/  BPMN/  2 .0.
+[41]  Chen   P.P.-S., The Entity-Relationship Model - Toward a Unified View of Data. ACM Trans. 
+Database Syst. 1976 March,  1 (1) pp. 9–36
+[42]  Chung   Lawrence, N ixon   Brian A., Y u  Eric, M ylopoulos   John, Non-functional requirements in 
+software engineering, First Edition, Springer, 1999, p476. Hardcover, ISBN: 978-0-7923-8666-7.
+[43] DOLCE, Descriptive Ontology for Linguistic and Cognitive Computing, h t t p ://  www  .loa .istc  .cnr 
+.it/ dolce/  overview  .html
+© ISO/IEC 2023 – All rights reserved   
+ 33Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 42 ---
+ISO/IEC 11179-1:2023(E)
+[44]  Gruninger   M., C hui  C., K atsumi   M., Upper ontologies in colore. ¨ In Proceedings of the Joint 
+Ontology Workshops 2017 Episode 3: The Tyrolean Autumn of Ontology, Bozen-Bolzano, Italy, 
+September 21-23, 2017, 2017.
+[45]  Keller   G, N üttgens   M, S cheer   A.-W , “Semantische Prozebmodellierung auf der Grundlage”, 
+publication of the Institut für Wirtschaftsinformatik, paper 89, Saarbrucken, 1992.
+[46]  Martin   J., Information Engineering, Book II: Planning and Analysis.  Prentice Hall, 1990
+[47] National Institute of Standards and Technology 1993) Processing Standards Publication 184 
+Announcing the Standard for INTEGRATION DEFINITION FOR INFORMATION MODELING (IDEF1X)
+[48] OWL-S, Semantic Markup for Web Services, W3C Member Submission 22 November 2004, h t t p ://  
+www  .w3 .org/  Submission/  OWL  -S/ 
+[49] SA-REST, Semantic annotation of web resources, W3C Member Submission 05 April 2010, 
+h t t p s ://  www  .w3 .org/  Submission/  SA -R EST/  
+[50] SAWSDL, Semantic annotation for WSDL and XML Schema, W3C Recommendation 28 August 
+2007, https:/ / www  .w3 .org/  TR/  sawsdl/  
+[51] SWRL, A Semantic Web Rule Language Combining OWL and RuleML, W3C Member Submission 
+21 May 2004, h t t p ://  www  .w3 .org/  Submission/  SWRL/  
+[52] SWSL, Semantic Web Service Language. W3C Member Submission 9 September 2005, h t t p ://  
+www  .w3 .org/  Submission/  SWSF  -SWSL/  
+[53]  Web  A.D.L., W3C Member Submission 31 August 2009, h t t p ://  www  .w3 .org/  Submission/  wadl/  
+[54] Web Service Description Language (WSDL) Version 2.0 Part 0: Primer, h t t p ://  www  .w3 .org/  TR/  
+wsdl20  -primer/  
+[55]  Web Service  Modelling  Language  (WSML), W3C Member Submission 3 June 2005, h t t p ://  
+www  .w3 .org/  Submission/  WSML/  
+[56]  Yu  E., Towards modelling and reasoning support for early-phase requirements engineering, 
+Proceedings of the 3rd IEEE International Symposium on Requirements Engineering, 1997.
+   © ISO/IEC 2023 – All rights reserved
+  34Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 43 ---
+Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.
+
+--- Página 44 ---
+ISO/IEC 11179-1:2023(E)
+ICS 35.040.50
+Price based on 34 pages
+© ISO/IEC 2023 – All rights reserved  Exemplar para uso exclusivo - INSTITUTO SERZEDELLO CORREA-ISC-TCU - 00.414.607/0024-04
+Impresso por: Sylvio Xavier Júnior
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79192821.

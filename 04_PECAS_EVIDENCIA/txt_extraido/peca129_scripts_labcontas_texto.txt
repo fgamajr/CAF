@@ -1,0 +1,939 @@
+--- Página 1 ---
+Scripts SQL Server para Revalidação do PT-01
+Ambiente: LabContas
+Cadastro da Agricultura Familiar (CAF/MAPA)
+Equipe de Auditoria - Tribunal de Contas da União
+19 de novembro de 2025
+Sumário
+1 Visão Geral 2
+1.1 Bases de Dados Utilizadas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.2 Índice de Scripts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2 Código SQL Completo 3
+3 Resultados Obtidos 10
+3.1 Script 1: População Base . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.2 Script 2: MC-002 e MC-011 – Óbitos SISOBI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.3 Script 3: MC-002B – Validação Cruzada via RFB . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4 Script 4: MC-005, MC-006 e Idades Negativas . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.5 Script 5: MC-007 – Divergências de Data de Nascimento . . . . . . . . . . . . . . . . . . . . . . . 13
+3.6 Script 6: MC-008 – CPFs Não Localizados na RFB . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+4 Visualizações Gráficas 14
+4.1 Classificação das Divergências de Data de Nascimento . . . . . . . . . . . . . . . . . . . . . . . . 14
+4.2 Comparação de Óbitos: SISOBI vs RFB . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.3 Distribuição de Idades – Achado Crítico . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+5 Resumo Consolidado Final 17
+5.1 Legenda de Status . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5.2 Observações Importantes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+1
+
+--- Página 2 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+1 Visão Geral
+Este documento contém os scripts SQL Server utilizados para revalidação das Métricas de Controle (MCs) do
+Papel de Trabalho PT-01, executados no ambiente LabContas.
+1.1 Bases de Dados Utilizadas
+•[BD_AGRO_CAF_AUD_2025].[dbo].[S_*] – Cadastro da Agricultura Familiar
+•[BD_RECEITA].[dbo].[CPF] – Base de CPF da Receita Federal
+•[BD_SISOBI].[dbo].[SISOBI] – Sistema de Óbitos
+1.2 Índice de Scripts
+1.Script 1: População Base (JOIN Triplo) – ∼1-2 min
+2.Script 2: MC-002 – Óbitos SISOBI – ∼5-15 min
+3.Script 3: MC-002B – Validação Óbitos via RFB – ∼5-10 min
+4.Script 4: MC-005/006 – Menores Incapazes + Idades Negativas – <1 min
+5.Script 5: MC-007 – Divergências Data Nascimento – ∼5-15 min
+6.Script 6: MC-008 – CPFs Não Localizados na RFB – ∼5-10 min
+7.Script 7: Resumo Consolidado Final – <1 min
+Tempo Total Estimado: 25-45 minutos
+Página 2 de 17
+
+--- Página 3 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+2 Código SQL Completo
+1-- ================================================================================
+2-- SCRIPTS SQL SERVER PARA REVALIDACAO DO PT-01 - LABCONTAS
+3-- ================================================================================
+4-- ARQUIVO: scripts_PT01_LABCONTAS_SQLServer.sql
+5-- DATA: 19 de novembro de 2025
+6-- OBJETIVO: Recalcular todas as MCs do PT-01 com metodologia correta
+7-- METODOLOGIA: JOIN TRIPLO com criterio canonico de UF ativa
+8-- AMBIENTE: LabContas (SQL Server)
+9--
+10-- BASES UTILIZADAS:
+11-- - [BD_AGRO_CAF_AUD_2025].[dbo].[S_*] (CAF)
+12-- - [BD_RECEITA].[dbo].[CPF] (Receita Federal)
+13-- - [BD_SISOBI].[dbo].[SISOBI] (Obitos)
+14--
+15-- TEMPO TOTAL ESTIMADO: 25-45 minutos
+16-- ================================================================================
+17
+18-- ================================================================================
+19-- INDICE DE SCRIPTS
+20-- ================================================================================
+21-- Script 1: Populacao Base (JOIN Triplo) - ~1-2 min
+22-- Script 2: MC-002 - Obitos SISOBI - ~5-15 min
+23-- Script 3: MC-002B - Validacao Obitos via RFB - ~5-10 min
+24-- Script 4: MC-005/006 - Menores Incapazes + Idades Negativas - <1 min
+25-- Script 5: MC-007 - Divergencias Data Nascimento - ~5-15 min
+26-- Script 6: MC-008 - CPFs Nao Localizados na RFB - ~5-10 min
+27-- Script 7: Resumo Consolidado Final - <1 min
+28-- ================================================================================
+29
+30
+31-- ################################################################################
+32-- SCRIPT 1: POPULACAO BASE - JOIN TRIPLO COM CRITERIO CANONICO
+33-- ################################################################################
+34-- OBJETIVO: Criar tabela base com responsaveis de UFs ATIVAS
+35-- POPULACAO ESPERADA: ~2.905.000 CPFs unicos
+36-- TEMPO ESTIMADO: 1-2 minutos
+37-- ################################################################################
+38
+39PRINT ’================================================================================’
+40PRINT ’SCRIPT 1: CRIANDO POPULACAO BASE (JOIN TRIPLO)’
+41PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+42PRINT ’================================================================================’
+43
+44-- Dropar tabela se ja existir
+45IF OBJECT_ID(’tempdb..##tmp_responsaveis_ativos_v2’) IS NOT NULL
+46 DROP TABLE ##tmp_responsaveis_ativos_v2;
+47
+48-- Criar tabela base com JOIN triplo
+49SELECT DISTINCT
+50 pf.[nr_cpf],
+51 uf.[dt_ativacao],
+52 uf.[dt_inativacao],
+53 resp.[dt_entrada],
+54 resp.[dt_saida],
+55 uf.[id_unidade_familiar],
+56 pf.[dt_nascimento],
+57 pf.[st_declarante_emancipado]
+58INTO ##tmp_responsaveis_ativos_v2
+59FROM [BD_AGRO_CAF_AUD_2025].[dbo].[S_RESPONSAVEL_UFPR] resp
+60INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_UNIDADE_FAMILIAR] uf
+61 ON resp.[id_unidade_familiar] = uf.[id_unidade_familiar]
+62INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_UNIDADE_FAMILIAR_PESSOA] ufp
+63 ON resp.[id_ufpr_pessoa_responsavel] = ufp.[id_unidade_familiar_pessoa]
+64INNER JOIN [BD_AGRO_CAF_AUD_2025].[dbo].[S_PESSOA_FISICA] pf
+65 ON ufp.[id_pessoa_fisica] = pf.[id_pessoa_fisica]
+66WHERE
+67 -- Criterio canonico de UF ativa (conforme Achado 2)
+68 CASE
+69 WHEN uf.[dt_ativacao] IS NULL THEN ’INATIVA’
+70 WHEN uf.[dt_inativacao] IS NULL THEN ’ATIVA’
+71 WHEN CAST(uf.[dt_inativacao] AS DATE) < CAST(uf.[dt_ativacao] AS DATE) THEN ’ATIVA’
+72 WHEN CAST(uf.[dt_inativacao] AS DATE) = CAST(uf.[dt_ativacao] AS DATE)
+73 AND uf.[dt_inativacao] < uf.[dt_ativacao] THEN ’ATIVA’
+74 ELSE ’INATIVA’
+75 END = ’ATIVA’
+76 -- Responsavel ainda ativo (nao saiu)
+77 AND resp.[dt_saida] IS NULL;
+78
+79-- Criar indices para performance
+80CREATE INDEX idx_tmp_resp_cpf_v2 ON ##tmp_responsaveis_ativos_v2([nr_cpf]);
+81CREATE INDEX idx_tmp_resp_nasc_v2 ON ##tmp_responsaveis_ativos_v2([dt_nascimento]);
+82
+83PRINT ’’
+84PRINT ’================================================================================’
+85PRINT ’VALIDACAO SCRIPT 1: Populacao Base’
+86PRINT ’================================================================================’
+87
+88-- Validacao: Populacao total
+Página 3 de 17
+
+--- Página 4 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+89SELECT
+90 ’POPULACAO TOTAL’ AS [Metrica],
+91 COUNT(*) AS [Total Registros],
+92 COUNT(DISTINCT [nr_cpf]) AS [CPFs Unicos],
+93 COUNT(CASE WHEN [dt_nascimento] IS NOT NULL THEN 1 END) AS [Com Data Nascimento],
+94 COUNT(CASE WHEN [dt_ativacao] IS NOT NULL THEN 1 END) AS [Com Data Ativacao UF]
+95FROM ##tmp_responsaveis_ativos_v2;
+96
+97PRINT ’’
+98PRINT ’Resultado Esperado: CPFs Unicos ~2.905.000’
+99PRINT ’Se divergir muito (>+-10%), verifique os criterios de UF ativa’
+100 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+101 PRINT ’’
+102 GO
+103
+104
+105 -- ################################################################################
+106 -- SCRIPT 2: MC-002 e MC-011 - OBITOS CONFIRMADOS (SISOBI)
+107 -- ################################################################################
+108 -- OBJETIVO: Cruzar base CAF com SISOBI para identificar obitos
+109 -- MC-002: Total de obitos confirmados
+110 -- MC-011: Obitos antigos (2010-2015)
+111 -- TEMPO ESTIMADO: 5-15 minutos
+112 -- ################################################################################
+113
+114 PRINT ’================================================================================’
+115 PRINT ’SCRIPT 2: MC-002 e MC-011 - CRUZAMENTO COM SISOBI (OBITOS)’
+116 PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+117 PRINT ’================================================================================’
+118
+119 -- Dropar tabela se ja existir
+120 IF OBJECT_ID(’tempdb..##resultado_obitos_pt01_v2’) IS NOT NULL
+121 DROP TABLE ##resultado_obitos_pt01_v2;
+122
+123 -- Cruzamento com SISOBI
+124 SELECT
+125 rt.[nr_cpf],
+126 rt.[dt_ativacao] AS [dt_ativacao_uf],
+127 rt.[dt_entrada] AS [dt_entrada_responsavel],
+128 sisobi.[DATA_OBITO] AS [dt_obito],
+129 sisobi.[NUMERO_LIVRO_REGISTRO_OBITO] + ’/’ +
+130 sisobi.[FOLHA_REGISTRO_OBITO] + ’/’ +
+131 sisobi.[NUMERO_TERMO_OBITO] AS [nr_certidao_obito],
+132 YEAR(sisobi.[DATA_OBITO]) AS [ano_obito],
+133 -- Calcular dias entre obito e ativacao da UF
+134 DATEDIFF(DAY, sisobi.[DATA_OBITO], rt.[dt_ativacao]) AS [dias_ativacao_pos_obito],
+135 sisobi.[NOME_FALECIDO],
+136 sisobi.[DATA_NASCIMENTO_FALECIDO]
+137 INTO ##resultado_obitos_pt01_v2
+138 FROM ##tmp_responsaveis_ativos_v2 rt
+139 INNER JOIN [BD_SISOBI].[dbo].[SISOBI] sisobi
+140 ON rt.[nr_cpf] = sisobi.[CPF_FALECIDO]
+141 WHERE sisobi.[DATA_OBITO] IS NOT NULL;
+142
+143 -- Criar indice
+144 CREATE INDEX idx_obitos_ano ON ##resultado_obitos_pt01_v2([ano_obito]);
+145
+146 PRINT ’’
+147 PRINT ’================================================================================’
+148 PRINT ’MC-002/PT-01: OBITOS CONFIRMADOS’
+149 PRINT ’================================================================================’
+150
+151 SELECT
+152 ’MC-002/PT-01’ AS [MC],
+153 COUNT(*) AS [Obitos Confirmados],
+154 MIN([dt_obito]) AS [Obito Mais Antigo],
+155 MAX([dt_obito]) AS [Obito Mais Recente],
+156 AVG([dias_ativacao_pos_obito]) AS [Media Dias Ativacao Pos-Obito]
+157 FROM ##resultado_obitos_pt01_v2;
+158
+159 PRINT ’’
+160 PRINT ’PT-01 Original reportou: 12.821 obitos’
+161 PRINT ’Valor pode ser MENOR se metodologia anterior incluia UFs inativas’
+162 PRINT ’’
+163
+164 PRINT ’================================================================================’
+165 PRINT ’MC-011/PT-01: OBITOS ANTIGOS (2010-2015)’
+166 PRINT ’================================================================================’
+167
+168 SELECT
+169 ’MC-011/PT-01’ AS [MC],
+170 COUNT(*) AS [Obitos Antigos 2010-2015]
+171 FROM ##resultado_obitos_pt01_v2
+172 WHERE [ano_obito] BETWEEN 2010 AND 2015;
+173
+174 PRINT ’’
+175 PRINT ’================================================================================’
+176 PRINT ’DISTRIBUICAO POR ANO DE OBITO (TOP 20)’
+177 PRINT ’================================================================================’
+178
+179 SELECT TOP 20
+Página 4 de 17
+
+--- Página 5 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+180 [ano_obito] AS [Ano],
+181 COUNT(*) AS [Quantidade],
+182 CAST(ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS DECIMAL(5,2)) AS [Percentual]
+183 FROM ##resultado_obitos_pt01_v2
+184 GROUP BY [ano_obito]
+185 ORDER BY [ano_obito];
+186
+187 PRINT ’’
+188 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+189 PRINT ’’
+190 GO
+191
+192
+193 -- ################################################################################
+194 -- SCRIPT 3: MC-002B - VALIDACAO CRUZADA OBITOS VIA RFB
+195 -- ################################################################################
+196 -- OBJETIVO: Validar obitos usando campo ANO_OBITO da base CPF RFB
+197 -- COMPARACAO: SISOBI (data completa) vs RFB (apenas ano)
+198 -- TEMPO ESTIMADO: 5-10 minutos
+199 -- ################################################################################
+200
+201 PRINT ’================================================================================’
+202 PRINT ’SCRIPT 3: MC-002B - VALIDACAO CRUZADA OBITOS VIA RFB’
+203 PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+204 PRINT ’================================================================================’
+205
+206 -- Dropar tabela se ja existir
+207 IF OBJECT_ID(’tempdb..##resultado_obitos_rfb_v2’) IS NOT NULL
+208 DROP TABLE ##resultado_obitos_rfb_v2;
+209
+210 -- Cruzamento com RFB (ANO_OBITO)
+211 SELECT
+212 rt.[nr_cpf],
+213 rt.[dt_ativacao] AS [dt_ativacao_uf],
+214 cpf.[ANO_OBITO] AS [ano_obito_rfb],
+215 cpf.[NOME] AS [nome_rfb],
+216 cpf.[DATA_NASCIMENTO] AS [dt_nascimento_rfb]
+217 INTO ##resultado_obitos_rfb_v2
+218 FROM ##tmp_responsaveis_ativos_v2 rt
+219 INNER JOIN [BD_RECEITA].[dbo].[CPF] cpf
+220 ON rt.[nr_cpf] = cpf.[NUM_CPF]
+221 WHERE cpf.[ANO_OBITO] IS NOT NULL;
+222
+223 PRINT ’’
+224 PRINT ’================================================================================’
+225 PRINT ’MC-002B: OBITOS VIA RFB (ANO_OBITO)’
+226 PRINT ’================================================================================’
+227
+228 SELECT
+229 ’MC-002B (RFB)’ AS [MC],
+230 COUNT(*) AS [Obitos RFB (apenas ano)],
+231 MIN([ano_obito_rfb]) AS [Ano Mais Antigo],
+232 MAX([ano_obito_rfb]) AS [Ano Mais Recente]
+233 FROM ##resultado_obitos_rfb_v2;
+234
+235 PRINT ’’
+236 PRINT ’================================================================================’
+237 PRINT ’COMPARACAO SISOBI vs RFB’
+238 PRINT ’================================================================================’
+239
+240 SELECT
+241 ’SISOBI (data completa)’ AS [Fonte],
+242 COUNT(*) AS [Total Obitos]
+243 FROM ##resultado_obitos_pt01_v2
+244 UNION ALL
+245 SELECT
+246 ’RFB (apenas ano)’,
+247 COUNT(*)
+248 FROM ##resultado_obitos_rfb_v2;
+249
+250 PRINT ’’
+251 PRINT ’RFB pode ter mais registros (inclui obitos sem certidao no SISOBI)’
+252 PRINT ’SISOBI e mais preciso (data completa + certidao)’
+253 PRINT ’Usar SISOBI como fonte oficial para MC-002’
+254 PRINT ’’
+255 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+256 PRINT ’’
+257 GO
+258
+259
+260 -- ################################################################################
+261 -- SCRIPT 4: MC-005, MC-006 e IDADES NEGATIVAS
+262 -- ################################################################################
+263 -- OBJETIVO: Identificar menores absolutamente/relativamente incapazes
+264 -- MC-005: Menores < 16 anos (absolutamente incapazes)
+265 -- MC-006: Adolescentes 16-17 nao emancipados (relativamente incapazes)
+266 -- NOVO: Idades negativas (datas de nascimento futuras - ACHADO CRITICO)
+267 -- TEMPO ESTIMADO: < 1 minuto
+268 -- ################################################################################
+269
+270 PRINT ’================================================================================’
+Página 5 de 17
+
+--- Página 6 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+271 PRINT ’SCRIPT 4: MC-005, MC-006 e IDADES NEGATIVAS’
+272 PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+273 PRINT ’================================================================================’
+274
+275 PRINT ’’
+276 PRINT ’================================================================================’
+277 PRINT ’MC-005/PT-01: MENORES ABSOLUTAMENTE INCAPAZES (< 16 ANOS)’
+278 PRINT ’================================================================================’
+279
+280 SELECT
+281 ’MC-005/PT-01’ AS [MC],
+282 ’Menores < 16 anos’ AS [Descricao],
+283 COUNT(*) AS [Valor],
+284 ’Art. 3, I - Codigo Civil’ AS [Fundamentacao Legal]
+285 FROM ##tmp_responsaveis_ativos_v2
+286 WHERE [dt_nascimento] IS NOT NULL
+287 AND [dt_ativacao] IS NOT NULL
+288 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) < 16;
+289
+290 PRINT ’PT-01 Original reportou: 41’
+291 PRINT ’Metodologia correta esperada: ~91 (+122%)’
+292 PRINT ’’
+293
+294 PRINT ’================================================================================’
+295 PRINT ’MC-006/PT-01: ADOLESCENTES RELATIVAMENTE INCAPAZES (16-17 NAO EMANCIPADOS)’
+296 PRINT ’================================================================================’
+297
+298 SELECT
+299 ’MC-006/PT-01’ AS [MC],
+300 ’Adolescentes 16-17 nao emancipados’ AS [Descricao],
+301 COUNT(*) AS [Valor],
+302 ’Art. 4, I - Codigo Civil’ AS [Fundamentacao Legal]
+303 FROM ##tmp_responsaveis_ativos_v2
+304 WHERE [dt_nascimento] IS NOT NULL
+305 AND [dt_ativacao] IS NOT NULL
+306 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) BETWEEN 16 AND 17
+307 AND ISNULL([st_declarante_emancipado], 0) = 0;
+308
+309 PRINT ’PT-01 Original reportou: 211’
+310 PRINT ’Metodologia correta esperada: ~93 (-56%)’
+311 PRINT ’’
+312
+313 PRINT ’================================================================================’
+314 PRINT ’NOVO ACHADO CRITICO: IDADES NEGATIVAS (DATAS FUTURAS)’
+315 PRINT ’================================================================================’
+316
+317 SELECT
+318 ’NOVO: Idades Negativas’ AS [MC],
+319 ’Datas de nascimento futuras’ AS [Descricao],
+320 COUNT(*) AS [Valor],
+321 ’EVIDENCIA DE AUSENCIA DE VALIDACAO’ AS [Impacto]
+322 FROM ##tmp_responsaveis_ativos_v2
+323 WHERE [dt_nascimento] IS NOT NULL
+324 AND [dt_ativacao] IS NOT NULL
+325 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) < 0;
+326
+327 PRINT ’’
+328 PRINT ’ATENCAO: Este e um NOVO achado nao documentado no PT-01 original!’
+329 PRINT ’Indica falha critica de validacao de entrada de dados’
+330 PRINT ’Esperado: ~60 registros com idades chegando a -7.971 anos!’
+331 PRINT ’’
+332
+333 PRINT ’================================================================================’
+334 PRINT ’DISTRIBUICAO DE IDADES < 18 ANOS (INCLUINDO NEGATIVAS)’
+335 PRINT ’================================================================================’
+336
+337 SELECT TOP 50
+338 DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) AS [Idade],
+339 COUNT(*) AS [Quantidade]
+340 FROM ##tmp_responsaveis_ativos_v2
+341 WHERE [dt_nascimento] IS NOT NULL
+342 AND [dt_ativacao] IS NOT NULL
+343 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) < 18
+344 GROUP BY DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao])
+345 ORDER BY DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]);
+346
+347 PRINT ’’
+348 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+349 PRINT ’’
+350 GO
+351
+352
+353 -- ################################################################################
+354 -- SCRIPT 5: MC-007 - DIVERGENCIAS DE DATA DE NASCIMENTO CAF x RFB
+355 -- ################################################################################
+356 -- OBJETIVO: Comparar datas de nascimento CAF vs RFB
+357 -- CLASSIFICACAO: Por tipo de erro (digitacao, inversao, estrutural)
+358 -- TEMPO ESTIMADO: 5-15 minutos
+359 -- ################################################################################
+360
+361 PRINT ’================================================================================’
+Página 6 de 17
+
+--- Página 7 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+362 PRINT ’SCRIPT 5: MC-007 - DIVERGENCIAS DE DATA DE NASCIMENTO’
+363 PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+364 PRINT ’================================================================================’
+365
+366 -- Dropar tabela se ja existir
+367 IF OBJECT_ID(’tempdb..##resultado_divergencias_nascimento_v2’) IS NOT NULL
+368 DROP TABLE ##resultado_divergencias_nascimento_v2;
+369
+370 -- Cruzamento e classificacao de divergencias
+371 SELECT
+372 rt.[nr_cpf],
+373 rt.[dt_nascimento] AS [dt_nascimento_caf],
+374 cpf.[DATA_NASCIMENTO] AS [dt_nascimento_rfb],
+375 ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) AS [dias_divergencia],
+376 CASE
+377 WHEN ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) <= 7
+378 THEN ’Erro de digitacao (<= 7 dias)’
+379 WHEN ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) BETWEEN 8 AND 31
+380 THEN ’Inversao dia/mes (8-31 dias)’
+381 WHEN ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) BETWEEN 32 AND 365
+382 THEN ’Erro de ano/mes (32-365 dias)’
+383 WHEN ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) > 365
+384 THEN ’Divergencia estrutural (>365 dias)’
+385 END AS [classificacao_divergencia]
+386 INTO ##resultado_divergencias_nascimento_v2
+387 FROM ##tmp_responsaveis_ativos_v2 rt
+388 INNER JOIN [BD_RECEITA].[dbo].[CPF] cpf
+389 ON rt.[nr_cpf] = cpf.[NUM_CPF]
+390 WHERE rt.[dt_nascimento] IS NOT NULL
+391 AND cpf.[DATA_NASCIMENTO] IS NOT NULL
+392 AND ABS(DATEDIFF(DAY, rt.[dt_nascimento], cpf.[DATA_NASCIMENTO])) > 1;
+393
+394 PRINT ’’
+395 PRINT ’================================================================================’
+396 PRINT ’MC-007/PT-01: DIVERGENCIAS DE DATA DE NASCIMENTO’
+397 PRINT ’================================================================================’
+398
+399 SELECT
+400 ’MC-007/PT-01’ AS [MC],
+401 COUNT(*) AS [Total Divergencias]
+402 FROM ##resultado_divergencias_nascimento_v2;
+403
+404 PRINT ’PT-01 Original reportou: 12.778’
+405 PRINT ’Valor pode variar com metodologia correta’
+406 PRINT ’’
+407
+408 PRINT ’================================================================================’
+409 PRINT ’DISTRIBUICAO POR TIPO DE DIVERGENCIA’
+410 PRINT ’================================================================================’
+411
+412 SELECT
+413 [classificacao_divergencia] AS [Tipo de Divergencia],
+414 COUNT(*) AS [Quantidade],
+415 CAST(ROUND(100.0 * COUNT(*) / SUM(COUNT(*)) OVER (), 2) AS DECIMAL(5,2)) AS [Percentual]
+416 FROM ##resultado_divergencias_nascimento_v2
+417 GROUP BY [classificacao_divergencia]
+418 ORDER BY COUNT(*) DESC;
+419
+420 PRINT ’’
+421 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+422 PRINT ’’
+423 GO
+424
+425
+426 -- ################################################################################
+427 -- SCRIPT 6: MC-008 - CPFs NAO LOCALIZADOS NA BASE RFB
+428 -- ################################################################################
+429 -- OBJETIVO: Identificar CPFs do CAF ausentes na base da Receita Federal
+430 -- POSSIVEIS CAUSAS: CPFs invalidos, cancelados, ou erros de digitacao
+431 -- TEMPO ESTIMADO: 5-10 minutos
+432 -- ################################################################################
+433
+434 PRINT ’================================================================================’
+435 PRINT ’SCRIPT 6: MC-008 - CPFs NAO LOCALIZADOS NA RFB’
+436 PRINT ’Inicio: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+437 PRINT ’================================================================================’
+438
+439 SELECT
+440 ’MC-008/PT-01’ AS [MC],
+441 ’CPFs nao localizados na RFB’ AS [Descricao],
+442 COUNT(*) AS [Valor]
+443 FROM ##tmp_responsaveis_ativos_v2 rt
+444 WHERE NOT EXISTS (
+445 SELECT 1
+446 FROM [BD_RECEITA].[dbo].[CPF] cpf
+447 WHERE cpf.[NUM_CPF] = rt.[nr_cpf]
+448 );
+449
+450 PRINT ’’
+451 PRINT ’PT-01 Original reportou: 521’
+452 PRINT ’Valor pode variar com metodologia correta’
+Página 7 de 17
+
+--- Página 8 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+453 PRINT ’’
+454 PRINT ’Termino: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+455 PRINT ’’
+456 GO
+457
+458
+459 -- ################################################################################
+460 -- SCRIPT 7: RESUMO CONSOLIDADO FINAL - TODAS AS MCs
+461 -- ################################################################################
+462 -- OBJETIVO: Consolidar todos os resultados em uma unica tabela
+463 -- USO: Copiar direto para o relatorio
+464 -- TEMPO ESTIMADO: < 1 minuto
+465 -- ################################################################################
+466
+467 PRINT ’================================================================================’
+468 PRINT ’SCRIPT 7: RESUMO CONSOLIDADO FINAL’
+469 PRINT ’Data/Hora: ’ + CONVERT(VARCHAR, GETDATE(), 120)
+470 PRINT ’================================================================================’
+471
+472 PRINT ’’
+473 PRINT ’+===========================================================================+’
+474 PRINT ’| RESUMO FINAL - TODAS AS MCs |’
+475 PRINT ’+===========================================================================+’
+476 PRINT ’’
+477
+478 SELECT
+479 ’Populacao Total (CPFs unicos)’ AS [Metrica],
+480 CAST(COUNT(DISTINCT [nr_cpf]) AS VARCHAR) AS [Valor],
+481 ’~2.905.000’ AS [PT-01 Original],
+482 CASE
+483 WHEN COUNT(DISTINCT [nr_cpf]) BETWEEN 2800000 AND 2950000 THEN ’OK’
+484 ELSE ’DIVERGENTE’
+485 END AS [Status]
+486 FROM ##tmp_responsaveis_ativos_v2
+487
+488 UNION ALL
+489
+490 SELECT
+491 ’MC-002: Obitos Confirmados (SISOBI)’,
+492 CAST(COUNT(*) AS VARCHAR),
+493 ’12.821’,
+494 CASE
+495 WHEN COUNT(*) BETWEEN 11000 AND 14000 THEN ’OK’
+496 ELSE ’DIVERGENTE’
+497 END
+498 FROM ##resultado_obitos_pt01_v2
+499
+500 UNION ALL
+501
+502 SELECT
+503 ’MC-002B: Obitos via RFB (validacao)’,
+504 CAST(COUNT(*) AS VARCHAR),
+505 ’N/A’,
+506 ’Comparacao’
+507 FROM ##resultado_obitos_rfb_v2
+508
+509 UNION ALL
+510
+511 SELECT
+512 ’MC-005: Menores <16 anos’,
+513 CAST(COUNT(*) AS VARCHAR),
+514 ’41’,
+515 CASE
+516 WHEN COUNT(*) BETWEEN 80 AND 100 THEN ’OK’
+517 ELSE ’DIVERGENTE’
+518 END
+519 FROM ##tmp_responsaveis_ativos_v2
+520 WHERE [dt_nascimento] IS NOT NULL
+521 AND [dt_ativacao] IS NOT NULL
+522 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) < 16
+523
+524 UNION ALL
+525
+526 SELECT
+527 ’MC-006: Adolescentes 16-17 nao emancipados’,
+528 CAST(COUNT(*) AS VARCHAR),
+529 ’211’,
+530 CASE
+531 WHEN COUNT(*) BETWEEN 80 AND 100 THEN ’OK’
+532 ELSE ’DIVERGENTE’
+533 END
+534 FROM ##tmp_responsaveis_ativos_v2
+535 WHERE [dt_nascimento] IS NOT NULL
+536 AND [dt_ativacao] IS NOT NULL
+537 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) BETWEEN 16 AND 17
+538 AND ISNULL([st_declarante_emancipado], 0) = 0
+539
+540 UNION ALL
+541
+542 SELECT
+543 ’MC-007: Divergencias de nascimento’,
+Página 8 de 17
+
+--- Página 9 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+544 CAST(COUNT(*) AS VARCHAR),
+545 ’12.778’,
+546 CASE
+547 WHEN COUNT(*) BETWEEN 11000 AND 14000 THEN ’OK’
+548 ELSE ’DIVERGENTE’
+549 END
+550 FROM ##resultado_divergencias_nascimento_v2
+551
+552 UNION ALL
+553
+554 SELECT
+555 ’MC-008: CPFs nao localizados RFB’,
+556 CAST(COUNT(*) AS VARCHAR),
+557 ’521’,
+558 ’Verificar’
+559 FROM ##tmp_responsaveis_ativos_v2 rt
+560 WHERE NOT EXISTS (
+561 SELECT 1 FROM [BD_RECEITA].[dbo].[CPF] cpf
+562 WHERE cpf.[NUM_CPF] = rt.[nr_cpf]
+563 )
+564
+565 UNION ALL
+566
+567 SELECT
+568 ’NOVO: Idades Negativas’,
+569 CAST(COUNT(*) AS VARCHAR),
+570 ’N/A (novo achado)’,
+571 ’CRITICO’
+572 FROM ##tmp_responsaveis_ativos_v2
+573 WHERE [dt_nascimento] IS NOT NULL
+574 AND [dt_ativacao] IS NOT NULL
+575 AND DATEDIFF(YEAR, [dt_nascimento], [dt_ativacao]) < 0;
+576
+577 PRINT ’’
+578 PRINT ’================================================================================’
+579 PRINT ’LEGENDA STATUS:’
+580 PRINT ’ OK = Resultado dentro do esperado’
+581 PRINT ’ DIVERGENTE = Revisar (diferenca significativa do PT-01 original)’
+582 PRINT ’ Comparacao = Metrica adicional de validacao’
+583 PRINT ’ CRITICO = Novo achado nao documentado no PT-01’
+584 PRINT ’================================================================================’
+585
+586 PRINT ’’
+587 PRINT ’+===========================================================================+’
+588 PRINT ’| EXECUCAO CONCLUIDA COM SUCESSO |’
+589 PRINT ’+===========================================================================+’
+590 PRINT ’’
+591 PRINT ’PROXIMOS PASSOS:’
+592 PRINT ’ 1. Copie TODOS os resultados acima’
+593 PRINT ’ 2. Salve em arquivo .txt ou .xlsx’
+594 PRINT ’ 3. Envie para atualizacao do PT-01 e relatorio’
+595 PRINT ’’
+596 PRINT ’Tempo total de execucao: ’ +
+597 CAST(DATEDIFF(SECOND,
+598 (SELECT MIN([dt_ativacao]) FROM ##tmp_responsaveis_ativos_v2),
+599 GETDATE()) AS VARCHAR) + ’ segundos (aproximado)’
+600 PRINT ’’
+601 PRINT ’================================================================================’
+602 GO
+603
+604 -- ################################################################################
+605 -- FIM DOS SCRIPTS
+606 -- ################################################################################
+Listing 1: Scripts SQL Server para Revalidação PT-01 - LabContas
+Página 9 de 17
+
+--- Página 10 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+3 Resultados Obtidos
+Esta seção apresenta os resultados obtidos pela execução dos scripts SQL no ambiente LabContas em 19 de
+novembro de 2025.
+3.1 Script 1: População Base
+Tabela 1: População Base - JOIN Triplo com Critério Canônico de UF Ativa
+Métrica Valor
+Total de Registros 2.905.120
+CPFs Únicos 2.905.101
+Com Data de Nascimento 2.905.120
+Com Data de Ativação UF 2.905.120
+A população base de 2.905.101 CPFs únicos representa o universo de responsáveis por Unidades Familiares
+(UFs) ativas no Cadastro da Agricultura Familiar (CAF). Esses são os agricultores familiares que, segundo os
+registros do sistema, possuem cadastro válido e ativo para fins de acesso às políticas públicas direcionadas ao
+setor.
+Adiferençade19registrosentreototal(2.905.120)eCPFsúnicos(2.905.101)indicaqueexistempoucoscasos
+de duplicidade, onde um mesmo CPF aparece como responsável em mais de uma UF ativa simultaneamente.
+Essa taxa de duplicidade inferior a 0,001% sugere boa integridade referencial na base de dados.
+3.2 Script 2: MC-002 e MC-011 – Óbitos SISOBI
+Tabela 2: MC-002/PT-01: Óbitos Confirmados (SISOBI)
+Métrica Valor
+Óbitos Confirmados 3.097
+Óbito Mais Antigo 10/01/1943
+Óbito Mais Recente 04/01/2022
+Média Dias Ativação Pós-Óbito 4.646 dias
+Tabela 3: MC-011/PT-01: Óbitos Antigos (2010-2015)
+Métrica Valor
+Óbitos no período 2010-2015 645
+Foram identificados 3.097 responsáveis de UFs ativas cujos CPFs constam na base SISOBI com registro
+de óbito. A média de 4.646 dias entre a data do óbito e a data de ativação da UF indica que, em média,
+as Unidades Familiares foram ativadas aproximadamente 12,7 anos após o falecimento do responsável
+cadastrado, evidenciando grave falha nos controles de validação do sistema.
+O caso mais extremo apresenta óbito registrado em 1943 (há mais de 80 anos), demonstrando que o sistema
+CAF não realiza validação cruzada com bases de óbitos antes de ativar ou manter ativas as Unidades Familiares.
+Dos 3.097 óbitos identificados, 645 (20,8%) ocorreram entre 2010 e 2015, período anterior à criação do CAF, o
+que reforça a necessidade de saneamento cadastral.
+A distribuição temporal dos óbitos revela um padrão crescente a partir de meados da década de 1990, com
+pico nos anos 1998-2001. Esse período coincide com a expansão das políticas de agricultura familiar no Brasil e
+a criação de cadastros predecessores ao CAF, sugerindo que muitos registros foram migrados de bases antigas
+sem a devida validação de situação cadastral dos responsáveis.
+A presença de óbitos datados de 1943 e 1947 é particularmente alarmante, pois indica que pessoas falecidas
+há mais de 75 anos na época de criação do CAF foram cadastradas como responsáveis por Unidades Familiares.
+Isso evidencia não apenas ausência de validação, mas também possível fraude ou erro grosseiro na alimentação
+dos dados cadastrais.
+3.3 Script 3: MC-002B – Validação Cruzada via RFB
+A base de CPF da Receita Federal identificou 11.980 responsáveis de UFs ativas com indicação de óbito no
+campo ANO_OBITO. O intervalo de anos (1996 a 2025) demonstra que a RFB possui registros mais recentes
+Página 10 de 17
+
+--- Página 11 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+Tabela 4: Distribuição de Óbitos por Ano (Top 20)
+AnoQuantidade Percentual (%)
+1943 1 0,03
+1947 1 0,03
+1965 1 0,03
+1968 1 0,03
+1985 1 0,03
+1986 1 0,03
+1989 2 0,06
+1990 1 0,03
+1991 1 0,03
+1992 1 0,03
+1993 2 0,06
+1994 6 0,19
+1995 4 0,13
+1996 8 0,26
+1997 39 1,26
+1998 92 2,97
+1999 112 3,62
+2000 100 3,23
+2001 108 3,49
+2002 66 2,13
+Tabela 5: MC-002B: Óbitos via Base RFB (campo ANO_OBITO)
+Métrica Valor
+Óbitos RFB (apenas ano) 11.980
+Ano Mais Antigo 1996
+Ano Mais Recente 2025
+que o SISOBI, incluindo óbitos ocorridos até o ano corrente, o que a torna uma fonte mais atualizada para fins
+de verificação.
+O fato de haver óbitos registrados em 2025 indica que mesmo após a extração dos dados do CAF para
+auditoria, novos falecimentos continuam ocorrendo entre os responsáveis cadastrados, reforçando a necessidade
+de implementação de rotinas automáticas de verificação periódica contra bases de óbitos.
+Tabela 6: Comparação SISOBI vs RFB
+Fonte Total de Óbitos
+SISOBI (data completa) 3.097
+RFB (apenas ano) 11.980
+Observação: A base RFB apresenta mais registros pois inclui óbitos sem certidão no SISOBI. O SISOBI é
+a fonte mais precisa (data completa + certidão).
+A comparação entre as duas fontes revela uma diferença significativa: a RFB registra 11.980 óbitos contra
+apenas 3.097 do SISOBI, uma diferença de 8.883 registros (287% a mais). Essa discrepância ocorre porque a
+RFB possui informações de óbito mesmo quando não há certidão registrada no SISOBI, seja por subnotificação
+cartorial ou por óbitos ocorridos no exterior.
+Para fins de auditoria, recomenda-se utilizar a base da RFB como referência primária para identificação de
+óbitos, por ser mais abrangente, reservando o SISOBI para casos que necessitem de comprovação documental
+(númerodacertidão). Ouniversode11.980CPFscomindicaçãodeóbitonaRFBrepresenta0,41%dapopulação
+de responsáveis ativos no CAF.
+3.4 Script 4: MC-005, MC-006 e Idades Negativas
+Os 89 menores de 16 anos identificados como responsáveis por Unidades Familiares representam uma irregu-
+laridade jurídica grave. Conforme o Art. 3 º, inciso I, do Código Civil Brasileiro, menores de 16 anos são
+absolutamente incapazes de exercer pessoalmente os atos da vida civil, não podendo, portanto, assumir a
+titularidade de uma Unidade Familiar de produção agrícola.
+Página 11 de 17
+
+--- Página 12 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+Tabela 7: MC-005/PT-01: Menores Absolutamente Incapazes ( <16 anos)
+MC Descrição ValorFundamentação
+MC-005 Menores <16 anos 89Art. 3 º, I - Código Civil
+Esses cadastros podem indicar erros de digitação na data de nascimento, uso indevido de CPF de menores
+por terceiros, ou falha nos controles de validação do sistema CAF que deveriam impedir o cadastramento de
+pessoas sem capacidade civil plena. Cada caso deve ser investigado individualmente para determinar a natureza
+da irregularidade.
+Tabela 8: MC-006/PT-01: Adolescentes Relativamente Incapazes (16-17 não emancipados)
+MC Descrição ValorFundamentação
+MC-006 Adolescentes 16-17 não emancipados 49Art. 4 º, I - Código Civil
+Os 49 adolescentes entre 16 e 17 anos não emancipados cadastrados como responsáveis por UFs são re-
+lativamente incapazes , conforme Art. 4 º, inciso I, do Código Civil. Embora possam praticar alguns atos
+da vida civil, necessitam de assistência de seus representantes legais para atos que envolvam responsabilidade
+patrimonial, como a gestão de uma Unidade Familiar.
+O campo st_declarante_emancipado do CAF foi utilizado para filtrar adolescentes que possuem eman-
+cipação registrada, os quais foram excluídos desta contagem. Os 49 casos remanescentes indicam cadastros
+irregulares que deveriam ter sido bloqueados pelo sistema ou que necessitam de regularização junto aos órgãos
+responsáveis pela habilitação no CAF.
+Tabela 9: NOVO ACHADO CRÍTICO: Idades Negativas (Datas de Nascimento Futuras)
+MCDescrição ValorImpacto
+NOVO Datas de nascimento futuras 57Ausência de validação
+Este é oachado mais crítico identificado na análise: 57 registros possuem datas de nascimento no futuro ,
+resultando em idades calculadas negativas. Isso é logicamente impossível e representa evidência inequívoca de
+ausência total de validação de entrada de dados no sistema CAF.
+Os casos mais extremos apresentam idades de -7.972, -7.502 e -6.975 anos, o que corresponde a datas de
+nascimento nos anos 9997, 9527 e 9000 d.C., respectivamente. Tais valores absurdos demonstram que o sistema
+aceita qualquer data sem nenhuma verificação de plausibilidade, permitindo a persistência de dados claramente
+inválidos na base de produção.
+Tabela 10: Distribuição de Idades Negativas e Menores de 18 Anos
+Idade Qtd Idade Qtd Idade Qtd Idade Qtd
+-7.972 1 -58 1 -14 4 5 1
+-7.502 1 -57 1 -12 1 6 5
+-6.975 1 -24 8 -11 2 8 1
+-5.173 1 -23 5 -10 1 9 2
+-4.172 1 -22 1 -5 1 10 1
+-1.173 1 -21 2 -4 1 11 1
+-973 1 -20 6 -3 1 12 2
+-925 1 -19 1 -1 1 13 1
+-924 1 -18 2 1 7 14 2
+-59 1 -17 2 2 6 16 331
+-16 5 3 1 17 1.021
+-15 1 4 2
+Nota crítica: Registros com idades negativas (ex: -7.972 anos) indicam datas de nascimento no futuro
+distante, evidenciando ausência de validação de entrada de dados no sistema CAF.
+Os 89 menores de 16 anos (MC-005) cadastrados como responsáveis por UFs representam uma irregularidade
+jurídica grave, pois são absolutamente incapazes para os atos da vida civil conforme o Art. 3 ºdo Código Civil.
+Da mesma forma, os 49 adolescentes de 16-17 anos não emancipados (MC-006) são relativamente incapazes e
+não poderiam assumir responsabilidade por uma Unidade Familiar sem assistência legal.
+O achado mais crítico, porém, são os 57 registros com idades negativas , que indicam datas de nascimento
+no futuro . O caso extremo de -7.972 anos corresponde a uma data de nascimento por volta do ano 9997 d.C.
+Isso evidencia ausência total de validação de entrada de dados no sistema CAF, permitindo que datas claramente
+inválidas sejam aceitas e persistidas na base. Este achado não constava no PT-01 original e representa uma
+falha de controle interno sistêmica.
+Página 12 de 17
+
+--- Página 13 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+3.5 Script 5: MC-007 – Divergências de Data de Nascimento
+Tabela 11: MC-007/PT-01: Divergências de Data de Nascimento CAF x RFB
+Métrica Valor
+Total de Divergências 11.999
+Tabela 12: Classificação das Divergências por Tipo
+Tipo de Divergência Quantidade Percentual (%)
+Divergência estrutural ( >365 dias) 5.008 41,74
+Inversão dia/mês (8-31 dias) 2.853 23,78
+Erro de ano/mês (32-365 dias) 2.735 22,79
+Erro de digitação ( ≤7 dias) 1.403 11,69
+Total 11.999 100,00
+Foram identificadas 11.999 divergências entre as datas de nascimento registradas no CAF e na base da
+Receita Federal, representando 0,41% da população analisada. A classificação por tipo de erro revela que a
+maioria (41,74%) são divergências estruturais superiores a um ano, indicando possíveis erros de cadastro ou
+fraude.
+As inversões de dia/mês (23,78%) e erros de ano/mês (22,79%) sugerem problemas de digitação ou diferenças
+de formato na entrada de dados. Já os erros de digitação menores (11,69%) podem ser considerados menos
+graves, porém ainda comprometem a integridade cadastral. Esses achados reforçam a necessidade de validação
+cruzada com bases oficiais no momento do cadastramento.
+3.6 Script 6: MC-008 – CPFs Não Localizados na RFB
+Tabela 13: MC-008/PT-01: CPFs Não Localizados na Base da Receita Federal
+MC Descrição Valor
+MC-008 CPFs não localizados na RFB 520
+Foram identificados 520 CPFs cadastrados como responsáveis por UFs ativas que não foram localizados na
+base de CPF da Receita Federal. Esse número representa 0,018% da população analisada e pode indicar CPFs
+inválidos, cancelados, suspensos ou com erros de digitação que impedem a localização.
+A existência de CPFs não localizados na RFB é particularmente grave porque impede qualquer validação
+de dados cadastrais (nome, data de nascimento, situação cadastral, óbito) para esses registros. Recomenda-se
+investigação individualizada desses casos para verificar se são erros de digitação passíveis de correção ou se
+representam tentativas de cadastramento com CPFs fictícios ou adulterados.
+Página 13 de 17
+
+--- Página 14 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+4 Visualizações Gráficas
+Esta seção apresenta visualizações gráficas dos principais achados, facilitando a compreensão e comunicação dos
+resultados.
+4.1 Classificação das Divergências de Data de Nascimento
+Figura 1: MC-007: Distribuição das divergências de data de nascimento por tipo de erro
+O gráfico evidencia que as divergências estruturais (superiores a 365 dias) representam a maior parcela dos
+problemas identificados, sugerindo que não se tratam de meros erros de digitação, mas sim de inconsistências
+significativas que podem indicar cadastros fraudulentos ou migração incorreta de dados.
+Página 14 de 17
+
+--- Página 15 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+4.2 Comparação de Óbitos: SISOBI vs RFB
+Figura 2: MC-002/MC-002B: Comparação entre fontes de dados de óbitos
+A diferença de 287% entre as bases evidencia a importância de utilizar múltiplas fontes para identificação de
+óbitos. A base RFB, por ser mais abrangente, deve ser considerada como fonte primária para fins de saneamento
+cadastral, enquanto o SISOBI serve como fonte de comprovação documental.
+4.3 Distribuição de Idades – Achado Crítico
+Figura 3: Distribuição de idades dos responsáveis, destacando idades negativas e menores incapazes
+Página 15 de 17
+
+--- Página 16 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+O gráfico ilustra claramente a concentração de adolescentes de 16-17 anos (1.352 registros) e a presença anômala
+de idades negativas (em vermelho), que deveriam ser impossíveis em qualquer sistema com validação mínima
+de entrada de dados. Este achado crítico demonstra vulnerabilidade sistêmica nos controles do CAF.
+Página 16 de 17
+
+--- Página 17 ---
+Scripts SQL Server - PT-01 LabContas CAF/MAPA - Auditoria TCU
+5 Resumo Consolidado Final
+Tabela 14: Resumo Final – Todas as Métricas de Controle (MCs)
+Métrica Valor Obtido PT-01 Original Status
+População Total (CPFs únicos) 2.905.101 ∼2.905.000 OK
+MC-002: Óbitos SISOBI 3.097 12.821 DIVERGENTE
+MC-002B: Óbitos RFB (validação) 11.980 N/AComparação
+MC-011: Óbitos 2010-2015 645 –OK
+MC-005: Menores <16 anos 89 41+117%
+MC-006: Adolescentes 16-17 49 211-77%
+MC-007: Divergências nascimento 11.999 12.778 -6%
+MC-008: CPFs não localizados 520 521OK
+NOVO: Idades Negativas 57 N/ACRÍTICO
+5.1 Legenda de Status
+•OK– Resultado dentro do esperado ou com variação aceitável
+•DIVERGENTE – Diferença significativa em relação ao PT-01 original
+•Comparação – Métrica adicional para validação cruzada
+•CRÍTICO – Novo achado não documentado no PT-01 original
+5.2 Observações Importantes
+1.MC-002 (Óbitos): A divergência significativa (3.097 vs 12.821) sugere que o PT-01 original pode ter
+incluído UFs inativas ou utilizado metodologia diferente. A validação cruzada com RFB (11.980) confirma
+que há mais óbitos na base federal.
+2.MC-005/MC-006 (Menores): As variações indicam ajuste na metodologia de cálculo de idade (usando
+dt_ativacao como referência em vez de data atual).
+3.Idades Negativas: Este é um achado crítico novo que evidencia falha de validação no sistema CAF.
+Há registros com idades chegando a -7.972 anos (datas de nascimento no ano 9997).
+4.AmbientedeExecução: LabContas(SQLServer),utilizandoasbases BD_AGRO_CAF_AUD_2025 ,BD_RECEITA
+eBD_SISOBI .
+Página 17 de 17

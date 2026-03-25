@@ -1,0 +1,180 @@
+--- Página 1 ---
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  
+Secretaria de Agricultura Familiar e Agroecologia  
+Departamento do Cadastro Nacional da Agricultura Familiar   
+ 
+   
+ 
+Documento 121 - Reanálise MDA  
+  
+Análise de áreas municipais impossíveis no Cadastro 
+Nacional da Agricultura Familiar (CAF)  
+ 
+Entendimento institucional do Ministério: o Documento 121 pode ser aproveitado 
+como instrumento de triagem de risco, mas não comprova, por si só, inconsistência 
+estrutural do CAF. A reanálise promovida pelo MDA afastou a materialidade do achado 
+em 558 dos 608 municípios revistos e delimitou universo residual de 50 casos para 
+monitoramento e fiscalização, dos quais 10 apresentam indício de plausibilidade e 40 
+exigem averiguação complementar.  
+ 
+  1. Objeto e posição do Ministério  
+Esta síntese consolida a posição técnica do Ministério do Desenvolvimento Agrário e 
+Agricultura Familiar sobre o Documento 121 do TCU, que examinou municípios em que a 
+soma das áreas declaradas no CAF supera a área territorial oficial do respectivo municíp io. 
+Para esta Pasta, o trabalho do Tribunal tem utilidade como mecanismo de varredura 
+exploratória de anomalias agregadas, porém a metodologia adotada não autoriza, sem exame 
+complementar, a conclusão de que haja irregularidade cadastral material em cada m unicípio 
+apontado.  
+O ponto central do contraditório técnico é que o PT -12 opera com soma municipal 
+indistinta de áreas declaradas, tratando como homogêneo um cadastro que reúne agricultores 
+familiares típicos, beneficiários do Programa Nacional de Reforma Agrária, extrativis tas, 
+povos indígenas, quilombolas e demais povos e comunidades tradicionais. Ao desconsiderar 
+essas diferenças normativas e operacionais, o documento converte um critério de alerta em 
+presunção ampla de inconsistência.  
+  
+2. Razões pelas quais o Documento 121 não demonstra, por si só, 
+irregularidade cadastral  
+  
+2.1 Soma indistinta de públicos submetidos a regimes jurídicos diferentes  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990628.
+
+--- Página 2 ---
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  
+Secretaria de Agricultura Familiar e Agroecologia  
+Departamento do Cadastro Nacional da Agricultura Familiar   
+ 
+   
+ 
+O CAF não se limita ao perfil clássico do agricultor familiar submetido, sem 
+qualificações, ao parâmetro do inciso I do art. 3º da Lei nº 11.326/2006. A regulamentação do 
+cadastro contempla públicos específicos com tratamento jurídico próprio, entre os qua is 
+extrativistas, povos indígenas, quilombolas e demais povos e comunidades tradicionais. Nesses 
+casos, a leitura agregada de área municipal, sem segmentação dos públicos, passa a registrar 
+como suposto excesso aquilo que pode decorrer da própria disciplin a legal aplicável ao grupo 
+cadastrado.  
+  
+2.2 Territórios que extrapolam divisas municipais  
+Outra limitação central do método adotado pelo Tribunal é a comparação automática 
+entre a soma das áreas associadas ao município do cadastro e a área político -administrativa 
+oficial do município. Em diversos casos, os territórios declarados no CAF não se e xaurem 
+dentro de uma única divisa municipal. Essa realidade é típica de terras indígenas, áreas 
+quilombolas, reservas extrativistas, territórios tradicionais e outras formas de ocupação 
+reconhecidas pelo ordenamento. Nessas hipóteses, o município informado  no cadastro funciona 
+como referência administrativa de acesso ao serviço, e não como prova de que toda a área 
+associada àquele registro esteja fisicamente contida dentro daquele limite municipal.  
+  
+2.3 Efeito da integração dos beneficiários do PNRA  
+A reanálise ministerial também demonstrou a centralidade da integração com o INCRA, 
+disciplinada pela Portaria Conjunta MDA -INCRA nº 3/2025. Em parte relevante dos registros 
+migrados, a base de origem não discriminava a fração ideal do lote por beneficiári o, tendo sido 
+informada a área total do assentamento em cada cadastro. Quando esse conjunto é somado 
+indistintamente por município, o resultado é inflação municipal aparente, sobretudo em 
+assentamentos que atravessam mais de um município. Não se trata, por tanto, de dado apto a 
+confirmar automaticamente erro do emissor ou falha estrutural do CAF.  
+  
+2.4 Natureza exploratória do critério de multiplicador superior a 1,0  
+Para o Ministério, o multiplicador municipal superior a 1,0 deve ser compreendido 
+como sinal de risco e não como prova autônoma de irregularidade. A inferência de 
+impossibilidade física só seria conclusiva se todas as áreas somadas fossem parcelas 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990628.
+
+--- Página 3 ---
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  
+Secretaria de Agricultura Familiar e Agroecologia  
+Departamento do Cadastro Nacional da Agricultura Familiar   
+ 
+   
+ 
+individualizadas, juridicamente homogêneas e integralmente circunscritas ao mesmo 
+município, premissas que não se verificam no desenho normativo e operacional do CAF.  
+  
+3. Reanálise promovida pelo MDA  
+Com o objetivo de qualificar tecnicamente o debate, o Ministério reproduziu 
+parcialmente a lógica agregativa do PT -12, mas incorporou filtros interpretativos compatíveis 
+com a legislação e com a realidade operacional do cadastro. A reanálise identificou 60 8 
+municípios com cobertura de área igual ou superior a 100%. Desses, 535 tinham incidência de 
+beneficiários alcançados pela integração com o INCRA prevista na Portaria Conjunta MDA -
+INCRA nº 3/2025, ao passo que apenas 73 não estavam vinculados a essa medid a.  
+O resultado evidencia que o principal vetor de distorção metodológica não é a existência de um 
+vício uniforme em toda a base do CAF, mas a leitura agregada de conjuntos cadastrais 
+submetidos a lógicas territoriais e operacionais distintas. A classificação adotada pelo 
+Ministério está sintetizada a seguir.  
+  
+Quadro 1 - Hipóteses testadas pelo MDA e quantidade de municípios  
+Parecer MDA  Qnt municípios  
+Improcedente - Extrativistas  54 
+Improcedente - Indígenas  11 
+Improcedente - PCTs  5 
+Improcedente - PNRA  449  
+Improcedente - PNRA + Extrativistas  7 
+Improcedente - PNRA + Indígenas  1 
+Improcedente - PNRA + Quilombola  2 
+Improcedente - Quilombolas  27 
+Improcedente - Quilombolas + PCTs  1 
+Improcedente - PNRA + Quilombolas + Extrativistas  1 
+IPC - indício de plausibilidade do achado  10 
+NAC - necessidade de averiguação complementar  40 
+ 
+À luz dessa classificação, o Ministério não reconhece materialidade para confirmação 
+do achado em 558 municípios — equivalentes a 91,8% do universo revisto. Permanece 
+materialidade residual em 50 municípios, distribuídos entre 10 casos com indício de 
+plaus ibilidade e 40 casos ainda inconclusivos, que exigem averiguação complementar. Dentre 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990628.
+
+--- Página 4 ---
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  
+Secretaria de Agricultura Familiar e Agroecologia  
+Departamento do Cadastro Nacional da Agricultura Familiar   
+ 
+   
+ 
+os casos com indícios de materialidade, explicita -se a presença de Penalva -MA, caso analisado 
+pela equipe do técnica do Tribunal de Contas:  
+ 
+Quadro II – Lista de municípios enquadrados como IPC  
+CD_MUNICIPIO  MUNICIPIO  UF área _município_ha  áreas_CAF_ha  %CAF município  
+2108306  Penalva  MA 80.091,600  167.002.454,340  208514,32%  
+2915007  Itaeté  BA 133.182,200  28.960.104,300  21744,73%  
+2104909  Guimarães  MA 47.885,700  1.876.480,770  3918,67%  
+2900207  Abaré  BA 160.492,300  4.693.556,730  2924,47%  
+2108405  Peri Mirim  MA 39.799,300  753.318,050  1892,79%  
+2513984  São Francisco  PB 9.072,400  98.727,470  1088,22%  
+2929909  Seabra  BA 240.217,000  2.346.202,890  976,70%  
+2111409  São Luís Gonzaga do 
+Maranhão  MA 90.916,400  794.378,510  873,75%  
+2903904  Bom Jesus da Lapa  BA 411.449,100  3.543.298,510  861,18%  
+2401206  Arês  RN 11.540,700  80.292,410  695,73%  
+ 
+5. Conclusão  
+Em conclusão, esta Pasta sustenta que o Documento 121 identifica adequadamente um 
+universo de anomalias agregadas merecedoras de atenção administrativa, mas incorre em 
+sobre -extensão metodológica ao tratar tais anomalias como prova generalizada de 
+inconsis tência cadastral. A legislação da agricultura familiar, a regulamentação do CAF e a 
+realidade operacional da integração de dados com o INCRA impedem que o somatório 
+municipal de áreas seja convertido, sem mediações analíticas, em evidência conclusiva de 
+impropriedade.  
+Por essa razão, o Ministério não reconhece materialidade para confirmação do achado 
+em 558 dos 608 municípios reanalisados. Subsiste materialidade residual em 50 municípios, a 
+ser tratada no âmbito dos procedimentos de monitoramento e fiscalização do CAF, com 
+priorização territorial e análise individualizada dos casos. Essa posição preserva, 
+simultaneamente, a crítica metodológica ao PT -12 e o dever institucional de utilizar os achados 
+residuais como insumo legítimo de aperfeiçoamento administrativo.  
+ 
+  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990628.
+
+--- Página 5 ---
+Ministério do Desenvolvimento Agrário e Agricultura Familiar  
+Secretaria de Agricultura Familiar e Agroecologia  
+Departamento do Cadastro Nacional da Agricultura Familiar   
+ 
+   
+ 
+Fontes  utilizadas para análise :   
+Documento 121 do TCU,   
+Planilha VERIFICAÇÃO_AREAS_TCU_Resultados,   
+Lei nº 11.326 de 24 de julho de 2006  
+Portaria MDA nº 19/2025  
+Portaria MDA nº 20/2024  
+Portaria Conjunta MDA -INCRA nº 3/2025.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990628.

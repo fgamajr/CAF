@@ -1,0 +1,78 @@
+--- Página 1 ---
+MINISTÉRIO DO DESENVOLVIMENTO AGRÁRIO E AGRICULTURA FAMILIAR
+SECRETARIA DE AGRICULTURA FAMILIAR E AGROECOLOGIA
+DEPARTAMENTO DE CADASTRO NACIONAL DA AGRICULTURA FAMILIAR
+DESPACHO-MDA Nº 196/2025/DCAF-MDA/MDA
+Processo nº 55000.012930/2025-64
+Interessado
+: 
+AECI
+À Secretaria de Agricultura Familiar e Agroecologia - SAF/MDA, 
+ 
+ASSUNTO
+: OFÍCIO 0132/2025-TCU/AudTI - TC 011.073/2025-0 -
+Comunicação de fiscalização.
+ 
+1
+.
+Em resposta ao Despacho-MDA nº 1578 (
+44692334
+), que encaminha o
+Ofício nº 122/2025 (44686759), remetido pela Assessoria Especial de Controle
+Interno, contendo o Ofício nº 000.192/2025 - AudTI (44688159), do Tribunal de
+Contas da União (TCU), por meio do qual solicita a este Ministério informações no
+âmbito da auditoria em curso destinada a avaliar as bases de dados do Cadastro
+Ambiental Rural (CAR) e do Cadastro Nacional da Agricultura Familiar (CAF), no
+processo TC 011.073/2025-0, informo o que segue:
+2
+.
+No que se refere ao item “
+a
+” do referido despacho, registro que a ciência
+foi devidamente anotada no documento.
+3
+.
+Quanto ao item “
+b
+”, a Coordenação-Geral de Tecnologia da Informação
+(CGTI) informou, por meio do Ofício nº 59/2025/CGINOV/STI/SE/MAPA, que a extração
+da base de dados completa foi realizada de acordo com as especiﬁcações técnicas
+apresentadas. O ponto seguro para download dos arquivos foi conﬁgurado, e as
+credenciais de acesso foram disponibilizadas à equipe técnica do TCU por meio do e-
+mail registrado no (SEI nº 
+44817715
+).
+ 
+Atenciosamente, 
+ 
+(assinado eletronicamente)
+ARTHUR REIS RIMOLDI
+Diretor do Departamento de Cadastro Nacional da Agricultura Familiar 
+ 
+ 
+Documento assinado eletronicamente por 
+Arthur Reis Rimoldi
+, 
+Diretor (a)
+, em
+15/08/2025, às 17:05, conforme horário oficial de Brasília, com fundamento no art.
+4º,§ 3º, do 
+Decreto nº 10.543, de 13 de novembro de 2020.
+Despacho - MDA 196 (44737654)         SEI 55000.012930/2025-64 / pg. 1
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78722028.
+
+--- Página 2 ---
+A autenticidade deste documento pode ser conferida no site:
+https://sei.agro.gov.br/sei/controlador_externo.php?
+acao=documento_conferir&id_orgao_acesso_externo=0 
+, informando o código
+verificador 
+44737654
+ e o código CRC 
+3B1E47FB
+.
+Referência:
+ Processo nº 55000.012930/2025-64
+SEI nº 44737654
+Despacho - MDA 196 (44737654)         SEI 55000.012930/2025-64 / pg. 2
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 78722028.

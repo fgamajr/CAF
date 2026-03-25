@@ -1,0 +1,534 @@
+--- Página 1 ---
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 2 ---
+ 
+ 
+ 
+OBJETIVOS  
+O que é o CAF?  
+O Cadastro Nacional da Agricultura Familiar (CAF) visa identificar e qualificar os 
+beneficiários da Política Nacional da Agricultura Familiar (Lei nº 11.326/2006), incluindo 
+as Unidades Familiares de Produção  Agrária (UFPA), os Empreendimentos Familiares 
+Rurais e as formas associativas da agricultura familiar, como cooperativas e 
+associações. A inscrição no CAF é requisito essencial para o acesso às políticas 
+públicas voltadas ao desenvolvimento da agricultura familiar  
+Principal Objetivo  
+Identificação e Qualificação : Identificar e qualificar os agricultores familiares, suas 
+propriedades e atividades, de modo a fornecer um mapeamento detalhado da 
+agricultura familiar no país.  
+Acesso a Políticas Públicas : Facilitar o acesso dos agricultores familiares a políticas 
+públicas, programas e ações voltados para o desenvolvimento rural e inclusão 
+produtiva . 
+Garantia de Direitos : Garantir o acesso dos agricultores familiares aos benefícios de 
+seguridade social, como aposentadoria, assistência técnica, seguro safra e outros 
+direitos trabalhistas e previdenciários.  
+Promoção da Sustentabilidade : Promover o uso sustentável dos recursos naturais, por 
+meio do incentivo a práticas agrícolas que respeitem o meio ambiente, ao mesmo tempo 
+em que contribuem para o desenvolvimento econômico e social.  
+Facilidade na Gestão Pública : Auxiliar na gestão pública dos programas voltados para 
+a agricultura familiar, otimizando os processos de seleção, controle e 
+acompanhamento das políticas voltadas a este público.  
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 3 ---
+ 
+ 
+Usuário Beneficiados  
+Os beneficiários da Política Nacional da Agricultura Familiar, conforme a Lei nº 
+11.326/2006 e o Decreto nº 9.064/2017, incluem agricultores familiares, pescadores 
+artesanais, aquicultores, silvicultores, extrativistas, quilombolas, assentados do PNRA, 
+ben eficiários do PNCF e formas associativas da agricultura familiar.  
+Para a identificação e qualificação da Unidade Familiar de Produção Agrária, os critérios 
+incluem:  
+• Área de até quatro módulos fiscais.  
+• Maioria da força de trabalho familiar no processo produtivo.  
+• Gestão estritamente familiar.  
+• Renda do estabelecimento igual ou superior à renda externa.  
+Unidades familiares indígenas, quilombolas e de outras comunidades tradicionais não 
+precisam cumprir o limite de área de até quatro módulos fiscais.  
+ATORES ENVOLVIDOS  
+Cidadão  
+O papel do cidadão no CAF (Cadastro do Agricultor Familiar)  é realizar o registro 
+adequado, fornecendo informações sobre sua atividade rural, para acessar políticas 
+públicas como crédito, assistência técnica e capacitação. O cadastro é fundamental 
+para o agricultor familiar obter apoio e benefícios que visem o for talecimento da 
+produção e melhoria das condições de vida no campo.  
+Emissores (CECAF)  
+O vínculo do usuário (cadastrador ou gestor) com as entidades emissoras do CAF 
+(Cadastro da Agricultura Familiar) ocorre através do CECAF , onde o cadastrador registra 
+as informações do agricultor. As entidades responsáveis, como as secretarias estaduais 
+e municipais de agricultura, validam e monitoram os dados para garantir que o agricultor 
+tenha acesso aos benefícios e políticas públicas v oltados à agricultura familiar.  
+Administradores  
+Têm a função de gerenciar e controlar o sistema CAF, garantindo o correto 
+funcionamento e a segurança das informações. Eles supervisionam os processos 
+realizados pelos Cadastro Emissores, controlam o acesso dos usuários e podem realizar 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 4 ---
+ 
+ 
+ajustes nas configurações do sistema, além de assegurar a integridade dos dados e 
+facilitar a manutenção do sistema.  
+Instituições Financeiras e Parceiros  
+As instituições financeiras  recebem dados do cadastro dos agricultores familiares por 
+meio da nossa API do CAF 3.0 . As informações do CAF são fundamentais para que as 
+instituições financeiras possam oferecer suporte eficiente ao agricultor familiar. Com 
+dados sobre a situação f amiliar e perfil de produção dos agricultores, as instituições 
+conseguem avaliar riscos com mais clareza e agilidade. Isso permite a criação de linhas 
+de crédito mais adequadas, taxas de juros personalizadas e programas de 
+financiamento voltados às necessidades es pecíficas do agricultor familiar.  
+O Banco Central é responsável por gerir o Sistema de Operações do Crédito Rural e do 
+Proagro (SICOR). O SICOR é uma plataforma essencial para o registro e monitoramento 
+das operações de crédito rural. Ele possui integração com os  dados do CAF para avaliar 
+a situação financeira e o perfil dos agricultores, assegurando maior precisão na análise 
+de riscos e na concessão de crédito. A integração com o BACEN tem o objetivo de 
+realizar a disponibilização dos dados do CAF com o SICOR. Além do  BACEN , temos 
+também i ntegração direta com outras instituições financeiras, ampliando o alcance e o 
+impacto dessa colaboração.  
+Contamos com um total de nove instituições financeiras, sendo elas:  
+• BACEN  
+• BNB  
+• BANRISUL  
+• CRESOL  
+• SICREDI  
+• SICOOB  
+• BRDE  
+• BB 
+• BASA  
+• CAIXA  
+ E um total de quatro parceiros do MDA:  
+• INSS ( DATAPREV ) 
+• FNDE  
+• MDS  
+• CONAB  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 5 ---
+ 
+ 
+ 
+ 
+INTEGRAÇ ÕES  COM BASES DE DADOS  
+• B-CADASTRO  (Receita  Federal / ConectaGov  ) 
+No CAF, obtemos dados diretamente do B -Cadastro, solução em blockchain 
+implantada na estrutura do MDA/MAPA através de solicitação formal no ConectaGov do 
+MGI, e que é mantida pela Receita Federal. Essa integração permite acessar 
+informações atualizadas e o ficiais sobre contribuintes (pessoas físicas) e empresas 
+(pessoas jurídicas), por meio do CPF e CNPJ. Com isso, facilitamos a validação desses 
+dados, garantindo a precisão das informações em diversos processos e assegurando a 
+conformidade  com critérios est abelecidos . 
+• CECAF  ( MDA / CAF 2.0 )  
+Integrações internas – emissores de CAF.  
+O CECAF  é uma ferramenta essencial no Sistema CAF, pois estabelece o vínculo entre 
+o usuário (cadastrador ou gestor do CAF) e as entidades responsáveis pela emissão do 
+CAF. Ele utiliza o CPF  do usuário que está logando no sistema para verificar se ele tem 
+acesso aos recursos do CAF e para determinar em quais municípios e estados o usuário 
+tem permissão para realizar o cadastro de uma Unidade Familiar de Produção Agrária. 
+Dessa forma, o CECAF garante que o processo de cadastramento seja feito de acordo 
+com as permi ssões e responsabilidades de cada usuário, assegurando que apenas os 
+cadastradores ou gestores autorizados possam acessar e atualizar os dados dentro de 
+suas áreas de atuação.  
+INTEGRAÇÕES EXTERNAS  
+As integraç ões  com outras bases de dados promovem  a troca e atualização contínua de 
+informações entre bases e sistemas distintos, assegurando  a consistência , precisão e 
+confiabilidade dos dados  cadastrados.  A validação dessas informações é um processo 
+essencial  para garantir  que os dados sejam corretos, completos  e estejam em 
+conformidade com os critérios  estabelecidos  pelo MDA.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 6 ---
+ 
+ 
+No novo CAF 3.0, foram implementadas integrações externas que fortalecem a 
+qualidade das informações, permitindo o cruzamento de dados com bases 
+governamentais. Essa interligação não só reduz erros e inconsistências, mas também 
+simplifica e agiliza os proc essos de cadastramento e atualização.  
+Além dessas melhorias técnicas, o CAF 3.0 proporciona uma nova API que vai facilitar o 
+acesso de benefícios oferecidos por instituições financeiras, como o acesso facilitado a 
+linhas de crédito rural, programas de financiamento com taxas de juros reduzidas, 
+seguros agrícolas, incentivos fiscais e subsídios específicos para fomentar a produção 
+e a sust entabilidade no campo.  
+Segue m as integrações externas  inseridas no CAF : 
+INCRA  SIGEF , SNCR , SIPRA    
+SIGEF  (Sistema de Gestão Fundiária) é utilizado para  subsidiar a governança fundiária 
+do território nacional , facilitando a regularização fundiária e o gerenciamento de 
+propriedades rurais, especialmente no âmbito do INCRA.  
+➢ Consulta de dados de parcelas ge orreferenciadas  certificadas ou em processo 
+de regularização fundiária inser idas e validadas no Sistema de Gestão Fundiária 
+– SIGEF  
+SNCR  (Sistema Nacional de Cadastro Rural) é vinculado ao INCRA e serve para 
+cadastrar imóveis rurais, integrando informações sobre localização, área e titularidade, 
+essencial para o planejamento e controle fundiário.  
+➢ O serviço dispo nibiliza a consulta de i nformações de imóvel rural e verificação de 
+propriedade /posse física ou jurídica.  
+SIPRA  (Sistema de Informação e Processamento de Recursos Ambientais) gerencia 
+informações ambientais, focando no uso sustentável do solo e recursos naturais, 
+integrando dados sobre atividades que impactam o meio ambiente.  
+➢ Ainda não integrado.  
+MDS   CAD UNICO SERVIÇO  
+CAD UNICO SERVIÇO  - Utilizando como base as inf ormações contidas no Cadastro 
+Único, a API Cad Único Serv iço e indicadores  Familiares tem como finalidade retornar 
+para uma  determinada pessoa, a partir do CPF ou NIS:  
+➢ Se o CPF/NIS está na base do Cadastro , e com status  cadastrado;  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 7 ---
+ 
+ 
+➢ Se o cadastro está  atualizado  na base de dados;  
+➢ Faixas de renda familiar  
+➢ Muni cípio ( Código  IBGE,  Nome e UF);   
+➢ Características  do local de domicílios;  
+➢ Família é beneficiaria do programa Bolsa Família  
+DATAPREV   RELAÇÕES TRABALHISTAS, ENQUADRAMENTO DE RENDA, 
+BENEFICIOS  
+A DataPrev disponibiliza informações detalhadas sobre o CPF consultado, incluindo 
+dados sobre  Relações Trabalhistas, Enquadramento de Renda e dos Benefícios . 
+ 
+➢ Relação trabalhista : retorna os vínculos empregatício que o CPF consultado teve 
+ou tem no momento, usamos para identificar se ele teve algum emprego nos 
+últimos 12 meses.  
+➢ Enquadramento de renda : verifica se as rendas declaradas a um CPF se enquadra 
+na faixa de renda que retorna da dataprev. Os dados que retorna da dataprev não é o 
+valor exato da faixa de renda do CPF, mas sim o valor mínimo e máximo onde a renda 
+do CPF pode estar.  
+➢ Benefícios : retorna os benefícios que um CPF teve ou tem no momento, 
+identificamos se tem um ativo, verificamos já temos cadastro no banco de dados, se 
+não cadastramos como um produto colocando o nome dele e código interno da 
+dataprev.  
+➢ Caso a integração NÃO VIABILIZE  o processo , as informações serão salvas em uma 
+tabela temporária e preenchidas automaticamente quando a integração for 
+restabelecida. Contudo, erros na validação da UFPA impedirão sua ativação, 
+AFETANDO  o processo de cadastro no CAF.  
+ 
+RECEITA FEDERAL  B-CADASTRO  
+Receita Federal, por meio do B -Cadastro que fornece dados do “ CPF e CNPJ ”.  
+➢ Essa integração permite acessar informações cadastrais de pessoas físicas e 
+jurídicas, como dados de identificação, situação fiscal e registro de empresas, 
+facilitando a análise e o gerenciamento dessas informações para diversos 
+processos e serviços.  
+➢ Caso a integração NÃO VIABILIZE  o processo , os dados não serão retornados e 
+o cadastro não será concluído até que a integração seja restabelecida, 
+AFETANDO  o processo de cadastro no CAF.  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 8 ---
+ 
+ 
+CORREIOS  CEP  
+Correios, por meio do “ CEP”, que fornece dados relacionados a códigos postais.  
+➢ Essa integração permite acessar informações precisas sobre endereços, como 
+ruas, bairros, cidades e estados, facilitando a validação e o cadastro de locais 
+para diversos serviços e operações.  
+INTEGRAÇÕES INTERNAS  
+As integrações internas com os sistemas do MDA desempenham um papel 
+fundamental na verificação e validação dos dados cadastrados no Cadastro Nacional 
+da Agricultura Familiar (CAF). Essa conexão permite o intercâmbio eficiente de  
+informações entre diferentes plataformas do MDA, assegurando a precisão, 
+consistência e atualização dos dados relativos aos agricultores familiares.  
+Esse cruzamento interno de dados reduz significativamente erros, fraudes e 
+inconsistências, tornando o processo a execução de po líticas públicas mais segura e 
+ágil.  Além de melhorar a qualidade das informações, essas integrações internas 
+otimizam a gestão dos dados pelo MDA, facilitando o monitoramento e a 
+implementação de políticas públicas voltadas ao fortalecimento da agricultura 
+familiar.  
+Os sistemas abaixo possuem integração direta com a nova API do CAF 3.0:  
+Vitrine   
+A integração entre a Vitrine da Agricultura Familiar e o CAF permite acessar informações 
+essenciais sobre a situação cadastral de indivíduos e empresas, verificando se o CAF do 
+usuário está ativo ou inativo.  
+Por meio dessa integração permite que o Vitrine consulte o CAF para verificar se o CPF 
+ou CNPJ está ativo ou inativo, garantindo que as informações sejam sempre precisas e 
+atualizadas. Além disso, e puxado os dados automaticamente, tornando o cadastro dos 
+produtos na vitrine mais ágil.  
+Garantia Safra  
+A integração entre o programa Garantia Safra e o CAF visa garantir que as pessoas que 
+estão se inscrevendo no GS possuam um CAF ativo.  
+Para realizar o cadastro no programa, é essencial verificar se o cadastro no CAF está 
+ativo. Esse processo de verificação é feito por meio de duas consultas que checam a 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 9 ---
+ 
+ 
+situação cadastral dos documentos, confirmando se estão ativos e regulares no sistema 
+do CAF. Apenas indivíduos com CPF ou CNPJ válidos e ativos têm seu cadastro 
+aprovado, permitindo o acesso aos benefícios do programa Garantia Safra.  
+Sabido  
+A integração entre o Sabido e o CAF permite que, com base no CPF  e CNPJ , todos os 
+dados dos agricultores sejam acessados diretamente do banco de dados do CAF.  
+Com essa conexão, o sistema acessa de forma dinâmica todos os dados dos 
+agricultores registrados no banco de dados do CAF. As informações recuperadas 
+incluem dados essenciais como: CPF, nome completo, nome do cônjuge, outro 
+documento vinculado, município, unidade federativa (UF), código IBGE, número da 
+DAP/CAF, além de detalhes sobre a área principal e área do estabelecimento, o 
+enquadramento, e as datas de emissão e validade dos documentos.  
+Siater  
+A integração entre o S iater  e o CAF tem como objetivo verificar a situação do CAF do 
+beneficiário, consultando se está ativo ou não. No momento do cadastro do 
+beneficiário, o sistema realiza a consulta no banco de dados do CAF e, caso o CAF esteja 
+ativo, o sistema recupera informaçõ es importantes, como o nome e o endereço do 
+agricultor familiar.  
+Esse processo garante que apenas beneficiários com cadastro válido e ativo no CAF 
+sejam incluídos no sistema, facilitando o gerenciamento e o acompanhamento das 
+ações voltadas à agricultura familiar.  
+SERVIÇOS GOV.BR  
+Os serviços ofertados pelo portal GOV.br e disponibilizados no novo CAF 3.0 visam 
+otimizar e facilitar a experiência do usuário através de funcionalidades e recursos 
+compartilhados pela Secretaria de Governo Digital (SGD) do Ministério da Gestão e 
+Inovação  em Serviços Públicos (MGI).  
+LOGIN ÚNICO ; 
+É apresentado na tela inicial de acesso, permitindo que os usuários façam login com 
+uma única credencial, simplificando o processo.  
+➢ Sendo utilizado , dentro do sistema como autenticador, com objetivo de validar o 
+cadastro de emissores do CAF .    
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 10 ---
+ 
+ 
+ASSINATURA DIGITAL ;  
+A Assinatura Digital é utilizada durante o processo de assinatura de documentos e 
+contratos dentro do sistema  
+➢ Sendo  utilizado dentro do sistema para assinatura do Documento de Veracidade 
+que o agricultor ou responsável de Pessoa Jurídica assina quando da 
+confirmação dos dados informados aos emissores. Já está pronto para ser 
+utilizado, mas ainda não implantado em produção.   
+AVALIAÇÃO DE SERVIÇOS . 
+A Avaliação de Serviços é apresentada no painel de usuário, onde os usuários podem 
+fornecer feedback sobre os serviços prestados, contribuindo para a melhoria contínua 
+da plataforma.  
+➢ API do MGI, onde o emissor pode avaliar o sistema do CAF de forma 
+automatizada, gerando relatórios gerenciais para o Gestor do sistema.  
+ 
+ENDPOINTS  
+• Pessoa Física (PF) - Este endpoint no Sistema CAF é uma interface essencial 
+para gerenciar os dados das Unidades Familiares de Produção Agrária (UFPA) 
+vinculadas à Agricultura Familiar, incluindo informações pessoais, 
+identificação, contato, documentos e validação do CAF . 
+ 
+• Pessoa Jurídica (CNPJ) - Este endpoint  no Sistema CAF é uma interface de 
+integração que permite gerenciar os dados de entidades jurídicas vinculadas à 
+Agricultura Familiar, como cooperativas e associações. Ela é essencial para o 
+registro, atualização e consulta de informações cadastrais, documentos 
+legais, atividade econômica, dados fiscais, membros familiares e validação 
+do CAF.  
+ 
+• Por Período  - Este endpoint facilita a análise histórica dos dados cadastrais, 
+permitindo acompanhar mudanças nas informações de uma Unidade Familiar 
+de Produção Agrária ou Empreendimento Familiar Rural, como nome, endereço, 
+tipo de atividade econômica, entre outros. Isso oferece uma visão clara da 
+evolução das condições das unidades e empreendimento ao longo do tempo.  
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 11 ---
+ 
+ 
+• Catálogo de Produtos  - Este endpoint permite o registro e atualização dos 
+produtos agrícolas das unidades familiares e empreendimentos , incluindo 
+tipos de cultivo, quantidade, sazonalidade e qualidade. Esses dados são 
+essenciais para que os produtores acessem programas de comercialização, 
+apoio técnico e outras iniciativas voltadas ao setor agrícola.  
+ 
+• Consulta de tabelas domínio  - Este endpoint fornece acesso às tabelas de 
+domínio do banco de dados, permitindo que os agentes  financeiros  possam 
+realizar o mapeamento (de -para ) dos dados conforme necessário . Contém  os 
+seguintes dados como sexo, estado civil, etnia, caracterização de áreas, 
+escolaridade, entre outros. São os dados padrões de formulário do CAF 3.0 . 
+ 
+ 
+Tabela de Uso dos Endpoints Externo  
+ 
+ 
+Tabela de Uso dos Endpoints Interna  
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 12 ---
+ 
+ 
+DESENVOLVIMENTO, TESTE E 
+QUALIDADE  
+Ambiente de Homologação   
+A API do CAF foi inicialmente disponibilizada em um ambiente de homologação, com o 
+objetivo de realizar validações comerciais em colaboração com parceiros externos, 
+baseadas em serviços pré -definidos.  
+As áreas de negócio do MDA que possuem sistemas integrados ao CAF foram  
+notificadas para abrir chamados, visando adaptar seus sistemas à nova estrutura de 
+compartilhamento de dados. A integração dos sistemas internos do MDA ocorre u 
+conforme a priorização e a abertura de chamados, sendo alinhada com as demandas e 
+prazos estabelecidos pela área de negócio.  
+A integração com os parceiros externos foi estruturada em duas fases, a fim de organizar 
+as ações de apoio e evitar tratar todos os parceiros simultaneamente. Os testes de 
+integração foram  divididos em três categorias principais: conectividade, envio e 
+recebimento de dados, e testes funcionais com dados reais na base migrada. Após a 
+conclusão de todas as categorias de testes, o parceiro estará pronto para migrar para o 
+ambiente de produção.  
+• Testes da API:  
+o Conectividade  
+o Envio e recebimento de dados  
+o Testes funcionais com dados reais na base migrada  
+• Etapas de validação na homologação:  
+o Disponibilização da API no ambiente de homologação WSO2  
+o Inclusão de dados para testes funcionais  
+o Divulgação e apresentação da nova API aos parceiros  
+o Testes e validações internas  
+o Testes e validações com parceiros externos  
+• Integração e validações com sistemas internos:  
+o Integração e validação de sistemas internos do MDA, conforme a 
+priorização das áreas de negócio e a abertura de chamados.  
+ 
+URL:  https://caf.rhmg.agricultura.gov.br/  
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 13 ---
+ 
+ 
+Ambiente de Treinamento  
+... 
+URL:  
+Teste de Estresse e Desempenho  
+... 
+ 
+ESPECIFICAÇÕES DO SISTEMA  
+ 
+Aplicações Tecnologias e Bibliotecas Envolvidas no Sistema  
+Aplicação e feita no NODE em JS e em typescript  
+Bibliotecas Envolvidas no Sistema  
+ 
+Pacotes envolvidos no Backend:   
+Pacotes envolvidos no front:  
+@aws -sdk/client -s3 @emotion/react  
+@aws -sdk/s3 -request -presigner  @emotion/styled  
+@pdf -lib/fontkit  @fortawesome/fontawesome -svg-core  
+@types/ioredis  @fortawesome/free -regular -svg-icons  
+@types/morgan  @fortawesome/free -solid -svg-icons  
+@types/multer  @fortawesome/react -fontawesome  
+@types/swagger -jsdoc  @mui/icons -material  
+axios  @mui/material  
+bull  @mui/styled -engine -sc 
+cors  @mui/x -date -pickers  
+cross -env  @tiptap/core  
+dotenv  @tiptap/extension -color  
+exceljs  @tiptap/extension -font -family  
+express  @tiptap/extension -heading  
+express -async -errors  @tiptap/extension -highlight  
+express -validator  @tiptap/extension -image  
+helmet  @tiptap/extension -link  
+ioredis  @tiptap/extension -mention  
+jsonwebtoken  @tiptap/extension -placeholder  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 14 ---
+ 
+ 
+moment  @tiptap/extension -subscript  
+moment -timezone  @tiptap/extension -superscript  
+mongoose  @tiptap/extension -table  
+morgan  @tiptap/extension -table -cell  
+mssql  @tiptap/extension -table -header  
+multer  @tiptap/extension -table -row  
+node -cron  @tiptap/extension -task -item  
+node -forge  @tiptap/extension -task -list 
+node -signpdf  @tiptap/extension -text -align  
+pdf-lib @tiptap/extension -text -style  
+pdfmake  @tiptap/extension -underline  
+pg @tiptap/pm  
+reflect -metadata  @tiptap/react  
+rimraf  @tiptap/starter -kit 
+rsa-pem -from -mod -exp axios  
+slug  classnames  
+soap  cross -env  
+swagger -jsdoc  date -fns 
+swagger -ui-express  formik  
+ts-node  iron -session  
+tsyringe  jodit -react  
+typeorm  jsonwebtoken  
+uuid  lodash.uniqueid  
+winston  material -ui-confirm  
+xml -js material -ui-popup -state  
+ moment  
+ mui -tiptap  
+ next  
+ next -qrcode  
+ qs 
+ react  
+ react -any -attr 
+ react -csv 
+ react -dom  
+ react -hook -form  
+ react -imask  
+ react -number -format  
+ react -toastify  
+ sass  
+ styled -components  
+ swr  
+ yup  
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 15 ---
+ 
+ 
+ 
+Banco de dados  
+MongoDB  - O MongoDB é uma base de dados NoSQL orientada a documentos.  
+• Utilizamos o Mongo no sistema CAF 3.0 para gravar o histórico dos dados.  
+Postgres  - O PostgreSQL é uma base de dados relacional de código aberto e 
+altamente extensível.  
+• Utilizamos o  Postgres é o banco de dados utilizado no CAF 3.0.  
+Redis  - O Redis é uma base de dados NoSQL do tipo key -value (chave -valor), onde 
+os dados são armazenados como pares de chave e valor.  
+• Utilizamos o  Redis para o gerenciamento de filas  no CAF 3.0 .  
+Tecnologia e Versão  
+NODE VERSÃO 20  
+MAPA CAF  
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 16 ---
+ 
+ 
+MAPA TABELAS BANCO CAF  
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.
+
+--- Página 17 ---
+ 
+ 
+ 
+ 
+ 
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79990629.

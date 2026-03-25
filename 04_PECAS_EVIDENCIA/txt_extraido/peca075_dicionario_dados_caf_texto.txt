@@ -1,0 +1,4220 @@
+--- Página 1 ---
+Dicionário de Dados - CAF3
+ 
+S_AREA_IMOVEL
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_area_imovel
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de área imóvel
+nr_area
+numeric
+9
+2
+NO
+Tamanho da área imóvel
+sg_uf
+character varying
+2
+NO
+Sigla UF da área imóvel
+nr_longitude
+numeric
+NO
+Longitude da área imóvel
+nr_latitude
+numeric
+NO
+Latitude da área imóvel
+st_ativo
+boolean
+NO
+Situação ativo ou inativo da área imóvel
+st_imovel_principal
+boolean
+NO
+Se é o imóvel principal da unidade familiar
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_tipo_unidade_medida
+integer
+32
+0
+NO
+ID de identificação de tipo de unidade media
+id_tipo_area
+integer
+32
+0
+NO
+ID de identificação de tipo área
+id_tipo_localizacao_area
+integer
+32
+0
+NO
+ID de identificação de tipo de localização área
+cd_municipio
+character varying
+7
+NO
+Código IBGE do município
+st_incra
+boolean
+YES
+Se é um imóvel importado das APIs do
+INCRA(SIGEF/SNCR)
+cd_imovel_incra
+character varying
+255
+YES
+Código INCRA importado das APIs do
+INCRA(SIGEF/SNCR)
+nm_origem_imovel
+integer
+32
+0
+YES
+Origem do imóvel importado das APIs do INCRA
+INCRA(SIGEF/SNCR)
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 2 ---
+S_AREA_PESSOA_UFPR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_area_pessoa_ufpr
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de área pessoa UFPR
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_inativacao
+timestamp without
+time zone
+YES
+now()
+Data inativação
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+id_unidade_familiar_pess
+oa
+uuid
+NO
+ID de identificação da unidade familiar pessoa
+id_area_imovel
+uuid
+NO
+ID de identificação de área imóvel
+id_condicao_dominio
+integer
+32
+0
+NO
+ID de identificação de tipo de condição de domínio
+S_ATUALIZACAO_UNIDADE_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_atualizacao_unidade_f
+amiliar
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de atualização unidade familiar
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+dt_atualizacao
+timestamp without
+time zone
+NO
+now()
+Data atualização
+S_BENEFICIO_MEMBRO_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_beneficio_membro_fam
+iliar
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de beneficio membro familiar
+id_produto
+uuid
+YES
+ID de identificação de produto
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 3 ---
+S_BENEFICIO_MEMBRO_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar_pess
+oa
+uuid
+NO
+ID de identificação da unidade familiar pessoa
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+S_BLOQUEIO_LOTE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_bloqueio_lote
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de bloqueio lote
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+id_tipo_lote
+integer
+32
+0
+NO
+ID de identificação de tipo de lote
+S_BLOQUEIO_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_bloqueio_pessoa
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de bloqueio pessoa
+nr_cpf
+character varying
+11
+YES
+Numero do CPF
+ds_motivo
+character varying
+NO
+Motivo de bloqueio pessoa
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+nr_processo_sei
+character varying
+NO
+Numero do processo SEI
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 4 ---
+S_BLOQUEIO_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nm_bloqueio_pessoa
+character varying
+NO
+Nome do bloqueio pessoa
+nr_cnpj
+character varying
+14
+YES
+Numero do CNPJ
+id_tipo_lote
+integer
+32
+0
+NO
+ID de identificação de tipo lote
+st_ativo
+boolean
+YES
+Situação se estar ativo ou inativo
+dt_fim_suspensao
+timestamp without
+time zone
+YES
+Data fim suspensão
+id_bloqueio_pessoa_docu
+mento
+uuid
+YES
+ID de identificação de bloqueio pessoa documento
+S_BLOQUEIO_PESSOA_DOCUMENTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_bloqueio_pessoa_docu
+mento
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de bloqueio pessoa documento
+id_documento
+uuid
+NO
+ID de identificação de documento
+S_CACHE_DATAPREV
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_cadunico
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de cadunico
+nr_cpf
+character varying
+11
+NO
+Numero CPF
+tp_consulta
+integer
+32
+0
+NO
+1 - cadunico, 2 - beneficios, 3 - faixa renda, 4
+relacao trabalhista
+consulta
+jsonb
+NO
+Retorno da consulta nas APIs da Dataprev
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 5 ---
+S_CADUNICO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_cadunico
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de cadunico
+st_cadastrado
+boolean
+NO
+Situação se o cadastro estar ativo ou inativo
+nr_cpf
+character varying
+11
+NO
+Numero CPF
+S_CAF
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar
+uuid
+YES
+ID de identificação da unidade familiar
+id_usuario
+uuid
+YES
+ID de identificação de usuário
+id_pessoa_juridica
+uuid
+YES
+ID de identificação de pessoa jurídica
+uf
+character varying
+2
+NO
+Sigla UF
+id_tipo_caf
+integer
+32
+0
+NO
+ID de identificação de tipo CAF
+id_caf
+uuid
+NO
+uuid_generate_v4()
+ID de identificação CAF
+nr_caf
+integer
+32
+0
+NO
+Numero CAF
+dt_criacao
+date
+NO
+Data criação
+id_entidade
+uuid
+YES
+ID de identificação de entidade
+S_CARACTERIZACAO_AREA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_caracterizacao_area
+integer
+32
+0
+NO
+ID de identificação de caracterização área
+nm_caracterizacao_area
+character varying
+100
+NO
+Descrição caracterização área
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 6 ---
+S_CATEGORIA_PRODUTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_categoria_produto
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de categoria produto
+ds_categoria_produto
+character varying
+155
+NO
+Descrição categoria produto
+st_ativo
+boolean
+NO
+true
+Situação ativo ou inativo categoria produto
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+S_CATEGORIA_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_categoria_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de categoria renda
+id_tipo_renda
+uuid
+NO
+ID de identificação de tipo renda
+id_categoria_produto
+uuid
+NO
+ID de identificação de categoria produto
+S_CLIENTE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_cliente
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de cliente
+ds_cliente
+character varying
+NO
+Nome do cliente.
+st_ativo
+boolean
+NO
+true
+Situação do cliente, ativo ou inativo.
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 7 ---
+S_CLIENTE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+id_modelo_arquivo
+uuid
+YES
+ID de identificação de modelo arquivo
+S_CNAE_PRINCIPAL
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+cd_cnae_principal
+character varying
+7
+NO
+Codigo CNAE principal
+ds_cnae_principal
+character varying
+255
+NO
+Descrição CNAE principal
+S_CONDICAO_DOMINIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_condicao_dominio
+integer
+32
+0
+NO
+ID de identificação de condição de domínio
+ds_condicao_dominio
+character varying
+50
+NO
+Descrição condição de domínio
+S_CONFIGURACAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_config
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de configuração
+config
+json
+NO
+Campos de configuração
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 8 ---
+S_CONTROLE_MIGRACAO_PJ
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_controle_migracao_pj
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de controle migração pessoa
+jurídica
+id_pj
+integer
+32
+0
+NO
+ID de identificação de pessoa jurídica CAF 2
+nu_situacao
+integer
+32
+0
+NO
+ 1
+ 1 - migrando, 2 - migrado, 3 - cadastro incomplet, 4
+- PJ sem socios
+id_pj_caf3
+character varying
+YES
+ID de identificação de pessoa jurídica CAF 3
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+nr_cnpj
+character varying
+YES
+Numero CNPJ
+tp_pj
+integer
+32
+0
+YES
+1 - Coop. Singular, 2 - Coop. Central, 3 - Empresa,
+4 - Associacao
+S_CONTROLE_MIGRACAO_UFPA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_controle_migracao_ufp
+a
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de controle migração UFPA
+id_unidade_familiar
+integer
+32
+0
+NO
+ID de identificação da unidade familiar
+nu_situacao
+integer
+32
+0
+NO
+ 1
+ 1 - realizando migracao, 2 - cadastro migrado, 3 -
+cadastro incompleto, 4 - UFPA sem membros, 5 -
+realizando atualizacao
+id_unidade_familiar_caf3
+character varying
+YES
+ID de identificação da unidade familiar
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 9 ---
+S_CONTROLE_MIGRACAO_UFPA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+st_atualizada
+boolean
+YES
+Situação controle migração pessoa jurídica
+atualizada
+S_COPIA_DAP
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nr_dap
+character varying
+NO
+Numero DAP
+nr_cpf_titular
+character varying
+11
+NO
+Numero CPF do titular
+nr_cpf_subtitular
+character varying
+11
+YES
+Numero CPF do subtitular
+dt_validade
+date
+NO
+Data Validade
+st_ultima_versao
+boolean
+NO
+Situação se é a ultima versão
+st_dap_valida
+boolean
+NO
+Situação DAP valida
+st_dap_expirada
+boolean
+NO
+Situação DAP expirada
+st_cdda_cancelada
+boolean
+NO
+Situação CDDA cancelada
+id_unidade_familiar
+uuid
+YES
+ID de identificação da unidade familiar
+nm_titular
+character varying
+255
+YES
+Nome do titular
+nm_subtitular
+character varying
+255
+YES
+Nome do subtitular
+cd_municipio
+character varying
+7
+YES
+Código do IBGE do município
+cd_uf
+character varying
+2
+YES
+Código da UF
+id_sexo_titular
+integer
+32
+0
+YES
+ID de identificação de sexo do titular
+id_sexo_subtitular
+integer
+32
+0
+YES
+ID de identificação de sexo do subtitular
+id_caracterizacao_area
+integer
+32
+0
+YES
+ID de identificação de caracterização área
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 10 ---
+S_COPIA_DAP
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_atividade_principal
+integer
+32
+0
+YES
+ID de identificação de atividade principal
+ds_obito
+character varying
+255
+YES
+Descrição óbito
+st_validado
+boolean
+YES
+Situação validado
+S_DOCUMENTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_documento
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de documento
+nm_documento
+character varying
+255
+NO
+Nome do documento
+cd_cloud_storage
+character varying
+100
+NO
+Chave do documento na nuvem
+ds_url
+character varying
+2000
+NO
+URL do Documento
+id_unidade_familiar
+uuid
+YES
+ID de identificação da unidade familiar
+id_tipo_documento
+integer
+32
+0
+NO
+ID de identificação do tipo documento
+id_pessoa_juridica
+uuid
+YES
+ID de identificação de pessoa jurídica
+id_bloqueio_lote
+uuid
+YES
+ID de identificação de bloqueio lote
+dt_criacao
+date
+NO
+Data criação
+dt_atualizacao
+date
+YES
+Data atualização
+st_migrado_nuvem
+boolean
+NO
+false
+Situação migrado nuvem
+nm_extensao
+character varying
+20
+YES
+Nome da extensão do arquivo
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 11 ---
+S_DOC_IDENTIFICACAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_doc_identificacao
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de documento de identificação
+sg_uf
+character varying
+2
+NO
+Sigla UF
+dt_emissao
+date
+YES
+Data emissão
+nr_documento
+character varying
+20
+NO
+numero do documento
+id_pessoa_fisica
+uuid
+NO
+ID de identificação de pessoa física
+id_tipo_documento
+integer
+32
+0
+NO
+ID de identificação de tipo documento
+nm_emissor_orgao
+character varying
+255
+YES
+Nome do órgão emissor
+S_ENDERECO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_endereco
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de endereço
+sg_uf
+character varying
+2
+NO
+Sigla UF
+nr_cep
+character varying
+8
+NO
+Numero do CEP
+ds_logradouro
+character varying
+255
+NO
+Descrição do logradouro
+ds_complemento
+character varying
+100
+YES
+Descrição do complemento
+ds_referencia
+character varying
+100
+YES
+Descrição de referencia
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+cd_municipio
+character varying
+7
+NO
+Código IBGE do município
+nr_logradouro
+character varying
+15
+YES
+Numero do logradouro
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 12 ---
+S_ENDERECO_UFPR_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_endereco_ufpr_pessoa
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de endereço pessoa UFPR
+id_endereco
+uuid
+NO
+ID de identificação de endereço
+id_unidade_familiar
+uuid
+YES
+ID de identificação da unidade familiar
+id_pessoa_juridica
+uuid
+YES
+ID de identificação de pessoa jurídica
+S_ENTIDADE_EMISSORA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_entidade_emissora
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de entidade emissora
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_inativacao
+timestamp without
+time zone
+YES
+Data inativação
+ds_motivo_inativacao
+character varying
+200
+YES
+Descrição motivo inativação
+nr_cnpj
+character varying
+14
+NO
+Numero CNPJ
+nm_razao_social
+character varying
+150
+NO
+Razão social da entidade emissora
+S_FAIXA_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_faixa_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de faixa renda
+valor_maximo
+numeric
+10
+2
+YES
+Valor máximo da renda
+valor_minimo
+numeric
+10
+2
+YES
+Valor mínimo da renda
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 13 ---
+S_FAIXA_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar_pess
+oa
+uuid
+YES
+ID de identificação da unidade familiar pessoa
+S_FUNCIONARIO_UFPR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_funcionario_ufpr
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de funcionário UFPR
+id_pessoa_fisica
+uuid
+YES
+ID de identificação de pessoa física
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+dt_criacao
+date
+YES
+Data criação
+S_GERACAO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_geracao_arquivo
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de geração arquivo
+nr_etapa
+integer
+32
+0
+YES
+ 0
+ Etapa que o processo estão no momento.
+nr_ultima_pagina
+integer
+32
+0
+YES
+Ultima pagina inteirada na etapa atual.
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+dt_inicio_processamento
+timestamp without
+time zone
+YES
+Data de inicio da geração do arquivo
+dt_fim_processamento
+timestamp without
+time zone
+YES
+Data de fim da geração do arquivo
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 14 ---
+S_GERACAO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_cliente
+uuid
+YES
+ID de identificação de cliente
+id_tipo_situacao_geracao
+_arquivo
+integer
+32
+0
+NO
+ID de identificação de tipo situação geração arquivo
+id_usuario
+uuid
+YES
+ID de identificação de usuário
+dt_inicio
+timestamp without
+time zone
+YES
+Data de inicio do intervalo da geração do arquivo
+dt_fim
+timestamp without
+time zone
+YES
+Data de fim do intervalo da geração do arquivo
+S_GERACAO_ARQUIVO_DOCUMENTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_geracao_arquivo_docu
+mento
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de geração arquivo documento
+id_geracao_arquivo
+uuid
+NO
+ID de identificação de geração arquivo
+id_documento
+uuid
+NO
+ID de identificação de documento
+nr_etapa
+integer
+32
+0
+YES
+ 0
+ Etapa que o processo esta no momento.
+S_MEMBRO_EXCLUIDO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_membro_excluido
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de membro excluído
+dt_exclusao
+timestamp without
+time zone
+NO
+now()
+Data exclusão
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 15 ---
+S_MEMBRO_EXCLUIDO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_fisica
+uuid
+NO
+ID de identificação de pessoa física
+id_unidade_familiar_pess
+oa
+uuid
+NO
+ID de identificação da unidade familiar pessoa
+id_usuario
+uuid
+YES
+ID do usuário que excluiu o membro
+id_entidade_emissora
+uuid
+YES
+ID da entidade que excluiu o membro
+S_MENSAGEM
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_mensagem
+uuid
+NO
+uuid_generate_v4()
+ID de identificação da mensagem
+titulo
+character varying
+200
+NO
+Titulo da mensagem
+mensagem
+text
+NO
+corpo da mensagem
+dt_inicio
+date
+NO
+Data inicio
+dt_fim
+date
+NO
+Data fim
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+S_MENSAGEM_PERFIS
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_mensagem
+uuid
+NO
+ID de identificação da mensagem
+id_perfil
+uuid
+NO
+ID de identificação de perfil
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 16 ---
+S_MENSAGEM_USUARIOS
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_mensagem
+uuid
+NO
+ID de identificação da mensagem
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+S_MODELO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_modelo_arquivo
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de modelo arquivo
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 17 ---
+S_MODELO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+js_campos
+jsonb
+NO
+{"area": [{"alias": "
+arquivo", "column": "
+4"}, {"alias": "
+numero_UFPA", "
+column": "caf.nr_caf"
+}, {"alias": "
+codigo_area", "
+column": "area.id_a
+rea_imovel"},
+{"alias": "situacao_a
+rea", "column": "
+case when area.st_i
+movel_principal is
+true then 1 else 0
+end"}, {"alias": "
+data_ativacao_area"
+, "column": "
+TO_CHAR(area_uf
+pa.dt_criacao, '
+'YYYYMMDD'')"},
+{"alias": "data_inativ
+acao_area", "
+column": "TO_CHA
+R(area_ufpa.dt_inat
+ivacao, ''YYYYMMD
+D'')"}, {"alias": "
+tamanho_area", "
+column": "area.nr_a
+rea"}, {...
+Campos do modelo arquivo
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 18 ---
+S_MODELO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+js_cabecalho
+jsonb
+NO
+{"area": "arquivo;nu
+mero_UFPA;codigo
+_area;situacao_are
+a;data_ativacao_ar
+ea;data_inativacao_
+area;tamanho_area;
+codigo_tipo_unidad
+e_medida;descricao
+_tipo_unidade_med
+ida;codigo_tipo_are
+a;descricao_tipo_ar
+ea;descricao_locali
+zacao_area;codigo
+_localizacao_area;c
+odigo_UF;sigla_UF;
+codigo_municipio;n
+ome_municipio;num
+ero_sipra;codigo_c
+ondicao_dominio;de
+scricao_condicao_d
+ominio;cpf_respons
+avel_area;latitude;lo
+ngitude", "membro":
+"arquivo;numero_U
+FPA;codigo_pessoa
+_fisica;cpf;nome;tra
+balha_na_UFPA;rel
+acao_...
+Cabeçalho do arquivo
+S_MODULO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_modulo
+integer
+32
+0
+NO
+ID de identificação de modulo
+nm_modulo
+character varying
+100
+NO
+Descrição do modulo
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 19 ---
+S_MODULO_FISCAL
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_modulo_fiscal
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de modulo fiscal
+nr_modulo_fiscal
+integer
+32
+0
+NO
+Numero de módulos fiscais aceito no município
+cd_municipio
+character varying
+7
+NO
+Código IBGE do município
+S_MODULO_PERMISSAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_modulo_permissao
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de modulo permissão
+id_modulo
+integer
+32
+0
+NO
+ID de identificação de modulo
+id_tipo_permissao
+integer
+32
+0
+NO
+ID de identificação de tipo permissão
+id_motivo_inativacao
+integer
+32
+0
+NO
+ID de identificação de motivo inativação
+ds_inativacao
+text
+NO
+Descrição inativação
+S_MUNICIPIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+cd_municipio
+character varying
+7
+NO
+Código IBGE do município
+cd_uf
+character varying
+2
+NO
+Código UF
+sg_uf
+character varying
+2
+NO
+Sigla UF
+nm_municipio
+character varying
+155
+NO
+Nome do município
+id_regiao
+integer
+32
+0
+YES
+ID de identificação da região
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 20 ---
+S_NACIONALIDADE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_nacionalidade
+uuid
+NO
+uuid_generate_v4()
+ID de identificação da nacionalidade
+cd_nacionalidade
+character varying
+3
+NO
+Código da nacionalidade
+nm_nacionalidade
+character varying
+100
+NO
+Nome da nacionalidade
+sg_pais
+character varying
+3
+YES
+Sigla país
+S_NATUREZA_JURIDICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+cd_natureza_juridica
+character varying
+10
+NO
+Código natureza jurídica
+ds_natureza_juridica
+character varying
+255
+NO
+Descrição natureza jurídica
+S_NOTIFICACAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_notificacao
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de notificação
+ds_conteudo
+character varying
+1000
+NO
+Descrição do conteúdo
+st_lida
+boolean
+NO
+Situação se a notificação foi lida
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_unidade_familiar
+uuid
+YES
+ID de identificação da unidade familiar
+id_tipo_notificacao
+integer
+32
+0
+NO
+ID de identificação de tipo notificação
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 21 ---
+S_NOTIFICACAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_usuario
+uuid
+YES
+ID de identificação de usuário
+id_pessoa_juridica
+uuid
+YES
+ID de identificação de pessoa jurídica
+S_ORIGEM_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_origem_renda
+integer
+32
+0
+NO
+ID de identificação de origem renda
+ds_origem_renda
+character varying
+80
+NO
+Descrição origem renda
+S_PERFIL
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_perfil
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de perfil
+nm_perfil
+character varying
+50
+NO
+Nome do perfil
+ds_perfil
+character varying
+255
+NO
+Descrição do perfil
+nm_sistema
+character varying
+20
+YES
+Nome que aparece no sistema
+st_ativo
+boolean
+NO
+true
+Situação do perfil se estar ativo ou inativo
+st_padrao
+boolean
+NO
+false
+Situação do perfil se é o perfil padrão do sistema
+st_administrador
+boolean
+NO
+false
+Situação do perfil se é perfil administrador
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 22 ---
+S_PERFIL_PERMISSAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_perfil_permissao
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de perfil permissão
+id_perfil
+uuid
+NO
+ID de identificação de perfil
+id_modulo
+integer
+32
+0
+NO
+ID de identificação de modulo
+id_tipo_permissao
+integer
+32
+0
+NO
+ID de identificação de tipo permissão
+S_PESSOA_FISICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_fisica
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa física
+sg_uf
+character varying
+2
+YES
+Sigla UF
+nm_pessoa_fisica
+character varying
+255
+NO
+Nome da pessoa física
+nm_social
+character varying
+155
+YES
+Nome social
+dt_nascimento
+date
+NO
+Data nascimento
+nr_cpf
+character varying
+11
+NO
+Numero CPF
+nm_mae
+character varying
+200
+YES
+Nome da mãe
+nm_pai
+character varying
+200
+YES
+Nome do pai
+ds_email
+character varying
+100
+YES
+e-mail
+st_declarante_emancipad
+o
+boolean
+YES
+Situação da pessoa física se é emancipado
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_nacionalidade
+uuid
+YES
+ID de identificação da nacionalidade
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 23 ---
+S_PESSOA_FISICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_sexo
+integer
+32
+0
+NO
+ID de identificação de sexo
+id_tipo_etnia
+integer
+32
+0
+YES
+ID de identificação de tipo etnia
+id_tipo_escolaridade
+integer
+32
+0
+YES
+ID de identificação de tipo escolaridade
+id_tipo_estado_civil
+integer
+32
+0
+YES
+ID de identificação de tipo estado civil
+cd_municipio
+character varying
+7
+YES
+Código IBGE do município
+st_excluido
+boolean
+YES
+false
+Situação se estar excluído
+S_PESSOA_JURIDICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa jurídica
+nr_cnpj
+character varying
+14
+NO
+Numero do CNPJ
+nm_razao_social
+character varying
+150
+NO
+Razão social da pessoa jurídica
+nm_fantasia
+character varying
+150
+NO
+Nome fantasia da pessoa jurídica
+dt_constituicao
+date
+YES
+Data constituição da pessoa jurídica
+ds_email
+character varying
+150
+YES
+e-mail
+dt_inativacao
+date
+YES
+Data inativação
+st_ativo
+boolean
+NO
+true
+Situação se estar ativo ou inativo
+st_coop_singular
+boolean
+YES
+Situação se é uma cooperativa singular
+st_coop_central
+boolean
+YES
+Situação se é uma cooperativa central
+cd_natureza_juridica
+character varying
+10
+NO
+Código natureza jurídica
+cd_cnae_principal
+character varying
+7
+NO
+Código CNAE principal
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 24 ---
+S_PESSOA_JURIDICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_responsavel_legal
+uuid
+NO
+ID de identificação de responsável legal
+id_responsavel_tecnico
+uuid
+YES
+ID de identificação de responsável técnico
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+id_tipo_situacao_pessoa_j
+uridica
+integer
+32
+0
+NO
+ID de identificação de tipo situação pessoa jurídica
+dt_validade
+date
+YES
+Data validade
+id_entidade_emissora
+uuid
+YES
+ID de identificação de entidade emissora
+dt_bloqueio
+date
+YES
+Data bloqueio
+dt_atualizacao
+date
+YES
+Data atualização
+dt_inscricao
+date
+YES
+Data inscrição
+ds_inativacao
+character varying
+100
+YES
+Motivo da inativação
+id_motivo_inativacao
+integer
+32
+0
+YES
+ID de identificação de motivo inativação
+dt_ativacao
+date
+YES
+Data ativação
+S_PESSOA_JURIDICA_FALHA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica_falha
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa jurídica falha
+nr_cpf
+character varying
+11
+YES
+Numero CPF
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+ds_erro
+character varying
+255
+NO
+Descrição erro
+id_pessoa_juridica
+uuid
+NO
+ID de identificação de pessoa jurídica
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 25 ---
+S_PESSOA_JURIDICA_FALHA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+nr_cnpj
+character varying
+14
+YES
+Numero CNPJ
+nm_pessoa_juridica_falha
+character varying
+255
+NO
+Nome pessoa jurídica falha
+S_PESSOA_JURIDICA_SOCIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica_socio
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa jurídica socio
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+id_pessoa_juridica
+uuid
+NO
+ID de identificação de pessoa jurídica
+id_socio_pessoa_fisica
+uuid
+YES
+ID de identificação de socio pessoa física
+id_socio_pessoa_juridica
+uuid
+YES
+ID de identificação de socio pessoa jurídica
+id_usuario
+uuid
+NO
+ID de identificação de usuário
+nr_cpf_socio_dap
+character varying
+11
+YES
+Numero CPF socio DAP
+S_PESSOA_JURIDICA_TOTALIZADORES
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica_totaliz
+adores
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa jurídica totalizadores
+nr_assentado_pnra
+integer
+32
+0
+NO
+ 0
+ Numero assentados PNRA
+nr_beneficio_pncf
+integer
+32
+0
+NO
+ 0
+ Numero benefícios PNCF
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 26 ---
+S_PESSOA_JURIDICA_TOTALIZADORES
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nr_demais_agricultores
+integer
+32
+0
+NO
+ 0
+ Numero demais agricultores
+nr_socios_caf_ativos
+integer
+32
+0
+NO
+ 0
+ Numero sócios CAF ativos
+nr_socios_sem_caf
+integer
+32
+0
+NO
+ 0
+ Sócios que não possuem CAF ou que o CAF
+esteja inativo!
+nr_socios_masculino
+integer
+32
+0
+NO
+ 0
+ Numero sócios masculinos
+nr_socios_feminino
+integer
+32
+0
+NO
+ 0
+ Numero sócios femininos
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+NO
+now()
+Data atualização
+id_pessoa_juridica
+uuid
+NO
+ID de identificação de pessoa jurídica
+nr_percentual_assentado
+_pnra
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual assentado PNRA
+nr_percentual_beneficio_p
+ncf
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual beneficio PNCF
+nr_percentual_demais_ag
+ricultores
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual demais agricultores
+nr_percentual_socios_caf
+_ativos
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual sócios CAF ativo
+nr_percentual_socios_se
+m_caf
+numeric
+5
+2
+NO
+0'::numeric
+Percentual de sócios que não possuem CAF ou
+que o CAF esteja inativo!
+nr_percentual_socios_ma
+sculino
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual sócios masculinos
+nr_percentual_socios_fem
+inino
+numeric
+5
+2
+NO
+0'::numeric
+Numero percentual sócios femininos
+nr_dap
+integer
+32
+0
+NO
+ 0
+ Numero DAP
+nr_percentual_dap
+numeric
+5
+2
+NO
+0'::numeric
+Percentual DAP
+nr_quilombo
+integer
+32
+0
+NO
+ 0
+ Numero quilombo
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 27 ---
+S_PESSOA_JURIDICA_TOTALIZADORES
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nr_percentual_quilombo
+numeric
+5
+2
+NO
+0'::numeric
+Percentual quilombo
+nr_terra_indigena
+integer
+32
+0
+NO
+ 0
+ Numero terra indígena
+nr_percentual_terra_indig
+ena
+numeric
+5
+2
+NO
+0'::numeric
+Percentual terra indígena
+nr_demais_povos_comuni
+dades
+integer
+32
+0
+NO
+ 0
+ Numero demais povos comunidades
+nr_percentual_demais_po
+vos_comunidades
+numeric
+5
+2
+NO
+0'::numeric
+Percentual demais povos comunidades
+nr_nenhuma_opcao
+integer
+32
+0
+NO
+ 0
+ Numero nenhuma opção
+nr_percentual_nenhuma_
+opcao
+numeric
+5
+2
+NO
+0'::numeric
+Percentual nenhuma opção
+nr_aquicultor
+integer
+32
+0
+NO
+ 0
+ Numero agricultor
+nr_percentual_aquicultor
+numeric
+5
+2
+NO
+0'::numeric
+Percentual agricultor
+nr_extrativista
+integer
+32
+0
+NO
+ 0
+ Numero extrativista
+nr_percentual_extrativista
+numeric
+5
+2
+NO
+0'::numeric
+Percentual extrativista
+nr_pescador_artesanal
+integer
+32
+0
+NO
+ 0
+ Numero pescador artesanal
+nr_percentual_pescador_
+artesanal
+numeric
+5
+2
+NO
+0'::numeric
+Percentual pescador artesanal
+nr_silvicultor
+integer
+32
+0
+NO
+ 0
+ Numero silvicultor
+nr_percentual_silvicultor
+numeric
+5
+2
+NO
+0'::numeric
+Percentual silvicultor
+S_PESSOA_JURIDICA_TOTALIZADORES_MUNICIPIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica_totaliz
+adores_municipio
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de pessoa jurídica totalizadores
+município
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 28 ---
+S_PESSOA_JURIDICA_TOTALIZADORES_MUNICIPIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nr_total_socios
+integer
+32
+0
+NO
+Numero total sócios
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+NO
+now()
+Data atualização
+id_pessoa_juridica
+uuid
+NO
+ID de identificação de pessoa jurídica
+cd_municipio
+character varying
+7
+NO
+Código IBGE do município
+S_PRODUTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_produto
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de produto
+ds_produto
+character varying
+155
+NO
+Descrição do produto
+st_ativo
+boolean
+NO
+true
+Situação se o produto estar ativo ou inativo
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_categoria_produto
+uuid
+YES
+ID de identificação de categoria produto
+nm_beneficio_dataprev
+character varying
+YES
+código do beneficio na Dataprev
+st_beneficio_social
+boolean
+NO
+false
+Situação se o produto é um beneficio social
+id_caf_2
+integer
+32
+0
+YES
+ID de identificação do produto no banco do CAF 2
+percentual_rebate
+numeric
+5
+2
+YES
+Percentual de rebate do produto
+id_ramo_atividade
+integer
+32
+0
+YES
+ID de identificação de ramo de atividade
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 29 ---
+S_PRODUTO_TIPO_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_produto_tipo_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de produto tipo renda
+id_produto
+uuid
+NO
+ID de identificação de produto tipo renda
+id_tipo_renda
+uuid
+NO
+ID de identificação de tipo renda
+S_PTR_BENEFICIO_CONSULTA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+nr_cpf
+character varying
+11
+NO
+Numero CPF
+ds_nome
+character varying
+255
+NO
+Nome
+dt_nascimento
+date
+YES
+Data nascimento
+nr_caf
+character varying
+50
+NO
+Numero CAF
+nr_tipo_ptr
+integer
+32
+0
+NO
+1-RURAL | 2-PESCA
+S_PUBLICOS_TRADICIONAIS
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_publico_tradicional
+integer
+32
+0
+NO
+ID de identificação de publico tradicional
+nm_publico_tradicional
+character varying
+255
+NO
+Nome do publico tradicional
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 30 ---
+S_RAMO_ATIVIDADE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_ramo_atividade
+integer
+32
+0
+NO
+ID de identificação de ramo atividade
+ds_ramo_atividade
+character varying
+100
+NO
+Descrição do ramo de atividade
+S_REGIAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_regiao
+integer
+32
+0
+NO
+ID de identificação de região
+ds_regiao
+character varying
+30
+NO
+Descrição da região
+S_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de renda
+vl_renda_estimada
+numeric
+10
+2
+YES
+Valor renda estimada
+vl_renda_auferida
+numeric
+10
+2
+NO
+Valor renda auferida
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+id_unidade_familiar_pess
+oa
+uuid
+YES
+ID de identificação da unidade familiar pessoa
+id_tipo_renda
+uuid
+NO
+ID de identificação de tipo renda
+id_produto
+uuid
+NO
+ID de identificação de produto
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 31 ---
+S_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+st_producao_agroecologic
+a
+boolean
+YES
+Situação se é produção agroecológica
+id_usuario
+uuid
+YES
+ID do usuário que criou a renda
+S_RENDA_DOCUMENTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_renda_documento
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de renda documento
+id_renda
+uuid
+NO
+ID de identificação de renda
+id_documento
+uuid
+NO
+ID de identificação de documento
+S_RESPONSAVEL_UFPR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_responsavel_ufpr
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de responsável UFPR
+dt_entrada
+timestamp without
+time zone
+NO
+now()
+Data entrada
+dt_saida
+timestamp without
+time zone
+YES
+Data saída
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+id_ufpr_pessoa_responsa
+vel
+uuid
+NO
+ID de identificação da unidade familiar pessoa
+id_usuario_inclusao
+uuid
+YES
+ID de identificação de usuário inclusão
+id_usuario_saida
+uuid
+YES
+ID de identificação de usuário saída
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 32 ---
+S_SEXO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_sexo
+integer
+32
+0
+NO
+ID de identificação de sexo
+nm_sexo
+character varying
+20
+NO
+Descrição sexo
+S_SISOBI_DAP
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_sisobi_dap
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de sisobi DAP
+nr_cpf
+character varying
+NO
+Numero CPF
+dt_obito
+character varying
+NO
+Data do óbito
+S_SISOBI_DAP_CONTROLE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_sisobi_dap_controle
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de SISOBI DAP controle
+nr_dap
+character varying
+NO
+Numero DAP
+S_SOCIO_PESSOA_JURIDICA_INVALIDO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_socio_pessoa_juridica_
+invalido
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de socio pessoa jurídica invalido
+nr_identificacao
+character varying
+NO
+Numero de identificação
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 33 ---
+S_SOCIO_PESSOA_JURIDICA_INVALIDO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_pessoa_juridica
+uuid
+NO
+ID de identificação de pessoa jurídica
+S_SUSPENSAO_UFPR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_suspensao_ufpr
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de suspensão UFPR
+id_tipo_suspensao
+integer
+32
+0
+NO
+ID de identificação de tipo suspensão
+S_TELEFONE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_telefone
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de telefone
+nr_telefone
+character varying
+15
+NO
+Numero telefone
+st_ativo
+boolean
+NO
+true
+Situação se o telefone estar ativo ou inativo
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_tipo_telefone
+integer
+32
+0
+YES
+ID de identificação de tipo telefone
+S_TELEFONE_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_telefone_pessoa
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de telefone pessoa
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 34 ---
+S_TELEFONE_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_telefone
+uuid
+NO
+ID de identificação de telefone
+id_pessoa_juridica
+uuid
+YES
+ID de identificação de pessoa jurídica
+id_pessoa_fisica
+uuid
+YES
+ID de identificação de pessoa física
+S_TIPO_AREA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_area
+integer
+32
+0
+NO
+ID de identificação de tipo área
+ds_tipo_area
+character varying
+30
+NO
+Descrição do tipo área
+S_TIPO_CAF
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_caf
+integer
+32
+0
+NO
+ID de identificação de tipo CAF
+ds_tipo_caf
+character varying
+30
+NO
+Descição do tipo CAF
+S_TIPO_DOCUMENTO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_documento
+integer
+32
+0
+NO
+ID de identificação de tipo documento
+nm_tipo_documento
+character varying
+50
+NO
+Descrição do tipo documento
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 35 ---
+S_TIPO_ENDERECO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_endereco
+integer
+32
+0
+NO
+ID de identificação de tipo endereço
+nm_tipo_endereco
+character varying
+30
+NO
+Descrição do tipo endereço
+S_TIPO_ENQUADRAMENTO_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_enquadramento_r
+enda
+integer
+32
+0
+NO
+ID de identificação de tipo enquadramento renda
+ds_tipo_enquadramento_r
+enda
+character varying
+50
+NO
+Descrição do tipo enquadramento renda
+S_TIPO_ENTIDADE_CADASTRADORA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_entidade_cadastra
+dora
+integer
+32
+0
+NO
+ID de identificação de tipo entidade cadastradora
+ds_tipo_entidade_cadastr
+adora
+character varying
+50
+NO
+Descrição do tipo entidade cadastradora
+S_TIPO_ESCOLARIDADE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_escolaridade
+integer
+32
+0
+NO
+ID de identificação de tipo escolaridade
+ds_tipo_escolaridade
+character varying
+50
+NO
+Descrição do tipo escolaridade
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 36 ---
+S_TIPO_ESTADO_CIVIL
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_estado_civil
+integer
+32
+0
+NO
+ID de identificação de tipo estado civil
+nm_tipo_estado_civil
+character varying
+30
+NO
+Descrição do tipo estado civil
+S_TIPO_ETNIA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_etnia
+integer
+32
+0
+NO
+ID de identificação de tipo etnia
+nm_tipo_etnia
+character varying
+30
+NO
+Descrição do tipo etnia
+S_TIPO_LOCALIZACAO_AREA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_localizacao_area
+integer
+32
+0
+NO
+ID de identificação de tipo localização área
+ds_tipo_localizacao_area
+character varying
+30
+NO
+Descrição do tipo localização área
+S_TIPO_LOTE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_lote
+integer
+32
+0
+NO
+ID de identificação de tipo lote
+nm_tipo_lote
+character varying
+50
+NO
+Descrição do tipo lote
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 37 ---
+S_TIPO_MEMBRO_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_membro_familiar
+integer
+32
+0
+NO
+ID de identificação de tipo membro familiar
+nm_tipo_membro_familiar
+character varying
+50
+NO
+Descrição do tipo membro familiar
+S_TIPO_NOTIFICACAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_notificacao
+integer
+32
+0
+NO
+ID de identificação de tipo notificação
+ds_tipo_notificacao
+character varying
+50
+NO
+Descrição do tipo notificação
+S_TIPO_PERMISSAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_permissao
+integer
+32
+0
+NO
+ID de identificação de tipo permissão
+nm_tipo_permissao
+character varying
+70
+NO
+Descrição do tipo permissão
+S_TIPO_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de tipo renda
+ds_tipo_renda
+character varying
+100
+NO
+Descrição do tipo renda
+st_ativo
+boolean
+NO
+true
+Situação se estar ativo ou inativo
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 38 ---
+S_TIPO_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_origem_renda
+integer
+32
+0
+NO
+ID de identificação de origem renda
+S_TIPO_SITUACAO_GERACAO_ARQUIVO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_situacao_geracao
+_arquivo
+integer
+32
+0
+NO
+ID de identificação de tipo situação geração arquivo
+ds_tipo_situacao_geracao
+_arquivo
+character varying
+NO
+Descrição do tipo situação geração arquivo
+S_TIPO_SITUACAO_PESSOA_JURIDICA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_situacao_pessoa_j
+uridica
+integer
+32
+0
+NO
+ID de identificação de tipo situação pessoa jurídica
+ds_tipo_situacao_pessoa
+_juridica
+character varying
+NO
+Descrição do tipo situação pessoa jurídica
+S_TIPO_SITUACAO_UNIDADE_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_situacao_unidade
+_familiar
+integer
+32
+0
+NO
+ID de identificação de tipo situação unidade familiar
+ds_situacao_unidade_fam
+iliar
+character varying
+NO
+Descrição do tipo situação unidade familiar
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 39 ---
+S_TIPO_SUSPENSAO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_suspensao
+integer
+32
+0
+NO
+ID de identificação de tipo suspensão
+ds_tipo_suspensao
+character varying
+150
+NO
+Descrição tipo suspensão
+S_TIPO_TELEFONE
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_telefone
+integer
+32
+0
+NO
+ID de identificação de tipo telefone
+ds_tipo_telefone
+character varying
+30
+NO
+Descrição de tipo telefone
+S_TIPO_TERRENO_UFPR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_terreno_ufpr
+integer
+32
+0
+NO
+ID de identificação de tipo terreno UFPR
+nm_tipo_terreno_ufpr
+character varying
+50
+NO
+Descrição de tipo terreno UFPR
+S_TIPO_UNIDADE_MEDIDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_tipo_unidade_medida
+integer
+32
+0
+NO
+ID de identificação de tipo unidade de medida
+ds_tipo_unidade_medida
+character varying
+10
+NO
+Descrição do tipo unidade de medida
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 40 ---
+S_UNIDADE_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar
+uuid
+NO
+uuid_generate_v4()
+ID de identificação da unidade familiar
+st_possui_mao_obra
+boolean
+NO
+Situação se possuem mão de obra contratada
+dt_validade
+date
+YES
+Data validade
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_usuario
+uuid
+YES
+ID de identificação de usuário
+id_entidade_emissora
+uuid
+YES
+ID de identificação de entidade emissora
+id_tipo_situacao_unidade
+_familiar
+integer
+32
+0
+NO
+ID de identificação de tipo situação unidade familiar
+dt_primeira_ativacao
+date
+YES
+Data primeira ativação
+dt_bloqueio
+date
+YES
+Data bloqueio
+id_motivo_inativacao
+integer
+32
+0
+YES
+ID de identificação de motivo inativação
+ds_inativacao
+character varying
+1000
+YES
+Descrição inativação
+id_tipo_terreno_ufpr
+integer
+32
+0
+YES
+ID de identificação de tipo terreno UFPR
+id_caracterizacao_area
+integer
+32
+0
+YES
+ID de identificação de caracterização área
+dt_criacao
+date
+YES
+Data criação
+id_publico_tradicional
+integer
+32
+0
+YES
+ID de identificação de publico tradicional
+dt_ativacao
+timestamp without
+time zone
+YES
+Data ativação
+st_migrada_caf_2
+boolean
+YES
+false
+Situação se foi migrada do CAF 2
+dt_inativacao
+date
+YES
+Data inativação
+st_possui_versao_caf3
+boolean
+NO
+false
+Situação se possui versão CAF 3
+st_migrada_incra
+boolean
+YES
+false
+Situação se foi migrada do INCRA
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 41 ---
+S_UNIDADE_FAMILIAR
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+dt_edicao
+timestamp without
+time zone
+YES
+Data edição
+S_UNIDADE_FAMILIAR_ENQUADRAMENTO_RENDA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar_enqu
+adramento_renda
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de unidade familiar
+enquadramento renda
+id_unidade_familiar
+uuid
+NO
+ID de identificação de unidade familiar
+id_tipo_enquadramento_r
+enda
+integer
+32
+0
+NO
+ID de identificação de tipo enquadramento renda
+S_UNIDADE_FAMILIAR_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar_pess
+oa
+uuid
+NO
+uuid_generate_v4()
+ID de identificação da unidade familiar pessoa
+st_trabalha_ufpr
+boolean
+NO
+Situação se trabalha como mão de obra
+cd_caf
+character varying
+20
+YES
+Código CAF
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_unidade_familiar
+uuid
+NO
+ID de identificação da unidade familiar
+id_pessoa_fisica
+uuid
+YES
+ID de identificação de pessoa física
+id_tipo_membro_familiar
+integer
+32
+0
+NO
+ID de identificação de tipo membro familiar
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 42 ---
+S_UNIDADE_FAMILIAR_PESSOA
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_usuario
+uuid
+YES
+ID de identificação de usuário
+st_excluido
+boolean
+NO
+false
+Situação excluído
+st_cadastro_cadunico
+boolean
+NO
+false
+Situação cadastro atualizado
+st_baixa_renda
+boolean
+YES
+Situação baixa renda
+st_cadunico_atualizado
+boolean
+YES
+Situação cadastro cadunico atualizado
+dt_inicio_mao_de_obra
+date
+YES
+Data inicio mão de obra
+dt_fim_mao_de_obra
+date
+YES
+Data fim mão de obra
+cd_sipra
+character varying
+50
+YES
+Código SIPRA
+S_UNIDADE_FAMILIAR_TIPO_TERRENO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_unidade_familiar
+uuid
+NO
+ID de identificação de unidade familiar
+id_tipo_terreno_ufpr
+integer
+32
+0
+NO
+ID de identificação de tipo terreno UFPR
+S_USUARIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id_usuario
+uuid
+NO
+uuid_generate_v4()
+ID de identificação de usuário
+nr_cpf
+character varying
+11
+NO
+Numero CPF
+nm_usuario
+character varying
+255
+NO
+Nome do usuário
+st_ativo
+boolean
+NO
+true
+Situação se estar ativo ou inativo
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
+
+--- Página 43 ---
+S_USUARIO
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+dt_criacao
+timestamp without
+time zone
+NO
+now()
+Data criação
+dt_atualizacao
+timestamp without
+time zone
+YES
+now()
+Data atualização
+id_pessoa_fisica
+uuid
+YES
+ID de identificação de pessoa física
+id_perfil
+uuid
+NO
+ID de identificação de perfil
+id_entidade_emissora
+uuid
+YES
+ID de identificação de entidade emissora
+typeorm_migrations
+Nome
+Tipo de dado
+Tamanho
+Precisão
+Escala
+Numérica
+Nullable
+Default
+ Descrição
+ 
+id
+integer
+32
+0
+NO
+nextval('caf_mapa.t
+ypeorm_migrations
+_id_seq'::regclass)
+ID de identificação da migration
+timestamp
+bigint
+64
+0
+NO
+Data de execução
+name
+character varying
+NO
+Nome da migration
+Para verificar as assinaturas, acesse www.tcu.gov.br/autenticidade e informe o código 79190684.
