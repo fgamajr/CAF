@@ -1,12 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Mac
 .DS_Store
+
+# Local secrets / machine config
 .env
 .env.*
-.local/
 .mcp.json
-.venv/
-__pycache__/
-*.pyc
+.local/
 
+# ==========================================
+# AUDIT KNOWLEDGE SYSTEM - Generated files
+# These directories contain derived artifacts
+# that should NOT be committed to version control
+# ==========================================
+
+# Derived artifacts (immutable raw source only)
+normalized/
+chunks/
+embeddings/
+index/
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Database files (SQLite WAL journals)
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Python packaging
+*.whl
+
+# CAF audit app
+caf_audit_knowledge/.data/
+caf_audit_knowledge/.venv/
+caf_audit_knowledge/ledger/
+caf_audit_knowledge/manifests/
+
+# LaTeX intermediate artifacts
 _artefatos_latex/*.aux
 _artefatos_latex/*.log
 _artefatos_latex/*.out

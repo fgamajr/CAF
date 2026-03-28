@@ -1,0 +1,39 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "folded": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "doc_id": { "type": "keyword" },
+      "content_hash": { "type": "keyword" },
+      "source_path": {
+        "type": "text",
+        "analyzer": "folded",
+        "fields": {
+          "keyword": { "type": "keyword", "ignore_above": 2048 }
+        }
+      },
+      "source_type": { "type": "keyword" },
+      "authority_weight": { "type": "float" },
+      "audit_object_id": { "type": "keyword" },
+      "pipeline_fingerprint": { "type": "keyword" },
+      "title": { "type": "text", "analyzer": "folded" },
+      "text": { "type": "text", "analyzer": "folded" },
+      "structured_markdown": { "type": "text", "analyzer": "folded" },
+      "page_count": { "type": "integer" },
+      "is_duplicate": { "type": "boolean" },
+      "duplicate_of": { "type": "keyword" },
+      "created_at": { "type": "date" },
+      "updated_at": { "type": "date" }
+    }
+  }
+}

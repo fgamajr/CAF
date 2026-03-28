@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "folded": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "chunk_id": { "type": "keyword" },
+      "doc_id": { "type": "keyword" },
+      "audit_object_id": { "type": "keyword" },
+      "chunk_seq": { "type": "integer" },
+      "char_start": { "type": "integer" },
+      "char_end": { "type": "integer" },
+      "page_start": { "type": "integer" },
+      "page_end": { "type": "integer" },
+      "section_type": { "type": "keyword" },
+      "text": { "type": "text", "analyzer": "folded" },
+      "source_type": { "type": "keyword" },
+      "authority_weight": { "type": "float" },
+      "chunk_manifest_hash": { "type": "keyword" },
+      "chunk_feature_hash": { "type": "keyword" },
+      "entity_density": { "type": "float" },
+      "legal_density": { "type": "float" },
+      "importance_score": { "type": "float" }
+    }
+  }
+}
