@@ -50,6 +50,7 @@ def _query_payload(text: str, audit_object_id: str | None = None, top_k: int = 5
     if explain:
         payload["query_context"] = trace["query_context"]
         payload["risk"] = trace["risk"]
+        payload["filtered_out"] = trace.get("filtered_out", [])
     return payload
 
 

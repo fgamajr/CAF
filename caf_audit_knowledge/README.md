@@ -8,7 +8,7 @@ This project is not a generic RAG scaffold. It is a repository-aware system that
 - preserves audit provenance at document, chunk, and page level
 - deduplicates overlapping representations of the same content
 - links content through `ACH01` to `ACH04`
-- combines lexical search, vector search, reranking, adaptive scoring, and answer generation
+- combines lexical search, vector search, reranking, calibrated scoring, adaptive scoring, and answer generation
 - exposes explainable traces, query feedback, scoring feedback, and operational ledgers
 
 Everything below is based on the actual implementation in this codebase.
@@ -34,10 +34,21 @@ Core implementation entry points:
 - Rule-based query classification with optional LLM fallback
 - Adaptive query-pattern learning from classification feedback
 - Adaptive scoring profiles per query type
+- Hard content filtering for debug, review-artifact, and stack-trace noise
 - Risk detection and safe-mode behavior
 - Explainable traces for retrieval, rerank, scoring, and final ranking
 - Page-aware provenance in chunks and answers
 - File watching for incremental reindex on source changes
+
+### How to reason about the system
+
+The implementation is easiest to operate if you separate it into three layers:
+
+1. Retrieval: get enough good candidates from BM25 and vectors.
+2. Ranking: reorder those candidates with the reranker and calibrated score weights.
+3. Answering: classify the query, choose the right prompt, and produce an answer with provenance.
+
+That separation helps during debugging. If a relevant chunk exists but ranks too low, inspect retrieval and scoring. If the right chunks rank well but the answer is incomplete, inspect prompt routing and answer generation.
 
 ## 2. Architecture
 
@@ -105,6 +116,8 @@ cross-encoder rerank
     |
     v
 adaptive scoring profile + policy boosts/penalties
+    |
+    +--> hard filters for debug / review-artifact / stack-trace noise
     |
     +--> explain trace / logs
     |
@@ -235,6 +248,8 @@ Implemented values include:
 - `analysis`
 - `body`
 
+`debug` is operationally significant: retrieval now hard-filters obvious review/debug artifacts before they can reach the final ranking.
+
 ### 3.2 Embeddings
 
 Embedding providers live in `src/caf_audit_knowledge/embeddings/providers.py`.
@@ -287,6 +302,12 @@ caf-audit debug list-docs --limit 20
 caf-audit debug stats
 caf-audit debug compare-chunks
 ```
+
+Operational expectations after a healthy rebuild:
+
+- `caf-audit validate` should report `valid: true`
+- `caf-audit debug compare-chunks` should stay identical across repeated full builds
+- `caf-audit debug stats` should show fewer indexed canonical docs than discovered files when duplicates are being skipped correctly
 
 ## 4. Adding new documents
 
@@ -448,8 +469,23 @@ Signals currently used:
 - `bm25`
 - `authority`
 - `entity`
+- `evidence` for evidential queries only
 
 `entity` here is derived from `entity_density`, normalized inside retrieval.
+
+The calibrated factual baseline is:
+
+```text
+0.45 * reranker +
+0.25 * vector +
+0.15 * bm25 +
+0.10 * authority +
+0.05 * entity
+```
+
+Those weights are configurable in `src/caf_audit_knowledge/config.py` and are used as the base profile for `factual` queries. Other query types override that base when lexical precision or synthesis requirements differ.
+
+For `evidential` queries the profile also includes an `evidence` signal, derived at ranking time from chunk metadata and textual evidence markers.
 
 Example default scoring profiles:
 
@@ -461,14 +497,21 @@ Example default scoring profiles:
 
 Additional policy multipliers are applied after base scoring:
 
+- hard-filter explicit debug/review artifacts and stack traces before ranking
 - penalize `debug`, `analysis`, `toc`, `intro`, `metodologia`
 - penalize low entity density
+- penalize low evidence density for `evidential` queries
+- penalize `metodologia`, `procedimento`, `abordagem` more aggressively for `evidential` queries
 - boost `sintese`, `causa`, `efeito`, `risco`
 - boost preferred section types by query type
+- boost legal-marker matches for `legal_reference`
+- boost evidence-bearing chunks for `evidential`
 - boost exact term matches
 - boost hierarchical queries
 - boost `normative` by `1.25`
 - boost `ground_truth` by `1.15`
+
+This combination matters for the real corpus. The repository includes review/debug artifacts and report scaffolding that are useful during drafting but are not suitable as top-ranked audit evidence.
 
 ## 7. Query types supported
 
@@ -496,6 +539,7 @@ Examples that match the real classifier:
 - `resuma o achado 3` -> `summary` + `hierarchical`
 - `quais são as causas do subachado 1 do achado 1?` -> `factual` + `hierarchical` + `subscope`
 - `quais evidências provaram o achado 3.1?` -> `evidential` + `hierarchical` + `subscope`
+- `quais documentos comprovam o subachado 1?` -> `evidential` + `hierarchical` + `subscope`
 - `qual legislação foi usada no achado 1?` -> `legal_reference` + `hierarchical`
 - `quem ficou responsável pelo subachado 1 do achado 1?` -> `accountability` + `hierarchical` + `subscope`
 - `qual a proposta de solução para o achado 4?` -> `recommendation` + `hierarchical`
@@ -512,7 +556,7 @@ Examples of implemented triggers:
 
 - aggregation: `quantos`, `quantidade`, `total`
 - summary: `resuma`, `síntese`
-- evidential: `evidências`, `prova`, `base probatória`
+- evidential: `evidências`, `prova`, `comprovação`, `documentos`, `base documental`, `foi verificado`
 - legal_reference: `legislação`, `norma`, `lei`, `decreto`
 - accountability: `responsável`, `responsabilidade`
 - recommendation: `proposta`, `solução`, `recomendação`
@@ -677,13 +721,24 @@ The output includes:
 - ranked results
 - `query_context`
 - `risk`
+- `filtered_out`
 
 Per result, `score_breakdown` includes:
 
+- `bm25Raw`
 - `bm25`
+- `vectorRaw`
 - `vector`
+- `rerankerRaw`
 - `reranker`
 - `authority`
+- `entityDensityRaw`
+- `penalties`
+- `boosts`
+- `evidenceScore`
+- `evidenceStructural`
+- `evidenceBoostApplied`
+- `methodologyPenaltyApplied`
 - `policyMultiplier`
 - `queryType`
 - `queryFacets`
@@ -716,10 +771,20 @@ Representative output from a live debug query:
     {
       "chunk_id": "...",
       "score_breakdown": {
+        "bm25Raw": 12.219331,
         "bm25": 0.114614,
+        "vectorRaw": 0.879102,
         "vector": 0.780537,
+        "rerankerRaw": 3.620441,
         "reranker": 0.023576,
         "authority": 0.95,
+        "entityDensityRaw": 0.00367,
+        "evidenceScore": 0.4,
+        "evidenceStructural": false,
+        "evidenceBoostApplied": true,
+        "methodologyPenaltyApplied": false,
+        "penalties": ["penalized: low entity density"],
+        "boosts": ["boosted: seção preferida para accountability"],
         "policyMultiplier": 1.134,
         "queryType": "accountability",
         "queryFacets": ["hierarchical"],
@@ -739,9 +804,15 @@ Representative output from a live debug query:
 - high `vector`: semantic proximity is strong
 - high `reranker`: pairwise relevance is strong
 - high `authority`: source domain is authoritative
+- `penalties`: soft demotions that still allowed the chunk to rank
+- `boosts`: positive policy adjustments for section/query fit
+- `evidenceScore`: evidence-bearing strength derived from section metadata and textual heuristics
+- `evidenceBoostApplied`: evidential ranking boost fired for this chunk
+- `methodologyPenaltyApplied`: stronger evidential penalty fired for methodology-like chunks
 - high `entityDensity`: chunk has more ACH/legal/piece anchor content
 - high `policyMultiplier`: section/query policy boosted the chunk
 - `safeMode=true`: the system considered the query operationally risky
+- `filtered_out`: candidates removed entirely before ranking because they matched hard-noise rules
 
 ## 13. Logs
 
@@ -778,6 +849,7 @@ Each answer log contains:
 - `conflict`
 - `query_context`
 - `retrieval`
+- `filtered_out`
 - `rerank`
 - `scoring`
 - `final`

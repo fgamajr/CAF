@@ -7,19 +7,35 @@ from functools import lru_cache
 
 from caf_audit_knowledge.config import settings
 
-SIGNAL_KEYS = ("reranker", "vector", "bm25", "authority", "entity")
+SIGNAL_KEYS = ("reranker", "vector", "bm25", "authority", "entity", "evidence")
 
-DEFAULT_SCORING_PROFILES: dict[str, dict[str, float]] = {
-    "exact_match": {"reranker": 0.30, "vector": 0.15, "bm25": 0.40, "authority": 0.10, "entity": 0.05},
-    "aggregation": {"reranker": 0.40, "vector": 0.20, "bm25": 0.15, "authority": 0.15, "entity": 0.10},
-    "summary": {"reranker": 0.50, "vector": 0.25, "bm25": 0.10, "authority": 0.10, "entity": 0.05},
-    "factual": {"reranker": 0.45, "vector": 0.25, "bm25": 0.15, "authority": 0.05, "entity": 0.10},
-    "exploratory": {"reranker": 0.40, "vector": 0.30, "bm25": 0.15, "authority": 0.10, "entity": 0.05},
-    "evidential": {"reranker": 0.40, "vector": 0.20, "bm25": 0.25, "authority": 0.15, "entity": 0.00},
-    "legal_reference": {"reranker": 0.30, "vector": 0.15, "bm25": 0.40, "authority": 0.15, "entity": 0.00},
-    "accountability": {"reranker": 0.45, "vector": 0.10, "bm25": 0.10, "authority": 0.05, "entity": 0.30},
-    "recommendation": {"reranker": 0.55, "vector": 0.25, "bm25": 0.05, "authority": 0.10, "entity": 0.05},
-}
+def _base_scoring_weights() -> dict[str, float]:
+    return {
+        "reranker": settings.score_weight_reranker,
+        "vector": settings.score_weight_vector,
+        "bm25": settings.score_weight_bm25,
+        "authority": settings.score_weight_authority,
+        "entity": settings.score_weight_entity_density,
+        "evidence": settings.score_weight_evidence,
+    }
+
+
+def _build_default_scoring_profiles() -> dict[str, dict[str, float]]:
+    base = _base_scoring_weights()
+    return {
+        "exact_match": {"reranker": 0.35, "vector": 0.15, "bm25": 0.35, "authority": 0.10, "entity": 0.05, "evidence": 0.0},
+        "aggregation": {"reranker": 0.40, "vector": 0.25, "bm25": 0.10, "authority": 0.15, "entity": 0.10, "evidence": 0.0},
+        "summary": {"reranker": 0.50, "vector": 0.25, "bm25": 0.10, "authority": 0.10, "entity": 0.05, "evidence": 0.0},
+        "factual": dict(base),
+        "exploratory": {"reranker": 0.40, "vector": 0.30, "bm25": 0.15, "authority": 0.10, "entity": 0.05, "evidence": 0.0},
+        "evidential": {"reranker": 0.40, "vector": 0.20, "bm25": 0.20, "authority": 0.10, "entity": 0.05, "evidence": 0.05},
+        "legal_reference": {"reranker": 0.35, "vector": 0.20, "bm25": 0.25, "authority": 0.15, "entity": 0.05, "evidence": 0.0},
+        "accountability": {"reranker": 0.45, "vector": 0.10, "bm25": 0.10, "authority": 0.10, "entity": 0.25, "evidence": 0.0},
+        "recommendation": {"reranker": 0.55, "vector": 0.25, "bm25": 0.05, "authority": 0.10, "entity": 0.05, "evidence": 0.0},
+    }
+
+
+DEFAULT_SCORING_PROFILES: dict[str, dict[str, float]] = _build_default_scoring_profiles()
 
 
 @dataclass(frozen=True)
@@ -50,7 +66,7 @@ class AdaptiveScoringPolicy:
         payload = json.loads(settings.scoring_profiles_path.read_text(encoding="utf-8"))
         profiles = payload.get("profiles", {})
         return {
-            query_type: _normalize_weights(weights)
+            query_type: _normalize_weights({**DEFAULT_SCORING_PROFILES[query_type], **weights})
             for query_type, weights in profiles.items()
             if query_type in DEFAULT_SCORING_PROFILES
         }
@@ -88,6 +104,8 @@ class AdaptiveScoringPolicy:
             current["bm25"] *= 0.9
             if query_type in {"evidential", "legal_reference"}:
                 current["authority"] += 0.02
+            if query_type == "evidential":
+                current["evidence"] += 0.03
             if query_type in {"accountability", "factual"}:
                 current["entity"] += 0.02
             if query_type == "recommendation":

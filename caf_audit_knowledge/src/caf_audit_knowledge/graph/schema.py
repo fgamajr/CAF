@@ -19,14 +19,24 @@ EmbeddingStatusEnum = strawberry.enum(EmbeddingStatus)
 
 @strawberry.type
 class ScoreBreakdown:
+    bm25_raw: float | None = strawberry.field(name="bm25Raw", default=None)
     bm25: float | None = None
+    vector_raw: float | None = strawberry.field(name="vectorRaw", default=None)
     vector: float | None = None
+    reranker_raw: float | None = strawberry.field(name="rerankerRaw", default=None)
     reranker: float | None = None
     authority: float | None = None
     policy_multiplier: float | None = strawberry.field(name="policyMultiplier", default=None)
     query_type: str | None = strawberry.field(name="queryType", default=None)
     query_facets: JSON | None = strawberry.field(name="queryFacets", default=None)
+    entity_density_raw: float | None = strawberry.field(name="entityDensityRaw", default=None)
     entity_density: float | None = strawberry.field(name="entityDensity", default=None)
+    evidence_score: float | None = strawberry.field(name="evidenceScore", default=None)
+    evidence_structural: bool | None = strawberry.field(name="evidenceStructural", default=None)
+    evidence_boost_applied: bool | None = strawberry.field(name="evidenceBoostApplied", default=None)
+    methodology_penalty_applied: bool | None = strawberry.field(name="methodologyPenaltyApplied", default=None)
+    penalties: JSON | None = None
+    boosts: JSON | None = None
     risk_flags: JSON | None = strawberry.field(name="riskFlags", default=None)
     risk_score: float | None = strawberry.field(name="riskScore", default=None)
     safe_mode: bool | None = strawberry.field(name="safeMode", default=None)
@@ -268,14 +278,24 @@ class Query:
                 chunk=Chunk.from_record(hit.chunk),
                 score=hit.score,
                 score_breakdown=ScoreBreakdown(
+                    bm25_raw=hit.score_breakdown["bm25Raw"] if explain else None,
                     bm25=hit.score_breakdown["bm25"] if explain else None,
+                    vector_raw=hit.score_breakdown["vectorRaw"] if explain else None,
                     vector=hit.score_breakdown["vector"] if explain else None,
+                    reranker_raw=hit.score_breakdown["rerankerRaw"] if explain else None,
                     reranker=hit.score_breakdown["reranker"] if explain else None,
                     authority=hit.score_breakdown["authority"] if explain else None,
                     policy_multiplier=hit.score_breakdown["policyMultiplier"] if explain else None,
                     query_type=hit.score_breakdown["queryType"] if explain else None,
                     query_facets=hit.score_breakdown["queryFacets"] if explain else None,
+                    entity_density_raw=hit.score_breakdown["entityDensityRaw"] if explain else None,
                     entity_density=hit.score_breakdown["entityDensity"] if explain else None,
+                    evidence_score=hit.score_breakdown["evidenceScore"] if explain else None,
+                    evidence_structural=hit.score_breakdown["evidenceStructural"] if explain else None,
+                    evidence_boost_applied=hit.score_breakdown["evidenceBoostApplied"] if explain else None,
+                    methodology_penalty_applied=hit.score_breakdown["methodologyPenaltyApplied"] if explain else None,
+                    penalties=hit.score_breakdown["penalties"] if explain else None,
+                    boosts=hit.score_breakdown["boosts"] if explain else None,
                     risk_flags=hit.score_breakdown["riskFlags"] if explain else None,
                     risk_score=hit.score_breakdown["riskScore"] if explain else None,
                     safe_mode=hit.score_breakdown["safeMode"] if explain else None,
@@ -322,14 +342,24 @@ class Query:
                     chunk=Chunk.from_record(hit.chunk),
                     score=hit.score,
                     score_breakdown=ScoreBreakdown(
+                        bm25_raw=hit.score_breakdown["bm25Raw"] if explain else None,
                         bm25=hit.score_breakdown["bm25"] if explain else None,
+                        vector_raw=hit.score_breakdown["vectorRaw"] if explain else None,
                         vector=hit.score_breakdown["vector"] if explain else None,
+                        reranker_raw=hit.score_breakdown["rerankerRaw"] if explain else None,
                         reranker=hit.score_breakdown["reranker"] if explain else None,
                         authority=hit.score_breakdown["authority"] if explain else None,
                         policy_multiplier=hit.score_breakdown["policyMultiplier"] if explain else None,
                         query_type=hit.score_breakdown["queryType"] if explain else None,
                         query_facets=hit.score_breakdown["queryFacets"] if explain else None,
+                        entity_density_raw=hit.score_breakdown["entityDensityRaw"] if explain else None,
                         entity_density=hit.score_breakdown["entityDensity"] if explain else None,
+                        evidence_score=hit.score_breakdown["evidenceScore"] if explain else None,
+                        evidence_structural=hit.score_breakdown["evidenceStructural"] if explain else None,
+                        evidence_boost_applied=hit.score_breakdown["evidenceBoostApplied"] if explain else None,
+                        methodology_penalty_applied=hit.score_breakdown["methodologyPenaltyApplied"] if explain else None,
+                        penalties=hit.score_breakdown["penalties"] if explain else None,
+                        boosts=hit.score_breakdown["boosts"] if explain else None,
                         risk_flags=hit.score_breakdown["riskFlags"] if explain else None,
                         risk_score=hit.score_breakdown["riskScore"] if explain else None,
                         safe_mode=hit.score_breakdown["safeMode"] if explain else None,

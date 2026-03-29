@@ -89,7 +89,27 @@ def _regex_classification(query: str) -> QueryClassification:
     if any(token in lowered for token in ["resuma", "resumo", "sintese", "síntese", "explique o achado", "explique a seção", "explique a secao"]):
         return QueryClassification(query_type="summary", confidence=0.9, source="rule", facets=facets)
 
-    if any(token in lowered for token in ["evidência", "evidencias", "evidências", "prova", "provaram", "comprova", "comprovam", "base probatória", "base probatoria"]):
+    if any(
+        token in lowered
+        for token in [
+            "evidência",
+            "evidencias",
+            "evidências",
+            "prova",
+            "provaram",
+            "provar",
+            "comprova",
+            "comprovam",
+            "comprovação",
+            "comprovacao",
+            "documento",
+            "documentos",
+            "base documental",
+            "base probatória",
+            "base probatoria",
+            "foi verificado",
+        ]
+    ):
         return QueryClassification(query_type="evidential", confidence=0.9, source="rule", facets=facets)
 
     if any(token in lowered for token in ["legislação", "legislacao", "norma", "normas", "lei", "decreto", "portaria", "iso", "tcu nat"]):

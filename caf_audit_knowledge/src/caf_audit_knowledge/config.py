@@ -59,9 +59,10 @@ class Settings(BaseSettings):
     safe_mode_top_k_bonus: int = 3
     score_weight_bm25: float = 0.15
     score_weight_vector: float = 0.25
-    score_weight_reranker: float = 0.35
-    score_weight_authority: float = 0.15
-    score_weight_entity_density: float = 0.10
+    score_weight_reranker: float = 0.45
+    score_weight_authority: float = 0.10
+    score_weight_entity_density: float = 0.05
+    score_weight_evidence: float = 0.0
     graphql_host: str = "127.0.0.1"
     graphql_port: int = 8000
     chunk_target_chars: int = CHUNK_TARGET_CHARS

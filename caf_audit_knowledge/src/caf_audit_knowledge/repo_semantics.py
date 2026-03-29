@@ -97,7 +97,21 @@ def infer_section_type(text: str, title: str | None = None, source_path: str | N
     full_haystack = "\n".join(part for part in [title_text, source_text, full_text] if part)
     toc_line_count = len(TOC_LINE_RE.findall("\n".join(text.splitlines()[:25])))
 
-    if any(token in full_haystack for token in ["bug:", "persona:", "chaos-agent", "adversarial", "review panel", "swarm panel"]):
+    if any(
+        token in full_haystack
+        for token in [
+            "bug:",
+            "debug:",
+            "bugs identificados",
+            "bug adicional",
+            "persona:",
+            "chaos-agent",
+            "adversarial",
+            "review panel",
+            "swarm panel",
+            "tone check",
+        ]
+    ):
         return "debug"
     if toc_line_count >= 3 or any(token in head_haystack for token in ["sumário", "sumario", "lista de figuras", "lista de tabelas", "table of contents"]):
         return "toc"

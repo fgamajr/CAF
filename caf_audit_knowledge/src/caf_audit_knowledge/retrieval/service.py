@@ -8,7 +8,7 @@ from sqlalchemy import select
 
 from caf_audit_knowledge.answering.classifier import QueryClassification, assess_query_risk, classify_query
 from caf_audit_knowledge.config import settings
-from caf_audit_knowledge.constants import SourceType
+from caf_audit_knowledge.constants import LEGAL_TOKEN_RE, SourceType
 from caf_audit_knowledge.embeddings.providers import get_embedding_provider
 from caf_audit_knowledge.retrieval.elasticsearch_store import ElasticsearchStore
 from caf_audit_knowledge.retrieval.reranker import RerankCandidate, get_reranker
@@ -18,6 +18,26 @@ from caf_audit_knowledge.storage.db import get_session
 from caf_audit_knowledge.storage.models import ChunkRecord, DocumentRecord
 
 logger = logging.getLogger(__name__)
+STACK_TRACE_RE = re.compile(
+    r"(traceback \(most recent call last\):|exception in thread|^\s*file \".*\", line \d+, in |\bat\s+\S+\([^)]*:\d+\))",
+    re.IGNORECASE | re.MULTILINE,
+)
+HARD_FILTER_MARKERS: tuple[tuple[str, re.Pattern[str]], ...] = (
+    ("debug_marker", re.compile(r"\b(?:bug:|debug:)\b", re.IGNORECASE)),
+    ("review_artifact", re.compile(r"\b(?:bugs?\s+identificad[oa]s?|bug\s+adicional|tone check|swarm panel|review panel)\b", re.IGNORECASE)),
+    ("adversarial_marker", re.compile(r"\b(?:persona:|chaos-agent|adversarial)\b", re.IGNORECASE)),
+    ("stack_trace", STACK_TRACE_RE),
+)
+LEGAL_SIGNAL_RE = re.compile(LEGAL_TOKEN_RE, re.IGNORECASE)
+EVIDENCE_PATTERNS: tuple[tuple[str, re.Pattern[str], float], ...] = (
+    ("piece_reference", re.compile(r"\bconforme\s+peça\s*\d+|\bpeça\s*\d+\b", re.IGNORECASE), 0.25),
+    ("verified_phrase", re.compile(r"\bfoi\s+verificad[oa]|\bverificou-se\b", re.IGNORECASE), 0.20),
+    ("proof_phrase", re.compile(r"\bcomprovad[oa]|\bcomprova\b|\bcomprovam\b|\bcomprovação\b|\bcomprovacao\b", re.IGNORECASE), 0.20),
+    ("document_phrase", re.compile(r"\bdocumento\s+analisado|\bdocumentos?\s+analisad[oa]s?\b", re.IGNORECASE), 0.15),
+    ("annex_phrase", re.compile(r"\banexo\b|\banexos\b", re.IGNORECASE), 0.10),
+    ("table_phrase", re.compile(r"\btabela\b|\bquadro\b", re.IGNORECASE), 0.10),
+    ("record_phrase", re.compile(r"\bregistro\b|\bregistros\b|\bbase\s+de\s+dados\b", re.IGNORECASE), 0.10),
+)
 
 
 @dataclass(frozen=True)
@@ -138,31 +158,63 @@ class RetrievalService:
             safe_mode=risk.safe_mode,
         )
 
-    def _policy_adjustments(self, chunk: ChunkRecord, document: DocumentRecord | None, query_context: QueryContext) -> tuple[float, list[str]]:
+    def _hard_filter_reasons(self, chunk: ChunkRecord, document: DocumentRecord | None) -> list[str]:
+        haystack = "\n".join(
+            part
+            for part in [
+                chunk.text,
+                chunk.section_type or "",
+                document.title if document else "",
+                document.source_path if document else "",
+            ]
+            if part
+        )
+        reasons = [label for label, pattern in HARD_FILTER_MARKERS if pattern.search(haystack)]
+        if (chunk.section_type or "").lower() == "debug":
+            reasons.append("debug_section")
+        return sorted(set(reasons))
+
+    def _policy_adjustments(
+        self,
+        chunk: ChunkRecord,
+        document: DocumentRecord | None,
+        query_context: QueryContext,
+        *,
+        entity_signal: float,
+        evidence_signal: float,
+    ) -> tuple[float, list[str]]:
         score = 1.0
         reasons: list[str] = []
         section_type = (chunk.section_type or "body").lower()
         text_casefold = chunk.text.casefold()
         title_casefold = (document.title or "").casefold() if document else ""
+        metadata_types = {section_type, chunk.source_type.casefold()}
 
-        if section_type in {"debug", "analysis"}:
+        if metadata_types.intersection({"debug", "analysis"}):
             score *= 0.6
-            reasons.append(f"penalized: {section_type}")
+            reasons.append("penalized: debug/analysis metadata")
         if section_type == "toc":
             score *= 0.7
             reasons.append("penalized: toc")
-        if "bug:" in text_casefold:
-            score *= 0.7
-            reasons.append("penalized: bug marker")
         if "persona:" in text_casefold or "chaos-agent" in text_casefold or "review panel" in title_casefold:
             score *= 0.7
             reasons.append("penalized: adversarial/debug context")
-        if section_type in {"intro", "metodologia"}:
+        if section_type in {"intro", "metodologia", "boilerplate"}:
             score *= 0.85
             reasons.append(f"penalized: {section_type}")
-        if chunk.entity_density < 0.2:
+        if entity_signal < 0.2:
             score *= 0.9
             reasons.append("penalized: low entity density")
+        if query_context.query_type == "evidential":
+            if section_type in {"metodologia", "procedimento", "abordagem"}:
+                score *= 0.6
+                reasons.append("penalized: methodology_section")
+            if evidence_signal <= 0:
+                score *= 0.9
+                reasons.append("penalized: low evidence density")
+            else:
+                score *= 1 + (0.2 * evidence_signal)
+                reasons.append("boosted: evidential signal")
         if section_type == "sintese":
             score *= 1.15
             reasons.append("boosted: seção síntese")
@@ -175,6 +227,14 @@ class RetrievalService:
         if query_context.preferred_section_types and section_type in query_context.preferred_section_types:
             score *= 1.15
             reasons.append(f"boosted: seção preferida para {query_context.query_type}")
+        if query_context.query_type == "legal_reference":
+            legal_haystack = "\n".join(part for part in [chunk.text, document.title if document else ""] if part)
+            if LEGAL_SIGNAL_RE.search(legal_haystack):
+                score *= 1.15
+                reasons.append("boosted: legal reference signal")
+            else:
+                score *= 0.9
+                reasons.append("penalized: no legal reference marker")
         if query_context.has_exact_match and query_context.exact_term:
             exact = query_context.exact_term.casefold()
             if exact in text_casefold or exact in title_casefold:
@@ -185,6 +245,25 @@ class RetrievalService:
             reasons.append("boosted: consulta hierárquica")
         return score, reasons
 
+    def _evidence_signal(self, chunk: ChunkRecord, document: DocumentRecord | None) -> tuple[float, bool]:
+        section_type = (chunk.section_type or "").lower()
+        if section_type in {"evidencia", "evidence", "comprovacao", "comprovação"}:
+            return 1.0, True
+        haystack = "\n".join(
+            part
+            for part in [
+                chunk.text,
+                chunk.section_type or "",
+                document.title if document else "",
+            ]
+            if part
+        )
+        score = 0.0
+        for _label, pattern, weight in EVIDENCE_PATTERNS:
+            if pattern.search(haystack):
+                score += weight
+        return min(round(score, 6), 1.0), False
+
     def _score_reasons(
         self,
         *,
@@ -193,6 +272,7 @@ class RetrievalService:
         reranker: float,
         authority: float,
         entity_density: float,
+        evidence_score: float,
         policy_reasons: list[str],
         source_type: str,
         query_context: QueryContext,
@@ -214,6 +294,10 @@ class RetrievalService:
             reasons.append("fonte de alta autoridade")
         if entity_density >= 0.5:
             reasons.append("alta densidade de entidades")
+        if evidence_score >= 0.7:
+            reasons.append("alta densidade evidencial")
+        elif evidence_score > 0:
+            reasons.append("sinal evidencial presente")
         if source_type == SourceType.NORMATIVE.value:
             reasons.append("boosted: fonte normativa")
         if source_type == SourceType.GROUND_TRUTH.value:
@@ -309,17 +393,39 @@ class RetrievalService:
             retrieval_trace = []
             rerank_trace = []
             scoring_trace = []
+            filtered_trace = []
             for chunk_id in merged_ids:
                 chunk = chunks.get(chunk_id)
                 if chunk is None:
+                    continue
+                document = documents.get(chunk.document_id)
+                hard_filter_reasons = self._hard_filter_reasons(chunk, document)
+                if hard_filter_reasons:
+                    filtered_trace.append(
+                        {
+                            "chunk_id": chunk.id,
+                            "source_type": chunk.source_type,
+                            "audit_object_id": chunk.audit_object_id,
+                            "section_type": chunk.section_type,
+                            "reasons": hard_filter_reasons,
+                        }
+                    )
                     continue
                 source_type_values.add(chunk.source_type)
                 bm25 = norm_bm25.get(chunk_id, 0.0)
                 vector = norm_vector.get(chunk_id, 0.0)
                 reranker = norm_reranker.get(chunk_id, 0.0)
                 authority = chunk.authority_weight
-                entity_density = min(chunk.entity_density * 25, 1.0)
-                policy_multiplier, policy_reasons = self._policy_adjustments(chunk, documents.get(chunk.document_id), query_context)
+                entity_density_raw = chunk.entity_density
+                entity_density = min(entity_density_raw * 25, 1.0)
+                evidence_score, evidence_structural = self._evidence_signal(chunk, document)
+                policy_multiplier, policy_reasons = self._policy_adjustments(
+                    chunk,
+                    document,
+                    query_context,
+                    entity_signal=entity_density,
+                    evidence_signal=evidence_score,
+                )
                 weights = scoring_profile.weights
                 final = (
                     (reranker * weights.get("reranker", 0.0))
@@ -327,18 +433,24 @@ class RetrievalService:
                     + (bm25 * weights.get("bm25", 0.0))
                     + (authority * weights.get("authority", 0.0))
                     + (entity_density * weights.get("entity", 0.0))
+                    + (evidence_score * weights.get("evidence", 0.0))
                 )
                 final *= policy_multiplier
                 if chunk.source_type == SourceType.NORMATIVE.value:
                     final *= 1.25
                 if chunk.source_type == SourceType.GROUND_TRUTH.value:
                     final *= 1.15
+                penalties = [reason for reason in policy_reasons if reason.startswith("penalized")]
+                boosts = [reason for reason in policy_reasons if reason.startswith("boosted")]
+                evidence_boost_applied = "boosted: evidential signal" in boosts
+                methodology_penalty_applied = "penalized: methodology_section" in penalties
                 reasons = self._score_reasons(
                     bm25=bm25,
                     vector=vector,
                     reranker=reranker,
                     authority=authority,
                     entity_density=entity_density,
+                    evidence_score=evidence_score,
                     policy_reasons=policy_reasons,
                     source_type=chunk.source_type,
                     query_context=query_context,
@@ -352,6 +464,8 @@ class RetrievalService:
                         "bm25": round(bm25, 6),
                         "vector_raw": round(vector_lookup.get(chunk_id, 0.0), 6),
                         "vector": round(vector, 6),
+                        "filtered": False,
+                        "evidence_score": round(evidence_score, 6),
                     }
                 )
                 rerank_trace.append(
@@ -370,8 +484,15 @@ class RetrievalService:
                         "vector": round(vector, 6),
                         "reranker": round(reranker, 6),
                         "authority": round(authority, 6),
+                        "entity_density_raw": round(entity_density_raw, 6),
                         "entity_density": round(entity_density, 6),
+                        "evidence_score": round(evidence_score, 6),
+                        "evidence_structural": evidence_structural,
+                        "evidence_boost_applied": evidence_boost_applied,
+                        "methodology_penalty_applied": methodology_penalty_applied,
                         "policy_multiplier": round(policy_multiplier, 6),
+                        "penalties": penalties,
+                        "boosts": boosts,
                         "scoring_profile": scoring_profile.weights,
                         "scoring_profile_source": scoring_profile.source,
                         "risk_flags": list(query_context.risk_flags),
@@ -385,14 +506,24 @@ class RetrievalService:
                         chunk=chunk,
                         score=round(final, 6),
                         score_breakdown={
+                            "bm25Raw": round(bm25_lookup.get(chunk_id, 0.0), 6),
                             "bm25": round(bm25, 6),
+                            "vectorRaw": round(vector_lookup.get(chunk_id, 0.0), 6),
                             "vector": round(vector, 6),
+                            "rerankerRaw": round(reranker_lookup.get(chunk_id, 0.0), 6),
                             "reranker": round(reranker, 6),
                             "authority": round(authority, 6),
+                            "entityDensityRaw": round(entity_density_raw, 6),
                             "policyMultiplier": round(policy_multiplier, 6),
                             "queryType": query_context.query_type,
                             "queryFacets": list(query_context.query_facets),
                             "entityDensity": round(entity_density, 6),
+                            "evidenceScore": round(evidence_score, 6),
+                            "evidenceStructural": evidence_structural,
+                            "evidenceBoostApplied": evidence_boost_applied,
+                            "methodologyPenaltyApplied": methodology_penalty_applied,
+                            "penalties": penalties,
+                            "boosts": boosts,
                             "riskFlags": list(query_context.risk_flags),
                             "riskScore": query_context.risk_score,
                             "safeMode": query_context.safe_mode,
@@ -420,6 +551,7 @@ class RetrievalService:
                 "safe_mode": query_context.safe_mode,
             },
             "retrieval": retrieval_trace,
+            "filtered_out": filtered_trace,
             "rerank": rerank_trace,
             "scoring": scoring_trace,
             "final": [
