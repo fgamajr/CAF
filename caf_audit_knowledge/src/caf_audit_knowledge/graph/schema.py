@@ -181,6 +181,7 @@ class AnswerPayload:
     risk: JSON
     conflict: bool
     source_types: list[SourceTypeEnum] = strawberry.field(name="sourceTypes")
+    aggregation: JSON | None = None
     evidence: list[SearchResult]
     explain_log: JSON = strawberry.field(name="explainLog")
 
@@ -336,6 +337,7 @@ class Query:
             },
             conflict=result.conflict["conflict"],
             source_types=[SourceType(value) for value in result.conflict["source_types"]],
+            aggregation=result.aggregation if explain else None,
             explain_log=result.explain_log,
             evidence=[
                 SearchResult(

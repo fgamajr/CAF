@@ -5,6 +5,7 @@ import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
+from caf_audit_knowledge.answering.aggregation import AggregatedBundle, build_aggregation
 from caf_audit_knowledge.answering.classifier import QueryClassification, RiskAssessment, assess_query_risk, classify_query
 from caf_audit_knowledge.answering.prompts import SYSTEM_PROMPT, build_prompt
 from caf_audit_knowledge.config import settings
@@ -19,6 +20,7 @@ class AnswerResult:
     risk: RiskAssessment
     evidence: list[SearchHit]
     conflict: dict
+    aggregation: dict[str, object] | None
     explain_log: dict
 
 
@@ -39,6 +41,10 @@ class AnswerService:
         top_k = settings.answer_top_k_default
         if classification.query_type in {"summary", "aggregation", "evidential", "recommendation", "legal_reference"}:
             top_k = settings.answer_top_k_expanded
+        if classification.query_type == "aggregation":
+            top_k = max(top_k, 12)
+        elif classification.query_type in {"evidential", "factual"}:
+            top_k = max(top_k, 10)
         if "hierarchical" in classification.facets:
             top_k = max(top_k, settings.answer_top_k_default + 2)
         if risk.safe_mode:
@@ -96,6 +102,8 @@ class AnswerService:
             conflict=conflict["conflict"],
             score_margin=score_margin,
         )
+        aggregated = build_aggregation(query=query, classification=classification, hits=hits)
+        effective_hits = aggregated.ordered_hits if aggregated is not None else hits
         explain_log = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "query": query,
@@ -113,6 +121,7 @@ class AnswerService:
             },
             "conflict": conflict,
             "query_context": trace["query_context"],
+            "aggregation": aggregated.payload if aggregated is not None else None,
             "retrieval": trace["retrieval"],
             "rerank": trace["rerank"],
             "scoring": trace["scoring"],
@@ -125,6 +134,7 @@ class AnswerService:
                 risk=risk,
                 evidence=[],
                 conflict=conflict,
+                aggregation=aggregated.payload if aggregated is not None else None,
                 explain_log=explain_log,
             )
             self._write_query_log({"event": "answer", **explain_log, "answer": result.answer, "conflict": conflict})
@@ -134,8 +144,9 @@ class AnswerService:
                 answer="A camada de resposta LLM não está disponível no momento. Use as evidências recuperadas abaixo.",
                 classification=classification,
                 risk=risk,
-                evidence=hits,
+                evidence=effective_hits,
                 conflict=conflict,
+                aggregation=aggregated.payload if aggregated is not None else None,
                 explain_log=explain_log,
             )
             self._write_query_log({"event": "answer", **explain_log, "answer": result.answer, "conflict": conflict})
@@ -153,20 +164,29 @@ class AnswerService:
                 answer=answer,
                 classification=classification,
                 risk=risk,
-                evidence=hits,
+                evidence=effective_hits,
                 conflict=conflict,
+                aggregation=aggregated.payload if aggregated is not None else None,
                 explain_log=explain_log,
             )
             self._write_query_log({"event": "answer", **explain_log, "answer": answer, "conflict": conflict})
             return result
-        prompt = build_prompt(query=query, hits=hits, classification=classification, conflict=conflict, risk=risk)
+        prompt = build_prompt(
+            query=query,
+            hits=effective_hits,
+            classification=classification,
+            conflict=conflict,
+            risk=risk,
+            aggregated=aggregated,
+        )
         answer = self.llm.complete(system=SYSTEM_PROMPT, prompt=prompt)
         result = AnswerResult(
             answer=answer,
             classification=classification,
             risk=risk,
-            evidence=hits,
+            evidence=effective_hits,
             conflict=conflict,
+            aggregation=aggregated.payload if aggregated is not None else None,
             explain_log=explain_log,
         )
         self._write_query_log({"event": "answer", **explain_log, "answer": answer, "conflict": conflict})

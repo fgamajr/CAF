@@ -9,6 +9,7 @@ This project is not a generic RAG scaffold. It is a repository-aware system that
 - deduplicates overlapping representations of the same content
 - links content through `ACH01` to `ACH04`
 - combines lexical search, vector search, reranking, calibrated scoring, adaptive scoring, and answer generation
+- adds post-retrieval aggregation for list, counting, and evidence-heavy questions
 - exposes explainable traces, query feedback, scoring feedback, and operational ledgers
 
 Everything below is based on the actual implementation in this codebase.
@@ -68,8 +69,9 @@ That separation helps during debugging. If a relevant chunk exists but ranks too
 12. Hybrid retrieval
 13. Reranking
 14. Dynamic scoring
-15. Prompt selection
-16. Answer generation
+15. Aggregation for list/count/evidence questions
+16. Prompt selection
+17. Answer generation
 
 ### ASCII flow
 
@@ -118,6 +120,8 @@ cross-encoder rerank
 adaptive scoring profile + policy boosts/penalties
     |
     +--> hard filters for debug / review-artifact / stack-trace noise
+    |
+    +--> aggregation bundle for aggregation / factual / evidential queries
     |
     +--> explain trace / logs
     |
@@ -513,6 +517,34 @@ Additional policy multipliers are applied after base scoring:
 
 This combination matters for the real corpus. The repository includes review/debug artifacts and report scaffolding that are useful during drafting but are not suitable as top-ranked audit evidence.
 
+### 6.4 Aggregation layer
+
+The answering stack now includes a post-retrieval aggregation step in `src/caf_audit_knowledge/answering/aggregation.py`.
+
+It currently activates for:
+
+- `aggregation`
+- `factual`
+- `evidential`
+
+What it does:
+
+- deduplicates highly similar hits before prompting
+- filters the hit set toward section types that match the query intent
+- groups surviving hits by:
+  - `audit_object_id`
+  - inferred `subscope_id` when text explicitly exposes it
+  - `section_type`
+- emits a structured payload with:
+  - `total_hits`
+  - `deduplicated_hits`
+  - `filtered_hits`
+  - grouped counts by audit object
+  - grouped counts by section type
+  - top grouped items with `chunk_id`, `doc_id`, citation, score, and summary
+
+This aggregation payload is injected into prompts and returned in `--explain` output for CLI and GraphQL answer calls. It gives the LLM grouped context instead of a flat list of chunks, which materially improves list-style and evidential answers without changing the indexing layer.
+
 ## 7. Query types supported
 
 The current classifier supports these primary query types:
@@ -623,6 +655,7 @@ What the prompt system injects:
 - hierarchy note
 - subscope note
 - safe-mode note
+- aggregation bundle JSON when the query type uses aggregation
 - chunk-by-chunk context with:
   - `chunk_id`
   - `doc_id`
@@ -848,6 +881,7 @@ Each answer log contains:
 - `risk`
 - `conflict`
 - `query_context`
+- `aggregation`
 - `retrieval`
 - `filtered_out`
 - `rerank`
@@ -878,7 +912,9 @@ These are real current limitations of the codebase.
 - Hierarchical queries are only partially structured.
   - `achado 3.1` is detected as risky.
   - true `subachado_id` indexing does not yet exist.
-- Aggregation answers are prompt-based, not a deterministic aggregation engine.
+- A post-retrieval aggregation layer exists, but counting is still not fully deterministic.
+  - groups come from retrieved chunks, not from a canonical achado/subachado graph
+  - `subscope_id` is inferred heuristically from text when possible
 - Result quality still depends heavily on chunking and `section_type` inference.
 - Elasticsearch search uses a relatively simple `multi_match`, not a richer fielded DSL.
 - Test coverage is currently narrow.
@@ -923,7 +959,7 @@ Use exact-match style queries when you have stable anchors:
 The following are consistent next steps given the current implementation:
 
 - add structured `subachado_id` extraction and indexing
-- add a deterministic aggregation layer for counting/list-all questions
+- harden the aggregation layer into a deterministic counting/grouping engine
 - improve PDF parsing with layout-aware extraction
 - expand tests to cover indexing, embeddings, retrieval, and GraphQL
 - add richer Elasticsearch query construction

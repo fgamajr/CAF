@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import json
+
 from caf_audit_knowledge.answering.classifier import QueryClassification, RiskAssessment
+from caf_audit_knowledge.answering.aggregation import AggregatedBundle
 from caf_audit_knowledge.retrieval.service import SearchHit
 
 
@@ -47,8 +50,12 @@ def build_prompt(
     classification: QueryClassification,
     conflict: dict,
     risk: RiskAssessment,
+    aggregated: AggregatedBundle | None = None,
 ) -> str:
     context = _format_context(hits)
+    aggregated_context = ""
+    if aggregated is not None:
+        aggregated_context = f"Aggregated context (structured JSON):\n{json.dumps(aggregated.payload, indent=2, ensure_ascii=False)}\n\n"
     if classification.query_type == "aggregation":
         task = """You are analyzing audit findings.
 
@@ -63,7 +70,8 @@ Rules:
 - Distinguish categories from totals.
 - Mention uncertainty when categories overlap.
 - Do not merge counts from different ACH objects into one total unless a source explicitly consolidates them.
-- If the retrieved evidence spans different ACH objects without a single authoritative consolidation, say the query is ambiguous."""
+- If the retrieved evidence spans different ACH objects without a single authoritative consolidation, say the query is ambiguous.
+- Use all grouped data from the aggregated context before relying on individual passages."""
     elif classification.query_type == "summary":
         task = """You are summarizing an audit finding.
 
@@ -84,7 +92,8 @@ Task:
 
 Rules:
 - Prefer sections that directly match the request.
-- Avoid unrelated sections unless they are needed to clarify ambiguity."""
+- Avoid unrelated sections unless they are needed to clarify ambiguity.
+- Use all grouped items from the aggregated context; do not ignore sibling items within the same section."""
     elif classification.query_type == "evidential":
         task = """You are identifying evidentiary support.
 
@@ -95,7 +104,8 @@ Task:
 Rules:
 - Prefer direct evidence over narrative summaries.
 - If multiple evidence pieces are needed, keep them distinct.
-- Do not infer support that is not explicit in the retrieved text."""
+- Do not infer support that is not explicit in the retrieved text.
+- Use the aggregated context to keep evidence grouped by achado/subscope/section."""
     elif classification.query_type == "legal_reference":
         task = """You are extracting legal and normative references.
 
@@ -175,6 +185,7 @@ Rules:
         f"{safe_mode_note}"
         f"{conflict_note}\n\n"
         f"{risk_note}\n\n"
+        f"{aggregated_context}"
         f"Context:\n{context}\n\n"
         f"Question:\n{query}\n\n"
         "Answer in Portuguese. Keep it concise, cite evidence inline using exact chunk ids like [chunk:abc123, p. 4], and end with a short 'Base probatória' list."

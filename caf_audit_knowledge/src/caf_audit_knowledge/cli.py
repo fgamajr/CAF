@@ -73,6 +73,7 @@ def _answer_payload(text: str, audit_object_id: str | None = None, explain: bool
         "conflict": result.conflict["conflict"],
         "source_types": result.conflict["source_types"],
         "answer": result.answer,
+        "aggregation": result.aggregation if explain else {},
         "explain_log": result.explain_log if explain else {},
         "evidence": [
             {
