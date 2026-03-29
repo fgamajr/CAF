@@ -545,6 +545,74 @@ What it does:
 
 This aggregation payload is injected into prompts and returned in `--explain` output for CLI and GraphQL answer calls. It gives the LLM grouped context instead of a flat list of chunks, which materially improves list-style and evidential answers without changing the indexing layer.
 
+Run it from the CLI with:
+
+```bash
+caf-audit answer "liste todas as causas do achado 1" --explain
+caf-audit answer "quais evidências foram usadas no achado 3?" --explain
+caf-audit answer "quantos problemas foram identificados?" --explain
+```
+
+Representative aggregation payload for `liste todas as causas do achado 1`:
+
+```json
+{
+  "query": "liste todas as causas do achado 1",
+  "query_type": "aggregation",
+  "total_hits": 15,
+  "deduplicated_hits": 15,
+  "filtered_hits": 8,
+  "group_count": 3,
+  "counts": {
+    "by_audit_object_id": {
+      "ACH01": 8
+    },
+    "by_section_type": {
+      "causa": 4,
+      "sintese": 2,
+      "tabela": 2
+    }
+  }
+}
+```
+
+Representative aggregation payload for `quais evidências foram usadas no achado 3?`:
+
+```json
+{
+  "query": "quais evidências foram usadas no achado 3?",
+  "query_type": "evidential",
+  "total_hits": 13,
+  "deduplicated_hits": 9,
+  "filtered_hits": 9,
+  "group_count": 4,
+  "counts": {
+    "by_audit_object_id": {
+      "ACH03": 9
+    },
+    "by_section_type": {
+      "causa": 2,
+      "efeito": 2,
+      "risco": 2,
+      "sintese": 3
+    }
+  }
+}
+```
+
+How to read these fields:
+
+- `total_hits`: retrieved hits before answer-time cleanup
+- `deduplicated_hits`: hits left after semantic near-duplicate removal
+- `filtered_hits`: hits left after section-aware filtering for the query intent
+- `group_count`: number of `(audit_object_id, subscope_id, section_type)` groups passed into the prompt
+
+In practice:
+
+- list-style cause queries should usually collapse toward `causa`, `sintese`, and sometimes `tabela`
+- evidential queries should keep `causa`, `efeito`, `risco`, and `sintese` when each section contributes support
+- counting queries improve with this layer, but are still not guaranteed to represent a canonical total
+
 ## 7. Query types supported
 
 The current classifier supports these primary query types:
