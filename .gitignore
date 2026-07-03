@@ -10,3 +10,13 @@ __pycache__/
 _artefatos_latex/*.aux
 _artefatos_latex/*.log
 _artefatos_latex/*.out
+
+# Ferramentas / editores (artefatos gerados, não versionar)
+.codegraph/
+.cursor/
+.vscode/
+
+# Pastas de dados/evidência pesadas — GBs de binários (PDFs, mp3, installers, CSV),
+# contêm segredos (.env). Nunca versionar.
+OneDrive_2_23-06-2026/
+achado01/

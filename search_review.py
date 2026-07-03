@@ -30,6 +30,9 @@ ROOT = Path(__file__).resolve().parent
 HIERARCHY_MAP = {
     "constituicao": "constituicao",
     "relatorio_v2": "relatorio_v2",
+    "pos_comentarios": "pos_comentarios",
+    "achado01": "achado01",
+    "trabalho": "trabalho",
     "pecas": "pecas",
     "normas": "normas",
     "contexto": "contexto",
@@ -40,6 +43,9 @@ HIERARCHY_MAP = {
 HIERARCHY_BOOST = {
     "constituicao": 2.0,
     "relatorio_v2": 1.8,
+    "pos_comentarios": 1.6,
+    "achado01": 1.5,
+    "trabalho": 1.4,
     "contexto": 1.4,
     "pecas": 1.3,
     "normas": 1.2,
@@ -76,6 +82,9 @@ def rrf_score(rank: int, k: int = 60) -> float:
     return 1.0 / (k + rank + 1)
 
 
+PIECE_ONLY_PATTERN = re.compile(r"^\s*(?:peça|peca)\s*0*(\d{1,3})\s*$", flags=re.IGNORECASE)
+
+
 def detect_piece_number(query: str) -> int | None:
     match = re.search(r"(?:peça|peca)\s*0*(\d{1,3})", query, flags=re.IGNORECASE)
     if match:
@@ -83,18 +92,44 @@ def detect_piece_number(query: str) -> int | None:
     return None
 
 
-def build_es_query(query: str, piece_number: int | None, hierarchy_label: str | None) -> dict[str, Any]:
+def is_piece_only_query(query: str, piece_number: int | None) -> bool:
+    if piece_number is None:
+        return False
+    match = PIECE_ONLY_PATTERN.match(query.strip())
+    return match is not None and int(match.group(1)) == piece_number
+
+
+def build_metadata_filters(
+    piece_number: int | None,
+    hierarchy_label: str | None,
+) -> list[dict[str, Any]]:
+    filters: list[dict[str, Any]] = []
+    if piece_number is not None:
+        filters.append({"term": {"piece_number": piece_number}})
+    if hierarchy_label is not None:
+        filters.append({"term": {"hierarchy_label": hierarchy_label}})
+    return filters
+
+
+def build_es_query(
+    query: str,
+    piece_number: int | None,
+    hierarchy_label: str | None,
+    *,
+    piece_only: bool = False,
+) -> dict[str, Any]:
+    filters = build_metadata_filters(piece_number, hierarchy_label)
+    if piece_only:
+        if filters:
+            return {"bool": {"filter": filters}}
+        return {"match_all": {}}
+
     must_clause = {
         "multi_match": {
             "query": query,
             "fields": ["title^4", "section^2", "path^2", "text"],
         }
     }
-    filters: list[dict[str, Any]] = []
-    if piece_number is not None:
-        filters.append({"term": {"piece_number": piece_number}})
-    if hierarchy_label is not None:
-        filters.append({"term": {"hierarchy_label": hierarchy_label}})
     if not filters:
         return must_clause
     return {"bool": {"must": [must_clause], "filter": filters}}
@@ -127,8 +162,14 @@ def search_bm25(
     top_k: int,
     piece_number: int | None,
     hierarchy_label: str | None,
+    piece_only: bool = False,
 ) -> list[dict[str, Any]]:
-    response = es.search(index=index_name, size=top_k, query=build_es_query(query, piece_number, hierarchy_label))
+    response = es.search(
+        index=index_name,
+        size=top_k,
+        query=build_es_query(query, piece_number, hierarchy_label, piece_only=piece_only),
+        sort=[{"path": "asc"}, {"page_start": "asc"}] if piece_only else None,
+    )
     results: list[dict[str, Any]] = []
     for hit in response["hits"]["hits"]:
         src = hit["_source"]
@@ -150,6 +191,38 @@ def search_bm25(
                 metadata=metadata,
                 source_name="bm25",
                 engine_score=float(hit["_score"] or 0.0),
+            )
+        )
+    return results
+
+
+def search_chroma_by_piece(
+    collection,
+    *,
+    top_k: int,
+    piece_number: int,
+    hierarchy_label: str | None,
+) -> list[dict[str, Any]]:
+    where: dict[str, Any] = {"piece_number": piece_number}
+    if hierarchy_label is not None:
+        where = {"$and": [{"piece_number": piece_number}, {"hierarchy_label": hierarchy_label}]}
+
+    response = collection.get(where=where, limit=top_k, include=["documents", "metadatas"])
+    results: list[dict[str, Any]] = []
+    for hit_id, text, meta in zip(
+        response.get("ids", []),
+        response.get("documents", []),
+        response.get("metadatas", []),
+        strict=True,
+    ):
+        metadata = dict(meta or {})
+        results.append(
+            normalize_hit(
+                hit_id=hit_id,
+                text=text,
+                metadata=metadata,
+                source_name="chroma",
+                engine_score=1.0,
             )
         )
     return results
@@ -186,6 +259,36 @@ def search_chroma(
                 engine_score=1.0 - float(distance),
             )
         )
+    return results
+
+
+def search_faiss_by_piece(
+    *,
+    top_k: int,
+    piece_number: int,
+    hierarchy_label: str | None,
+) -> list[dict[str, Any]]:
+    _, metadata_rows = load_faiss_index()
+    if not metadata_rows:
+        return []
+
+    results: list[dict[str, Any]] = []
+    for metadata in metadata_rows:
+        if metadata.get("piece_number") != piece_number:
+            continue
+        if hierarchy_label is not None and metadata.get("hierarchy_label") != hierarchy_label:
+            continue
+        results.append(
+            normalize_hit(
+                hit_id=metadata["chunk_id"],
+                text=metadata["text"],
+                metadata=metadata,
+                source_name="faiss",
+                engine_score=1.0,
+            )
+        )
+        if len(results) >= top_k:
+            break
     return results
 
 
@@ -318,30 +421,53 @@ def main() -> int:
 
     hierarchy_label = HIERARCHY_MAP.get(args.hierarchy) if args.hierarchy else None
     piece_number = detect_piece_number(args.query)
+    piece_only = is_piece_only_query(args.query, piece_number)
     fetch_k = max(args.k * 6, 30)
-    query_embedding = embed_query(gemini, args.embedding_model, args.query, args.embedding_dim)
 
-    bm25_results = search_bm25(
-        es,
-        args.es_index,
-        args.query,
-        top_k=fetch_k,
-        piece_number=piece_number,
-        hierarchy_label=hierarchy_label,
-    )
-    chroma_results = search_chroma(
-        collection,
-        query_embedding,
-        top_k=fetch_k,
-        piece_number=piece_number,
-        hierarchy_label=hierarchy_label,
-    )
-    faiss_results = search_faiss(
-        query_embedding,
-        top_k=fetch_k,
-        piece_number=piece_number,
-        hierarchy_label=hierarchy_label,
-    )
+    if piece_only and piece_number is not None:
+        bm25_results = search_bm25(
+            es,
+            args.es_index,
+            args.query,
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+            piece_only=True,
+        )
+        chroma_results = search_chroma_by_piece(
+            collection,
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+        )
+        faiss_results = search_faiss_by_piece(
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+        )
+    else:
+        query_embedding = embed_query(gemini, args.embedding_model, args.query, args.embedding_dim)
+        bm25_results = search_bm25(
+            es,
+            args.es_index,
+            args.query,
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+        )
+        chroma_results = search_chroma(
+            collection,
+            query_embedding,
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+        )
+        faiss_results = search_faiss(
+            query_embedding,
+            top_k=fetch_k,
+            piece_number=piece_number,
+            hierarchy_label=hierarchy_label,
+        )
 
     fused = fuse_results([bm25_results, chroma_results, faiss_results], args.k)
     print_results(args.query, fused, piece_number=piece_number, hierarchy_label=hierarchy_label)

@@ -40,7 +40,7 @@ FAISS_INDEX_PATH = FAISS_DIR / "caf-final.index"
 FAISS_META_PATH = FAISS_DIR / "caf-final.metadata.jsonl"
 DEFAULT_ES_INDEX = "caf-final"
 DEFAULT_COLLECTION = "caf-final"
-DEFAULT_EMBEDDING_MODEL = "gemini-embedding-2-preview"
+DEFAULT_EMBEDDING_MODEL = "gemini-embedding-001"
 DEFAULT_EMBEDDING_DIM = 1024
 
 PRIORITY_GLOBS: list[tuple[int, str]] = [
@@ -50,9 +50,16 @@ PRIORITY_GLOBS: list[tuple[int, str]] = [
     (1, "02_FONTE_VERDADE/**/*.md"),
     (1, "02_FONTE_VERDADE/**/*.docx"),
     (2, "01_RELATORIO_V2/**/*.md"),
+    (2, "03_2_POS_COMENTÁRIOS/**/*.pdf"),
+    (2, "achado01/**/*.md"),
+    (2, "achado01/**/*.txt"),
+    (2, "achado01/**/*.docx"),
+    (2, "OneDrive_2_23-06-2026/**/*.md"),
+    (2, "OneDrive_2_23-06-2026/**/*.txt"),
+    (2, "OneDrive_2_23-06-2026/**/*.docx"),
     (3, "04_PECAS_EVIDENCIA/txt_extraido/**/*.txt"),
-    (4, "03_RELATORIO_V1/**/*.md"),
-    (4, "03_RELATORIO_V1/**/*.docx"),
+    (4, "03_1_RELATORIO_V1/**/*.md"),
+    (4, "03_1_RELATORIO_V1/**/*.docx"),
     (5, "06_NORMAS_CRITERIOS/**/*.md"),
     (5, "06_NORMAS_CRITERIOS/**/*.pdf"),
     (5, "06_NORMAS_CRITERIOS/**/*.doc"),
@@ -63,6 +70,18 @@ PRIORITY_GLOBS: list[tuple[int, str]] = [
 ]
 
 EXCLUDED_PARTS = {"_artefatos_latex", ".venv", ".git", ".local", "__pycache__"}
+# Prefixos (relativos ao ROOT) pulados na descoberta: duplicatas e dumps gigantes.
+EXCLUDED_PREFIXES = (
+    "OneDrive_2_23-06-2026/achado01",            # dup exato de ./achado01 (já indexado)
+    "OneDrive_2_23-06-2026/relatorio_auditoria/pecas",  # dup das peças em 04_.../txt_extraido
+    "OneDrive_2_23-06-2026/CODEBASE_COMPLETE.txt",       # dump de 4MB do código-fonte
+)
+# Pula PDFs gigantes (scans/compilações de evidência redundante). 30MB preserva
+# todo o corpus de peças (maior é ~19MB) e corta só os monstros de OCR do achado01.
+MAX_PDF_BYTES = 30 * 1024 * 1024
+# OCR de PDFs escaneados é lento (~30s/pág). Com CAF_PDF_OCR=0 usa só a camada de
+# texto digital (rápido); PDFs sem texto retornam vazio em vez de disparar Tesseract.
+PDF_OCR_ENABLED = os.getenv("CAF_PDF_OCR", "1") != "0"
 TEXT_SUFFIXES = {".md", ".txt"}
 PDF_SUFFIXES = {".pdf"}
 WORD_SUFFIXES = {".doc", ".docx"}
@@ -72,10 +91,13 @@ PARAGRAPH_MARKER = re.compile(r"^\s*(\d+)\.\s+", re.MULTILINE)
 HIERARCHY_PREFIXES: list[tuple[str, str]] = [
     ("02_FONTE_VERDADE/", "constituicao"),
     ("01_RELATORIO_V2/", "relatorio_v2"),
+    ("achado01/", "achado01"),
+    ("OneDrive_2_23-06-2026/", "trabalho"),
+    ("03_2_POS_COMENTÁRIOS/", "pos_comentarios"),
     ("04_PECAS_EVIDENCIA/", "pecas"),
     ("06_NORMAS_CRITERIOS/", "normas"),
     ("00_CONTEXTO/", "contexto"),
-    ("03_RELATORIO_V1/", "v1"),
+    ("03_1_RELATORIO_V1/", "v1"),
     ("05_PECAS_TRAMITACAO/", "tramitacao"),
     ("07_MODELOS_TCU/", "modelos"),
 ]
@@ -264,6 +286,11 @@ def discover_documents() -> list[SourceDocument]:
                 continue
             if any(part in EXCLUDED_PARTS for part in path.parts):
                 continue
+            if str(path.relative_to(ROOT)).startswith(EXCLUDED_PREFIXES):
+                continue
+            if path.suffix.lower() in PDF_SUFFIXES and path.stat().st_size > MAX_PDF_BYTES:
+                print(f"  [skip] PDF >{MAX_PDF_BYTES // (1024*1024)}MB: {path.relative_to(ROOT)}")
+                continue
             found[path] = SourceDocument(
                 path=path,
                 priority=priority,
@@ -355,7 +382,7 @@ def read_pdf(path: Path) -> str:
     pages: list[str] = []
     for idx in range(1, len(reader.pages) + 1):
         digital_text = clean_text(extract_pdf_page_text(path, idx))
-        if is_reliable_page_text(digital_text):
+        if is_reliable_page_text(digital_text) or not PDF_OCR_ENABLED:
             final_text = digital_text
         else:
             ocr_text = clean_text(ocr_pdf_page(path, idx))
@@ -961,6 +988,8 @@ def create_es_index(es: Elasticsearch, index_name: str, dims: int, recreate: boo
 
     mappings = {
         "settings": {
+            # Single-node clusters (Docker/tunnel) cannot assign replica shards.
+            "number_of_replicas": 0,
             "analysis": {
                 "analyzer": {
                     "default": {
@@ -1160,15 +1189,28 @@ def main() -> int:
     for start in tqdm(range(0, len(chunks), args.batch_size), desc="Gerando embeddings"):
         batch = chunks[start:start + args.batch_size]
         texts = [chunk.text for chunk in batch]
-        all_embeddings.extend(
-            embed_texts(
-                gemini_client,
-                args.embedding_model,
-                texts,
-                task_type="RETRIEVAL_DOCUMENT",
-                output_dimensionality=args.embedding_dim,
-            )
-        )
+        for attempt in range(8):
+            try:
+                result = embed_texts(
+                    gemini_client,
+                    args.embedding_model,
+                    texts,
+                    task_type="RETRIEVAL_DOCUMENT",
+                    output_dimensionality=args.embedding_dim,
+                )
+                if len(result) == len(texts):
+                    all_embeddings.extend(result)
+                    break
+                print(f"\nBatch {start}: got {len(result)}/{len(texts)} embeddings, retrying...")
+                time.sleep(2 ** attempt)
+            except Exception as e:
+                # 429/RESOURCE_EXHAUSTED é limite por minuto: espera ~70s e segue.
+                is_rate = "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)
+                wait = 70 if is_rate else min(60, 2 ** attempt)
+                print(f"\nBatch {start} attempt {attempt+1} failed ({'rate-limit' if is_rate else 'erro'}); aguardando {wait}s: {str(e)[:120]}")
+                time.sleep(wait)
+        else:
+            raise SystemExit(f"Failed to embed batch starting at chunk {start} after 8 attempts")
 
     index_chunks(
         chunks=chunks,
